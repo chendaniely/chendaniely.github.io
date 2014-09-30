@@ -9,14 +9,15 @@ Earlier this month, Ben Wellington wrote a blog post about
 [How Memorizing “$19.05” Can Help You Outsmart the MTA](http://iquantny.tumblr.com/post/96700509489/how-memorizing-19-05-can-help-you-outsmart-the-mta).
 A few days later, after the post went viral, the MTA
 [responded](http://iquantny.tumblr.com/post/97027810529/update-mta-cites-lack-of-infinite-change-in-current)
-by saying it is so there will be enough change in the machine for cash
-users and will be addressed next year after the new fare increase.
+by saying this is so there will be enough change in the machine for cash
+users and this will be addressed next year after the new fare increase.
 
 Ben suggested to us all to remember `$9.55`, `$19.05`, and `$38.10` to get a
 MetroCard that will yield us a `$0.00` card at the end.  Among all the
 comments I saw going around my social media feeds, one of the comments
-that I saw was how remembering these key numbers is great, but people
-are still annoyed that there will always be a few cents left over.
+that I saw was how remembering these magic numbers are great, but people
+are still annoyed that there will always be a few cents left over
+depending on when you read about the magic fares.
 
 If we look closer at the table Ben shared (partially reproduced
 below), and take in to account the fact that the kiosks will only
