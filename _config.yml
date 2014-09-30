@@ -3,7 +3,8 @@ title: Under Construction Indefinitely
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   My name is Daniel Chen.  Meow.
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
+  Please forgive me while I slowly learn how Jekyll works...
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://mrdanielchen.com" # the base hostname & protocol for your site
 twitter_username: chendaniely
 github_username:  chendaniely
