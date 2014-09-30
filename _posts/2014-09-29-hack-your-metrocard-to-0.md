@@ -46,7 +46,7 @@ Let's walk through an example.
 You buy a 'Fast $9 MetroCard', You end up with `$9.45` on it.  By the
 time you've used it to exhaustion, you will have `$1.95` on it.  You are
 'short' `$2.50 - $1.95 = $0.55`.  So you go to the kiosk and put in
-`$19.05 + $0.55 = $19.60`, and viola.  You now have an 9 ride
+`$19.05 + $0.55 = $19.60`, and voilà.  You now have an 9 ride
 MetroCard.
 
 Let's say you have a MetroCard laying around with `$0.01` on it.  We
