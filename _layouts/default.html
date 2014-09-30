@@ -3,6 +3,7 @@
 
   {% include head.html %}
   {% include google_analytics.html %}
+
   <body>
 
     {% include header.html %}
@@ -10,6 +11,7 @@
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
+	{% include comments.html %}
       </div>
     </div>
 
