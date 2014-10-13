@@ -14,3 +14,5 @@ wordpress: 69.195.124.76
 
 # Build settings
 markdown: kramdown
+
+permalink: /blog/:year/:month/:day/:title
