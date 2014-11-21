@@ -201,15 +201,15 @@ https://chendaniely.shinyapps.io/shinyCountryTimeseries
 
 ## The repositories
 
-Caitlin Rivers: https://github.com/cmrivers/ebola
+This is all possible beacause of [Caitlin](http://www.caitlinrivers.com/) [Rivers](https://twitter.com/cmyeaton) and all the [contributors](https://github.com/cmrivers/ebola/graphs/contributors) (25+) to the [repository](https://github.com/cmrivers/ebola)
 
     - Computational epidemiology
     - Network Dynamics and Simulation Science Laboratory (NDSSL) 
         - Virginia Bioinformatics Institute, Virginia Tech
 
-Daniel Chen's fork: https://github.com/chendaniely/ebola
+My [fork](https://github.com/chendaniely/ebola) is the staging area for the shiny application
 
-## Contributors
+## Shiny contributors
 - Timothée Poisot [tpoisot](https://github.com/tpoisot)
     - Québec Centre for Biodiversity Science, Rimouski, Québec, Canada
 - Mathew Hall [mathew-hall](https://github.com/mathew-hall/)
