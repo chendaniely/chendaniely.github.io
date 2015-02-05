@@ -5,19 +5,19 @@ sass:
   sass_dir: assets/css/_sass
   style: :compressed
 
-# url: http://nadjetey.github.io
+# url: http://chendaniely.github.io
 
 owner:
-    name: Nii Adjetey Sowah
-    twitter: #
-    github: #
-    disqus_shortname: #
+    name: Daniel
+    twitter: chendaniely
+    github: chendaniely
+    disqus_shortname: chendaniely
 
 ga_id: #
 ga_username: #
 
-permalink: /:year/:month/:title/
-timezone: Africa/Accra
+permalink: /blog/:year/:month/:day/:title
+timezone: America/New_York
 
 markdown: redcarpet
 redcarpet:
