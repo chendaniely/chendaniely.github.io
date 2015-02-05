@@ -87,3 +87,32 @@ sets up the simulation.  I eventually moved the `main.py` script (and all requir
 into the
 [Multidisciplinary Diffusion Model Experiments (MDME)](https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments)
 repo.
+
+# Prerequisites
+
+I've realized the more I program in python, the more invaluable
+virtual environments
+are when developing packages.  A Virtual Environment is a tool to keep
+dependencies required by different projects in separate places while simultaneously
+keeping your base python distribution clean and working should something go awry.
+They also allow you to flip between Python 2 and Python 3 depending on what
+version a piece of code you are trying to run was written in.  Pretty cool stuff.
+
+The Python distribution I use is called [Anaconda]().
+
+Setting up virtual environments using `conda`:
+
+`conda create -n VIRTUAL_ENV_NAME python=3.4`
+
+You can specify different versions of python and/or pre-create environments
+with a set of modules if needed.
+
+Switching between environments: `source activate VIRTUAL_ENV_NAME`
+
+To exit out of an environment: `source deactivate`.
+
+You can read up more about creating environments on the conda documentation
+
+- [Createing Python 2/3 environments](http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments)
+- [`conda create`](http://conda.pydata.org/docs/examples/create.html)
+- 
