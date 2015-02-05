@@ -75,7 +75,8 @@ open source projects use it, was my rational to stick with `nosetests`.
 # My project
 
 The original
-[Multi-Agent Neural Network (MANN)](https://github.com/chendaniely/multi-agent-neural-network) project had a `main.py` script that
+[Multi-Agent Neural Network (MANN)](https://github.com/chendaniely/multi-agent-neural-network)
+project had a `main.py` script that
 loaded in my modules for the individual agents and the network structure.
 Everything was placed under the `mann` folder in the repo, with no subfolders.
 When I eventually realized that I wanted the project to be PyPI ready, I wanted
