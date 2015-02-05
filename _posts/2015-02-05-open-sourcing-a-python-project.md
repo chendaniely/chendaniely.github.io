@@ -18,12 +18,12 @@ my own package instead of extending his existing code base.
 
 I took it as an opportunity to learn and 'do things right':
 
-- write a module that contains all program logic, 
-- write functions that only do only one thing, but does it well
-- unit test everything
-- test builds on different versions of Python
-- document your code
-- get it on [PyPI](https://pypi.python.org/pypi)
+- Write a module that contains all program logic
+- Write functions that only do only one thing, but does it well
+- Unit test everything
+- Test builds on different versions of Python
+- Document your code
+- Get it on [PyPI](https://pypi.python.org/pypi)
 - [PEP8](https://www.python.org/dev/peps/pep-0008/)
 
 This series of posts are essentially notes to myself, and to other programmers
@@ -58,10 +58,10 @@ understanding as to what is going on in the background.  Plus, this lets me slow
 rather than have an entire repo loaded with unknown files.  More important, I added a few other
 things to make my project 'better':
 
-- use the [git-flow]() paradigm to add new features
-- continuous integration (with [TravisCI]())
-- test your package with other versions of Python (using [Tox]())
-- code documentation with [Sphinx]() and [Read the Docs]()
+- Use the [git-flow]() paradigm to add new features
+- Continuous integration (with [TravisCI]())
+- Test your package with other versions of Python (using [Tox]())
+- Code documentation with [Sphinx]() and [Read the Docs]()
 
 I opted not to use Tox locally (at least not yet).
 TravisCI is handling my Python compatibility since I was working with Python 3.4, and was not going to
