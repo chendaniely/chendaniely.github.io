@@ -23,7 +23,7 @@ I took it as an opportunity to learn and 'do things right':
 - unit test everything
 - test builds on different versions of Python
 - document your code
-- get it on [pypi](https://pypi.python.org/pypi)
+- get it on [PyPI](https://pypi.python.org/pypi)
 - [PEP8](https://www.python.org/dev/peps/pep-0008/)
 
 This series of posts are essentially notes to myself, and to other programmers
