@@ -72,6 +72,8 @@ SWC [material](http://software-carpentry.org/v4/test/index.html),
 and other [big](https://github.com/numpy/numpy)
 open source projects use it, was my rational to stick with `nosetests`.
 
+<hr>
+
 # My project
 
 The original
