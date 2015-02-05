@@ -82,6 +82,6 @@ Everything was placed under the `mann` folder in the repo, with no subfolders.
 When I eventually realized that I wanted the project to be PyPI ready, I wanted
 to separate the main program logic (the MANN code) from the actual script that
 sets up the simulation.  I eventually moved the `main.py` script (and all required files)
-into the 
+into the
 [Multidisciplinary Diffusion Model Experiments (MDME)](https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments)
 repo.
