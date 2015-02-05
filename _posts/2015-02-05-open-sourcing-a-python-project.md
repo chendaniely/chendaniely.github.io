@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Opensource A Python Project Part I"
+title:  "Open Source A Python Project I"
 date:   2014-09-29 20:40:00
 categories: opensource python
 ---
