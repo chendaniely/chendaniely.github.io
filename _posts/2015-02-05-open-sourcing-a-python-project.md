@@ -116,3 +116,13 @@ You can read up more about creating environments on the conda documentation
 - [Createing Python 2/3 environments](http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments)
 - [`conda create`](http://conda.pydata.org/docs/examples/create.html)
 - 
+
+# Issues
+Turning a current python project into a 'module' can break a few things.
+It is as simple as putting a `__init__.py` into a directory to signify that the
+contents of the folder is now a Python module, but there can be some weird
+side-effects.
+
+# Unit tests
+
+# Importing Modules
