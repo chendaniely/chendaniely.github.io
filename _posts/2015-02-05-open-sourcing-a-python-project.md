@@ -58,16 +58,19 @@ understanding as to what is going on in the background.  Plus, this lets me slow
 rather than have an entire repo loaded with unknown files.  More important, I added a few other
 things to make my project 'better':
 
-- Use the [git-flow]() paradigm to add new features
-- Continuous integration (with [TravisCI]())
-- Test your package with other versions of Python (using [Tox]())
-- Code documentation with [Sphinx]() and [Read the Docs]()
+- Use the [git](https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow)-[flow](http://nvie.com/posts/a-successful-git-branching-model/)
+paradigm to add new features
+- Continuous integration (with [TravisCI](https://travis-ci.org/recent))
+- Test your package with other versions of Python (using [Tox](https://tox.readthedocs.org/en/latest/))
+- Code documentation with [Sphinx](http://sphinx-doc.org/) and [Read the Docs](https://readthedocs.org/)
 
 I opted not to use Tox locally (at least not yet).
 TravisCI is handling my Python compatibility since I was working with Python 3.4, and was not going to
 have Python 2 support.  I added a build for Python 3.4 and 3.3, and called it a day.
-Also I opted to use `nosetests` instead of `pytest__________` since that's what I was shown when I
-helped out at the [MIT SWC workshop]().  That, plus there was
+Also I opted to use `nosetests` instead of [pytest](http://pytest.org/latest/)
+since that's what I was shown when I
+helped out at the [MIT SWC workshop](http://geocarpentry.github.io/2014-01-30-mit/).
+That, plus there was
 SWC [material](http://software-carpentry.org/v4/test/index.html),
 and other [big](https://github.com/numpy/numpy)
 open source projects use it, was my rational to stick with `nosetests`.
