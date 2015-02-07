@@ -118,7 +118,7 @@ You can read up more about creating environments on the conda documentation
 
 - [Createing Python 2/3 environments](http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments)
 - [`conda create`](http://conda.pydata.org/docs/examples/create.html)
-- 
+- [__________blah__________]()
 
 # Issues
 Turning a current python project into a 'module' can break a few things.
@@ -128,4 +128,30 @@ side-effects.
 
 # Unit tests
 
+When you turn your project into a package, you will find that if you run nosetests
+it will start running the unit tests for all the modules you load (if they have any).
+
+For example I was initially using
+
+`nosetests --cover-branches --with-coverage`
+
+to test my code, but I had to add the `--cover-package=MODULE_NAME` to get it
+to only test the code in my module:
+
+`nosetests --cover-branches --with-coverage --cover-erase --cover-package=mann`
+
 # Importing Modules
+Since I've moved out my simulation code from the code that defines that MANN
+module, I had to install the MANN module.  One way to do it is to upload the
+code to PyPI and `pip install` the package.  The problem is when you want to
+load a module to PyPI you essentially need to have a git tag associated with
+the version you want.  This is problematic when you are rapidly prototyping
+since you'll need to either delete tags, or constantly increment the tag.
+You'll end up with a v.0.314.0 very quickly.  You can do a local install
+of your module by going to where you have the setup.py file and doing:
+
+`python setup.py install`.
+
+This is why virtual environments are really helpful.
+You won't have to worry about cluttering the base Python distribution and
+modules with your 'test' code.
