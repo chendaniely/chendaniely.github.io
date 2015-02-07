@@ -2,16 +2,16 @@
 layout: post
 title:  "Open Source A Python Project I"
 date:   2015-02-05
-categories: opensource python
+categories: opensource python nosetests pip install
 ---
 
-I started my [first](https://github.com/chendaniely/multi-agent-neural-network) 
-open source project towards the end of summer 2014 I began working 
-at the [Social Decision Analytics Laboratory](http://vbi.vt.edu/sdal) at 
+I started my [first](https://github.com/chendaniely/multi-agent-neural-network)
+open source project towards the end of summer 2014 I began working
+at the [Social Decision Analytics Laboratory](http://vbi.vt.edu/sdal) at
 the [Virginia Informatics Institutee](http://www.vbi.vt.edu/).
-The project involves creating a simulation environment where we can observe how an idea or 
+The project involves creating a simulation environment where we can observe how an idea or
 belief spreads within a social network.  The initial thought was to look for and extend
-an [agent-based model]() package in Python.  I did manage to find the 
+an [agent-based model]() package in Python.  I did manage to find the
 [pyabm](https://github.com/azvoleff/pyabm) package
 by [Alex Zvoleff](http://azvoleff.com/), but for simplicity's sake I wrote
 my own package instead of extending his existing code base.
