@@ -2,7 +2,13 @@
 layout: post
 title:  "Open Source A Python Project II: Documentation"
 date:   2015-02-07
-categories: opensource python documentation sphinx readthedocs
+categories: Tutorials
+
+tags:
+  - opensource
+  - python
+  - sphinx
+  - read the docs
 ---
 
 - In [part I]() I introduced my [project]() and some of the initial hurdles.
