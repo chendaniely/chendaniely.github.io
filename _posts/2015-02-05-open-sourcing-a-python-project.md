@@ -2,7 +2,14 @@
 layout: post
 title:  "Open Source A Python Project I"
 date:   2015-02-05
-categories: opensource python nosetests pip install
+
+categories: Tutorials
+
+tags:
+  - opensource
+  - python
+  - nosetests
+  - pip install
 ---
 
 I started my [first](https://github.com/chendaniely/multi-agent-neural-network)
