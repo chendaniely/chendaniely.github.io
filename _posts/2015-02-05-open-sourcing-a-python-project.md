@@ -183,6 +183,12 @@ module by going to where you have the setup.py file and doing:
 
 `python setup.py install`
 
-This is why virtual environments are really helpful.  You won't have
-to worry about cluttering the base Python distribution and modules
-with your 'test' code.
+This is why virtual environments are really helpful.
+
+1. You won't have to worry about cluttering the base Python
+distribution and modules with your 'test' code.
+1. You can test your code before uploading it to PyPI (or anywhere
+   else).  This is really helpful becuase PyPI requires you to have a
+   `tag`.  Doing a local install allows you to workout any potential
+   bugs before submitting a release so you won't have to have 15
+   release numbers for your first release.
