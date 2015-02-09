@@ -123,7 +123,7 @@ also allow you to flip between Python 2 and Python 3 depending on what
 version a piece of code you are trying to run was written in.  Pretty
 cool stuff.
 
-The Python distribution I use is called [Anaconda]().
+The Python distribution I use is called [Anaconda](http://continuum.io/downloads).
 
 Setting up virtual environments using `conda`:
 
