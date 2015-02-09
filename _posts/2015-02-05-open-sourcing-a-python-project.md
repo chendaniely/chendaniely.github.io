@@ -181,7 +181,7 @@ either delete tags, or constantly increment the tag.  You'll end up
 with a v.0.314.0 very quickly.  You can do a local install of your
 module by going to where you have the setup.py file and doing:
 
-`python setup.py install`.
+`python setup.py install`
 
 This is why virtual environments are really helpful.  You won't have
 to worry about cluttering the base Python distribution and modules
