@@ -125,7 +125,7 @@ You can read up more about creating environments on the conda documentation
 
 - [Createing Python 2/3 environments](http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments)
 - [`conda create`](http://conda.pydata.org/docs/examples/create.html)
-- [__________blah__________]()
+-[Python Packages and Environments with conda](http://www.continuum.io/blog/conda)
 
 # Issues
 Turning a current python project into a 'module' can break a few things.
