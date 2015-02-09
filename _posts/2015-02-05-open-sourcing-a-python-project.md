@@ -20,7 +20,8 @@ the [Social Decision Analytics Laboratory](http://vbi.vt.edu/sdal) at
 the [Virginia Informatics Institutee](http://www.vbi.vt.edu/).  The
 project involves creating a simulation environment where we can
 observe how an idea or belief spreads within a social network.  The
-initial thought was to look for and extend an [agent-based model](http://en.wikipedia.org/wiki/Agent-based_model)
+initial thought was to look for and extend an
+[agent-based model](http://en.wikipedia.org/wiki/Agent-based_model)
 package in Python.  I did manage to find the
 [pyabm](https://github.com/azvoleff/pyabm) package by
 [Alex Zvoleff](http://azvoleff.com/), but for simplicity's sake I
@@ -50,8 +51,8 @@ listed were not entirely foreign, just a matter of implementation.
 Thanks to a workshop by
 [Gabriel Perez-Giz](http://www.ccpp.nyu.edu/gabriel_perez-giz.html) at
 NYU earlier that summer, I took it upon myself to practice my EMACS
-and setup [elpy](https://github.com/jorgenschaefer/elpy) as my IDE.
-A development environment that can be used within a terminal was
+and setup [elpy](https://github.com/jorgenschaefer/elpy) as my IDE.  A
+development environment that can be used within a terminal was
 especially important, because the simulations I would be running would
 all be on a remote server.
 
@@ -88,8 +89,9 @@ I opted not to use Tox locally (at least not yet).  TravisCI is
 handling my Python compatibility since I was working with Python 3.4,
 and was not going to have Python 2 support.  I added a build for
 Python 3.4 and 3.3, and called it a day.  Also I opted to use
-[nosetests](https://nose.readthedocs.org/en/latest/) instead of [pytest](http://pytest.org/latest/) since
-that's what I was shown when I helped out at the
+[nosetests](https://nose.readthedocs.org/en/latest/) instead of
+[pytest](http://pytest.org/latest/) since that's what I was shown when
+I helped out at the
 [MIT SWC workshop](http://geocarpentry.github.io/2014-01-30-mit/).
 That, plus there was SWC
 [material](http://software-carpentry.org/v4/test/index.html), and
@@ -123,7 +125,8 @@ also allow you to flip between Python 2 and Python 3 depending on what
 version a piece of code you are trying to run was written in.  Pretty
 cool stuff.
 
-The Python distribution I use is called [Anaconda](http://continuum.io/downloads).
+The Python distribution I use is called
+[Anaconda](http://continuum.io/downloads).
 
 Setting up virtual environments using `conda`:
 
@@ -142,8 +145,7 @@ documentation
 -
   [Createing Python 2/3 environments](http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments)
 - [`conda create`](http://conda.pydata.org/docs/examples/create.html)
--
-  [Python Packages and Environments with conda](http://www.continuum.io/blog/conda)
+-[Python Packages and Environments with conda](http://www.continuum.io/blog/conda)
 
 # Issues
 
