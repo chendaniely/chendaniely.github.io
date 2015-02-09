@@ -20,7 +20,7 @@ the [Social Decision Analytics Laboratory](http://vbi.vt.edu/sdal) at
 the [Virginia Informatics Institutee](http://www.vbi.vt.edu/).  The
 project involves creating a simulation environment where we can
 observe how an idea or belief spreads within a social network.  The
-initial thought was to look for and extend an [agent-based model]()
+initial thought was to look for and extend an [agent-based model](http://en.wikipedia.org/wiki/Agent-based_model)
 package in Python.  I did manage to find the
 [pyabm](https://github.com/azvoleff/pyabm) package by
 [Alex Zvoleff](http://azvoleff.com/), but for simplicity's sake I
