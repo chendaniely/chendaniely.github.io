@@ -38,7 +38,11 @@ I took it as an opportunity to learn and 'do things right':
 - [PEP8](https://www.python.org/dev/peps/pep-0008/)
 
 This series of posts are essentially notes to myself, and to other
-programmers who are starting out from where I was.
+programmers who are starting out from where I was.  In this post I
+discuss the background, rational, and inital steps in my open source
+struggles.  In
+[part II](https://github.com/chendaniely/chendaniely.github.io/blob/draft-os-python2/_posts/2015-02-05-open-sourcing-a-python-project-II.md)
+I discuss automatic project and code documentation.
 
 <hr>
 
