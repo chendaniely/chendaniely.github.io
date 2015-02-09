@@ -20,7 +20,7 @@ tl;dr:
 
 ` sphinx-apidoc -F -o docs NAME_OF_FOLDER`.
 
-Thanks to [Jeff Knupp](http://www.jeffknupp.com/) and his 
+Thanks to [Jeff Knupp](http://www.jeffknupp.com/) and his
 '[Open Sourcing a Python Project the Right Way](http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)'.
 post.
 
@@ -80,7 +80,9 @@ but esseentailly, create an account, link it to your
 [github]() account,
 and have RTD track the repository that you are working on.
 Make sure when you are setting up the RTD, under advanced settings, be sure
-to use to dropdown menu and select `Sphinx Documentaiton`.  I believe the
-default would be something along the lines of `markdown`.
+to use to dropdown menu and select `Sphinx HTML`.  I believe the
+default would be something along the lines of `Automatically Choose`.
 After that is all set, every push you make will cause RTD to rebuild the
 documentation.
+
+Select `Python` under Programming Language
