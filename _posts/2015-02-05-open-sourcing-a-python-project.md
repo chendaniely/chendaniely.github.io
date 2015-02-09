@@ -45,8 +45,9 @@ programmers who are starting out from where I was.
 
 I had already been involved with
 [Software Carpentry (SWC)](http://software-carpentry.org/) for about 8
-months, so many of the concepts I just listed were not entirely
-foreign, just a matter of implementation.  Thanks to a workshop by
+months when I started the project, so many of the concepts I just
+listed were not entirely foreign, just a matter of implementation.
+Thanks to a workshop by
 [Gabriel Perez-Giz](http://www.ccpp.nyu.edu/gabriel_perez-giz.html) at
 NYU earlier that summer, I took it upon myself to practice my EMACS
 and setup [elpy](https://github.com/jorgenschaefer/elpy) for my IDE.
