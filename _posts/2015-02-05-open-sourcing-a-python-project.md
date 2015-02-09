@@ -88,7 +88,7 @@ I opted not to use Tox locally (at least not yet).  TravisCI is
 handling my Python compatibility since I was working with Python 3.4,
 and was not going to have Python 2 support.  I added a build for
 Python 3.4 and 3.3, and called it a day.  Also I opted to use
-`nosetests` instead of [pytest](http://pytest.org/latest/) since
+[nosetests](https://nose.readthedocs.org/en/latest/) instead of [pytest](http://pytest.org/latest/) since
 that's what I was shown when I helped out at the
 [MIT SWC workshop](http://geocarpentry.github.io/2014-01-30-mit/).
 That, plus there was SWC
