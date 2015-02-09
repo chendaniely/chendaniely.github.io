@@ -50,7 +50,7 @@ listed were not entirely foreign, just a matter of implementation.
 Thanks to a workshop by
 [Gabriel Perez-Giz](http://www.ccpp.nyu.edu/gabriel_perez-giz.html) at
 NYU earlier that summer, I took it upon myself to practice my EMACS
-and setup [elpy](https://github.com/jorgenschaefer/elpy) for my IDE.
+and setup [elpy](https://github.com/jorgenschaefer/elpy) as my IDE.
 A development environment that can be used within a terminal was
 especially important, because the simulations I would be running would
 all be on a remote server.
