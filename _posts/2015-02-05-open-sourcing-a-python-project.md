@@ -54,7 +54,7 @@ For Python, I'd write a suite of unit tests for the first time, and I figured
 if I write some comments and docstrings I can get a nice document from it (I was wrong about that).
 Finally, I wanted to get those cool little badges people have on their github repo
 about build status, coverage, etc.  That's when I found an awesome blog post
-by [Jeff Knupp](http://www.jeffknupp.com/) titled 
+by [Jeff Knupp](http://www.jeffknupp.com/) titled
 '[Open Sourcing a Python Project the Right Way](http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)'.
 
 It's an amazing read if you are ready to take your programming practices to the next step.
