@@ -11,7 +11,7 @@ You can find the source code for the Jekyll new theme at: [github.com/jglovier/j
 
 You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
 
-% if page.comments %
+{% if page.comments %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -25,4 +25,4 @@ You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://gi
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-% endif %
+{% endif %}
