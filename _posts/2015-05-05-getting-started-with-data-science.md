@@ -25,18 +25,18 @@ This isn't a blog post about SWC per se, but how one might go about learing and 
 SWC has a page of [lessons](http://software-carpentry.org/lessons.html) that link to the various lessons taught during workshops.
 The core material covers:
 
-    1. [Unix](http://swcarpentry.github.io/shell-novice/)
-    2. Some programming language like [Python](http://swcarpentry.github.io/python-novice-inflammation/), [R](http://swcarpentry.github.io/r-novice-inflammation/), [MATLAB](http://swcarpentry.github.io/matlab-novice-inflammation/), etc
-    3. Version control using [Git](https://github.com/swcarpentry/git-novice) or [Mercurial](https://github.com/swcarpentry/hg-novice)
-    4. Databases and [SQL](http://swcarpentry.github.io/sql-novice-survey/)
+1. [Unix](http://swcarpentry.github.io/shell-novice/)
+2. Some programming language like [Python](http://swcarpentry.github.io/python-novice-inflammation/), [R](http://swcarpentry.github.io/r-novice-inflammation/), [MATLAB](http://swcarpentry.github.io/matlab-novice-inflammation/), etc
+3. Version control using [Git](https://github.com/swcarpentry/git-novice) or [Mercurial](https://github.com/swcarpentry/hg-novice)
+4. Databases and [SQL](http://swcarpentry.github.io/sql-novice-survey/)
 
 If you take a look and listen (there is sound) to the [introductory browsercase](http://swcarpentry.github.io/slideshows/introducing-software-carpentry/index.html#slide-3).
 You will see that we say we teach the above material, but in essense we try to convey:
 
-    1. Automation of repetitive tasks
-    2. Tracking and sharing work
-    3. Building modular code
-    4. Manage data
+1. Automation of repetitive tasks
+2. Tracking and sharing work
+3. Building modular code
+4. Manage data
 
 It's a little bait-and-switch :)
 
