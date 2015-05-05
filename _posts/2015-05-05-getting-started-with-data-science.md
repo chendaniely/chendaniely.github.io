@@ -14,7 +14,7 @@ tags:
 ---
 
 I've been an instructor for [Software-Carpentry (SWC)](http://software-carpentry.org) over a year now.
-It's been a facinating experience and I'm proud to be apart of an open source movement promoting best practices.
+It's been a facinating experience and I'm proud to be a part of an open source movement promoting best practices.
 Typically when looking to start learing data science/analysis the first things people look up is something along the lines of: "learn python", "free online r course", "data science python", "r jobs", etc.
 Or scan through the coursera offerings.
 I'm a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics.
