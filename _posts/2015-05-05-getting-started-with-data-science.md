@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Getting Started with Data Analysis"
+title:  "Getting Started with Data Science and Analysis"
 date:   2015-05-05
 
 categories: Tutorials
