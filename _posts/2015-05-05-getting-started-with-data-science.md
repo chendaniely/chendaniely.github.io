@@ -71,6 +71,10 @@ In order to view the lessons, open up the folder and all the lessons are numbere
 Click, read, and code through them in order.
 
 If you want to view the lessons online, you can click the `.Rmd` documents, and github should be able to render the lesson for you in the browser.  For Python and other materials, use the `.md` documents.
+The caveat with viewing the `.Rmd` and `.md` (aka R markdown, and markdown respectively) is that it does not render the documently exactly the same way as the `.html` files.
+There is a potential for things to be rendered incorrectly, and you'll see some bizzare (YAML) header on the top.
+It's great for a quick reference when you're not at your computer, but I would suggest using one of the `.html` methods.
+
 
 # Data Carpentry Material
 
