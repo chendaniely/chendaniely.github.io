@@ -74,8 +74,8 @@ If you want to view the lessons online, you can click the `.Rmd` documents, and 
 
 # Data Carpentry Material
 
-Software Carpentry's sister organization, [Data Carpentry]() also has a set of [lesson plans](http://datacarpentry.org/lesson-dev.html).
-From their [about us] page:
+Software Carpentry's sister organization, [Data Carpentry](http://datacarpentry.org/) also has a set of [lesson plans](http://datacarpentry.org/lesson-dev.html).
+From their [about us](http://datacarpentry.org/about.html) page:
 
 > Data Carpentry is a sister organization of Software Carpentry designed to teach basic concepts, skills and tools for working more effectively with data.
 We develop curricula and run workshops that are 1) domain specific; 2) target fundamental data analysis and data management challenges; and 3) require little or no prior programming experience.
