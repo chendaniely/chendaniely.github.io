@@ -62,9 +62,9 @@ Using the R material as an example.  The instructors typically teach from the [N
 
 Once you're on the github page of the lesson, there are a few ways to get the lessons plan
 
-    1. If you know your way around git, you can clone the repository
-    2. Otherwise, you will see an option to "Download ZIP" on the right panel.
-    3. View them in the browser
+1. If you know your way around git, you can clone the repository
+2. Otherwise, you will see an option to "Download ZIP" on the right panel.
+3. View them in the browser
 
 The first 2 methods get you do the same place -- have the lessons on your computer.
 In order to view the lessons, open up the folder and all the lessons are numbered and end in `.html`.
