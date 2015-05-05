@@ -70,7 +70,7 @@ The first 2 methods get you do the same place -- have the lessons on your comput
 In order to view the lessons, open up the folder and all the lessons are numbered and end in `.html`.
 Click, read, and code through them in order.
 
-If you want to view the lessons online, you can click the `.Rmd` documents, and github should be able to render the lesson for you in the browser.  For python and other materials, use the `.md` documents.
+If you want to view the lessons online, you can click the `.Rmd` documents, and github should be able to render the lesson for you in the browser.  For Python and other materials, use the `.md` documents.
 
 # Data Carpentry Material
 
