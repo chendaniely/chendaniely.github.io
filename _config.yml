@@ -16,3 +16,5 @@ wordpress: 69.195.124.76
 markdown: kramdown
 
 permalink: /blog/:year/:month/:day/:title
+
+exclude:	   ['*.ipynb']
