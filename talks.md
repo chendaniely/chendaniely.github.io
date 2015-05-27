@@ -22,7 +22,7 @@ Links to talks I've given.
   </tr>
 
   <tr>
-    <td>2014-11-21</td>
+    <td width="110px">2014-11-21</td>
     <td>Open Science and Ebola for the Health Communication and Informatics Laboratory at Columbia DBMI</td>
     <td><a href='https://github.com/chendaniely/2014-11-21-talk-cumc-dbmi-hci'>repo</a></td>
     <td><a href='https://htmlpreview.github.io/?https://github.com/chendaniely/2014-11-21-talk-cumc-dbmi-hci/blob/master/ebolaOpenScience.html#1'>slides</a></td>
