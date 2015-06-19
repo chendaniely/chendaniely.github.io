@@ -10,4 +10,4 @@ at
 
 1.  inter- and intra- hospital networks and comparing care coordination networks to improve
 patient outcomes and
-1.  improving communication and patient care between multi-disciplinary care coordination teams.
+1.  improving communication and patient care between multidisciplinary care coordination teams.
