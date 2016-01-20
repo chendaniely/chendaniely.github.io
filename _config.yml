@@ -4,13 +4,12 @@ email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   My name is Daniel Chen.
   Please forgive me while I slowly learn how Jekyll works...
-  In the mean time my old site is <a href='http://www.mrdanielchen.com/'>here</a>
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://mrdanielchen.com" # the base hostname & protocol for your site
 twitter_username: chendaniely
 github_username:  chendaniely
 photoblog: dan.aminus3.com
-wordpress: 69.195.124.76
+# wordpress: 69.195.124.76
 
 # Build settings
 markdown: kramdown
