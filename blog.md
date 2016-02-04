@@ -1,6 +1,8 @@
 ---
 layout: default
 comments: false
+title: Blog
+permalink: /blog/
 ---
 
 <div class="home">
