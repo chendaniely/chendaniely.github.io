@@ -50,7 +50,7 @@ Watts references a quote from Nobel laureate,
 > each of which comes with its own rules and principles that are not reducible to a mere knowledge of psychology and biology
 
 This juxtaposition depicts why studying complexity science and understanding system dynamics is crucial.
-Watts uses the blackouts in the United States as examples of how optimizing local infrastructure makes the entire system more fragile.
+Watts uses the 1996 blackouts in the United States as examples of how optimizing local infrastructure makes the entire system more fragile.
 
 The more I progress academically and professionally,
 the more I realize the importance of Mathematics.
