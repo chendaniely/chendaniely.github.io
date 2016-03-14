@@ -27,24 +27,19 @@ specialist, is to collate and review information about the patient and
 their disease, discuss it, and make a decision for further
 investigation and treatment.
 
-<h1 class="page-heading">Research Related Posts</h1>
+ <h1 class="page-heading">Research Related Posts</h1>
 
-  <ul class="post-list">
-    {% for post in site.categories.Research %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+   <ul class="post-list">
+	 {% for post in site.categories.Research %}
+	   <li>
+		 <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-
-{% for post in site.categories.Research %}
-    <li>{{ post.title }}</li>
-{% endfor %}
+		 <h2>
+		   <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		 </h2>
+	   </li>
+	 {% endfor %}
+   </ul>
 
 <!--
 1. network stuff
