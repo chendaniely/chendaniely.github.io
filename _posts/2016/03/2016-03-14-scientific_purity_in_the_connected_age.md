@@ -49,6 +49,9 @@ Watts references a quote from Nobel laureate,
 > from ecology and epidemiology, to sociology and economics,
 > each of which comes with its own rules and principles that are not reducible to a mere knowledge of psychology and biology
 
+The juxtaposition depicts why studying complexity science and understanding system dynamics is crucial.
+Watts uses the blackouts in the United States as examples of how optimizing local infrastructure makes the entire system more fragile.
+
 The more I progress academically and professionally,
 the more I realize the importance of Mathematics.
 As a statistician in training,
