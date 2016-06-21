@@ -11,51 +11,49 @@ tags:
   - Linux
   - Setup
 ---
-Adapted from Shubhmay and TimD from: <a href="http://askubuntu.com/questions/26632/how-to-install-eclipse" title="http://askubuntu.com/questions/26632/how-to-install-eclipse" target="_blank">http://askubuntu.com/questions/26632/how-to-install-eclipse</a>
 
-1.  Extract the eclipse.XX.YY.tar.gz file <pre class="brush: bash; title: ; notranslate" title="">tar -zxvf eclipse.XX.YY.tar.gz
-</pre></p> 
 
-2.  Copy the extracted folder to /opt
+Adapted answer from Shubhmay and TimD on [askubuntu](http://askubuntu.com/questions/26632/how-to-install-eclipse) on installing Eclipse.
+
+<!-- more -->
+
+1.  Extract the eclipse.XX.YY.tar.gz file: `tar -zxvf eclipse.XX.YY.tar.gz`
+
+2.  Copy the extracted folder to `/opt`: `sudo cp -r eclipse /opt`
+
+3. Create a desktop file `gedit eclipse.desktop`
+
+4. copy the following to the eclipse.desktop file
+
     
-    <pre class="brush: bash; title: ; notranslate" title="">sudo cp -r eclipse /opt
-</pre></p> 
-
-3a. Create a desktop file and install it:
-
-<pre class="brush: bash; title: ; notranslate" title="">gedit eclipse.desktop
-</pre>
-
-3b.  
-and copy the following to the eclipse.desktop file.
-
-<pre class="brush: bash; title: ; notranslate" title="">[Desktop Entry]
-Name=Eclipse 
-Type=Application
-#Exec=eclipse
-Exec=env UBUNTU_MENUPROXY=0 eclipse # for menubar bug in 13.10
-Terminal=false
-Icon=eclipse
-Comment=Integrated Development Environment
-NoDisplay=false
-Categories=Development;IDE;
-Name[en]=Eclipse
-</pre>
-
-3c. then execute the following command to automatically install it in the unity:
-
-<pre class="brush: bash; title: ; notranslate" title="">sudo desktop-file-install eclipse.desktop
-</pre>
-
-1.  Create a symlink in /usr/local/bin using
+        [Desktop Entry]
+        Name=Eclipse 
+        Type=Application
+        #Exec=eclipse
+        Exec=env UBUNTU_MENUPROXY=0 eclipse # for menubar bug in 13.10
+        Terminal=false
+        Icon=eclipse
+        Comment=Integrated Development Environment
+        NoDisplay=false
+        Categories=Development;IDE;
+        Name[en]=Eclipse
     
-    <pre class="brush: bash; title: ; notranslate" title="">cd /usr/local/bin
-ln -s /opt/eclipse/eclipse
-</pre>
-    
-    according to user ortang: Use the eclipse version when creating a the symlink (eg: ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse42), and use Exec=eclipse42 at the desktop entry. That way you will be able to install multiple different versions of eclipse
 
-2.  For eclipse icon to be displayed in dash, eclipse icon can be added as
+5. Execute the following command to automatically install it in the unity: `sudo desktop-file-install eclipse.desktop`
+
+6.  Create a symlink in `/usr/local/bin` using
+
+        cd /usr/local/bin
+        ln -s /opt/eclipse/eclipse
+
     
-    <pre class="brush: bash; title: ; notranslate" title="">cp /opt/eclipse/icon.xpm /usr/share/pixmaps/eclipse.xpm
-</pre></p>
+    according to user ortang:
+
+    > Use the eclipse version when creating a the symlink
+    > (eg: `ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse42`),
+    > and use `Exec=eclipse42` at the desktop entry.
+    > That way you will be able to install multiple different versions of eclipse
+
+2.  For eclipse icon to be displayed in dash, eclipse icon can be added with
+    
+    `cp /opt/eclipse/icon.xpm /usr/share/pixmaps/eclipse.xpm`

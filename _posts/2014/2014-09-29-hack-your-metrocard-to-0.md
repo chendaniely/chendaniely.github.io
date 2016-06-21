@@ -12,6 +12,8 @@ A few days later, after the post went viral, the MTA
 by saying this is so there will be enough change in the machine for cash
 users and this will be addressed next year after the new fare increase.
 
+<!-- more -->
+
 Ben suggested to us all to remember `$9.55`, `$19.05`, and `$38.10` to get a
 MetroCard that will yield us a `$0.00` card at the end.  Among all the
 comments I saw going around my social media feeds, one of the comments

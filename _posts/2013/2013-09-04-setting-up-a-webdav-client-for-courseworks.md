@@ -19,6 +19,8 @@ In this post I discuss setting up a WebDAV Client for Windows and Mac.  If you 
 
 This post shows how to setup [BitKinex ][3]and [Cyberduck ][4]in Windows.  You can also use the Cyberduck instructions for Mac.
 
+<!-- more -->
+
 Courseworks also has instructions on setting up Cyberduck under their Mac section; the same instructions can also be used for the Windows version of Cyberduck.
 
 *Be careful when accessing a directory that you do not own.  There is the potential that you may be able to upload files to the directory, or worse, change, overwrite, or delete the files.*
@@ -28,7 +30,7 @@ Courseworks also has instructions on setting up Cyberduck under their Mac sectio
 What you have to do first is log into your Coureworks, click on the course number for your class and then in the left frame of the page click "Files & Resources".  On the top of the page you will see a link for "upload-download multiple resources", see figure 1.1
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav01.png"><img alt="webdav01" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav01-300x52.png" width="300" height="52" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav01.png"><img alt="webdav01" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav01-300x52.png" width="300" height="52" /></a>
 </p>
 
 <p style="text-align: center;">
@@ -40,7 +42,7 @@ It will direct you do a link to copy in "step 1" and directions to set up WebDAV
 The link that you need essentially has 2 parts, the part that is highlighted in Figure 1.2 is what you will need when you are using BitKinex, the entire link is needed for Cyberduck,
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav02.png"><img alt="webdav02" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav02-300x35.png" width="300" height="35" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav02.png"><img alt="webdav02" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav02-300x35.png" width="300" height="35" /></a>
 </p>
 
 <p style="text-align: center;">
@@ -55,7 +57,7 @@ You can download BitKinex [here][3].  At the time of this post Current Version:
 
 After you have BitKinex installed, you will right click "Http/WebDAV" and go to New > Http/WebDav, See figure 2.1 (sorry my mouse is highlighted over the wrong option).
 
-[<img class="aligncenter" alt="webdav03" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav03-300x272.png" width="300" height="272" />][5]
+[<img class="aligncenter" alt="webdav03" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav03-300x272.png" width="300" height="272" />][5]
 
 <p style="text-align: center;">
   Figure 2.1:  Creating a new WebDAV connection in BitKinex
@@ -65,7 +67,7 @@ A popup window will appear for a name, you can simply put "Columbia" or "newcour
 
 Next, it should direct you to a settings menu under the "Server" option on the left, See Figure 2.2.  for server address enter "courseworks.columbia.edu", I used "newcourseworks.columbia.edu", but I believe the two should be the same, and the former may be preferred.  You can also refer to Step 1 and copy the text I showed that was not highlighted in blue (Figure 1.2).  Under Authentication, enter your UNI for "User" and password for "Password"
 
-[<img class="aligncenter" alt="webdav04" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav04-300x191.png" width="300" height="191" />][6]
+[<img class="aligncenter" alt="webdav04" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav04-300x191.png" width="300" height="191" />][6]
 
 <p style="text-align: center;">
   Figure 2.2: WebDAV Setup
@@ -76,7 +78,7 @@ Next, it should direct you to a settings menu under the "Server" option on the l
 </p>
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav05.png"><img alt="webdav05" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav05-300x191.png" width="300" height="191" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav05.png"><img alt="webdav05" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav05-300x191.png" width="300" height="191" /></a>
 </p>
 
 <p style="text-align: center;">
@@ -88,7 +90,7 @@ Next, it should direct you to a settings menu under the "Server" option on the l
 </p>
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav06.png"><img alt="webdav06" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav06-300x168.png" width="300" height="168" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav06.png"><img alt="webdav06" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav06-300x168.png" width="300" height="168" /></a>
 </p>
 
 <p style="text-align: center;">
@@ -120,7 +122,7 @@ I will be showing a different method, all have the same results.
 On the bottom left of the application, click on the "+" sign (Figure 3.1)
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav07.png"><img alt="webdav07" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav07.png" width="122" height="83" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav07.png"><img alt="webdav07" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav07.png" width="122" height="83" /></a>
 </p>
 
 <p style="text-align: center;">
@@ -132,7 +134,7 @@ On the bottom left of the application, click on the "+" sign (Figure 3.1)
 </p>
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav08.png"><img class="aligncenter" alt="webdav08" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav08-251x300.png" width="251" height="300" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav08.png"><img class="aligncenter" alt="webdav08" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav08-251x300.png" width="251" height="300" /></a>
 </p>
 
 <p style="text-align: center;">
@@ -144,16 +146,16 @@ On the bottom left of the application, click on the "+" sign (Figure 3.1)
 </p>
 
 <p style="text-align: center;">
-  <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav061.png"><img class="aligncenter size-medium wp-image-148" alt="webdav061" src="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav061-300x185.png" width="300" height="185" /></a>
+  <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav061.png"><img class="aligncenter size-medium wp-image-148" alt="webdav061" src="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav061-300x185.png" width="300" height="185" /></a>
 </p>
 
 <p style="text-align: center;">
-  Figure 3.3: Bookmarks View<a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav08.png"><br /> </a> <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav07.png"><br /> </a> <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav06.png"><br /> </a> <a href="http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav02.png"><br /> </a>
+  Figure 3.3: Bookmarks View<a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav08.png"><br /> </a> <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav07.png"><br /> </a> <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav06.png"><br /> </a> <a href="{{ site.baseurl }}/wp-content/uploads/2013/09/webdav02.png"><br /> </a>
 </p>
 
- [1]: http://en.wikipedia.org/wiki/WebDAV
- [2]: http://www.jscape.com/products/file-transfer-clients/anyclient/
- [3]: http://www.bitkinex.com/download
- [4]: http://cyberduck.ch/
- [5]: http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav03.png
- [6]: http://www.mrdanielchen.com/wp-content/uploads/2013/09/webdav04.png
+[1]: http://en.wikipedia.org/wiki/WebDAV
+[2]: http://www.jscape.com/products/file-transfer-clients/anyclient/
+[3]: http://www.bitkinex.com/download
+[4]: http://cyberduck.ch/
+[5]: {{ site.baseurl }}/wp-content/uploads/2013/09/webdav03.png
+[6]: {{ site.baseurl }}/wp-content/uploads/2013/09/webdav04.png

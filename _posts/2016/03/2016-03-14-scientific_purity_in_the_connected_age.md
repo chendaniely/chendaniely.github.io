@@ -23,6 +23,8 @@ The first chapter, "The Connected Age", reminded me of this XKCD
 
 ![purity](http://imgs.xkcd.com/comics/purity.png)
 
+<!-- more -->
+
 When first saw the comic as an Psychology / Neuroscience undergrad,
 I found it extremely amusing -- I wasn't on the bottom!
 To my delight,

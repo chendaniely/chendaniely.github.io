@@ -44,7 +44,7 @@ struggles.  In
 [part II](https://github.com/chendaniely/chendaniely.github.io/blob/draft-os-python2/_posts/2015-02-05-open-sourcing-a-python-project-II.md)
 I discuss automatic project and code documentation.
 
-<hr>
+<!-- more -->
 
 # Background
 
