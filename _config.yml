@@ -1,19 +1,70 @@
-# Site settings
-title: Under Construction Indefinitely
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  My name is Daniel Chen.
-  Please forgive me while I slowly learn how Jekyll works...
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://mrdanielchen.com" # the base hostname & protocol for your site
-twitter_username: chendaniely
-github_username:  chendaniely
-photoblog: dan.aminus3.com
-# wordpress: 69.195.124.76
+# Site Info
+title: Daniel Chen
+tagline: 'Perpetually Under Construction'
+description: 'A Jekyll theme adapted from <a href="http://lanyon.getpoole.com/" target="_blank">Lanyon</a>. Made by <a href="http://codinfox.github.io" target="_blank">@codinfox</a>.'
+baseurl: "/lanyon"
+url: http://chendaniely.github.io
+logo: '/public/dc/dc-69.png'
 
-# Build settings
+# Site configurations
+gems:
+  - jekyll-paginate
 markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 10
+paginate_path: '/blog/page:num'
+permalink: pretty
 
-permalink: /blog/:year/:month/:day/:title
+version: 1.0.0
 
-exclude:	   ['*.ipynb']
+# About/contact
+author:
+  name: chendaniely
+  description: Using computational methods and network science in 
+    <strong>public health, epidemiology, psychology, and medicine</strong>.
+  gravatar: bafc04ef618c2c9d8d71fac8448bb8c7 # md5 hash of your email address
+  contact:
+    linkedin:  https://www.linkedin.com/in/danielychen
+    github:    https://github.com/chendaniely
+    # facebook:  <hide>
+    twitter:   https://twitter.com/chendaniely
+    # weibo:     http://weibo.com/41173780
+    # email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
+
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Blog:           
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+  Github Project: 
+    - 'http://chendaniely.github.io/'
+  Teaching:
+    - '/teaching/'
+  Data Science:
+    - /data_science/
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+hero:
+  image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
+  # /public/img/we_will_be_giants_by_yalestewart.jpg
+  caption: Original Artwork &copy; <a href="https://xkcd.com/1132/">XKCD - Randall Munroe</a>
+  # Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics
+disqus_short_name: 'chendaniely' # leave blank if you don't want disqus
+

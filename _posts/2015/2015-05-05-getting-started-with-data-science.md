@@ -20,6 +20,8 @@ Or scan through the coursera offerings.
 I'm a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics.
 This isn't a blog post about SWC per se, but how one might go about learing and navigating some of the material on your own without attending a workshop.
 
+<!-- more -->
+
 # Software Carptentry Material
 
 SWC has a page of [lessons](http://software-carpentry.org/lessons.html) that link to the various lessons taught during workshops.
