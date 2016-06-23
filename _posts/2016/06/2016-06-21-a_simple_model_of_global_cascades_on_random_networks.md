@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Simple Model of Global Cascades on Random Networks"
-date:   2016-03-14
+date:   2016-06-21
 
 categories: Research
 
