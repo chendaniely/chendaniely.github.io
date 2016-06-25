@@ -10,6 +10,7 @@ tags:
   - jupyter notebook
   - jekyll
   - blogging
+  - draft
 ---
 
 I'm trying to get into a habbit of writing regularly.
@@ -45,8 +46,7 @@ Luckily, something like this could be delt with in a `makefile`, or a really sim
 
 # Method 2: custom jekyll templates and python parser
 
-The second method uses the existing `jupyter nbconvert` infrastructure to create 
-
+The second method uses the existing `jupyter nbconvert` infrastructure to create a
 
 
 [1]: http://predictablynoisy.com/blogging-in-wordpress-with-ipython-jupyter-notebooks/
