@@ -2,3 +2,6 @@ _site
 *~
 .sass-cache/
 npm-debug.log
+
+notebooks/.ipynb_checkpoints/*
+
