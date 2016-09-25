@@ -29,7 +29,9 @@ title: About
   <a href='http://dads2busy.github.io/'>Aaron Schroeder</a>)
   and maintain the
   <a href='https://aur.archlinux.org/packages/rstudio-desktop-preview-bin/'>rstudio-desktop-preview-bin</a>
-  package in the
+  and
+  <a href='https://aur.archlinux.org/packages/rodeo/'>rodeo</a>
+  packages in the
   <a href='https://aur.archlinux.org/'>AUR</a>.
   <br>
   <br>
