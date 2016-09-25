@@ -20,7 +20,7 @@ title: About
   Volunteer instructor for
   <a href='http://software-carpentry.org/'>Software Carpentry</a> and
   <a href='http://www.datacarpentry.org/'>Data Carpentry</a> and
-  maintain the
+  co-maintain the
   <a href='http://swcarpentry.github.io/r-novice-inflammation/'>Novice Inflammation R Lesson</a>.
   <br>
   <br>
