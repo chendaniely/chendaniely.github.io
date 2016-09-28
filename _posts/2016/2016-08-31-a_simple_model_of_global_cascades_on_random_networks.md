@@ -31,7 +31,7 @@ I've been working with my Masters and Doctoral advisor,
 incorporates artificial neural networks within an agent-based
 simulation.  The project is called "Multi-Agent Neural Network" (MANN)
 and it was my
-[first](http://chendaniely.github.io/blog/2015/02/05/open-sourcing-a-python-project)
+[first]({% link _posts/2015/02/05/open-sourcing-a-python-project %})
 open source project; the code can be found in two parts:
 
 1. [The Python module](https://github.com/chendaniely/multi-agent-neural-network)
@@ -148,6 +148,8 @@ Goals of the paper:
 
 ### Fig 1
 
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F1/>
+
 Shows for a given threshold, $\phi$ and average number of neighbors, $z$,
 where the cascade condition is satisfied.
 This is an analytical solution, not a simulated solution
@@ -157,6 +159,8 @@ This is an analytical solution, not a simulated solution
 
 ### Fig 2
 
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F2/>
+
 Looking at a specific threshold value, $\phi = 0.18$
 
 - $n$ = 10,000
@@ -164,10 +168,19 @@ Looking at a specific threshold value, $\phi = 0.18$
 
 ### Fig 3
 
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F3/>
+
 a log-log plot of the cascade size vs cumulative distribution
+
+### Fig 4
+
+<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F4/>
+
+
+
 
 # References
 
-http://www.ncbi.nlm.nih.gov/pubmed/16578874
+<http://www.ncbi.nlm.nih.gov/pubmed/16578874>
 
 [1]: http://www.ncbi.nlm.nih.gov/pubmed/16578874
