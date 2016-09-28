@@ -60,6 +60,7 @@ title: About
   <a href='http://www.macaulay.cuny.edu/'>The Macaulay Honors College</a>
   at <a href='https://www.google.com/search?q=cuny+hunter+college&oq=cuny+hunter+college&aqs=chrome.0.0j69i65l2j0l3.2012j0j1&sourceid=chrome&ie=UTF-8'>Hunter College</a> of
   <a href='http://www2.cuny.edu/'>The City University of New York</a>.
+  <a href='http://stuy.enschool.org/'>Stuyvesant High School</a> alumnus.
   <br>
   <br>
   CV
