@@ -60,7 +60,7 @@ but the process of making a decision and performing an action are not.
 [Mark Orr, Roxanne Thrush, and David C. Plaut][5]
 suggest incorporating the [Theory of Reasoned Action (TRA)][6] as the
 theoretical framework to describe how behaviors emerge and an
-[auto-associator][7] [neural-network][8]
+[auto][7]-[associator][8] [neural-network][11]
 as the computational framework to simulate nodes.
 
 A neural network allows for a multi-dimensional node, not just a simple binary node.
@@ -72,7 +72,7 @@ If we re-conceptualize the Watts model, the prototype is the bit of information 
 Since this is a binary model, then each node can be thought to be trained to have an output of 1,
 but has a state of 0 until the proper inputs are met (local dependencies and fractional thresholds), and the node has a state of 1.
 
-From the neural network perspective, every node is trained to a particular prototype (e.g., the vector: [1, 1, 1, 0, 0, 0]),
+From the neural network perspective, every node is trained to a particular prototype (e.g., the vector: `[1, 1, 1, 0, 0, 0]`),
 and has a state of 0 (e.g., the vector: `[0, 0, 0, 0, 0, 0]`)
 until proper inputs are met, the neural network will output the prototype (e.g., the vector: `[1, 1, 1, 0, 0, 0]`).
 Additionally, the same output should be returned, if only a portion of the prototype vector is presented.
@@ -136,3 +136,4 @@ and have each node use a random 1 neighbor's state (i.e., output) and its input.
 [8]: http://www.sciencedirect.com/science/article/pii/009813549280051A
 [9]: https://en.wikipedia.org/wiki/Autoassociative_memory
 [10]: https://en.wikipedia.org/wiki/Cosine_similarity
+[11]: https://en.wikipedia.org/wiki/Artificial_neural_network
