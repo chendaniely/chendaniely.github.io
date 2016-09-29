@@ -31,7 +31,7 @@ I've been working with my Masters and Doctoral advisor,
 incorporates artificial neural networks within an agent-based
 simulation.  The project is called "Multi-Agent Neural Network" (MANN)
 and it was my
-[first]({% post_url /2015/02/05/open-sourcing-a-python-project %})
+[first](http://chendaniely.github.io/tutorials/2015/02/05/open-sourcing-a-python-project/)
 open source project; the code can be found in two parts:
 
 1. [The Python module](https://github.com/chendaniely/multi-agent-neural-network)
