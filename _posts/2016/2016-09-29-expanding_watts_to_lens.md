@@ -122,7 +122,7 @@ However if a node has multiple neighbors, the probability of the same neighbor p
 ## Creating a simpler neural-network model
 
 A simpler approach would be to have each node in the network trained against the prototype.
-Seed a single node with the prototype, and run the model without any additional thresholding rule ($\theta),
+Seed a single node with the prototype, and run the model without any additional thresholding rule ($\theta$),
 and have each node use a random 1 neighbor's state (i.e., output) and its input.
 
 
