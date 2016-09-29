@@ -126,7 +126,7 @@ Seed a single node with the prototype, and run the model without any additional 
 and have each node use a random 1 neighbor's state (i.e., output) and its input.
 
 
-[1]: {% post_url /2016/ 2016-09-27-expanding_watts_to_lens %}
+[1]: {% post_url /2016/2016-09-27-expanding_watts_to_lens %}
 [2]: www.google.com
 [3]: https://www.ncbi.nlm.nih.gov/pubmed/16578874
 [4]: https://github.com/chendaniely/mann2
