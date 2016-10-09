@@ -50,6 +50,8 @@ nav:
     - /projects/
   Talks:
     - /talks/
+  Research:
+    - /research/
   Teaching:
     - '/teaching/'
   Data Science:
