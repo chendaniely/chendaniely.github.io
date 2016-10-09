@@ -20,6 +20,12 @@ paginate: 10
 paginate_path: '/blog/page:num'
 permalink: pretty
 
+collections:
+  data_science:
+    output: true
+
+jupyter_notebooks: /notebooks/
+
 version: 1.0.0
 
 # About/contact
