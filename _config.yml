@@ -52,8 +52,8 @@ nav:
     - { Tags: '/blog/tags/' }
   About:
     - '/about/'
-  Github Project:
-    - 'http://chendaniely.github.io/'
+  Projects:
+    - /projects/
   Teaching:
     - '/teaching/'
   Data Science:
