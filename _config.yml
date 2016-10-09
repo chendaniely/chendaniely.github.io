@@ -48,6 +48,8 @@ nav:
     - '/about/'
   Projects:
     - /projects/
+  Talks:
+    - /talks/
   Teaching:
     - '/teaching/'
   Data Science:
