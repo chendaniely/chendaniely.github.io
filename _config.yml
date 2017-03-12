@@ -74,6 +74,12 @@ hero:
   image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
   caption: Original Artwork &copy; <a href="https://xkcd.com/1132/">XKCD - Randall Munroe</a>
 
+project_logos:
+  safari_books_online: /public/project_images/safari_books_online.jpg
+  datacamp: /public/project_images/datacamp_white_fulllogo_tagline.png
+  pandas_for_everyone: /public/project_images/pandas_for_everyone.jpg
+  github_octocat: /public/project_images/octocat/Octocat.png
+
 # Puglins
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics

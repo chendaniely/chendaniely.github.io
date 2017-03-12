@@ -15,6 +15,6 @@ This page is still in draft mode.
   - https://github.com/chendaniely/wicer-entice3
   - https://github.com/chendaniely/wicer-entice3-grader
 
-- *Pandas for Everyone*
-- *Git Essentials*
-- Cleaning Data in Python
+- *Pandas for Everyone* <img src="{{ site.project_logos.pandas_for_everyone }}" /> <img src="{{ site.project_logos.safari_books_online }}" />
+- *Git Essentials* <img src="{{ site.project_logos.safari_books_online }}" />
+- Cleaning Data in Python <img src="{{ site.project_logos.datacamp }}" />
