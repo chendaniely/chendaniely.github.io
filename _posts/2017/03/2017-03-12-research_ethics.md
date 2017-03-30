@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ethics"
+title:  "Research Ethics"
 date:   2017-03-12
 
 categories: Teaching
