@@ -4,16 +4,52 @@ title: talks
 ---
 
 - https://github.com/chendaniely/2016-11-01-bi_symposium
-- https://github.com/chendaniely/2016-pydata-dc-python_useRs
-- https://github.com/chendaniely/2016-pydata-carolinas-pandas
 - https://github.com/chendaniely/gbcb_seminar_presentation_1
-- https://github.com/chendaniely/2016-04-06-dib-git-intro-intermediate
-- https://github.com/chendaniely/2016-04-13-dib-git-intermediate
-- https://github.com/chendaniely/2016-04-08-rstatsnyc_testing
-- https://github.com/chendaniely/2015-scipy-lightning-mann-properties
-- https://github.com/chendaniely/2015-scipy-lightning-literate
+
 
 <table>
+
+  <tr>
+    <td>2016-10-08</td>
+    <td>PyData DC 2016: Python useRs</td>
+    <td><a href='https://github.com/chendaniely/2016-pydata-dc-python_useRs'>repo</a></td>
+  </tr>
+
+  <tr>
+    <td>2016-09-14</td>
+    <td>PyData Carolinas 2016: Intro to Pandas</td>
+    <td><a href='https://github.com/chendaniely/2016-pydata-carolinas-pandas'>repo</a></td>
+  </tr>
+
+  <tr>
+    <td>2016-04-13</td>
+    <td>Data Intensive Biology Git Intermediate</td>
+    <td><a href='https://github.com/chendaniely/2016-04-13-dib-git-intermediate'>repo</a></td>
+  </tr>
+
+  <tr>
+    <td>2016-04-06</td>
+    <td>Data Intensive Biology Git Intro</td>
+    <td><a href='https://github.com/chendaniely/2016-04-06-dib-git-intro-intermediate'>repo</a></td>
+  </tr>
+
+  <tr>
+    <td>2016-04-08</td>
+    <td>rstatsnyc 2016: data testing</td>
+    <td><a href='https://github.com/chendaniely/2016-04-08-rstatsnyc_testing'>repo</a></td>
+  </tr>
+
+  <tr>
+    <td>2015-07-09</td>
+    <td>scipy lightning talk: python properties</td>
+    <td><a href='https://github.com/chendaniely/2015-scipy-lightning-mann-properties'>repo</a></td>
+  </tr>
+
+  <tr>
+    <td>2015-07-09</td>
+    <td>scipy lightning talk: literate programming</td>
+    <td><a href='https://github.com/chendaniely/2015-scipy-lightning-literate'>repo</a></td>
+  </tr>
 
   <tr>
     <td>2015-04-25</td>
