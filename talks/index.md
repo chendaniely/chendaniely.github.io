@@ -13,30 +13,40 @@ title: talks
     <td>2016-10-08</td>
     <td>PyData DC 2016: Python useRs</td>
     <td><a href='https://github.com/chendaniely/2016-pydata-dc-python_useRs'>repo</a></td>
+    <td></td>
+    <td><a href='https://www.youtube.com/watch?v=3KqZbVab7AA'>video</a></td>
   </tr>
 
   <tr>
     <td>2016-09-14</td>
     <td>PyData Carolinas 2016: Intro to Pandas</td>
     <td><a href='https://github.com/chendaniely/2016-pydata-carolinas-pandas'>repo</a></td>
+    <td></td>
+    <td><a href='https://www.youtube.com/watch?v=dye7rDktJ2E'>video</a></td>
   </tr>
 
   <tr>
     <td>2016-04-13</td>
     <td>Data Intensive Biology Git Intermediate</td>
     <td><a href='https://github.com/chendaniely/2016-04-13-dib-git-intermediate'>repo</a></td>
+    <td></td>
+    <td><a href='https://www.youtube.com/watch?v=S8TLL05qVFg'>video</a></td>
   </tr>
 
   <tr>
     <td>2016-04-06</td>
     <td>Data Intensive Biology Git Intro</td>
     <td><a href='https://github.com/chendaniely/2016-04-06-dib-git-intro-intermediate'>repo</a></td>
+    <td></td>
+    <td><a href='https://www.youtube.com/watch?v=IpUDlhh8I2E'>video</a></td>
   </tr>
 
   <tr>
     <td>2016-04-08</td>
     <td>rstatsnyc 2016: data testing</td>
     <td><a href='https://github.com/chendaniely/2016-04-08-rstatsnyc_testing'>repo</a></td>
+    <td></td>
+    <td><a href='https://www.youtube.com/watch?v=CAy0udiWwmg'>video</a></td>
   </tr>
 
   <tr>
