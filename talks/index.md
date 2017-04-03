@@ -8,6 +8,7 @@ title: talks
 
 
 <table>
+  <col width="125">
 
   <tr>
     <td>2016-10-08</td>
