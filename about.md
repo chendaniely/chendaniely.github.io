@@ -65,3 +65,33 @@ title: About
   <br>
   CV
 </p>
+
+Podcasts
+
+<h1>Data Science</h1>
+
+- https://soundcloud.com/nssd-podcast
+- http://www.maximumfun.org/shows/sawbones
+- http://partiallyderivative.com/
+- http://lineardigressions.com/
+- https://dataskeptic.com/
+- https://www.becomingadatascientist.com/category/podcast/
+
+<h1>Programming</h1>
+
+- https://talkpython.fm/
+- http://www.jupiterbroadcasting.com/show/coderradio/
+
+<h1>Linux</h1>
+
+- http://www.jupiterbroadcasting.com/tag/linux-action-show/
+- http://www.jupiterbroadcasting.com/show/linuxun/
+
+<h1>Other</h1>
+
+- http://freakonomics.com/
+- https://www.startalkradio.net/
+- https://www.apmpodcasts.org/thwod/
+- https://www.nytimes.com/column/the-daily
+- http://tmsidk.com/
+
