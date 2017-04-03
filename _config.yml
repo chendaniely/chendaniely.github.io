@@ -61,10 +61,10 @@ nav:
     - /talks/
   Research:
     - /research/
-  Teaching:
-    - '/teaching/'
-  Data Science:
-    - /data_science/
+#   Teaching:
+#     - '/teaching/'
+#   Data Science:
+#     - /data_science/
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
