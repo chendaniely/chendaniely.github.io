@@ -80,6 +80,66 @@ project_logos:
   pandas_for_everyone: /public/project_images/pandas_for_everyone.jpg
   github_octocat: /public/project_images/octocat/Octocat.png
 
+podcasts:
+- name: Not So Standard Deviations
+  image: /public/podcasts/not_so_standard_deviations-500x500.jpg
+  url: https://soundcloud.com/nssd-podcast
+- name: Partially Derivative
+  image: /public/podcasts/partially_derivative-1400x1400.png
+  url: http://partiallyderivative.com/
+- name: Linear Digressions
+  image: /public/podcasts/linear_digressions-630x630.jpg
+  url: http://lineardigressions.com/
+- name: Data Skeptic
+  image: /public/podcasts/data_skeptic-3000x3000.jpg
+  url: https://dataskeptic.com/
+- name: Becoming a Data Scientist
+  image: /public/podcasts/becoming_a_data_scientist.jpg
+  url: https://www.becomingadatascientist.com/category/podcast/
+- name: Talk Python to Me
+  image: /public/podcasts/talk_python_to_me_1400x1400.png
+  url: https://talkpython.fm/
+
+- name: Linux Action Show
+  image: /public/podcasts/linux_action_show-200x199.png
+  url: http://www.jupiterbroadcasting.com/tag/linux-action-show/
+
+- name: Linux Unplugged
+  image: /public/podcasts/linux_unplugged-1400x1400.jpg
+  url: http://www.jupiterbroadcasting.com/show/linuxun/
+
+- name: Coder Radio
+  image: /public/podcasts/coder_radio-630x630.jpg
+  url: http://www.jupiterbroadcasting.com/show/coderradio/
+
+- name: Freakonomics
+  image: /public/podcasts/freakonomics_radio-1400x1400.png
+  url: http://freakonomics.com/
+
+- name: Startalk
+  image: /public/podcasts/startalk-1400x1400.jpg
+  url: https://www.startalkhttp://127.0.0.1:4000/about/radio.net/category/startalk-radio/
+
+- name: Sawbones
+  image: /public/podcasts/sawbones-2400x2400.png
+  url: http://www.maximumfun.org/shows/sawbones
+
+- name: The Hilarious World of Depression
+  image: /public/podcasts/hilarous-world-depression-576x576.jpg
+  url: https://www.apmpodcasts.org/thwod/
+
+- name: Tell Me Something I should Know
+  image: /public/podcasts/tell_me_something_i_should_know-550x550.jpg
+  url: http://tmsidk.com/
+
+- name: The Daily
+  image: /public/podcasts/the_daily.jpg
+  url: https://www.nytimes.com/column/the-daily
+
+podcast_settings:
+  global_size_width: 100px
+  global_size_height: 100px
+
 # Puglins
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics
