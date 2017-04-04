@@ -53,8 +53,6 @@ nav:
     - '/blog/'
     - { Categories: '/blog/categories/' }
     - { Tags: '/blog/tags/' }
-  About:
-    - '/about/'
   Projects:
     - /projects/
   Talks:
@@ -65,6 +63,8 @@ nav:
 #     - '/teaching/'
 #   Data Science:
 #     - /data_science/
+  About:
+    - '/about/'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
