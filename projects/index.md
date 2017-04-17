@@ -52,6 +52,15 @@ title: projects
 
 <hr>
 
+<hr>
+
+<h1>Notes</h1>
+
+- https://github.com/chendaniely/r-flight-rules
+- https://github.com/chendaniely/figure_animation_scripts
+- https://github.com/chendaniely/sdal_notes
+- https://github.com/chendaniely/scipy_2016_notes
+
 <h1>Contributions</h1>
 
 - <a href="https://github.com/projectmesa/mesa">MESA</a>
