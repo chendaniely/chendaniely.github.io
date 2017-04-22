@@ -12,6 +12,14 @@ title: talks
 
   <tr>
     <td>2016-10-08</td>
+    <td>RStatsNYC 2017: So You Want to be a Data Scientist?</td>
+    <td><a href='https://github.com/chendaniely/rstatsnyc_2017-data_scientist'>repo</a></td>
+    <td><a href='https://github.com/chendaniely/rstatsnyc_2017-data_scientist/raw/master/slides/slides.html'>Slides</a></td>
+    <td><a href=''>video</a></td>
+  </tr>
+
+  <tr>
+    <td>2016-10-08</td>
     <td>PyData DC 2016: Python useRs</td>
     <td><a href='https://github.com/chendaniely/2016-pydata-dc-python_useRs'>repo</a></td>
     <td></td>
