@@ -10,4 +10,4 @@ tags:
   - pfps17-journal
 ---
 
-I am a PhD Student, not a candidate... yet.
+I am a PhD *Student*, not a candidate... yet.
