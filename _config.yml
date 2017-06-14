@@ -126,7 +126,7 @@ lander_analytics                     : "https://www.landeranalytics.com/"
 
 aur                                  : "https://www.archlinux.org/"
 rstudio-desktop-preview-bin          : "https://aur.archlinux.org/packages/rstudio-desktop-preview-bin/"
-rodeo :                              : "https://aur.archlinux.org/packages/rodeo/"
+rodeo                                : "https://aur.archlinux.org/packages/rodeo/"
 
 #                      __                __      
 #     ____  ____  ____/ /________ ______/ /______
