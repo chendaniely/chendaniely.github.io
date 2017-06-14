@@ -87,12 +87,51 @@ project_logos:
   pandas_for_everyone: /public/project_images/pandas_for_everyone.jpg
   github_octocat: /public/project_images/octocat/Octocat.png
 
-                     __                __      
-    ____  ____  ____/ /________ ______/ /______
-   / __ \/ __ \/ __  / ___/ __ `/ ___/ __/ ___/
-  / /_/ / /_/ / /_/ / /__/ /_/ (__  ) /_(__  ) 
- / .___/\____/\__,_/\___/\__,_/____/\__/____/  
-/_/                                            
+#               __    
+#   __  _______/ /____
+#  / / / / ___/ / ___/
+# / /_/ / /  / (__  ) 
+# \__,_/_/  /_/____/  
+#
+
+dc                                   : "http://datacarpentry.org"
+swc                                  : "https://v4.software-carpentry.org"
+r-novice                             : "http://swcarpentry.github.io/r-novice-inflammation/"
+
+bi                                   : "https://www.bi.vt.edu/"
+sdal                                 : "https://www.bi.vt.edu/sdal"
+ndssl                                : "https://www.bi.vt.edu/ndssl"
+gbcb                                 : "http://gbcb.vbi.vt.edu/"
+
+cu_mph                               : "https://www.mailman.columbia.edu/become-student/degrees/masters-programs/masters-public-health/columbia-mph"
+cu_epi                               : "https://www.mailman.columbia.edu/become-student/departments/epidemiology"
+cu_adv_epi                           : "https://www.mailman.columbia.edu/become-student/degrees/masters-programs/masters-public-health/columbia-mph/certificates/advanced"
+
+macaulay                             : "https://macaulay.cuny.edu/"
+hunter                               : "http://www.hunter.cuny.edu/main/"
+cuny                                 : "http://www2.cuny.edu/"
+
+stuy                                 : "http://stuy.enschool.org/"
+
+mark_orr                             : "http://mark-orr.github.io/"
+kaja_abbas                           : "http://www.kajaabbas.com/"
+jacqueline_merrill_1  : "http://www.columbia.edu/~jam119/"
+jacqueline_merrill_2                 : "http://nursing.columbia.edu/profile/jmerrill"
+aaron_schroeder                      : "http://dads2busy.github.io/"
+
+lander_analytics                     : "https://www.landeranalytics.com/"
+
+aur                                  : "https://www.archlinux.org/"
+rstudio-desktop-preview-bin          : "https://aur.archlinux.org/packages/rstudio-desktop-preview-bin/"
+rodeo :                              : "https://aur.archlinux.org/packages/rodeo/"
+
+#                      __                __      
+#     ____  ____  ____/ /________ ______/ /______
+#    / __ \/ __ \/ __  / ___/ __ `/ ___/ __/ ___/
+#   / /_/ / /_/ / /_/ / /__/ /_/ (__  ) /_(__  ) 
+#  / .___/\____/\__,_/\___/\__,_/____/\__/____/  
+# /_/                                            
+#
 
 podcasts:
 - name: Not So Standard Deviations
