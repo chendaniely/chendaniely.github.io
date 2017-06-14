@@ -70,6 +70,11 @@ nav:
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics
+disqus_short_name: 'chendaniely' # leave blank if you don't want disqus
+
 hero:
   image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
   caption: Original Artwork &copy; <a href="https://xkcd.com/1132/">XKCD - Randall Munroe</a>
@@ -139,8 +144,3 @@ podcasts:
 podcast_settings:
   global_size_width: 100px
   global_size_height: 100px
-
-# Puglins
-mathjax: true # whether support mathjax
-google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics
-disqus_short_name: 'chendaniely' # leave blank if you don't want disqus
