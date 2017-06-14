@@ -1,3 +1,5 @@
+# ASCII Text Art: http://patorjk.com/software/taag/#p=display&f=Slant&t=chendaniely
+
 # Site Info
 title: Daniel Chen
 tagline: 'Perpetually Under Construction'
@@ -84,6 +86,13 @@ project_logos:
   datacamp: /public/project_images/datacamp_white_fulllogo_tagline.png
   pandas_for_everyone: /public/project_images/pandas_for_everyone.jpg
   github_octocat: /public/project_images/octocat/Octocat.png
+
+                     __                __      
+    ____  ____  ____/ /________ ______/ /______
+   / __ \/ __ \/ __  / ___/ __ `/ ___/ __/ ___/
+  / /_/ / /_/ / /_/ / /__/ /_/ (__  ) /_(__  ) 
+ / .___/\____/\__,_/\___/\__,_/____/\__/____/  
+/_/                                            
 
 podcasts:
 - name: Not So Standard Deviations
