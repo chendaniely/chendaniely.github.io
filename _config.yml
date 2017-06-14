@@ -78,8 +78,11 @@ google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google a
 disqus_short_name: 'chendaniely' # leave blank if you don't want disqus
 
 hero:
-  image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
+  image: https://imgs.xkcd.com/comics/here_to_help.png
   caption: Original Artwork &copy; <a href="https://xkcd.com/1132/">XKCD - Randall Munroe</a>
+
+# image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
+# caption: Original Artwork &copy; <a href="https://xkcd.com/1831/">XKCD - Randall Munroe</a>
 
 project_logos:
   safari_books_online: /public/project_images/safari-logo-lockup-sunshine.png
