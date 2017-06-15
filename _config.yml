@@ -128,6 +128,17 @@ aur                                  : "https://www.archlinux.org/"
 rstudio-desktop-preview-bin          : "https://aur.archlinux.org/packages/rstudio-desktop-preview-bin/"
 rodeo                                : "https://aur.archlinux.org/packages/rodeo/"
 
+mann                                 : "https://github.com/chendaniely/mann"
+mann_code                            : "https://github.com/chendaniely/multi-agent-neural-network"
+mann2_code                           : "https://github.com/chendaniely/mann2"
+
+mann_sims                            : "https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments"
+mann2_sims                           : "https://github.com/chendaniely/mann2_simulations"
+
+mann_assortativity                   : "https://github.com/chendaniely/mann_assortativity_analysis"
+mann2_analysis                       : "https://github.com/chendaniely/mann2_analysis"
+mannAnalysisR                        : "https://github.com/chendaniely/mannAnalysisR"
+
 #                      __                __      
 #     ____  ____  ____/ /________ ______/ /______
 #    / __ \/ __ \/ __  / ___/ __ `/ ___/ __/ ___/
