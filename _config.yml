@@ -1,3 +1,5 @@
+# ASCII Text Art: http://patorjk.com/software/taag/#p=display&f=Slant&t=chendaniely
+
 # Site Info
 title: Daniel Chen
 tagline: 'Perpetually Under Construction'
@@ -70,15 +72,80 @@ nav:
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics
+disqus_short_name: 'chendaniely' # leave blank if you don't want disqus
+
 hero:
-  image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
+  image: https://imgs.xkcd.com/comics/here_to_help.png
   caption: Original Artwork &copy; <a href="https://xkcd.com/1132/">XKCD - Randall Munroe</a>
+
+# image: http://imgs.xkcd.com/comics/frequentists_vs_bayesians.png
+# caption: Original Artwork &copy; <a href="https://xkcd.com/1831/">XKCD - Randall Munroe</a>
 
 project_logos:
   safari_books_online: /public/project_images/safari-logo-lockup-sunshine.png
   datacamp: /public/project_images/datacamp_white_fulllogo_tagline.png
   pandas_for_everyone: /public/project_images/pandas_for_everyone.jpg
   github_octocat: /public/project_images/octocat/Octocat.png
+
+#               __    
+#   __  _______/ /____
+#  / / / / ___/ / ___/
+# / /_/ / /  / (__  ) 
+# \__,_/_/  /_/____/  
+#
+
+dc                                   : "http://datacarpentry.org"
+swc                                  : "https://v4.software-carpentry.org"
+r-novice                             : "http://swcarpentry.github.io/r-novice-inflammation/"
+
+bi                                   : "https://www.bi.vt.edu/"
+sdal                                 : "https://www.bi.vt.edu/sdal"
+ndssl                                : "https://www.bi.vt.edu/ndssl"
+gbcb                                 : "http://gbcb.vbi.vt.edu/"
+
+cu_mph                               : "https://www.mailman.columbia.edu/become-student/degrees/masters-programs/masters-public-health/columbia-mph"
+cu_epi                               : "https://www.mailman.columbia.edu/become-student/departments/epidemiology"
+cu_adv_epi                           : "https://www.mailman.columbia.edu/become-student/degrees/masters-programs/masters-public-health/columbia-mph/certificates/advanced"
+
+macaulay                             : "https://macaulay.cuny.edu/"
+hunter                               : "http://www.hunter.cuny.edu/main/"
+cuny                                 : "http://www2.cuny.edu/"
+
+stuy                                 : "http://stuy.enschool.org/"
+
+mark_orr                             : "http://mark-orr.github.io/"
+kaja_abbas                           : "http://www.kajaabbas.com/"
+jacqueline_merrill_1                 : "http://www.columbia.edu/~jam119/"
+jacqueline_merrill_2                 : "http://nursing.columbia.edu/profile/jmerrill"
+aaron_schroeder                      : "http://dads2busy.github.io/"
+
+lander_analytics                     : "https://www.landeranalytics.com/"
+
+aur                                  : "https://www.archlinux.org/"
+rstudio-desktop-preview-bin          : "https://aur.archlinux.org/packages/rstudio-desktop-preview-bin/"
+rodeo                                : "https://aur.archlinux.org/packages/rodeo/"
+
+mann                                 : "https://github.com/chendaniely/mann"
+mann_code                            : "https://github.com/chendaniely/multi-agent-neural-network"
+mann2_code                           : "https://github.com/chendaniely/mann2"
+
+mann_sims                            : "https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments"
+mann2_sims                           : "https://github.com/chendaniely/mann2_simulations"
+
+mann_assortativity                   : "https://github.com/chendaniely/mann_assortativity_analysis"
+mann2_analysis                       : "https://github.com/chendaniely/mann2_analysis"
+mannAnalysisR                        : "https://github.com/chendaniely/mannAnalysisR"
+
+#                      __                __      
+#     ____  ____  ____/ /________ ______/ /______
+#    / __ \/ __ \/ __  / ___/ __ `/ ___/ __/ ___/
+#   / /_/ / /_/ / /_/ / /__/ /_/ (__  ) /_(__  ) 
+#  / .___/\____/\__,_/\___/\__,_/____/\__/____/  
+# /_/                                            
+#
 
 podcasts:
 - name: Not So Standard Deviations
@@ -139,8 +206,3 @@ podcasts:
 podcast_settings:
   global_size_width: 100px
   global_size_height: 100px
-
-# Puglins
-mathjax: true # whether support mathjax
-google_analytics_token: 'UA-54964509-2' # leave blank if you don't want google analytics
-disqus_short_name: 'chendaniely' # leave blank if you don't want disqus
