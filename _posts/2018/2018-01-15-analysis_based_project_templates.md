@@ -11,7 +11,7 @@ tags:
   - dspg
   - dspg17
   - programming practices
-  - sdal-post
+  - sdal_post
 ---
 
 One of the most annoying things you hear people say when they are working with some common code base is
