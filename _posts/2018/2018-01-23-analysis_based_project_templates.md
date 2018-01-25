@@ -67,28 +67,52 @@ and can lead to unwanted changes in the code if a file was reverted unexpectedly
 
 Many of these problems can be solved with using [RStudio Projects](https://support.rstudio.com/hc/en-us/articles/200526207).
 
-1. It prevents scripts from setting a working directory (`setwd()`) since the workign directory will be the root of the project.
-Since the starting point for each script is deterministic, we can implement a folder structure within the project in a way
+1. **Prevents scripts from setting a working directory (`setwd()`)**
+    - The working directory will be the root of the project.
+    - Since the starting point for each script is deterministic, we can implement a folder structure within the project in a way
 where data has a common access point (e.g., `./data/path/to/data`) and code that needs to be run will also have a common access point (e.g., `./src/path/to/script.R`)
-2. Since code and scripts can be easily be referenced from the root working directory of the project,
-when someone wants to create a script to hold functions, it has a consistent path to be `source`d in another R script.
-This would provide a place for common code bases to be shared without copy/pasting into multiple scripts and
+2. **Code and scripts can be easily be referenced from the root working directory of the project**
+    - When someone wants to create a script to hold functions, it has a consistent path to be `source`d in another R script
+    - This would provide a place for common code bases to be shared without copy/pasting into multiple scripts and
 without having to be put into a proper R package.
-3. The structure of the project template needs to account for multiple people entering and leaving a project at various points during the lifetime of a project.
-We had a `src` folder so people knew where to put his/her `R` scripts, we needed a way to organize the folder so we don't have 10s or 100s of files in a single directory.
-We initially settled on using user name sub-folders.
-This prevented a lot of potential merge conflicts, since people are more likely to just work in their own directory,
-but it also caused people to copy/paste from other people's folders.
-It also made it difficult to find out later on how to find a particular piece of analytics.
-We would have to know who worked on it to find the script, versus looking up the analysis itself.
-Thus, we are moving to a naming system not under user names.
-This also will prevent copy/pasting of common code bases.
-One thing that can happen is more merge conflicts while working, but even that can be minimized by coordinating efforts.
-4. Verson control systems (VCS) keep track of changes within a file.
-When we have working directories manually being set on a user-by-user basis, each user will have to set his/her own working directory
+3. **The structure of the project template needs to account for multiple people entering and leaving a project at various points during the lifetime of a project**
+    - We have a `src` folder so people knew where to put his/her `R` scripts
+    - needed a way to organize the folder so we don't have 10s or 100s of files in a single directory.
+    - We initially settled on using user name sub-folders.
+        - This prevented a lot of potential merge conflicts, since people are more likely to just work in their own directory
+        - but it also caused people to copy/paste from other people's folders.
+        - It also made it difficult to find out later on how to find a particular piece of analytics.
+        - We would have to know who worked on it to find the script, versus looking up the analysis itself.
+    - Thus, we are moving to a naming system not under user names.
+        - This also will prevent copy/pasting of common code bases.
+        - One thing that can happen is more merge conflicts (editing the same line of a file at the same time) while working
+            - but even that can be minimized by coordinating efforts.
+4. **Reduces the Git history clutter**
+    - Version control systems (VCS) keep track of changes within a file.
+    - When we have working directories manually being set on a user-by-user basis, each user will have to set his/her own working directory
 to get the script to run.
-This requires commenting out the current working directory set in the code,
+    - This requires commenting out the current working directory set in the code,
 and either replacing or uncommenting out the 'correct' working directory.
-This will cause the VCS to note there is a change in a file where the user either needs to `commit` or `revert` for each person who is running the script.
-While this may be a 'harmless' change, it clutters the `log` and history of the file, when bigger changes need to be reverted or bugs need to be tracked down.
-The project template should also fix this problem since the working directory no longer needs to be set in the file.
+    - This will cause the VCS to note there is a change in a file where the user either needs to `commit` or `revert` for each person who is running the script.
+    - While this may be a 'harmless' change, it clutters the `log` and history of the file, when bigger changes need to be reverted or bugs need to be tracked down.
+    - The project template should also fix this problem since the working directory no longer needs to be set in the file.
+
+# Changes to mindset
+
+*Section taken from feedback from Ian*
+
+### Git
+The major change from using username `src` subfolders to analysis-based subfolders is how to navigate the initial hierarchies of the folder.
+While the most technical hurdle to overcome is the potential of increased Git merge conflicts,
+it can be minimized by coordinating efforts.
+We have a system that distinguishes code from data, where code is stored on a Git server (e.g., GitLab) and data is stored on an encrypted LUKS volume.
+This means learning and using Git will have to be part of everyone's toolkit.
+It's a technical solution to solve a very complex problem, sharing and version controlling files,
+but it does offer solutions for project management, if you choose to use it.
+
+### Code structure
+
+
+> The most appealing part of using usernames as folders is that it allows users to think of their code however they like, and never need to reconcile that with other people's understanding of project structure. For instance, Alice can organize folders by the work she did on a month to month basis. Bob can organize scripts into data processing/data loading/plots/misc. Chris can structure code based on who asked her to do whatever. Each person has a system that works for them and doesn't have to work for anyone else.
+> But even in this small example, the three code bases are conceptually incompatible. How do you reconcile folders called 'June2017', 'get ACS stuff', and 'For Sallie'? In a project-centered folder structure, everyone needs to be on more or less the same page regarding the structure of the project and what goes on in it. Personally I think this is a good thing, and something we should be doing anyway, but it will certainly be a challenge especially if people don't think to think of it.
+```
