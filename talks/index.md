@@ -3,10 +3,6 @@ layout: default
 title: talks
 ---
 
-- https://github.com/chendaniely/2016-11-01-bi_symposium
-- https://github.com/chendaniely/gbcb_seminar_presentation_1
-
-
 <table>
   <col width="125">  
   <tr>
@@ -95,6 +91,14 @@ title: talks
     <td><a href='https://github.com/chendaniely/2016-pydata-carolinas-pandas'>repo</a></td>
     <td></td>
     <td><a href='https://www.youtube.com/watch?v=dye7rDktJ2E'>video</a></td>
+  </tr>
+  
+  <tr>
+    <td>2016-09-05</td>
+    <td>VT GBCB Seminar Presentation 1</td>
+    <td><a href='https://github.com/chendaniely/gbcb_seminar_presentation_1'>repo</a></td>
+    <td></td>
+    <td><a href=''></a></td>
   </tr>
 
   <tr>
