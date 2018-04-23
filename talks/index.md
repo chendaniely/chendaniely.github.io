@@ -4,7 +4,15 @@ title: talks
 ---
 
 <table>
-  <col width="125">  
+  <col width="125">
+  <tr>
+    <td>2018-04-20</td>
+    <td>RStatsNYC 2018: Doing Data Science</td>
+    <td><a href='https://github.com/chendaniely/rstatsnyc_2018-data_science'>repo</a></td>
+    <td><a href='https://github.com/chendaniely/rstatsnyc_2018-data_science/raw/master/slides/slides.html'>Slides</a></td>
+    <td><a href=''>video</a></td>
+  </tr>
+
   <tr>
     <td>2017-12-04</td>
     <td>Pandas Live Training</td>
