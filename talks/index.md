@@ -9,7 +9,7 @@ title: talks
     <td>2018-04-20</td>
     <td>RStatsNYC 2018: Doing Data Science</td>
     <td><a href='https://github.com/chendaniely/rstatsnyc_2018-data_science'>repo</a></td>
-    <td><a href='https://github.com/chendaniely/rstatsnyc_2018-data_science/raw/master/slides/talk.html'>Slides</a></td>
+    <td><a href='http://htmlpreview.github.io/?https://raw.githubusercontent.com/chendaniely/rstatsnyc_2018-data_science/master/talk.html'>Slides</a></td>
     <td><a href=''></a></td>
   </tr>
 
