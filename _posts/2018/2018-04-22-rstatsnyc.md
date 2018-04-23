@@ -25,13 +25,9 @@ Brooke Watson ([@brookLYNevery1](https://twitter.com/brookLYNevery1)) did a *fan
 illustrating and summarzing *all* of the talks.
 So I've just linked to all her tweets (after the break).
 
-Oh... and I got my books signed :)
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Another year at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, another batch of books to get autographed! <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/i4EoW0OSa1">pic.twitter.com/i4EoW0OSa1</a></p>&mdash; Dⓐniel Chen (@chendaniely) <a href="https://twitter.com/chendaniely/status/987085700578316290?ref_src=twsrc%5Etfw">April 19, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+Oh... and I got my [books signed :)](#signedbooks)
 
 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/Bh4-7x2Bf-2/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/Bh4-7x2Bf-2/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">#rstatsnyc as told by #autographs. #rstats #nycdatamafia #python #datascience</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/chendaniely/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Daniel Chen</a> (@chendaniely) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2018-04-22T22:59:39+00:00">Apr 22, 2018 at 3:59pm PDT</time></p></div></blockquote> <script async defer src="//www.instagram.com/embed.js"></script>
-
 
 <!-- more -->
 
@@ -79,9 +75,14 @@ Jared P. Lander, Lander Analytics, [@jaredlander](https://twitter.com/jaredlande
 # Doing Data Science
 Dan Chen, Virginia Tech, [@chendaniely](https://twitter.com/chendaniely)
 
+[slides](https://github.com/chendaniely/rstatsnyc_2018-data_science/blob/master/talk.html)
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw">@chendaniely</a> on using best practices while getting stuff done. TL;DR: in structure there is freedom.  <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/SssCn47HmW">pic.twitter.com/SssCn47HmW</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987357809699418117?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+First time converting slides to PDF.  First time publishing on Speaker Deck.
+
+<script async class="speakerdeck-embed" data-id="60ff3d852b3e4f5dafee9e97b8a12882" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
 
 # Forecasting at Scale: How and Why We Developed Prophet for Forecasting at Facebook
 Sean Taylor, Facebook, [@seanjtaylor](https://twitter.com/seanjtaylor)
@@ -226,6 +227,10 @@ Kelly O’Briant, MapD, [@kellrstats](https://twitter.com/kellrstats)
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 # It's always fun getting autographed books!
+<a name="signedbooks"></a>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Another year at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, another batch of books to get autographed! <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/i4EoW0OSa1">pic.twitter.com/i4EoW0OSa1</a></p>&mdash; Dⓐniel Chen (@chendaniely) <a href="https://twitter.com/chendaniely/status/987085700578316290?ref_src=twsrc%5Etfw">April 19, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Had a great time at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, thanks <a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw">@jaredlander</a>! I even won the R Packages book by <a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw">@hadleywickham</a> - so here&#39;s to all the future R packages coming out of <a href="https://twitter.com/turinginst?ref_src=twsrc%5Etfw">@turinginst</a> 👍 <a href="https://t.co/sxSo3AtZby">pic.twitter.com/sxSo3AtZby</a></p>&mdash; Evelina Gabasova (@evelgab) <a href="https://twitter.com/evelgab/status/987850908393463808?ref_src=twsrc%5Etfw">April 22, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
