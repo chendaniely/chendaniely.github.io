@@ -80,7 +80,11 @@ Dan Chen, Virginia Tech, [@chendaniely](https://twitter.com/chendaniely)
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw">@chendaniely</a> on using best practices while getting stuff done. TL;DR: in structure there is freedom.  <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/SssCn47HmW">pic.twitter.com/SssCn47HmW</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987357809699418117?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-First time converting slides to PDF.  First time publishing on Speaker Deck.
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;ve uploaded and linked my <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> slides on doing <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a>, link in the ongoing blogpost: <a href="https://t.co/wqFARzBbss">https://t.co/wqFARzBbss</a>. Comes complete with my dog, Hobbes. <a href="https://twitter.com/hashtag/rdogladies?src=hash&amp;ref_src=twsrc%5Etfw">#rdogladies</a>. <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/fiR0h5y8OB">pic.twitter.com/fiR0h5y8OB</a></p>&mdash; Dⓐniel Chen (@chendaniely) <a href="https://twitter.com/chendaniely/status/988535088014032896?ref_src=twsrc%5Etfw">April 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+First time converting slides to PDF.  First time publishing on Speaker Deck. Hope it turns out okay >.<
 
 <script async class="speakerdeck-embed" data-id="60ff3d852b3e4f5dafee9e97b8a12882" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
 
