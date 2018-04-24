@@ -126,12 +126,15 @@ Jonathan Hersh, Chapman University, [@DogmaticPrior](https://twitter.com/Dogmati
 # Apache Arrow: A Cross-Language Development Platform for In-Memory Analytics
 Wes McKinney, Two Sigma, [@wesmckinn](https://twitter.com/wesmckinn)
 
+[slides](https://www.slideshare.net/wesm/apache-arrow-crosslanguage-development-platform-for-inmemory-data)
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/wesmckinn?ref_src=twsrc%5Etfw">@wesmckinn</a> thinking BIG about data frame portability. Really excited to see what happens with Ursu labs. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/j3JfIfz3c4">pic.twitter.com/j3JfIfz3c4</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987419892143022080?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Rest of <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> Day 1 (before my little ❤ couldn&#39;t take it) feat. <a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw">@jaredlander</a> <a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw">@chendaniely</a> <a href="https://twitter.com/seanjtaylor?ref_src=twsrc%5Etfw">@seanjtaylor</a> <a href="https://twitter.com/noamross?ref_src=twsrc%5Etfw">@noamross</a> <a href="https://twitter.com/brookLYNevery1?ref_src=twsrc%5Etfw">@brookLYNevery1</a> <a href="https://twitter.com/DTDusty?ref_src=twsrc%5Etfw">@dtdusty</a> <a href="https://twitter.com/DogmaticPrior?ref_src=twsrc%5Etfw">@DogmaticPrior</a> <a href="https://twitter.com/wesmckinn?ref_src=twsrc%5Etfw">@wesmckinn</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> 🗽 <a href="https://t.co/pTOXTPTO5b">pic.twitter.com/pTOXTPTO5b</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/988435298005803008?ref_src=twsrc%5Etfw">April 23, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/CxwGbWQO0mDtUE" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/AimeeEmejas/how-to-upload-presentations-in-slideshare-and-embed-in-your-wordpress-blog" title="How to Upload Presentations in SlideShare and Embed in your Wordpress Blog " target="_blank">How to Upload Presentations in SlideShare and Embed in your Wordpress Blog </a> </strong> from <strong><a href="https://www.slideshare.net/AimeeEmejas" target="_blank">Aimee Emejas</a></strong> </div>
 
 # R in Minecraft
 David Smith, Microsoft, [@revodavid](https://twitter.com/revodavid)
