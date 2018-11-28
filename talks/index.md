@@ -66,7 +66,7 @@ title: talks
     <td>RStatsNYC 2017: So You Want to be a Data Scientist?</td>
     <td><a href='https://github.com/chendaniely/rstatsnyc_2017-data_scientist'>repo</a></td>
     <td><a href='https://github.com/chendaniely/rstatsnyc_2017-data_scientist/raw/master/slides/slides.html'>Slides</a></td>
-    <td><a href=''>video</a></td>
+    <td><a href=''></a></td>
   </tr>
   
   <tr>
@@ -74,7 +74,7 @@ title: talks
     <td>About Me: NYP Value Institute</td>
     <td><a href='https://github.com/chendaniely/2017-04-20-nyp_value_institute'>repo</a></td>
     <td><a href='https://github.com/chendaniely/2017-04-20-nyp_value_institute/raw/master/talk.html'>Slides</a></td>
-    <td><a href=''>video</a></td>
+    <td><a href=''></a></td>
   </tr>
 
    <tr>
@@ -82,7 +82,7 @@ title: talks
     <td>Poster for the 2016 BI Research Symposium</td>
     <td><a href='https://github.com/chendaniely/2016-11-01-bi_symposium'>repo</a></td>
     <td></td>
-    <td><a href=''>video</a></td>
+    <td><a href=''></a></td>
   </tr>
   
   <tr>
