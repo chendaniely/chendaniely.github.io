@@ -5,12 +5,21 @@ title: talks
 
 <table>
   <col width="125">
+
+  <tr>
+    <td>2018-04-20</td>
+    <td>RStatsDC 2018: Structuring Data Science Projects</td>
+    <td><a href='https://github.com/chendaniely/rstatsdc_2018-structure'>repo</a></td>
+    <td><a href='https://speakerdeck.com/chendaniely/analysis-projects'>Slides</a></td>
+    <td><a href=''></a></td>
+  </tr>
+  
   <tr>
     <td>2018-04-20</td>
     <td>RStatsNYC 2018: Doing Data Science</td>
     <td><a href='https://github.com/chendaniely/rstatsnyc_2018-data_science'>repo</a></td>
     <td><a href='http://htmlpreview.github.io/?https://raw.githubusercontent.com/chendaniely/rstatsnyc_2018-data_science/master/talk.html'>Slides</a></td>
-    <td><a href=''></a></td>
+    <td><a href='https://www.youtube.com/watch?v=1VcuGSjPHWU'>video</a></td>
   </tr>
 
   <tr>
