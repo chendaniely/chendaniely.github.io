@@ -41,8 +41,8 @@ author:
     github:    https://github.com/chendaniely
     # facebook:  <hide>
     twitter:   https://twitter.com/chendaniely
-    instagram: https://www.instagram.com/maveri2k
-    lastfm: http://www.last.fm/user/Maveri2k
+    instagram: https://www.instagram.com/chendaniely
+    # lastfm: http://www.last.fm/user/Maveri2k
     # weibo:     http://weibo.com/41173780
     # email:     http://www.google.com/recaptcha/mailhide/d?k=01I3lZFiZYng9N3QxYEtsDaQ==&c=31wAnZkuKqcG0ATAqJN8Z3ln5kkYLA9TwkGc-IbygpM=
     orcid:     http://orcid.org/0000-0003-3857-1741
@@ -55,6 +55,7 @@ nav:
     - '/blog/'
     - { Categories: '/blog/categories/' }
     - { Tags: '/blog/tags/' }
+    - { External: /blog/external/}
   Projects:
     - /projects/
   Talks:
@@ -100,6 +101,7 @@ project_logos:
 dc                                   : "http://datacarpentry.org"
 swc                                  : "https://v4.software-carpentry.org"
 r-novice                             : "http://swcarpentry.github.io/r-novice-inflammation/"
+carpentries                          : "https://carpentries.org/"
 
 bi                                   : "https://www.bi.vt.edu/"
 sdal                                 : "https://www.bi.vt.edu/sdal"
@@ -148,6 +150,7 @@ mannAnalysisR                        : "https://github.com/chendaniely/mannAnaly
 #
 
 podcasts:
+# data science-y
 - name: Not So Standard Deviations
   image: /public/podcasts/not_so_standard_deviations-500x500.jpg
   url: https://soundcloud.com/nssd-podcast
@@ -163,22 +166,23 @@ podcasts:
 - name: Becoming a Data Scientist
   image: /public/podcasts/becoming_a_data_scientist.jpg
   url: https://www.becomingadatascientist.com/category/podcast/
+
+# tech-y
+
 - name: Talk Python to Me
   image: /public/podcasts/talk_python_to_me_1400x1400.png
   url: https://talkpython.fm/
-
 - name: Linux Action Show
   image: /public/podcasts/linux_action_show-200x199.png
   url: http://www.jupiterbroadcasting.com/tag/linux-action-show/
-
 - name: Linux Unplugged
   image: /public/podcasts/linux_unplugged-1400x1400.jpg
   url: http://www.jupiterbroadcasting.com/show/linuxun/
-
 - name: Coder Radio
   image: /public/podcasts/coder_radio-630x630.jpg
   url: http://www.jupiterbroadcasting.com/show/coderradio/
 
+# misc
 - name: Freakonomics
   image: /public/podcasts/freakonomics_radio-1400x1400.png
   url: http://freakonomics.com/
@@ -199,6 +203,7 @@ podcasts:
   image: /public/podcasts/tell_me_something_i_should_know-550x550.jpg
   url: http://tmsidk.com/
 
+# news-y
 - name: The Daily
   image: /public/podcasts/the_daily.jpg
   url: https://www.nytimes.com/column/the-daily
