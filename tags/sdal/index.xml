@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sdal on Academic</title>
+    <link>/tags/sdal/</link>
+    <description>Recent content in sdal on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/sdal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysis-Based Project Templates</title>
+      <link>/post/2018/2018-01-23-analysis_based_project_templates/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/2018-01-23-analysis_based_project_templates/</guid>
+      <description>
+
+&lt;p&gt;One of the most annoying things you hear people say when they are working with some common code base is
+&amp;ldquo;It works on my machine&amp;hellip;&amp;rdquo;.
+Conversely, one of the more satisfying things is running a script that you are not actively working on and
+have it run without problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;{% post_url 2017-05-30-project_templates %}&#34; target=&#34;_blank&#34;&gt;Project Templates&lt;/a&gt; are one way to address this problem.
+The &lt;a href=&#34;{% post_url 2017-05-30-project_templates %}&#34; target=&#34;_blank&#34;&gt;original post&lt;/a&gt; about project templates mainly talks about the folder structure but not so much as the rationale behind why things are the way they are.
+Also the original post used a user-based subfolder structure under &lt;code&gt;src&lt;/code&gt;,
+which caused some problems when we ended up doing code reviews.&lt;/p&gt;
+
+&lt;p&gt;Why do we even want to use &amp;ldquo;projects&amp;rdquo;?
+&lt;a href=&#34;https://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;Software Carpentry&lt;/a&gt; has a good set of &lt;a href=&#34;https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/&#34; target=&#34;_blank&#34;&gt;explanations&lt;/a&gt;.
+When dealing with &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200711843-Working-Directories-and-Workspaces&#34; target=&#34;_blank&#34;&gt;working directories and workspaces&lt;/a&gt; within R and RStudio,
+even RStudio suggests &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200526207&#34; target=&#34;_blank&#34;&gt;using projects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Hopefully the links above are convincing enough to use projects and some standardized folder structure within projects.
+Below are some of the issues we&amp;rsquo;ve encountered while working on various projects, and hopefully
+we can slowly migrate to a standardization for all projects and analysis moving forward.
+Some of the problems and solutions are already mentioned from the Software-Carpentry and RStudio links above.&lt;/p&gt;
+
+&lt;h1 id=&#34;problems&#34;&gt;Problems&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Manually setting a working directory in a script.&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reduces the reproducibility by hard-coding a path specific to each user.&lt;/li&gt;
+&lt;li&gt;When sharing code, each person needs to manually edit at least one line within the file to set the working directory.&lt;/li&gt;
+&lt;li&gt;Results and other saved outputs from code are also tied to the working directory&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sharing code within a project by copy/pasting from another script.&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redundant routines in code should always be encapsulated into a function so they can be re-used within a script and shared across scripts.&lt;/li&gt;
+&lt;li&gt;Since duplication of code is minimized, a fix in one location should provide the same fix in other locations.&lt;/li&gt;
+&lt;li&gt;We&amp;rsquo;ve had situations where code was copy/pasted into multiple scripts and multiple bugs were introduced/fixed in multiple places but neither set of duplicated code contained all the bug fixes.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username subfolders in the &lt;code&gt;src&lt;/code&gt; folder&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Promoted code duplication and made it hard to find a particular analysis.&lt;/li&gt;
+&lt;li&gt;Originally set up this way to minimize merge conflicts&lt;/li&gt;
+&lt;li&gt;Individuals can quickly find his/her own work&lt;/li&gt;
+&lt;li&gt;Became a problem because instead of sharing code that needed to be reused, people started copy/pasting code into scripts&lt;/li&gt;
+&lt;li&gt;See duplication of code problem from the previous point&lt;/li&gt;
+&lt;li&gt;During the code review process, finding code that did a certain task was difficult since it was organized by
+who did a task, versus the task itself.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manually setting working directories while under a version control systems (VCS)&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VCS keep track of changes from files.&lt;/li&gt;
+&lt;li&gt;Even if there is a general understanding of manually setting a working directory among collaborators,
+every time someone changes the working directory to run on their machine,
+the version control system will report a change in the file.&lt;/li&gt;
+&lt;li&gt;While the changes can be reverted by the VCS, it&amp;rsquo;s an unnecessary step in the work flow,
+and can lead to unwanted changes in the code if a file was reverted unexpectedly.&lt;/li&gt;
+&lt;li&gt;Or you will end up with the same lines and files being changed over and over, cluttering the log and history.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;solutions&#34;&gt;Solutions&lt;/h1&gt;
+
+&lt;p&gt;Many of these problems can be solved with using &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200526207&#34; target=&#34;_blank&#34;&gt;RStudio Projects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Prevents scripts from setting a working directory (&lt;code&gt;setwd()&lt;/code&gt;)&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The working directory will be the root of the project.&lt;/li&gt;
+&lt;li&gt;Since the starting point for each script is deterministic, we can implement a folder structure within the project in a way
+where data has a common access point (e.g., &lt;code&gt;./data/path/to/data&lt;/code&gt;) and code that needs to be run will also have a common access point (e.g., &lt;code&gt;./src/path/to/script.R&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code and scripts can be easily be referenced from the root working directory of the project&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When someone wants to create a script to hold functions, it has a consistent path to be &lt;code&gt;source&lt;/code&gt;d in another R script&lt;/li&gt;
+&lt;li&gt;This would provide a place for common code bases to be shared without copy/pasting into multiple scripts and
+without having to be put into a proper R package.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The structure of the project template needs to account for multiple people entering and leaving a project at various points during the lifetime of a project&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We have a &lt;code&gt;src&lt;/code&gt; folder so people knew where to put his/her &lt;code&gt;R&lt;/code&gt; scripts&lt;/li&gt;
+&lt;li&gt;needed a way to organize the folder so we don&amp;rsquo;t have 10s or 100s of files in a single directory.&lt;/li&gt;
+&lt;li&gt;We initially settled on using user name sub-folders.
+
+&lt;ul&gt;
+&lt;li&gt;This prevented a lot of potential merge conflicts, since people are more likely to just work in their own directory&lt;/li&gt;
+&lt;li&gt;but it also caused people to copy/paste from other people&amp;rsquo;s folders.&lt;/li&gt;
+&lt;li&gt;It also made it difficult to find out later on how to find a particular piece of analytics.&lt;/li&gt;
+&lt;li&gt;We would have to know who worked on it to find the script, versus looking up the analysis itself.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Thus, we are moving to a naming system not under user names.
+
+&lt;ul&gt;
+&lt;li&gt;This also will prevent copy/pasting of common code bases.&lt;/li&gt;
+&lt;li&gt;One thing that can happen is more merge conflicts (editing the same line of a file at the same time) while working
+
+&lt;ul&gt;
+&lt;li&gt;but even that can be minimized by coordinating efforts.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reduces the Git history clutter&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Version control systems (VCS) keep track of changes within a file.&lt;/li&gt;
+&lt;li&gt;When we have working directories manually being set on a user-by-user basis, each user will have to set his/her own working directory
+to get the script to run.&lt;/li&gt;
+&lt;li&gt;This requires commenting out the current working directory set in the code,
+and either replacing or uncommenting out the &amp;lsquo;correct&amp;rsquo; working directory.&lt;/li&gt;
+&lt;li&gt;This will cause the VCS to note there is a change in a file where the user either needs to &lt;code&gt;commit&lt;/code&gt; or &lt;code&gt;revert&lt;/code&gt; for each person who is running the script.&lt;/li&gt;
+&lt;li&gt;While this may be a &amp;lsquo;harmless&amp;rsquo; change, it clutters the &lt;code&gt;log&lt;/code&gt; and history of the file, when bigger changes need to be reverted or bugs need to be tracked down.&lt;/li&gt;
+&lt;li&gt;The project template should also fix this problem since the working directory no longer needs to be set in the file.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;changes-to-mindset&#34;&gt;Changes to mindset&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Section taken from feedback from Ian&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+
+&lt;p&gt;The major change from using username &lt;code&gt;src&lt;/code&gt; subfolders to analysis-based subfolders is how to navigate the initial hierarchies of the folder.
+While the most technical hurdle to overcome is the potential of increased Git merge conflicts,
+it can be minimized by coordinating efforts.
+We have a system that distinguishes code from data, where code is stored on a Git server (e.g., GitLab) and data is stored on an encrypted LUKS volume.
+This means learning and using Git will have to be part of everyone&amp;rsquo;s toolkit.
+It&amp;rsquo;s a technical solution to solve a very complex problem, sharing and version controlling files,
+but it does offer solutions for project management, if you choose to use it.&lt;/p&gt;
+
+&lt;h3 id=&#34;code-structure&#34;&gt;Code structure&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The most appealing part of using usernames as folders is that it allows users to think of their code however they like, and never need to reconcile that with other people&amp;rsquo;s understanding of project structure. For instance, Alice can organize folders by the work she did on a month to month basis. Bob can organize scripts into data processing/data loading/plots/misc. Chris can structure code based on who asked her to do whatever. Each person has a system that works for them and doesn&amp;rsquo;t have to work for anyone else.
+But even in this small example, the three code bases are conceptually incompatible. How do you reconcile folders called &amp;lsquo;June2017&amp;rsquo;, &amp;lsquo;get ACS stuff&amp;rsquo;, and &amp;lsquo;For Sallie&amp;rsquo;? In a project-centered folder structure, everyone needs to be on more or less the same page regarding the structure of the project and what goes on in it. Personally I think this is a good thing, and something we should be doing anyway, but it will certainly be a challenge especially if people don&amp;rsquo;t think to think of it.
+```&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>From VMs to LXC Containers to Docker Containers</title>
+      <link>/post/2017/2017-07-07-vm_lxc_docker/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/2017-07-07-vm_lxc_docker/</guid>
+      <description>
+
+&lt;p&gt;Since I&amp;rsquo;ve joined &lt;a href=&#34;https://www.bi.vt.edu/sdal&#34; target=&#34;_blank&#34;&gt;SDAL&lt;/a&gt;,
+the lab has undergone a few infrastructure related changes,
+mainly how applications are run on the servers.
+From what I remember, we started using &lt;a href=&#34;https://www.virtualbox.org/&#34; target=&#34;_blank&#34;&gt;Virtual Box&lt;/a&gt; virtual machines,
+then moved to &lt;a href=&#34;https://linuxcontainers.org/&#34; target=&#34;_blank&#34;&gt;LXC&lt;/a&gt; Linux containers, and we are now rebuilding our entire infrastructure
+using &lt;a href=&#34;https://www.docker.com/&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; containers.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;how-we-got-here&#34;&gt;How we got here&lt;/h1&gt;
+
+&lt;p&gt;The whole point of using these visualization and container technologies is so
+we did not want to install anything directly on the server.
+There are many benefits to this&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;If the server goes down, we should be able to redeploy our infrastructure on a backup server&lt;/li&gt;
+&lt;li&gt;If an installation goes wrong, it will not crash the underlying server
+
+&lt;ul&gt;
+&lt;li&gt;If an installation goes wrong, we should be able to swap out or roll back to a working state&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;This gives us the ability to test out updates before rolling them out on a production server&lt;/li&gt;
+&lt;li&gt;If something happens with one part of the system, it should not affect another&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;virtual-box-virtual-machines&#34;&gt;Virtual Box Virtual Machines&lt;/h2&gt;
+
+&lt;p&gt;We (&lt;a href=&#34;https://www.bi.vt.edu/sdal/people/Aaron-Schroeder&#34; target=&#34;_blank&#34;&gt;Aaron&lt;/a&gt;) started with Virtual Box Virtual Machines,
+because it&amp;rsquo;s a very logical first step.
+If you wanted the same thing on your own computer/laptop,
+you&amp;rsquo;d use a virtual machine.
+This meant that it was relatively easy to get started because
+we already had experience with VB.&lt;/p&gt;
+
+&lt;p&gt;Our main reasons for looking into other solutions were&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;performance&lt;/strong&gt;: since we are using these VMs to run data analytics,
+we needed performant system.
+The fact we needed to install an entire OS made it clunky&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;size&lt;/strong&gt;: Since we wanted multiple containers, one for each application,
+the fact that an entire OS needed to be installed for each application
+meant that a lot of OS information was replicated and
+used a large amount of space&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VBoxManage&lt;/code&gt;: since we had to run our VMs in &lt;code&gt;headless&lt;/code&gt; mode,
+the only way to make changes to the VMs was with the VB command line tool,
+&lt;code&gt;VBoxManage&lt;/code&gt;, which is less than ideal in terms of simplicity and
+documentation.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;lxc-containers&#34;&gt;LXC Containers&lt;/h2&gt;
+
+&lt;p&gt;When looking to move away from VirtualBox,
+we started with LXC because at the time Docker just started and
+didn&amp;rsquo;t seem to be developed enough.
+During the early days of Docker,
+the documentation was lacking (one might argue that it still is),
+and the API/interface was cumbersome
+(How do I get into my container? why can&amp;rsquo;t I just SSH?).
+We went with LXC since docker was an extension of it.
+We later also looked into LXD,
+since it extended LXC with more and better security, group, and
+permission features.&lt;/p&gt;
+
+&lt;p&gt;LXC got us pretty far,
+we had a lighter set of applications running on the servers,
+since each container was based on the host operating system
+(in our case this was CenOS 7).&lt;/p&gt;
+
+&lt;p&gt;The main issue was that it was hard to quickly tear down and redeploy containers.
+Or have container dependencies to build applications.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;support&lt;/strong&gt;: support for LXC was lacking, mainly a lack of documentation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;permissions&lt;/strong&gt;: permissions from the host were not being carried over into the container&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;host os&lt;/strong&gt;: each container was limited to whatever the host OS was on.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These limitations had us looking at LXD, LXC successor.
+LXD did not run as root, so each container was not privileged.
+It also mapped permissions from the host OS,
+and we had the ability to install an image using Ubuntu, if needed.&lt;/p&gt;
+
+&lt;p&gt;However, after a year we transitioned into Docker, and solved the LXC limitations.&lt;/p&gt;
+
+&lt;h2 id=&#34;docker-containers&#34;&gt;Docker Containers&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure a lot of the issues from LXC could&amp;rsquo;ve been worked out with enough blood, sweat, and tears, it is linux after all.
+The popularity of Docker over the year was hard to ignore and worth trying again.&lt;/p&gt;
+
+&lt;p&gt;The best part about docker is how it forces you to fully document the setup process,
+using the &lt;code&gt;Dockerfile&lt;/code&gt;.
+This not only meant that we can readily tear down and spin up the container if
+something goes wrong.
+Additionally, we can just as easily start up multiple containers running the same application.
+This is particularly useful when trying to get RStudio to see newly mounted and mapped drives
+or permission changes.
+Instead of restarting the image, which requires nobody to be using it,
+we can spin up a new container and have the people who needed new data partitions or
+permission to have a temporary new container without disrupting other users.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-s-next&#34;&gt;What&amp;rsquo;s next?&lt;/h1&gt;
+
+&lt;p&gt;We&amp;rsquo;ll probably look into container orchestration tools such as docker-swarm or kubernetes.
+While we could use the current &lt;code&gt;docker-compose&lt;/code&gt; file and function to create multiple RStudio Servers,
+there&amp;rsquo;s a lot of copying and pasting involved.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;d like everyone to have his/her own RStudio instance, so if there is a permission change,
+we can simply restart the individual user&amp;rsquo;s container instance, rather than finding workarounds in the middle of the day because we can&amp;rsquo;t do a restart.
+Relying on zero usage on a server (especially in the middle of a work day) to do maintenance is almost never a good idea.
+Having a orchestrator will allow us to spin up as many instances without conflicting ports and username-appended container names with a single script.&lt;/p&gt;
+
+&lt;p&gt;It would also be nice to have a single entry page, so users can pick the service they need,
+rather than remembering port numbers to connect to (since those can change at any given time).&lt;/p&gt;
+
+&lt;p&gt;Finally, on a recent server hiccup, we were having issues around dead containers.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the error message when we tried to stop and remove the containers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker-compose down
+Stopping adminer ... done
+Stopping mro ... done
+Stopping postgresql ... done
+Stopping dokuwiki ... done
+Stopping rpkgs ... done
+Stopping rstudio ... done
+Stopping shiny ... done
+Removing adminer ... error
+Removing mro ... error
+Removing postgresql ... error
+Removing dokuwiki ... error
+Removing rpkgs ... error
+Removing rstudio ... error
+Removing shiny ... error
+
+ERROR: for postgresql  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for b91b18c144d40801b1782789ffe3a9352509b720b368947cefd9e443d02edf01: remove /home/vms/docker/overlay/014f942314a693d1984155ded44a30f50b27b67fce62f7ed60233028f998379c/merged: device or resource busy
+
+ERROR: for dokuwiki  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for f228cc35d050d8654cc1eb4e424feb111a2b826b3a4bd35d42aa4ff38dcc5524: remove /home/vms/docker/overlay/6dc15c5116a0290bc42bdae7fafdcbdcf718951c8ebcbfbc63eb56d18fd07c23/merged: device or resource busy
+
+ERROR: for adminer  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for fb7f33ed5a10a843b9855ffa3aa83c0b68ecfeb793a89274e0277add2bc08262: remove /home/vms/docker/overlay/58c311625ca5d6288359489d36c4653107fd710e3700298cf8400cf85d4c4523/merged: device or resource busy
+
+ERROR: for rpkgs  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for 14c0516130623640ebace03e89478b17efb2e802232ddc22a524f42e4fcaef02: remove /home/vms/docker/overlay/d083c1fb3046605fe3a9eaa8e19111b00473c38bebe23f222bfd0cfa81802c6f/merged: device or resource busy
+
+ERROR: for mro  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for 7c75a0cc6ba4f80bdb47df37d0aeab38681e621a5052507a5cc8da2a4eac332c: remove /home/vms/docker/overlay/cd7e50fe0e95feca8ced590c0ecd373290fa6710656db75286c1ce8900ff09d1/merged: device or resource busy
+
+ERROR: for rstudio  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for 8f90d16c8da45c59519203e582917b24a4249fdfa9a35f5043782320d6d6b2d4: remove /home/vms/docker/overlay/408a938c07d53d5b4cf79376a15f1bf3ffc5cc54eb0c1d2f7f95215764e010b5/merged: device or resource busy
+
+ERROR: for shiny  driver &amp;quot;overlay&amp;quot; failed to remove root filesystem for dc85077a54862940c0a17906b66d7670d1dbb95f5006083871c36c20586483f3: remove /home/vms/docker/overlay/08e22f468c2f5aa0ca4823a2aa5d9cb400167c49aa21a06f3538a9fa943c4dba/merged: device or resource busy
+Removing network dockerimages_default
+Removing network dockerimages_dspg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We got around this error by restart the server, which is far from an ideal solution,&lt;/p&gt;
+
+&lt;p&gt;There was a promising explanation &lt;a href=&#34;https://github.com/moby/moby/issues/25718#issuecomment-250356570&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://blog.hashbangbash.com/2014/11/docker-devicemapper-fix-for-device-or-resource-busy-ebusy/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+Here&amp;rsquo;s an excerpt from Anusha Ragunathan&amp;rsquo;s post about what&amp;rsquo;s going on&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Dug up some history:
+
+daemon flags changed to default &amp;quot;shared&amp;quot; mount propagation in 2aee081 in an effort to help volume mounts to ensure shared. This change made it to 1.12, which is probably why there&#39;s more reports since then.
+
+Prior to this, the flags were indeed set to &amp;quot;slave&amp;quot; in eb76cb2 to avoid EBUSY errors on container remove. There&#39;s a blog post on why this was done. Although it mentions devicemapper, the problem exists across graphdrivers. http://blog.hashbangbash.com/2014/11/docker-devicemapper-fix-for-device-or-resource-busy-ebusy/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Overview:
+While this is issue not exclusive to devicemapper, the mechanics currently involved in this driver cause it to be affected by this.
+
+A couple of the more commons issues seen when using the ‘devicemapper’ storage driver is when trying to stop and/or remove a contianer.
+In the docker daemon logs, you may see output like:
+
+[error] deviceset.go:792 Warning: error waiting for device ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef to close: Timeout while waiting for device ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef to close
+
+or more likely:
+
+Cannot destroy container ac05cffda663: Driver devicemapper failed to remove root filesystem ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef: Device is Busy
+[8ad069f7] -job rm(ac05cffda663) = ERR (1)
+[error] server.go:1207 Handler for DELETE /containers/{name:.*} returned error: Cannot destroy container ac05cffda663: Driver devicemapper failed to remove root filesystem ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef: Device is Busy
+[error] server.go:110 HTTP Error: statusCode=500 Cannot destroy container ac05cffda663: Driver devicemapper failed to remove root filesystem ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef: Device is Busy
+
+Diagnosis:
+What’s happening behind the scenes is that devicemapper has established a new thin snapshot device to mount then container on.
+Sometime during the life of that container another PID on the host, unrelated to docker, has likely started and unshared some namespaces from the root namespace, namely the mount namespace (CLONE_NEWNS). In the mounts referenced in this unshared host PID, it includes the thin snapshot device and its mount for the container runtime.
+
+When the container goes to stop and unmount, while it may unmount the device from the root namespace, that umount does not propogate to the unshared host PID.
+When the container is removed, devicemapper attempts to remove the thin snapshot device, but since the unshared host PID includes a reference to the device in its mountinfo, the kernel sees the device as still busy (EBUSY). Despite the fact the mounts of the root mount namespace may no longer show this device and mount.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Maybe these problems can be fixed with a different container orchestration system like docker swarm
+or kubernetes, who knows.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project Templates</title>
+      <link>/post/2017/2017-05-30-project_templates/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017/2017-05-30-project_templates/</guid>
+      <description>
+
+&lt;p&gt;Project templates provide some standardized way to organize files.
+Our lab uses a template that is based off the &lt;a href=&#34;http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424&#34; target=&#34;_blank&#34;&gt;Noble 2009 Paper, &amp;ldquo;A Quick Guide to Organizing Computational Biology Projects&amp;rdquo;&lt;/a&gt;.
+I&amp;rsquo;ve created a simple shell script that automatically generates this folder structure &lt;a href=&#34;https://github.com/chendaniely/computational-project-cookie-cutter&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;,
+and there&amp;rsquo;s an &lt;a href=&#34;https://github.com/Reproducible-Science-Curriculum/rr-init&#34; target=&#34;_blank&#34;&gt;rr-init&lt;/a&gt; project by the Reproducible Science Curriculum folks.&lt;/p&gt;
+
+&lt;p&gt;The structure we have in our lab looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;project
+|
+|- data             # raw and primary data, are not changed once created
+|  |
+|  |- project_data  # subfolder that links to an encrypted data storage container
+|  |  |
+|  |  |- original   # raw data, will not be altered
+|  |  |- working    # intermediate datasets from src code
+|  +  +- final      # datasets used in analysis
+|
+|- src /            # any programmatic code
+|  |- user1         # user1 assigned to the project
+|  +- user2         # user2 assigned to the project
+|
+|- output           # all output and results from workflows and analyses
+|  |- figures/      # graphs, likely designated for manuscript figures
+|  |- pictures/     # diagrams, images, and other non-graph graphics
+|  +- analysis/     # generated reports for (e.g. rmarkdown output)
+|
+|- README.md        # the top level description of content
+|
+|- Makefile         # Makefile, if applicable
+|- .gitignore       # git ignore file
++- project.Rproj    # RStudio project
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;In the main level there are &lt;code&gt;data&lt;/code&gt;, &lt;code&gt;src&lt;/code&gt;, and &lt;code&gt;output&lt;/code&gt; folders.
+As well as &lt;code&gt;*.Rproj&lt;/code&gt;, &lt;code&gt;.gitignore&lt;/code&gt;, and potentially a &lt;code&gt;Makefile&lt;/code&gt; files.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-rproj-file&#34;&gt;The &lt;code&gt;.Rproj&lt;/code&gt; file&lt;/h1&gt;
+
+&lt;p&gt;Since we are primarily an R lab that runs an RStudio Server server,
+we use the Rproj files organize the various projects.
+There are a few benefits to this.
+When using the &lt;code&gt;RProj&lt;/code&gt; file,
+it sets the working directory in RStudio to the location of the &lt;code&gt;Rproj&lt;/code&gt; file automatically.
+This makes the project more reproducible by avoiding the &lt;code&gt;setwd()&lt;/code&gt; command in R,
+and since multiple people work on the same project, referencing other people&amp;rsquo;s source code and data outputs
+all stem from a common location.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-gitignore-file&#34;&gt;The &lt;code&gt;.gitignore&lt;/code&gt; file&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;.gitignore&lt;/code&gt; file is there to ignore various outputs from the &lt;code&gt;src&lt;/code&gt; code.
+This includes things like &lt;code&gt;.pdf&lt;/code&gt; or &lt;code&gt;.html&lt;/code&gt; output from &lt;code&gt;knitr&lt;/code&gt; and &lt;code&gt;rmarkdown&lt;/code&gt; documents,
+as well as things in the first level of the &lt;code&gt;data&lt;/code&gt; folder.
+In general,
+the files and folders in the &lt;code&gt;.gitignore&lt;/code&gt; file are things that can be reproduced/regenerated by running code from the &lt;code&gt;src&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-src-folder&#34;&gt;The &lt;code&gt;src&lt;/code&gt; folder&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;src&lt;/code&gt; folder contains all the analysis and code for the project.
+It should only contain the code for the project and not any kind of output from the code, i.e., data, reports, etc..
+Since all the projects int he lab are separate &lt;code&gt;git&lt;/code&gt; repositories,
+each person working on the project creates a separate folder with his/her user name (e.g. &lt;code&gt;user1&lt;/code&gt;, &lt;code&gt;user2&lt;/code&gt;) under the &lt;code&gt;src&lt;/code&gt; directory to minimize
+potential conflicts within the code.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-output-folder&#34;&gt;The &lt;code&gt;output&lt;/code&gt; folder&lt;/h1&gt;
+
+&lt;p&gt;Is there for any type of &amp;lsquo;final&amp;rsquo; non-data output.
+The useage is ambiguous on purpose,
+but typically is used for some kind of plot or table that will be used in a final publication or report.
+the &lt;code&gt;figures&lt;/code&gt;, &lt;code&gt;pictures&lt;/code&gt;, and &lt;code&gt;analysis&lt;/code&gt; subfolders are just placeholders about what could potentially be placed in the folder,
+users have the freedom to adapt the contents to the project at hand.&lt;/p&gt;
+
+&lt;p&gt;Things in the &lt;code&gt;output&lt;/code&gt; folder are, by default,
+ignored since the they should be able to be re-created with one of the &lt;code&gt;src&lt;/code&gt; scripts.&lt;/p&gt;
+
+&lt;p&gt;The only thing that should &lt;em&gt;not&lt;/em&gt; be in the output folder are any datasets.
+Those should all be under of the the &lt;code&gt;data&lt;/code&gt; subfolders described below.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-data-folder&#34;&gt;The &lt;code&gt;data&lt;/code&gt; folder&lt;/h1&gt;
+
+&lt;p&gt;Since the data folder is part of the code repository, (i.e., it comes when you &lt;code&gt;git clone&lt;/code&gt; the repository),
+the contents of the folder are, by default, ignored in the &lt;code&gt;.gitignore&lt;/code&gt; file.
+Additionally, because of data privacy concerns, all of our project data are on separate (encrypted) LUKS (Linux Unified Key Setup)
+partitions.
+The &lt;code&gt;data&lt;/code&gt; folder contains a shortcut to the relevant encrypted data container.
+This is one way to prevent data from being checked into the code repository,
+and potentially leaving the server.&lt;/p&gt;
+
+&lt;p&gt;Within the encrypted data folder, there are 3 main folders: &lt;code&gt;original&lt;/code&gt;, &lt;code&gt;working&lt;/code&gt;, and &lt;code&gt;final&lt;/code&gt;.
+The &lt;code&gt;original&lt;/code&gt; data are the rawest datasets available.
+Typically theses are datasets we are given by sponsors,
+or found online.
+These datasets, in combination with the code in &lt;code&gt;src&lt;/code&gt;, should be able to regenerate any of the datasets in &lt;code&gt;working&lt;/code&gt; and &lt;code&gt;final&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Data provenance is the chronology of how data is transformed through the cleaning and analysis phase.
+It&amp;rsquo;s important for reproducibility/reproducibility, and means
+that &lt;code&gt;original&lt;/code&gt; data should never be altered directly.
+&lt;code&gt;original&lt;/code&gt; data should &lt;em&gt;only&lt;/em&gt; be modified by the code in &lt;code&gt;src&lt;/code&gt;.
+Also, because the &lt;code&gt;original&lt;/code&gt; dataset is never altered,
+and bugs or alterations in the code can be fixed without compromising the integrity of the dataset.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;working&lt;/code&gt; data folder is mainly used for intermediate datasets.
+For example, when a particular data step takes &amp;ldquo;a long time&amp;rdquo; to run,
+the output of that datastep can be saved in the &lt;code&gt;working&lt;/code&gt; directory
+and be used in a new &lt;code&gt;R&lt;/code&gt; script to resume any additional data cleaning steps.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;final&lt;/code&gt; data folder is usually used for datasets that have been cleaned and ready for analysis.
+No dataset is every fully cleaned, you can probably always perform some other data transformation on it,
+but this folder is mainly reserved for datasets where an analysis, report, or plot is generated from.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Project templates provide a standard for one to share code with other people.
+With a standardized folder structures, a new member of a project can easily start to understand
+where the data, code, documentation, and results are.&lt;/p&gt;
+
+&lt;p&gt;It also makes code reproducible/replicable and provides a common location (working directory) to run the code.&lt;/p&gt;
+
+&lt;p&gt;Finally, because there are specifically designated areas for various components of a project,
+things become easier to find because everything is not simply placed in the same folder for &amp;ldquo;convenience&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

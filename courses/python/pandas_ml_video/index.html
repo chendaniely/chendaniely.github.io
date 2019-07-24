@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Pandas Data Cleaning and Modeling with Python
+by Daniel Y. Chen
+Publisher: Addison-Wesley Professional
+Release Date: January 2018
+ISBN: 9780135170199
+https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/
+Video Description The perfect follow up to Pandas Data Analysis with Python Fundamentals LiveLessons for the aspiring data scientist
+Overview In Pandas Data Cleaning and Modeling with Python LiveLessons, Daniel Y. Chen builds upon the foundation he built in Pandas Data Analysis with Python Fundamentals LiveLessons. In this LiveLesson Dan teaches you the techniques and skills you need to know to be able to clean and process your data.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/courses/python/pandas_ml_video/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/courses/python/pandas_ml_video/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/courses/python/pandas_ml_video/">
+  <meta property="og:title" content="Pandas Data Cleaning and Modeling with Python | Academic">
+  <meta property="og:description" content="Pandas Data Cleaning and Modeling with Python
+by Daniel Y. Chen
+Publisher: Addison-Wesley Professional
+Release Date: January 2018
+ISBN: 9780135170199
+https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/
+Video Description The perfect follow up to Pandas Data Analysis with Python Fundamentals LiveLessons for the aspiring data scientist
+Overview In Pandas Data Cleaning and Modeling with Python LiveLessons, Daniel Y. Chen builds upon the foundation he built in Pandas Data Analysis with Python Fundamentals LiveLessons. In this LiveLesson Dan teaches you the techniques and skills you need to know to be able to clean and process your data."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-05-05T00:00:00&#43;01:00">
+  
+  <meta property="article:modified_time" content="2019-07-01T01:04:47-04:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>Pandas Data Cleaning and Modeling with Python | Academic</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Academic</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/python/">Python</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/python/dc_cleaning_data_python/">DataCamp</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/python/dc_cleaning_data_python/">Cleaning Data in Python</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/python/python_pandas_video/">Video Courses</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/python/python_pandas_video/">Pandas Data Analysis with Python Fundamentals</a>
+      </li>
+      
+      <li class="active">
+        <a href="/courses/python/pandas_ml_video/">Pandas Data Cleaning and Modeling with Python</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+<ul>
+<li><a href="#video-description">Video Description</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#skill-level">Skill Level</a></li>
+<li><a href="#learn-how-to">Learn How To</a></li>
+<li><a href="#who-should-take-this-course">Who Should Take This Course</a></li>
+<li><a href="#course-requirements">Course Requirements</a></li>
+<li><a href="#lesson-descriptions">Lesson Descriptions</a>
+<ul>
+<li><a href="#lesson-1-pandas-data-types">Lesson 1: Pandas Data Types</a></li>
+<li><a href="#lesson-2-unstructured-text-and-strings-in-pandas">Lesson 2: Unstructured Text and Strings in Pandas</a></li>
+<li><a href="#lesson-3-applying-functions-to-data">Lesson 3: Applying Functions to Data</a></li>
+<li><a href="#lesson-4-breaking-up-computations-using-groupby-operations-split-apply-combine">Lesson 4: Breaking Up Computations Using groupby Operations: split-apply-combine</a></li>
+<li><a href="#lesson-5-dates-and-times-in-python-and-pandas">Lesson 5: Dates and Times in Python and Pandas</a></li>
+<li><a href="#lesson-6-modeling-connecting-to-the-world-outside-of-pandas">Lesson 6: Modeling: Connecting to the World Outside of Pandas</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Pandas Data Cleaning and Modeling with Python</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>Pandas Data Cleaning and Modeling with Python<br />
+by Daniel Y. Chen<br />
+Publisher: Addison-Wesley Professional<br />
+Release Date: January 2018<br />
+ISBN: 9780135170199</p>
+
+<p><a href="https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/" target="_blank">https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/</a></p>
+
+<h1 id="video-description">Video Description</h1>
+
+<p>The perfect follow up to Pandas Data Analysis with Python Fundamentals LiveLessons for the aspiring data scientist</p>
+
+<h1 id="overview">Overview</h1>
+
+<p>In Pandas Data Cleaning and Modeling with Python LiveLessons, Daniel Y. Chen builds upon the foundation he built in Pandas Data Analysis with Python Fundamentals LiveLessons. In this LiveLesson Dan teaches you the techniques and skills you need to know to be able to clean and process your data. Dan shows you how to do data munging using some of the built-in Python libraries that can be used to clean data loaded into Pandas. Once your data is clean you are going to want to analyze it, so next Dan introduces you to other libraries that are used for model fitting.</p>
+
+<h1 id="skill-level">Skill Level</h1>
+
+<p>Beginner to Intermediate</p>
+
+<h1 id="learn-how-to">Learn How To</h1>
+
+<p>Use pandas data types
+Convert data types
+Use string methods and regular expressions
+Apply functions to data
+Aggregate, transform, and filter data
+Use pandas and Python date and time methods
+Model data</p>
+
+<h1 id="who-should-take-this-course">Who Should Take This Course</h1>
+
+<p>Those new to data science, particularly those with Python programming experience</p>
+
+<h1 id="course-requirements">Course Requirements</h1>
+
+<p>Basic programming skills, particularly in Python</p>
+
+<h1 id="lesson-descriptions">Lesson Descriptions</h1>
+
+<h2 id="lesson-1-pandas-data-types">Lesson 1: Pandas Data Types</h2>
+
+<p>These lessons pick up where Pandas Data Analysis with Python Fundamentals LiveLessons left off. You learned the basics of subsetting, combining, and reshaping data. Now you can start learning how to cleaning your data. That begins with learning data types and how to find them in your data. Next comes the converting from one type to another, including converting data into numeric and string values. The lesson finishes with categorical data.</p>
+
+<h2 id="lesson-2-unstructured-text-and-strings-in-pandas">Lesson 2: Unstructured Text and Strings in Pandas</h2>
+
+<p>There are vast stores of data available as unstructured text. Understanding how to work with text data in Python is important when your dataset has text data that needs to be processed. The lesson begins with a basic overview of strings and the built-in python string methods. Next, Dan covers how to format strings. This will make your code more legible and can make the output more consistent and “prettier.” Dan then introduces regular expressions with the built-in regular expressions library (2.5) and how you can use regular expressions to do pattern matching. Finally, Dan shows you a quick example of the better, but not built-in, regex library.</p>
+
+<h2 id="lesson-3-applying-functions-to-data">Lesson 3: Applying Functions to Data</h2>
+
+<p>Applying functions is a fundamental skill when working with data. Application of functions incorporates many skills used in programming and data analytics. Instead of writing for loops to perform calculations and data manipulations, we write functions that work on a column-by-column or row-by-row basis. Dan begins with a quick introduction to functions in Python. Then, he turns to using simple functions on a toy dataset to see how apply works. Next, he applies functions on an actual dataset. You then learn how to write vectorized functions, functions that work on an element-wise basis. Finally, Dan takes a look at lambda functions for one-off calculations.</p>
+
+<h2 id="lesson-4-breaking-up-computations-using-groupby-operations-split-apply-combine">Lesson 4: Breaking Up Computations Using groupby Operations: split-apply-combine</h2>
+
+<p>groupby operations follow the mantra of split-apply-combine. Where your data is split and partitioned by a variable or variables, functions are applied to each partition, and the results are combined back into a single result. This technique is utilized heavily on distributed systems when the data no longer can fit on a single machine. There are three common operations when performing a groupby. First, there is aggregation where you summarize your data into a single value. For example, calculating the average life expectancy across each year in your data would be aggregation. Transformation is done when you perform a specific calculation for each individual group. Next, there is filtration, where you reduce your data based on a calculation within a group.</p>
+
+<p>Dan also looks further into the groupby object itself and how you can iterate over your groups. And finally, he demonstrates the multi-index and how you can chain multiple groupby calculations together.</p>
+
+<h2 id="lesson-5-dates-and-times-in-python-and-pandas">Lesson 5: Dates and Times in Python and Pandas</h2>
+
+<p>One of pandas’ strong suits is handling dates and times in time-series data. There are many convenient functions and methods that make working and processing datetime data much easier in pandas. Dan begins by looking at Python’s datetime object and how to create them. Next, you learn how you can convert columns in your data into datetime objects. He then shows you how you can directly load data into a datetime without having an intermediate step and then convert it later. Once you have your data stored as a proper date and time object, Dan shows you how you can extract various datetime components and how you can perform calculations and create Timedeltas. Then Dan shows you other functions and methods you can perform on datetimes, and how you can download stock data from the internet. Once you have your data processed the way you want, Dan takes you back to the basics and you learn how you can leverage dates and times to subset your data. From there you learn how you can create ranges of dates, followed by an example of shifting date values. Finally, Dan covers how you can resample your dates and how you can convert dates and times across various time zones.</p>
+
+<h2 id="lesson-6-modeling-connecting-to-the-world-outside-of-pandas">Lesson 6: Modeling: Connecting to the World Outside of Pandas</h2>
+
+<p>Once you have your data processed the way you want, you can begin modeling your data to gain insights. This lesson begins to expand our world within pandas to other Python libraries used to model data. Dan begins with linear regression and how it is performed in two very popular modeling libraries: statsmodels and scikit-learn. While linear regression is great if your outcome or response variable is continuous, you can use logistic regression when your outcome of interest is a binary variable. When you begin working with count data, you use a Poisson or negative binomial model, depending on the assumptions and characteristics of your data. Next, Dan introduces you to survival models, when you have censored data and want to model the time a particular event will occur. Dan then covers how you can perform model diagnostics and compare model performance by looking at residuals, ANOVA, AIC, BIC, and k-fold cross validation. He then covers how you can have a more parsimonious model that can better predict future data points by using regularization techniques, and the lesson concludes by introducing clustering techniques and how you can use principal components analysis to visualize your k-means results.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/courses/python/python_pandas_video/" rel="next">Pandas Data Analysis with Python Fundamentals</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/courses/python/dc_cleaning_data_python/" rel="prev">Cleaning Data in Python</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on 2019-07-01
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.f1a21f988a77cdbdeeb2f60c710009d1.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

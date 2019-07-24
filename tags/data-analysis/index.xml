@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data analysis on Academic</title>
+    <link>/tags/data-analysis/</link>
+    <description>Recent content in data analysis on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with Data Science and Analysis</title>
+      <link>/post/2015/2015-05-05-getting-started-with-data-science/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-05-05-getting-started-with-data-science/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve been an instructor for &lt;a href=&#34;http://software-carpentry.org&#34; target=&#34;_blank&#34;&gt;Software-Carpentry (SWC)&lt;/a&gt; over a year now.
+It&amp;rsquo;s been a facinating experience and I&amp;rsquo;m proud to be a part of an open source movement promoting best practices.
+Typically when looking to start learing data science/analysis the first things people look up is something along the lines of: &amp;ldquo;learn python&amp;rdquo;, &amp;ldquo;free online r course&amp;rdquo;, &amp;ldquo;data science python&amp;rdquo;, &amp;ldquo;r jobs&amp;rdquo;, etc.
+Or scan through the coursera offerings.
+I&amp;rsquo;m a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics.
+This isn&amp;rsquo;t a blog post about SWC per se, but how one might go about learing and navigating some of the material on your own without attending a workshop.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;software-carptentry-material&#34;&gt;Software Carptentry Material&lt;/h1&gt;
+
+&lt;p&gt;SWC has a page of &lt;a href=&#34;http://software-carpentry.org/lessons.html&#34; target=&#34;_blank&#34;&gt;lessons&lt;/a&gt; that link to the various lessons taught during workshops.
+The core material covers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://swcarpentry.github.io/shell-novice/&#34; target=&#34;_blank&#34;&gt;Unix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some programming language like &lt;a href=&#34;http://swcarpentry.github.io/python-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;Python&lt;/a&gt;, &lt;a href=&#34;http://swcarpentry.github.io/r-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt;, &lt;a href=&#34;http://swcarpentry.github.io/matlab-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;MATLAB&lt;/a&gt;, etc&lt;/li&gt;
+&lt;li&gt;Version control using &lt;a href=&#34;https://github.com/swcarpentry/git-novice&#34; target=&#34;_blank&#34;&gt;Git&lt;/a&gt; or &lt;a href=&#34;https://github.com/swcarpentry/hg-novice&#34; target=&#34;_blank&#34;&gt;Mercurial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Databases and &lt;a href=&#34;http://swcarpentry.github.io/sql-novice-survey/&#34; target=&#34;_blank&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you take a look and listen (there is sound) to the &lt;a href=&#34;http://swcarpentry.github.io/slideshows/introducing-software-carpentry/index.html#slide-3&#34; target=&#34;_blank&#34;&gt;introductory browsercase&lt;/a&gt;.
+You will see that we say we teach the above material, but in essense we try to convey:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Automation of repetitive tasks&lt;/li&gt;
+&lt;li&gt;Tracking and sharing work&lt;/li&gt;
+&lt;li&gt;Building modular code&lt;/li&gt;
+&lt;li&gt;Manage data&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It&amp;rsquo;s a little bait-and-switch :)&lt;/p&gt;
+
+&lt;h1 id=&#34;installing-things&#34;&gt;Installing Things&lt;/h1&gt;
+
+&lt;p&gt;For each SWC workshop is accompanied by a &lt;a href=&#34;http://chendaniely.github.io/workshop-template-empty/&#34; target=&#34;_blank&#34;&gt;website&lt;/a&gt;.
+The website Contains information about location, instructors, helpers, syllabus, etc.
+For people reading this post, the most important part may be the installation instructions towards the middle/bottom of the page.
+There are separate instructions depending on your operating system.&lt;/p&gt;
+
+&lt;p&gt;Essentially:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Python: &lt;a href=&#34;http://continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;R: &lt;a href=&#34;http://cran.rstudio.com/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt; and &lt;a href=&#34;http://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;navigating-the-material&#34;&gt;Navigating the Material&lt;/h1&gt;
+
+&lt;p&gt;For people who have not been to a workshop trying to navigate the lesson material can be tricky.
+And I would highly suggest going through at least the first 3 &lt;a href=&#34;http://swcarpentry.github.io/shell-novice/&#34; target=&#34;_blank&#34;&gt;Unix&lt;/a&gt; lessons.
+This is mainly because loading files in a programming language uses the concept of relative and absolute paths, and it&amp;rsquo;s important to know where your data is and how to load it.&lt;/p&gt;
+
+&lt;p&gt;Using the R material as an example.  The instructors typically teach from the &lt;a href=&#34;http://swcarpentry.github.io/r-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;Novice R Inflammation&lt;/a&gt; lessons.  There has been some &lt;a href=&#34;https://github.com/swcarpentry/r-novice-inflammation/pull/65#issuecomment-93483536&#34; target=&#34;_blank&#34;&gt;discussion&lt;/a&gt; and plans to use the &lt;a href=&#34;http://www.gapminder.org/&#34; target=&#34;_blank&#34;&gt;Gapminder&lt;/a&gt; data to teach lessons.  The beta can be found in the &lt;a href=&#34;https://github.com/swcarpentry/r-novice-gapminder&#34; target=&#34;_blank&#34;&gt;R Novice Gapminder&lt;/a&gt; lesson.&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;rsquo;re on the github page of the lesson, there are a few ways to get the lessons plan&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;If you know your way around git, you can clone the repository&lt;/li&gt;
+&lt;li&gt;Otherwise, you will see an option to &amp;ldquo;Download ZIP&amp;rdquo; on the right panel.&lt;/li&gt;
+&lt;li&gt;View them in the browser&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The first 2 methods get you do the same place &amp;ndash; have the lessons on your computer.
+In order to view the lessons, open up the folder and all the lessons are numbered and end in &lt;code&gt;.html&lt;/code&gt;.
+Click, read, and code through them in order.&lt;/p&gt;
+
+&lt;p&gt;If you want to view the lessons online, you can click the &lt;code&gt;.Rmd&lt;/code&gt; documents, and github should be able to render the lesson for you in the browser.  For Python and other materials, use the &lt;code&gt;.md&lt;/code&gt; documents.
+The caveat with viewing the &lt;code&gt;.Rmd&lt;/code&gt; and &lt;code&gt;.md&lt;/code&gt; (aka R markdown, and markdown respectively) is that it does not render the documently exactly the same way as the &lt;code&gt;.html&lt;/code&gt; files.
+There is a potential for things to be rendered incorrectly, and you&amp;rsquo;ll see some bizzare (YAML) header on the top.
+It&amp;rsquo;s great for a quick reference when you&amp;rsquo;re not at your computer, but I would suggest using one of the &lt;code&gt;.html&lt;/code&gt; methods.&lt;/p&gt;
+
+&lt;h1 id=&#34;data-carpentry-material&#34;&gt;Data Carpentry Material&lt;/h1&gt;
+
+&lt;p&gt;Software Carpentry&amp;rsquo;s sister organization, &lt;a href=&#34;http://datacarpentry.org/&#34; target=&#34;_blank&#34;&gt;Data Carpentry&lt;/a&gt; also has a set of &lt;a href=&#34;http://datacarpentry.org/lesson-dev.html&#34; target=&#34;_blank&#34;&gt;lesson plans&lt;/a&gt;.
+From their &lt;a href=&#34;http://datacarpentry.org/about.html&#34; target=&#34;_blank&#34;&gt;about us&lt;/a&gt; page:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Data Carpentry is a sister organization of Software Carpentry designed to teach basic concepts, skills and tools for working more effectively with data.
+We develop curricula and run workshops that are 1) domain specific; 2) target fundamental data analysis and data management challenges; and 3) require little or no prior programming experience.
+In many domains of research the rapid generation of large amounts of data is fundamentally changing how research is done. The deluge of data presents great opportunities, but also many challenges in managing, analyzing and sharing data. Data Carpentry aims to teach the data skills that will enable researchers to be more effective and productive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pick a language you want to do the lesson with.  &lt;code&gt;clone&lt;/code&gt; or &lt;code&gt;Download ZIP&lt;/code&gt;, and go through the lessons using the &lt;code&gt;.html&lt;/code&gt;, &lt;code&gt;.Rmd&lt;/code&gt;, or &lt;code&gt;.md&lt;/code&gt; as mentioned above.&lt;/p&gt;
+
+&lt;h1 id=&#34;happy-learning&#34;&gt;Happy Learning!&lt;/h1&gt;
+
+&lt;p&gt;Hopefully this has been clear enough.  If not, post a comment, and I&amp;rsquo;ll respond and update this post accordinly.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

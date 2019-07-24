@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Academic</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with Data Science and Analysis</title>
+      <link>/post/2015/2015-05-05-getting-started-with-data-science/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-05-05-getting-started-with-data-science/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve been an instructor for &lt;a href=&#34;http://software-carpentry.org&#34; target=&#34;_blank&#34;&gt;Software-Carpentry (SWC)&lt;/a&gt; over a year now.
+It&amp;rsquo;s been a facinating experience and I&amp;rsquo;m proud to be a part of an open source movement promoting best practices.
+Typically when looking to start learing data science/analysis the first things people look up is something along the lines of: &amp;ldquo;learn python&amp;rdquo;, &amp;ldquo;free online r course&amp;rdquo;, &amp;ldquo;data science python&amp;rdquo;, &amp;ldquo;r jobs&amp;rdquo;, etc.
+Or scan through the coursera offerings.
+I&amp;rsquo;m a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics.
+This isn&amp;rsquo;t a blog post about SWC per se, but how one might go about learing and navigating some of the material on your own without attending a workshop.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;software-carptentry-material&#34;&gt;Software Carptentry Material&lt;/h1&gt;
+
+&lt;p&gt;SWC has a page of &lt;a href=&#34;http://software-carpentry.org/lessons.html&#34; target=&#34;_blank&#34;&gt;lessons&lt;/a&gt; that link to the various lessons taught during workshops.
+The core material covers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://swcarpentry.github.io/shell-novice/&#34; target=&#34;_blank&#34;&gt;Unix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Some programming language like &lt;a href=&#34;http://swcarpentry.github.io/python-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;Python&lt;/a&gt;, &lt;a href=&#34;http://swcarpentry.github.io/r-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt;, &lt;a href=&#34;http://swcarpentry.github.io/matlab-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;MATLAB&lt;/a&gt;, etc&lt;/li&gt;
+&lt;li&gt;Version control using &lt;a href=&#34;https://github.com/swcarpentry/git-novice&#34; target=&#34;_blank&#34;&gt;Git&lt;/a&gt; or &lt;a href=&#34;https://github.com/swcarpentry/hg-novice&#34; target=&#34;_blank&#34;&gt;Mercurial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Databases and &lt;a href=&#34;http://swcarpentry.github.io/sql-novice-survey/&#34; target=&#34;_blank&#34;&gt;SQL&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you take a look and listen (there is sound) to the &lt;a href=&#34;http://swcarpentry.github.io/slideshows/introducing-software-carpentry/index.html#slide-3&#34; target=&#34;_blank&#34;&gt;introductory browsercase&lt;/a&gt;.
+You will see that we say we teach the above material, but in essense we try to convey:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Automation of repetitive tasks&lt;/li&gt;
+&lt;li&gt;Tracking and sharing work&lt;/li&gt;
+&lt;li&gt;Building modular code&lt;/li&gt;
+&lt;li&gt;Manage data&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It&amp;rsquo;s a little bait-and-switch :)&lt;/p&gt;
+
+&lt;h1 id=&#34;installing-things&#34;&gt;Installing Things&lt;/h1&gt;
+
+&lt;p&gt;For each SWC workshop is accompanied by a &lt;a href=&#34;http://chendaniely.github.io/workshop-template-empty/&#34; target=&#34;_blank&#34;&gt;website&lt;/a&gt;.
+The website Contains information about location, instructors, helpers, syllabus, etc.
+For people reading this post, the most important part may be the installation instructions towards the middle/bottom of the page.
+There are separate instructions depending on your operating system.&lt;/p&gt;
+
+&lt;p&gt;Essentially:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Python: &lt;a href=&#34;http://continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;R: &lt;a href=&#34;http://cran.rstudio.com/&#34; target=&#34;_blank&#34;&gt;R&lt;/a&gt; and &lt;a href=&#34;http://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34;&gt;RStudio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;navigating-the-material&#34;&gt;Navigating the Material&lt;/h1&gt;
+
+&lt;p&gt;For people who have not been to a workshop trying to navigate the lesson material can be tricky.
+And I would highly suggest going through at least the first 3 &lt;a href=&#34;http://swcarpentry.github.io/shell-novice/&#34; target=&#34;_blank&#34;&gt;Unix&lt;/a&gt; lessons.
+This is mainly because loading files in a programming language uses the concept of relative and absolute paths, and it&amp;rsquo;s important to know where your data is and how to load it.&lt;/p&gt;
+
+&lt;p&gt;Using the R material as an example.  The instructors typically teach from the &lt;a href=&#34;http://swcarpentry.github.io/r-novice-inflammation/&#34; target=&#34;_blank&#34;&gt;Novice R Inflammation&lt;/a&gt; lessons.  There has been some &lt;a href=&#34;https://github.com/swcarpentry/r-novice-inflammation/pull/65#issuecomment-93483536&#34; target=&#34;_blank&#34;&gt;discussion&lt;/a&gt; and plans to use the &lt;a href=&#34;http://www.gapminder.org/&#34; target=&#34;_blank&#34;&gt;Gapminder&lt;/a&gt; data to teach lessons.  The beta can be found in the &lt;a href=&#34;https://github.com/swcarpentry/r-novice-gapminder&#34; target=&#34;_blank&#34;&gt;R Novice Gapminder&lt;/a&gt; lesson.&lt;/p&gt;
+
+&lt;p&gt;Once you&amp;rsquo;re on the github page of the lesson, there are a few ways to get the lessons plan&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;If you know your way around git, you can clone the repository&lt;/li&gt;
+&lt;li&gt;Otherwise, you will see an option to &amp;ldquo;Download ZIP&amp;rdquo; on the right panel.&lt;/li&gt;
+&lt;li&gt;View them in the browser&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The first 2 methods get you do the same place &amp;ndash; have the lessons on your computer.
+In order to view the lessons, open up the folder and all the lessons are numbered and end in &lt;code&gt;.html&lt;/code&gt;.
+Click, read, and code through them in order.&lt;/p&gt;
+
+&lt;p&gt;If you want to view the lessons online, you can click the &lt;code&gt;.Rmd&lt;/code&gt; documents, and github should be able to render the lesson for you in the browser.  For Python and other materials, use the &lt;code&gt;.md&lt;/code&gt; documents.
+The caveat with viewing the &lt;code&gt;.Rmd&lt;/code&gt; and &lt;code&gt;.md&lt;/code&gt; (aka R markdown, and markdown respectively) is that it does not render the documently exactly the same way as the &lt;code&gt;.html&lt;/code&gt; files.
+There is a potential for things to be rendered incorrectly, and you&amp;rsquo;ll see some bizzare (YAML) header on the top.
+It&amp;rsquo;s great for a quick reference when you&amp;rsquo;re not at your computer, but I would suggest using one of the &lt;code&gt;.html&lt;/code&gt; methods.&lt;/p&gt;
+
+&lt;h1 id=&#34;data-carpentry-material&#34;&gt;Data Carpentry Material&lt;/h1&gt;
+
+&lt;p&gt;Software Carpentry&amp;rsquo;s sister organization, &lt;a href=&#34;http://datacarpentry.org/&#34; target=&#34;_blank&#34;&gt;Data Carpentry&lt;/a&gt; also has a set of &lt;a href=&#34;http://datacarpentry.org/lesson-dev.html&#34; target=&#34;_blank&#34;&gt;lesson plans&lt;/a&gt;.
+From their &lt;a href=&#34;http://datacarpentry.org/about.html&#34; target=&#34;_blank&#34;&gt;about us&lt;/a&gt; page:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Data Carpentry is a sister organization of Software Carpentry designed to teach basic concepts, skills and tools for working more effectively with data.
+We develop curricula and run workshops that are 1) domain specific; 2) target fundamental data analysis and data management challenges; and 3) require little or no prior programming experience.
+In many domains of research the rapid generation of large amounts of data is fundamentally changing how research is done. The deluge of data presents great opportunities, but also many challenges in managing, analyzing and sharing data. Data Carpentry aims to teach the data skills that will enable researchers to be more effective and productive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pick a language you want to do the lesson with.  &lt;code&gt;clone&lt;/code&gt; or &lt;code&gt;Download ZIP&lt;/code&gt;, and go through the lessons using the &lt;code&gt;.html&lt;/code&gt;, &lt;code&gt;.Rmd&lt;/code&gt;, or &lt;code&gt;.md&lt;/code&gt; as mentioned above.&lt;/p&gt;
+
+&lt;h1 id=&#34;happy-learning&#34;&gt;Happy Learning!&lt;/h1&gt;
+
+&lt;p&gt;Hopefully this has been clear enough.  If not, post a comment, and I&amp;rsquo;ll respond and update this post accordinly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Open Source A Python Project I</title>
+      <link>/post/2015/2015-02-05-open-sourcing-a-python-project/</link>
+      <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-02-05-open-sourcing-a-python-project/</guid>
+      <description>
+
+&lt;p&gt;I started my
+&lt;a href=&#34;https://github.com/chendaniely/multi-agent-neural-network&#34; target=&#34;_blank&#34;&gt;first&lt;/a&gt;
+open source project towards the end of summer 2014 I began working at
+the &lt;a href=&#34;http://vbi.vt.edu/sdal&#34; target=&#34;_blank&#34;&gt;Social Decision Analytics Laboratory&lt;/a&gt; at
+the &lt;a href=&#34;http://www.vbi.vt.edu/&#34; target=&#34;_blank&#34;&gt;Virginia Informatics Institutee&lt;/a&gt;.  The
+project involves creating a simulation environment where we can
+observe how an idea or belief spreads within a social network.  The
+initial thought was to look for and extend an
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Agent-based_model&#34; target=&#34;_blank&#34;&gt;agent-based model&lt;/a&gt;
+package in Python.  I did manage to find the
+&lt;a href=&#34;https://github.com/azvoleff/pyabm&#34; target=&#34;_blank&#34;&gt;pyabm&lt;/a&gt; package by
+&lt;a href=&#34;http://azvoleff.com/&#34; target=&#34;_blank&#34;&gt;Alex Zvoleff&lt;/a&gt;, but for simplicity&amp;rsquo;s sake I
+wrote my own package instead of extending his existing code base.&lt;/p&gt;
+
+&lt;p&gt;I took it as an opportunity to learn and &amp;lsquo;do things right&amp;rsquo;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write a module that contains all program logic&lt;/li&gt;
+&lt;li&gt;Write functions that only do only one thing, but does it well&lt;/li&gt;
+&lt;li&gt;Unit test everything&lt;/li&gt;
+&lt;li&gt;Test builds on different versions of Python&lt;/li&gt;
+&lt;li&gt;Document your code&lt;/li&gt;
+&lt;li&gt;Get it on &lt;a href=&#34;https://pypi.python.org/pypi&#34; target=&#34;_blank&#34;&gt;PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34; target=&#34;_blank&#34;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This series of posts are essentially notes to myself, and to other
+programmers who are starting out from where I was.  In this post I
+discuss the background, rational, and inital steps in my open source
+struggles.  In
+&lt;a href=&#34;https://github.com/chendaniely/chendaniely.github.io/blob/draft-os-python2/_posts/2015-02-05-open-sourcing-a-python-project-II.md&#34; target=&#34;_blank&#34;&gt;part II&lt;/a&gt;
+I discuss automatic project and code documentation.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;I had already been involved with
+&lt;a href=&#34;http://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;Software Carpentry (SWC)&lt;/a&gt; for about 8
+months when I started the project, so many of the concepts I just
+listed were not entirely foreign, just a matter of implementation.
+Thanks to a workshop by
+&lt;a href=&#34;http://www.ccpp.nyu.edu/gabriel_perez-giz.html&#34; target=&#34;_blank&#34;&gt;Gabriel Perez-Giz&lt;/a&gt; at
+NYU earlier that summer, I took it upon myself to practice my EMACS
+and setup &lt;a href=&#34;https://github.com/jorgenschaefer/elpy&#34; target=&#34;_blank&#34;&gt;elpy&lt;/a&gt; as my IDE.  A
+development environment that can be used within a terminal was
+especially important, because the simulations I would be running would
+all be on a remote server.&lt;/p&gt;
+
+&lt;p&gt;For git, it was getting into the habit of not committing directly to
+master.  For Python, I&amp;rsquo;d write a suite of unit tests for the first
+time, and I figured if I write some comments and docstrings I can get
+a nice document from it (I was wrong about that).  Finally, I wanted
+to get those cool little badges people have on their github repo about
+build status, coverage, etc.  That&amp;rsquo;s when I found an awesome blog post
+by &lt;a href=&#34;http://www.jeffknupp.com/&#34; target=&#34;_blank&#34;&gt;Jeff Knupp&lt;/a&gt; titled
+&amp;lsquo;&lt;a href=&#34;http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/&#34; target=&#34;_blank&#34;&gt;Open Sourcing a Python Project the Right Way&lt;/a&gt;&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s an amazing read if you are ready to take your programming
+practices to the next step.  Jeff references a
+&lt;a href=&#34;https://github.com/audreyr/cookiecutter-pypackage&#34; target=&#34;_blank&#34;&gt;cookie-cutter&lt;/a&gt;
+that will setup the python project boilerplate, but I opted to just
+follow the blog post and do everything manually so I can have a better
+understanding as to what is going on in the background.  Plus, this
+lets me slowly add features, rather than have an entire repo loaded
+with unknown files.  More important, I added a few other things to
+make my project &amp;lsquo;better&amp;rsquo;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the
+&lt;a href=&#34;https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow&#34; target=&#34;_blank&#34;&gt;git&lt;/a&gt;-&lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34; target=&#34;_blank&#34;&gt;flow&lt;/a&gt;
+paradigm to add new features&lt;/li&gt;
+&lt;li&gt;Continuous integration (with
+&lt;a href=&#34;https://travis-ci.org/recent&#34; target=&#34;_blank&#34;&gt;TravisCI&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Test your package with other versions of Python (using
+&lt;a href=&#34;https://tox.readthedocs.org/en/latest/&#34; target=&#34;_blank&#34;&gt;Tox&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Code documentation with &lt;a href=&#34;http://sphinx-doc.org/&#34; target=&#34;_blank&#34;&gt;Sphinx&lt;/a&gt; and
+&lt;a href=&#34;https://readthedocs.org/&#34; target=&#34;_blank&#34;&gt;Read the Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I opted not to use Tox locally (at least not yet).  TravisCI is
+handling my Python compatibility since I was working with Python 3.4,
+and was not going to have Python 2 support.  I added a build for
+Python 3.4 and 3.3, and called it a day.  Also I opted to use
+&lt;a href=&#34;https://nose.readthedocs.org/en/latest/&#34; target=&#34;_blank&#34;&gt;nosetests&lt;/a&gt; instead of
+&lt;a href=&#34;http://pytest.org/latest/&#34; target=&#34;_blank&#34;&gt;pytest&lt;/a&gt; since that&amp;rsquo;s what I was shown when
+I helped out at the
+&lt;a href=&#34;http://geocarpentry.github.io/2014-01-30-mit/&#34; target=&#34;_blank&#34;&gt;MIT SWC workshop&lt;/a&gt;.
+That, plus there was SWC
+&lt;a href=&#34;http://software-carpentry.org/v4/test/index.html&#34; target=&#34;_blank&#34;&gt;material&lt;/a&gt;, and
+other &lt;a href=&#34;https://github.com/numpy/numpy&#34; target=&#34;_blank&#34;&gt;big&lt;/a&gt; open source projects use
+it, was my rational to stick with &lt;code&gt;nosetests&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 id=&#34;my-project&#34;&gt;My project&lt;/h1&gt;
+
+&lt;p&gt;The original
+&lt;a href=&#34;https://github.com/chendaniely/multi-agent-neural-network&#34; target=&#34;_blank&#34;&gt;Multi-Agent Neural Network (MANN)&lt;/a&gt;
+project had a &lt;code&gt;main.py&lt;/code&gt; script that loaded in my modules for the
+individual agents and the network structure.  Everything was placed
+under the &lt;code&gt;mann&lt;/code&gt; folder in the repo, with no subfolders.  When I
+eventually realized that I wanted the project to be PyPI ready, I
+wanted to separate the main program logic (the MANN code) from the
+actual script that sets up the simulation.  I eventually moved the
+&lt;code&gt;main.py&lt;/code&gt; script (and all required files) into the
+&lt;a href=&#34;https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments&#34; target=&#34;_blank&#34;&gt;Multidisciplinary Diffusion Model Experiments (MDME)&lt;/a&gt;
+repo.&lt;/p&gt;
+
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;ve realized the more I program in python, the more invaluable
+virtual environments are when developing packages.  A Virtual
+Environment is a tool to keep dependencies required by different
+projects in separate places while simultaneously keeping your base
+python distribution clean and working should something go awry.  They
+also allow you to flip between Python 2 and Python 3 depending on what
+version a piece of code you are trying to run was written in.  Pretty
+cool stuff.&lt;/p&gt;
+
+&lt;p&gt;The Python distribution I use is called
+&lt;a href=&#34;http://continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Setting up virtual environments using &lt;code&gt;conda&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;conda create -n VIRTUAL_ENV_NAME python=3.4&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can specify different versions of python and/or pre-create
+environments with a set of modules if needed.&lt;/p&gt;
+
+&lt;p&gt;Switching between environments: &lt;code&gt;source activate VIRTUAL_ENV_NAME&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To exit out of an environment: &lt;code&gt;source deactivate&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can read up more about creating environments on the conda
+documentation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments&#34; target=&#34;_blank&#34;&gt;Createing Python &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; environments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://conda.pydata.org/docs/examples/create.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;conda create&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.continuum.io/blog/conda&#34; target=&#34;_blank&#34;&gt;Python Packages and Environments with conda&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;issues&#34;&gt;Issues&lt;/h1&gt;
+
+&lt;p&gt;Turning a current python project into a &amp;lsquo;module&amp;rsquo; can break a few
+things.  It is as simple as putting a &lt;code&gt;__init__.py&lt;/code&gt; into a directory
+to signify that the contents of the folder is now a Python module, but
+there can be some weird side-effects.&lt;/p&gt;
+
+&lt;h1 id=&#34;unit-tests&#34;&gt;Unit tests&lt;/h1&gt;
+
+&lt;p&gt;When you turn your project into a package, you will find that if you
+run nosetests it will start running the unit tests for all the modules
+you load (if they have any).&lt;/p&gt;
+
+&lt;p&gt;For example I was initially using&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nosetests --cover-branches --with-coverage&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;to test my code, but I had to add the &lt;code&gt;--cover-package=MODULE_NAME&lt;/code&gt; to
+get it to only test the code in my module:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nosetests --cover-branches --with-coverage --cover-erase
+--cover-package=mann&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;importing-modules&#34;&gt;Importing Modules&lt;/h1&gt;
+
+&lt;p&gt;Since I&amp;rsquo;ve moved out my simulation code from the code that defines
+that MANN module, I had to install the MANN module.  One way to do it
+is to upload the code to PyPI and &lt;code&gt;pip install&lt;/code&gt; the package.  The
+problem is when you want to load a module to PyPI you essentially need
+to have a git tag associated with the version you want.  This is
+problematic when you are rapidly prototyping since you&amp;rsquo;ll need to
+either delete tags, or constantly increment the tag.  You&amp;rsquo;ll end up
+with a v.0.314.0 very quickly.  You can do a local install of your
+module by going to where you have the setup.py file and doing:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python setup.py install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This is why virtual environments are really helpful.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You won&amp;rsquo;t have to worry about cluttering the base Python
+distribution and modules with your &amp;lsquo;test&amp;rsquo; code.&lt;/li&gt;
+&lt;li&gt;You can test your code before uploading it to PyPI (or anywhere
+else).  This is really helpful becuase PyPI requires you to have a
+&lt;code&gt;tag&lt;/code&gt;.  Doing a local install allows you to workout any potential
+bugs before submitting a release so you won&amp;rsquo;t have to have 15
+release numbers for your first release.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Absolute and Relative Directories in Python</title>
+      <link>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</link>
+      <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</guid>
+      <description>&lt;p&gt;One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the file I/O functions, it assumes the current directory or you need to give it an absolute directory. Using something like &lt;code&gt;../other_directory&lt;/code&gt; will not work.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Here is one way you can get the current script directory, and then append to the string the relative paths.&lt;/p&gt;
+
+&lt;p&gt;Adapted from user Al Cramer: &lt;a href=&#34;http://stackoverflow.com/questions/4934806/python-how-to-find-scripts-directory&#34; target=&#34;_blank&#34;&gt;http://stackoverflow.com/questions/4934806/python-how-to-find-scripts-directory&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example I have a pandas dataframe I want to save to another folder&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;abs_dir = os.path.dirname(__file__)
+print abs_dir
+
+rel_dir = os.path.join(abs_dir, &#39;../data&#39;)
+print rel_dir
+
+data = &#39;&#39;.join([rel_dir, &#39;/nhtsa.csv&#39;])
+print data
+
+df.to_csv(data, sep=&#39;,&#39;, encoding=&#39;utf-8&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

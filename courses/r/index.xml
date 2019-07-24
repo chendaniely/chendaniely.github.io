@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Academic</title>
+    <link>/courses/r/</link>
+    <description>Recent content in R on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/courses/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python for R Users</title>
+      <link>/courses/r/dc_python_r/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/r/dc_python_r/</guid>
+      <description>
+
+&lt;p&gt;This course is for R users who want to get up to speed with Python!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.datacamp.com/courses/python-for-r-users&#34; target=&#34;_blank&#34;&gt;https://www.datacamp.com/courses/python-for-r-users&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;course-description&#34;&gt;Course Description&lt;/h1&gt;
+
+&lt;p&gt;Python and R have seen immense growth in popularity in the &amp;ldquo;Machine Learning Age&amp;rdquo;. They both are high-level languages that are easy to learn and write. The language you use will depend on your background and field of study and work. R is a language made by and for statisticians, whereas Python is a more general purpose programming language. Regardless of the background, there will be times when a particular algorithm is implemented in one language and not the other, a feature is better documented, or simply, the tutorial you found online uses Python instead of R. In either case, this would require the R user to work in Python to get his/her work done, or try to understand how something is implemented in Python for it to be translated into R. This course helps you cross the R-Python language barrier.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-basics&#34;&gt;The Basics&lt;/h1&gt;
+
+&lt;p&gt;Learn about some of the most important data types (integers, floats, strings, and booleans) and data structures (lists, dictionaries, numpy arrays, and pandas DataFrames) in Python and how they compare to the ones in R.&lt;/p&gt;
+
+&lt;h1 id=&#34;control-flow-loops-and-functions&#34;&gt;Control flow, Loops, and Functions&lt;/h1&gt;
+
+&lt;p&gt;This chapter covers control flow statements (if-else if-else), for loops and shows you how to write your own functions in Python!&lt;/p&gt;
+
+&lt;h1 id=&#34;pandas&#34;&gt;Pandas&lt;/h1&gt;
+
+&lt;p&gt;In this chapter you will learn more about one of the most important Python libraries, Pandas. In addition to DataFrames, pandas provides several data manipulation functions and methods.&lt;/p&gt;
+
+&lt;h1 id=&#34;plotting&#34;&gt;Plotting&lt;/h1&gt;
+
+&lt;p&gt;You will learn about the rich ecosystem of visualization libraries in Python. This chapter covers matplotlib, the core visualization library in Python along with the pandas and seaborn libraries.&lt;/p&gt;
+
+&lt;h1 id=&#34;capstone&#34;&gt;Capstone&lt;/h1&gt;
+
+&lt;p&gt;As a final capstone, you will apply your Python skills on the NYC Flights 2013 dataset.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tips on Academic</title>
+    <link>/tags/tips/</link>
+    <description>Recent content in tips on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Absolute and Relative Directories in Python</title>
+      <link>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</link>
+      <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</guid>
+      <description>&lt;p&gt;One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the file I/O functions, it assumes the current directory or you need to give it an absolute directory. Using something like &lt;code&gt;../other_directory&lt;/code&gt; will not work.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Here is one way you can get the current script directory, and then append to the string the relative paths.&lt;/p&gt;
+
+&lt;p&gt;Adapted from user Al Cramer: &lt;a href=&#34;http://stackoverflow.com/questions/4934806/python-how-to-find-scripts-directory&#34; target=&#34;_blank&#34;&gt;http://stackoverflow.com/questions/4934806/python-how-to-find-scripts-directory&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example I have a pandas dataframe I want to save to another folder&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;abs_dir = os.path.dirname(__file__)
+print abs_dir
+
+rel_dir = os.path.join(abs_dir, &#39;../data&#39;)
+print rel_dir
+
+data = &#39;&#39;.join([rel_dir, &#39;/nhtsa.csv&#39;])
+print data
+
+df.to_csv(data, sep=&#39;,&#39;, encoding=&#39;utf-8&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

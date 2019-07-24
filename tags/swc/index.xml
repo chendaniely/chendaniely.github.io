@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swc on Academic</title>
+    <link>/tags/swc/</link>
+    <description>Recent content in swc on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/swc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SWC: What the Carpentries Mean To Me</title>
+      <link>/post/2016/2016-10-26-what_swc_means_to_me/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/2016-10-26-what_swc_means_to_me/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SWC: Software Carpentry as a University Course</title>
+      <link>/post/2016/2016-02-05-swc-as-a-university-course/</link>
+      <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/2016-02-05-swc-as-a-university-course/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2016/02/swc-as-a-university-course.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2016/02/swc-as-a-university-course.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SWC: Teaching Bimodal Workshops with a Large Range</title>
+      <link>/post/2015/2015-11-05-teaching-extreme-ranges/</link>
+      <pubDate>Thu, 05 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-11-05-teaching-extreme-ranges/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2015/11/teaching-extreme-ranges.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2015/11/teaching-extreme-ranges.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SWC: Assessing Our Learners Part I</title>
+      <link>/post/2015/2015-06-23-learner-assessment-part-01/</link>
+      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-06-23-learner-assessment-part-01/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2015/06/learner-assessment-part-01.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2015/06/learner-assessment-part-01.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SWC: Cookie Cutter</title>
+      <link>/post/2015/2015-02-10-cookie-cutter/</link>
+      <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-02-10-cookie-cutter/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2015/02/cookie-cutter.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2015/02/cookie-cutter.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SWC: Revamping the Instructor Survey</title>
+      <link>/post/2014/2014-11-02-revised-instructor-survey/</link>
+      <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014/2014-11-02-revised-instructor-survey/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2014/11/revised-instructor-survey.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2014/11/revised-instructor-survey.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SWC: Our First High School Workshop at Rockefeller University</title>
+      <link>/post/2014/2014-07-07-high-school-students-at-rockefeller/</link>
+      <pubDate>Mon, 07 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2014/2014-07-07-high-school-students-at-rockefeller/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2014/07/high-school-students-at-rockefeller.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2014/07/high-school-students-at-rockefeller.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

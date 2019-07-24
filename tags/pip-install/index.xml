@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pip install on Academic</title>
+    <link>/tags/pip-install/</link>
+    <description>Recent content in pip install on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/pip-install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Open Source A Python Project I</title>
+      <link>/post/2015/2015-02-05-open-sourcing-a-python-project/</link>
+      <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015/2015-02-05-open-sourcing-a-python-project/</guid>
+      <description>
+
+&lt;p&gt;I started my
+&lt;a href=&#34;https://github.com/chendaniely/multi-agent-neural-network&#34; target=&#34;_blank&#34;&gt;first&lt;/a&gt;
+open source project towards the end of summer 2014 I began working at
+the &lt;a href=&#34;http://vbi.vt.edu/sdal&#34; target=&#34;_blank&#34;&gt;Social Decision Analytics Laboratory&lt;/a&gt; at
+the &lt;a href=&#34;http://www.vbi.vt.edu/&#34; target=&#34;_blank&#34;&gt;Virginia Informatics Institutee&lt;/a&gt;.  The
+project involves creating a simulation environment where we can
+observe how an idea or belief spreads within a social network.  The
+initial thought was to look for and extend an
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Agent-based_model&#34; target=&#34;_blank&#34;&gt;agent-based model&lt;/a&gt;
+package in Python.  I did manage to find the
+&lt;a href=&#34;https://github.com/azvoleff/pyabm&#34; target=&#34;_blank&#34;&gt;pyabm&lt;/a&gt; package by
+&lt;a href=&#34;http://azvoleff.com/&#34; target=&#34;_blank&#34;&gt;Alex Zvoleff&lt;/a&gt;, but for simplicity&amp;rsquo;s sake I
+wrote my own package instead of extending his existing code base.&lt;/p&gt;
+
+&lt;p&gt;I took it as an opportunity to learn and &amp;lsquo;do things right&amp;rsquo;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write a module that contains all program logic&lt;/li&gt;
+&lt;li&gt;Write functions that only do only one thing, but does it well&lt;/li&gt;
+&lt;li&gt;Unit test everything&lt;/li&gt;
+&lt;li&gt;Test builds on different versions of Python&lt;/li&gt;
+&lt;li&gt;Document your code&lt;/li&gt;
+&lt;li&gt;Get it on &lt;a href=&#34;https://pypi.python.org/pypi&#34; target=&#34;_blank&#34;&gt;PyPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34; target=&#34;_blank&#34;&gt;PEP8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This series of posts are essentially notes to myself, and to other
+programmers who are starting out from where I was.  In this post I
+discuss the background, rational, and inital steps in my open source
+struggles.  In
+&lt;a href=&#34;https://github.com/chendaniely/chendaniely.github.io/blob/draft-os-python2/_posts/2015-02-05-open-sourcing-a-python-project-II.md&#34; target=&#34;_blank&#34;&gt;part II&lt;/a&gt;
+I discuss automatic project and code documentation.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+
+&lt;p&gt;I had already been involved with
+&lt;a href=&#34;http://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;Software Carpentry (SWC)&lt;/a&gt; for about 8
+months when I started the project, so many of the concepts I just
+listed were not entirely foreign, just a matter of implementation.
+Thanks to a workshop by
+&lt;a href=&#34;http://www.ccpp.nyu.edu/gabriel_perez-giz.html&#34; target=&#34;_blank&#34;&gt;Gabriel Perez-Giz&lt;/a&gt; at
+NYU earlier that summer, I took it upon myself to practice my EMACS
+and setup &lt;a href=&#34;https://github.com/jorgenschaefer/elpy&#34; target=&#34;_blank&#34;&gt;elpy&lt;/a&gt; as my IDE.  A
+development environment that can be used within a terminal was
+especially important, because the simulations I would be running would
+all be on a remote server.&lt;/p&gt;
+
+&lt;p&gt;For git, it was getting into the habit of not committing directly to
+master.  For Python, I&amp;rsquo;d write a suite of unit tests for the first
+time, and I figured if I write some comments and docstrings I can get
+a nice document from it (I was wrong about that).  Finally, I wanted
+to get those cool little badges people have on their github repo about
+build status, coverage, etc.  That&amp;rsquo;s when I found an awesome blog post
+by &lt;a href=&#34;http://www.jeffknupp.com/&#34; target=&#34;_blank&#34;&gt;Jeff Knupp&lt;/a&gt; titled
+&amp;lsquo;&lt;a href=&#34;http://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/&#34; target=&#34;_blank&#34;&gt;Open Sourcing a Python Project the Right Way&lt;/a&gt;&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s an amazing read if you are ready to take your programming
+practices to the next step.  Jeff references a
+&lt;a href=&#34;https://github.com/audreyr/cookiecutter-pypackage&#34; target=&#34;_blank&#34;&gt;cookie-cutter&lt;/a&gt;
+that will setup the python project boilerplate, but I opted to just
+follow the blog post and do everything manually so I can have a better
+understanding as to what is going on in the background.  Plus, this
+lets me slowly add features, rather than have an entire repo loaded
+with unknown files.  More important, I added a few other things to
+make my project &amp;lsquo;better&amp;rsquo;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Use the
+&lt;a href=&#34;https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow&#34; target=&#34;_blank&#34;&gt;git&lt;/a&gt;-&lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34; target=&#34;_blank&#34;&gt;flow&lt;/a&gt;
+paradigm to add new features&lt;/li&gt;
+&lt;li&gt;Continuous integration (with
+&lt;a href=&#34;https://travis-ci.org/recent&#34; target=&#34;_blank&#34;&gt;TravisCI&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Test your package with other versions of Python (using
+&lt;a href=&#34;https://tox.readthedocs.org/en/latest/&#34; target=&#34;_blank&#34;&gt;Tox&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Code documentation with &lt;a href=&#34;http://sphinx-doc.org/&#34; target=&#34;_blank&#34;&gt;Sphinx&lt;/a&gt; and
+&lt;a href=&#34;https://readthedocs.org/&#34; target=&#34;_blank&#34;&gt;Read the Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I opted not to use Tox locally (at least not yet).  TravisCI is
+handling my Python compatibility since I was working with Python 3.4,
+and was not going to have Python 2 support.  I added a build for
+Python 3.4 and 3.3, and called it a day.  Also I opted to use
+&lt;a href=&#34;https://nose.readthedocs.org/en/latest/&#34; target=&#34;_blank&#34;&gt;nosetests&lt;/a&gt; instead of
+&lt;a href=&#34;http://pytest.org/latest/&#34; target=&#34;_blank&#34;&gt;pytest&lt;/a&gt; since that&amp;rsquo;s what I was shown when
+I helped out at the
+&lt;a href=&#34;http://geocarpentry.github.io/2014-01-30-mit/&#34; target=&#34;_blank&#34;&gt;MIT SWC workshop&lt;/a&gt;.
+That, plus there was SWC
+&lt;a href=&#34;http://software-carpentry.org/v4/test/index.html&#34; target=&#34;_blank&#34;&gt;material&lt;/a&gt;, and
+other &lt;a href=&#34;https://github.com/numpy/numpy&#34; target=&#34;_blank&#34;&gt;big&lt;/a&gt; open source projects use
+it, was my rational to stick with &lt;code&gt;nosetests&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 id=&#34;my-project&#34;&gt;My project&lt;/h1&gt;
+
+&lt;p&gt;The original
+&lt;a href=&#34;https://github.com/chendaniely/multi-agent-neural-network&#34; target=&#34;_blank&#34;&gt;Multi-Agent Neural Network (MANN)&lt;/a&gt;
+project had a &lt;code&gt;main.py&lt;/code&gt; script that loaded in my modules for the
+individual agents and the network structure.  Everything was placed
+under the &lt;code&gt;mann&lt;/code&gt; folder in the repo, with no subfolders.  When I
+eventually realized that I wanted the project to be PyPI ready, I
+wanted to separate the main program logic (the MANN code) from the
+actual script that sets up the simulation.  I eventually moved the
+&lt;code&gt;main.py&lt;/code&gt; script (and all required files) into the
+&lt;a href=&#34;https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments&#34; target=&#34;_blank&#34;&gt;Multidisciplinary Diffusion Model Experiments (MDME)&lt;/a&gt;
+repo.&lt;/p&gt;
+
+&lt;h1 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;ve realized the more I program in python, the more invaluable
+virtual environments are when developing packages.  A Virtual
+Environment is a tool to keep dependencies required by different
+projects in separate places while simultaneously keeping your base
+python distribution clean and working should something go awry.  They
+also allow you to flip between Python 2 and Python 3 depending on what
+version a piece of code you are trying to run was written in.  Pretty
+cool stuff.&lt;/p&gt;
+
+&lt;p&gt;The Python distribution I use is called
+&lt;a href=&#34;http://continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;Anaconda&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Setting up virtual environments using &lt;code&gt;conda&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;conda create -n VIRTUAL_ENV_NAME python=3.4&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can specify different versions of python and/or pre-create
+environments with a set of modules if needed.&lt;/p&gt;
+
+&lt;p&gt;Switching between environments: &lt;code&gt;source activate VIRTUAL_ENV_NAME&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To exit out of an environment: &lt;code&gt;source deactivate&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can read up more about creating environments on the conda
+documentation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://conda.pydata.org/docs/intro.html#creating-python-3-4-or-python-2-6-environments&#34; target=&#34;_blank&#34;&gt;Createing Python &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; environments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://conda.pydata.org/docs/examples/create.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;conda create&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.continuum.io/blog/conda&#34; target=&#34;_blank&#34;&gt;Python Packages and Environments with conda&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;issues&#34;&gt;Issues&lt;/h1&gt;
+
+&lt;p&gt;Turning a current python project into a &amp;lsquo;module&amp;rsquo; can break a few
+things.  It is as simple as putting a &lt;code&gt;__init__.py&lt;/code&gt; into a directory
+to signify that the contents of the folder is now a Python module, but
+there can be some weird side-effects.&lt;/p&gt;
+
+&lt;h1 id=&#34;unit-tests&#34;&gt;Unit tests&lt;/h1&gt;
+
+&lt;p&gt;When you turn your project into a package, you will find that if you
+run nosetests it will start running the unit tests for all the modules
+you load (if they have any).&lt;/p&gt;
+
+&lt;p&gt;For example I was initially using&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nosetests --cover-branches --with-coverage&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;to test my code, but I had to add the &lt;code&gt;--cover-package=MODULE_NAME&lt;/code&gt; to
+get it to only test the code in my module:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nosetests --cover-branches --with-coverage --cover-erase
+--cover-package=mann&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;importing-modules&#34;&gt;Importing Modules&lt;/h1&gt;
+
+&lt;p&gt;Since I&amp;rsquo;ve moved out my simulation code from the code that defines
+that MANN module, I had to install the MANN module.  One way to do it
+is to upload the code to PyPI and &lt;code&gt;pip install&lt;/code&gt; the package.  The
+problem is when you want to load a module to PyPI you essentially need
+to have a git tag associated with the version you want.  This is
+problematic when you are rapidly prototyping since you&amp;rsquo;ll need to
+either delete tags, or constantly increment the tag.  You&amp;rsquo;ll end up
+with a v.0.314.0 very quickly.  You can do a local install of your
+module by going to where you have the setup.py file and doing:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python setup.py install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This is why virtual environments are really helpful.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You won&amp;rsquo;t have to worry about cluttering the base Python
+distribution and modules with your &amp;lsquo;test&amp;rsquo; code.&lt;/li&gt;
+&lt;li&gt;You can test your code before uploading it to PyPI (or anywhere
+else).  This is really helpful becuase PyPI requires you to have a
+&lt;code&gt;tag&lt;/code&gt;.  Doing a local install allows you to workout any potential
+bugs before submitting a release so you won&amp;rsquo;t have to have 15
+release numbers for your first release.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

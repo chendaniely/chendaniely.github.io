@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sdal-post on Academic</title>
+    <link>/tags/sdal-post/</link>
+    <description>Recent content in sdal-post on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/sdal-post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysis-Based Project Templates</title>
+      <link>/post/2018/2018-01-23-analysis_based_project_templates/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/2018-01-23-analysis_based_project_templates/</guid>
+      <description>
+
+&lt;p&gt;One of the most annoying things you hear people say when they are working with some common code base is
+&amp;ldquo;It works on my machine&amp;hellip;&amp;rdquo;.
+Conversely, one of the more satisfying things is running a script that you are not actively working on and
+have it run without problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;{% post_url 2017-05-30-project_templates %}&#34; target=&#34;_blank&#34;&gt;Project Templates&lt;/a&gt; are one way to address this problem.
+The &lt;a href=&#34;{% post_url 2017-05-30-project_templates %}&#34; target=&#34;_blank&#34;&gt;original post&lt;/a&gt; about project templates mainly talks about the folder structure but not so much as the rationale behind why things are the way they are.
+Also the original post used a user-based subfolder structure under &lt;code&gt;src&lt;/code&gt;,
+which caused some problems when we ended up doing code reviews.&lt;/p&gt;
+
+&lt;p&gt;Why do we even want to use &amp;ldquo;projects&amp;rdquo;?
+&lt;a href=&#34;https://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;Software Carpentry&lt;/a&gt; has a good set of &lt;a href=&#34;https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/&#34; target=&#34;_blank&#34;&gt;explanations&lt;/a&gt;.
+When dealing with &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200711843-Working-Directories-and-Workspaces&#34; target=&#34;_blank&#34;&gt;working directories and workspaces&lt;/a&gt; within R and RStudio,
+even RStudio suggests &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200526207&#34; target=&#34;_blank&#34;&gt;using projects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Hopefully the links above are convincing enough to use projects and some standardized folder structure within projects.
+Below are some of the issues we&amp;rsquo;ve encountered while working on various projects, and hopefully
+we can slowly migrate to a standardization for all projects and analysis moving forward.
+Some of the problems and solutions are already mentioned from the Software-Carpentry and RStudio links above.&lt;/p&gt;
+
+&lt;h1 id=&#34;problems&#34;&gt;Problems&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Manually setting a working directory in a script.&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reduces the reproducibility by hard-coding a path specific to each user.&lt;/li&gt;
+&lt;li&gt;When sharing code, each person needs to manually edit at least one line within the file to set the working directory.&lt;/li&gt;
+&lt;li&gt;Results and other saved outputs from code are also tied to the working directory&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sharing code within a project by copy/pasting from another script.&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redundant routines in code should always be encapsulated into a function so they can be re-used within a script and shared across scripts.&lt;/li&gt;
+&lt;li&gt;Since duplication of code is minimized, a fix in one location should provide the same fix in other locations.&lt;/li&gt;
+&lt;li&gt;We&amp;rsquo;ve had situations where code was copy/pasted into multiple scripts and multiple bugs were introduced/fixed in multiple places but neither set of duplicated code contained all the bug fixes.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username subfolders in the &lt;code&gt;src&lt;/code&gt; folder&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Promoted code duplication and made it hard to find a particular analysis.&lt;/li&gt;
+&lt;li&gt;Originally set up this way to minimize merge conflicts&lt;/li&gt;
+&lt;li&gt;Individuals can quickly find his/her own work&lt;/li&gt;
+&lt;li&gt;Became a problem because instead of sharing code that needed to be reused, people started copy/pasting code into scripts&lt;/li&gt;
+&lt;li&gt;See duplication of code problem from the previous point&lt;/li&gt;
+&lt;li&gt;During the code review process, finding code that did a certain task was difficult since it was organized by
+who did a task, versus the task itself.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Manually setting working directories while under a version control systems (VCS)&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VCS keep track of changes from files.&lt;/li&gt;
+&lt;li&gt;Even if there is a general understanding of manually setting a working directory among collaborators,
+every time someone changes the working directory to run on their machine,
+the version control system will report a change in the file.&lt;/li&gt;
+&lt;li&gt;While the changes can be reverted by the VCS, it&amp;rsquo;s an unnecessary step in the work flow,
+and can lead to unwanted changes in the code if a file was reverted unexpectedly.&lt;/li&gt;
+&lt;li&gt;Or you will end up with the same lines and files being changed over and over, cluttering the log and history.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;solutions&#34;&gt;Solutions&lt;/h1&gt;
+
+&lt;p&gt;Many of these problems can be solved with using &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/200526207&#34; target=&#34;_blank&#34;&gt;RStudio Projects&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Prevents scripts from setting a working directory (&lt;code&gt;setwd()&lt;/code&gt;)&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The working directory will be the root of the project.&lt;/li&gt;
+&lt;li&gt;Since the starting point for each script is deterministic, we can implement a folder structure within the project in a way
+where data has a common access point (e.g., &lt;code&gt;./data/path/to/data&lt;/code&gt;) and code that needs to be run will also have a common access point (e.g., &lt;code&gt;./src/path/to/script.R&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code and scripts can be easily be referenced from the root working directory of the project&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When someone wants to create a script to hold functions, it has a consistent path to be &lt;code&gt;source&lt;/code&gt;d in another R script&lt;/li&gt;
+&lt;li&gt;This would provide a place for common code bases to be shared without copy/pasting into multiple scripts and
+without having to be put into a proper R package.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The structure of the project template needs to account for multiple people entering and leaving a project at various points during the lifetime of a project&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We have a &lt;code&gt;src&lt;/code&gt; folder so people knew where to put his/her &lt;code&gt;R&lt;/code&gt; scripts&lt;/li&gt;
+&lt;li&gt;needed a way to organize the folder so we don&amp;rsquo;t have 10s or 100s of files in a single directory.&lt;/li&gt;
+&lt;li&gt;We initially settled on using user name sub-folders.
+
+&lt;ul&gt;
+&lt;li&gt;This prevented a lot of potential merge conflicts, since people are more likely to just work in their own directory&lt;/li&gt;
+&lt;li&gt;but it also caused people to copy/paste from other people&amp;rsquo;s folders.&lt;/li&gt;
+&lt;li&gt;It also made it difficult to find out later on how to find a particular piece of analytics.&lt;/li&gt;
+&lt;li&gt;We would have to know who worked on it to find the script, versus looking up the analysis itself.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Thus, we are moving to a naming system not under user names.
+
+&lt;ul&gt;
+&lt;li&gt;This also will prevent copy/pasting of common code bases.&lt;/li&gt;
+&lt;li&gt;One thing that can happen is more merge conflicts (editing the same line of a file at the same time) while working
+
+&lt;ul&gt;
+&lt;li&gt;but even that can be minimized by coordinating efforts.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reduces the Git history clutter&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Version control systems (VCS) keep track of changes within a file.&lt;/li&gt;
+&lt;li&gt;When we have working directories manually being set on a user-by-user basis, each user will have to set his/her own working directory
+to get the script to run.&lt;/li&gt;
+&lt;li&gt;This requires commenting out the current working directory set in the code,
+and either replacing or uncommenting out the &amp;lsquo;correct&amp;rsquo; working directory.&lt;/li&gt;
+&lt;li&gt;This will cause the VCS to note there is a change in a file where the user either needs to &lt;code&gt;commit&lt;/code&gt; or &lt;code&gt;revert&lt;/code&gt; for each person who is running the script.&lt;/li&gt;
+&lt;li&gt;While this may be a &amp;lsquo;harmless&amp;rsquo; change, it clutters the &lt;code&gt;log&lt;/code&gt; and history of the file, when bigger changes need to be reverted or bugs need to be tracked down.&lt;/li&gt;
+&lt;li&gt;The project template should also fix this problem since the working directory no longer needs to be set in the file.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;changes-to-mindset&#34;&gt;Changes to mindset&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Section taken from feedback from Ian&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+
+&lt;p&gt;The major change from using username &lt;code&gt;src&lt;/code&gt; subfolders to analysis-based subfolders is how to navigate the initial hierarchies of the folder.
+While the most technical hurdle to overcome is the potential of increased Git merge conflicts,
+it can be minimized by coordinating efforts.
+We have a system that distinguishes code from data, where code is stored on a Git server (e.g., GitLab) and data is stored on an encrypted LUKS volume.
+This means learning and using Git will have to be part of everyone&amp;rsquo;s toolkit.
+It&amp;rsquo;s a technical solution to solve a very complex problem, sharing and version controlling files,
+but it does offer solutions for project management, if you choose to use it.&lt;/p&gt;
+
+&lt;h3 id=&#34;code-structure&#34;&gt;Code structure&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The most appealing part of using usernames as folders is that it allows users to think of their code however they like, and never need to reconcile that with other people&amp;rsquo;s understanding of project structure. For instance, Alice can organize folders by the work she did on a month to month basis. Bob can organize scripts into data processing/data loading/plots/misc. Chris can structure code based on who asked her to do whatever. Each person has a system that works for them and doesn&amp;rsquo;t have to work for anyone else.
+But even in this small example, the three code bases are conceptually incompatible. How do you reconcile folders called &amp;lsquo;June2017&amp;rsquo;, &amp;lsquo;get ACS stuff&amp;rsquo;, and &amp;lsquo;For Sallie&amp;rsquo;? In a project-centered folder structure, everyone needs to be on more or less the same page regarding the structure of the project and what goes on in it. Personally I think this is a good thing, and something we should be doing anyway, but it will certainly be a challenge especially if people don&amp;rsquo;t think to think of it.
+```&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

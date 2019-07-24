@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Academic</title>
+    <link>/courses/python/</link>
+    <description>Recent content in Python on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/courses/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pandas Data Analysis with Python Fundamentals</title>
+      <link>/courses/python/python_pandas_video/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/python/python_pandas_video/</guid>
+      <description>
+
+&lt;p&gt;Pandas Data Analysis with Python Fundamentals&lt;br /&gt;
+by Daniel Y. Chen&lt;br /&gt;
+Publisher: Addison-Wesley Professional&lt;br /&gt;
+Release Date: February 2017&lt;br /&gt;
+ISBN: 9780134692272&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/&#34; target=&#34;_blank&#34;&gt;https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;video-description&#34;&gt;Video Description&lt;/h1&gt;
+
+&lt;p&gt;3+ Hours of Video Instruction&lt;/p&gt;
+
+&lt;p&gt;Pandas Data Analysis with Python Fundamentals LiveLessons provides analysts and aspiring data scientists with a practical introduction to Python and pandas, the analytics stack that enables you to move from spreadsheet programs such as Excel into automation of your data analysis workflows.&lt;/p&gt;
+
+&lt;p&gt;In this video training, Daniel starts by introducing Python and pandas and why they are great tools for data analysis. He then covers installing and starting Python. The video then moves into the basics of working with data sets in Python and with pandas, followed by plotting and visualization, data assembly and manipulations, missing data, and tidy data. After watching this video, analysts and those new to data science will understand why Python and pandas are so popular with data scientists and should be able to begin to create automated data workflows.&lt;/p&gt;
+
+&lt;h1 id=&#34;skill-level&#34;&gt;Skill Level&lt;/h1&gt;
+
+&lt;p&gt;Beginner to Intermediate&lt;/p&gt;
+
+&lt;h1 id=&#34;what-you-will-learn&#34;&gt;What You Will Learn&lt;/h1&gt;
+
+&lt;p&gt;Installing and starting Python
+Loading data sets into pandas and beginning to assess and analyze them
+Using pandas data structures and importing/exporting data
+Combining multiple data sets
+Dealing with missing data
+Tidying and reshaping data&lt;/p&gt;
+
+&lt;h1 id=&#34;who-should-take-this-course&#34;&gt;Who Should Take This Course&lt;/h1&gt;
+
+&lt;p&gt;Analysts and aspiring data scientists looking to move beyond spreadsheets into automated data workflows.&lt;/p&gt;
+
+&lt;h1 id=&#34;course-requirements&#34;&gt;Course Requirements&lt;/h1&gt;
+
+&lt;p&gt;Basic understanding of programming and development
+Some familiarity with basic data analysis&lt;/p&gt;
+
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+
+&lt;p&gt;Lesson 1: Installing and Running Python&lt;/p&gt;
+
+&lt;p&gt;Lesson 1 explains why the Python and pandas combination is great for data analysis. It also shows you how to install Python and the analytics stack and how to run Python.&lt;/p&gt;
+
+&lt;p&gt;Lesson 2: Pandas Basics&lt;/p&gt;
+
+&lt;p&gt;Lesson 2 covers some of the initial steps to take after you are given a dataset to analyze. You load data into pandas and then look at different subsets of the data. Finally, you learn how to perform your first simple set of analyses.&lt;/p&gt;
+
+&lt;p&gt;Lesson 3: Pandas Data Structures&lt;/p&gt;
+
+&lt;p&gt;Lesson 3 dives a little further into how pandas works. You learn how to create the pandas series and dataframe data structures. Next, you learn how you can use the pandas series object and pandas dataframe object. Last, how you import and export various types of data are covered.&lt;/p&gt;
+
+&lt;p&gt;Lesson 4: Introduction to Plotting&lt;/p&gt;
+
+&lt;p&gt;Lesson 4 emphasizes why visualization is important. You learn how to create a basic set of plots within matplotlib, Seaborn, and pandas.&lt;/p&gt;
+
+&lt;p&gt;Lesson 5: Data Assembly&lt;/p&gt;
+
+&lt;p&gt;Now that you know how to load and look at your data, the next step is assembling the data you need for analysis. Lesson 5 begins with concatenating data, that is, how to append data along the rows or columns. The lessons end with how to merge multiple data sets together.&lt;/p&gt;
+
+&lt;p&gt;Lesson 6: Missing Data&lt;/p&gt;
+
+&lt;p&gt;By now you have seen a few datasets with missing data. In Lesson 6 we begin to discuss what missing data is and how we get missing data. Your start learning how to work with missing data, including ways to find, count, and clean missing data. These are all important considerations when missing data is used in calculations.&lt;/p&gt;
+
+&lt;p&gt;Lesson 7: Tidy Data&lt;/p&gt;
+
+&lt;p&gt;Lesson 7 is concerned with tidy data. Tidy data describes the shape of your data that makes it easier to manipulate and analyze. The lesson covers Hadley Wickham’s tidy data paper that describes the ways data can be dirty. Finally, it covers the various ways you can reshape data.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pandas Data Cleaning and Modeling with Python</title>
+      <link>/courses/python/pandas_ml_video/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/python/pandas_ml_video/</guid>
+      <description>
+
+&lt;p&gt;Pandas Data Cleaning and Modeling with Python&lt;br /&gt;
+by Daniel Y. Chen&lt;br /&gt;
+Publisher: Addison-Wesley Professional&lt;br /&gt;
+Release Date: January 2018&lt;br /&gt;
+ISBN: 9780135170199&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/&#34; target=&#34;_blank&#34;&gt;https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;video-description&#34;&gt;Video Description&lt;/h1&gt;
+
+&lt;p&gt;The perfect follow up to Pandas Data Analysis with Python Fundamentals LiveLessons for the aspiring data scientist&lt;/p&gt;
+
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;In Pandas Data Cleaning and Modeling with Python LiveLessons, Daniel Y. Chen builds upon the foundation he built in Pandas Data Analysis with Python Fundamentals LiveLessons. In this LiveLesson Dan teaches you the techniques and skills you need to know to be able to clean and process your data. Dan shows you how to do data munging using some of the built-in Python libraries that can be used to clean data loaded into Pandas. Once your data is clean you are going to want to analyze it, so next Dan introduces you to other libraries that are used for model fitting.&lt;/p&gt;
+
+&lt;h1 id=&#34;skill-level&#34;&gt;Skill Level&lt;/h1&gt;
+
+&lt;p&gt;Beginner to Intermediate&lt;/p&gt;
+
+&lt;h1 id=&#34;learn-how-to&#34;&gt;Learn How To&lt;/h1&gt;
+
+&lt;p&gt;Use pandas data types
+Convert data types
+Use string methods and regular expressions
+Apply functions to data
+Aggregate, transform, and filter data
+Use pandas and Python date and time methods
+Model data&lt;/p&gt;
+
+&lt;h1 id=&#34;who-should-take-this-course&#34;&gt;Who Should Take This Course&lt;/h1&gt;
+
+&lt;p&gt;Those new to data science, particularly those with Python programming experience&lt;/p&gt;
+
+&lt;h1 id=&#34;course-requirements&#34;&gt;Course Requirements&lt;/h1&gt;
+
+&lt;p&gt;Basic programming skills, particularly in Python&lt;/p&gt;
+
+&lt;h1 id=&#34;lesson-descriptions&#34;&gt;Lesson Descriptions&lt;/h1&gt;
+
+&lt;h2 id=&#34;lesson-1-pandas-data-types&#34;&gt;Lesson 1: Pandas Data Types&lt;/h2&gt;
+
+&lt;p&gt;These lessons pick up where Pandas Data Analysis with Python Fundamentals LiveLessons left off. You learned the basics of subsetting, combining, and reshaping data. Now you can start learning how to cleaning your data. That begins with learning data types and how to find them in your data. Next comes the converting from one type to another, including converting data into numeric and string values. The lesson finishes with categorical data.&lt;/p&gt;
+
+&lt;h2 id=&#34;lesson-2-unstructured-text-and-strings-in-pandas&#34;&gt;Lesson 2: Unstructured Text and Strings in Pandas&lt;/h2&gt;
+
+&lt;p&gt;There are vast stores of data available as unstructured text. Understanding how to work with text data in Python is important when your dataset has text data that needs to be processed. The lesson begins with a basic overview of strings and the built-in python string methods. Next, Dan covers how to format strings. This will make your code more legible and can make the output more consistent and “prettier.” Dan then introduces regular expressions with the built-in regular expressions library (2.5) and how you can use regular expressions to do pattern matching. Finally, Dan shows you a quick example of the better, but not built-in, regex library.&lt;/p&gt;
+
+&lt;h2 id=&#34;lesson-3-applying-functions-to-data&#34;&gt;Lesson 3: Applying Functions to Data&lt;/h2&gt;
+
+&lt;p&gt;Applying functions is a fundamental skill when working with data. Application of functions incorporates many skills used in programming and data analytics. Instead of writing for loops to perform calculations and data manipulations, we write functions that work on a column-by-column or row-by-row basis. Dan begins with a quick introduction to functions in Python. Then, he turns to using simple functions on a toy dataset to see how apply works. Next, he applies functions on an actual dataset. You then learn how to write vectorized functions, functions that work on an element-wise basis. Finally, Dan takes a look at lambda functions for one-off calculations.&lt;/p&gt;
+
+&lt;h2 id=&#34;lesson-4-breaking-up-computations-using-groupby-operations-split-apply-combine&#34;&gt;Lesson 4: Breaking Up Computations Using groupby Operations: split-apply-combine&lt;/h2&gt;
+
+&lt;p&gt;groupby operations follow the mantra of split-apply-combine. Where your data is split and partitioned by a variable or variables, functions are applied to each partition, and the results are combined back into a single result. This technique is utilized heavily on distributed systems when the data no longer can fit on a single machine. There are three common operations when performing a groupby. First, there is aggregation where you summarize your data into a single value. For example, calculating the average life expectancy across each year in your data would be aggregation. Transformation is done when you perform a specific calculation for each individual group. Next, there is filtration, where you reduce your data based on a calculation within a group.&lt;/p&gt;
+
+&lt;p&gt;Dan also looks further into the groupby object itself and how you can iterate over your groups. And finally, he demonstrates the multi-index and how you can chain multiple groupby calculations together.&lt;/p&gt;
+
+&lt;h2 id=&#34;lesson-5-dates-and-times-in-python-and-pandas&#34;&gt;Lesson 5: Dates and Times in Python and Pandas&lt;/h2&gt;
+
+&lt;p&gt;One of pandas’ strong suits is handling dates and times in time-series data. There are many convenient functions and methods that make working and processing datetime data much easier in pandas. Dan begins by looking at Python’s datetime object and how to create them. Next, you learn how you can convert columns in your data into datetime objects. He then shows you how you can directly load data into a datetime without having an intermediate step and then convert it later. Once you have your data stored as a proper date and time object, Dan shows you how you can extract various datetime components and how you can perform calculations and create Timedeltas. Then Dan shows you other functions and methods you can perform on datetimes, and how you can download stock data from the internet. Once you have your data processed the way you want, Dan takes you back to the basics and you learn how you can leverage dates and times to subset your data. From there you learn how you can create ranges of dates, followed by an example of shifting date values. Finally, Dan covers how you can resample your dates and how you can convert dates and times across various time zones.&lt;/p&gt;
+
+&lt;h2 id=&#34;lesson-6-modeling-connecting-to-the-world-outside-of-pandas&#34;&gt;Lesson 6: Modeling: Connecting to the World Outside of Pandas&lt;/h2&gt;
+
+&lt;p&gt;Once you have your data processed the way you want, you can begin modeling your data to gain insights. This lesson begins to expand our world within pandas to other Python libraries used to model data. Dan begins with linear regression and how it is performed in two very popular modeling libraries: statsmodels and scikit-learn. While linear regression is great if your outcome or response variable is continuous, you can use logistic regression when your outcome of interest is a binary variable. When you begin working with count data, you use a Poisson or negative binomial model, depending on the assumptions and characteristics of your data. Next, Dan introduces you to survival models, when you have censored data and want to model the time a particular event will occur. Dan then covers how you can perform model diagnostics and compare model performance by looking at residuals, ANOVA, AIC, BIC, and k-fold cross validation. He then covers how you can have a more parsimonious model that can better predict future data points by using regularization techniques, and the lesson concludes by introducing clustering techniques and how you can use principal components analysis to visualize your k-means results.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cleaning Data in Python</title>
+      <link>/courses/python/dc_cleaning_data_python/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/python/dc_cleaning_data_python/</guid>
+      <description>
+
+&lt;p&gt;This course will equip you with all the skills you need to clean your data in Python.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.datacamp.com/courses/cleaning-data-in-python&#34; target=&#34;_blank&#34;&gt;https://www.datacamp.com/courses/cleaning-data-in-python&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;course-description&#34;&gt;Course Description&lt;/h1&gt;
+
+&lt;p&gt;A vital component of data science involves acquiring raw data and getting it into a form ready for analysis. In fact, it is commonly said that data scientists spend 80% of their time cleaning and manipulating data, and only 20% of their time actually analyzing it. This course will equip you with all the skills you need to clean your data in Python, from learning how to diagnose your data for problems to dealing with missing values and outliers. At the end of the course, you&amp;rsquo;ll apply all of the techniques you&amp;rsquo;ve learned to a case study in which you&amp;rsquo;ll clean a real-world Gapminder dataset!&lt;/p&gt;
+
+&lt;h1 id=&#34;exploring-your-data&#34;&gt;Exploring your data&lt;/h1&gt;
+
+&lt;p&gt;So you&amp;rsquo;ve just got a brand new dataset and are itching to start exploring it. But where do you begin, and how can you be sure your dataset is clean? This chapter will introduce you to the world of data cleaning in Python! You&amp;rsquo;ll learn how to explore your data with an eye for diagnosing issues such as outliers, missing values, and duplicate rows.&lt;/p&gt;
+
+&lt;h1 id=&#34;tidying-data-for-analysis&#34;&gt;Tidying data for analysis&lt;/h1&gt;
+
+&lt;p&gt;Here, you&amp;rsquo;ll learn about the principles of tidy data and more importantly, why you should care about them and how they make subsequent data analysis more efficient. You&amp;rsquo;ll gain first hand experience with reshaping and tidying your data using techniques such as pivoting and melting.&lt;/p&gt;
+
+&lt;h1 id=&#34;combining-data-for-analysis&#34;&gt;Combining data for analysis&lt;/h1&gt;
+
+&lt;p&gt;The ability to transform and combine your data is a crucial skill in data science, because your data may not always come in one monolithic file or table for you to load. A large dataset may be broken into separate datasets to facilitate easier storage and sharing. Or if you are dealing with time series data, for example, you may have a new dataset for each day. No matter the reason, it is important to be able to combine datasets so you can either clean a single dataset, or clean each dataset separately and then combine them later so you can run your analysis on a single dataset. In this chapter, you&amp;rsquo;ll learn all about combining data.&lt;/p&gt;
+
+&lt;h1 id=&#34;cleaning-data-for-analysis&#34;&gt;Cleaning data for analysis&lt;/h1&gt;
+
+&lt;p&gt;Here, you&amp;rsquo;ll dive into some of the grittier aspects of data cleaning. You&amp;rsquo;ll learn about string manipulation and pattern matching to deal with unstructured data, and then explore techniques to deal with missing or duplicate data. You&amp;rsquo;ll also learn the valuable skill of programmatically checking your data for consistency, which will give you confidence that your code is running correctly and that the results of your analysis are reliable!&lt;/p&gt;
+
+&lt;h1 id=&#34;case-study&#34;&gt;Case study&lt;/h1&gt;
+
+&lt;p&gt;In this final chapter, you&amp;rsquo;ll apply all of the data cleaning techniques you&amp;rsquo;ve learned in this course towards tidying a real-world, messy dataset obtained from the Gapminder Foundation. Once you&amp;rsquo;re done, not only will you have a clean and tidy dataset, you&amp;rsquo;ll also be ready to start working on your own data science projects using the power of Python!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

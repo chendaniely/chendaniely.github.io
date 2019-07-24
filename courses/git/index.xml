@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Academic</title>
+    <link>/courses/git/</link>
+    <description>Recent content in Git on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/courses/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Essentials LiveLessons</title>
+      <link>/courses/git/git_essentials/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
+      
+      <guid>/courses/git/git_essentials/</guid>
+      <description>
+
+&lt;p&gt;Git Essentials LiveLessons&lt;br /&gt;
+by Daniel Y. Chen&lt;br /&gt;
+Publisher: Addison-Wesley Professional&lt;br /&gt;
+Release Date: September 2016&lt;br /&gt;
+ISBN: 9780134655284&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.oreilly.com/library/view/git-essentials-livelessons/9780134655284/&#34; target=&#34;_blank&#34;&gt;https://www.oreilly.com/library/view/git-essentials-livelessons/9780134655284/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;video-description&#34;&gt;Video Description&lt;/h1&gt;
+
+&lt;p&gt;Git has emerged as the leading revision control system for open source projects. Git is a distributed revision control and source code management (SCM) system with an emphasis on speed.
+Description&lt;/p&gt;
+
+&lt;p&gt;Git Essentials LiveLessons teaches the skills necessary to version control with git. The first part of the course begins with the basics of Git and how to use it as an individual programmer. Part 1: Git Fundamentals covers installation and setup, fundamental commands, and how to use remote and branches in git using Github as the online hosting service to lay the foundation for more advanced workflows.&lt;/p&gt;
+
+&lt;p&gt;After the basics are covered, Part 2: Collaborating with Git shows how to work collaboratively with teams with git. Three common ways of collaboration are covered, including: adding other users to your project repository, forking a copy of repository and submitting changes for review, and finally using the git flow workflow.&lt;/p&gt;
+
+&lt;h1 id=&#34;skill-level&#34;&gt;Skill Level&lt;/h1&gt;
+
+&lt;p&gt;Beginner&lt;/p&gt;
+
+&lt;h1 id=&#34;you-will-learn-how-to&#34;&gt;You Will Learn How To&lt;/h1&gt;
+
+&lt;p&gt;Set up and install git&lt;/p&gt;
+
+&lt;p&gt;Use basic git commands&lt;/p&gt;
+
+&lt;p&gt;Understand remotes and branches&lt;/p&gt;
+
+&lt;p&gt;Add a collaborator&lt;/p&gt;
+
+&lt;p&gt;Push/pull branches and incorporate changes&lt;/p&gt;
+
+&lt;p&gt;Fork a repository and make changes while staying in sync&lt;/p&gt;
+
+&lt;p&gt;Work with branches&lt;/p&gt;
+
+&lt;p&gt;Use a Git Flow workflow&lt;/p&gt;
+
+&lt;h1 id=&#34;who-should-take-this-course&#34;&gt;Who Should Take This Course&lt;/h1&gt;
+
+&lt;p&gt;Individuals who want to incorporate version control and more robust collaboration methods into their workflow.&lt;/p&gt;
+
+&lt;h1 id=&#34;course-pre-requisites&#34;&gt;Course Pre-Requisites&lt;/h1&gt;
+
+&lt;p&gt;Basic command line skills:
+- moving to directories
+- creating and editing plain text files&lt;/p&gt;
+
+&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+
+&lt;p&gt;Introduction to Git Essentials&lt;/p&gt;
+
+&lt;p&gt;Introduction to Part I&lt;/p&gt;
+
+&lt;p&gt;Part I: Git Basics&lt;/p&gt;
+
+&lt;p&gt;Lesson 1: Setting Up Git&lt;/p&gt;
+
+&lt;p&gt;Learning objectives&lt;/p&gt;
+
+&lt;p&gt;1.1 Understand what can Git do for you&lt;/p&gt;
+
+&lt;p&gt;1.2 Install Git&lt;/p&gt;
+
+&lt;p&gt;1.3 Configure Git&lt;/p&gt;
+
+&lt;p&gt;Lesson 2: Understanding and Using Git- The Basics&lt;/p&gt;
+
+&lt;p&gt;Learning objectives&lt;/p&gt;
+
+&lt;p&gt;2.1 Create a Git repository (init, status)&lt;/p&gt;
+
+&lt;p&gt;2.2 Track changes (add, commit, log; what is master)&lt;/p&gt;
+
+&lt;p&gt;2.3 Look at differences&lt;/p&gt;
+
+&lt;p&gt;2.4 Look around&lt;/p&gt;
+
+&lt;p&gt;2.5 Undo changes&lt;/p&gt;
+
+&lt;p&gt;2.6 Ignore things in Git&lt;/p&gt;
+
+&lt;p&gt;Lesson 3: Remotes and Branches&lt;/p&gt;
+
+&lt;p&gt;Learning objectives&lt;/p&gt;
+
+&lt;p&gt;3.1 Understand what GitHub is and how it&amp;rsquo;s used&lt;/p&gt;
+
+&lt;p&gt;3.2 Use remotes with https&lt;/p&gt;
+
+&lt;p&gt;3.3 Use remotes with ssh&lt;/p&gt;
+
+&lt;p&gt;3.4 Utilize self collaboration&lt;/p&gt;
+
+&lt;p&gt;3.5 Use Git for project management&lt;/p&gt;
+
+&lt;p&gt;3.6 Use branches on your own&lt;/p&gt;
+
+&lt;p&gt;3.7 Understand Git workflows&lt;/p&gt;
+
+&lt;p&gt;3.8 Incorporating changes after you branch&lt;/p&gt;
+
+&lt;p&gt;3.9 Use Git GUIs&lt;/p&gt;
+
+&lt;p&gt;Introduction to Part II&lt;/p&gt;
+
+&lt;p&gt;Part II: Collaborating with Git&lt;/p&gt;
+
+&lt;p&gt;Lesson 4: Adding a Collaborator&lt;/p&gt;
+
+&lt;p&gt;Learning objectives&lt;/p&gt;
+
+&lt;p&gt;4.1 Add a collaborator, push and pull down changes&lt;/p&gt;
+
+&lt;p&gt;4.2 Push/pull with branches and request a pull&lt;/p&gt;
+
+&lt;p&gt;4.3 Incorporate changes in existing branches&lt;/p&gt;
+
+&lt;p&gt;Lesson 5: Forking Workflow of Collaboration&lt;/p&gt;
+
+&lt;p&gt;Learning objectives&lt;/p&gt;
+
+&lt;p&gt;5.1 Fork a repository and making a change as a collaborator&lt;/p&gt;
+
+&lt;p&gt;5.2 Working with changes and staying in sync&lt;/p&gt;
+
+&lt;p&gt;5.3 Working with branches&lt;/p&gt;
+
+&lt;p&gt;Lesson 6: Git Flow Workflow of Collaboration&lt;/p&gt;
+
+&lt;p&gt;Learning objectives&lt;/p&gt;
+
+&lt;p&gt;6.1 Forking and making changes on a Git Flow repository&lt;/p&gt;
+
+&lt;p&gt;6.2 Working with changes and staying in sync&lt;/p&gt;
+
+&lt;p&gt;6.3 Staying in sync with conflicts&lt;/p&gt;
+
+&lt;p&gt;Summary&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

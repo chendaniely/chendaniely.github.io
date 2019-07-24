@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scientific paper on Academic</title>
+    <link>/tags/scientific-paper/</link>
+    <description>Recent content in scientific paper on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/scientific-paper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Simple Model of Global Cascades on Random Networks</title>
+      <link>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</link>
+      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/duncanjwatts&#34; target=&#34;_blank&#34;&gt;Duncan J Watts&lt;/a&gt; wrote a paper that
+was published in 2002 titled &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/16578874&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;A simple model of global
+cascades on random networks&amp;rdquo;&lt;/a&gt; in the Proceedings of the National Academy of Sciences (PNAS).
+It&amp;rsquo;s a seminal paper in my current
+work on information diffusion in (social) networks.  Watts shows how
+the interactions between local dependencies, fractional threshold, and
+heterogeneity relate to information cascades in networks.  My work
+builds on these ideas, so it&amp;rsquo;s important to have a strong
+understanding of the terms and model specifications outlined in the
+paper.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been working with my Masters and Doctoral advisor,
+&lt;a href=&#34;http://mark-orr.github.io/&#34; target=&#34;_blank&#34;&gt;Mark Orr&lt;/a&gt; on a simulation platform that
+incorporates artificial neural networks within an agent-based
+simulation.  The project is called &amp;ldquo;Multi-Agent Neural Network&amp;rdquo; (MANN)
+and it was my
+&lt;a href=&#34;http://chendaniely.github.io/tutorials/2015/02/05/open-sourcing-a-python-project/&#34; target=&#34;_blank&#34;&gt;first&lt;/a&gt;
+open source project; the code can be found in two parts:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chendaniely/multi-agent-neural-network&#34; target=&#34;_blank&#34;&gt;The Python module&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chendaniely/multidisciplinary-diffusion-model-experiments&#34; target=&#34;_blank&#34;&gt;The simulation code&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I&amp;rsquo;m currently working on a refactoring a lot of the old code here:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chendaniely/mann2&#34; target=&#34;_blank&#34;&gt;MANN2 Python module&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chendaniely/mann2_simulations&#34; target=&#34;_blank&#34;&gt;MANN2 simulation code&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;the-paper&#34;&gt;The paper&lt;/h1&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;em&gt;These are my notes on the paper.  In no way shape or form am I claiming the content below as my own work, it all comes from &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/16578874&#34; target=&#34;_blank&#34;&gt;the paper&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;em&gt;Binary decisions with externalities&lt;/em&gt; is a general class of problems
+that can be used to model a wide variety of real-world problems.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Cascades limited by connectivity&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Connectivity can play a role in global cascades.
+Fewer connections mean a lesser chance of information spreading within a network.
+The abstract references
+
+&lt;ul&gt;
+&lt;li&gt;power law&lt;/li&gt;
+&lt;li&gt;cluster size distribution in standard percolation theory&lt;/li&gt;
+&lt;li&gt;avalanches in self-organized criticality&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Cascades limited by local stability&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When a network is highly connected, cascades will occur when a
+threshold number of connected nodes incorporate the information.
+Additionally, these types of networks have a bimodal distribution
+of a global cascade, either one will happen or it will not.&lt;/li&gt;
+&lt;li&gt;When the &lt;em&gt;threshold&lt;/em&gt; of agent&amp;rsquo;s to incorporate a bit of
+information is heterogeneous, the entire system has a higher
+chance of a global information cascade.
+
+&lt;ul&gt;
+&lt;li&gt;When the agent&amp;rsquo;s threshold is heterogeneous, the ones who
+have a lower threshold are &lt;em&gt;more&lt;/em&gt; &lt;em&gt;vulnerable&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Conversely, when the &lt;em&gt;degree&lt;/em&gt; distribution is heterogeneous, the
+system is less likely to have a information cascade.
+
+&lt;ul&gt;
+&lt;li&gt;When an agent&amp;rsquo;s degree centrality is heterogeneous, the ones
+who have a higher degree will be &lt;em&gt;less&lt;/em&gt; vulnerable.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The model Watts outlines has 3 unique features:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;local dependencies&lt;/li&gt;
+&lt;li&gt;fractional thresholds&lt;/li&gt;
+&lt;li&gt;heterogeneity&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Network heterogeneity and threshold heterogeneity are not equivalent.&lt;/p&gt;
+
+&lt;p&gt;Goals of the paper:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Probability of a global cascade from a single node&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;definitions&#34;&gt;Definitions&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;cascade&lt;/strong&gt;: event of any size triggered by an initial seed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;global cascades&lt;/strong&gt;: a cascade that occupies a finite fraction of an infinite network.  A sufficiently large cascade.  More than a fixed fraction of a large, but finite network.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;diffusion&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;random network&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;agents&lt;/strong&gt;: nodes of a network&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;neighbors&lt;/strong&gt;: all relevant incoming signals to an agent (usually other agents who have a directed edge to the agent in question)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;connectivity&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;power law distribution&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;cluster size&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;local stability&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$\phi$&lt;/strong&gt;: threshold
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;$f(\phi)$&lt;/strong&gt;: distribution where $\phi$ is drawn from
+
+&lt;ul&gt;
+&lt;li&gt;unit interval and normalized such that the area under the distribution is 1&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$n$&lt;/strong&gt;: number of agents in the network&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$k$&lt;/strong&gt;: number of neighbors each agent is connected to
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;$p_k$&lt;/strong&gt;: probability of an agent being connected to $k$ neighbors (degree distribution)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$z$&lt;/strong&gt;: average number of neighbors $\langle k \rangle$ (coordination number)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$\phi_0$&lt;/strong&gt;: the number of agents that are seeded with 1 at the start of the simulation
+
+&lt;ul&gt;
+&lt;li&gt;$\phi_0 \ll 1$&lt;/li&gt;
+&lt;li&gt;See definition on &lt;em&gt;small seed&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;vulnerable vertex&lt;/strong&gt;:  an agent that has a small threshold ($\phi \le \frac{1}{k}$) or has a degree, $k$ such that $k \le K = [\frac{1}{\phi}]$
+
+&lt;ul&gt;
+&lt;li&gt;$\rho_k$: probability that an agent with degree $k$ is vulnerable
+
+&lt;ul&gt;
+&lt;li&gt;$\rho_k = P[\phi \le \frac{1}{k}]$&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stable vertex&lt;/strong&gt;: one that is not vulnerable. Stable vertices do not flip states at the start of a simulation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;small seed&lt;/strong&gt;: three orders of magnitude less than the system size, $n$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;innovator&lt;/strong&gt;: an agent that is seeded&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;early adopter&lt;/strong&gt;: a vulnerable agent&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;early and late majority&lt;/strong&gt;: agents who can be influenced if exposed to multiple early adopters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;model-specification&#34;&gt;Model Specification&lt;/h1&gt;
+
+&lt;h2 id=&#34;how-the-simulation-runs&#34;&gt;How the Simulation runs&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;$n$ agents in a network start off with a state of 0&lt;/li&gt;
+&lt;li&gt;Individual agents can only have a state that is either 0 or 1&lt;/li&gt;
+&lt;li&gt;Each agent has $k$ neighbors&lt;/li&gt;
+&lt;li&gt;An agent gets a new state of 1, if a fraction of its neighbors, $\phi$ are also 1.
+
+&lt;ul&gt;
+&lt;li&gt;Otherwise an agent gets a new state of 0.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;During each time step, the population evolves:
+
+&lt;ol&gt;
+&lt;li&gt;Update states in random, asynchronous order using the threshold rule&lt;/li&gt;
+&lt;li&gt;Once an agent has a state of 1, it will stay at 1 for the remainder of the simulation&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;how-the-model-is-parameterized&#34;&gt;How the model is parameterized&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;$\phi$ and $k$ &lt;em&gt;may&lt;/em&gt; be heterogeneous
+
+&lt;ul&gt;
+&lt;li&gt;To simplify the simulations, the paper has a homogeneous threshold, $\phi$
+
+&lt;ul&gt;
+&lt;li&gt;$f(\phi) = \delta(\phi - \phi_*)$&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;The network is a uniform random graph&lt;/li&gt;
+&lt;li&gt;A small seed&lt;/li&gt;
+&lt;li&gt;Any pair of vertices is connected with probability $p = \frac{z}{n}$
+
+&lt;ol&gt;
+&lt;li&gt;in uniform random graphs $p_k = \text{the Poisson distribution}$&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;$n = 10,000$&lt;/li&gt;
+&lt;li&gt;100 random runs of each simulation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;values-used-in-figures&#34;&gt;Values used in figures&lt;/h2&gt;
+
+&lt;h3 id=&#34;fig-1&#34;&gt;Fig 1&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F1/&#34; target=&#34;_blank&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F1/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Shows for a given threshold, $\phi$ and average number of neighbors, $z$,
+where the cascade condition is satisfied.
+This is an analytical solution, not a simulated solution&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;$\phi$: range from 0.10 to 0.25 in increments of 0.01&lt;/li&gt;
+&lt;li&gt;$z$: range from 0 to 15&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;fig-2&#34;&gt;Fig 2&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F2/&#34; target=&#34;_blank&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F2/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking at a specific threshold value, $\phi = 0.18$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$n$ = 10,000&lt;/li&gt;
+&lt;li&gt;1,000 random realizations of the network and initial conditions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;fig-3&#34;&gt;Fig 3&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F3/&#34; target=&#34;_blank&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F3/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;a log-log plot of the cascade size vs cumulative distribution&lt;/p&gt;
+
+&lt;h3 id=&#34;fig-4&#34;&gt;Fig 4&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F4/&#34; target=&#34;_blank&#34;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC122850/figure/F4/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/16578874&#34; target=&#34;_blank&#34;&gt;http://www.ncbi.nlm.nih.gov/pubmed/16578874&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

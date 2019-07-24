@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="EDIT: I&rsquo;ve added the notes from @dataandme and linked to people&rsquo;s twitter and slides (if I found them). This is probably going to be an ongoing process&hellip;
+ Another year and another talk at the NYC R Conference. As always, the conference was filled with excellent speakers (I&rsquo;m biased here becuase I was one of them&hellip;), food, and people.
+Brooke Watson (@brookLYNevery1) did a fantastic job illustrating and summarzing all of the talks.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2018/2018-04-22-rstatsnyc/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2018/2018-04-22-rstatsnyc/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/post/2018/2018-04-22-rstatsnyc/">
+  <meta property="og:title" content="#rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs | Academic">
+  <meta property="og:description" content="EDIT: I&rsquo;ve added the notes from @dataandme and linked to people&rsquo;s twitter and slides (if I found them). This is probably going to be an ongoing process&hellip;
+ Another year and another talk at the NYC R Conference. As always, the conference was filled with excellent speakers (I&rsquo;m biased here becuase I was one of them&hellip;), food, and people.
+Brooke Watson (@brookLYNevery1) did a fantastic job illustrating and summarzing all of the talks."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-04-22T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-07-23T20:45:50-04:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>#rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs | Academic</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Academic</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">#rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs</h1>
+
+  
+  <p class="page-subtitle">An ongoing set up updates about what happened at the 2018 NYC R Conference</p>
+  
+
+  
+    
+
+
+
+<meta content="2018-04-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-07-23 20:45:50 -0400 EDT" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>2019-07-23</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/2018/2018-04-22-rstatsnyc/#disqus_thread"></a>
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/2018/2018-04-22-rstatsnyc/&amp;text=#rstatsnyc%20as%20told%20by%20@brookLYNevery1,%20@dataandme,%20and%20autographs" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/2018/2018-04-22-rstatsnyc/&amp;t=#rstatsnyc%20as%20told%20by%20@brookLYNevery1,%20@dataandme,%20and%20autographs" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=#rstatsnyc%20as%20told%20by%20@brookLYNevery1,%20@dataandme,%20and%20autographs&amp;body=/post/2018/2018-04-22-rstatsnyc/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2018/2018-04-22-rstatsnyc/&amp;title=#rstatsnyc%20as%20told%20by%20@brookLYNevery1,%20@dataandme,%20and%20autographs" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=#rstatsnyc%20as%20told%20by%20@brookLYNevery1,%20@dataandme,%20and%20autographs%20/post/2018/2018-04-22-rstatsnyc/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/2018/2018-04-22-rstatsnyc/&amp;title=#rstatsnyc%20as%20told%20by%20@brookLYNevery1,%20@dataandme,%20and%20autographs" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>EDIT: I&rsquo;ve added the notes from <a href="https://twitter.com/dataandme" target="_blank">@dataandme</a> and linked to people&rsquo;s twitter and slides (if I found them). This is probably going to be an ongoing process&hellip;</p>
+
+<hr>
+
+<p>Another year and another talk at the <a href="https://www.rstats.nyc/" target="_blank">NYC R Conference</a>.
+As always,
+the conference was filled with excellent speakers (I&rsquo;m biased here becuase I was one of them&hellip;),
+food, and people.</p>
+
+<p>Brooke Watson (<a href="https://twitter.com/brookLYNevery1" target="_blank">@brookLYNevery1</a>) did a <em>fantastic</em> job
+illustrating and summarzing <em>all</em> of the talks.
+So I&rsquo;ve just linked to all her tweets (after the break).</p>
+
+<p>Oh&hellip; and I got my <a href="#signedbooks">books signed :)</a></p>
+
+<p><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/Bh4-7x2Bf-2/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/Bh4-7x2Bf-2/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">#rstatsnyc as told by #autographs. #rstats #nycdatamafia #python #datascience</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/chendaniely/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Daniel Chen</a> (@chendaniely) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2018-04-22T22:59:39+00:00">Apr 22, 2018 at 3:59pm PDT</time></p></div></blockquote> <script async defer src="//www.instagram.com/embed.js"></script></p>
+
+<!-- more -->
+
+<h1 id="accelerating-cancer-research-with-r">Accelerating Cancer Research with R</h1>
+
+<p>Sandy Griffith, Flatiron Health, <a href="https://twitter.com/sgrifter" target="_blank">@sgrifter</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/sgrifter?ref_src=twsrc%5Etfw">@sgrifter</a> kicking off the <a href="https://twitter.com/nyrconf?ref_src=twsrc%5Etfw">@nyrconf</a> with a bang 🎉 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/9A9R0ozLBc">pic.twitter.com/9A9R0ozLBc</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987323042094354432?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="skin-first-makeup-second-a-metaphor-for-data-science">Skin First, Makeup Second: A Metaphor for Data Science</h1>
+
+<p>Eurry Kim, Glossier, <a href="https://twitter.com/eurryPlot" target="_blank">@eurryPlot</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/eurryPlot?ref_src=twsrc%5Etfw">@eurryPlot</a> metaphors on 💯, skincare on 💯, walk-out song on 💯. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/vt8FpS4EYg">pic.twitter.com/vt8FpS4EYg</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987328781764513793?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">NYR 🔥 thus far&hellip; <a href="https://twitter.com/sgrifter?ref_src=twsrc%5Etfw">@sgrifter</a> &amp; <a href="https://twitter.com/eurryPlot?ref_src=twsrc%5Etfw">@eurryPlot</a> starting out 💪<a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/6v8qZTYE33">pic.twitter.com/6v8qZTYE33</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/987350390524882946?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="r-for-big-data-in-the-cloud">R for Big Data in the Cloud</h1>
+
+<p>Marck Vaisman, Microsoft, <a href="https://twitter.com/wahalulu" target="_blank">@wahalulu</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/big?src=hash&amp;ref_src=twsrc%5Etfw">#big</a> <a href="https://twitter.com/hashtag/data?src=hash&amp;ref_src=twsrc%5Etfw">#data</a> <a href="https://twitter.com/hashtag/in?src=hash&amp;ref_src=twsrc%5Etfw">#in</a> <a href="https://twitter.com/hashtag/the?src=hash&amp;ref_src=twsrc%5Etfw">#the</a> <a href="https://twitter.com/hashtag/cloud?src=hash&amp;ref_src=twsrc%5Etfw">#cloud</a> !!!!! And abstracting away the backend, which truly sounds ideal. <br>By <a href="https://twitter.com/wahalulu?ref_src=twsrc%5Etfw">@wahalulu</a> <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/3z3L2Joiyq">pic.twitter.com/3z3L2Joiyq</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987335059308007424?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="the-lesser-known-stars-of-the-tidyverse">The Lesser Known Stars of the Tidyverse</h1>
+
+<p>Emily Robinson, DataCamp, <a href="https://twitter.com/robinson_es" target="_blank">@robinson_es</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The lesser known stars of the tidyverse, from a greater known star of <a href="https://twitter.com/RLadiesNYC?ref_src=twsrc%5Etfw">@RLadiesNYC</a> 🌟 <a href="https://twitter.com/robinson_es?ref_src=twsrc%5Etfw">@robinson_es</a> at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/zGQQ4y0fUR">pic.twitter.com/zGQQ4y0fUR</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987346846950535171?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">👻 Big Data in the ☁ w/ <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> 🗣 <a href="https://twitter.com/wahalulu?ref_src=twsrc%5Etfw">@wahalulu</a><br>&amp;<br>Lesser known 🌟s of the <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> 💃 <a href="https://twitter.com/robinson_es?ref_src=twsrc%5Etfw">@robinson_es</a><br>🗽 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/gc3YkqxgOu">pic.twitter.com/gc3YkqxgOu</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/987351370666856448?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="deep-learning-vs-machine-learning-in-r">Deep Learning vs Machine Learning in R</h1>
+
+<p>Jared P. Lander, Lander Analytics, <a href="https://twitter.com/jaredlander" target="_blank">@jaredlander</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw">@jaredlander</a> speaking truth to deep learning hype. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/emESZ48Ji6">pic.twitter.com/emESZ48Ji6</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987352531008393216?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="doing-data-science">Doing Data Science</h1>
+
+<p>Dan Chen, Virginia Tech, <a href="https://twitter.com/chendaniely" target="_blank">@chendaniely</a></p>
+
+<p><a href="https://github.com/chendaniely/rstatsnyc_2018-data_science/blob/master/talk.html" target="_blank">slides</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw">@chendaniely</a> on using best practices while getting stuff done. TL;DR: in structure there is freedom.  <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/SssCn47HmW">pic.twitter.com/SssCn47HmW</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987357809699418117?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;ve uploaded and linked my <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> slides on doing <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a>, link in the ongoing blogpost: <a href="https://t.co/wqFARzBbss">https://t.co/wqFARzBbss</a>. Comes complete with my dog, Hobbes. <a href="https://twitter.com/hashtag/rdogladies?src=hash&amp;ref_src=twsrc%5Etfw">#rdogladies</a>. <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/fiR0h5y8OB">pic.twitter.com/fiR0h5y8OB</a></p>&mdash; Dⓐniel Chen (@chendaniely) <a href="https://twitter.com/chendaniely/status/988535088014032896?ref_src=twsrc%5Etfw">April 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>First time converting slides to PDF.  First time publishing on Speaker Deck. Hope it turns out okay &gt;.&lt;</p>
+
+<script async class="speakerdeck-embed" data-id="60ff3d852b3e4f5dafee9e97b8a12882" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
+
+<h1 id="forecasting-at-scale-how-and-why-we-developed-prophet-for-forecasting-at-facebook">Forecasting at Scale: How and Why We Developed Prophet for Forecasting at Facebook</h1>
+
+<p>Sean Taylor, Facebook, <a href="https://twitter.com/seanjtaylor" target="_blank">@seanjtaylor</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/seanjtaylor?ref_src=twsrc%5Etfw">@seanjtaylor</a> talked about scaling machine learning, which is really about making tools more usable and interpretable. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/KJMy0Q4LdL">pic.twitter.com/KJMy0Q4LdL</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987812859873779713?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="the-modern-r-data-package">The Modern R Data Package</h1>
+
+<p>Noam Ross, ROpenSci &amp; EcoHealth Alliance, <a href="https://twitter.com/noamross" target="_blank">@noamross</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/noamross?ref_src=twsrc%5Etfw">@noamross</a> talked about the best ways to make data available and evergreen for analysis in R. Lots of lessons learned from the data packaging at <a href="https://twitter.com/EcoHealthNYC?ref_src=twsrc%5Etfw">@EcoHealthNYC</a>! <a href="https://t.co/bOJrkahuvT">pic.twitter.com/bOJrkahuvT</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987814482528342020?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="open-source-sampling-building-and-remixing-packages-in-r">Open Source Sampling: Building and Remixing Packages in R</h1>
+
+<p>Brooke Watson, EcoHealth Alliance, <a href="https://twitter.com/brookLYNevery1" target="_blank">@brookLYNevery1</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Finally got around to drawing my own <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> talk on the train home. Key point: copy and remix from your unique multitude of interests, and you’ll probably make something new. Thank you for not judging my unrealistic hair expectations! <br><br>Slides here: <a href="https://t.co/ZxA2jBxL2c">https://t.co/ZxA2jBxL2c</a> <a href="https://t.co/E7pPoPes8T">pic.twitter.com/E7pPoPes8T</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987829373540716544?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="r-in-usma">R in USMA</h1>
+
+<p>Dusty Turner, United States Military Academy, <a href="https://twitter.com/DTDusty" target="_blank">@DTDusty</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/DTDusty?ref_src=twsrc%5Etfw">@DTDusty</a> using shiny apps to make learning more interesting for everyone, from 6th graders to army cadets. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/7praNmFY1q">pic.twitter.com/7praNmFY1q</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987412652946284547?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="applying-deep-learning-to-satellite-images-to-estimate-violence-in-syria-and-poverty-in-mexico">Applying Deep Learning to Satellite Images to Estimate Violence in Syria and Poverty in Mexico</h1>
+
+<p>Jonathan Hersh, Chapman University, <a href="https://twitter.com/DogmaticPrior" target="_blank">@DogmaticPrior</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/DogmaticPrior?ref_src=twsrc%5Etfw">@DogmaticPrior</a> on balancing model accuracy with model usefulness in humanitarian settings. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/zVDgxC95Fr">pic.twitter.com/zVDgxC95Fr</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987414601095630848?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="apache-arrow-a-cross-language-development-platform-for-in-memory-analytics">Apache Arrow: A Cross-Language Development Platform for In-Memory Analytics</h1>
+
+<p>Wes McKinney, Two Sigma, <a href="https://twitter.com/wesmckinn" target="_blank">@wesmckinn</a></p>
+
+<p><a href="https://www.slideshare.net/wesm/apache-arrow-crosslanguage-development-platform-for-inmemory-data" target="_blank">slides</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/wesmckinn?ref_src=twsrc%5Etfw">@wesmckinn</a> thinking BIG about data frame portability. Really excited to see what happens with Ursu labs. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/j3JfIfz3c4">pic.twitter.com/j3JfIfz3c4</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987419892143022080?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Rest of <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> Day 1 (before my little ❤ couldn&#39;t take it) feat. <a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw">@jaredlander</a> <a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw">@chendaniely</a> <a href="https://twitter.com/seanjtaylor?ref_src=twsrc%5Etfw">@seanjtaylor</a> <a href="https://twitter.com/noamross?ref_src=twsrc%5Etfw">@noamross</a> <a href="https://twitter.com/brookLYNevery1?ref_src=twsrc%5Etfw">@brookLYNevery1</a> <a href="https://twitter.com/DTDusty?ref_src=twsrc%5Etfw">@dtdusty</a> <a href="https://twitter.com/DogmaticPrior?ref_src=twsrc%5Etfw">@DogmaticPrior</a> <a href="https://twitter.com/wesmckinn?ref_src=twsrc%5Etfw">@wesmckinn</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> 🗽 <a href="https://t.co/pTOXTPTO5b">pic.twitter.com/pTOXTPTO5b</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/988435298005803008?ref_src=twsrc%5Etfw">April 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/67s7If0jpkCCo3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/wesm/apache-arrow-crosslanguage-development-platform-for-inmemory-data" title="Apache Arrow -- Cross-language development platform for in-memory data" target="_blank">Apache Arrow &ndash; Cross-language development platform for in-memory data</a> </strong> from <strong><a href="https://www.slideshare.net/wesm" target="_blank">Wes McKinney</a></strong> </div></p>
+
+<h1 id="r-in-minecraft">R in Minecraft</h1>
+
+<p>David Smith, Microsoft, <a href="https://twitter.com/revodavid" target="_blank">@revodavid</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/revodavid?ref_src=twsrc%5Etfw">@revodavid</a> on tricking The Youth™ into learning R via Minecraft 💫 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/yn77S34frl">pic.twitter.com/yn77S34frl</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987437600708456448?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="may-the-r-be-with-you-exploring-the-star-wars-universe">May the R be with You: Exploring the Star Wars Universe</h1>
+
+<p>Evelina Gabasova, Alan Turing Institute, <a href="https://twitter.com/evelgab" target="_blank">@evelgab</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/evelgab?ref_src=twsrc%5Etfw">@evelgab</a> CRUSHING the final talk of the day. Use interpretable datasets!! <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/zO05w8kO2r">pic.twitter.com/zO05w8kO2r</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987441813626740737?ref_src=twsrc%5Etfw">April 20, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="patterns-and-drivers-of-ice-shelf-melt">Patterns and Drivers of Ice Shelf Melt</h1>
+
+<p>Alex Boghosian, Columbia</p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Day two of <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> kicking off with avocado toast, glaciology, and cold brew. Alex Boghosian kicked it off right 💯 <a href="https://t.co/3rV06B7VsT">pic.twitter.com/3rV06B7VsT</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987702830227181568?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="cracking-into-the-meat-of-r-with-lobstr-console-visualisations-that-explain-how-stuff-works">Cracking into the Meat of R with lobstr: Console Visualisations that Explain How Stuff Works</h1>
+
+<p>Hadley Wickham, RStudio, <a href="https://twitter.com/hadleywickham" target="_blank">@hadleywickham</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw">@hadleywickham</a> on the lobstr package, which helps users understand the unique strengths of R. (Not least of which, that R is made to be read by humans). 💯 <a href="https://twitter.com/hashtag/rstatnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatnyc</a> <a href="https://t.co/FBCzDC1HRx">pic.twitter.com/FBCzDC1HRx</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987713547483451393?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="introduction-to-scikit-learn">Introduction to scikit-learn</h1>
+
+<p>Andreas Mueller, Columbia, <a href="https://twitter.com/amuellerml" target="_blank">@amuellerml</a></p>
+
+<p><a href="https://github.com/amueller/talks_odt/blob/master/2018/machine-learning-with-scikit-learn-NYC-R.pdf" target="_blank">slides</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Lots of good workflow advice in <a href="https://twitter.com/amuellerml?ref_src=twsrc%5Etfw">@amuellerml</a> ‘s <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> talk. Lots of data processing and selection goes into both supervised and unsupervised ML - cross validate the WHOLE pipeline, not just the final model. <a href="https://t.co/u8ABxwdv70">pic.twitter.com/u8ABxwdv70</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987726372092239873?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="how-long-will-i-live-the-statistics-behind-prognosis-in-cancer-research">How Long Will I Live? The Statistics Behind Prognosis in Cancer Research</h1>
+
+<p>Emily Zabor, Memorial Sloan Kettering, <a href="https://twitter.com/zabormetrics" target="_blank">@zabormetrics</a></p>
+
+<p><a href="https://github.com/zabore/slidedecks/blob/master/nyr2018_zabor.pdf" target="_blank">slides</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">LIVING for <a href="https://twitter.com/zabormetrics?ref_src=twsrc%5Etfw">@zabormetrics</a> ‘s Epi and biostats realness this morning. god bless statisticians saving people from themselves 💯 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/CBKq2wWLUo">pic.twitter.com/CBKq2wWLUo</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987732086617444353?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="automated-versus-do-it-yourself-methods-for-causal-inference-lessons-learned-from-a-data-analysis-competition">Automated Versus Do-it-Yourself Methods for Causal Inference: Lessons Learned From a Data Analysis Competition</h1>
+
+<p>Jennifer Hill, New York University</p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Nerding out SO hard at the back-to-back Epi stats talks. Jennifer Hill with some real talk about causal inference - it CAN be done in observational studies, if done carefully. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/4cS9PepySX">pic.twitter.com/4cS9PepySX</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987738817640706048?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="teach-the-tidyverse-to-beginners">Teach the Tidyverse to Beginners</h1>
+
+<p>David Robinson, DataCamp, <a href="https://twitter.com/drob" target="_blank">@drob</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Great talk from <a href="https://twitter.com/drob?ref_src=twsrc%5Etfw">@drob</a> from <a href="https://twitter.com/DataCamp?ref_src=twsrc%5Etfw">@DataCamp</a>, who really genuinely understand and empathizes with the needs and goals of beginners. My favorite takeaway: if you Mr. Miyagi your students or colleagues, they’ll lose interest before they learn karate (/R). <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/e6szgb7vf4">pic.twitter.com/e6szgb7vf4</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987767397213003778?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="open-source-success-a-decade-of-r-in-finance">Open Source Success: A Decade of R in Finance</h1>
+
+<p>Jeff Ryan, Citadel, <a href="https://twitter.com/lemnica" target="_blank">@lemnica</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/lemnica?ref_src=twsrc%5Etfw">@lemnica</a> on building software in community. “Build places that are nice to hang out in,” and the ecosystem will grow. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/dJSjzFCeeX">pic.twitter.com/dJSjzFCeeX</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987771563020902402?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="investigating-user-experience-with-natural-language-analysis">Investigating User Experience with Natural Language Analysis</h1>
+
+<p>Stephanie Kim, Algorithmia, <a href="https://twitter.com/StephLKim" target="_blank">@StephLKim</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Excellent talk from <a href="https://twitter.com/StephLKim?ref_src=twsrc%5Etfw">@StephLKim</a> about using NLP techniques to analyze user feedback 📖 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/Z35nqgIBSL">pic.twitter.com/Z35nqgIBSL</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987782101448740866?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection">Phrasing: Communicating Data Science Through Tweets, Gifs, and Classic Misdirection</h1>
+
+<p>Mara Averick, RStudio, <a href="https://twitter.com/dataandme" target="_blank">@dataandme</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/dataandme?ref_src=twsrc%5Etfw">@dataandme</a> crushing it with humor, humility, and Pam Poovey. 🔥🔥🔥<a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/cDzdEozoEj">pic.twitter.com/cDzdEozoEj</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987800135936684032?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="comparing-posteriors-estimating-practical-differences-between-models">Comparing Posteriors: Estimating Practical Differences Between Models</h1>
+
+<p>Max Kuhn, RStudio, <a href="https://twitter.com/topepos" target="_blank">@topepos</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/topepos?ref_src=twsrc%5Etfw">@topepos</a> on the tidyposterior package to compare performance between models in R with Stan. <sup>10</sup>&frasl;<sub>10</sub> talk, <sup>10</sup>&frasl;<sub>10</sub> phrasing <a href="https://t.co/HhGoaUHugp">pic.twitter.com/HhGoaUHugp</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987804401275428866?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="the-what-where-how-why-of-gpu-computing-with-r">The What-Where-How-Why of GPU computing with R</h1>
+
+<p>Kelly O’Briant, MapD, <a href="https://twitter.com/kellrstats" target="_blank">@kellrstats</a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Final talk of the day: <a href="https://twitter.com/kellrstats?ref_src=twsrc%5Etfw">@kellrstats</a>, making a Suuuper compelling case for incorporating GPU computing into R pipelines. So much data viz power! <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/IzZdBFSiSx">pic.twitter.com/IzZdBFSiSx</a></p>&mdash; Brooke Watson (@brookLYNevery1) <a href="https://twitter.com/brookLYNevery1/status/987809301094977536?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Day 2: ✍️ gets tired, 📝 get weird&hellip; <a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw">@hadleywickham</a> <a href="https://twitter.com/drob?ref_src=twsrc%5Etfw">@drob</a> <a href="https://twitter.com/lemnica?ref_src=twsrc%5Etfw">@lemnica</a> <a href="https://twitter.com/topepos?ref_src=twsrc%5Etfw">@topepos</a> &amp; <a href="https://twitter.com/kellrstats?ref_src=twsrc%5Etfw">@kellrstats</a> oh my!! <br>/* Also, Mara borks Twitter handles 😬 */<a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/daoclum3Qj">pic.twitter.com/daoclum3Qj</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/988437353936105472?ref_src=twsrc%5Etfw">April 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h1 id="it-s-always-fun-getting-autographed-books">It&rsquo;s always fun getting autographed books!</h1>
+
+<p><a name="signedbooks"></a></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Another year at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, another batch of books to get autographed! <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/i4EoW0OSa1">pic.twitter.com/i4EoW0OSa1</a></p>&mdash; Dⓐniel Chen (@chendaniely) <a href="https://twitter.com/chendaniely/status/987085700578316290?ref_src=twsrc%5Etfw">April 19, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Had a great time at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, thanks <a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw">@jaredlander</a>! I even won the R Packages book by <a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw">@hadleywickham</a> - so here&#39;s to all the future R packages coming out of <a href="https://twitter.com/turinginst?ref_src=twsrc%5Etfw">@turinginst</a> 👍 <a href="https://t.co/sxSo3AtZby">pic.twitter.com/sxSo3AtZby</a></p>&mdash; Evelina Gabasova (@evelgab) <a href="https://twitter.com/evelgab/status/987850908393463808?ref_src=twsrc%5Etfw">April 22, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/conference/">conference</a>
+  
+  <a class="badge badge-light" href="/tags/rstatsnyc/">rstatsnyc</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/4020908e54741b5fc49e743ef6913ceb?s=200')" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/">Daniel Chen</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      <p class="card-text" itemprop="description">My research interests include trying anything to graduate.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.instagram.com/chendaniely/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.twitch.tv/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://open.spotify.com/user/maveri2k" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="http://orcid.org/0000-0003-3857-1741" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/post/2019/2019-06-10-rstudio_internship_wk01/" rel="next">And we&#39;re off! RStudio internship week 1, complete.</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/post/2018/2018-01-23-analysis_based_project_templates/" rel="prev">Analysis-Based Project Templates</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chendaniely" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.f1a21f988a77cdbdeeb2f60c710009d1.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

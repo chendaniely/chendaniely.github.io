@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rstudio-internship on Academic</title>
+    <link>/tags/rstudio-internship/</link>
+    <description>Recent content in rstudio-internship on Academic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/rstudio-internship/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Website a la Blogdown!</title>
+      <link>/post/2019/2019-07-23-new-website/</link>
+      <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/2019-07-23-new-website/</guid>
+      <description>&lt;p&gt;I finally got everything moved over to &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;blogdown&lt;/a&gt;
+with the &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; &lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt; theme.
+Thanks so much to &lt;a href=&#34;https://alison.rbind.io/&#34; target=&#34;_blank&#34;&gt;Allison Hill&lt;/a&gt;, who ran the &lt;a href=&#34;https://summer-of-blogdown.netlify.com&#34; target=&#34;_blank&#34;&gt;summer-of-blogdown&lt;/a&gt;
+tutorial for us &lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34; target=&#34;_blank&#34;&gt;RStudio interns&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;The transition was pretty seamless. Mainly because I didn&amp;rsquo;t really have that much content to move over.
+The biggest change was I had to commout my &lt;code&gt;categories&lt;/code&gt; tag in my YAML post headers becuase they were causing the
+site to not build.&lt;/p&gt;
+
+&lt;p&gt;While writing this post, I just realized that the way categories and tags are specified in hugo
+are not the same as jekyll.&lt;/p&gt;
+
+&lt;p&gt;In jekyll I could write categories as&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;categories: R
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;categories:
+  - R
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But in hugo it seems it&amp;rsquo;s a list written as&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;categories: [&#39;R&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Anyway, it was fun going through and enabling/disabling different widgets.
+I&amp;rsquo;ll keep it simple for now, and build on the site accordinly.
+I&amp;rsquo;m just happy I can maintain my website without worrying how I had Jekyll setup to properly &lt;code&gt;serve&lt;/code&gt; the site.
+The folks at RStudio truely make things easy for us end users.&lt;/p&gt;
+
+&lt;p&gt;The other change I did was to make my old repository, &lt;code&gt;chendaniely.github.io&lt;/code&gt; a submodule of my blogdown site repo
+and change the target folder the published contents will be from the default &lt;code&gt;public&lt;/code&gt; by addding this
+to my main &lt;code&gt;config.toml&lt;/code&gt; file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;publishDir = &amp;quot;chendaniely.github.io&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This way my old url will still work (I&amp;rsquo;m really attached to the &lt;code&gt;.github.io&lt;/code&gt; domain),
+but I can still have netlify deploy everything and have my &lt;code&gt;rbind.io&lt;/code&gt; domain as well.
+Everything will look the same, and I&amp;rsquo;ll work on redirecting everything to a single domain sometime later.&lt;/p&gt;
+
+&lt;p&gt;I also needed to change the &lt;code&gt;[build]&lt;/code&gt; section in my &lt;code&gt;netlify.toml&lt;/code&gt; file to point to the new build location&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[build]
+  # publish = &amp;quot;public&amp;quot;
+  publish = &amp;quot;chendaniely.github.io&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Netlify is a little wonky when you have SSH keys enabled with the submodule.
+I get an error message because when Netlify tries to clone the submodule I get a permission error&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fatal: clone of &#39;git@github.com:chendaniely/chendaniely.github.io.git&#39; into submodule path &#39;/opt/build/repo/chendaniely.github.io&#39; failed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That makes sense, the Netlify servers do not have SSH keys setup on my GitHub account.
+I haven&amp;rsquo;t figured out how to do this yet, so I switched my &lt;code&gt;.gitmodule&lt;/code&gt; url to the https link.
+However, that means, for the time being, I created another remote with my SSH url (&lt;code&gt;git remote add originssh ...&lt;/code&gt;)
+and I have to push using that remote instead of the &lt;code&gt;origin&lt;/code&gt; url (which is the https link).&lt;/p&gt;
+
+&lt;p&gt;Now to start that massive backlog of things I&amp;rsquo;ve been doing this summer ( :&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RStudio internship week 2</title>
+      <link>/post/2019/2019-06-18-rstudio_internship_wk02/</link>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/2019-06-18-rstudio_internship_wk02/</guid>
+      <description>
+
+&lt;p&gt;The main topics and events of last week were:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Much git.&lt;/li&gt;
+&lt;li&gt;Metaprogramming and non-standard evaluation (NSE) in R&lt;/li&gt;
+&lt;li&gt;Four 1-hour workshops by Allison Hill on the &lt;a href=&#34;https://summer-of-blogdown.netlify.com&#34; target=&#34;_blank&#34;&gt;summer-of-blogdown&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;moving things over from jekyll will take some time&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So many of the random things I&amp;rsquo;ve tinkered with in the past have come front and center.
+As an educator,
+I know seeing these things again make learning and understanding them easier.
+You build on your previous knowledge to solidify, fix, and fill in gaps in your mental model.
+The process repeats until you get an understanding about a topic.&lt;/p&gt;
+
+&lt;p&gt;For me, I&amp;rsquo;m getting a better foundation to how NSE works and how it all plays together within the Tidyverse.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+
+&lt;p&gt;I got some things merged!&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/10&#34; target=&#34;_blank&#34;&gt;pull-request&lt;/a&gt; that was broken and merged on my first day finally was &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/14&#34; target=&#34;_blank&#34;&gt;fixed and merged&lt;/a&gt;.
+I also got to work with the &lt;a href=&#34;https://github.com/jimhester/lintr&#34; target=&#34;_blank&#34;&gt;lintr&lt;/a&gt; package and &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/17&#34; target=&#34;_blank&#34;&gt;merged it into &lt;code&gt;grader&lt;/code&gt;&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p&gt;This week was probably the first time I&amp;rsquo;ve used &lt;code&gt;git amend&lt;/code&gt; in a long time (if ever?).
+I&amp;rsquo;ve typically always just made the commit, and run &lt;code&gt;git rebase -i&lt;/code&gt; to squash and/or amend my commits.
+I can see why common operations like making changes to the previous commit would have a shortcut.
+I typically don&amp;rsquo;t use these features because it&amp;rsquo;s another thing to teach, and understanding &lt;code&gt;git rebase -i&lt;/code&gt; is more general than &lt;code&gt;git commit --amend&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;What &lt;code&gt;--amend&lt;/code&gt; allows you to do is replace the previous git commit with another one.
+You can fix the commit message, or add/fix file you missed.
+Theses are all ways to make the commit history cleaner.&lt;/p&gt;
+
+&lt;p&gt;The recipe looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add &amp;lt;file&amp;gt;
+git commit --amend
+
+&amp;lt;Fix/modify the commit message&amp;gt;
+
+git push -f origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The last line does a &lt;code&gt;-f&lt;/code&gt; force &lt;code&gt;push&lt;/code&gt;, because the commit is actually different from the one before you &lt;code&gt;--amend&lt;/code&gt;ed.&lt;/p&gt;
+
+&lt;h3 id=&#34;r-package-versions&#34;&gt;R package versions&lt;/h3&gt;
+
+&lt;p&gt;There&amp;rsquo;s a convention about version numbering adding a &lt;code&gt;.9000&lt;/code&gt;+ after the patch (e.g., v0.1.4.9000) to show a
+a development version number.
+You can couple this with the &lt;code&gt;DESCRIPTION&lt;/code&gt; file by forcing a particular version to make sure you and the team
+all have access to the same development features.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/rstudio-education/grader/blob/master/DESCRIPTION&#34; target=&#34;_blank&#34;&gt;I came across this in &lt;code&gt;grader&lt;/code&gt;&lt;/a&gt; that has a &lt;code&gt;Imports&lt;/code&gt; for &lt;code&gt;learnr (&amp;gt;= 0.9.2.9001)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;grader-progress&#34;&gt;&lt;code&gt;grader&lt;/code&gt; progress&lt;/h3&gt;
+
+&lt;p&gt;We&amp;rsquo;re probably &lt;a href=&#34;[https://github.com/rstudio-education/grader/issues/18]&#34; target=&#34;_blank&#34;&gt;going to change the name of the package&lt;/a&gt; to
+&lt;code&gt;gradethis&lt;/code&gt; because the package &lt;code&gt;gradeR&lt;/code&gt; (note capital R) was submitted to CRAN right as I started.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s what I learned about the library I&amp;rsquo;m working on this week:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;learnr&lt;/code&gt; set&amp;rsquo;s the &lt;code&gt;checker&lt;/code&gt; function
+
+&lt;ul&gt;
+&lt;li&gt;In the knitr chunk &lt;code&gt;exercise.checker&lt;/code&gt; specifies the &lt;code&gt;checker&lt;/code&gt; function
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tutorial_options(exercise.timelimit = 60, exercise.checker = grade_learnr)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;In this example, &lt;code&gt;grade_learnr&lt;/code&gt; is the main entrypoint from &lt;code&gt;learnr&lt;/code&gt; to &lt;code&gt;grader&lt;/code&gt; and my work starts with this function.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;checker&lt;/code&gt; is called on &lt;a href=&#34;https://github.com/rstudio/learnr/blob/master/R/exercise.R#L129&#34; target=&#34;_blank&#34;&gt;line 129 in &lt;code&gt;exercise.R&lt;/code&gt; in &lt;code&gt;learnr&lt;/code&gt;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;checker&lt;/code&gt; function (i.e., &lt;code&gt;grade_learnr&lt;/code&gt;) returns a value depending on what is passed into it
+
+&lt;ul&gt;
+&lt;li&gt;if missing: returns a &lt;code&gt;list()&lt;/code&gt; with &lt;code&gt;message&lt;/code&gt;, &lt;code&gt;correct&lt;/code&gt;, &lt;code&gt;type&lt;/code&gt;, and &lt;code&gt;location&lt;/code&gt; keys&lt;/li&gt;
+&lt;li&gt;if error: &lt;code&gt;graded&lt;/code&gt; object (named &lt;code&gt;checked_result&lt;/code&gt; of class &lt;code&gt;grader_graded&lt;/code&gt;) with &lt;code&gt;correct&lt;/code&gt; and &lt;code&gt;message&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;or evaluated code&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There&amp;rsquo;s a bunch of stuff within the &lt;code&gt;exercise.R&lt;/code&gt; function in &lt;code&gt;learnr&lt;/code&gt; that captures information from shiny,
+sets up the &lt;code&gt;knitr&lt;/code&gt; environment, and inserts the output and results into the correct place in the DOM.
+That&amp;rsquo;ll be a separate writeup when I leave the &lt;code&gt;grader&lt;/code&gt; world.&lt;/p&gt;
+
+&lt;p&gt;For the next week or so the goal is to update the &lt;a href=&#34;https://github.com/rstudio-education/grader/issues/11&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;check_result&lt;/code&gt; API&lt;/a&gt;,
+which got me down the rabbit hole of non-standard evaluation in R (I&amp;rsquo;ll talk about it in a separate set of posts).&lt;/p&gt;
+
+&lt;h3 id=&#34;non-standard-evaluation-nse&#34;&gt;Non-standard Evaluation (NSE)&lt;/h3&gt;
+
+&lt;p&gt;I gave &lt;a href=&#34;https://github.com/chendaniely/satRdays-dc2018-functions&#34; target=&#34;_blank&#34;&gt;a talk&lt;/a&gt; about writing functions in R which touched on NSE but it was pretty superficial.
+Since NSE is so crucial to &lt;code&gt;grader&lt;/code&gt; I&amp;rsquo;ll write a series of posts about this topic and eventually turn it into a talk.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, here are the materials (in no particular order) I&amp;rsquo;ll be reading to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dplyr.tidyverse.org/articles/programming.html&#34; target=&#34;_blank&#34;&gt;https://dplyr.tidyverse.org/articles/programming.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tidyeval.tidyverse.org/&#34; target=&#34;_blank&#34;&gt;https://tidyeval.tidyverse.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ggplot2.tidyverse.org/dev/articles/ggplot2-in-packages.html#using-aes-and-vars-in-a-package-function&#34; target=&#34;_blank&#34;&gt;https://ggplot2.tidyverse.org/dev/articles/ggplot2-in-packages.html#using-aes-and-vars-in-a-package-function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://adv-r.hadley.nz/&#34; target=&#34;_blank&#34;&gt;https://adv-r.hadley.nz/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;misc&#34;&gt;Misc&lt;/h3&gt;
+
+&lt;p&gt;Other random things I&amp;rsquo;ve discovered this week&lt;/p&gt;
+
+&lt;h4 id=&#34;dplyr-count-vs-dplyr-tally&#34;&gt;&lt;code&gt;dplyr::count&lt;/code&gt; vs &lt;code&gt;dplyr::tally&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;From the docs:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;tally() is a convenient wrapper for summarise that will either call n() or sum(n) depending on whether you&amp;rsquo;re tallying for the first time, or re-tallying.
+count() is similar but calls group_by() before and ungroup() after. If the data is already grouped, count() adds an additional group that is removed afterwards.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;dplyr::count&lt;/code&gt; can count observations with 0 counts (useful for group_by operations) with the &lt;code&gt;.drop&lt;/code&gt; argument&lt;/p&gt;
+
+&lt;h4 id=&#34;pryr-standarise-call&#34;&gt;&lt;code&gt;pryr::standarise_call&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Manipulating the function call is black magic NSE voodoo.
+This is the stuff that is happening within &lt;code&gt;grader&lt;/code&gt; that gets student code, solution code, &lt;code&gt;learnr&lt;/code&gt; and &lt;code&gt;grader&lt;/code&gt; arguments
+that are all passed into &lt;code&gt;grade_learnr&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# code below was copy/pasted from the console
+
+my_add &amp;lt;- function(x, y) {
+  x + y
+}
+
+# pass in part of an expression
+call &amp;lt;- pryr::standardise_call(quote(my_add(x = 3)))
+
+# on the fly add more parameters!
+call$y &amp;lt;- 10 
+
+# evaluate the thing
+eval(call) 
+
+## [1] 13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This all uses the global environment,
+but &lt;code&gt;grader&lt;/code&gt; will be doing this type of thing with separate environments for each exercise that will be checked.&lt;/p&gt;
+
+&lt;p&gt;Also, this is all how &lt;code&gt;match.call&lt;/code&gt; works in base R.&lt;/p&gt;
+
+&lt;h4 id=&#34;checkmate-package&#34;&gt;&lt;code&gt;checkmate&lt;/code&gt; package&lt;/h4&gt;
+
+&lt;p&gt;There is a &lt;a href=&#34;https://mllg.github.io/checkmate/index.html&#34; target=&#34;_blank&#34;&gt;package called &lt;code&gt;checkmate&lt;/code&gt;&lt;/a&gt; that is unit testing (e.g., &lt;code&gt;testthat&lt;/code&gt;) on steroids.
+It allows you to more specific type and argument checking in R.
+I haven&amp;rsquo;t work with the package personally yet, but it does seem to be like &lt;a href=&#34;https://docs.python.org/3/library/typing.html&#34; target=&#34;_blank&#34;&gt;type hints in Python&lt;/a&gt;
+and allows more specific checks into what objects in R contain.&lt;/p&gt;
+
+&lt;h4 id=&#34;credentials&#34;&gt;Credentials&lt;/h4&gt;
+
+&lt;p&gt;One of the coolest things about being an intern at RStudio is being on the slack channel!
+I try to keep my questions reserved but one of the things that have always bothered me was how store and access credentials for R.
+Putting in API keys in &lt;code&gt;.Renviron&lt;/code&gt; are common practice, but I piggy-backed on another intern&amp;rsquo;s question by asking about
+storing passwords more securely than in a plain text file.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve used the &lt;a href=&#34;https://cran.rstudio.com/web/packages/rstudioapi/index.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;rstudioapi&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://cran.r-project.org/web/packages/secret/vignettes/secrets.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;secret&lt;/code&gt;&lt;/a&gt;, and &lt;a href=&#34;https://cran.r-project.org/web/packages/getPass/index.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;getPass&lt;/code&gt;&lt;/a&gt; libraries &lt;a href=&#34;https://github.com/bi-sdal/sdalr&#34; target=&#34;_blank&#34;&gt;before&lt;/a&gt;,
+but as &lt;a href=&#34;https://twitter.com/raymondh&#34; target=&#34;_blank&#34;&gt;Raymond Hettinger&lt;/a&gt; always says: There must be a better way.&lt;/p&gt;
+
+&lt;p&gt;The resource I was given was to look at how database credentials are stored: &lt;a href=&#34;https://db.rstudio.com/best-practices/managing-credentials/&#34; target=&#34;_blank&#34;&gt;https://db.rstudio.com/best-practices/managing-credentials/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;summer-of-blog-down&#34;&gt;Summer of blog down&lt;/h3&gt;
+
+&lt;p&gt;Lastly,
+the great Allison Hill hosted a series of blogdown workshops for people who were interested, &lt;a href=&#34;https://summer-of-blogdown.netlify.com&#34; target=&#34;_blank&#34;&gt;summer-of-blogdown&lt;/a&gt;.
+It was a total of 4 days and we covered
+the basics of blogdown,
+how to pick (the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34;&gt;academic&lt;/a&gt;) themes,
+&lt;a href=&#34;https://chendaniely.netlify.com/&#34; target=&#34;_blank&#34;&gt;deploying it on netlify&lt;/a&gt;,
+and best ways to maintain the site.&lt;/p&gt;
+
+&lt;p&gt;I didn&amp;rsquo;t realize how amazingly flexible the &lt;a href=&#34;https://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34;&gt;academic&lt;/a&gt; theme was until this workshop.
+I&amp;rsquo;ll be sure to move &lt;a href=&#34;https://chendaniely.github.io/&#34; target=&#34;_blank&#34;&gt;my own website&lt;/a&gt; over to blogdown + academic one of these days.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m currently trying to find out how to save urls in a common location so they can be maintained in one place and be used in links throughout the site.
+The ongoing search for how to use variables in an &lt;code&gt;md&lt;/code&gt; document (tl;dr: you can&amp;rsquo;t, but you might still be able to do what I want):
+&lt;a href=&#34;https://discourse.gohugo.io/t/variables-in-markdown/7113/12&#34; target=&#34;_blank&#34;&gt;https://discourse.gohugo.io/t/variables-in-markdown/7113/12&lt;/a&gt;.
+It almost seemed that &lt;a href=&#34;https://gohugo.io/variables/site/&#34; target=&#34;_blank&#34;&gt;site variables&lt;/a&gt;
+were going to be the way to go, but that ended up in a dead end.&lt;/p&gt;
+
+&lt;p&gt;What I&amp;rsquo;m most excited about is the ability to write posts in &lt;code&gt;Rmd&lt;/code&gt; and &lt;code&gt;jupyter notebooks&lt;/code&gt; for R and Python posts.&lt;/p&gt;
+
+&lt;p&gt;Things I&amp;rsquo;ve learned the 4 days:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Each folder in content is a &amp;ldquo;section&amp;rdquo; and each &amp;ldquo;section&amp;rdquo; has a &amp;ldquo;page&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/content/home/&lt;/code&gt; contain widgets&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://learnxinyminutes.com&#34; target=&#34;_blank&#34;&gt;Learn x in y minutes&lt;/a&gt; website for &lt;a href=&#34;https://learnxinyminutes.com/docs/toml/&#34; target=&#34;_blank&#34;&gt;TOML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;From Greg Wilson: Put a &lt;code&gt;LICENSE&lt;/code&gt; and &lt;code&gt;CITATION&lt;/code&gt; + &lt;a href=&#34;https://orcid.org/0000-0003-3857-1741&#34; target=&#34;_blank&#34;&gt;orcid&lt;/a&gt; on your website. Make the librarians happy.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>And we&#39;re off! RStudio internship week 1, complete.</title>
+      <link>/post/2019/2019-06-10-rstudio_internship_wk01/</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019/2019-06-10-rstudio_internship_wk01/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;m still pinching myself about being one of the &lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34; target=&#34;_blank&#34;&gt;RStudio interns this year&lt;/a&gt;.
+It&amp;rsquo;s an unbelievable opportunity and I&amp;rsquo;ve been half panicked and fighting imposter syndrome since the &lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34; target=&#34;_blank&#34;&gt;announcement was made in March&lt;/a&gt;.
+My meeting with &lt;a href=&#34;http://third-bit.com/&#34; target=&#34;_blank&#34;&gt;Greg Wilson&lt;/a&gt; on Friday (2019-06-07) went something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Greg Wilson: How&#39;s the internship going?
+Me: I&#39;m panicked, but really excited.
+Greg Wilson: Good. That&#39;s how interns should feel.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;m working on the &lt;a href=&#34;https://github.com/rstudio-education/grader&#34; target=&#34;_blank&#34;&gt;grader&lt;/a&gt; package (with &lt;a href=&#34;https://twitter.com/statgarrett?lang=en&#34; target=&#34;_blank&#34;&gt;Garrett Grolemund&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/schloerke&#34; target=&#34;_blank&#34;&gt;Barret Schloerke&lt;/a&gt;) which aims to check code against a solution.
+This package integrates with the &lt;a href=&#34;https://github.com/rstudio/learnr&#34; target=&#34;_blank&#34;&gt;learnr&lt;/a&gt; package, that allows an RMarkdown document to be run as an interactive tutorial (more on this after the break).&lt;/p&gt;
+
+&lt;p&gt;My internship began with a &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/10&#34; target=&#34;_blank&#34;&gt;broken pull request&lt;/a&gt; that needs to &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/14&#34; target=&#34;_blank&#34;&gt;be fixed&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;the-learnr-grader-packages&#34;&gt;The &lt;code&gt;learnr&lt;/code&gt;/&lt;code&gt;grader&lt;/code&gt; packages&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;learnr&lt;/code&gt; allows users to write interactive tutorials/lessons (using &lt;a href=&#34;https://rmarkdown.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RMarkdown&lt;/a&gt;) that give instructors to write interactive tutorials (using &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown/shiny-documents.html&#34; target=&#34;_blank&#34;&gt;shiny&lt;/a&gt;).
+Learners will be able to follow the tutorial write and execute R code that will be graded.
+Under the hood, &lt;code&gt;learnr&lt;/code&gt; is an &lt;a href=&#34;https://rmarkdown.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RMarkdown document&lt;/a&gt; with &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown/shiny-documents.html&#34; target=&#34;_blank&#34;&gt;runtime: shiny&lt;/a&gt;.
+This allows the user (e.g., instructor) to write tutorials using markdown and provide solutions using code chunks and all the magic of capturing and checking the answer with &lt;code&gt;shiny&lt;/code&gt; and &lt;code&gt;grader&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are two main ways code can be graded.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Comparing results&lt;/li&gt;
+&lt;li&gt;Comparing the provided student code with the solution code (i.e., strict checking).
+
+&lt;ul&gt;
+&lt;li&gt;One way this can be done is by looking at the &lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34; target=&#34;_blank&#34;&gt;abstract syntax tree&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Another way would be some fancy set of string matching / regular expressions.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When I started, there were some &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/10&#34; target=&#34;_blank&#34;&gt;API changes&lt;/a&gt; that were made and I&amp;rsquo;ve spent my first week going down various rabbit holes &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/14&#34; target=&#34;_blank&#34;&gt;fixing tests and getting &lt;code&gt;R CMD check&lt;/code&gt; to pass&lt;/a&gt;.
+Barret has been super helpful and supportive by walking me through the code base and helping me fix the broken things.
+I&amp;rsquo;m pretty sure he did all the work in &lt;a href=&#34;https://github.com/rstudio-education/grader/pull/14&#34; target=&#34;_blank&#34;&gt;my PR&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;general-goals-for-the-summer&#34;&gt;General goals for the summer&lt;/h3&gt;
+
+&lt;p&gt;This will be a moving target, but it seems like after the first week these may be good goals for the summer:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A (&lt;a href=&#34;https://pkgdown.r-lib.org/&#34; target=&#34;_blank&#34;&gt;pkgdown&lt;/a&gt;) vignette for the &lt;code&gt;grader&lt;/code&gt; user API and a separate one for the developer API.&lt;/li&gt;
+&lt;li&gt;Blog post of how learnr works, and what order to expect error messages (see &lt;a href=&#34;http://third-bit.com/2018/12/27/use-case-maps.html&#34; target=&#34;_blank&#34;&gt;use-case maps&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Put together a &lt;code&gt;grader&lt;/code&gt; example without the use of &lt;code&gt;learnr&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;An example would be to pass &lt;code&gt;grader&lt;/code&gt; 2 R scripts (the student code and the solution code).&lt;/li&gt;
+&lt;li&gt;This came up while I was talking to Greg and he brought up &amp;ldquo;Working Effectively with Legacy Code&amp;rdquo; by Michael Feathers
+
+&lt;ul&gt;
+&lt;li&gt;This will help me find the entry points to the package, write isolated tests, and have a clearer goal of the project.&lt;/li&gt;
+&lt;li&gt;Along with &lt;a href=&#34;http://third-bit.com/2018/12/27/use-case-maps.html&#34; target=&#34;_blank&#34;&gt;use-case maps&lt;/a&gt;, this will help me be a better software developer and understand what&amp;rsquo;s actually going on (did I mention I&amp;rsquo;m half panicked and fighting imposter syndrome?)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other goals would be to have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Virtual coffee meetings with other people in the company (there&amp;rsquo;s a channel called &amp;ldquo;virtual-donut&amp;rdquo; that has a scheduler bot)&lt;/li&gt;
+&lt;li&gt;See if I can draft up and hunt down the people for a PhD topic.
+
+&lt;ul&gt;
+&lt;li&gt;Greg really planted a seed in my head a few months ago about putting together materials to help &amp;ldquo;front-line health practitioners (e.g., nurse and general practitioners) use and understand data&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;I think I can&amp;hellip; I think I can&amp;hellip; I think I can&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;random-things-i-ve-learned-so-far&#34;&gt;Random things I&amp;rsquo;ve learned so far&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I think I really like this 100% remote work schedule, I&amp;rsquo;ve been up way earlier than usual finishing things before a morning meeting and then taking my time the rest of the day planning and implementing things.
+
+&lt;ul&gt;
+&lt;li&gt;I also feel like a teenager in chatrooms talking to everyone (thanks Slack!)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/15100129/using-roxygen2-template-tags/15143507#15143507&#34; target=&#34;_blank&#34;&gt;Using Templates with Roxygen2&lt;/a&gt;: allows &lt;a href=&#34;https://cran.r-project.org/web/packages/roxygen2/index.html&#34; target=&#34;_blank&#34;&gt;roxygen2&lt;/a&gt; docstrings to be reused by using a &lt;code&gt;@template&lt;/code&gt; Rd keyword&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://third-bit.com/2018/12/27/use-case-maps.html&#34; target=&#34;_blank&#34;&gt;Use-case maps&lt;/a&gt;: document and show the various components of an application,
+but also show what components are used for a given action
+
+&lt;ul&gt;
+&lt;li&gt;This would be great for &lt;code&gt;learnr&lt;/code&gt; and &lt;code&gt;grader&lt;/code&gt; since I&amp;rsquo;ll pretty much be doing this for myself just to figure out all the moving parts of the system and how each component works in the full application.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jimhester/lintr&#34; target=&#34;_blank&#34;&gt;lintr&lt;/a&gt;: is a way to do static code analysis in R.
+
+&lt;ul&gt;
+&lt;li&gt;You can use this to check for (potential) errors before runtime&lt;/li&gt;
+&lt;li&gt;Pretty sure I can take the same idea and apply it to &lt;code&gt;grader&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;All these years practicing my Git-fu seems to be paying off.&lt;/li&gt;
+&lt;li&gt;My mentor, Garrett Grolemund, is RStudio employee number &lt;em&gt;insert number that can be represented with 1 hand&lt;/em&gt; :O&lt;/li&gt;
+&lt;li&gt;There&amp;rsquo;s an &amp;ldquo;emoji-psa&amp;rdquo; channel at RStudio. It&amp;rsquo;s active. People really know their emojis. owo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;misc&#34;&gt;Misc&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;ve given up trying to sync the GSuite with Thunderbird and having a unified calendar.
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;m using &lt;a href=&#34;https://github.com/openWMail/openWMail&#34; target=&#34;_blank&#34;&gt;openWMail&lt;/a&gt; again for my RStudio calendar/drive.&lt;/li&gt;
+&lt;li&gt;Still have all my emails in Thunderbird.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Not all the interns started on the same date. Most of us started June 3rd, but some started earlier and others will start later.
+
+&lt;ul&gt;
+&lt;li&gt;Us interns have our own slack &lt;strong&gt;workspace&lt;/strong&gt;!&lt;/li&gt;
+&lt;li&gt;We had our first interns-only coffee chat on Friday.
+
+&lt;ul&gt;
+&lt;li&gt;Malcolm Barrett, Julia Blum, Joyce Cahoon, Desiree De Leon, Dewey Dunnington, and Maya Gans all met this week.&lt;/li&gt;
+&lt;li&gt;We&amp;rsquo;re planning to have an intern &amp;ldquo;host&amp;rdquo; one each week so everyone gets a chance to meet some (if not all) of us.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://alison.rbind.io/&#34; target=&#34;_blank&#34;&gt;Allison Hill&lt;/a&gt; is hosing a &lt;a href=&#34;https://summer-of-blogdown.netlify.com/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Summer of blogdown&amp;rdquo;&lt;/a&gt; this week, so I&amp;rsquo;ll probably be doing another website update.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

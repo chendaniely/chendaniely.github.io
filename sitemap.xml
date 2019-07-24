@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/courses/git/git_essentials/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/python/python_pandas_video/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/r/dc_python_r/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/python/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/r/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/python/pandas_ml_video/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/git/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/python/dc_cleaning_data_python/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/talk/example/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019/2019-07-23-new-website/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/blogdown/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rstudio-internship/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/website/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2019/2019-06-18-rstudio_internship_wk02/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2019/2019-06-10-rstudio_internship_wk01/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/3/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/publication/preprint/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/source-themes/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/slides/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/slides/example/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/privacy/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2018/2018-04-22-rstatsnyc/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/conference/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rstatsnyc/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2018/2018-01-23-analysis_based_project_templates/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dspg/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dspg17/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/programming-practices/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sdal/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sdal-post/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-07-07-vm_lxc_docker/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/containers/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/devops/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/infrastructure/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/lxc/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/vms/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-05-30-project_templates/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/project_template/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-05-01-pfp_blog_changes_in_higher_education/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/higher-ed/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/pfps17/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/teaching/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-24-pfp_blog_05_summer_plans/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pfps17-journal/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-17-pfp_journal_12_working_phd/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-10-pfp_journal_11_us_education/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-10-pfp_blog_open_access/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-03-pfp_blog_tech_and_innovation/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-04-03-pfp_journal_10_snow_scuba/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-30-simple_neural_network_model/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/complexity-science/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mann/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/network-science/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/research/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/watts-model/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-27-pfp_blog_04_scientific_programming/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-27-pfp_journal_09_masters_phd/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-20-pfp_blog_03_my_story/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-13-pfp_journal_07_naming_yourself/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-12-pfp_blog_research_ethics/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-06-pfp_journal_06_how_teaching_works/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-03-06-pfp_blog_02_modest_advice/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-02-27-pfp_journal_05_teaching_mentoring/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-02-20-pfp_journal_04_academic_fit/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-02-13-pfp_journal_03_communicating_science/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-02-06-pfp_journal_02_accessible_education/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-02-06-pfp_blog_01_imposter_syndrome/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2017/2017-01-30-pfp_blog_mission_statements/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2016/2016-10-26-what_swc_means_to_me/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/external/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/swc/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2016/2016-09-29-expanding_watts_to_lens/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/paper-review/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/scientific-paper/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/deep-learning/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/demo/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/project/external-project/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/internal-project/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/6-degrees/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2016/03/2016-03-14-scientific_purity_in_the_connected_age/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/quote/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/reflection/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/xkcd/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2016/2016-02-05-swc-as-a-university-course/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015/2015-11-05-teaching-extreme-ranges/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/publication/journal-article/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/robert-ford/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2015/2015-06-23-learner-assessment-part-01/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015/2015-05-05-getting-started-with-data-science/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-analysis/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/opensource/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tutorials/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2015/2015-02-10-cookie-cutter/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015/2015-02-05-open-sourcing-a-python-project/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nosetests/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/pip-install/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-11-02-revised-instructor-survey/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-09-29-hack-your-metrocard-to-0/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lifehack/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/metrocard/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mta/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-09-07-welcome-to-jekyll/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/jekyll/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/update/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-07-07-high-school-students-at-rockefeller/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tutorial/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tips/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/eclipse/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/install/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/repast-simphony/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/setup/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/client/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mac/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/webdav/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/windows/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/publication_types/1/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/publication/conference-paper/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2013/2013-02-21-setting-up-virtualbox/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/virtualbox/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/windows-xp/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/courses/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hobbies/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hobbies/photography/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
+    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hobbies/scuba/</loc>
+    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
+  </url>
+  
+</urlset>
