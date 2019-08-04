@@ -13,10 +13,10 @@
     
     <item>
       <title>Getting Started with Data Science and Analysis</title>
-      <link>/post/2015/2015-05-05-getting-started-with-data-science/</link>
+      <link>/2015/05/05/getting-started-with-data-science-and-analysis/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-05-05-getting-started-with-data-science/</guid>
+      <guid>/2015/05/05/getting-started-with-data-science-and-analysis/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve been an instructor for &lt;a href=&#34;http://software-carpentry.org&#34; target=&#34;_blank&#34;&gt;Software-Carpentry (SWC)&lt;/a&gt; over a year now.
@@ -112,10 +112,10 @@ In many domains of research the rapid generation of large amounts of data is fun
     
     <item>
       <title>Open Source A Python Project I</title>
-      <link>/post/2015/2015-02-05-open-sourcing-a-python-project/</link>
+      <link>/2015/02/05/open-source-a-python-project-i/</link>
       <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-02-05-open-sourcing-a-python-project/</guid>
+      <guid>/2015/02/05/open-source-a-python-project-i/</guid>
       <description>
 
 &lt;p&gt;I started my
@@ -314,10 +314,10 @@ release numbers for your first release.&lt;/li&gt;
     
     <item>
       <title>Absolute and Relative Directories in Python</title>
-      <link>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</link>
+      <link>/2014/05/16/absolute-and-relative-directories-in-python/</link>
       <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</guid>
+      <guid>/2014/05/16/absolute-and-relative-directories-in-python/</guid>
       <description>&lt;p&gt;One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the file I/O functions, it assumes the current directory or you need to give it an absolute directory. Using something like &lt;code&gt;../other_directory&lt;/code&gt; will not work.&lt;/p&gt;
 
 &lt;!-- more --&gt;

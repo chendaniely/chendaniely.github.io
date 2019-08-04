@@ -13,10 +13,10 @@
     
     <item>
       <title>New Website a la Blogdown!</title>
-      <link>/post/2019/2019-07-23-new-website/</link>
+      <link>/2019/07/23/new-website-a-la-blogdown/</link>
       <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019/2019-07-23-new-website/</guid>
+      <guid>/2019/07/23/new-website-a-la-blogdown/</guid>
       <description>&lt;p&gt;I finally got everything moved over to &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;blogdown&lt;/a&gt;
 with the &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; &lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt; theme.
 Thanks so much to &lt;a href=&#34;https://alison.rbind.io/&#34; target=&#34;_blank&#34;&gt;Allison Hill&lt;/a&gt;, who ran the &lt;a href=&#34;https://summer-of-blogdown.netlify.com&#34; target=&#34;_blank&#34;&gt;summer-of-blogdown&lt;/a&gt;

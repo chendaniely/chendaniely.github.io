@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I wrote a blog post and gave a seminar talk about the Watts 2002 paper. The next step is thinking about expanding the binary decisions with externalities model to a psychological plausible decisions with externalities model. This has been the goal of the multi-agent neural-network (MANN) project.
+Context from the Watts model From an information diffusion perspective, a cascade is the spread of information from an initial set (seed) of individuals (nodes).">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2016/09/29/expanding-the-watts-model/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2016/09/29/expanding-the-watts-model/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/2016/09/29/expanding-the-watts-model/">
+  <meta property="og:title" content="Expanding the Watts Model | Academic">
+  <meta property="og:description" content="I wrote a blog post and gave a seminar talk about the Watts 2002 paper. The next step is thinking about expanding the binary decisions with externalities model to a psychological plausible decisions with externalities model. This has been the goal of the multi-agent neural-network (MANN) project.
+Context from the Watts model From an information diffusion perspective, a cascade is the spread of information from an initial set (seed) of individuals (nodes)."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2016-09-29T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-07-23T20:45:50-04:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>Expanding the Watts Model | Academic</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Academic</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Expanding the Watts Model</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2016-09-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-07-23 20:45:50 -0400 EDT" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>2019-07-23</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2016/09/29/expanding-the-watts-model/#disqus_thread"></a>
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/2016/09/29/expanding-the-watts-model/&amp;text=Expanding%20the%20Watts%20Model" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/2016/09/29/expanding-the-watts-model/&amp;t=Expanding%20the%20Watts%20Model" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Expanding%20the%20Watts%20Model&amp;body=/2016/09/29/expanding-the-watts-model/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/2016/09/29/expanding-the-watts-model/&amp;title=Expanding%20the%20Watts%20Model" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Expanding%20the%20Watts%20Model%20/2016/09/29/expanding-the-watts-model/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/2016/09/29/expanding-the-watts-model/&amp;title=Expanding%20the%20Watts%20Model" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>I wrote a <a href="http://chendaniely.github.io/research/2016/08/31/a_simple_model_of_global_cascades_on_random_networks/" target="_blank">blog post</a> and
+gave a <a href="www.google.com" target="_blank">seminar talk</a> about the <a href="https://www.ncbi.nlm.nih.gov/pubmed/16578874" target="_blank">Watts 2002 paper</a>.
+The next step is thinking about expanding the <em>binary decisions with externalities</em> model to a
+<em>psychological plausible decisions with externalities</em> model.
+This has been the goal of the <a href="https://github.com/chendaniely/mann2" target="_blank">multi-agent neural-network (MANN) project</a>.</p>
+
+<!-- more -->
+
+<h1 id="context-from-the-watts-model">Context from the Watts model</h1>
+
+<p>From an information diffusion perspective,
+a cascade is the spread of information from an initial set (seed) of individuals (nodes).
+Watts talks about features of a network that create a <em>global cascade</em>,
+which is simply a cascade of &lsquo;sufficient&rsquo; size.
+The ability for a node to receive and pass on a bit of information is it&rsquo;s <em>vulnerability</em>.</p>
+
+<p>Cascades are triggered by the interaction between 2 properties &ndash;
+a network property (degree centrality) and a node property (threshold).
+If we look at these 2 properties as mutually exclusive from one another,
+then nodes with smaller degree centrality will be less vulnerable compared to nodes with higher degree centrality,
+and nodes with lower threshold values will be more vulnerable than nodes with higher threshold values.
+This is because nodes with fewer connections have a smaller probability of getting information passed onto it,
+and nodes with lower thresholds need fewer bits of information to propagate a signal.</p>
+
+<p>Although degree centrality (<em>local dependencies</em>) and <em>(fractional) thresholds</em> are integral parts of
+the binary decisions with externalities model,
+another key aspect is <em>heterogeneity</em>.
+For a given network, not every node will have the same degree centrality,
+and not every node will have the same fractional threshold value.
+As a matter of fact, any combination of high/low degree centrality and high/low fractional threshold is possible,
+and each combination has an effect on a particular node&rsquo;s vulnerability.</p>
+
+<table>
+<thead>
+<tr>
+<th>Degree (k)</th>
+<th>Threshold ($\phi$)</th>
+<th>Vulnerability</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>High</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>High</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+
+<tr>
+<td>Low</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+
+<tr>
+<td>Low</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="expanding-the-watts-model-with-neural-networks">Expanding the Watts model with neural networks</h1>
+
+<p>The next step is to explore ways the Watts model can be expanded.
+The rationale being decisions, and similarly, behaviors, are binary,
+but the process of making a decision and performing an action are not.
+<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0062490" target="_blank">Mark Orr, Roxanne Thrush, and David C. Plaut</a>
+suggest incorporating the <a href="https://en.wikipedia.org/wiki/Theory_of_reasoned_action" target="_blank">Theory of Reasoned Action (TRA)</a> as the
+theoretical framework to describe how behaviors emerge and an
+<a href="https://en.wikipedia.org/wiki/Autoassociative_memory" target="_blank">auto</a>-<a href="http://www.sciencedirect.com/science/article/pii/009813549280051A" target="_blank">associator</a> <a href="https://en.wikipedia.org/wiki/Artificial_neural_network" target="_blank">neural-network</a>
+as the computational framework to simulate nodes.</p>
+
+<p>A neural network allows for a multi-dimensional node, not just a simple binary node.
+The key feature of an <em>auto associative neural network</em> is its ability to learn and reproduce an identity (a.k.a, prototype) given a portion of inputs.
+From the Wikipedia <a href="https://en.wikipedia.org/wiki/Autoassociative_memory" target="_blank">page</a>, if we are presented the quote &ldquo;I came, I saw&hellip;&rdquo;,
+we should be able to complete the rest of the quote: &ldquo;&hellip; I conquered&rdquo;.</p>
+
+<p>If we re-conceptualize the Watts model, the prototype is the bit of information each node can pass to its neighbors (i.e., a state of 1).
+Since this is a binary model, then each node can be thought to be trained to have an output of 1,
+but has a state of 0 until the proper inputs are met (local dependencies and fractional thresholds), and the node has a state of 1.</p>
+
+<p>From the neural network perspective, every node is trained to a particular prototype (e.g., the vector: <code>[1, 1, 1, 0, 0, 0]</code>),
+and has a state of 0 (e.g., the vector: <code>[0, 0, 0, 0, 0, 0]</code>)
+until proper inputs are met, the neural network will output the prototype (e.g., the vector: <code>[1, 1, 1, 0, 0, 0]</code>).
+Additionally, the same output should be returned, if only a portion of the prototype vector is presented.</p>
+
+<h2 id="creating-a-neural-network-model-analogous-to-the-watts-model">Creating a neural network model analogous to the Watts model</h2>
+
+<p>While there are many questions and solutions on how to relate the Watts model to this newly defined neural-network model,
+two immediately come to mind.</p>
+
+<ol>
+<li>How do we measure if information has been passed from one node to another?</li>
+<li>How do we map fractional thresholds between the two models?</li>
+</ol>
+
+<p>Since we know the trained/learned prototype for each node,
+one way to know if information passed from the seed node (and subsequent nodes) to a new node is to look at how &lsquo;similar&rsquo;
+the output of the new node is to the prototype.
+Similarity can be measured in many ways, one such way is to use <a href="https://en.wikipedia.org/wiki/Cosine_similarity" target="_blank">cosine similarity</a>.
+Once the similarity is calculated, we can apply another threshold, $\theta$,
+that signals the propagation of information.
+This new threshold can be used to calculate a binary state, $S_1$ that is analogous to the Watts model state, $S_0$.
+We can use $\theta$ to calculate how many nodes are different from the node of interest
+(this can also be thought of as some function of $S_1$),
+and use the same threshold, $\phi$, from the Watts model to determine whether the node of interest will propagate our signal in the network.</p>
+
+<p>However, since our definition of &lsquo;similarity&rsquo; and &lsquo;information propagation&rsquo; relies on the <em>output</em> of our neural network,
+we need to give the neural network a set of <em>inputs</em>.
+This leads to anther question:</p>
+
+<ol>
+<li>How do we provide inputs to nodes that have been designated to carry and propagate information in the network?</li>
+</ol>
+
+<p>We can do this a few ways.
+For each node that will propagate information we can assign the input as</p>
+
+<ol>
+<li>the prototype (e.g., the vector: <code>[1, 1, 1, 0, 0, 0]</code>)</li>
+<li>the state (a.k.a output) of 1 of the &lsquo;different&rsquo; connected nodes</li>
+<li>the average state of all of the &lsquo;different&rsquo; connected nodes</li>
+<li>the average state of all connected nodes</li>
+<li>present each &lsquo;different&rsquo; node in a random order and have the neural network cycle though them</li>
+<li>present all connected nodes in a random order and have the neural network cycle though them</li>
+</ol>
+
+<p>Other than the first option of using the prototype,
+the other methods will still preserve the differences in degree centrality between the nodes.
+For example, if a node only has one neighbor and it will be updated with 1 neighbor,
+it will always be presented with the same inputs.
+However if a node has multiple neighbors, the probability of the same neighbor picked every time is proportional to the number neighbors.</p>
+
+<h2 id="creating-a-simpler-neural-network-model">Creating a simpler neural-network model</h2>
+
+<p>A simpler approach would be to have each node in the network trained against the prototype.
+Seed a single node with the prototype, and run the model without any additional thresholding rule ($\theta$),
+and have each node use a random 1 neighbor&rsquo;s state (i.e., output) and its input.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/research/">research</a>
+  
+  <a class="badge badge-light" href="/tags/complexity-science/">complexity science</a>
+  
+  <a class="badge badge-light" href="/tags/network-science/">network science</a>
+  
+  <a class="badge badge-light" href="/tags/notes/">notes</a>
+  
+  <a class="badge badge-light" href="/tags/mann/">mann</a>
+  
+  <a class="badge badge-light" href="/tags/watts-model/">watts model</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/4020908e54741b5fc49e743ef6913ceb?s=200')" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/">Daniel Chen</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      <p class="card-text" itemprop="description">My research interests include trying anything to graduate.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.instagram.com/chendaniely/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.twitch.tv/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://open.spotify.com/user/maveri2k" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="http://orcid.org/0000-0003-3857-1741" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/2016/08/31/a-simple-model-of-global-cascades-on-random-networks/">A Simple Model of Global Cascades on Random Networks</a></li>
+          
+          <li><a href="/2016/03/14/scientific-purity-in-the-connected-age/">Scientific &#39;Purity&#39; in the &#39;Connected Age&#39;</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/2016/10/26/swc-what-the-carpentries-mean-to-me/" rel="next">SWC: What the Carpentries Mean To Me</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/2016/08/31/a-simple-model-of-global-cascades-on-random-networks/" rel="prev">A Simple Model of Global Cascades on Random Networks</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chendaniely" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.23e2fabfaf271b1b075bb9e0280085b7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

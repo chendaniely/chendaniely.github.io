@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tutorial on Academic</title>
+    <title>tutorial on Academic</title>
     <link>/tags/tutorial/</link>
-    <description>Recent content in Tutorial on Academic</description>
+    <description>Recent content in tutorial on Academic</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 May 2014 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Absolute and Relative Directories in Python</title>
-      <link>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</link>
+      <link>/2014/05/16/absolute-and-relative-directories-in-python/</link>
       <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</guid>
+      <guid>/2014/05/16/absolute-and-relative-directories-in-python/</guid>
       <description>&lt;p&gt;One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the file I/O functions, it assumes the current directory or you need to give it an absolute directory. Using something like &lt;code&gt;../other_directory&lt;/code&gt; will not work.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -43,10 +43,10 @@ df.to_csv(data, sep=&#39;,&#39;, encoding=&#39;utf-8&#39;)
     
     <item>
       <title>Setting up VirtualBox</title>
-      <link>/post/2013/2013-02-21-setting-up-virtualbox/</link>
+      <link>/2013/02/21/setting-up-virtualbox/</link>
       <pubDate>Thu, 21 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013/2013-02-21-setting-up-virtualbox/</guid>
+      <guid>/2013/02/21/setting-up-virtualbox/</guid>
       <description>&lt;p&gt;Edit: March 31, 2014: As an assignment for &lt;a href=&#34;http://software-carpentry.org/&#34; title=&#34;Software Carpentry&#34; target=&#34;_blank&#34;&gt;Software Carpentry&lt;/a&gt; I made a screencast to follow along with these steps, &lt;a href=&#34;https://www.youtube.com/watch?v=5q_K4sIwJ0E&#34; title=&#34;here&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Installing Windows XP in VirtualBox:&lt;br /&gt;

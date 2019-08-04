@@ -11,11 +11,109 @@
     
     
     <item>
+      <title>Mounting Oclus Rift Sensors on the Wall</title>
+      <link>/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/</link>
+      <pubDate>Sat, 03 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/</guid>
+      <description>
+
+
+&lt;p&gt;I was initially going to get some small bookshelves to put my Oculus sensors on,
+but you can take your Oculus sensors off the stand!
+This way you wont have an awkward way to mount the sensors against the wall.&lt;/p&gt;
+&lt;p&gt;I also have a 3rd rear sensor, but when I was (re)setting up my sensors,
+I ended up just leaving it on my desk.
+The parts list below was from me shopping at Home Depot assuming I was going to mount all 3 against the wall.&lt;/p&gt;
+&lt;p&gt;Need:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;1/4in-20 X 1in Machine Screws (4 pack – it comes with screws and nuts, you need both): $1.18&lt;/li&gt;
+&lt;li&gt;4in Corner Brace (4 pack): $7.24&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Optional:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Temporary sensor setup: Painters tape, or anything that won’t strip off your paint.&lt;/li&gt;
+&lt;li&gt;To mount the brackets against the wall (Home Depot): 3 1/2&#34; x 3/4&#34; Velcro strips (4 pack): $2.98&lt;/li&gt;
+&lt;li&gt;Cable management: 1/2&#34; plastic KWIK Clip (4 pack) (Home Depot): 2 x 3.28 = $6.56&lt;/li&gt;
+&lt;li&gt;USB extension for sensors (Micro Center): 2 x 10Ft QVS USB 2.0 Extension Cable A to A: 2 x 19.99 = $39.98&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tools:&lt;/p&gt;
+&lt;p&gt;You’re also going to need a Phillips head screwdriver and pliers
+to tighten the nut without moving and/or loosening the sensor&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;div id=&#34;the-parts&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Parts&lt;/h2&gt;
+&lt;p&gt;Here’s what the parts look like:&lt;/p&gt;
+&lt;p&gt;1/4in-20 X 1in Machine Screws (4 pack): $1.18&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-machine_screws.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;4in Corner Brace (4 pack): $7.24&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-corner_braces.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;now-the-assembly&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Now the Assembly&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Remove the Sensor&lt;/li&gt;
+&lt;li&gt;Mount the sensors on the brace&lt;/li&gt;
+&lt;li&gt;Finalize the mounts&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;remove-the-sensor&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Remove the sensor&lt;/h3&gt;
+&lt;p&gt;The top of the sensor screws off.
+I ended up taking just the base stand with me to Home Depot to check the type of screw that was needed.
+1/4in-20 worked for me. I found the 1&#34; long screws was enough to connect everything together nicely.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-remove_sensor.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;mount-the-sensors-on-the-brace&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Mount the sensors on the brace&lt;/h3&gt;
+&lt;p&gt;You can mount the sensors to the brace any way you want,
+but I found that it was better to mount the sensors upside-down
+since the sensors pivot upwards (on the stand) more than the other direction.
+Also the entire rig is pretty light, so something like painters tape can hold up the entire unit against the wall
+(it’s too heavy for painters tape to hold on the ceiling)
+for you to try to get everything in the right place.
+I had to do a lot of adjustments during the Oculus sensor setup.&lt;/p&gt;
+&lt;p&gt;Sensors right-side up:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-sensor_rightsideup.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Sensors upside-down:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-sensor_upsidedownjpg.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;finalize-the-mounts&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Finalize the mounts&lt;/h3&gt;
+&lt;p&gt;Seriously, don’t screw or mount (I used the 3 1/2in Velcro strips) until &lt;strong&gt;after&lt;/strong&gt; you go though the Oculus sensor setup.
+I had to go back and adjust placement and angles multiple times.
+I even had to scrap my initial idea of mounting the rear sensor against the wall because it was too far away from the other sensors, and I found it awkward to mount it on the ceiling.&lt;/p&gt;
+&lt;p&gt;Here’s what the front 2 sensors look like, you actually need to pivot them inwards a lot more than I thought,
+they’re almost at 45-degrees and pretty much point right at you when you’re in the middle of the play area.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-front_sensors.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the entire setup looks like, with the 3rd (rear) sensor on my desk by the microphone.
+What’s not pictured: the train wreck of packaging, boxes, papers, cables beind me :p&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-play_area_1.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;mounting_oculus-play_area_2.jpg&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-i-would-do-differently&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I would do differently&lt;/h2&gt;
+&lt;p&gt;If I was more motivated, I would’ve found a way to mount the rear sensor on the ceiling behind me.
+But It didn’t seem like the Oculus sensor could pivot downward enough with the braces up there.
+I also wasn’t that motivated to have it on the ceiling,
+because now I get to return my 39ft USB extension cable from Micro Center ($$$$).&lt;/p&gt;
+&lt;p&gt;If I living in a more permanent location I would’ve gotten a better cable management system than the plastic clips.
+By the electrical section in Home Depot there were long adhesive wire management cases that would hide the black cables &lt;strong&gt;much&lt;/strong&gt; better.&lt;/p&gt;
+&lt;p&gt;The way my computer was setup, one of the 10ft USB extensions was too long,
+and the other was too short.
+I had to use a another USB extension for the sensor that was further away.&lt;/p&gt;
+&lt;p&gt;Also, my standing desk was my old childhood dining room table that I just (i.e., last night) upgraded with
+the &lt;a href=&#34;https://www.autonomous.ai/&#34;&gt;Autonomous.ai Home Edition DIY legs&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>New Website a la Blogdown!</title>
-      <link>/post/2019/2019-07-23-new-website/</link>
+      <link>/2019/07/23/new-website-a-la-blogdown/</link>
       <pubDate>Tue, 23 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019/2019-07-23-new-website/</guid>
+      <guid>/2019/07/23/new-website-a-la-blogdown/</guid>
       <description>&lt;p&gt;I finally got everything moved over to &lt;a href=&#34;https://bookdown.org/yihui/blogdown/&#34; target=&#34;_blank&#34;&gt;blogdown&lt;/a&gt;
 with the &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; &lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt; theme.
 Thanks so much to &lt;a href=&#34;https://alison.rbind.io/&#34; target=&#34;_blank&#34;&gt;Allison Hill&lt;/a&gt;, who ran the &lt;a href=&#34;https://summer-of-blogdown.netlify.com&#34; target=&#34;_blank&#34;&gt;summer-of-blogdown&lt;/a&gt;
@@ -86,10 +184,10 @@ and I have to push using that remote instead of the &lt;code&gt;origin&lt;/code&
     
     <item>
       <title>RStudio internship week 2</title>
-      <link>/post/2019/2019-06-18-rstudio_internship_wk02/</link>
+      <link>/2019/06/18/rstudio-internship-week-2/</link>
       <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019/2019-06-18-rstudio_internship_wk02/</guid>
+      <guid>/2019/06/18/rstudio-internship-week-2/</guid>
       <description>
 
 &lt;p&gt;The main topics and events of last week were:&lt;/p&gt;
@@ -300,10 +398,10 @@ were going to be the way to go, but that ended up in a dead end.&lt;/p&gt;
     
     <item>
       <title>And we&#39;re off! RStudio internship week 1, complete.</title>
-      <link>/post/2019/2019-06-10-rstudio_internship_wk01/</link>
+      <link>/2019/06/10/and-were-off-rstudio-internship-week-1-complete./</link>
       <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019/2019-06-10-rstudio_internship_wk01/</guid>
+      <guid>/2019/06/10/and-were-off-rstudio-internship-week-1-complete./</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;m still pinching myself about being one of the &lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34; target=&#34;_blank&#34;&gt;RStudio interns this year&lt;/a&gt;.
@@ -429,11 +527,11 @@ but also show what components are used for a given action
     </item>
     
     <item>
-      <title>#rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs</title>
-      <link>/post/2018/2018-04-22-rstatsnyc/</link>
+      <title>rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs</title>
+      <link>/2018/04/22/rstatsnyc-as-told-by-brooklynevery1-dataandme-and-autographs/</link>
       <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018/2018-04-22-rstatsnyc/</guid>
+      <guid>/2018/04/22/rstatsnyc-as-told-by-brooklynevery1-dataandme-and-autographs/</guid>
       <description>
 
 &lt;p&gt;EDIT: I&amp;rsquo;ve added the notes from &lt;a href=&#34;https://twitter.com/dataandme&#34; target=&#34;_blank&#34;&gt;@dataandme&lt;/a&gt; and linked to people&amp;rsquo;s twitter and slides (if I found them). This is probably going to be an ongoing process&amp;hellip;&lt;/p&gt;
@@ -673,10 +771,10 @@ So I&amp;rsquo;ve just linked to all her tweets (after the break).&lt;/p&gt;
     
     <item>
       <title>Analysis-Based Project Templates</title>
-      <link>/post/2018/2018-01-23-analysis_based_project_templates/</link>
+      <link>/2018/01/23/analysis-based-project-templates/</link>
       <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018/2018-01-23-analysis_based_project_templates/</guid>
+      <guid>/2018/01/23/analysis-based-project-templates/</guid>
       <description>
 
 &lt;p&gt;One of the most annoying things you hear people say when they are working with some common code base is
@@ -825,10 +923,10 @@ But even in this small example, the three code bases are conceptually incompatib
     
     <item>
       <title>From VMs to LXC Containers to Docker Containers</title>
-      <link>/post/2017/2017-07-07-vm_lxc_docker/</link>
+      <link>/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-07-07-vm_lxc_docker/</guid>
+      <guid>/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/</guid>
       <description>
 
 &lt;p&gt;Since I&amp;rsquo;ve joined &lt;a href=&#34;https://www.bi.vt.edu/sdal&#34; target=&#34;_blank&#34;&gt;SDAL&lt;/a&gt;,
@@ -1026,10 +1124,10 @@ or kubernetes, who knows.&lt;/p&gt;
     
     <item>
       <title>Project Templates</title>
-      <link>/post/2017/2017-05-30-project_templates/</link>
+      <link>/2017/05/30/project-templates/</link>
       <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-05-30-project_templates/</guid>
+      <guid>/2017/05/30/project-templates/</guid>
       <description>
 
 &lt;p&gt;Project templates provide some standardized way to organize files.
@@ -1158,10 +1256,10 @@ things become easier to find because everything is not simply placed in the same
     
     <item>
       <title>Changes in Higher Education</title>
-      <link>/post/2017/2017-05-01-pfp_blog_changes_in_higher_education/</link>
+      <link>/2017/05/01/changes-in-higher-education/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-05-01-pfp_blog_changes_in_higher_education/</guid>
+      <guid>/2017/05/01/changes-in-higher-education/</guid>
       <description>&lt;p&gt;As a PhD student who already has a Master&amp;rsquo;s degree, it&amp;rsquo;s safe to say that I&amp;rsquo;ve been in school for a long time.
 One of the things in higher education that I started to dislike over the years are the ways professors assess students in the classroom.&lt;/p&gt;
 
@@ -1190,10 +1288,10 @@ I have bounded books of old class notes and homeworks that I constantly referenc
     
     <item>
       <title>NYC R Conference</title>
-      <link>/post/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/</link>
+      <link>/2017/04/24/nyc-r-conference/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/</guid>
+      <guid>/2017/04/24/nyc-r-conference/</guid>
       <description>&lt;p&gt;Just got back from the 3rd annual &lt;a href=&#34;http://www.rstats.nyc/&#34; target=&#34;_blank&#34;&gt;NYC R Conference&lt;/a&gt; this past weekend.
 I have been honored to be one of the few speakers for the 3rd year in a row.
 This year&amp;rsquo;s talk, &lt;a href=&#34;https://github.com/chendaniely/rstatsnyc_2017-data_scientist&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;So You Want to be a Data Scientist&amp;rdquo;&lt;/a&gt;
@@ -1214,10 +1312,10 @@ That has to be a good sign, right?&lt;/p&gt;
     
     <item>
       <title>Preparing for the Summer</title>
-      <link>/post/2017/2017-04-24-pfp_blog_05_summer_plans/</link>
+      <link>/2017/04/24/preparing-for-the-summer/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-24-pfp_blog_05_summer_plans/</guid>
+      <guid>/2017/04/24/preparing-for-the-summer/</guid>
       <description>&lt;p&gt;As the semester comes to an end,
 preparing for my lab&amp;rsquo;s &lt;a href=&#34;https://www.bi.vt.edu/sdal/projects/data-science-for-the-public-good-program&#34; target=&#34;_blank&#34;&gt;Data Science for the Public Good Program&lt;/a&gt; begins.
 I&amp;rsquo;ve started a &lt;a href=&#34;https://github.com/bi-sdal/&#34; target=&#34;_blank&#34;&gt;GitHub group&lt;/a&gt; to dump the various components we will be using during the summer.&lt;/p&gt;
@@ -1256,10 +1354,10 @@ and pretty much finish up my book that will be the basis for my &lt;a href=&#34;
     
     <item>
       <title>Working While Pursuing a PhD</title>
-      <link>/post/2017/2017-04-17-pfp_journal_12_working_phd/</link>
+      <link>/2017/04/17/working-while-pursuing-a-phd/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-17-pfp_journal_12_working_phd/</guid>
+      <guid>/2017/04/17/working-while-pursuing-a-phd/</guid>
       <description>&lt;p&gt;My lab has extended me an opportunity to be a research scientist and helping out our current senior data scientist
 with the daily analytics and IT support the lab needs.
 It&amp;rsquo;s a very enticing opportunity, but I need to stop and think about my options&lt;/p&gt;
@@ -1289,10 +1387,10 @@ We&amp;rsquo;ll discuss this further then.&lt;/p&gt;
     
     <item>
       <title>Education in the United States</title>
-      <link>/post/2017/2017-04-10-pfp_journal_11_us_education/</link>
+      <link>/2017/04/10/education-in-the-united-states/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-10-pfp_journal_11_us_education/</guid>
+      <guid>/2017/04/10/education-in-the-united-states/</guid>
       <description>&lt;p&gt;As people start sharing their educational experiences from around the world,
 I realized how lucky I am to have been educated in New York City,
 and how much less the United States focuses on education when compared to many other countries around the world.&lt;/p&gt;
@@ -1301,10 +1399,10 @@ and how much less the United States focuses on education when compared to many o
     
     <item>
       <title>Open Access</title>
-      <link>/post/2017/2017-04-10-pfp_blog_open_access/</link>
+      <link>/2017/04/10/open-access/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-10-pfp_blog_open_access/</guid>
+      <guid>/2017/04/10/open-access/</guid>
       <description>&lt;p&gt;&amp;ldquo;Open&amp;rdquo; has played in important role in my life the last few years.
 It all began when I was an attendee at a &lt;a href=&#34;https://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;Software-Carpentry&lt;/a&gt; &lt;a href=&#34;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&#34; target=&#34;_blank&#34;&gt;workshop&lt;/a&gt; back in 2013.
 Before then, I only knew about Open Access and Open Source,
@@ -1362,10 +1460,10 @@ potentially losing publications is enough of a detractor for many to not pursuit
     
     <item>
       <title>Tech &amp; Innovation in Higher Ed</title>
-      <link>/post/2017/2017-04-03-pfp_blog_tech_and_innovation/</link>
+      <link>/2017/04/03/tech-innovation-in-higher-ed/</link>
       <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-03-pfp_blog_tech_and_innovation/</guid>
+      <guid>/2017/04/03/tech-innovation-in-higher-ed/</guid>
       <description>&lt;p&gt;How faculty (higher education) are using and/or reacting to social media, MOOCs, and/or other &amp;ldquo;disruptive&amp;rdquo; technologies.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -1417,10 +1515,10 @@ This allows companies to purchase bulk subscriptions for their employees to give
     
     <item>
       <title>The People that Keep Me Sane</title>
-      <link>/post/2017/2017-04-03-pfp_journal_10_snow_scuba/</link>
+      <link>/2017/04/03/the-people-that-keep-me-sane/</link>
       <pubDate>Mon, 03 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-04-03-pfp_journal_10_snow_scuba/</guid>
+      <guid>/2017/04/03/the-people-that-keep-me-sane/</guid>
       <description>&lt;p&gt;Coming from CUNY Hunter College, I never really had the typical &amp;lsquo;college experience&amp;rsquo;.
 Going to college for me was almost no different than going to high school since so many people
 were commuters; there was no campus, especially when compared to Virginia Tech.&lt;/p&gt;
@@ -1457,10 +1555,10 @@ and the calm weightless feeling while diving is meditative.&lt;/p&gt;
     
     <item>
       <title>A &#39;Simple&#39; Neural-Network Model</title>
-      <link>/post/2017/2017-03-30-simple_neural_network_model/</link>
+      <link>/2017/03/30/a-simple-neural-network-model/</link>
       <pubDate>Thu, 30 Mar 2017 00:10:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-30-simple_neural_network_model/</guid>
+      <guid>/2017/03/30/a-simple-neural-network-model/</guid>
       <description>
 
 &lt;p&gt;My previous &lt;a href=&#34;http://chendaniely.github.io/research/2016/09/29/expanding_watts_to_lens/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; summarized the main points of the &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/16578874&#34; target=&#34;_blank&#34;&gt;Watts 2002 paper&lt;/a&gt;.
@@ -1554,10 +1652,10 @@ end of each simulation time tick.&lt;/p&gt;
     
     <item>
       <title>Scientific Programming</title>
-      <link>/post/2017/2017-03-27-pfp_blog_04_scientific_programming/</link>
+      <link>/2017/03/27/scientific-programming/</link>
       <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-27-pfp_blog_04_scientific_programming/</guid>
+      <guid>/2017/03/27/scientific-programming/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;Software-Carpentry&lt;/a&gt; played an &lt;a href=&#34;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&#34; target=&#34;_blank&#34;&gt;integral part&lt;/a&gt; of who I am today.
 I am always trying to learn and follow best practices in the context of scientific programming,
 which I think is a neglected area in research.&lt;/p&gt;
@@ -1586,10 +1684,10 @@ and can also explain why science has a reproducibility problem.&lt;/p&gt;
     
     <item>
       <title>Should You Attend Grad School?</title>
-      <link>/post/2017/2017-03-27-pfp_journal_09_masters_phd/</link>
+      <link>/2017/03/27/should-you-attend-grad-school/</link>
       <pubDate>Mon, 27 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-27-pfp_journal_09_masters_phd/</guid>
+      <guid>/2017/03/27/should-you-attend-grad-school/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been asked a few times about whether one should attend graduate school.
 I usually follow up by asking whether they are planning to do a Master&amp;rsquo;s or a Doctorate.&lt;/p&gt;
 
@@ -1615,10 +1713,10 @@ and there&amp;rsquo;s a reason why &lt;a href=&#34;http://www.sciencemag.org/car
     
     <item>
       <title>From NYC to Blacksburg, VA</title>
-      <link>/post/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/</link>
+      <link>/2017/03/20/from-nyc-to-blacksburg-va/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/</guid>
+      <guid>/2017/03/20/from-nyc-to-blacksburg-va/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m from New York City.
 Born and raised in Queens, and went to school in Manhattan for high school, college, and masters.
 So, coming down to rural Blacksburg, VA has been a big change in scenery.&lt;/p&gt;
@@ -1646,10 +1744,10 @@ The 30-60 minutes to cook and eat is a nice distraction from the daily stress fr
     
     <item>
       <title>My Story</title>
-      <link>/post/2017/2017-03-20-pfp_blog_03_my_story/</link>
+      <link>/2017/03/20/my-story/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-20-pfp_blog_03_my_story/</guid>
+      <guid>/2017/03/20/my-story/</guid>
       <description>&lt;p&gt;How did I get to where I am today.&lt;/p&gt;
 
 &lt;p&gt;This is my story.&lt;/p&gt;
@@ -1726,20 +1824,20 @@ guacamole on my Chipotle.&lt;/p&gt;
     
     <item>
       <title>What You Call Yourself is Important</title>
-      <link>/post/2017/2017-03-13-pfp_journal_07_naming_yourself/</link>
+      <link>/2017/03/13/what-you-call-yourself-is-important/</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-13-pfp_journal_07_naming_yourself/</guid>
+      <guid>/2017/03/13/what-you-call-yourself-is-important/</guid>
       <description>&lt;p&gt;I am a PhD &lt;em&gt;Student&lt;/em&gt;, not a candidate&amp;hellip; yet.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Research Ethics</title>
-      <link>/post/2017/2017-03-12-pfp_blog_research_ethics/</link>
+      <link>/2017/03/12/research-ethics/</link>
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-12-pfp_blog_research_ethics/</guid>
+      <guid>/2017/03/12/research-ethics/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;The &lt;a href=&#34;https://ori.hhs.gov/&#34; target=&#34;_blank&#34;&gt;Office of Research Integrity&lt;/a&gt; (ORI) oversees and directs Public Health Service (PHS) research integrity activities on behalf of the Secretary of Health and Human Services with the exception of the regulatory research integrity activities of the Food and Drug Administration.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1785,10 +1883,10 @@ Additionally, all papers related needed to be retracted or corrected.&lt;/p&gt;
     
     <item>
       <title>How Learning Works</title>
-      <link>/post/2017/2017-03-06-pfp_journal_06_how_teaching_works/</link>
+      <link>/2017/03/06/how-learning-works/</link>
       <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-06-pfp_journal_06_how_teaching_works/</guid>
+      <guid>/2017/03/06/how-learning-works/</guid>
       <description>&lt;p&gt;Susan Ambrose&amp;rsquo;s book &lt;a href=&#34;https://www.amazon.com/How-Learning-Works-Research-Based-Principles/dp/0470484101&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;How Learning Works&amp;rdquo;&lt;/a&gt; is probably one of the best investments for people who teach.
 The next best (time) investment is reading Greg Wilson&amp;rsquo;s paper on &lt;a href=&#34;https://f1000research.com/articles/3-62/v1&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Software Carpentry: lessons learned&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
 
@@ -1799,10 +1897,10 @@ and is well worth the listen.&lt;/p&gt;
     
     <item>
       <title>Some Modest Advice for Graduate Students</title>
-      <link>/post/2017/2017-03-06-pfp_blog_02_modest_advice/</link>
+      <link>/2017/03/06/some-modest-advice-for-graduate-students/</link>
       <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-06-pfp_blog_02_modest_advice/</guid>
+      <guid>/2017/03/06/some-modest-advice-for-graduate-students/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://stearnslab.yale.edu/some-modest-advice-graduate-students&#34; target=&#34;_blank&#34;&gt;Some Modest Advice for Graduate Students&lt;/a&gt;
 by Stephen C. Stearns&lt;/p&gt;
 
@@ -1844,10 +1942,10 @@ The first step of solving a problem is acknowledging the problem:&lt;/p&gt;
     
     <item>
       <title>Teaching and Mentoring</title>
-      <link>/post/2017/2017-02-27-pfp_journal_05_teaching_mentoring/</link>
+      <link>/2017/02/27/teaching-and-mentoring/</link>
       <pubDate>Mon, 27 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-02-27-pfp_journal_05_teaching_mentoring/</guid>
+      <guid>/2017/02/27/teaching-and-mentoring/</guid>
       <description>&lt;p&gt;Software-Carpentry&lt;a href=&#34;https://software-carpentry.org/&#34; target=&#34;_blank&#34;&gt;1&lt;/a&gt; has made be a better teacher because of the way we collect feedback during our workshops.
 When teaching a technical class,
 we use low-tech sticky notes to signify whether individuals need help or not:
@@ -1873,10 +1971,10 @@ that helped shaped the person I am today.&lt;/p&gt;
     
     <item>
       <title>Where Do I Fit in Academia?</title>
-      <link>/post/2017/2017-02-20-pfp_journal_04_academic_fit/</link>
+      <link>/2017/02/20/where-do-i-fit-in-academia/</link>
       <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-02-20-pfp_journal_04_academic_fit/</guid>
+      <guid>/2017/02/20/where-do-i-fit-in-academia/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s always a good idea to take a break and think about all that&amp;rsquo;s going on in life in perspective.
 As I approach the end of the coursework phase of my PhD program,
 I need to think about what&amp;rsquo;s next.&lt;/p&gt;
@@ -1906,10 +2004,10 @@ or my love for teaching has directed me into looking into Professor of Practice 
     
     <item>
       <title>Communicating Science</title>
-      <link>/post/2017/2017-02-13-pfp_journal_03_communicating_science/</link>
+      <link>/2017/02/13/communicating-science/</link>
       <pubDate>Mon, 13 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-02-13-pfp_journal_03_communicating_science/</guid>
+      <guid>/2017/02/13/communicating-science/</guid>
       <description>&lt;p&gt;The communication science workshop at class reminds me of the various acting warm-up exercise I did when I took an acting class in high school.
 The drills require individuals to coordinate and communicate with other people in the room,
 but also serves as an icebreaker by doing &amp;lsquo;silly&amp;rsquo; things.&lt;/p&gt;
@@ -1940,10 +2038,10 @@ being asked.&lt;/p&gt;
     
     <item>
       <title>Accessible Education in the United States</title>
-      <link>/post/2017/2017-02-06-pfp_journal_02_accessible_education/</link>
+      <link>/2017/02/06/accessible-education-in-the-united-states/</link>
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-02-06-pfp_journal_02_accessible_education/</guid>
+      <guid>/2017/02/06/accessible-education-in-the-united-states/</guid>
       <description>&lt;p&gt;In the United States,
 higher education aims to be accessible to everyone.
 Although historically, college and university degrees were mainly for privileged, white males,
@@ -1961,10 +2059,10 @@ to Community Colleges, each `type&amp;rsquo; of College/University was aimed to 
     
     <item>
       <title>Impostor Syndrome: Am I Qualified?</title>
-      <link>/post/2017/2017-02-06-pfp_blog_01_imposter_syndrome/</link>
+      <link>/2017/02/06/impostor-syndrome-am-i-qualified/</link>
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-02-06-pfp_blog_01_imposter_syndrome/</guid>
+      <guid>/2017/02/06/impostor-syndrome-am-i-qualified/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a concept describing high-achieving individuals who are marked by an inability to internalize their accomplishments and a persistent fear of being exposed as a &amp;ldquo;fraud&amp;rdquo;.
 - &lt;a href=&#34;https://en.wikipedia.org/wiki/Impostor_syndrome&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
@@ -2000,10 +2098,10 @@ we see people doing things that they are good at and we are not.&lt;/p&gt;
     
     <item>
       <title>Journal: Why am I Journaling?</title>
-      <link>/post/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/</link>
+      <link>/2017/01/30/journal-why-am-i-journaling/</link>
       <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/</guid>
+      <guid>/2017/01/30/journal-why-am-i-journaling/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m taking &lt;a href=&#34;https://blogs.lt.vt.edu/grad5104/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Preparing the Future Professoriate&amp;rdquo;&lt;/a&gt; this semester at Virginia Tech,
 which is one of the core classes for the &lt;a href=&#34;http://graduateschool.vt.edu/transformative-graduate-education-experience/future-professoriate/future-professoriate-certificate.html&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Future Professoriate Certificate&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
 
@@ -2018,10 +2116,10 @@ then focus on tailoring my voice towards different audiences.&lt;/p&gt;
     
     <item>
       <title>Mission Statements</title>
-      <link>/post/2017/2017-01-30-pfp_blog_mission_statements/</link>
+      <link>/2017/01/30/mission-statements/</link>
       <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-01-30-pfp_blog_mission_statements/</guid>
+      <guid>/2017/01/30/mission-statements/</guid>
       <description>
 
 &lt;p&gt;Mission statements and reflections on higher education institutions (plus one high school) that I&amp;rsquo;ve attended.&lt;/p&gt;
@@ -2125,20 +2223,20 @@ and creative expression, and give back to it through our service and citizenship
     
     <item>
       <title>SWC: What the Carpentries Mean To Me</title>
-      <link>/post/2016/2016-10-26-what_swc_means_to_me/</link>
+      <link>/2016/10/26/swc-what-the-carpentries-mean-to-me/</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/2016-10-26-what_swc_means_to_me/</guid>
+      <guid>/2016/10/26/swc-what-the-carpentries-mean-to-me/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Expanding the Watts Model</title>
-      <link>/post/2016/2016-09-29-expanding_watts_to_lens/</link>
+      <link>/2016/09/29/expanding-the-watts-model/</link>
       <pubDate>Thu, 29 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/2016-09-29-expanding_watts_to_lens/</guid>
+      <guid>/2016/09/29/expanding-the-watts-model/</guid>
       <description>
 
 &lt;p&gt;I wrote a &lt;a href=&#34;http://chendaniely.github.io/research/2016/08/31/a_simple_model_of_global_cascades_on_random_networks/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; and
@@ -2291,10 +2389,10 @@ and have each node use a random 1 neighbor&amp;rsquo;s state (i.e., output) and 
     
     <item>
       <title>A Simple Model of Global Cascades on Random Networks</title>
-      <link>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</link>
+      <link>/2016/08/31/a-simple-model-of-global-cascades-on-random-networks/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</guid>
+      <guid>/2016/08/31/a-simple-model-of-global-cascades-on-random-networks/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://twitter.com/duncanjwatts&#34; target=&#34;_blank&#34;&gt;Duncan J Watts&lt;/a&gt; wrote a paper that
@@ -2536,10 +2634,10 @@ This is an analytical solution, not a simulated solution&lt;/p&gt;
     
     <item>
       <title>Scientific &#39;Purity&#39; in the &#39;Connected Age&#39;</title>
-      <link>/post/2016/03/2016-03-14-scientific_purity_in_the_connected_age/</link>
+      <link>/2016/03/14/scientific-purity-in-the-connected-age/</link>
       <pubDate>Mon, 14 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/03/2016-03-14-scientific_purity_in_the_connected_age/</guid>
+      <guid>/2016/03/14/scientific-purity-in-the-connected-age/</guid>
       <description>&lt;p&gt;I just started reading
 &lt;a href=&#39;http://www.amazon.com/Six-Degrees-The-Science-Connected/dp/0393325423&#39;&gt;&lt;i&gt;Six Degrees: The Science of a Connected Age&lt;/i&gt;&lt;/a&gt; by Duncan J. Watts.
 It&amp;rsquo;s a book on network theory and related to the
@@ -2597,40 +2695,40 @@ I now have greater appreciation for purer disciplines and a drive to learn them.
     
     <item>
       <title>SWC: Software Carpentry as a University Course</title>
-      <link>/post/2016/2016-02-05-swc-as-a-university-course/</link>
+      <link>/2016/02/05/swc-software-carpentry-as-a-university-course/</link>
       <pubDate>Fri, 05 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/2016-02-05-swc-as-a-university-course/</guid>
+      <guid>/2016/02/05/swc-software-carpentry-as-a-university-course/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2016/02/swc-as-a-university-course.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2016/02/swc-as-a-university-course.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SWC: Teaching Bimodal Workshops with a Large Range</title>
-      <link>/post/2015/2015-11-05-teaching-extreme-ranges/</link>
+      <link>/2015/11/05/swc-teaching-bimodal-workshops-with-a-large-range/</link>
       <pubDate>Thu, 05 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-11-05-teaching-extreme-ranges/</guid>
+      <guid>/2015/11/05/swc-teaching-bimodal-workshops-with-a-large-range/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2015/11/teaching-extreme-ranges.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2015/11/teaching-extreme-ranges.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SWC: Assessing Our Learners Part I</title>
-      <link>/post/2015/2015-06-23-learner-assessment-part-01/</link>
+      <link>/2015/06/23/swc-assessing-our-learners-part-i/</link>
       <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-06-23-learner-assessment-part-01/</guid>
+      <guid>/2015/06/23/swc-assessing-our-learners-part-i/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2015/06/learner-assessment-part-01.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2015/06/learner-assessment-part-01.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Getting Started with Data Science and Analysis</title>
-      <link>/post/2015/2015-05-05-getting-started-with-data-science/</link>
+      <link>/2015/05/05/getting-started-with-data-science-and-analysis/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-05-05-getting-started-with-data-science/</guid>
+      <guid>/2015/05/05/getting-started-with-data-science-and-analysis/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve been an instructor for &lt;a href=&#34;http://software-carpentry.org&#34; target=&#34;_blank&#34;&gt;Software-Carpentry (SWC)&lt;/a&gt; over a year now.
@@ -2726,20 +2824,20 @@ In many domains of research the rapid generation of large amounts of data is fun
     
     <item>
       <title>SWC: Cookie Cutter</title>
-      <link>/post/2015/2015-02-10-cookie-cutter/</link>
+      <link>/2015/02/10/swc-cookie-cutter/</link>
       <pubDate>Tue, 10 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-02-10-cookie-cutter/</guid>
+      <guid>/2015/02/10/swc-cookie-cutter/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2015/02/cookie-cutter.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2015/02/cookie-cutter.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Open Source A Python Project I</title>
-      <link>/post/2015/2015-02-05-open-sourcing-a-python-project/</link>
+      <link>/2015/02/05/open-source-a-python-project-i/</link>
       <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-02-05-open-sourcing-a-python-project/</guid>
+      <guid>/2015/02/05/open-source-a-python-project-i/</guid>
       <description>
 
 &lt;p&gt;I started my
@@ -2938,20 +3036,20 @@ release numbers for your first release.&lt;/li&gt;
     
     <item>
       <title>SWC: Revamping the Instructor Survey</title>
-      <link>/post/2014/2014-11-02-revised-instructor-survey/</link>
+      <link>/2014/11/02/swc-revamping-the-instructor-survey/</link>
       <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-11-02-revised-instructor-survey/</guid>
+      <guid>/2014/11/02/swc-revamping-the-instructor-survey/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2014/11/revised-instructor-survey.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2014/11/revised-instructor-survey.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Hacking Your MetroCard to $0.00</title>
-      <link>/post/2014/2014-09-29-hack-your-metrocard-to-0/</link>
+      <link>/2014/09/29/hacking-your-metrocard-to-0.00/</link>
       <pubDate>Mon, 29 Sep 2014 20:40:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-09-29-hack-your-metrocard-to-0/</guid>
+      <guid>/2014/09/29/hacking-your-metrocard-to-0.00/</guid>
       <description>&lt;p&gt;Earlier this month, Ben Wellington wrote a blog post about
 &lt;a href=&#34;http://iquantny.tumblr.com/post/96700509489/how-memorizing-19-05-can-help-you-outsmart-the-mta&#34; target=&#34;_blank&#34;&gt;How Memorizing “$19.05” Can Help You Outsmart the MTA&lt;/a&gt;.
 A few days later, after the post went viral, the MTA
@@ -3071,10 +3169,10 @@ difference and you&amp;rsquo;ll have one fewer thing to be worried about.&lt;/p&
     
     <item>
       <title>Welcome to Jekyll!</title>
-      <link>/post/2014/2014-09-07-welcome-to-jekyll/</link>
+      <link>/2014/09/07/welcome-to-jekyll/</link>
       <pubDate>Sun, 07 Sep 2014 15:38:57 +0000</pubDate>
       
-      <guid>/post/2014/2014-09-07-welcome-to-jekyll/</guid>
+      <guid>/2014/09/07/welcome-to-jekyll/</guid>
       <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
@@ -3095,20 +3193,20 @@ print_hi(&amp;lsquo;Tom&amp;rsquo;)
     
     <item>
       <title>SWC: Our First High School Workshop at Rockefeller University</title>
-      <link>/post/2014/2014-07-07-high-school-students-at-rockefeller/</link>
+      <link>/2014/07/07/swc-our-first-high-school-workshop-at-rockefeller-university/</link>
       <pubDate>Mon, 07 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-07-07-high-school-students-at-rockefeller/</guid>
+      <guid>/2014/07/07/swc-our-first-high-school-workshop-at-rockefeller-university/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://software-carpentry.org/blog/2014/07/high-school-students-at-rockefeller.html&#34; target=&#34;_blank&#34;&gt;https://software-carpentry.org/blog/2014/07/high-school-students-at-rockefeller.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Absolute and Relative Directories in Python</title>
-      <link>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</link>
+      <link>/2014/05/16/absolute-and-relative-directories-in-python/</link>
       <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</guid>
+      <guid>/2014/05/16/absolute-and-relative-directories-in-python/</guid>
       <description>&lt;p&gt;One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the file I/O functions, it assumes the current directory or you need to give it an absolute directory. Using something like &lt;code&gt;../other_directory&lt;/code&gt; will not work.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -3135,10 +3233,10 @@ df.to_csv(data, sep=&#39;,&#39;, encoding=&#39;utf-8&#39;)
     
     <item>
       <title>Installing Eclipse in Ubuntu 13.10</title>
-      <link>/post/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/</link>
+      <link>/2014/02/04/installing-eclipse-in-ubuntu-13.10/</link>
       <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/</guid>
+      <guid>/2014/02/04/installing-eclipse-in-ubuntu-13.10/</guid>
       <description>&lt;p&gt;Adapted answer from Shubhmay and TimD on &lt;a href=&#34;http://askubuntu.com/questions/26632/how-to-install-eclipse&#34; target=&#34;_blank&#34;&gt;askubuntu&lt;/a&gt; on installing Eclipse.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -3191,10 +3289,10 @@ That way you will be able to install multiple different versions of eclipse&lt;/
     
     <item>
       <title>Setting Up Repast Simphony 2.1 in Linux</title>
-      <link>/post/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/</link>
+      <link>/2014/02/04/setting-up-repast-simphony-2.1-in-linux/</link>
       <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/</guid>
+      <guid>/2014/02/04/setting-up-repast-simphony-2.1-in-linux/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://repast.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;Repast Simphony&lt;/a&gt; is a Java based collection of agent-based modeling and simulation software.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -3221,10 +3319,10 @@ ls | xargs -I targ sudo ln -s ~/.eclipse/org.eclipse.platform_4.3.0_1473617060_l
     
     <item>
       <title>Setting up a WebDAV Client for Courseworks</title>
-      <link>/post/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/</link>
+      <link>/2013/09/04/setting-up-a-webdav-client-for-courseworks/</link>
       <pubDate>Wed, 04 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/</guid>
+      <guid>/2013/09/04/setting-up-a-webdav-client-for-courseworks/</guid>
       <description>&lt;p&gt;Columbia University&amp;rsquo;s Courseworks website allows you to download files for a registered class.  A problem arises when multiple files needed to be downloaded simultaneously.  One simply cannot just select the files and bulk download them.  Courseworks have instructions to circumvent this limitation in the web interface by implementing a &lt;a href=&#34;http://en.wikipedia.org/wiki/WebDAV&#34; target=&#34;_blank&#34;&gt;WebDAV&lt;/a&gt; client.  However, other than Cyberduck under their Mac instructions, the Windows suggestion is quite limited.&lt;/p&gt;
 
 &lt;p&gt;In this post I discuss setting up a WebDAV Client for Windows and Mac.  If you are on Linux, I&amp;rsquo;ve only used &lt;a href=&#34;http://www.jscape.com/products/file-transfer-clients/anyclient/&#34; target=&#34;_blank&#34;&gt;AnyClient&lt;/a&gt;, which is Java based but is not as comprehensive as the Windows/Mac alternatives suggested in this post (and this is the one suggested by Courseworks).  If anyone knows of a good Linux WebDAV client, let me know!&lt;/p&gt;
@@ -3374,10 +3472,10 @@ ls | xargs -I targ sudo ln -s ~/.eclipse/org.eclipse.platform_4.3.0_1473617060_l
     
     <item>
       <title>Setting up VirtualBox</title>
-      <link>/post/2013/2013-02-21-setting-up-virtualbox/</link>
+      <link>/2013/02/21/setting-up-virtualbox/</link>
       <pubDate>Thu, 21 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013/2013-02-21-setting-up-virtualbox/</guid>
+      <guid>/2013/02/21/setting-up-virtualbox/</guid>
       <description>&lt;p&gt;Edit: March 31, 2014: As an assignment for &lt;a href=&#34;http://software-carpentry.org/&#34; title=&#34;Software Carpentry&#34; target=&#34;_blank&#34;&gt;Software Carpentry&lt;/a&gt; I made a screencast to follow along with these steps, &lt;a href=&#34;https://www.youtube.com/watch?v=5q_K4sIwJ0E&#34; title=&#34;here&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Installing Windows XP in VirtualBox:&lt;br /&gt;

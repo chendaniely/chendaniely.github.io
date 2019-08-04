@@ -13,10 +13,10 @@
     
     <item>
       <title>Getting Started with Data Science and Analysis</title>
-      <link>/post/2015/2015-05-05-getting-started-with-data-science/</link>
+      <link>/2015/05/05/getting-started-with-data-science-and-analysis/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-05-05-getting-started-with-data-science/</guid>
+      <guid>/2015/05/05/getting-started-with-data-science-and-analysis/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve been an instructor for &lt;a href=&#34;http://software-carpentry.org&#34; target=&#34;_blank&#34;&gt;Software-Carpentry (SWC)&lt;/a&gt; over a year now.
@@ -112,10 +112,10 @@ In many domains of research the rapid generation of large amounts of data is fun
     
     <item>
       <title>Open Source A Python Project I</title>
-      <link>/post/2015/2015-02-05-open-sourcing-a-python-project/</link>
+      <link>/2015/02/05/open-source-a-python-project-i/</link>
       <pubDate>Thu, 05 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015/2015-02-05-open-sourcing-a-python-project/</guid>
+      <guid>/2015/02/05/open-source-a-python-project-i/</guid>
       <description>
 
 &lt;p&gt;I started my
@@ -314,10 +314,10 @@ release numbers for your first release.&lt;/li&gt;
     
     <item>
       <title>Installing Eclipse in Ubuntu 13.10</title>
-      <link>/post/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/</link>
+      <link>/2014/02/04/installing-eclipse-in-ubuntu-13.10/</link>
       <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/</guid>
+      <guid>/2014/02/04/installing-eclipse-in-ubuntu-13.10/</guid>
       <description>&lt;p&gt;Adapted answer from Shubhmay and TimD on &lt;a href=&#34;http://askubuntu.com/questions/26632/how-to-install-eclipse&#34; target=&#34;_blank&#34;&gt;askubuntu&lt;/a&gt; on installing Eclipse.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -370,10 +370,10 @@ That way you will be able to install multiple different versions of eclipse&lt;/
     
     <item>
       <title>Setting Up Repast Simphony 2.1 in Linux</title>
-      <link>/post/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/</link>
+      <link>/2014/02/04/setting-up-repast-simphony-2.1-in-linux/</link>
       <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/</guid>
+      <guid>/2014/02/04/setting-up-repast-simphony-2.1-in-linux/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://repast.sourceforge.net/&#34; target=&#34;_blank&#34;&gt;Repast Simphony&lt;/a&gt; is a Java based collection of agent-based modeling and simulation software.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -400,10 +400,10 @@ ls | xargs -I targ sudo ln -s ~/.eclipse/org.eclipse.platform_4.3.0_1473617060_l
     
     <item>
       <title>Setting up a WebDAV Client for Courseworks</title>
-      <link>/post/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/</link>
+      <link>/2013/09/04/setting-up-a-webdav-client-for-courseworks/</link>
       <pubDate>Wed, 04 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/</guid>
+      <guid>/2013/09/04/setting-up-a-webdav-client-for-courseworks/</guid>
       <description>&lt;p&gt;Columbia University&amp;rsquo;s Courseworks website allows you to download files for a registered class.  A problem arises when multiple files needed to be downloaded simultaneously.  One simply cannot just select the files and bulk download them.  Courseworks have instructions to circumvent this limitation in the web interface by implementing a &lt;a href=&#34;http://en.wikipedia.org/wiki/WebDAV&#34; target=&#34;_blank&#34;&gt;WebDAV&lt;/a&gt; client.  However, other than Cyberduck under their Mac instructions, the Windows suggestion is quite limited.&lt;/p&gt;
 
 &lt;p&gt;In this post I discuss setting up a WebDAV Client for Windows and Mac.  If you are on Linux, I&amp;rsquo;ve only used &lt;a href=&#34;http://www.jscape.com/products/file-transfer-clients/anyclient/&#34; target=&#34;_blank&#34;&gt;AnyClient&lt;/a&gt;, which is Java based but is not as comprehensive as the Windows/Mac alternatives suggested in this post (and this is the one suggested by Courseworks).  If anyone knows of a good Linux WebDAV client, let me know!&lt;/p&gt;
@@ -553,10 +553,10 @@ ls | xargs -I targ sudo ln -s ~/.eclipse/org.eclipse.platform_4.3.0_1473617060_l
     
     <item>
       <title>Setting up VirtualBox</title>
-      <link>/post/2013/2013-02-21-setting-up-virtualbox/</link>
+      <link>/2013/02/21/setting-up-virtualbox/</link>
       <pubDate>Thu, 21 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013/2013-02-21-setting-up-virtualbox/</guid>
+      <guid>/2013/02/21/setting-up-virtualbox/</guid>
       <description>&lt;p&gt;Edit: March 31, 2014: As an assignment for &lt;a href=&#34;http://software-carpentry.org/&#34; title=&#34;Software Carpentry&#34; target=&#34;_blank&#34;&gt;Software Carpentry&lt;/a&gt; I made a screencast to follow along with these steps, &lt;a href=&#34;https://www.youtube.com/watch?v=5q_K4sIwJ0E&#34; title=&#34;here&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Installing Windows XP in VirtualBox:&lt;br /&gt;

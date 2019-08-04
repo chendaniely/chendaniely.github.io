@@ -13,10 +13,10 @@
     
     <item>
       <title>A &#39;Simple&#39; Neural-Network Model</title>
-      <link>/post/2017/2017-03-30-simple_neural_network_model/</link>
+      <link>/2017/03/30/a-simple-neural-network-model/</link>
       <pubDate>Thu, 30 Mar 2017 00:10:00 +0000</pubDate>
       
-      <guid>/post/2017/2017-03-30-simple_neural_network_model/</guid>
+      <guid>/2017/03/30/a-simple-neural-network-model/</guid>
       <description>
 
 &lt;p&gt;My previous &lt;a href=&#34;http://chendaniely.github.io/research/2016/09/29/expanding_watts_to_lens/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; summarized the main points of the &lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/16578874&#34; target=&#34;_blank&#34;&gt;Watts 2002 paper&lt;/a&gt;.
@@ -110,10 +110,10 @@ end of each simulation time tick.&lt;/p&gt;
     
     <item>
       <title>Expanding the Watts Model</title>
-      <link>/post/2016/2016-09-29-expanding_watts_to_lens/</link>
+      <link>/2016/09/29/expanding-the-watts-model/</link>
       <pubDate>Thu, 29 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/2016-09-29-expanding_watts_to_lens/</guid>
+      <guid>/2016/09/29/expanding-the-watts-model/</guid>
       <description>
 
 &lt;p&gt;I wrote a &lt;a href=&#34;http://chendaniely.github.io/research/2016/08/31/a_simple_model_of_global_cascades_on_random_networks/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; and
@@ -266,10 +266,10 @@ and have each node use a random 1 neighbor&amp;rsquo;s state (i.e., output) and 
     
     <item>
       <title>A Simple Model of Global Cascades on Random Networks</title>
-      <link>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</link>
+      <link>/2016/08/31/a-simple-model-of-global-cascades-on-random-networks/</link>
       <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/</guid>
+      <guid>/2016/08/31/a-simple-model-of-global-cascades-on-random-networks/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://twitter.com/duncanjwatts&#34; target=&#34;_blank&#34;&gt;Duncan J Watts&lt;/a&gt; wrote a paper that

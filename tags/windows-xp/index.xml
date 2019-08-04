@@ -13,10 +13,10 @@
     
     <item>
       <title>Setting up VirtualBox</title>
-      <link>/post/2013/2013-02-21-setting-up-virtualbox/</link>
+      <link>/2013/02/21/setting-up-virtualbox/</link>
       <pubDate>Thu, 21 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/2013/2013-02-21-setting-up-virtualbox/</guid>
+      <guid>/2013/02/21/setting-up-virtualbox/</guid>
       <description>&lt;p&gt;Edit: March 31, 2014: As an assignment for &lt;a href=&#34;http://software-carpentry.org/&#34; title=&#34;Software Carpentry&#34; target=&#34;_blank&#34;&gt;Software Carpentry&lt;/a&gt; I made a screencast to follow along with these steps, &lt;a href=&#34;https://www.youtube.com/watch?v=5q_K4sIwJ0E&#34; title=&#34;here&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Installing Windows XP in VirtualBox:&lt;br /&gt;

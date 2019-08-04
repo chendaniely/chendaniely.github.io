@@ -13,10 +13,10 @@
     
     <item>
       <title>Absolute and Relative Directories in Python</title>
-      <link>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</link>
+      <link>/2014/05/16/absolute-and-relative-directories-in-python/</link>
       <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/2014/2014-05-16-absolute-and-relative-directories-in-python/</guid>
+      <guid>/2014/05/16/absolute-and-relative-directories-in-python/</guid>
       <description>&lt;p&gt;One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the file I/O functions, it assumes the current directory or you need to give it an absolute directory. Using something like &lt;code&gt;../other_directory&lt;/code&gt; will not work.&lt;/p&gt;
 
 &lt;!-- more --&gt;

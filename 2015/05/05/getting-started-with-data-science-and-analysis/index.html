@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I&rsquo;ve been an instructor for Software-Carpentry (SWC) over a year now. It&rsquo;s been a facinating experience and I&rsquo;m proud to be a part of an open source movement promoting best practices. Typically when looking to start learing data science/analysis the first things people look up is something along the lines of: &ldquo;learn python&rdquo;, &ldquo;free online r course&rdquo;, &ldquo;data science python&rdquo;, &ldquo;r jobs&rdquo;, etc. Or scan through the coursera offerings. I&rsquo;m a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2015/05/05/getting-started-with-data-science-and-analysis/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2015/05/05/getting-started-with-data-science-and-analysis/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/2015/05/05/getting-started-with-data-science-and-analysis/">
+  <meta property="og:title" content="Getting Started with Data Science and Analysis | Academic">
+  <meta property="og:description" content="I&rsquo;ve been an instructor for Software-Carpentry (SWC) over a year now. It&rsquo;s been a facinating experience and I&rsquo;m proud to be a part of an open source movement promoting best practices. Typically when looking to start learing data science/analysis the first things people look up is something along the lines of: &ldquo;learn python&rdquo;, &ldquo;free online r course&rdquo;, &ldquo;data science python&rdquo;, &ldquo;r jobs&rdquo;, etc. Or scan through the coursera offerings. I&rsquo;m a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2015-05-05T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-07-23T20:45:50-04:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>Getting Started with Data Science and Analysis | Academic</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Academic</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Getting Started with Data Science and Analysis</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2015-05-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-07-23 20:45:50 -0400 EDT" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>2019-07-23</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2015/05/05/getting-started-with-data-science-and-analysis/#disqus_thread"></a>
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/2015/05/05/getting-started-with-data-science-and-analysis/&amp;text=Getting%20Started%20with%20Data%20Science%20and%20Analysis" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/2015/05/05/getting-started-with-data-science-and-analysis/&amp;t=Getting%20Started%20with%20Data%20Science%20and%20Analysis" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Getting%20Started%20with%20Data%20Science%20and%20Analysis&amp;body=/2015/05/05/getting-started-with-data-science-and-analysis/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/2015/05/05/getting-started-with-data-science-and-analysis/&amp;title=Getting%20Started%20with%20Data%20Science%20and%20Analysis" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Getting%20Started%20with%20Data%20Science%20and%20Analysis%20/2015/05/05/getting-started-with-data-science-and-analysis/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/2015/05/05/getting-started-with-data-science-and-analysis/&amp;title=Getting%20Started%20with%20Data%20Science%20and%20Analysis" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>I&rsquo;ve been an instructor for <a href="http://software-carpentry.org" target="_blank">Software-Carpentry (SWC)</a> over a year now.
+It&rsquo;s been a facinating experience and I&rsquo;m proud to be a part of an open source movement promoting best practices.
+Typically when looking to start learing data science/analysis the first things people look up is something along the lines of: &ldquo;learn python&rdquo;, &ldquo;free online r course&rdquo;, &ldquo;data science python&rdquo;, &ldquo;r jobs&rdquo;, etc.
+Or scan through the coursera offerings.
+I&rsquo;m a bit biased, but I think the SWC material is one of the best ways to just get familiar with the basics.
+This isn&rsquo;t a blog post about SWC per se, but how one might go about learing and navigating some of the material on your own without attending a workshop.</p>
+
+<!-- more -->
+
+<h1 id="software-carptentry-material">Software Carptentry Material</h1>
+
+<p>SWC has a page of <a href="http://software-carpentry.org/lessons.html" target="_blank">lessons</a> that link to the various lessons taught during workshops.
+The core material covers:</p>
+
+<ol>
+<li><a href="http://swcarpentry.github.io/shell-novice/" target="_blank">Unix</a></li>
+<li>Some programming language like <a href="http://swcarpentry.github.io/python-novice-inflammation/" target="_blank">Python</a>, <a href="http://swcarpentry.github.io/r-novice-inflammation/" target="_blank">R</a>, <a href="http://swcarpentry.github.io/matlab-novice-inflammation/" target="_blank">MATLAB</a>, etc</li>
+<li>Version control using <a href="https://github.com/swcarpentry/git-novice" target="_blank">Git</a> or <a href="https://github.com/swcarpentry/hg-novice" target="_blank">Mercurial</a></li>
+<li>Databases and <a href="http://swcarpentry.github.io/sql-novice-survey/" target="_blank">SQL</a></li>
+</ol>
+
+<p>If you take a look and listen (there is sound) to the <a href="http://swcarpentry.github.io/slideshows/introducing-software-carpentry/index.html#slide-3" target="_blank">introductory browsercase</a>.
+You will see that we say we teach the above material, but in essense we try to convey:</p>
+
+<ol>
+<li>Automation of repetitive tasks</li>
+<li>Tracking and sharing work</li>
+<li>Building modular code</li>
+<li>Manage data</li>
+</ol>
+
+<p>It&rsquo;s a little bait-and-switch :)</p>
+
+<h1 id="installing-things">Installing Things</h1>
+
+<p>For each SWC workshop is accompanied by a <a href="http://chendaniely.github.io/workshop-template-empty/" target="_blank">website</a>.
+The website Contains information about location, instructors, helpers, syllabus, etc.
+For people reading this post, the most important part may be the installation instructions towards the middle/bottom of the page.
+There are separate instructions depending on your operating system.</p>
+
+<p>Essentially:</p>
+
+<ul>
+<li>Python: <a href="http://continuum.io/downloads" target="_blank">Anaconda</a></li>
+<li>R: <a href="http://cran.rstudio.com/" target="_blank">R</a> and <a href="http://www.rstudio.com/products/rstudio/download/" target="_blank">RStudio</a></li>
+</ul>
+
+<h1 id="navigating-the-material">Navigating the Material</h1>
+
+<p>For people who have not been to a workshop trying to navigate the lesson material can be tricky.
+And I would highly suggest going through at least the first 3 <a href="http://swcarpentry.github.io/shell-novice/" target="_blank">Unix</a> lessons.
+This is mainly because loading files in a programming language uses the concept of relative and absolute paths, and it&rsquo;s important to know where your data is and how to load it.</p>
+
+<p>Using the R material as an example.  The instructors typically teach from the <a href="http://swcarpentry.github.io/r-novice-inflammation/" target="_blank">Novice R Inflammation</a> lessons.  There has been some <a href="https://github.com/swcarpentry/r-novice-inflammation/pull/65#issuecomment-93483536" target="_blank">discussion</a> and plans to use the <a href="http://www.gapminder.org/" target="_blank">Gapminder</a> data to teach lessons.  The beta can be found in the <a href="https://github.com/swcarpentry/r-novice-gapminder" target="_blank">R Novice Gapminder</a> lesson.</p>
+
+<p>Once you&rsquo;re on the github page of the lesson, there are a few ways to get the lessons plan</p>
+
+<ol>
+<li>If you know your way around git, you can clone the repository</li>
+<li>Otherwise, you will see an option to &ldquo;Download ZIP&rdquo; on the right panel.</li>
+<li>View them in the browser</li>
+</ol>
+
+<p>The first 2 methods get you do the same place &ndash; have the lessons on your computer.
+In order to view the lessons, open up the folder and all the lessons are numbered and end in <code>.html</code>.
+Click, read, and code through them in order.</p>
+
+<p>If you want to view the lessons online, you can click the <code>.Rmd</code> documents, and github should be able to render the lesson for you in the browser.  For Python and other materials, use the <code>.md</code> documents.
+The caveat with viewing the <code>.Rmd</code> and <code>.md</code> (aka R markdown, and markdown respectively) is that it does not render the documently exactly the same way as the <code>.html</code> files.
+There is a potential for things to be rendered incorrectly, and you&rsquo;ll see some bizzare (YAML) header on the top.
+It&rsquo;s great for a quick reference when you&rsquo;re not at your computer, but I would suggest using one of the <code>.html</code> methods.</p>
+
+<h1 id="data-carpentry-material">Data Carpentry Material</h1>
+
+<p>Software Carpentry&rsquo;s sister organization, <a href="http://datacarpentry.org/" target="_blank">Data Carpentry</a> also has a set of <a href="http://datacarpentry.org/lesson-dev.html" target="_blank">lesson plans</a>.
+From their <a href="http://datacarpentry.org/about.html" target="_blank">about us</a> page:</p>
+
+<blockquote>
+<p>Data Carpentry is a sister organization of Software Carpentry designed to teach basic concepts, skills and tools for working more effectively with data.
+We develop curricula and run workshops that are 1) domain specific; 2) target fundamental data analysis and data management challenges; and 3) require little or no prior programming experience.
+In many domains of research the rapid generation of large amounts of data is fundamentally changing how research is done. The deluge of data presents great opportunities, but also many challenges in managing, analyzing and sharing data. Data Carpentry aims to teach the data skills that will enable researchers to be more effective and productive.</p>
+</blockquote>
+
+<p>Pick a language you want to do the lesson with.  <code>clone</code> or <code>Download ZIP</code>, and go through the lessons using the <code>.html</code>, <code>.Rmd</code>, or <code>.md</code> as mentioned above.</p>
+
+<h1 id="happy-learning">Happy Learning!</h1>
+
+<p>Hopefully this has been clear enough.  If not, post a comment, and I&rsquo;ll respond and update this post accordinly.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/tutorials/">tutorials</a>
+  
+  <a class="badge badge-light" href="/tags/opensource/">opensource</a>
+  
+  <a class="badge badge-light" href="/tags/python/">python</a>
+  
+  <a class="badge badge-light" href="/tags/r/">r</a>
+  
+  <a class="badge badge-light" href="/tags/data-analysis/">data analysis</a>
+  
+  <a class="badge badge-light" href="/tags/data-science/">data science</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/4020908e54741b5fc49e743ef6913ceb?s=200')" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/">Daniel Chen</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      <p class="card-text" itemprop="description">My research interests include trying anything to graduate.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.instagram.com/chendaniely/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.twitch.tv/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://open.spotify.com/user/maveri2k" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="http://orcid.org/0000-0003-3857-1741" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/2015/02/05/open-source-a-python-project-i/">Open Source A Python Project I</a></li>
+          
+          <li><a href="/2014/05/16/absolute-and-relative-directories-in-python/">Absolute and Relative Directories in Python</a></li>
+          
+          <li><a href="/2014/02/04/installing-eclipse-in-ubuntu-13.10/">Installing Eclipse in Ubuntu 13.10</a></li>
+          
+          <li><a href="/2014/02/04/setting-up-repast-simphony-2.1-in-linux/">Setting Up Repast Simphony 2.1 in Linux</a></li>
+          
+          <li><a href="/2013/09/04/setting-up-a-webdav-client-for-courseworks/">Setting up a WebDAV Client for Courseworks</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/2015/06/23/swc-assessing-our-learners-part-i/" rel="next">SWC: Assessing Our Learners Part I</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/2015/02/10/swc-cookie-cutter/" rel="prev">SWC: Cookie Cutter</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chendaniely" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.23e2fabfaf271b1b075bb9e0280085b7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Since I&rsquo;ve joined SDAL, the lab has undergone a few infrastructure related changes, mainly how applications are run on the servers. From what I remember, we started using Virtual Box virtual machines, then moved to LXC Linux containers, and we are now rebuilding our entire infrastructure using Docker containers.
+How we got here The whole point of using these visualization and container technologies is so we did not want to install anything directly on the server.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/">
+  <meta property="og:title" content="From VMs to LXC Containers to Docker Containers | Academic">
+  <meta property="og:description" content="Since I&rsquo;ve joined SDAL, the lab has undergone a few infrastructure related changes, mainly how applications are run on the servers. From what I remember, we started using Virtual Box virtual machines, then moved to LXC Linux containers, and we are now rebuilding our entire infrastructure using Docker containers.
+How we got here The whole point of using these visualization and container technologies is so we did not want to install anything directly on the server."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-07-07T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-07-23T20:45:50-04:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>From VMs to LXC Containers to Docker Containers | Academic</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Academic</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">From VMs to LXC Containers to Docker Containers</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2017-07-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-07-23 20:45:50 -0400 EDT" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>2019-07-23</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/#disqus_thread"></a>
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/&amp;text=From%20VMs%20to%20LXC%20Containers%20to%20Docker%20Containers" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/&amp;t=From%20VMs%20to%20LXC%20Containers%20to%20Docker%20Containers" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=From%20VMs%20to%20LXC%20Containers%20to%20Docker%20Containers&amp;body=/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/&amp;title=From%20VMs%20to%20LXC%20Containers%20to%20Docker%20Containers" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=From%20VMs%20to%20LXC%20Containers%20to%20Docker%20Containers%20/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/2017/07/07/from-vms-to-lxc-containers-to-docker-containers/&amp;title=From%20VMs%20to%20LXC%20Containers%20to%20Docker%20Containers" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>Since I&rsquo;ve joined <a href="https://www.bi.vt.edu/sdal" target="_blank">SDAL</a>,
+the lab has undergone a few infrastructure related changes,
+mainly how applications are run on the servers.
+From what I remember, we started using <a href="https://www.virtualbox.org/" target="_blank">Virtual Box</a> virtual machines,
+then moved to <a href="https://linuxcontainers.org/" target="_blank">LXC</a> Linux containers, and we are now rebuilding our entire infrastructure
+using <a href="https://www.docker.com/" target="_blank">Docker</a> containers.</p>
+
+<!-- more -->
+
+<h1 id="how-we-got-here">How we got here</h1>
+
+<p>The whole point of using these visualization and container technologies is so
+we did not want to install anything directly on the server.
+There are many benefits to this</p>
+
+<ol>
+<li>If the server goes down, we should be able to redeploy our infrastructure on a backup server</li>
+<li>If an installation goes wrong, it will not crash the underlying server
+
+<ul>
+<li>If an installation goes wrong, we should be able to swap out or roll back to a working state</li>
+</ul></li>
+<li>This gives us the ability to test out updates before rolling them out on a production server</li>
+<li>If something happens with one part of the system, it should not affect another</li>
+</ol>
+
+<h2 id="virtual-box-virtual-machines">Virtual Box Virtual Machines</h2>
+
+<p>We (<a href="https://www.bi.vt.edu/sdal/people/Aaron-Schroeder" target="_blank">Aaron</a>) started with Virtual Box Virtual Machines,
+because it&rsquo;s a very logical first step.
+If you wanted the same thing on your own computer/laptop,
+you&rsquo;d use a virtual machine.
+This meant that it was relatively easy to get started because
+we already had experience with VB.</p>
+
+<p>Our main reasons for looking into other solutions were</p>
+
+<ol>
+<li><strong>performance</strong>: since we are using these VMs to run data analytics,
+we needed performant system.
+The fact we needed to install an entire OS made it clunky</li>
+<li><strong>size</strong>: Since we wanted multiple containers, one for each application,
+the fact that an entire OS needed to be installed for each application
+meant that a lot of OS information was replicated and
+used a large amount of space</li>
+<li><code>VBoxManage</code>: since we had to run our VMs in <code>headless</code> mode,
+the only way to make changes to the VMs was with the VB command line tool,
+<code>VBoxManage</code>, which is less than ideal in terms of simplicity and
+documentation.</li>
+</ol>
+
+<h2 id="lxc-containers">LXC Containers</h2>
+
+<p>When looking to move away from VirtualBox,
+we started with LXC because at the time Docker just started and
+didn&rsquo;t seem to be developed enough.
+During the early days of Docker,
+the documentation was lacking (one might argue that it still is),
+and the API/interface was cumbersome
+(How do I get into my container? why can&rsquo;t I just SSH?).
+We went with LXC since docker was an extension of it.
+We later also looked into LXD,
+since it extended LXC with more and better security, group, and
+permission features.</p>
+
+<p>LXC got us pretty far,
+we had a lighter set of applications running on the servers,
+since each container was based on the host operating system
+(in our case this was CenOS 7).</p>
+
+<p>The main issue was that it was hard to quickly tear down and redeploy containers.
+Or have container dependencies to build applications.</p>
+
+<ol>
+<li><strong>support</strong>: support for LXC was lacking, mainly a lack of documentation</li>
+<li><strong>permissions</strong>: permissions from the host were not being carried over into the container</li>
+<li><strong>host os</strong>: each container was limited to whatever the host OS was on.</li>
+</ol>
+
+<p>These limitations had us looking at LXD, LXC successor.
+LXD did not run as root, so each container was not privileged.
+It also mapped permissions from the host OS,
+and we had the ability to install an image using Ubuntu, if needed.</p>
+
+<p>However, after a year we transitioned into Docker, and solved the LXC limitations.</p>
+
+<h2 id="docker-containers">Docker Containers</h2>
+
+<p>I&rsquo;m sure a lot of the issues from LXC could&rsquo;ve been worked out with enough blood, sweat, and tears, it is linux after all.
+The popularity of Docker over the year was hard to ignore and worth trying again.</p>
+
+<p>The best part about docker is how it forces you to fully document the setup process,
+using the <code>Dockerfile</code>.
+This not only meant that we can readily tear down and spin up the container if
+something goes wrong.
+Additionally, we can just as easily start up multiple containers running the same application.
+This is particularly useful when trying to get RStudio to see newly mounted and mapped drives
+or permission changes.
+Instead of restarting the image, which requires nobody to be using it,
+we can spin up a new container and have the people who needed new data partitions or
+permission to have a temporary new container without disrupting other users.</p>
+
+<h1 id="what-s-next">What&rsquo;s next?</h1>
+
+<p>We&rsquo;ll probably look into container orchestration tools such as docker-swarm or kubernetes.
+While we could use the current <code>docker-compose</code> file and function to create multiple RStudio Servers,
+there&rsquo;s a lot of copying and pasting involved.</p>
+
+<p>We&rsquo;d like everyone to have his/her own RStudio instance, so if there is a permission change,
+we can simply restart the individual user&rsquo;s container instance, rather than finding workarounds in the middle of the day because we can&rsquo;t do a restart.
+Relying on zero usage on a server (especially in the middle of a work day) to do maintenance is almost never a good idea.
+Having a orchestrator will allow us to spin up as many instances without conflicting ports and username-appended container names with a single script.</p>
+
+<p>It would also be nice to have a single entry page, so users can pick the service they need,
+rather than remembering port numbers to connect to (since those can change at any given time).</p>
+
+<p>Finally, on a recent server hiccup, we were having issues around dead containers.</p>
+
+<p>Here&rsquo;s the error message when we tried to stop and remove the containers:</p>
+
+<pre><code>$ docker-compose down
+Stopping adminer ... done
+Stopping mro ... done
+Stopping postgresql ... done
+Stopping dokuwiki ... done
+Stopping rpkgs ... done
+Stopping rstudio ... done
+Stopping shiny ... done
+Removing adminer ... error
+Removing mro ... error
+Removing postgresql ... error
+Removing dokuwiki ... error
+Removing rpkgs ... error
+Removing rstudio ... error
+Removing shiny ... error
+
+ERROR: for postgresql  driver &quot;overlay&quot; failed to remove root filesystem for b91b18c144d40801b1782789ffe3a9352509b720b368947cefd9e443d02edf01: remove /home/vms/docker/overlay/014f942314a693d1984155ded44a30f50b27b67fce62f7ed60233028f998379c/merged: device or resource busy
+
+ERROR: for dokuwiki  driver &quot;overlay&quot; failed to remove root filesystem for f228cc35d050d8654cc1eb4e424feb111a2b826b3a4bd35d42aa4ff38dcc5524: remove /home/vms/docker/overlay/6dc15c5116a0290bc42bdae7fafdcbdcf718951c8ebcbfbc63eb56d18fd07c23/merged: device or resource busy
+
+ERROR: for adminer  driver &quot;overlay&quot; failed to remove root filesystem for fb7f33ed5a10a843b9855ffa3aa83c0b68ecfeb793a89274e0277add2bc08262: remove /home/vms/docker/overlay/58c311625ca5d6288359489d36c4653107fd710e3700298cf8400cf85d4c4523/merged: device or resource busy
+
+ERROR: for rpkgs  driver &quot;overlay&quot; failed to remove root filesystem for 14c0516130623640ebace03e89478b17efb2e802232ddc22a524f42e4fcaef02: remove /home/vms/docker/overlay/d083c1fb3046605fe3a9eaa8e19111b00473c38bebe23f222bfd0cfa81802c6f/merged: device or resource busy
+
+ERROR: for mro  driver &quot;overlay&quot; failed to remove root filesystem for 7c75a0cc6ba4f80bdb47df37d0aeab38681e621a5052507a5cc8da2a4eac332c: remove /home/vms/docker/overlay/cd7e50fe0e95feca8ced590c0ecd373290fa6710656db75286c1ce8900ff09d1/merged: device or resource busy
+
+ERROR: for rstudio  driver &quot;overlay&quot; failed to remove root filesystem for 8f90d16c8da45c59519203e582917b24a4249fdfa9a35f5043782320d6d6b2d4: remove /home/vms/docker/overlay/408a938c07d53d5b4cf79376a15f1bf3ffc5cc54eb0c1d2f7f95215764e010b5/merged: device or resource busy
+
+ERROR: for shiny  driver &quot;overlay&quot; failed to remove root filesystem for dc85077a54862940c0a17906b66d7670d1dbb95f5006083871c36c20586483f3: remove /home/vms/docker/overlay/08e22f468c2f5aa0ca4823a2aa5d9cb400167c49aa21a06f3538a9fa943c4dba/merged: device or resource busy
+Removing network dockerimages_default
+Removing network dockerimages_dspg
+</code></pre>
+
+<p>We got around this error by restart the server, which is far from an ideal solution,</p>
+
+<p>There was a promising explanation <a href="https://github.com/moby/moby/issues/25718#issuecomment-250356570" target="_blank">here</a> and <a href="http://blog.hashbangbash.com/2014/11/docker-devicemapper-fix-for-device-or-resource-busy-ebusy/" target="_blank">here</a>.
+Here&rsquo;s an excerpt from Anusha Ragunathan&rsquo;s post about what&rsquo;s going on</p>
+
+<pre><code>Dug up some history:
+
+daemon flags changed to default &quot;shared&quot; mount propagation in 2aee081 in an effort to help volume mounts to ensure shared. This change made it to 1.12, which is probably why there's more reports since then.
+
+Prior to this, the flags were indeed set to &quot;slave&quot; in eb76cb2 to avoid EBUSY errors on container remove. There's a blog post on why this was done. Although it mentions devicemapper, the problem exists across graphdrivers. http://blog.hashbangbash.com/2014/11/docker-devicemapper-fix-for-device-or-resource-busy-ebusy/
+</code></pre>
+
+<pre><code>Overview:
+While this is issue not exclusive to devicemapper, the mechanics currently involved in this driver cause it to be affected by this.
+
+A couple of the more commons issues seen when using the ‘devicemapper’ storage driver is when trying to stop and/or remove a contianer.
+In the docker daemon logs, you may see output like:
+
+[error] deviceset.go:792 Warning: error waiting for device ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef to close: Timeout while waiting for device ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef to close
+
+or more likely:
+
+Cannot destroy container ac05cffda663: Driver devicemapper failed to remove root filesystem ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef: Device is Busy
+[8ad069f7] -job rm(ac05cffda663) = ERR (1)
+[error] server.go:1207 Handler for DELETE /containers/{name:.*} returned error: Cannot destroy container ac05cffda663: Driver devicemapper failed to remove root filesystem ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef: Device is Busy
+[error] server.go:110 HTTP Error: statusCode=500 Cannot destroy container ac05cffda663: Driver devicemapper failed to remove root filesystem ac05cffda663a01cbc37879bc146fcd68d0f95b5b141f60da2b64579add1f4ef: Device is Busy
+
+Diagnosis:
+What’s happening behind the scenes is that devicemapper has established a new thin snapshot device to mount then container on.
+Sometime during the life of that container another PID on the host, unrelated to docker, has likely started and unshared some namespaces from the root namespace, namely the mount namespace (CLONE_NEWNS). In the mounts referenced in this unshared host PID, it includes the thin snapshot device and its mount for the container runtime.
+
+When the container goes to stop and unmount, while it may unmount the device from the root namespace, that umount does not propogate to the unshared host PID.
+When the container is removed, devicemapper attempts to remove the thin snapshot device, but since the unshared host PID includes a reference to the device in its mountinfo, the kernel sees the device as still busy (EBUSY). Despite the fact the mounts of the root mount namespace may no longer show this device and mount.
+</code></pre>
+
+<p>Maybe these problems can be fixed with a different container orchestration system like docker swarm
+or kubernetes, who knows.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/infrastructure/">infrastructure</a>
+  
+  <a class="badge badge-light" href="/tags/dspg/">dspg</a>
+  
+  <a class="badge badge-light" href="/tags/dspg17/">dspg17</a>
+  
+  <a class="badge badge-light" href="/tags/containers/">containers</a>
+  
+  <a class="badge badge-light" href="/tags/sdal/">sdal</a>
+  
+  <a class="badge badge-light" href="/tags/docker/">docker</a>
+  
+  <a class="badge badge-light" href="/tags/vms/">vms</a>
+  
+  <a class="badge badge-light" href="/tags/lxc/">lxc</a>
+  
+  <a class="badge badge-light" href="/tags/devops/">devops</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/4020908e54741b5fc49e743ef6913ceb?s=200')" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/">Daniel Chen</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      <p class="card-text" itemprop="description">My research interests include trying anything to graduate.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.instagram.com/chendaniely/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.twitch.tv/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://open.spotify.com/user/maveri2k" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="http://orcid.org/0000-0003-3857-1741" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/2017/05/30/project-templates/">Project Templates</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/2018/01/23/analysis-based-project-templates/" rel="next">Analysis-Based Project Templates</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/2017/05/30/project-templates/" rel="prev">Project Templates</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chendaniely" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.23e2fabfaf271b1b075bb9e0280085b7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
