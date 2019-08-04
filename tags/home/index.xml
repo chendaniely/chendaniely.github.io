@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>home on Academic</title>
+    <title>home on Daniel Chen</title>
     <link>/tags/home/</link>
-    <description>Recent content in home on Academic</description>
+    <description>Recent content in home on Daniel Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
+    <copyright>&amp;copy; Daniel Chen {year}</copyright>
     <lastBuildDate>Sat, 03 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/tags/home/index.xml" rel="self" type="application/rss+xml" />
