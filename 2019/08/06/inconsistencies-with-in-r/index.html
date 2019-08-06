@@ -28,11 +28,12 @@
   
     
   
-  <meta name="description" content="I was initially going to get some small bookshelves to put my Oculus sensors on,but you can take your Oculus sensors off the stand!This way you wont have an awkward way to mount the sensors against the wall.
-I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended up just leaving it on my desk.The parts list below was from me shopping at Home Depot assuming I was going to mount all 3 against the wall.">
+  <meta name="description" content="One of the cool things about working on gradethis(grader need to be renamed)is that we end up doing things that aren’t common in R (i.e., grading and comparing code).
+I discovered an inconsistency with the == operator when comparing (long) R expressions.
+A quick primer on expressionsIn R, you can create an expression using thequote() function.This is essentially the code that R will execute.It is similar to the “string” that will be executed,but an actual string in R will return a string, not a command or set of instructions that R will execute.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/">
+  <link rel="alternate" hreflang="en-us" href="/2019/08/06/inconsistencies-with-in-r/">
 
   
 
@@ -111,7 +112,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/">
+  <link rel="canonical" href="/2019/08/06/inconsistencies-with-in-r/">
 
   
   
@@ -126,15 +127,16 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
   <meta property="twitter:creator" content="@chendaniely">
   
   <meta property="og:site_name" content="Daniel Chen">
-  <meta property="og:url" content="/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/">
-  <meta property="og:title" content="Mounting Oclus Rift Sensors on the Wall | Daniel Chen">
-  <meta property="og:description" content="I was initially going to get some small bookshelves to put my Oculus sensors on,but you can take your Oculus sensors off the stand!This way you wont have an awkward way to mount the sensors against the wall.
-I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended up just leaving it on my desk.The parts list below was from me shopping at Home Depot assuming I was going to mount all 3 against the wall."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:url" content="/2019/08/06/inconsistencies-with-in-r/">
+  <meta property="og:title" content="Inconsistencies with the `==` operator in R | Daniel Chen">
+  <meta property="og:description" content="One of the cool things about working on gradethis(grader need to be renamed)is that we end up doing things that aren’t common in R (i.e., grading and comparing code).
+I discovered an inconsistency with the == operator when comparing (long) R expressions.
+A quick primer on expressionsIn R, you can create an expression using thequote() function.This is essentially the code that R will execute.It is similar to the “string” that will be executed,but an actual string in R will return a string, not a command or set of instructions that R will execute."><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-08-03T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2019-08-06T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2019-08-03T20:37:19-04:00">
+  <meta property="article:modified_time" content="2019-08-06T09:35:59-04:00">
   
 
   
@@ -172,7 +174,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
 
 
 
-  <title>Mounting Oclus Rift Sensors on the Wall | Daniel Chen</title>
+  <title>Inconsistencies with the `==` operator in R | Daniel Chen</title>
 
 </head>
 
@@ -373,10 +375,10 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Mounting Oclus Rift Sensors on the Wall</h1>
+  <h1 itemprop="name">Inconsistencies with the `==` operator in R</h1>
 
   
-  <p class="page-subtitle">Still looking for a way to hide my cables behind the desk&hellip;</p>
+  <p class="page-subtitle">I found a bug with the == operator in R!</p>
   
 
   
@@ -384,8 +386,8 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
 
 
 
-<meta content="2019-08-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2019-08-03 20:37:19 -0400 EDT" itemprop="dateModified">
+<meta content="2019-08-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2019-08-06 09:35:59 -0400 EDT" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -400,7 +402,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
           Last updated on
       
     
-    <time>2019-08-03</time>
+    <time>2019-08-06</time>
   </span>
   
 
@@ -409,14 +411,14 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
   
   
   <span class="middot-divider"></span>
-  <a href="/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/#disqus_thread"></a>
+  <a href="/2019/08/06/inconsistencies-with-in-r/#disqus_thread"></a>
   
 
   
@@ -435,7 +437,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/&amp;text=Mounting%20Oclus%20Rift%20Sensors%20on%20the%20Wall" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/2019/08/06/inconsistencies-with-in-r/&amp;text=Inconsistencies%20with%20the%20%60==%60%20operator%20in%20R" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -448,7 +450,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/&amp;t=Mounting%20Oclus%20Rift%20Sensors%20on%20the%20Wall" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/2019/08/06/inconsistencies-with-in-r/&amp;t=Inconsistencies%20with%20the%20%60==%60%20operator%20in%20R" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
@@ -461,7 +463,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
       
       <li>
-        <a href="mailto:?subject=Mounting%20Oclus%20Rift%20Sensors%20on%20the%20Wall&amp;body=/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Inconsistencies%20with%20the%20%60==%60%20operator%20in%20R&amp;body=/2019/08/06/inconsistencies-with-in-r/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -474,7 +476,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/&amp;title=Mounting%20Oclus%20Rift%20Sensors%20on%20the%20Wall" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/2019/08/06/inconsistencies-with-in-r/&amp;title=Inconsistencies%20with%20the%20%60==%60%20operator%20in%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -487,7 +489,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Mounting%20Oclus%20Rift%20Sensors%20on%20the%20Wall%20/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Inconsistencies%20with%20the%20%60==%60%20operator%20in%20R%20/2019/08/06/inconsistencies-with-in-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -500,7 +502,7 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/&amp;title=Mounting%20Oclus%20Rift%20Sensors%20on%20the%20Wall" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/2019/08/06/inconsistencies-with-in-r/&amp;title=Inconsistencies%20with%20the%20%60==%60%20operator%20in%20R" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -539,91 +541,127 @@ I also have a 3rd rear sensor, but when I was (re)setting up my sensors,I ended
       
 
 
-<p>I was initially going to get some small bookshelves to put my Oculus sensors on,
-but you can take your Oculus sensors off the stand!
-This way you wont have an awkward way to mount the sensors against the wall.</p>
-<p>I also have a 3rd rear sensor, but when I was (re)setting up my sensors,
-I ended up just leaving it on my desk.
-The parts list below was from me shopping at Home Depot assuming I was going to mount all 3 against the wall.</p>
-<p>Need:</p>
-<ol style="list-style-type: decimal">
-<li>1/4in-20 X 1in Machine Screws (4 pack – it comes with screws and nuts, you need both): $1.18</li>
-<li>4in Corner Brace (4 pack): $7.24</li>
-</ol>
-<p>Optional:</p>
-<ol style="list-style-type: decimal">
-<li>Temporary sensor setup: Painters tape, or anything that won’t strip off your paint.</li>
-<li>To mount the brackets against the wall (Home Depot): 3 1/2" x 3/4" Velcro strips (4 pack): $2.98</li>
-<li>Cable management: 1/2" plastic KWIK Clip (4 pack) (Home Depot): 2 x 3.28 = $6.56</li>
-<li>USB extension for sensors (Micro Center): 2 x 10Ft QVS USB 2.0 Extension Cable A to A: 2 x 19.99 = $39.98</li>
-</ol>
-<p>Tools:</p>
-<p>You’re also going to need a Phillips head screwdriver and pliers
-to tighten the nut without moving and/or loosening the sensor</p>
+<p>One of the cool things about working on <a href="https://github.com/rstudio-education/gradethis"><code>gradethis</code></a>
+(<a href="https://github.com/rstudio-education/gradethis/issues/18"><code>grader</code> need to be renamed</a>)
+is that we end up doing things that aren’t common in R (i.e., grading and comparing code).</p>
+<p>I discovered an inconsistency with the <code>==</code> operator when <a href="https://github.com/rstudio-education/gradethis/issues/28">comparing (long) R expressions</a>.</p>
 <!-- more -->
-<div id="the-parts" class="section level2">
-<h2>The Parts</h2>
-<p>Here’s what the parts look like:</p>
-<p>1/4in-20 X 1in Machine Screws (4 pack): $1.18</p>
-<p><img src="mounting_oculus-machine_screws.jpg" /></p>
-<p>4in Corner Brace (4 pack): $7.24</p>
-<p><img src="mounting_oculus-corner_braces.jpg" /></p>
+<div id="a-quick-primer-on-expressions" class="section level2">
+<h2>A quick primer on expressions</h2>
+<p>In R, you can create an expression using the
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/substitute.html"><code>quote()</code></a> function.
+This is essentially the code that R will execute.
+It is similar to the “string” that will be executed,
+but an actual string in R will return a string, not a command or set of instructions that R will execute.</p>
+<p>Compare:</p>
+<pre class="r"><code>3 + 3</code></pre>
+<pre><code>## [1] 6</code></pre>
+<p>Which will return the executed result of <code>3 + 3</code> and</p>
+<pre class="r"><code>&quot;3 + 3&quot;</code></pre>
+<pre><code>## [1] &quot;3 + 3&quot;</code></pre>
+<p>which will return the string <code>"3 + 3"</code></p>
+<p>with:</p>
+<pre class="r"><code>quote(3 + 3)</code></pre>
+<pre><code>## 3 + 3</code></pre>
+<p>which returns the expression <code>3 + 3</code> that is the instruction to R without actually evaluating it.</p>
+<p>If we wanted to evaluate the expression, we can call <code>eval</code>.</p>
+<pre class="r"><code>eval(quote(3 + 3))</code></pre>
+<pre><code>## [1] 6</code></pre>
+<p>You can read more about expressions in the
+<a href="http://adv-r.had.co.nz/Expressions.html">Expressions Chapter in Advanced R</a>.</p>
 </div>
-<div id="now-the-assembly" class="section level2">
-<h2>Now the Assembly</h2>
-<ol style="list-style-type: decimal">
-<li>Remove the Sensor</li>
-<li>Mount the sensors on the brace</li>
-<li>Finalize the mounts</li>
-</ol>
-<div id="remove-the-sensor" class="section level3">
-<h3>Remove the sensor</h3>
-<p>The top of the sensor screws off.
-I ended up taking just the base stand with me to Home Depot to check the type of screw that was needed.
-1/4in-20 worked for me. I found the 1" long screws was enough to connect everything together nicely.</p>
-<p><img src="mounting_oculus-remove_sensor.jpg" /></p>
+<div id="the-bug" class="section level2">
+<h2>The “bug”</h2>
+<p>The bug was detected in <code>gradethis</code> where we want to compare student submitted code with the instructor solution.
+There are multiple steps in the comparison process,
+but the first step is to simply check if the two bits of code are the same.
+That way, we can stop there and not have to go through the process to detect where the actual differences are.</p>
+<p>The comparison code was originally written to use <code>==</code> to compare the expressions.</p>
+<pre class="r"><code>user &lt;- quote(3 + 3)
+solution &lt;- quote(3 + 3)
+
+user == solution</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>Garrett Grolemund put in a bunch of examples that show some <a href="https://github.com/rstudio-education/gradethis/issues/28#issuecomment-510541776">weird behaviour</a>.
+I initially thought it had to do with name spacing the function name, or after using the <code>:</code> notation to select columns in a dataframe via <code>tidyselect</code>.</p>
+<p>When the two expressions are the same, we get <code>TRUE</code> as expected</p>
+<pre class="r"><code># supposed to return TRUE
+u &lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+s &lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+u == s</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>But when we change the values for <code>na.rm</code>, we <strong>also</strong> get <code>TRUE</code> when the expressions are not the same.</p>
+<pre class="r"><code># supposed to return FALSE
+u &lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+s &lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = FALSE))
+u == s</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>But it seems if we get rid of the tidyselect column selector, we get the correct result.</p>
+<pre class="r"><code># If we remove the third argument the error goes away
+u &lt;- quote(tidyr::gather(key = key, value = value, na.rm = TRUE))
+s &lt;- quote(tidyr::gather(key = key, value = value, na.rm = FALSE))
+u == s</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>I brought this up on our daily shiny-core stand-ups and Winston Chang thought it may have something to do with the <code>deparse</code> function since it doesn’t actually matter what the expressions being compared are.</p>
+<pre class="r"><code>u &lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+s &lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+u == s</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>You can see Winston’s comment and link to R code in question
+<a href="https://github.com/rstudio-education/gradethis/issues/28#issuecomment-510610227">here</a>.</p>
+<p>Pretty much when <code>==</code> is used to compare expressions, the expressions are passed through <code>deparse</code>.
+When <code>deparse</code> is run on an expression, it breaks it up into vectors that are <code>60L</code> characters long,
+which is fine, but the R bug is when the comparison is only performed with the first element of the vector.
+That’s why only the end of the expressions seem to “not matter”.</p>
 </div>
-<div id="mount-the-sensors-on-the-brace" class="section level3">
-<h3>Mount the sensors on the brace</h3>
-<p>You can mount the sensors to the brace any way you want,
-but I found that it was better to mount the sensors upside-down
-since the sensors pivot upwards (on the stand) more than the other direction.
-Also the entire rig is pretty light, so something like painters tape can hold up the entire unit against the wall
-(it’s too heavy for painters tape to hold on the ceiling)
-for you to try to get everything in the right place.
-I had to do a lot of adjustments during the Oculus sensor setup.</p>
-<p>Sensors right-side up:</p>
-<p><img src="mounting_oculus-sensor_rightsideup.jpg" /></p>
-<p>Sensors upside-down:</p>
-<p><img src="mounting_oculus-sensor_upsidedownjpg.jpg" /></p>
+<div id="reporting-the-bug" class="section level2">
+<h2>Reporting the bug</h2>
+<p><a href="https://r.789695.n4.nabble.com/Unexpected-behaviour-when-comparing-long-quoted-expressions-td4758181.html">I reported the findings to the r-devel mailing list</a></p>
+<p>Where, even after botching my first listserv submission, I got a response from Martin Maechler (R-core)</p>
+<blockquote>
+<p>Looking at that and its context, I think we (R core) should
+reconsider that implementation of ‘==’ which indeed does about
+the same thing as deparse {which also truncates at some point by
+default; something very very reasonable for error messages, but
+undesirable in other cases}.</p>
+<p>But I think it’s fair expectation that comparing calls [“language”]
+with ‘==’ should compare the full call’s syntax even if that may
+occasionally be very long.</p>
+</blockquote>
+<p>So it is actually a behavior that will get patched one day.</p>
 </div>
-<div id="finalize-the-mounts" class="section level3">
-<h3>Finalize the mounts</h3>
-<p>Seriously, don’t screw or mount (I used the 3 1/2in Velcro strips) until <strong>after</strong> you go though the Oculus sensor setup.
-I had to go back and adjust placement and angles multiple times.
-I even had to scrap my initial idea of mounting the rear sensor against the wall because it was too far away from the other sensors, and I found it awkward to mount it on the ceiling.</p>
-<p>Here’s what the front 2 sensors look like, you actually need to pivot them inwards a lot more than I thought,
-they’re almost at 45-degrees and pretty much point right at you when you’re in the middle of the play area.</p>
-<p><img src="mounting_oculus-front_sensors.jpg" /></p>
-<p>Here’s the entire setup looks like, with the 3rd (rear) sensor on my desk by the microphone.
-What’s not pictured: the train wreck of packaging, boxes, papers, cables beind me :p</p>
-<p><img src="mounting_oculus-play_area_1.jpg" /></p>
-<p><img src="mounting_oculus-play_area_2.jpg" /></p>
-</div>
-</div>
-<div id="what-i-would-do-differently" class="section level2">
-<h2>What I would do differently</h2>
-<p>If I was more motivated, I would’ve found a way to mount the rear sensor on the ceiling behind me.
-But It didn’t seem like the Oculus sensor could pivot downward enough with the braces up there.
-I also wasn’t that motivated to have it on the ceiling,
-because now I get to return my 39ft USB extension cable from Micro Center ($$$$).</p>
-<p>If I living in a more permanent location I would’ve gotten a better cable management system than the plastic clips.
-By the electrical section in Home Depot there were long adhesive wire management cases that would hide the black cables <strong>much</strong> better.</p>
-<p>The way my computer was setup, one of the 10ft USB extensions was too long,
-and the other was too short.
-I had to use a another USB extension for the sensor that was further away.</p>
-<p>Also, my standing desk was my old childhood dining room table that I just (i.e., last night) upgraded with
-the <a href="https://www.autonomous.ai/">Autonomous.ai Home Edition DIY legs</a></p>
+<div id="the-fix" class="section level2">
+<h2>The fix</h2>
+<p>We ended up <a href="https://github.com/rstudio-education/gradethis/pull/34/files">making changes</a>
+to <code>gradethis</code> by using <code>identical()</code> while comparing quoted expressions.</p>
+<pre class="r"><code>u &lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+s &lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+identical(u, s)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>Using <code>identical()</code> is a much better way when we are comparing code <em>and</em> results, because <code>==</code> will return a matrix when comparing 2 dataframes where using <code>all</code> has problems when there are <code>NA</code> missing values.</p>
+<p>We want to see if the 2 vectors are the same</p>
+<pre class="r"><code>u &lt;- c(1, 2, 3)
+s &lt;- c(1, 2, NA)
+all(u == s)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>We can remove missing values, but now when either the user code or solution code does contains an <code>NA</code> it gets ignored.</p>
+<pre class="r"><code>u &lt;- c(1, 2, 3)
+s &lt;- c(1, 2, NA)
+all(u == s, na.rm = TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>u &lt;- c(1, 2, NA)
+s &lt;- c(1, 2, 3)
+all(u == s, na.rm = TRUE)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>Now, we
+<a href="https://github.com/rstudio-education/gradethis/pull/56/files">nudge toward using identical</a> and
+<a href="https://github.com/rstudio-education/gradethis/pull/47">raise a warning</a>
+when we detect <code>==</code>.</p>
+<pre class="r"><code>u &lt;- c(1, 2, NA)
+s &lt;- c(1, 2, 3)
+identical(u, s)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>Does Donald Knuth owe me a dollar now?</p>
 </div>
 
     </div>
@@ -632,7 +670,9 @@ the <a href="https://www.autonomous.ai/">Autonomous.ai Home Edition DIY legs</a>
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/home/">home</a>
+  <a class="badge badge-light" href="/tags/rstudio-internship/">rstudio-internship</a>
+  
+  <a class="badge badge-light" href="/tags/r/">r</a>
   
 </div>
 
@@ -796,6 +836,22 @@ the <a href="https://www.autonomous.ai/">Autonomous.ai Home Edition DIY legs</a>
 
       
       
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/2019/07/23/new-website-a-la-blogdown/">New Website a la Blogdown!</a></li>
+          
+          <li><a href="/2019/06/18/rstudio-internship-week-2/">RStudio internship week 2</a></li>
+          
+          <li><a href="/2019/06/10/and-were-off-rstudio-internship-week-1-complete./">And we&#39;re off! RStudio internship week 1, complete.</a></li>
+          
+          <li><a href="/2015/05/05/getting-started-with-data-science-and-analysis/">Getting Started with Data Science and Analysis</a></li>
+          
+        </ul>
+      </div>
+      
     
 
     
@@ -806,15 +862,8 @@ the <a href="https://www.autonomous.ai/">Autonomous.ai Home Edition DIY legs</a>
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/2019/08/06/inconsistencies-with-in-r/" rel="next">Inconsistencies with the `==` operator in R</a>
-  </div>
-  
-  
-  
-  <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/2019/07/23/new-website-a-la-blogdown/" rel="prev">New Website a la Blogdown!</a>
+    <a href="/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/" rel="prev">Mounting Oclus Rift Sensors on the Wall</a>
   </div>
   
 </div>

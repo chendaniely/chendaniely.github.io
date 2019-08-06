@@ -44,7 +44,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
+    <lastmod>2019-08-06T09:35:59-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,14 +54,31 @@
   </url>
   
   <url>
-    <loc>/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/</loc>
-    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
+    <loc>/2019/08/06/inconsistencies-with-in-r/</loc>
+    <lastmod>2019-08-06T09:35:59-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2019-08-06T09:35:59-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
+    <lastmod>2019-08-06T09:35:59-04:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rstudio-internship/</loc>
+    <lastmod>2019-08-06T09:35:59-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/</loc>
+    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
   </url>
   
   <url>
@@ -76,12 +93,6 @@
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/blogdown/</loc>
     <lastmod>2019-07-23T20:45:50-04:00</lastmod>
     <priority>0</priority>
@@ -89,12 +100,6 @@
   
   <url>
     <loc>/tags/hugo/</loc>
-    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rstudio-internship/</loc>
     <lastmod>2019-07-23T20:45:50-04:00</lastmod>
     <priority>0</priority>
   </url>

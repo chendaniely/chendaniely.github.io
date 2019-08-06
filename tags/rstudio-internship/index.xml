@@ -7,10 +7,144 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Daniel Chen {year}</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/tags/rstudio-internship/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inconsistencies with the `==` operator in R</title>
+      <link>/2019/08/06/inconsistencies-with-in-r/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/08/06/inconsistencies-with-in-r/</guid>
+      <description>
+
+
+&lt;p&gt;One of the cool things about working on &lt;a href=&#34;https://github.com/rstudio-education/gradethis&#34;&gt;&lt;code&gt;gradethis&lt;/code&gt;&lt;/a&gt;
+(&lt;a href=&#34;https://github.com/rstudio-education/gradethis/issues/18&#34;&gt;&lt;code&gt;grader&lt;/code&gt; need to be renamed&lt;/a&gt;)
+is that we end up doing things that aren’t common in R (i.e., grading and comparing code).&lt;/p&gt;
+&lt;p&gt;I discovered an inconsistency with the &lt;code&gt;==&lt;/code&gt; operator when &lt;a href=&#34;https://github.com/rstudio-education/gradethis/issues/28&#34;&gt;comparing (long) R expressions&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;div id=&#34;a-quick-primer-on-expressions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A quick primer on expressions&lt;/h2&gt;
+&lt;p&gt;In R, you can create an expression using the
+&lt;a href=&#34;https://stat.ethz.ch/R-manual/R-devel/library/base/html/substitute.html&#34;&gt;&lt;code&gt;quote()&lt;/code&gt;&lt;/a&gt; function.
+This is essentially the code that R will execute.
+It is similar to the “string” that will be executed,
+but an actual string in R will return a string, not a command or set of instructions that R will execute.&lt;/p&gt;
+&lt;p&gt;Compare:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;3 + 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Which will return the executed result of &lt;code&gt;3 + 3&lt;/code&gt; and&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;quot;3 + 3&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;3 + 3&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which will return the string &lt;code&gt;&#34;3 + 3&#34;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;with:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;quote(3 + 3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 3 + 3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;which returns the expression &lt;code&gt;3 + 3&lt;/code&gt; that is the instruction to R without actually evaluating it.&lt;/p&gt;
+&lt;p&gt;If we wanted to evaluate the expression, we can call &lt;code&gt;eval&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(quote(3 + 3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 6&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can read more about expressions in the
+&lt;a href=&#34;http://adv-r.had.co.nz/Expressions.html&#34;&gt;Expressions Chapter in Advanced R&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-bug&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The “bug”&lt;/h2&gt;
+&lt;p&gt;The bug was detected in &lt;code&gt;gradethis&lt;/code&gt; where we want to compare student submitted code with the instructor solution.
+There are multiple steps in the comparison process,
+but the first step is to simply check if the two bits of code are the same.
+That way, we can stop there and not have to go through the process to detect where the actual differences are.&lt;/p&gt;
+&lt;p&gt;The comparison code was originally written to use &lt;code&gt;==&lt;/code&gt; to compare the expressions.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;user &amp;lt;- quote(3 + 3)
+solution &amp;lt;- quote(3 + 3)
+
+user == solution&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Garrett Grolemund put in a bunch of examples that show some &lt;a href=&#34;https://github.com/rstudio-education/gradethis/issues/28#issuecomment-510541776&#34;&gt;weird behaviour&lt;/a&gt;.
+I initially thought it had to do with name spacing the function name, or after using the &lt;code&gt;:&lt;/code&gt; notation to select columns in a dataframe via &lt;code&gt;tidyselect&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When the two expressions are the same, we get &lt;code&gt;TRUE&lt;/code&gt; as expected&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# supposed to return TRUE
+u &amp;lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+s &amp;lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+u == s&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But when we change the values for &lt;code&gt;na.rm&lt;/code&gt;, we &lt;strong&gt;also&lt;/strong&gt; get &lt;code&gt;TRUE&lt;/code&gt; when the expressions are not the same.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# supposed to return FALSE
+u &amp;lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+s &amp;lt;- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = FALSE))
+u == s&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But it seems if we get rid of the tidyselect column selector, we get the correct result.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# If we remove the third argument the error goes away
+u &amp;lt;- quote(tidyr::gather(key = key, value = value, na.rm = TRUE))
+s &amp;lt;- quote(tidyr::gather(key = key, value = value, na.rm = FALSE))
+u == s&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I brought this up on our daily shiny-core stand-ups and Winston Chang thought it may have something to do with the &lt;code&gt;deparse&lt;/code&gt; function since it doesn’t actually matter what the expressions being compared are.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;u &amp;lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+s &amp;lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+u == s&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see Winston’s comment and link to R code in question
+&lt;a href=&#34;https://github.com/rstudio-education/gradethis/issues/28#issuecomment-510610227&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pretty much when &lt;code&gt;==&lt;/code&gt; is used to compare expressions, the expressions are passed through &lt;code&gt;deparse&lt;/code&gt;.
+When &lt;code&gt;deparse&lt;/code&gt; is run on an expression, it breaks it up into vectors that are &lt;code&gt;60L&lt;/code&gt; characters long,
+which is fine, but the R bug is when the comparison is only performed with the first element of the vector.
+That’s why only the end of the expressions seem to “not matter”.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reporting-the-bug&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Reporting the bug&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://r.789695.n4.nabble.com/Unexpected-behaviour-when-comparing-long-quoted-expressions-td4758181.html&#34;&gt;I reported the findings to the r-devel mailing list&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Where, even after botching my first listserv submission, I got a response from Martin Maechler (R-core)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Looking at that and its context, I think we (R core) should
+reconsider that implementation of ‘==’ which indeed does about
+the same thing as deparse {which also truncates at some point by
+default; something very very reasonable for error messages, but
+undesirable in other cases}.&lt;/p&gt;
+&lt;p&gt;But I think it’s fair expectation that comparing calls [“language”]
+with ‘==’ should compare the full call’s syntax even if that may
+occasionally be very long.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So it is actually a behavior that will get patched one day.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-fix&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The fix&lt;/h2&gt;
+&lt;p&gt;We ended up &lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/34/files&#34;&gt;making changes&lt;/a&gt;
+to &lt;code&gt;gradethis&lt;/code&gt; by using &lt;code&gt;identical()&lt;/code&gt; while comparing quoted expressions.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;u &amp;lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+s &amp;lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+identical(u, s)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using &lt;code&gt;identical()&lt;/code&gt; is a much better way when we are comparing code &lt;em&gt;and&lt;/em&gt; results, because &lt;code&gt;==&lt;/code&gt; will return a matrix when comparing 2 dataframes where using &lt;code&gt;all&lt;/code&gt; has problems when there are &lt;code&gt;NA&lt;/code&gt; missing values.&lt;/p&gt;
+&lt;p&gt;We want to see if the 2 vectors are the same&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;u &amp;lt;- c(1, 2, 3)
+s &amp;lt;- c(1, 2, NA)
+all(u == s)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] NA&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can remove missing values, but now when either the user code or solution code does contains an &lt;code&gt;NA&lt;/code&gt; it gets ignored.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;u &amp;lt;- c(1, 2, 3)
+s &amp;lt;- c(1, 2, NA)
+all(u == s, na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;u &amp;lt;- c(1, 2, NA)
+s &amp;lt;- c(1, 2, 3)
+all(u == s, na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, we
+&lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/56/files&#34;&gt;nudge toward using identical&lt;/a&gt; and
+&lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/47&#34;&gt;raise a warning&lt;/a&gt;
+when we detect &lt;code&gt;==&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;u &amp;lt;- c(1, 2, NA)
+s &amp;lt;- c(1, 2, 3)
+identical(u, s)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Does Donald Knuth owe me a dollar now?&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>New Website a la Blogdown!</title>
