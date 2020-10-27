@@ -7,10 +7,537 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Daniel Chen {year}</copyright>
-    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python Environments with Conda</title>
+      <link>/2020/02/29/python-environments-with-conda/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/29/python-environments-with-conda/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34;&gt;Anaconda&lt;/a&gt;
+(and these days
+&lt;a href=&#34;https://docs.conda.io/en/latest/miniconda.html&#34;&gt;miniconda&lt;/a&gt;)
+has been my go-to for getting Python and the scientific/data science software stack
+installed on my computer
+(even on my Arch linux machine!).&lt;/p&gt;
+&lt;p&gt;When it first came out it was the first time I was able to install and use
+&lt;code&gt;pandas&lt;/code&gt; and the rest of the scipy stack.
+I’ve stuck with it ever since.&lt;/p&gt;
+&lt;p&gt;It was also the first time I used (and understood) virtual environments.&lt;/p&gt;
+&lt;p&gt;In this post I’m hoping to show you a quick guide to using virtual environments with &lt;code&gt;conda&lt;/code&gt;.
+You can find more details on how to
+&lt;a href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&#34;&gt;manage your &lt;code&gt;conda&lt;/code&gt; environment&lt;/a&gt;
+here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&#34; class=&#34;uri&#34;&gt;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&lt;/a&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;div id=&#34;problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Problem&lt;/h2&gt;
+&lt;p&gt;Here are some situations virtual environments solve:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;You have code that needs to run in a different version of python than the version you have on your computer (e.g., I have Python (3) and need to run a script in Legacy Python (2))&lt;/li&gt;
+&lt;li&gt;The code I want to run uses a different version of package(s) than what I have installed (e.g., you need an older or newer version of &lt;code&gt;pandas&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;You can’t install and/or &lt;code&gt;import&lt;/code&gt; a package because of package dependency conflicts&lt;/li&gt;
+&lt;li&gt;All the code and packages work on your computer, and you want a way to give someone else the same set of packages so they can run your code&lt;/li&gt;
+&lt;li&gt;You want to install an experimental package and do not want to mess up your current environment.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-are-virtual-environments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What are virtual environments&lt;/h2&gt;
+&lt;p&gt;A virtual environment allows you to create an isolated (i.e., virtual) “environment”
+for your software, in this case, Python packages.
+This allows you to “activate” different python environments on your computer
+without having to uninstall everything just to run code from different projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;creating-conda-environments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Creating conda environments&lt;/h2&gt;
+&lt;p&gt;We’ll be talking about &lt;code&gt;conda&lt;/code&gt; environments in this post.
+Depending on how you installed anaconda/miniconda/conda make sure you’re in an environment
+that can run &lt;code&gt;conda&lt;/code&gt; commands&lt;/p&gt;
+&lt;div id=&#34;getting-in-the-right-place&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Getting in the right place&lt;/h3&gt;
+&lt;p&gt;You should see &lt;code&gt;(base)&lt;/code&gt; in the beginning of a prompt. This is what it looks like on my computer, the &lt;code&gt;(base)&lt;/code&gt; tells me I am in the “base” conda environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see here the default python is the one installed in my miniconda directory.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ which python
+/home/dchen/miniconda3/bin/python&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can run &lt;code&gt;conda info --envs&lt;/code&gt; to get a list of all the environments we have&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda info --envs
+# conda environments:
+#
+base                  *  /home/dchen/miniconda3&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;creating-an-environment&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Creating an environment&lt;/h3&gt;
+&lt;p&gt;I’m currently using Python 3.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ python --version
+Python 3.7.6&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s create another environment named &lt;code&gt;py27&lt;/code&gt; that’s Legacy Python (i.e., Python 2).
+We do this with the &lt;code&gt;conda create&lt;/code&gt; command.
+We pass in the &lt;code&gt;--name&lt;/code&gt; or &lt;code&gt;-n&lt;/code&gt; flag to give a name to the new environment.
+We can also pass in &lt;code&gt;python=2.7&lt;/code&gt; to put Python 2.7 in this environment.
+Here you can specify any version of Python you want.
+For example, it can be another Python 3.7 environment for another Python 3 project.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda create -n py27 python=2.7&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It’ll will build the plan for you, all you need to do is hit &lt;code&gt;enter&lt;/code&gt; (it defaults to &lt;code&gt;y&lt;/code&gt;)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/dchen/miniconda3/envs/py27
+
+  added / updated specs:
+    - python=2.7
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2019.11.28         |           py27_0         149 KB  conda-forge
+    pip-20.0.2                 |             py_2         1.0 MB  conda-forge
+    python-2.7.15              |    h5a48372_1009        12.7 MB  conda-forge
+    setuptools-44.0.0          |           py27_0         663 KB  conda-forge
+    wheel-0.34.2               |             py_1          24 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        14.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-0_gnu
+  ca-certificates    conda-forge/linux-64::ca-certificates-2019.11.28-hecc5488_0
+  certifi            conda-forge/linux-64::certifi-2019.11.28-py27_0
+  libffi             conda-forge/linux-64::libffi-3.2.1-he1b5a44_1006
+  libgcc-ng          conda-forge/linux-64::libgcc-ng-9.2.0-h24d8f2e_2
+  libgomp            conda-forge/linux-64::libgomp-9.2.0-h24d8f2e_2
+  libstdcxx-ng       conda-forge/linux-64::libstdcxx-ng-9.2.0-hdf63c60_2
+  ncurses            conda-forge/linux-64::ncurses-6.1-hf484d3e_1002
+  openssl            conda-forge/linux-64::openssl-1.1.1d-h516909a_0
+  pip                conda-forge/noarch::pip-20.0.2-py_2
+  python             conda-forge/linux-64::python-2.7.15-h5a48372_1009
+  readline           conda-forge/linux-64::readline-8.0-hf8c457e_0
+  setuptools         conda-forge/linux-64::setuptools-44.0.0-py27_0
+  sqlite             conda-forge/linux-64::sqlite-3.30.1-hcee41ef_0
+  tk                 conda-forge/linux-64::tk-8.6.10-hed695b0_0
+  wheel              conda-forge/noarch::wheel-0.34.2-py_1
+  zlib               conda-forge/linux-64::zlib-1.2.11-h516909a_1006
+
+
+Proceed ([y]/n)?&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When it’s done you’ll actually see a message on how to “activate” your new environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;Downloading and Extracting Packages
+setuptools-44.0.0    | 663 KB    | ######################################################################## | 100%
+wheel-0.34.2         | 24 KB     | ######################################################################## | 100%
+pip-20.0.2           | 1.0 MB    | ######################################################################## | 100%
+python-2.7.15        | 12.7 MB   | ######################################################################## | 100%
+certifi-2019.11.28   | 149 KB    | ######################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate py27
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can run &lt;code&gt;conda activate py27&lt;/code&gt; to “activate” (i.e., enable) our new environment.
+Do “deactivate” (i.e., exit) the environment we can use &lt;code&gt;conda deactivate&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;activate-i.e.-enter-the-new-environment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Activate (i.e., “enter”) the new environment&lt;/h2&gt;
+&lt;p&gt;We can see our new environment when we list our &lt;code&gt;envs&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda info --envs
+# conda environments:
+#
+base                  *  /home/dchen/miniconda3
+py27                     /home/dchen/miniconda3/envs/py27&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To activate the &lt;code&gt;py27&lt;/code&gt; environment we just created we run &lt;code&gt;conda activate py27&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda activate py27
+(py27) $&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see when we activate the environment, we get a new prompt.
+The &lt;code&gt;(base)&lt;/code&gt; now changed to let us know which environment we’re in, &lt;code&gt;(py27)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now when we run Python commands, it’s actually an entirely different Python from
+what we were using before.&lt;/p&gt;
+&lt;p&gt;Here’s the location of the Python binary&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ which python
+/home/dchen/miniconda3/envs/py27/bin/python&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The version is different from before
+(because we used &lt;code&gt;python=2.7&lt;/code&gt; when we created this &lt;code&gt;py27&lt;/code&gt; environment).&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ python --version
+Python 2.7.15&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installing-packages-into-environment-conda&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing packages into environment (conda)&lt;/h2&gt;
+&lt;p&gt;I’ll write a separate post about setting up
+&lt;a href=&#34;https://conda-forge.org/&#34;&gt;&lt;code&gt;conda-forge&lt;/code&gt;&lt;/a&gt; for installing packages
+(the commands to run are on the website).&lt;/p&gt;
+&lt;p&gt;In general, I try to &lt;code&gt;conda install&lt;/code&gt; as many packages as I can.
+If the package I’m trying to install does not exist on &lt;code&gt;conda&lt;/code&gt;,
+then I &lt;code&gt;pip install&lt;/code&gt; the package.&lt;/p&gt;
+&lt;p&gt;This is a brand new Legacy Python environment, without any packages.
+In this example we’ll try to install the &lt;code&gt;networkx&lt;/code&gt; package.
+You can see we currently do not have this package in this environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ python
+Python 2.7.15 | packaged by conda-forge | (default, Jul  2 2019, 00:39:44)
+[GCC 7.3.0] on linux2
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import networkx as nx
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
+ImportError: No module named networkx
+&amp;gt;&amp;gt;&amp;gt; quit()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can install &lt;code&gt;networkx&lt;/code&gt; with &lt;code&gt;conda install networkx&lt;/code&gt;.
+If you need a specific version of a package, this is where you will install it.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda install networkx
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/dchen/miniconda3/envs/py27
+
+  added / updated specs:
+    - networkx
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    networkx-2.1               |           py27_0         1.8 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:         1.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  decorator          conda-forge/noarch::decorator-4.4.1-py_0
+  networkx           conda-forge/linux-64::networkx-2.1-py27_0
+
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages
+networkx-2.1         | 1.8 MB    | ######################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we have the package in our environment!&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ python
+Python 2.7.15 | packaged by conda-forge | (default, Jul  2 2019, 00:39:44)
+[GCC 7.3.0] on linux2
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import networkx as nx
+&amp;gt;&amp;gt;&amp;gt; G = nx.Graph()
+&amp;gt;&amp;gt;&amp;gt; quit()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Just to show that the package is in an entirely different environment,
+we can &lt;code&gt;deativate&lt;/code&gt; our current environment to go back into &lt;code&gt;(base)&lt;/code&gt;,
+and can see we don’t have &lt;code&gt;networkx&lt;/code&gt; installed in our &lt;code&gt;base&lt;/code&gt; Python 3 environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda deactivate
+(base) $ python
+Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48)
+[GCC 7.3.0] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import networkx as nx
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
+ModuleNotFoundError: No module named &amp;#39;networkx&amp;#39;
+&amp;gt;&amp;gt;&amp;gt; quit()
+(base) $&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reproducing-and-sharing-environments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Reproducing and sharing environments&lt;/h2&gt;
+&lt;p&gt;Now that you have all the packages you need in an environment and all your code is working,
+next is to document your work.
+Even if you’re working on your own,
+you may be working on your laptop and on a remote server,
+and need to replicate your environment in both locations.
+Another scenario is if you need to share your code with another person and want to make
+sure your code is executed in the same environment on their machine.&lt;/p&gt;
+&lt;p&gt;We can use the &lt;code&gt;conda env export&lt;/code&gt; command to generate all the packages in the current environment.
+So if we’re in the &lt;code&gt;py27&lt;/code&gt; environment we created,
+you can get a list of all the packages in it.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda env export
+name: py27
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=0_gnu
+  - ca-certificates=2019.11.28=hecc5488_0
+  - certifi=2019.11.28=py27_0
+  - decorator=4.4.1=py_0
+  - libffi=3.2.1=he1b5a44_1006
+  - libgcc-ng=9.2.0=h24d8f2e_2
+  - libgomp=9.2.0=h24d8f2e_2
+  - libstdcxx-ng=9.2.0=hdf63c60_2
+  - ncurses=6.1=hf484d3e_1002
+  - networkx=2.1=py27_0
+  - openssl=1.1.1d=h516909a_0
+  - pip=20.0.2=py_2
+  - python=2.7.15=h5a48372_1009
+  - readline=8.0=hf8c457e_0
+  - setuptools=44.0.0=py27_0
+  - sqlite=3.30.1=hcee41ef_0
+  - tk=8.6.10=hed695b0_0
+  - wheel=0.34.2=py_1
+  - zlib=1.2.11=h516909a_1006
+prefix: /home/dchen/miniconda3/envs/py27&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can export this to an &lt;code&gt;environment.yml&lt;/code&gt; file so all the packages are saved and documented.
+You can do this by copying and pasting the results in to a file called &lt;code&gt;environment.yml&lt;/code&gt; manually,
+or you can pipe the output into the file &lt;code&gt;conda env export &amp;gt; environment.yml&lt;/code&gt;.
+If your python code is in a
+&lt;a href=&#34;https://daniel.rbind.io/2017/05/30/project-templates/&#34;&gt;project&lt;/a&gt;
+&lt;a href=&#34;https://daniel.rbind.io/2018/01/23/analysis-based-project-templates/&#34;&gt;structure&lt;/a&gt;
+you would run this command to put the &lt;code&gt;environment.yml&lt;/code&gt; file in the root project directory.&lt;/p&gt;
+&lt;p&gt;Now you can send your Python project to another person or to another computer.
+To reproduce the environment, you can run &lt;code&gt;conda env create -f environment.yml&lt;/code&gt;
+to use the &lt;code&gt;environment.yml&lt;/code&gt; file to automatically recreate the environment.
+The &lt;code&gt;name&lt;/code&gt; field in the first line will be used as the environment name.&lt;/p&gt;
+&lt;p&gt;In this example let’s edit the name to &lt;code&gt;py27copy&lt;/code&gt; since we already have a &lt;code&gt;py27&lt;/code&gt; environment.&lt;/p&gt;
+&lt;p&gt;Now if we run &lt;code&gt;conda env create -f environment.yml&lt;/code&gt;,
+it will “reinstall” all the packages needed as specified in the &lt;code&gt;environment.yml&lt;/code&gt; file,
+and we can activate/deactivate just like before&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda env create -f ~/Desktop/environment.yml
+Collecting package metadata (repodata.json): done
+Solving environment: done
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate py27dup
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installing-packages-into-environment-pip&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing packages into environment (pip)&lt;/h2&gt;
+&lt;p&gt;Not every package will be &lt;code&gt;conda&lt;/code&gt; installable,
+for those packages we can &lt;code&gt;pip install&lt;/code&gt; them just like normal.
+Here we’ll install the &lt;code&gt;flask&lt;/code&gt; package for web development into our &lt;code&gt;py27&lt;/code&gt; environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ pip install flask
+DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting flask
+  Using cached Flask-1.1.1-py2.py3-none-any.whl (94 kB)
+Collecting Werkzeug&amp;gt;=0.15
+  Downloading Werkzeug-1.0.0-py2.py3-none-any.whl (298 kB)
+     |████████████████████████████████| 298 kB 1.1 MB/s
+Collecting itsdangerous&amp;gt;=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting click&amp;gt;=5.1
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+     |████████████████████████████████| 81 kB 2.0 MB/s
+Collecting Jinja2&amp;gt;=2.10.1
+  Downloading Jinja2-2.11.1-py2.py3-none-any.whl (126 kB)
+     |████████████████████████████████| 126 kB 306 kB/s
+Collecting MarkupSafe&amp;gt;=0.23
+  Downloading MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl (24 kB)
+Installing collected packages: Werkzeug, itsdangerous, click, MarkupSafe, Jinja2, flask
+Successfully installed Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-1.0.0 click-7.0 flask-1.1.1 itsdangerous-1.1.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now if you want to export the enviornment to the &lt;code&gt;environment.yml&lt;/code&gt;
+you’ll notice that &lt;code&gt;pip&lt;/code&gt; will be part of the installation,
+and also a new &lt;code&gt;pip&lt;/code&gt; section that describes the packages that will be installed via
+&lt;code&gt;pip&lt;/code&gt; instead of &lt;code&gt;conda&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda env export
+name: py27
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=0_gnu
+  - ca-certificates=2019.11.28=hecc5488_0
+  - certifi=2019.11.28=py27_0
+  - decorator=4.4.1=py_0
+  - libffi=3.2.1=he1b5a44_1006
+  - libgcc-ng=9.2.0=h24d8f2e_2
+  - libgomp=9.2.0=h24d8f2e_2
+  - libstdcxx-ng=9.2.0=hdf63c60_2
+  - ncurses=6.1=hf484d3e_1002
+  - networkx=2.1=py27_0
+  - openssl=1.1.1d=h516909a_0
+  - pip=20.0.2=py_2
+  - python=2.7.15=h5a48372_1009
+  - readline=8.0=hf8c457e_0
+  - setuptools=44.0.0=py27_0
+  - sqlite=3.30.1=hcee41ef_0
+  - tk=8.6.10=hed695b0_0
+  - wheel=0.34.2=py_1
+  - zlib=1.2.11=h516909a_1006
+  - pip:
+    - click==7.0
+    - flask==1.1.1
+    - itsdangerous==1.1.0
+    - jinja2==2.11.1
+    - markupsafe==1.1.1
+    - werkzeug==1.0.0
+prefix: /home/dchen/miniconda3/envs/py27&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Creating environments with the
+&lt;code&gt;conda create -n &amp;lt;name&amp;gt; python=&amp;lt;version&amp;gt;&lt;/code&gt;
+is an easy way to create new environments with a specified version of Python.
+You can then &lt;code&gt;activate&lt;/code&gt; the environment with
+&lt;code&gt;conda activate &amp;lt;name&amp;gt;&lt;/code&gt;
+and proceed to install packages with
+&lt;code&gt;conda install &amp;lt;package&amp;gt;&lt;/code&gt; or &lt;code&gt;pip install &amp;lt;package&lt;/code&gt;.
+When you’re ready to document and share your environment with another person
+or on another machine,
+you can run
+&lt;code&gt;conda env export &amp;gt; environment.yml&lt;/code&gt;
+to save the current environment
+to a &lt;code&gt;environment.yml&lt;/code&gt;.
+This file can be used to create a new environment with
+&lt;code&gt;conda env create -f environment.yml&lt;/code&gt;
+and now you can replicate your environment across multiple machines!&lt;/p&gt;
+&lt;p&gt;You don’t need to use &lt;code&gt;conda&lt;/code&gt; to create your Python environments.
+If you’re not using &lt;code&gt;conda&lt;/code&gt; for your environments,
+you can create a &lt;code&gt;requirements.txt&lt;/code&gt; file
+instead of an &lt;code&gt;environment.yml&lt;/code&gt; with
+&lt;code&gt;pip freeze &amp;gt; requirements.txt&lt;/code&gt;
+and install everything into the current environment with
+&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;.
+Just know you need to create the environment first as &lt;code&gt;pip&lt;/code&gt; will
+not create the environment for you.&lt;/p&gt;
+&lt;p&gt;Hope this helps people get started with environments and getting their code working
+on multiple computers.
+You can checkout the main documentation page on &lt;code&gt;conda&lt;/code&gt; environment management here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&#34; class=&#34;uri&#34;&gt;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R or Python, which One to Learn (First)?</title>
+      <link>/2019/08/28/r-or-python-which-one-to-learn-first/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/08/28/r-or-python-which-one-to-learn-first/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I’ve been asked a few times lately about whether one should learn R or Python.&lt;/p&gt;
+&lt;p&gt;Channeling
+&lt;a href=&#34;http://varianceexplained.org/r/start-blog/&#34;&gt;David Robinson’s post&lt;/a&gt;,
+I’m writing a blog post about it.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+When you’ve written the same code 3 times, write a function&lt;br&gt;&lt;br&gt;When you’ve given the same in-person advice 3 times, write a blog post
+&lt;/p&gt;
+— David Robinson (&lt;span class=&#34;citation&#34;&gt;@drob&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/drob/status/928447584712253440?ref_src=twsrc%5Etfw&#34;&gt;November 9, 2017&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;The only definitive answer I have is if you’re planning to do web deveopment,
+and you’re somehow only picking between R and Python, pick Python
+(any of the Python web frameworks, Flask, Django, Pyramid, and then ask yourself why not JavaScript?).
+If you’re doing hardward things, also pick Python
+(see &lt;a href=&#34;https://twitter.com/search?q=%23pythonhardware&amp;amp;src=typed_query&amp;amp;f=live&#34;&gt;#pythonhardware&lt;/a&gt;).
+Otherwise, pick what you already know or took a class in,
+or look at a few job postings in your area and pick the one that is most prevelent.
+In the end all the data science and data cleaning skills you learn in one language will
+carry over into the other.&lt;/p&gt;
+&lt;p&gt;I personally perfer R for dashboarding
+(&lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;shiny&lt;/a&gt;)
+and publication
+(&lt;a href=&#34;https://rmarkdown.rstudio.com/&#34;&gt;RMarkdown + knitr&lt;/a&gt;),
+but that’s mainly because back in 2014, when I was first learning data science skills I was taught in R,
+and there were not good equlivilants in the Python world
+(other than what is now &lt;a href=&#34;https://jupyter.org/&#34;&gt;Jupyter&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Also, most data scientists in industry are working in SQL anyway ( :&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;For data science/data cleaning/data analysis programs,
+the best way is to practice working with data.
+Having said that, it’s really hard to find projects,
+or sometimes your own projects are “too big and complicated” so you might be at a loss of where to begin.&lt;/p&gt;
+&lt;p&gt;My first recommendation is take a look at
+&lt;a href=&#34;https://www.kaggle.com/competitions&#34;&gt;Kaggle&lt;/a&gt;.
+You’ll see a lot of datasets there and you might find something interesting to play around with.
+The forums on the competitions are also good place to get ideas on some of the machine learning and model fitting side.
+One of my first exposures to data science was one of those competitions,
+and I learned a lot of web scraping and string parsing skills there.&lt;/p&gt;
+&lt;p&gt;Another great resource where you can practice some of your data skills come from the R community.
+It’s called
+&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34;&gt;Tidy&lt;/a&gt;
+&lt;a href=&#34;https://thomasmock.netlify.com/post/tidytuesday-a-weekly-social-data-project-in-r/&#34;&gt;Tuesday&lt;/a&gt;.
+Every Tuesday a new dataset gets released, and people
+(all over &lt;a href=&#34;https://twitter.com/hashtag/tidytuesday&#34;&gt;twitter&lt;/a&gt;)
+share their findings.
+It does not need to be a fully worked out machine learning pipeline.
+You are just getting a new dataset to explore.
+David Robinson does a
+&lt;a href=&#34;https://www.youtube.com/user/safe4democracy/videos&#34;&gt;1-hour livestream every week&lt;/a&gt;.
+Even though it’s in R, you can do it all in Python as well (maybe try replicating someone’s R work?).
+After you get used to exploring data, and when you get more practice in either R or Python,
+it’s much easier to see how you can apply it in your daily life.
+And that motivation will help you practice and learn more.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/rctatman&#34;&gt;Rachael Tatman&lt;/a&gt;,
+from Kaggle, also does weekly livestreams where
+she also hosts a journal club to discuss an academic paper about
+a machine learning method.&lt;/p&gt;
+&lt;p&gt;If you need some more of the basic programming knowledge,
+take a look at the
+&lt;a href=&#34;https://software-carpentry.org/lessons/&#34;&gt;software-carpentry&lt;/a&gt; and
+&lt;a href=&#34;https://datacarpentry.org/lessons/&#34;&gt;data-carpentry&lt;/a&gt;
+R and Python lessons.
+Jake VanderPlas’ book
+&lt;a href=&#34;https://jakevdp.github.io/PythonDataScienceHandbook/&#34;&gt;“Python Data Science Handbook”&lt;/a&gt;
+is free online as well as
+as Garrett Grolemund and Hadley Wickham’s
+&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;.
+Hadley Wickham also as a free book on
+&lt;a href=&#34;https://adv-r.hadley.nz/&#34;&gt;Advanced R&lt;/a&gt;,
+but that’s not necessary when getting started.
+I also try to keep a list of free (python)
+&lt;a href=&#34;https://github.com/chendaniely/pandas_for_everyone#other-random-goodies&#34;&gt;resources&lt;/a&gt;
+online as well.&lt;/p&gt;
+&lt;p&gt;Since I work on the data side of most things,
+it’s easy for me to suggest learning things from that point of view.
+All I can say is, that it if you stick with one of the learning paths,
+you will actually pick up bits of knowledge that will help you in others.
+I first learned Python as a normal scriping language, and learned how to do data analysis in R.
+I only started to do data manipulation in Python when I understoon the concept of
+&lt;a href=&#34;https://vita.had.co.nz/papers/tidy-data.pdf&#34;&gt;tidy data&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tidy data is probably the &lt;em&gt;most&lt;/em&gt; important topic when working with data.
+So many of the skills you need to clean and tidy your data involve other aspects of the langage
+(e.g., writing vectorized functions),
+that you’ll learn basic programming concepts by making your data tidy.&lt;/p&gt;
+&lt;p&gt;For example, while learning pandas and data manipulations,
+will get you working with Python classes,
+which is an Object Oriented Programming concept.
+That will all translate if you need to so more software work in Python or if you want to learn Django.
+In R, you learn how to work with dataframes, functions, and how to write your own.&lt;/p&gt;
+&lt;p&gt;In the end, find somewhere to start.
+Because of my background, I say start with loading data and playing with it.
+The more you do it, the more questions you will have on your data,
+and the more skills you’ll acquire to answer those questions.
+Those skills will carry over to other aspects of the language, and even to other languages
+(e.g., R, Python, even Julia!).&lt;/p&gt;
+&lt;p&gt;You’ll always be learning, it never ends, so don’t worry about ever trying to “know it all”.
+I’m constantly finding new things and ways to do things in R and Pandas; I am always googling and stackoverflow-ing…
+Even though I have a book about Pandas and worked as an intern for RStudio! :)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Getting Started with Data Science and Analysis</title>

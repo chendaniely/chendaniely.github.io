@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I’m at the R/Medicine conference (no it’s not a Reddit thing) andgot to help Alison Hill with her R Markdown for Medicine workshop.One of the questions I got to tinker with was making tables used to report model results.
+One technique I learned while doing my MPH was to add variables to your model in blocks.It reduces the number of tests you need to perform, and is more meaningful than saying “I ran stepwise”.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2019/09/13/table-of-model-results-using-kable-and-kableextra/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2019/09/13/table-of-model-results-using-kable-and-kableextra/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Daniel Chen">
+  <meta property="og:url" content="/2019/09/13/table-of-model-results-using-kable-and-kableextra/">
+  <meta property="og:title" content="Table of Model Results using kable and kableExtra | Daniel Chen">
+  <meta property="og:description" content="I’m at the R/Medicine conference (no it’s not a Reddit thing) andgot to help Alison Hill with her R Markdown for Medicine workshop.One of the questions I got to tinker with was making tables used to report model results.
+One technique I learned while doing my MPH was to add variables to your model in blocks.It reduces the number of tests you need to perform, and is more meaningful than saying “I ran stepwise”."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-09-13T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-02-29T02:12:56-05:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>Table of Model Results using kable and kableExtra | Daniel Chen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Daniel Chen</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Table of Model Results using kable and kableExtra</h1>
+
+  
+
+  
+    
+
+
+
+<meta content="2019-09-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-02-29 02:12:56 -0500 EST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>2020-02-29</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2019/09/13/table-of-model-results-using-kable-and-kableextra/#disqus_thread"></a>
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/2019/09/13/table-of-model-results-using-kable-and-kableextra/&amp;text=Table%20of%20Model%20Results%20using%20kable%20and%20kableExtra" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/2019/09/13/table-of-model-results-using-kable-and-kableextra/&amp;t=Table%20of%20Model%20Results%20using%20kable%20and%20kableExtra" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Table%20of%20Model%20Results%20using%20kable%20and%20kableExtra&amp;body=/2019/09/13/table-of-model-results-using-kable-and-kableextra/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/2019/09/13/table-of-model-results-using-kable-and-kableextra/&amp;title=Table%20of%20Model%20Results%20using%20kable%20and%20kableExtra" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Table%20of%20Model%20Results%20using%20kable%20and%20kableExtra%20/2019/09/13/table-of-model-results-using-kable-and-kableextra/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/2019/09/13/table-of-model-results-using-kable-and-kableextra/&amp;title=Table%20of%20Model%20Results%20using%20kable%20and%20kableExtra" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<p>I’m at the <a href="https://r-medicine.com/">R/Medicine</a> conference (no it’s not a Reddit thing) and
+got to help Alison Hill with her <a href="https://rmd4medicine.netlify.com/">R Markdown for Medicine</a> workshop.
+One of the questions I got to tinker with was making tables used to report model results.</p>
+<!-- more -->
+<p>One technique I learned while doing my MPH was to add variables to your model in blocks.
+It reduces the number of tests you need to perform, and is more meaningful than saying “I ran stepwise”.
+So, as a researcher, you will add variables in meaningful blocks and then see if that block of variables
+is “significant” by looking at the F-statistic.</p>
+<p>Here is one example of at least putting your model results into a table.</p>
+<div id="creating-the-models" class="section level2">
+<h2>Creating the models</h2>
+<pre class="r"><code>library(reshape2) # using this just for the tips dataset
+library(broom)
+library(purrr)
+library(knitr)
+library(kableExtra)
+
+head(tips)</code></pre>
+<pre><code>##   total_bill  tip    sex smoker day   time size
+## 1      16.99 1.01 Female     No Sun Dinner    2
+## 2      10.34 1.66   Male     No Sun Dinner    3
+## 3      21.01 3.50   Male     No Sun Dinner    3
+## 4      23.68 3.31   Male     No Sun Dinner    2
+## 5      24.59 3.61 Female     No Sun Dinner    4
+## 6      25.29 4.71   Male     No Sun Dinner    4</code></pre>
+<pre class="r"><code># create a bumch of models
+m1 &lt;- lm(tip ~ total_bill, data = tips)
+m2 &lt;- lm(tip ~ total_bill + sex, data = tips)
+m3 &lt;- lm(tip ~ total_bill + sex + smoker, data = tips)
+m4 &lt;- lm(tip ~ total_bill + smoker + size, data = tips)</code></pre>
+<p>Now that we have the models, we can use the <code>broom</code> package to get a nice consistent dataframe of the coefficients</p>
+<pre class="r"><code># get a dataframe of the model estimates
+models &lt;- list(m1, m2, m3, m4)
+broom_outputs &lt;- purrr::map(models, broom::tidy)
+broom_outputs</code></pre>
+<pre><code>## [[1]]
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    0.920   0.160        5.76 2.53e- 8
+## 2 total_bill     0.105   0.00736     14.3  6.69e-34
+## 
+## [[2]]
+## # A tibble: 3 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   0.933    0.174       5.37  1.84e- 7
+## 2 total_bill    0.105    0.00746    14.1   2.33e-33
+## 3 sexMale      -0.0266   0.138      -0.192 8.48e- 1
+## 
+## [[3]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   0.977    0.178       5.48  1.05e- 7
+## 2 total_bill    0.106    0.00748    14.2   1.73e-33
+## 3 sexMale      -0.0281   0.138      -0.203 8.39e- 1
+## 4 smokerYes    -0.149    0.135      -1.10  2.72e- 1
+## 
+## [[4]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   0.709    0.205       3.46  6.38e- 4
+## 2 total_bill    0.0939   0.00933    10.1   4.26e-20
+## 3 smokerYes    -0.0834   0.138      -0.605 5.46e- 1
+## 4 size          0.180    0.0878      2.05  4.11e- 2</code></pre>
+<p>What we have now is a list of dataframes, one for each model we fit.</p>
+</div>
+<div id="just-the-beta-estimates" class="section level2">
+<h2>Just the beta estimates</h2>
+<p>If we just want the coefficients, we only need the <code>terms</code> and <code>estimates</code> columns and do a <code>join</code>.
+We can use the <code>purrr::reduce</code> function to do this</p>
+<pre class="r"><code># join them all together
+model_outputs &lt;- purrr::reduce(broom_outputs, dplyr::full_join, by = &#39;term&#39;)
+model_outputs</code></pre>
+<pre><code>## # A tibble: 5 x 17
+##   term  estimate.x std.error.x statistic.x p.value.x estimate.y std.error.y
+##   &lt;chr&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+## 1 (Int~      0.920     0.160          5.76  2.53e- 8     0.933      0.174  
+## 2 tota~      0.105     0.00736       14.3   6.69e-34     0.105      0.00746
+## 3 sexM~     NA        NA             NA    NA           -0.0266     0.138  
+## 4 smok~     NA        NA             NA    NA           NA         NA      
+## 5 size      NA        NA             NA    NA           NA         NA      
+## # ... with 10 more variables: statistic.y &lt;dbl&gt;, p.value.y &lt;dbl&gt;,
+## #   estimate.x.x &lt;dbl&gt;, std.error.x.x &lt;dbl&gt;, statistic.x.x &lt;dbl&gt;,
+## #   p.value.x.x &lt;dbl&gt;, estimate.y.y &lt;dbl&gt;, std.error.y.y &lt;dbl&gt;,
+## #   statistic.y.y &lt;dbl&gt;, p.value.y.y &lt;dbl&gt;</code></pre>
+<p>This will join all the dataframes together using the <code>term</code> column as the key.
+Variables that do not exist in the model will be filled with an <code>NA</code>.
+Problem now, is that we have a bunch of columns we don’t need.
+So the next step is to pull out the columns we want, and rename them accordingly.</p>
+<pre class="r"><code>model_table &lt;- model_outputs %&gt;%
+  dplyr::select(term, tidyselect::starts_with(&#39;estimate&#39;))</code></pre>
+<pre class="r"><code>names(model_table) &lt;- c(&#39;Variable&#39;, &#39;Model 1&#39;, &quot;Model 2&quot;, &quot;Model 3&quot;, &quot;Model 4&quot;)
+model_table</code></pre>
+<pre><code>## # A tibble: 5 x 5
+##   Variable    `Model 1` `Model 2` `Model 3` `Model 4`
+##   &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept)     0.920    0.933     0.977     0.709 
+## 2 total_bill      0.105    0.105     0.106     0.0939
+## 3 sexMale        NA       -0.0266   -0.0281   NA     
+## 4 smokerYes      NA       NA        -0.149    -0.0834
+## 5 size           NA       NA        NA         0.180</code></pre>
+</div>
+<div id="what-if-i-need-more-variables" class="section level2">
+<h2>What if I need more variables?</h2>
+<p>Just reporting the beta coefficients is not how you want to report your findings,
+typically you’d want to also display some measure of uncertainty along with the results.
+Here I’m just going to add the <code>std.error</code> column, but you can calculate the 95% confidence intervals using the <code>std.error</code>.</p>
+<p>Here’s the reference from the <code>kableExtra</code> library I’m using to build the coefficient table:</p>
+<pre class="r"><code># this is the exmaple form the kable docs I used for reference
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+collapse_rows_dt &lt;- data.frame(C1 = c(rep(&quot;a&quot;, 3), rep(&quot;b&quot;, 2)),
+                               C2 = c(rep(&quot;c&quot;, 2), rep(&quot;d&quot;, 1), rep(&quot;c&quot;, 1), rep(&quot;d&quot;, 1)),
+                               C3 = 1:5,
+                               C4 = sample(c(0,1), 5, replace = TRUE))
+collapse_rows_dt</code></pre>
+<pre><code>##   C1 C2 C3 C4
+## 1  a  c  1  0
+## 2  a  c  2  0
+## 3  a  d  3  1
+## 4  b  c  4  1
+## 5  b  d  5  1</code></pre>
+<pre class="r"><code>kable(collapse_rows_dt, align = &quot;c&quot;) %&gt;%
+  kable_styling(full_width = F) %&gt;%
+  column_spec(1, bold = T) %&gt;%
+  collapse_rows(columns = 1:2, valign = &quot;top&quot;)</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+C1
+</th>
+<th style="text-align:center;">
+C2
+</th>
+<th style="text-align:center;">
+C3
+</th>
+<th style="text-align:center;">
+C4
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="3">
+a
+</td>
+<td style="text-align:center;vertical-align: top !important;" rowspan="2">
+c
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+d
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="2">
+b
+</td>
+<td style="text-align:center;">
+c
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+d
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>This example was important to my solution, becuase I would need to format my coefficient table the same way as <code>collapse_rows_dt</code>.
+This means that:</p>
+<ul>
+<li><code>C1</code> would be the variables in my model</li>
+<li><code>C2</code> would need to alternate between the <code>estimate</code> and the <code>std.error</code></li>
+<li>The other columns would be the actual values for each model.</li>
+</ul>
+<p>Since the model outputs the <code>estimate</code> and <code>std.error</code> as columns,
+I know some kind of reshaping/tidying step will need to be involved (<code>melt</code>/<code>gather</code> / <code>pivot_longer</code>).</p>
+<p>We still start from the same data steps as the previous example</p>
+<pre class="r"><code>broom_outputs</code></pre>
+<pre><code>## [[1]]
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)    0.920   0.160        5.76 2.53e- 8
+## 2 total_bill     0.105   0.00736     14.3  6.69e-34
+## 
+## [[2]]
+## # A tibble: 3 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   0.933    0.174       5.37  1.84e- 7
+## 2 total_bill    0.105    0.00746    14.1   2.33e-33
+## 3 sexMale      -0.0266   0.138      -0.192 8.48e- 1
+## 
+## [[3]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   0.977    0.178       5.48  1.05e- 7
+## 2 total_bill    0.106    0.00748    14.2   1.73e-33
+## 3 sexMale      -0.0281   0.138      -0.203 8.39e- 1
+## 4 smokerYes    -0.149    0.135      -1.10  2.72e- 1
+## 
+## [[4]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+## 1 (Intercept)   0.709    0.205       3.46  6.38e- 4
+## 2 total_bill    0.0939   0.00933    10.1   4.26e-20
+## 3 smokerYes    -0.0834   0.138      -0.605 5.46e- 1
+## 4 size          0.180    0.0878      2.05  4.11e- 2</code></pre>
+<p>The trick here is to get the data in the correct format that can be used by <code>kableExtra</code></p>
+<pre class="r"><code>broom_stats_long &lt;- purrr::map(broom_outputs, tidyr::gather, &#39;key&#39;, &#39;value&#39;, estimate, std.error)
+broom_stats_long</code></pre>
+<pre><code>## [[1]]
+## # A tibble: 4 x 5
+##   term        statistic  p.value key         value
+##   &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
+## 1 (Intercept)      5.76 2.53e- 8 estimate  0.920  
+## 2 total_bill      14.3  6.69e-34 estimate  0.105  
+## 3 (Intercept)      5.76 2.53e- 8 std.error 0.160  
+## 4 total_bill      14.3  6.69e-34 std.error 0.00736
+## 
+## [[2]]
+## # A tibble: 6 x 5
+##   term        statistic  p.value key          value
+##   &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;
+## 1 (Intercept)     5.37  1.84e- 7 estimate   0.933  
+## 2 total_bill     14.1   2.33e-33 estimate   0.105  
+## 3 sexMale        -0.192 8.48e- 1 estimate  -0.0266 
+## 4 (Intercept)     5.37  1.84e- 7 std.error  0.174  
+## 5 total_bill     14.1   2.33e-33 std.error  0.00746
+## 6 sexMale        -0.192 8.48e- 1 std.error  0.138  
+## 
+## [[3]]
+## # A tibble: 8 x 5
+##   term        statistic  p.value key          value
+##   &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;
+## 1 (Intercept)     5.48  1.05e- 7 estimate   0.977  
+## 2 total_bill     14.2   1.73e-33 estimate   0.106  
+## 3 sexMale        -0.203 8.39e- 1 estimate  -0.0281 
+## 4 smokerYes      -1.10  2.72e- 1 estimate  -0.149  
+## 5 (Intercept)     5.48  1.05e- 7 std.error  0.178  
+## 6 total_bill     14.2   1.73e-33 std.error  0.00748
+## 7 sexMale        -0.203 8.39e- 1 std.error  0.138  
+## 8 smokerYes      -1.10  2.72e- 1 std.error  0.135  
+## 
+## [[4]]
+## # A tibble: 8 x 5
+##   term        statistic  p.value key          value
+##   &lt;chr&gt;           &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;
+## 1 (Intercept)     3.46  6.38e- 4 estimate   0.709  
+## 2 total_bill     10.1   4.26e-20 estimate   0.0939 
+## 3 smokerYes      -0.605 5.46e- 1 estimate  -0.0834 
+## 4 size            2.05  4.11e- 2 estimate   0.180  
+## 5 (Intercept)     3.46  6.38e- 4 std.error  0.205  
+## 6 total_bill     10.1   4.26e-20 std.error  0.00933
+## 7 smokerYes      -0.605 5.46e- 1 std.error  0.138  
+## 8 size            2.05  4.11e- 2 std.error  0.0878</code></pre>
+<p>Now that we have the data formatted the way we need, we now <code>select</code> only the columns we need.</p>
+<pre class="r"><code># filter only the columns we need
+broom_stats_long_filter &lt;- purrr::map(broom_stats_long, dplyr::select, term, key, value)
+broom_stats_long_filter</code></pre>
+<pre><code>## [[1]]
+## # A tibble: 4 x 3
+##   term        key         value
+##   &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;
+## 1 (Intercept) estimate  0.920  
+## 2 total_bill  estimate  0.105  
+## 3 (Intercept) std.error 0.160  
+## 4 total_bill  std.error 0.00736
+## 
+## [[2]]
+## # A tibble: 6 x 3
+##   term        key          value
+##   &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt;
+## 1 (Intercept) estimate   0.933  
+## 2 total_bill  estimate   0.105  
+## 3 sexMale     estimate  -0.0266 
+## 4 (Intercept) std.error  0.174  
+## 5 total_bill  std.error  0.00746
+## 6 sexMale     std.error  0.138  
+## 
+## [[3]]
+## # A tibble: 8 x 3
+##   term        key          value
+##   &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt;
+## 1 (Intercept) estimate   0.977  
+## 2 total_bill  estimate   0.106  
+## 3 sexMale     estimate  -0.0281 
+## 4 smokerYes   estimate  -0.149  
+## 5 (Intercept) std.error  0.178  
+## 6 total_bill  std.error  0.00748
+## 7 sexMale     std.error  0.138  
+## 8 smokerYes   std.error  0.135  
+## 
+## [[4]]
+## # A tibble: 8 x 3
+##   term        key          value
+##   &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt;
+## 1 (Intercept) estimate   0.709  
+## 2 total_bill  estimate   0.0939 
+## 3 smokerYes   estimate  -0.0834 
+## 4 size        estimate   0.180  
+## 5 (Intercept) std.error  0.205  
+## 6 total_bill  std.error  0.00933
+## 7 smokerYes   std.error  0.138  
+## 8 size        std.error  0.0878</code></pre>
+<p>Next, you need to create some kind of ID value for each model you’re creating,
+that way when you’re combining everything into a single dataframe,
+the estimates are traveling together with the standard error.
+Here I’m labeling each model as a number starting with <code>1</code>.</p>
+<pre class="r"><code>tidy_tables &lt;- purrr::map2_df(broom_stats_long_filter, 1:length(broom_stats_long_filter),
+                              function(x, y) dplyr::mutate(x, mod = y))
+tidy_tables</code></pre>
+<pre><code>## # A tibble: 26 x 4
+##    term        key          value   mod
+##    &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt; &lt;int&gt;
+##  1 (Intercept) estimate   0.920       1
+##  2 total_bill  estimate   0.105       1
+##  3 (Intercept) std.error  0.160       1
+##  4 total_bill  std.error  0.00736     1
+##  5 (Intercept) estimate   0.933       2
+##  6 total_bill  estimate   0.105       2
+##  7 sexMale     estimate  -0.0266      2
+##  8 (Intercept) std.error  0.174       2
+##  9 total_bill  std.error  0.00746     2
+## 10 sexMale     std.error  0.138       2
+## # ... with 16 more rows</code></pre>
+<p>Almost there!</p>
+<p>Lastly, we need to sort the columns by using <code>arrange</code>.
+Here is where the ID column, <code>mod</code> get’s used to make sure model values are traveling together.</p>
+<pre class="r"><code>df &lt;- tidy_tables %&gt;%
+  dplyr::arrange(term, mod, key, value) %&gt;%
+  tidyr::spread(mod, value, drop = FALSE)
+df</code></pre>
+<pre><code>## # A tibble: 10 x 6
+##    term        key            `1`      `2`      `3`      `4`
+##    &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1 (Intercept) estimate   0.920    0.933    0.977    0.709  
+##  2 (Intercept) std.error  0.160    0.174    0.178    0.205  
+##  3 sexMale     estimate  NA       -0.0266  -0.0281  NA      
+##  4 sexMale     std.error NA        0.138    0.138   NA      
+##  5 size        estimate  NA       NA       NA        0.180  
+##  6 size        std.error NA       NA       NA        0.0878 
+##  7 smokerYes   estimate  NA       NA       -0.149   -0.0834 
+##  8 smokerYes   std.error NA       NA        0.135    0.138  
+##  9 total_bill  estimate   0.105    0.105    0.106    0.0939 
+## 10 total_bill  std.error  0.00736  0.00746  0.00748  0.00933</code></pre>
+<pre class="r"><code>kable(df, align=&#39;c&#39;) %&gt;%
+  kable_styling(full_width = F) %&gt;%
+  column_spec(1, bold = T) %&gt;%
+  collapse_rows(columns = 1, valign = &quot;top&quot;)</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+term
+</th>
+<th style="text-align:center;">
+key
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+4
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="2">
+(Intercept)
+</td>
+<td style="text-align:center;">
+estimate
+</td>
+<td style="text-align:center;">
+0.9202696
+</td>
+<td style="text-align:center;">
+0.9332785
+</td>
+<td style="text-align:center;">
+0.9770353
+</td>
+<td style="text-align:center;">
+0.7090155
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+std.error
+</td>
+<td style="text-align:center;">
+0.1597347
+</td>
+<td style="text-align:center;">
+0.1737557
+</td>
+<td style="text-align:center;">
+0.1781633
+</td>
+<td style="text-align:center;">
+0.2048813
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="2">
+sexMale
+</td>
+<td style="text-align:center;">
+estimate
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+-0.0266087
+</td>
+<td style="text-align:center;">
+-0.0280926
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+std.error
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+0.1383340
+</td>
+<td style="text-align:center;">
+0.1382793
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="2">
+size
+</td>
+<td style="text-align:center;">
+estimate
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+0.1803316
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+std.error
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+0.0878033
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="2">
+smokerYes
+</td>
+<td style="text-align:center;">
+estimate
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+-0.1491923
+</td>
+<td style="text-align:center;">
+-0.0834326
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+std.error
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+0.1354353
+</td>
+<td style="text-align:center;">
+0.1380005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="2">
+total_bill
+</td>
+<td style="text-align:center;">
+estimate
+</td>
+<td style="text-align:center;">
+0.1050245
+</td>
+<td style="text-align:center;">
+0.1052324
+</td>
+<td style="text-align:center;">
+0.1059431
+</td>
+<td style="text-align:center;">
+0.0938884
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+std.error
+</td>
+<td style="text-align:center;">
+0.0073648
+</td>
+<td style="text-align:center;">
+0.0074582
+</td>
+<td style="text-align:center;">
+0.0074827
+</td>
+<td style="text-align:center;">
+0.0093314
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="kableextra" class="section level2">
+<h2>kableExtra</h2>
+<p>There kableExtra is great for tables like this. Here are links to more information</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html" class="uri">https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html</a></li>
+<li><a href="http://haozhu233.github.io/kableExtra/" class="uri">http://haozhu233.github.io/kableExtra/</a></li>
+</ul>
+</div>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/rmarkdown/">rmarkdown</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/4020908e54741b5fc49e743ef6913ceb?s=200')" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/">Daniel Chen</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      <p class="card-text" itemprop="description">My research interests include trying anything to graduate.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.instagram.com/chendaniely/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.twitch.tv/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://open.spotify.com/user/maveri2k" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="http://orcid.org/0000-0003-3857-1741" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/2019/08/28/r-or-python-which-one-to-learn-first/">R or Python, which One to Learn (First)?</a></li>
+          
+          <li><a href="/2019/06/18/rstudio-internship-week-2/">RStudio internship week 2</a></li>
+          
+          <li><a href="/2019/06/10/and-were-off-rstudio-internship-week-1-complete./">And we&#39;re off! RStudio internship week 1, complete.</a></li>
+          
+          <li><a href="/2018/04/22/rstatsnyc-as-told-by-brooklynevery1-dataandme-and-autographs/">rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/2020/01/29/my-time-as-an-rstudio-intern/" rel="next">My time as an RStudio Intern</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/2019/08/28/r-or-python-which-one-to-learn-first/" rel="prev">R or Python, which One to Learn (First)?</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chendaniely" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.23e2fabfaf271b1b075bb9e0280085b7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Daniel Chen 2020 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

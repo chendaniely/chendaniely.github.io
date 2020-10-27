@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rmarkdown on Daniel Chen</title>
+    <link>/tags/rmarkdown/</link>
+    <description>Recent content in rmarkdown on Daniel Chen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Daniel Chen {year}</copyright>
+    <lastBuildDate>Fri, 13 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="/tags/rmarkdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Table of Model Results using kable and kableExtra</title>
+      <link>/2019/09/13/table-of-model-results-using-kable-and-kableextra/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/13/table-of-model-results-using-kable-and-kableextra/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;I’m at the &lt;a href=&#34;https://r-medicine.com/&#34;&gt;R/Medicine&lt;/a&gt; conference (no it’s not a Reddit thing) and
+got to help Alison Hill with her &lt;a href=&#34;https://rmd4medicine.netlify.com/&#34;&gt;R Markdown for Medicine&lt;/a&gt; workshop.
+One of the questions I got to tinker with was making tables used to report model results.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;One technique I learned while doing my MPH was to add variables to your model in blocks.
+It reduces the number of tests you need to perform, and is more meaningful than saying “I ran stepwise”.
+So, as a researcher, you will add variables in meaningful blocks and then see if that block of variables
+is “significant” by looking at the F-statistic.&lt;/p&gt;
+&lt;p&gt;Here is one example of at least putting your model results into a table.&lt;/p&gt;
+&lt;div id=&#34;creating-the-models&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Creating the models&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reshape2) # using this just for the tips dataset
+library(broom)
+library(purrr)
+library(knitr)
+library(kableExtra)
+
+head(tips)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   total_bill  tip    sex smoker day   time size
+## 1      16.99 1.01 Female     No Sun Dinner    2
+## 2      10.34 1.66   Male     No Sun Dinner    3
+## 3      21.01 3.50   Male     No Sun Dinner    3
+## 4      23.68 3.31   Male     No Sun Dinner    2
+## 5      24.59 3.61 Female     No Sun Dinner    4
+## 6      25.29 4.71   Male     No Sun Dinner    4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create a bumch of models
+m1 &amp;lt;- lm(tip ~ total_bill, data = tips)
+m2 &amp;lt;- lm(tip ~ total_bill + sex, data = tips)
+m3 &amp;lt;- lm(tip ~ total_bill + sex + smoker, data = tips)
+m4 &amp;lt;- lm(tip ~ total_bill + smoker + size, data = tips)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have the models, we can use the &lt;code&gt;broom&lt;/code&gt; package to get a nice consistent dataframe of the coefficients&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# get a dataframe of the model estimates
+models &amp;lt;- list(m1, m2, m3, m4)
+broom_outputs &amp;lt;- purrr::map(models, broom::tidy)
+broom_outputs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)    0.920   0.160        5.76 2.53e- 8
+## 2 total_bill     0.105   0.00736     14.3  6.69e-34
+## 
+## [[2]]
+## # A tibble: 3 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.933    0.174       5.37  1.84e- 7
+## 2 total_bill    0.105    0.00746    14.1   2.33e-33
+## 3 sexMale      -0.0266   0.138      -0.192 8.48e- 1
+## 
+## [[3]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.977    0.178       5.48  1.05e- 7
+## 2 total_bill    0.106    0.00748    14.2   1.73e-33
+## 3 sexMale      -0.0281   0.138      -0.203 8.39e- 1
+## 4 smokerYes    -0.149    0.135      -1.10  2.72e- 1
+## 
+## [[4]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.709    0.205       3.46  6.38e- 4
+## 2 total_bill    0.0939   0.00933    10.1   4.26e-20
+## 3 smokerYes    -0.0834   0.138      -0.605 5.46e- 1
+## 4 size          0.180    0.0878      2.05  4.11e- 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What we have now is a list of dataframes, one for each model we fit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;just-the-beta-estimates&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Just the beta estimates&lt;/h2&gt;
+&lt;p&gt;If we just want the coefficients, we only need the &lt;code&gt;terms&lt;/code&gt; and &lt;code&gt;estimates&lt;/code&gt; columns and do a &lt;code&gt;join&lt;/code&gt;.
+We can use the &lt;code&gt;purrr::reduce&lt;/code&gt; function to do this&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# join them all together
+model_outputs &amp;lt;- purrr::reduce(broom_outputs, dplyr::full_join, by = &amp;#39;term&amp;#39;)
+model_outputs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 5 x 17
+##   term  estimate.x std.error.x statistic.x p.value.x estimate.y std.error.y
+##   &amp;lt;chr&amp;gt;      &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;
+## 1 (Int~      0.920     0.160          5.76  2.53e- 8     0.933      0.174  
+## 2 tota~      0.105     0.00736       14.3   6.69e-34     0.105      0.00746
+## 3 sexM~     NA        NA             NA    NA           -0.0266     0.138  
+## 4 smok~     NA        NA             NA    NA           NA         NA      
+## 5 size      NA        NA             NA    NA           NA         NA      
+## # ... with 10 more variables: statistic.y &amp;lt;dbl&amp;gt;, p.value.y &amp;lt;dbl&amp;gt;,
+## #   estimate.x.x &amp;lt;dbl&amp;gt;, std.error.x.x &amp;lt;dbl&amp;gt;, statistic.x.x &amp;lt;dbl&amp;gt;,
+## #   p.value.x.x &amp;lt;dbl&amp;gt;, estimate.y.y &amp;lt;dbl&amp;gt;, std.error.y.y &amp;lt;dbl&amp;gt;,
+## #   statistic.y.y &amp;lt;dbl&amp;gt;, p.value.y.y &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will join all the dataframes together using the &lt;code&gt;term&lt;/code&gt; column as the key.
+Variables that do not exist in the model will be filled with an &lt;code&gt;NA&lt;/code&gt;.
+Problem now, is that we have a bunch of columns we don’t need.
+So the next step is to pull out the columns we want, and rename them accordingly.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_table &amp;lt;- model_outputs %&amp;gt;%
+  dplyr::select(term, tidyselect::starts_with(&amp;#39;estimate&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;names(model_table) &amp;lt;- c(&amp;#39;Variable&amp;#39;, &amp;#39;Model 1&amp;#39;, &amp;quot;Model 2&amp;quot;, &amp;quot;Model 3&amp;quot;, &amp;quot;Model 4&amp;quot;)
+model_table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 5 x 5
+##   Variable    `Model 1` `Model 2` `Model 3` `Model 4`
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     0.920    0.933     0.977     0.709 
+## 2 total_bill      0.105    0.105     0.106     0.0939
+## 3 sexMale        NA       -0.0266   -0.0281   NA     
+## 4 smokerYes      NA       NA        -0.149    -0.0834
+## 5 size           NA       NA        NA         0.180&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-if-i-need-more-variables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What if I need more variables?&lt;/h2&gt;
+&lt;p&gt;Just reporting the beta coefficients is not how you want to report your findings,
+typically you’d want to also display some measure of uncertainty along with the results.
+Here I’m just going to add the &lt;code&gt;std.error&lt;/code&gt; column, but you can calculate the 95% confidence intervals using the &lt;code&gt;std.error&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s the reference from the &lt;code&gt;kableExtra&lt;/code&gt; library I’m using to build the coefficient table:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# this is the exmaple form the kable docs I used for reference
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+collapse_rows_dt &amp;lt;- data.frame(C1 = c(rep(&amp;quot;a&amp;quot;, 3), rep(&amp;quot;b&amp;quot;, 2)),
+                               C2 = c(rep(&amp;quot;c&amp;quot;, 2), rep(&amp;quot;d&amp;quot;, 1), rep(&amp;quot;c&amp;quot;, 1), rep(&amp;quot;d&amp;quot;, 1)),
+                               C3 = 1:5,
+                               C4 = sample(c(0,1), 5, replace = TRUE))
+collapse_rows_dt&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   C1 C2 C3 C4
+## 1  a  c  1  0
+## 2  a  c  2  0
+## 3  a  d  3  1
+## 4  b  c  4  1
+## 5  b  d  5  1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(collapse_rows_dt, align = &amp;quot;c&amp;quot;) %&amp;gt;%
+  kable_styling(full_width = F) %&amp;gt;%
+  column_spec(1, bold = T) %&amp;gt;%
+  collapse_rows(columns = 1:2, valign = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C1
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C2
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C3
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C4
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;3&#34;&gt;
+a
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+c
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+d
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+b
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+c
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+d
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This example was important to my solution, becuase I would need to format my coefficient table the same way as &lt;code&gt;collapse_rows_dt&lt;/code&gt;.
+This means that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;C1&lt;/code&gt; would be the variables in my model&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C2&lt;/code&gt; would need to alternate between the &lt;code&gt;estimate&lt;/code&gt; and the &lt;code&gt;std.error&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The other columns would be the actual values for each model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since the model outputs the &lt;code&gt;estimate&lt;/code&gt; and &lt;code&gt;std.error&lt;/code&gt; as columns,
+I know some kind of reshaping/tidying step will need to be involved (&lt;code&gt;melt&lt;/code&gt;/&lt;code&gt;gather&lt;/code&gt; / &lt;code&gt;pivot_longer&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;We still start from the same data steps as the previous example&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;broom_outputs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)    0.920   0.160        5.76 2.53e- 8
+## 2 total_bill     0.105   0.00736     14.3  6.69e-34
+## 
+## [[2]]
+## # A tibble: 3 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.933    0.174       5.37  1.84e- 7
+## 2 total_bill    0.105    0.00746    14.1   2.33e-33
+## 3 sexMale      -0.0266   0.138      -0.192 8.48e- 1
+## 
+## [[3]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.977    0.178       5.48  1.05e- 7
+## 2 total_bill    0.106    0.00748    14.2   1.73e-33
+## 3 sexMale      -0.0281   0.138      -0.203 8.39e- 1
+## 4 smokerYes    -0.149    0.135      -1.10  2.72e- 1
+## 
+## [[4]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.709    0.205       3.46  6.38e- 4
+## 2 total_bill    0.0939   0.00933    10.1   4.26e-20
+## 3 smokerYes    -0.0834   0.138      -0.605 5.46e- 1
+## 4 size          0.180    0.0878      2.05  4.11e- 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The trick here is to get the data in the correct format that can be used by &lt;code&gt;kableExtra&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;broom_stats_long &amp;lt;- purrr::map(broom_outputs, tidyr::gather, &amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;, estimate, std.error)
+broom_stats_long&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 4 x 5
+##   term        statistic  p.value key         value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;       &amp;lt;dbl&amp;gt;
+## 1 (Intercept)      5.76 2.53e- 8 estimate  0.920  
+## 2 total_bill      14.3  6.69e-34 estimate  0.105  
+## 3 (Intercept)      5.76 2.53e- 8 std.error 0.160  
+## 4 total_bill      14.3  6.69e-34 std.error 0.00736
+## 
+## [[2]]
+## # A tibble: 6 x 5
+##   term        statistic  p.value key          value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     5.37  1.84e- 7 estimate   0.933  
+## 2 total_bill     14.1   2.33e-33 estimate   0.105  
+## 3 sexMale        -0.192 8.48e- 1 estimate  -0.0266 
+## 4 (Intercept)     5.37  1.84e- 7 std.error  0.174  
+## 5 total_bill     14.1   2.33e-33 std.error  0.00746
+## 6 sexMale        -0.192 8.48e- 1 std.error  0.138  
+## 
+## [[3]]
+## # A tibble: 8 x 5
+##   term        statistic  p.value key          value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     5.48  1.05e- 7 estimate   0.977  
+## 2 total_bill     14.2   1.73e-33 estimate   0.106  
+## 3 sexMale        -0.203 8.39e- 1 estimate  -0.0281 
+## 4 smokerYes      -1.10  2.72e- 1 estimate  -0.149  
+## 5 (Intercept)     5.48  1.05e- 7 std.error  0.178  
+## 6 total_bill     14.2   1.73e-33 std.error  0.00748
+## 7 sexMale        -0.203 8.39e- 1 std.error  0.138  
+## 8 smokerYes      -1.10  2.72e- 1 std.error  0.135  
+## 
+## [[4]]
+## # A tibble: 8 x 5
+##   term        statistic  p.value key          value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     3.46  6.38e- 4 estimate   0.709  
+## 2 total_bill     10.1   4.26e-20 estimate   0.0939 
+## 3 smokerYes      -0.605 5.46e- 1 estimate  -0.0834 
+## 4 size            2.05  4.11e- 2 estimate   0.180  
+## 5 (Intercept)     3.46  6.38e- 4 std.error  0.205  
+## 6 total_bill     10.1   4.26e-20 std.error  0.00933
+## 7 smokerYes      -0.605 5.46e- 1 std.error  0.138  
+## 8 size            2.05  4.11e- 2 std.error  0.0878&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have the data formatted the way we need, we now &lt;code&gt;select&lt;/code&gt; only the columns we need.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# filter only the columns we need
+broom_stats_long_filter &amp;lt;- purrr::map(broom_stats_long, dplyr::select, term, key, value)
+broom_stats_long_filter&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 4 x 3
+##   term        key         value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;       &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate  0.920  
+## 2 total_bill  estimate  0.105  
+## 3 (Intercept) std.error 0.160  
+## 4 total_bill  std.error 0.00736
+## 
+## [[2]]
+## # A tibble: 6 x 3
+##   term        key          value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate   0.933  
+## 2 total_bill  estimate   0.105  
+## 3 sexMale     estimate  -0.0266 
+## 4 (Intercept) std.error  0.174  
+## 5 total_bill  std.error  0.00746
+## 6 sexMale     std.error  0.138  
+## 
+## [[3]]
+## # A tibble: 8 x 3
+##   term        key          value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate   0.977  
+## 2 total_bill  estimate   0.106  
+## 3 sexMale     estimate  -0.0281 
+## 4 smokerYes   estimate  -0.149  
+## 5 (Intercept) std.error  0.178  
+## 6 total_bill  std.error  0.00748
+## 7 sexMale     std.error  0.138  
+## 8 smokerYes   std.error  0.135  
+## 
+## [[4]]
+## # A tibble: 8 x 3
+##   term        key          value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate   0.709  
+## 2 total_bill  estimate   0.0939 
+## 3 smokerYes   estimate  -0.0834 
+## 4 size        estimate   0.180  
+## 5 (Intercept) std.error  0.205  
+## 6 total_bill  std.error  0.00933
+## 7 smokerYes   std.error  0.138  
+## 8 size        std.error  0.0878&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, you need to create some kind of ID value for each model you’re creating,
+that way when you’re combining everything into a single dataframe,
+the estimates are traveling together with the standard error.
+Here I’m labeling each model as a number starting with &lt;code&gt;1&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tidy_tables &amp;lt;- purrr::map2_df(broom_stats_long_filter, 1:length(broom_stats_long_filter),
+                              function(x, y) dplyr::mutate(x, mod = y))
+tidy_tables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 26 x 4
+##    term        key          value   mod
+##    &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;
+##  1 (Intercept) estimate   0.920       1
+##  2 total_bill  estimate   0.105       1
+##  3 (Intercept) std.error  0.160       1
+##  4 total_bill  std.error  0.00736     1
+##  5 (Intercept) estimate   0.933       2
+##  6 total_bill  estimate   0.105       2
+##  7 sexMale     estimate  -0.0266      2
+##  8 (Intercept) std.error  0.174       2
+##  9 total_bill  std.error  0.00746     2
+## 10 sexMale     std.error  0.138       2
+## # ... with 16 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Almost there!&lt;/p&gt;
+&lt;p&gt;Lastly, we need to sort the columns by using &lt;code&gt;arrange&lt;/code&gt;.
+Here is where the ID column, &lt;code&gt;mod&lt;/code&gt; get’s used to make sure model values are traveling together.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- tidy_tables %&amp;gt;%
+  dplyr::arrange(term, mod, key, value) %&amp;gt;%
+  tidyr::spread(mod, value, drop = FALSE)
+df&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 x 6
+##    term        key            `1`      `2`      `3`      `4`
+##    &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+##  1 (Intercept) estimate   0.920    0.933    0.977    0.709  
+##  2 (Intercept) std.error  0.160    0.174    0.178    0.205  
+##  3 sexMale     estimate  NA       -0.0266  -0.0281  NA      
+##  4 sexMale     std.error NA        0.138    0.138   NA      
+##  5 size        estimate  NA       NA       NA        0.180  
+##  6 size        std.error NA       NA       NA        0.0878 
+##  7 smokerYes   estimate  NA       NA       -0.149   -0.0834 
+##  8 smokerYes   std.error NA       NA        0.135    0.138  
+##  9 total_bill  estimate   0.105    0.105    0.106    0.0939 
+## 10 total_bill  std.error  0.00736  0.00746  0.00748  0.00933&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(df, align=&amp;#39;c&amp;#39;) %&amp;gt;%
+  kable_styling(full_width = F) %&amp;gt;%
+  column_spec(1, bold = T) %&amp;gt;%
+  collapse_rows(columns = 1, valign = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+term
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+key
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+2
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+3
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+4
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+(Intercept)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.9202696
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.9332785
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.9770353
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.7090155
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1597347
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1737557
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1781633
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.2048813
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+sexMale
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.0266087
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.0280926
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1383340
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1382793
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+size
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1803316
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0878033
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+smokerYes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.1491923
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.0834326
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1354353
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1380005
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+total_bill
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1050245
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1052324
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1059431
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0938884
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0073648
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0074582
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0074827
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0093314
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;kableextra&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;kableExtra&lt;/h2&gt;
+&lt;p&gt;There kableExtra is great for tables like this. Here are links to more information&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://haozhu233.github.io/kableExtra/&#34; class=&#34;uri&#34;&gt;http://haozhu233.github.io/kableExtra/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -44,7 +44,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-08-06T09:32:29-04:00</lastmod>
+    <lastmod>2020-10-27T14:00:31-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,36 +54,148 @@
   </url>
   
   <url>
-    <loc>/2019/08/06/inconsistencies-with-in-r/</loc>
-    <lastmod>2019-08-06T09:32:29-04:00</lastmod>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-27T14:00:31-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2020/10/27/using-obs-for-online-teaching/</loc>
+    <lastmod>2020-10-27T14:00:31-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/obs/</loc>
+    <lastmod>2020-10-27T14:00:31-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/teaching/</loc>
+    <lastmod>2020-10-27T14:00:31-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/zoom/</loc>
+    <lastmod>2020-10-27T14:00:31-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/3d-print/</loc>
+    <lastmod>2020-05-24T17:34:18-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-05-24T17:34:18-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2020/05/24/upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/</loc>
+    <lastmod>2020-05-24T17:34:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/makers/</loc>
+    <lastmod>2020-05-24T17:34:18-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/making/</loc>
+    <lastmod>2020-05-24T17:34:18-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2020/02/29/python-environments-with-conda/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tutorial/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2019-08-06T09:32:29-04:00</lastmod>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-08-06T09:32:29-04:00</lastmod>
-    <priority>0</priority>
+    <loc>/2020/01/30/r-hex-bowtie/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/01/29/my-time-as-an-rstudio-intern/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/rstudio-internship/</loc>
-    <lastmod>2019-08-06T09:32:29-04:00</lastmod>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/2019/09/13/table-of-model-results-using-kable-and-kableextra/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rmarkdown/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2019/08/28/r-or-python-which-one-to-learn-first/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/08/27/git-squash-and-merge-workflow/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/workflow/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/2019/08/06/inconsistencies-with-in-r/</loc>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/</loc>
-    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/home/</loc>
-    <lastmod>2019-08-03T20:37:19-04:00</lastmod>
+    <lastmod>2020-02-29T02:12:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,7 +245,7 @@
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
+    <lastmod>2020-01-15T15:47:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -288,12 +400,6 @@
   
   <url>
     <loc>/tags/pfps17/</loc>
-    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/teaching/</loc>
     <lastmod>2019-07-23T20:45:50-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -601,12 +707,6 @@
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
-    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/tutorials/</loc>
     <lastmod>2019-07-23T20:45:50-04:00</lastmod>
     <priority>0</priority>
@@ -691,12 +791,6 @@
   
   <url>
     <loc>/tags/tips/</loc>
-    <lastmod>2019-07-23T20:45:50-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tutorial/</loc>
     <lastmod>2019-07-23T20:45:50-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -800,12 +894,7 @@
   
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2019-07-01T01:04:47-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
+    <lastmod>2020-01-15T15:47:35-05:00</lastmod>
   </url>
   
   <url>

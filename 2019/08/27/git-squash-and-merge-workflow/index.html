@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Daniel Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I have a love-hate relationship with Git.It took me years of following cookbooks and following strict set of commands toget a sense of how it works.I still have to spend time wrangling Git at times,but I’ve gotten to the point where I’m just annoyed, instead of scared.Here is the branching-squash-and-merge workflow I’ve been using at RStudio.
+Also, sorry I may be glossing over some of the Git basics in this post…">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/2019/08/27/git-squash-and-merge-workflow/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.51aaf4ffea3f47e2aa5becc49e20baec.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54964509-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/2019/08/27/git-squash-and-merge-workflow/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@chendaniely">
+  <meta property="twitter:creator" content="@chendaniely">
+  
+  <meta property="og:site_name" content="Daniel Chen">
+  <meta property="og:url" content="/2019/08/27/git-squash-and-merge-workflow/">
+  <meta property="og:title" content="Git Squash and Merge Workflow | Daniel Chen">
+  <meta property="og:description" content="I have a love-hate relationship with Git.It took me years of following cookbooks and following strict set of commands toget a sense of how it works.I still have to spend time wrangling Git at times,but I’ve gotten to the point where I’m just annoyed, instead of scared.Here is the branching-squash-and-merge workflow I’ve been using at RStudio.
+Also, sorry I may be glossing over some of the Git basics in this post…"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-08-27T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-02-29T02:12:56-05:00">
+  
+
+  
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "#fff"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+</script>
+
+
+
+  
+
+
+
+
+
+  <title>Git Squash and Merge Workflow | Daniel Chen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Daniel Chen</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/python/"><i class="fab fa-python" style="color: #fff;"></i> <span>Python</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/r/"><i class="fab fa-r-project" style="color: #fff;"></i> <span>R</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/courses/git/"><i class="fas fa-code-branch" style="color: #fff;"></i> <span>Git</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Hobbies</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/scuba"><i class="fas fa-fish" style="color: #fff;"></i> <span>SCUBA Diving</span></a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/hobbies/photography"><i class="fas fa-camera" style="color: #fff;"></i> <span>Photography</span></a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Git Squash and Merge Workflow</h1>
+
+  
+  <p class="page-subtitle">Doing gitmastics as an RStudio intern</p>
+  
+
+  
+    
+
+
+
+<meta content="2019-08-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-02-29 02:12:56 -0500 EST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>2020-02-29</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2019/08/27/git-squash-and-merge-workflow/#disqus_thread"></a>
+  
+
+  
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/2019/08/27/git-squash-and-merge-workflow/&amp;text=Git%20Squash%20and%20Merge%20Workflow" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/2019/08/27/git-squash-and-merge-workflow/&amp;t=Git%20Squash%20and%20Merge%20Workflow" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Git%20Squash%20and%20Merge%20Workflow&amp;body=/2019/08/27/git-squash-and-merge-workflow/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/2019/08/27/git-squash-and-merge-workflow/&amp;title=Git%20Squash%20and%20Merge%20Workflow" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Git%20Squash%20and%20Merge%20Workflow%20/2019/08/27/git-squash-and-merge-workflow/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/2019/08/27/git-squash-and-merge-workflow/&amp;title=Git%20Squash%20and%20Merge%20Workflow" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>I have a love-hate relationship with Git.
+It took me years of following cookbooks and following strict set of commands to
+get a sense of how it works.
+I still have to spend time wrangling Git at times,
+but I’ve gotten to the point where I’m just annoyed, instead of scared.
+Here is the branching-squash-and-merge workflow I’ve been using at RStudio.</p>
+<p>Also, sorry I may be glossing over some of the Git basics in this post…</p>
+<!-- more -->
+<p>At RStudio, I’m using a brancing workflow where I am added directly as a collaborator to a project.
+I still have to create pull requests for review,
+but contrast this with me forking the repository and creating a pull regrest from my copy (<code>origin</code>)
+to the parent repository (<code>upstream</code>).</p>
+<p>Every workflow has benefits and drawbacks.
+The current workflow I’m using is a “squash and merge”.
+Where all the commits in a pull request are “squashed” into a single commit when it it merged into master.
+This means the main commit history is <em>super</em> clean,
+and potentially sets up the repository to create automatic change logs or <code>NEWS</code> reports.
+The downside is if you start branching off other branches (instead of the main <code>master</code>),
+you’ll have to <code>rebase</code> or <code>cherry-pick</code> to update the branches after a branch gets merged.</p>
+<div id="the-general-problem" class="section level1">
+<h1>The general problem</h1>
+<pre class="markdown"><code>m1-m2-m3 # the master branch
+       \
+        x11-x12-x13 # example branch_1
+                  \
+                   y21-y22-y23 # example branch_2 that depends on branch_1</code></pre>
+<p>After a squash and merge the Git DAG looks like this</p>
+<pre class="markdown"><code>m1-m2-m3-s1 # master branch + squash-merge
+       \
+        x11-x12-x13 # commits from branch_1 still exist
+                  \
+                   y21-y22-y23 # commits from branch_2 still exist</code></pre>
+<p>You can’t simply just squash merge <code>branch_2</code>, becuase the commits from <code>branch_1</code>
+are technically still part of the history of <code>branch_2</code>,
+so a rebase of <code>branch_2</code> against the new master will cause conflicts,
+<em>and</em> I’ll have duplicate messages if I do another squash+merge of <code>branch_2</code>.</p>
+<p>If you did a <code>rebase</code> you’ll end up with this:</p>
+<pre class="bash"><code>git checkout branch_2 # make sure you&#39;re on branch_2
+git rebase master
+# fix conflicts
+# so many conflicts</code></pre>
+<pre class="markdown"><code>m1-m2-m3-s1 # master branch + squash-merge
+          \
+           x11-x12-x13-y21-y22-y23 # commits from branch_1 and branch_2</code></pre>
+<p>Instead, you need to <code>git cherry-pick</code> the commits against the updated master
+with just the commits from <code>branch_2</code>.</p>
+<pre class="bash"><code>git checkout master # go to master branch so you can cherry-pick commits on top
+git cherry-pick y21^..y23 # this is how to cherry-pick multiple commits
+# (note the ^ to also include commit y21, otherwise it is left exclusive)</code></pre>
+<pre class="markdown"><code>m1-m2-m3-s1 # master branch + squash-merge
+       \  \
+        \  y21-y22-y23 # cherry-pick commits from branch_2 # this is good
+         \
+          x11-x12-x13 # commits from branch_1 still exist # already in s1</code></pre>
+<p>We don’t need the commits from branch one anymore (<code>x11</code> to <code>x13</code> in the example),
+so we can deleate that branch using <code>git branch -D branch_1</code>,
+note you have to use a force delete with the <code>-D</code> flag,
+because git does not think that <code>branch_1</code> was merged because we did a squash+merge.
+Otherwise you would’ve been able to use the lowercase <code>-d</code> flag to delete the branch.</p>
+<pre class="markdown"><code>m1-m2-m3-s1 # master branch + squash-merge
+          \
+           y21-y22-y23 # cherry-pick commits from branch_2 # yay!</code></pre>
+<p>Now we finally get everthing up to date, and can re-update the pull request for branch 2
+by doing a force push: <code>git push -f origin master</code>.</p>
+</div>
+<div id="in-the-real-world" class="section level1">
+<h1>In the real world</h1>
+<p>The PR process is the same as usual:</p>
+<ol style="list-style-type: decimal">
+<li>Create a branch</li>
+<li>Push the branch to the remote (i.e., Github, in this case)</li>
+<li>Pull request!</li>
+</ol>
+<p>However, Github now gives you an option of which <em>green</em> button you want!
+Specifically, the option to “Squash and merge”</p>
+<p><img src="github_squash_merge.png" /></p>
+<p>This is fine when you have a totally independent PR
+and there’s no other work that is based of the current work on that branch.
+However here’s an example where I created separate branches for each “feature”,
+but they all rely on the previous feature.</p>
+<p>Output of my <code>git log --oneline --graph --decorate --all</code>, which I have aliased as <code>git l</code></p>
+<p>Here’s the current state we’re in after we perform a squash+merge on GitHub</p>
+<pre class="markdown"><code>              vignettes
+             /
+older_commits
+             \
+              master</code></pre>
+<p>Here’s what the actual state of the repository looks like.</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:06] $ git l
+* 16f4b6b (HEAD -&gt; vignettes) intro to gradethis for learnr docs
+* b4e2873 (origin/vignettes) emphasize not to use ==
+* f66aa39 i don&#39;t want to stash
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+| |/  
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+| * 9083fc8 (me/master, master) rename functions per #65 update docs and tests (#72)
+| * 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+| * 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning
+</code></pre>
+<p>What we want is something like this:</p>
+<pre class="markdown"><code>older_commits
+             \
+              master
+                    \
+                     vignettes</code></pre>
+<p>First we pull and update <code>master</code></p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:18] $ git pull origin master
+From github.com:rstudio-education/gradethis
+ * branch            master     -&gt; FETCH_HEAD
+Updating 9083fc8..a195fa3
+Fast-forward
+ inst/tutorials/grading-demo/grading-demo.Rmd | 249 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------
+ 1 file changed, 112 insertions(+), 137 deletions(-)</code></pre>
+<p>Now that master is up to date,</p>
+<pre class="markdown"><code>              vignettes
+             /
+older_commits
+             \
+              master-master # master has moved up a commit from pull</code></pre>
+<p>we can cherry-pick the commits of interest</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:30] $ git cherry-pick f66aa39^..16f4b6b
+[master 28c7ebe] i don&#39;t want to stash
+ Date: Wed Aug 14 10:03:25 2019 -0400
+ 3 files changed, 72 insertions(+)
+ create mode 100644 vignettes/000-introduction_to_gradethis.Rmd
+ create mode 100644 vignettes/010-using_equal.Rmd
+ create mode 100644 vignettes/990-developers_guide.Rmd
+[master 9b84be6] emphasize not to use ==
+ Date: Wed Aug 14 11:44:36 2019 -0400
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 846bb18] intro to gradethis for learnr docs
+ Date: Tue Aug 27 10:51:06 2019 -0400
+ 1 file changed, 151 insertions(+), 9 deletions(-)
+</code></pre>
+<p>Note that I used the <code>&lt;commit&gt;^..&lt;commit&gt;</code> notation while <code>cherry-pick</code>ing.
+The <code>^</code> means to also include that commit, otherwise it will start from that commit,
+but not include it (i.e., left exclusive).</p>
+<p>If you wanted to not use the <code>^</code> you need to pick the previous commit hash.
+In my case it would’ve been <code>d5cf9de</code>.</p>
+<p>Now, we need to clean up the references to our branch.
+Since we <code>cherry-pick</code>ed commits on master we’re actually still on master.
+So we need to do update where our branches are pointing to by using `git reset –hard <commit></p>
+<p>First we checkout the <code>vignettes</code> branch,</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:46] $ git checkout vignettes 
+Switched to branch &#39;vignettes&#39;</code></pre>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:52] $ git l
+* 846bb18 (master) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&#39;t want to stash
+* a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| * 16f4b6b (HEAD -&gt; vignettes) intro to gradethis for learnr docs
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don&#39;t want to stash
+| | * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+| |/  
+|/|   
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+|/|   
+* | 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* | 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* | 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning</code></pre>
+<p>and then set it to the correct commit location.</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:04] $ git reset --hard 846bb18
+HEAD is now at 846bb18 intro to gradethis for learnr docs</code></pre>
+<p>We then repeat the process for the <code>master</code> branch.</p>
+<p>First <code>checkout master</code></p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:07] $ git checkout master
+Switched to branch &#39;master&#39;
+Your branch is ahead of &#39;origin/master&#39; by 3 commits.
+  (use &quot;git push&quot; to publish your local commits)</code></pre>
+<p>Then <code>reset --hard</code> to the correct location:</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:11] $ git reset --hard a195fa3
+HEAD is now at a195fa3 fix gradethis demo (#70)</code></pre>
+<p>Now everything is in the right place</p>
+<pre class="markdown"><code>older_commits
+             \
+              master
+                    \
+                     vignettes</code></pre>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:21] $ git l
+* 846bb18 (vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&#39;t want to stash
+* a195fa3 (HEAD -&gt; master, origin/master, origin/HEAD) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* 9cc3d6d Test result api fixes#60 (#63)
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don&#39;t want to stash
+|/  
+* d5cf9de Doc fixes (#62) and function pruning</code></pre>
+<p>Finally, we can update the GitHub remote by force bushing the branch
+(remember to be on the branch before pushing).</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:53:25] $ git checkout vignettes 
+Switched to branch &#39;vignettes&#39;</code></pre>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:53:30] $ git push -f origin vignettes 
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 3.27 KiB | 3.27 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+To github.com:rstudio-education/gradethis.git
+ + b4e2873...846bb18 vignettes -&gt; vignettes (forced update)</code></pre>
+<p>The final Graph now looks like this</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:54:13] $ git l
+* 846bb18 (HEAD -&gt; vignettes, origin/vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&#39;t want to stash
+* a195fa3 (origin/master, origin/HEAD, master) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)</code></pre>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>It’s taken me many years to be comfortable with Git.
+My previous go-to method was to <code>rebase</code> one branch on top of the other,
+but with the squash-and-merge method, a lot of commits get repeated,
+and it just makes <code>rebase</code>ing a pain with all the commits and merge conflicts.</p>
+<p>In this particular workflow I found <code>cherry-pick</code> to be way more convenient,
+and led to fewer merge conflicts.</p>
+<p>Again, the notation for <code>cherry-pick</code> is weird, in that it is <em>left exclusive</em> unless you put in the <code>^</code>,
+i.e.,</p>
+<pre class="bash"><code>git cherry-pick &lt;commit-start&gt;^..&lt;commit-end&gt;</code></pre>
+<p>not</p>
+<pre class="bash"><code>git cherry-pick &lt;commit-start&gt;..&lt;commit-end&gt;</code></pre>
+</div>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/rstudio-internship/">rstudio-internship</a>
+  
+  <a class="badge badge-light" href="/tags/git/">git</a>
+  
+  <a class="badge badge-light" href="/tags/workflow/">workflow</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      <img class="portrait mr-3" src="https://s.gravatar.com/avatar/4020908e54741b5fc49e743ef6913ceb?s=200')" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/">Daniel Chen</a></h5>
+      <h6 class="card-subtitle">PhD Student</h6>
+      <p class="card-text" itemprop="description">My research interests include trying anything to graduate.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.instagram.com/chendaniely/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://www.twitch.tv/chendaniely" target="_blank" rel="noopener">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://open.spotify.com/user/maveri2k" target="_blank" rel="noopener">
+              <i class="fab fa-spotify"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="http://orcid.org/0000-0003-3857-1741" target="_blank" rel="noopener">
+              <i class="ai ai-orcid"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/2019/08/06/inconsistencies-with-in-r/">Inconsistencies with the `==` operator in R</a></li>
+          
+          <li><a href="/2019/07/23/new-website-a-la-blogdown/">New Website a la Blogdown!</a></li>
+          
+          <li><a href="/2019/06/18/rstudio-internship-week-2/">RStudio internship week 2</a></li>
+          
+          <li><a href="/2019/06/10/and-were-off-rstudio-internship-week-1-complete./">And we&#39;re off! RStudio internship week 1, complete.</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/2019/08/28/r-or-python-which-one-to-learn-first/" rel="next">R or Python, which One to Learn (First)?</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/2019/08/06/inconsistencies-with-in-r/" rel="prev">Inconsistencies with the `==` operator in R</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chendaniely" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//chendaniely.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.23e2fabfaf271b1b075bb9e0280085b7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Daniel Chen 2020 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

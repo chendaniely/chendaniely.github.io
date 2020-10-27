@@ -12,12 +12,1956 @@
     
     
     <item>
+      <title>Using OBS for Online Teaching</title>
+      <link>/2020/10/27/using-obs-for-online-teaching/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/27/using-obs-for-online-teaching/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Open Broadcaster Software (OBS) is a featured and popular used to lay out your screen for recording and streaming.
+V26 of OBS Studio was released mid October 2020,
+and it ships with a virtual camera feature (windows).
+This allows you to use the OBS Studio output as the camera input for other programs (e.g., video conferencing software).&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;For teaching purposes, this means you have much more control when you are trying to teach
+online (and in person) since OBS gives you many options on what and how something is presented.
+OBS also allows you to setup “scenes” so you can potentially share an entire screen,
+or a specific set of application windows all with separate screen overlays.
+For me I was able to more efficiently lay out my screen with what I’m presenting,
+text overlays with quick links, and a live caption as I was teaching.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ds4biomed-workshop-screenshot.PNG&#34; title=&#34;Screenshot of the workshop showing the screen capture, webcam video, live captions, and links&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The virtual camera used to be an optional
+&lt;a href=&#34;https://obsproject.com/forum/resources/obs-virtualcam.949/&#34;&gt;plugin&lt;/a&gt;
+that needed to be installed,
+but this current version has been cleaned up with bug fixes.
+It seems like it’s currently Windows only,
+and you may still need to use the old plugins for Mac + Linux.&lt;/p&gt;
+&lt;p&gt;For my dissertation,
+I am writing an online resource that aims to teach
+data science skills focused towards people who work in the medical and biomedical sciences (&lt;a href=&#34;https://ds4biomed.tech/&#34;&gt;ds4biomed&lt;/a&gt;).
+I just finished giving my first workshop using these materials which you can find
+&lt;a href=&#34;https://www.youtube.com/watch?v=nQ4lbmKD1no&#34;&gt;here (part 1)&lt;/a&gt;
+and
+&lt;a href=&#34;https://www.youtube.com/watch?v=2eCSmIQN2hU&#34;&gt;here (part 2)&lt;/a&gt;.
+I wanted a way to be able to share my screen but also show a live caption at the same time.&lt;/p&gt;
+&lt;p&gt;In the past I would share my screen and open windows up in the screen,
+but that method wasted a lot of screen space to lay out all the components I wanted.
+OBS give me much more flexibility with how big each components takes up on the canvas.&lt;/p&gt;
+&lt;p&gt;Here’s an example of what was &lt;strong&gt;presented&lt;/strong&gt; to the learners over Zoom.&lt;/p&gt;
+&lt;div id=&#34;setting-up-obs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Setting up OBS&lt;/h2&gt;
+&lt;p&gt;Setting up OBS Studio is a separate post on its own.
+Luckily it’s used by streamers,
+so there are lots of YouTube guides on how to use OBS&lt;/p&gt;
+&lt;p&gt;Here are 2 resources&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Zt_HVScA3Js&#34;&gt;Gaming Careers Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=EuSUPpoi0Vs&#34;&gt;Alpha Gaming Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;my-setup&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;My setup&lt;/h2&gt;
+&lt;p&gt;I only have 1 scene when I’m teaching, but OBS gives you the option to have multiple scenes that you can toggle between.&lt;/p&gt;
+&lt;p&gt;My main teaching screen scene:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;obs-scenes.PNG&#34; title=&#34;Screenshot of the scene I used&#34; /&gt;&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Video Capture Device: Webcam&lt;/li&gt;
+&lt;li&gt;Text: Quick links to the Etherpad and workshop content&lt;/li&gt;
+&lt;li&gt;Color Source: Black bar to cover the Windows taskbar for the Text to show&lt;/li&gt;
+&lt;li&gt;Window Capture: Chrome window opened to Web Captioner&lt;/li&gt;
+&lt;li&gt;Audio Output Capture: Used to capture sound from the computer (from applications like zoom or videos)&lt;/li&gt;
+&lt;li&gt;Audio Input Capture: My microphone&lt;/li&gt;
+&lt;li&gt;Display Capture: Screen I use for screen sharing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An option here could be a series of application window captures instead of sharing the entire screen&lt;/li&gt;
+&lt;li&gt;You can have your own layout of source code and terminal output and not worry about windows overlapping on your end&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other things that could be useful is to have a scene that is setup in advanced to a certain part of the screen,
+e.g., the source code, or output,
+so you can zoom in to a certain area for emphasis and clarity.&lt;/p&gt;
+&lt;p&gt;You can also have a separate scene for a timer if you want a more explicit break timer.&lt;/p&gt;
+&lt;p&gt;Another useful scene is just your webcam and audio input capture so your webcam shows up like a normal webcam to people.
+The Scenes let you swap between all the different views out of OBS and into the virtual camera on the fly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;using-the-virtual-camera&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Using the Virtual Camera&lt;/h2&gt;
+&lt;p&gt;Once you have OBS setup with your scenes and sources,
+you can click the “Start Virtual Camera” button.
+Once you started that, you will see a new “webcam” option in your video conference software that will output what your OBS preview shows.&lt;/p&gt;
+&lt;p&gt;When using video conferencing software, e.g.,. Zoom, to teach,
+you need to remember you are no longer “sharing” your screen,
+since your webcam display is already setup to share your screen,
+so you need to tell people to either “pin” your video so it does not loose focus when other people talk,
+or mute microphones so people do not take away your focus.
+How this is done will vary between applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;other-obs-tips&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Other OBS tips&lt;/h2&gt;
+&lt;p&gt;Using OBS you can set it up to stream to services like Twitch or YouTube,
+and it also gives you the ability to “record” the stream.
+If you do decide to record out of OBS,
+I suggest you use &lt;code&gt;.mkv&lt;/code&gt; format to record since &lt;code&gt;mkv&lt;/code&gt; files will still work if something happens and the recording crashes.
+You can use programs like &lt;a href=&#34;https://handbrake.fr/&#34;&gt;HandBrake&lt;/a&gt;
+to convert video formats.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;learner-screen-layout&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Learner screen layout&lt;/h2&gt;
+&lt;p&gt;I wrote a post earlier this year for The Carpentries on how learners
+may lay out their screens during an online workshop.
+You can see the blog post here:
+&lt;a href=&#34;https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/&#34; class=&#34;uri&#34;&gt;https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Using the OBS virtual camera for online teaching gives the instructor a lot of flexibility on what and how something would be presented to the learners.
+For instructors who have limited screen space,
+OBS allows you to lay out individual application windows so you can have your notes over what is presented without it affecting what the learners see.
+Additionally, OBS’s scenes allow the instructor to pre set up different views that can be changed during the lesson as needed.
+There is a learning curve to OBS, but because of it’s use in the streaming community,
+there are a plethora of resources available.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Upgrading Marlin 2.0&#43; with Mesh Bed Levling CR-10s</title>
+      <link>/2020/05/24/upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/24/upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;download-software&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Download software&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Arduino: &lt;a href=&#34;https://www.arduino.cc/en/Main/Software&#34; class=&#34;uri&#34;&gt;https://www.arduino.cc/en/Main/Software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Marlin and configurations: &lt;a href=&#34;https://marlinfw.org/meta/download/&#34; class=&#34;uri&#34;&gt;https://marlinfw.org/meta/download/&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;You need the Marlin firmware in the “Downloads” column and the configurations from the “Configuration” column.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Video guide from “The First Layer”: &lt;a href=&#34;https://www.youtube.com/watch?v=-rOZpOiWYxM&#34; class=&#34;uri&#34;&gt;https://www.youtube.com/watch?v=-rOZpOiWYxM&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-up-printer-specific-configurations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load up printer-specific configurations&lt;/h2&gt;
+&lt;p&gt;In the Configurations navigate to &lt;code&gt;config &amp;gt; examples &amp;gt; Creality &amp;gt; CR-10s&lt;/code&gt; and copy-paste the files into the &lt;code&gt;Marlin-2.0.x &amp;gt; Marlin&lt;/code&gt; folder.
+It should prompt you to overwrite the existing &lt;code&gt;Configuration.h&lt;/code&gt; and &lt;code&gt;Configuration_adv.h&lt;/code&gt; files.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-up-the-firmware&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load up the firmware&lt;/h2&gt;
+&lt;p&gt;Run the &lt;code&gt;Marlin.ino&lt;/code&gt; file from the &lt;code&gt;Marlin&lt;/code&gt; folder.
+It should open up the Arduino IDE with the &lt;code&gt;Marlin&lt;/code&gt;, &lt;code&gt;Configuration.h&lt;/code&gt;, &lt;code&gt;Configuration_adv.h&lt;/code&gt;, &lt;code&gt;Version.h&lt;/code&gt;, &lt;code&gt;_Bootscreen.h&lt;/code&gt;, and &lt;code&gt;_Statusscreen.h&lt;/code&gt; files.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;select-the-correct-arduino-boards&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Select the correct Arduino boards&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Tools &amp;gt; board &amp;gt; Arduino Mega or Mega 2560&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Tools &amp;gt; processor &amp;gt; ATmega2560 (Mega2650)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-edits-to-firmware-files&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Make edits to firmware files&lt;/h2&gt;
+&lt;p&gt;See here for the changes I made: &lt;a href=&#34;https://github.com/chendaniely/3d-printer/pull/1&#34; class=&#34;uri&#34;&gt;https://github.com/chendaniely/3d-printer/pull/1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The relevant configurations you’d want to make for manual mesh leveling are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Disable auto bed leveling bilinear: &lt;code&gt;//#define AUTO_BED_LEVELING_BILINEAR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Enable mesh bed leveling: &lt;code&gt;#define MESH_BED_LEVELING&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Enable restore mesh: &lt;code&gt;#define RESTORE_LEVELING_AFTER_G28&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are upgrading Marlin you’d also want to enable EPROM auto init: &lt;code&gt;#define EEPROM_AUTO_INIT&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;flash-the-firmware&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Flash the firmware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Plug in your printer&lt;/li&gt;
+&lt;li&gt;verify&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you run into any errors, this is a good video walkthrough of potential issues:
+&lt;a href=&#34;https://www.youtube.com/watch?v=lAKyZd63_ns&#34; class=&#34;uri&#34;&gt;https://www.youtube.com/watch?v=lAKyZd63_ns&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I was having an error around &lt;code&gt;#include &amp;lt;U8glib.h&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div id=&#34;u8glib.h&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;U8glib.h&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/olikraus/u8glib&#34; class=&#34;uri&#34;&gt;https://github.com/olikraus/u8glib&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Scroll down to “U8glib for Arduino”&lt;/p&gt;
+&lt;p&gt;Download the library, and then in the Arduino editor &lt;code&gt;Sketch &amp;gt; Include Library &amp;gt; Add ZIP library&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python Environments with Conda</title>
+      <link>/2020/02/29/python-environments-with-conda/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/02/29/python-environments-with-conda/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34;&gt;Anaconda&lt;/a&gt;
+(and these days
+&lt;a href=&#34;https://docs.conda.io/en/latest/miniconda.html&#34;&gt;miniconda&lt;/a&gt;)
+has been my go-to for getting Python and the scientific/data science software stack
+installed on my computer
+(even on my Arch linux machine!).&lt;/p&gt;
+&lt;p&gt;When it first came out it was the first time I was able to install and use
+&lt;code&gt;pandas&lt;/code&gt; and the rest of the scipy stack.
+I’ve stuck with it ever since.&lt;/p&gt;
+&lt;p&gt;It was also the first time I used (and understood) virtual environments.&lt;/p&gt;
+&lt;p&gt;In this post I’m hoping to show you a quick guide to using virtual environments with &lt;code&gt;conda&lt;/code&gt;.
+You can find more details on how to
+&lt;a href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&#34;&gt;manage your &lt;code&gt;conda&lt;/code&gt; environment&lt;/a&gt;
+here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&#34; class=&#34;uri&#34;&gt;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&lt;/a&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;div id=&#34;problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Problem&lt;/h2&gt;
+&lt;p&gt;Here are some situations virtual environments solve:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;You have code that needs to run in a different version of python than the version you have on your computer (e.g., I have Python (3) and need to run a script in Legacy Python (2))&lt;/li&gt;
+&lt;li&gt;The code I want to run uses a different version of package(s) than what I have installed (e.g., you need an older or newer version of &lt;code&gt;pandas&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;You can’t install and/or &lt;code&gt;import&lt;/code&gt; a package because of package dependency conflicts&lt;/li&gt;
+&lt;li&gt;All the code and packages work on your computer, and you want a way to give someone else the same set of packages so they can run your code&lt;/li&gt;
+&lt;li&gt;You want to install an experimental package and do not want to mess up your current environment.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-are-virtual-environments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What are virtual environments&lt;/h2&gt;
+&lt;p&gt;A virtual environment allows you to create an isolated (i.e., virtual) “environment”
+for your software, in this case, Python packages.
+This allows you to “activate” different python environments on your computer
+without having to uninstall everything just to run code from different projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;creating-conda-environments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Creating conda environments&lt;/h2&gt;
+&lt;p&gt;We’ll be talking about &lt;code&gt;conda&lt;/code&gt; environments in this post.
+Depending on how you installed anaconda/miniconda/conda make sure you’re in an environment
+that can run &lt;code&gt;conda&lt;/code&gt; commands&lt;/p&gt;
+&lt;div id=&#34;getting-in-the-right-place&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Getting in the right place&lt;/h3&gt;
+&lt;p&gt;You should see &lt;code&gt;(base)&lt;/code&gt; in the beginning of a prompt. This is what it looks like on my computer, the &lt;code&gt;(base)&lt;/code&gt; tells me I am in the “base” conda environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see here the default python is the one installed in my miniconda directory.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ which python
+/home/dchen/miniconda3/bin/python&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can run &lt;code&gt;conda info --envs&lt;/code&gt; to get a list of all the environments we have&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda info --envs
+# conda environments:
+#
+base                  *  /home/dchen/miniconda3&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;creating-an-environment&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Creating an environment&lt;/h3&gt;
+&lt;p&gt;I’m currently using Python 3.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ python --version
+Python 3.7.6&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s create another environment named &lt;code&gt;py27&lt;/code&gt; that’s Legacy Python (i.e., Python 2).
+We do this with the &lt;code&gt;conda create&lt;/code&gt; command.
+We pass in the &lt;code&gt;--name&lt;/code&gt; or &lt;code&gt;-n&lt;/code&gt; flag to give a name to the new environment.
+We can also pass in &lt;code&gt;python=2.7&lt;/code&gt; to put Python 2.7 in this environment.
+Here you can specify any version of Python you want.
+For example, it can be another Python 3.7 environment for another Python 3 project.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda create -n py27 python=2.7&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It’ll will build the plan for you, all you need to do is hit &lt;code&gt;enter&lt;/code&gt; (it defaults to &lt;code&gt;y&lt;/code&gt;)&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/dchen/miniconda3/envs/py27
+
+  added / updated specs:
+    - python=2.7
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2019.11.28         |           py27_0         149 KB  conda-forge
+    pip-20.0.2                 |             py_2         1.0 MB  conda-forge
+    python-2.7.15              |    h5a48372_1009        12.7 MB  conda-forge
+    setuptools-44.0.0          |           py27_0         663 KB  conda-forge
+    wheel-0.34.2               |             py_1          24 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        14.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-0_gnu
+  ca-certificates    conda-forge/linux-64::ca-certificates-2019.11.28-hecc5488_0
+  certifi            conda-forge/linux-64::certifi-2019.11.28-py27_0
+  libffi             conda-forge/linux-64::libffi-3.2.1-he1b5a44_1006
+  libgcc-ng          conda-forge/linux-64::libgcc-ng-9.2.0-h24d8f2e_2
+  libgomp            conda-forge/linux-64::libgomp-9.2.0-h24d8f2e_2
+  libstdcxx-ng       conda-forge/linux-64::libstdcxx-ng-9.2.0-hdf63c60_2
+  ncurses            conda-forge/linux-64::ncurses-6.1-hf484d3e_1002
+  openssl            conda-forge/linux-64::openssl-1.1.1d-h516909a_0
+  pip                conda-forge/noarch::pip-20.0.2-py_2
+  python             conda-forge/linux-64::python-2.7.15-h5a48372_1009
+  readline           conda-forge/linux-64::readline-8.0-hf8c457e_0
+  setuptools         conda-forge/linux-64::setuptools-44.0.0-py27_0
+  sqlite             conda-forge/linux-64::sqlite-3.30.1-hcee41ef_0
+  tk                 conda-forge/linux-64::tk-8.6.10-hed695b0_0
+  wheel              conda-forge/noarch::wheel-0.34.2-py_1
+  zlib               conda-forge/linux-64::zlib-1.2.11-h516909a_1006
+
+
+Proceed ([y]/n)?&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When it’s done you’ll actually see a message on how to “activate” your new environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;Downloading and Extracting Packages
+setuptools-44.0.0    | 663 KB    | ######################################################################## | 100%
+wheel-0.34.2         | 24 KB     | ######################################################################## | 100%
+pip-20.0.2           | 1.0 MB    | ######################################################################## | 100%
+python-2.7.15        | 12.7 MB   | ######################################################################## | 100%
+certifi-2019.11.28   | 149 KB    | ######################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate py27
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can run &lt;code&gt;conda activate py27&lt;/code&gt; to “activate” (i.e., enable) our new environment.
+Do “deactivate” (i.e., exit) the environment we can use &lt;code&gt;conda deactivate&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;activate-i.e.-enter-the-new-environment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Activate (i.e., “enter”) the new environment&lt;/h2&gt;
+&lt;p&gt;We can see our new environment when we list our &lt;code&gt;envs&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda info --envs
+# conda environments:
+#
+base                  *  /home/dchen/miniconda3
+py27                     /home/dchen/miniconda3/envs/py27&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To activate the &lt;code&gt;py27&lt;/code&gt; environment we just created we run &lt;code&gt;conda activate py27&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(base) $ conda activate py27
+(py27) $&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see when we activate the environment, we get a new prompt.
+The &lt;code&gt;(base)&lt;/code&gt; now changed to let us know which environment we’re in, &lt;code&gt;(py27)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now when we run Python commands, it’s actually an entirely different Python from
+what we were using before.&lt;/p&gt;
+&lt;p&gt;Here’s the location of the Python binary&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ which python
+/home/dchen/miniconda3/envs/py27/bin/python&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The version is different from before
+(because we used &lt;code&gt;python=2.7&lt;/code&gt; when we created this &lt;code&gt;py27&lt;/code&gt; environment).&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ python --version
+Python 2.7.15&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installing-packages-into-environment-conda&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing packages into environment (conda)&lt;/h2&gt;
+&lt;p&gt;I’ll write a separate post about setting up
+&lt;a href=&#34;https://conda-forge.org/&#34;&gt;&lt;code&gt;conda-forge&lt;/code&gt;&lt;/a&gt; for installing packages
+(the commands to run are on the website).&lt;/p&gt;
+&lt;p&gt;In general, I try to &lt;code&gt;conda install&lt;/code&gt; as many packages as I can.
+If the package I’m trying to install does not exist on &lt;code&gt;conda&lt;/code&gt;,
+then I &lt;code&gt;pip install&lt;/code&gt; the package.&lt;/p&gt;
+&lt;p&gt;This is a brand new Legacy Python environment, without any packages.
+In this example we’ll try to install the &lt;code&gt;networkx&lt;/code&gt; package.
+You can see we currently do not have this package in this environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ python
+Python 2.7.15 | packaged by conda-forge | (default, Jul  2 2019, 00:39:44)
+[GCC 7.3.0] on linux2
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import networkx as nx
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
+ImportError: No module named networkx
+&amp;gt;&amp;gt;&amp;gt; quit()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can install &lt;code&gt;networkx&lt;/code&gt; with &lt;code&gt;conda install networkx&lt;/code&gt;.
+If you need a specific version of a package, this is where you will install it.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda install networkx
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/dchen/miniconda3/envs/py27
+
+  added / updated specs:
+    - networkx
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    networkx-2.1               |           py27_0         1.8 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:         1.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  decorator          conda-forge/noarch::decorator-4.4.1-py_0
+  networkx           conda-forge/linux-64::networkx-2.1-py27_0
+
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages
+networkx-2.1         | 1.8 MB    | ######################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we have the package in our environment!&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ python
+Python 2.7.15 | packaged by conda-forge | (default, Jul  2 2019, 00:39:44)
+[GCC 7.3.0] on linux2
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import networkx as nx
+&amp;gt;&amp;gt;&amp;gt; G = nx.Graph()
+&amp;gt;&amp;gt;&amp;gt; quit()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Just to show that the package is in an entirely different environment,
+we can &lt;code&gt;deativate&lt;/code&gt; our current environment to go back into &lt;code&gt;(base)&lt;/code&gt;,
+and can see we don’t have &lt;code&gt;networkx&lt;/code&gt; installed in our &lt;code&gt;base&lt;/code&gt; Python 3 environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda deactivate
+(base) $ python
+Python 3.7.6 | packaged by conda-forge | (default, Jan  7 2020, 22:33:48)
+[GCC 7.3.0] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; import networkx as nx
+Traceback (most recent call last):
+  File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt;
+ModuleNotFoundError: No module named &amp;#39;networkx&amp;#39;
+&amp;gt;&amp;gt;&amp;gt; quit()
+(base) $&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reproducing-and-sharing-environments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Reproducing and sharing environments&lt;/h2&gt;
+&lt;p&gt;Now that you have all the packages you need in an environment and all your code is working,
+next is to document your work.
+Even if you’re working on your own,
+you may be working on your laptop and on a remote server,
+and need to replicate your environment in both locations.
+Another scenario is if you need to share your code with another person and want to make
+sure your code is executed in the same environment on their machine.&lt;/p&gt;
+&lt;p&gt;We can use the &lt;code&gt;conda env export&lt;/code&gt; command to generate all the packages in the current environment.
+So if we’re in the &lt;code&gt;py27&lt;/code&gt; environment we created,
+you can get a list of all the packages in it.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda env export
+name: py27
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=0_gnu
+  - ca-certificates=2019.11.28=hecc5488_0
+  - certifi=2019.11.28=py27_0
+  - decorator=4.4.1=py_0
+  - libffi=3.2.1=he1b5a44_1006
+  - libgcc-ng=9.2.0=h24d8f2e_2
+  - libgomp=9.2.0=h24d8f2e_2
+  - libstdcxx-ng=9.2.0=hdf63c60_2
+  - ncurses=6.1=hf484d3e_1002
+  - networkx=2.1=py27_0
+  - openssl=1.1.1d=h516909a_0
+  - pip=20.0.2=py_2
+  - python=2.7.15=h5a48372_1009
+  - readline=8.0=hf8c457e_0
+  - setuptools=44.0.0=py27_0
+  - sqlite=3.30.1=hcee41ef_0
+  - tk=8.6.10=hed695b0_0
+  - wheel=0.34.2=py_1
+  - zlib=1.2.11=h516909a_1006
+prefix: /home/dchen/miniconda3/envs/py27&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can export this to an &lt;code&gt;environment.yml&lt;/code&gt; file so all the packages are saved and documented.
+You can do this by copying and pasting the results in to a file called &lt;code&gt;environment.yml&lt;/code&gt; manually,
+or you can pipe the output into the file &lt;code&gt;conda env export &amp;gt; environment.yml&lt;/code&gt;.
+If your python code is in a
+&lt;a href=&#34;https://daniel.rbind.io/2017/05/30/project-templates/&#34;&gt;project&lt;/a&gt;
+&lt;a href=&#34;https://daniel.rbind.io/2018/01/23/analysis-based-project-templates/&#34;&gt;structure&lt;/a&gt;
+you would run this command to put the &lt;code&gt;environment.yml&lt;/code&gt; file in the root project directory.&lt;/p&gt;
+&lt;p&gt;Now you can send your Python project to another person or to another computer.
+To reproduce the environment, you can run &lt;code&gt;conda env create -f environment.yml&lt;/code&gt;
+to use the &lt;code&gt;environment.yml&lt;/code&gt; file to automatically recreate the environment.
+The &lt;code&gt;name&lt;/code&gt; field in the first line will be used as the environment name.&lt;/p&gt;
+&lt;p&gt;In this example let’s edit the name to &lt;code&gt;py27copy&lt;/code&gt; since we already have a &lt;code&gt;py27&lt;/code&gt; environment.&lt;/p&gt;
+&lt;p&gt;Now if we run &lt;code&gt;conda env create -f environment.yml&lt;/code&gt;,
+it will “reinstall” all the packages needed as specified in the &lt;code&gt;environment.yml&lt;/code&gt; file,
+and we can activate/deactivate just like before&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda env create -f ~/Desktop/environment.yml
+Collecting package metadata (repodata.json): done
+Solving environment: done
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate py27dup
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;installing-packages-into-environment-pip&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Installing packages into environment (pip)&lt;/h2&gt;
+&lt;p&gt;Not every package will be &lt;code&gt;conda&lt;/code&gt; installable,
+for those packages we can &lt;code&gt;pip install&lt;/code&gt; them just like normal.
+Here we’ll install the &lt;code&gt;flask&lt;/code&gt; package for web development into our &lt;code&gt;py27&lt;/code&gt; environment.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ pip install flask
+DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting flask
+  Using cached Flask-1.1.1-py2.py3-none-any.whl (94 kB)
+Collecting Werkzeug&amp;gt;=0.15
+  Downloading Werkzeug-1.0.0-py2.py3-none-any.whl (298 kB)
+     |████████████████████████████████| 298 kB 1.1 MB/s
+Collecting itsdangerous&amp;gt;=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting click&amp;gt;=5.1
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+     |████████████████████████████████| 81 kB 2.0 MB/s
+Collecting Jinja2&amp;gt;=2.10.1
+  Downloading Jinja2-2.11.1-py2.py3-none-any.whl (126 kB)
+     |████████████████████████████████| 126 kB 306 kB/s
+Collecting MarkupSafe&amp;gt;=0.23
+  Downloading MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl (24 kB)
+Installing collected packages: Werkzeug, itsdangerous, click, MarkupSafe, Jinja2, flask
+Successfully installed Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-1.0.0 click-7.0 flask-1.1.1 itsdangerous-1.1.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now if you want to export the enviornment to the &lt;code&gt;environment.yml&lt;/code&gt;
+you’ll notice that &lt;code&gt;pip&lt;/code&gt; will be part of the installation,
+and also a new &lt;code&gt;pip&lt;/code&gt; section that describes the packages that will be installed via
+&lt;code&gt;pip&lt;/code&gt; instead of &lt;code&gt;conda&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;shell&#34;&gt;&lt;code&gt;(py27) $ conda env export
+name: py27
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=0_gnu
+  - ca-certificates=2019.11.28=hecc5488_0
+  - certifi=2019.11.28=py27_0
+  - decorator=4.4.1=py_0
+  - libffi=3.2.1=he1b5a44_1006
+  - libgcc-ng=9.2.0=h24d8f2e_2
+  - libgomp=9.2.0=h24d8f2e_2
+  - libstdcxx-ng=9.2.0=hdf63c60_2
+  - ncurses=6.1=hf484d3e_1002
+  - networkx=2.1=py27_0
+  - openssl=1.1.1d=h516909a_0
+  - pip=20.0.2=py_2
+  - python=2.7.15=h5a48372_1009
+  - readline=8.0=hf8c457e_0
+  - setuptools=44.0.0=py27_0
+  - sqlite=3.30.1=hcee41ef_0
+  - tk=8.6.10=hed695b0_0
+  - wheel=0.34.2=py_1
+  - zlib=1.2.11=h516909a_1006
+  - pip:
+    - click==7.0
+    - flask==1.1.1
+    - itsdangerous==1.1.0
+    - jinja2==2.11.1
+    - markupsafe==1.1.1
+    - werkzeug==1.0.0
+prefix: /home/dchen/miniconda3/envs/py27&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Creating environments with the
+&lt;code&gt;conda create -n &amp;lt;name&amp;gt; python=&amp;lt;version&amp;gt;&lt;/code&gt;
+is an easy way to create new environments with a specified version of Python.
+You can then &lt;code&gt;activate&lt;/code&gt; the environment with
+&lt;code&gt;conda activate &amp;lt;name&amp;gt;&lt;/code&gt;
+and proceed to install packages with
+&lt;code&gt;conda install &amp;lt;package&amp;gt;&lt;/code&gt; or &lt;code&gt;pip install &amp;lt;package&lt;/code&gt;.
+When you’re ready to document and share your environment with another person
+or on another machine,
+you can run
+&lt;code&gt;conda env export &amp;gt; environment.yml&lt;/code&gt;
+to save the current environment
+to a &lt;code&gt;environment.yml&lt;/code&gt;.
+This file can be used to create a new environment with
+&lt;code&gt;conda env create -f environment.yml&lt;/code&gt;
+and now you can replicate your environment across multiple machines!&lt;/p&gt;
+&lt;p&gt;You don’t need to use &lt;code&gt;conda&lt;/code&gt; to create your Python environments.
+If you’re not using &lt;code&gt;conda&lt;/code&gt; for your environments,
+you can create a &lt;code&gt;requirements.txt&lt;/code&gt; file
+instead of an &lt;code&gt;environment.yml&lt;/code&gt; with
+&lt;code&gt;pip freeze &amp;gt; requirements.txt&lt;/code&gt;
+and install everything into the current environment with
+&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;.
+Just know you need to create the environment first as &lt;code&gt;pip&lt;/code&gt; will
+not create the environment for you.&lt;/p&gt;
+&lt;p&gt;Hope this helps people get started with environments and getting their code working
+on multiple computers.
+You can checkout the main documentation page on &lt;code&gt;conda&lt;/code&gt; environment management here:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&#34; class=&#34;uri&#34;&gt;https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Hex Bowtie</title>
+      <link>/2020/01/30/r-hex-bowtie/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/30/r-hex-bowtie/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;conference_tag_labeled.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;Yes. That’s the #rstats hex bowtie.
+Yes, I lost it when Hadley was wearing it for the conference opening notes.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-theme=&#34;dark&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+Thanks to Daniel Chen for the awesome &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; bow tie! &lt;a href=&#34;https://t.co/OPnawWrltG&#34;&gt;https://t.co/OPnawWrltG&lt;/a&gt; &lt;a href=&#34;https://t.co/XZUj5z7Ox4&#34;&gt;pic.twitter.com/XZUj5z7Ox4&lt;/a&gt;
+&lt;/p&gt;
+— Hadley Wickham (&lt;span class=&#34;citation&#34;&gt;@hadleywickham&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/hadleywickham/status/1222568304088252416?ref_src=twsrc%5Etfw&#34;&gt;January 29, 2020&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/center&gt;
+&lt;div id=&#34;bow-ties-are-cool&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bow Ties are Cool&lt;/h2&gt;
+&lt;p&gt;The R hex fabric is by Amelia McNamara,
+which you can get on the
+&lt;a href=&#34;https://github.com/AmeliaMN/hexfabric&#34;&gt;GitHub repo&lt;/a&gt;
+or buy directly on her
+&lt;a href=&#34;https://www.spoonflower.com/profiles/ameliamn&#34;&gt;Spoonflower page&lt;/a&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-theme=&#34;dark&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+Now that the cat’s out of the bag 😻… Yes, I made myself an &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt;/&lt;a href=&#34;https://twitter.com/hashtag/tidyverse?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#tidyverse&lt;/a&gt; dress! &lt;br&gt;&lt;br&gt;📸 &lt;a href=&#34;https://twitter.com/alexandrabyrne?ref_src=twsrc%5Etfw&#34;&gt;&lt;span class=&#34;citation&#34;&gt;@alexandrabyrne&lt;/span&gt;&lt;/a&gt; with the angles &lt;a href=&#34;https://t.co/6m1nJotIwN&#34;&gt;pic.twitter.com/6m1nJotIwN&lt;/a&gt;
+&lt;/p&gt;
+— AmeliaMN (&lt;span class=&#34;citation&#34;&gt;@AmeliaMN&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/AmeliaMN/status/1162359039784673282?ref_src=twsrc%5Etfw&#34;&gt;August 16, 2019&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/center&gt;
+&lt;p&gt;For my particular use case,
+I needed smaller hexes because bow ties are just smaller than dresses.
+Here’s my modified
+&lt;a href=&#34;https://www.spoonflower.com/designs/9530930-r-hex-fabric-1-hexes-by-chendaniely&#34;&gt;1-inch r hex fabirc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I knew I wanted to make bowties since
+I gave a lightning talk during
+&lt;a href=&#34;https://daniel.rbind.io/2020/01/29/my-time-as-an-rstudio-intern/&#34;&gt;RStudio&lt;/a&gt;
+&lt;a href=&#34;https://education.rstudio.com/blog/2020/02/gestalt-internship/&#34;&gt;internship&lt;/a&gt;.
+And Hadley is a bow tie aficionado.
+After talking to a few people,
+I was directed to get them made on
+&lt;a href=&#34;https://www.etsy.com/&#34;&gt;Etsy&lt;/a&gt;,
+and so the hunt to find someone began in November.&lt;/p&gt;
+&lt;p&gt;The tricky part about finding custom bow ties on Etsy is that many of the
+sellers don’t make &lt;em&gt;adjustable&lt;/em&gt; bow ties.
+I eventually found
+&lt;a href=&#34;https://www.etsy.com/shop/OddsandHens&#34;&gt;Megan’s&lt;/a&gt;
+&lt;a href=&#34;https://www.etsy.com/listing/121450912/custom-bow-ties&#34;&gt;Shop&lt;/a&gt;,
+which allowed me to get adjustable bowties and use custom fabric.
+I placed an order for 20 with the only constraint of one of the bow ties
+must have &lt;code&gt;ggplot2&lt;/code&gt; and &lt;code&gt;tidyverse&lt;/code&gt; visiable when it is tied (for Hadley).
+This is when Megan told me about the original hex size needed to be smaller
+for the bow tie.
+I also got a few pocket squares in my order too.&lt;/p&gt;
+&lt;p&gt;I went though the process of creating the smaller hex pattern on
+&lt;a href=&#34;https://www.spoonflower.com/designs/9530930-r-hex-fabric-1-hexes-by-chendaniely&#34;&gt;Spoonflower&lt;/a&gt;
+and shipeed 6 yards of the pattern for my order in the “Petal Signature Cotton”.
+I had to ship Megan the fabric directly since you need to order a test sample
+before other people can purchace the pattern.
+It was a gamble,
+but it was the holiday season,
+and the conference was coming up fast.&lt;/p&gt;
+&lt;p&gt;Megan was great, I got a series of photos about the entire process.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;etsy_01.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The fabric is thicker than what I have used previously as spoonflower recently changed to the ‘petal cotton’. I’m just retooling the pattern and interfacing a bit to accommodate it. :)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;etsy_02.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;etsy_03.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Also- here is how the one tie with the prominent ggplotand tidyverse was cut out.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I got the order 2 weeks before the conference and it all turned out wonderfully.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;bowties.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the link to her
+&lt;a href=&#34;https://www.etsy.com/shop/OddsandHens&#34;&gt;shop&lt;/a&gt;
+and
+&lt;a href=&#34;https://twitter.com/OddsandHens&#34;&gt;twitter&lt;/a&gt;.
+I even convinced her to write a
+&lt;a href=&#34;https://oddsandhens.com/2020/01/29/bow-ties-make-everything-better/&#34;&gt;blog post of her own&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pybadge-name-badge&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;PyBadge Name Badge&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;pybadge.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;I went to PyCon for the first time in 2019.
+And the
+&lt;a href=&#34;https://twitter.com/hashtag/PythonHardware&#34;&gt;#pythonhardware&lt;/a&gt;
+community is amazing.
+The conference was filled with people with their own name tags.
+I though I’d introduce this to the R community.
+And also, gives a way for people to say hello to me,
+instead of the other way around :)&lt;/p&gt;
+&lt;p&gt;I got the bigger
+&lt;a href=&#34;https://www.adafruit.com/product/4200&#34;&gt;PyBadge&lt;/a&gt;
+(they also make a
+&lt;a href=&#34;https://www.adafruit.com/product/3939&#34;&gt;smaller one&lt;/a&gt;
+).
+I really like how Adafruit put python on their circuit boards using
+CircuitPython.
+It makes programming way more accessiable than using an Arduino,
+since you can do all the programming in Python!&lt;/p&gt;
+&lt;p&gt;In my case I dragged my picture into a folder and it just goes through them in a slide show.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-rest&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Rest&lt;/h2&gt;
+&lt;p&gt;I
+&lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34;&gt;interned&lt;/a&gt;
+for Rstudio over the summer,
+where I was on the
+&lt;a href=&#34;https://education.rstudio.com/&#34;&gt;Education Team&lt;/a&gt;.
+During rstudio::conf, I TA’ed for the
+&lt;a href=&#34;https://github.com/rstudio-conf-2020/intro-to-ml-tidy&#34;&gt;Introduction to Machine Learning with the Tidyverse&lt;/a&gt;
+workshop.&lt;/p&gt;
+&lt;p&gt;I started teaching as an instructor for
+&lt;a href=&#34;https://carpentries.org/&#34;&gt;The Carpentries&lt;/a&gt;.
+Which eventually led me to writing my book,
+&lt;a href=&#34;https://www.amazon.com/Pandas-Everyone-Analysis-Addison-Wesley-Analytics-ebook/dp/B0789WKTKJ&#34;&gt;Pandas for Everyone&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Hope you enjoyed reading about my conference badge!
+I look forward to seeing people in the R community add flair to the badges in the future!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My time as an RStudio Intern</title>
+      <link>/2020/01/29/my-time-as-an-rstudio-intern/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/29/my-time-as-an-rstudio-intern/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I’ve had a lot of time to think about my time as an RStudio intern.
+When I do,
+I usually end up with a few words in my head before I’m flooded with
+(good) emotions and struggle with finding the words to convey my thoughts.
+The last time I tried to write something like this went a little like
+&lt;a href=&#34;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&#34;&gt;this&lt;/a&gt;.
+What I can say is this:
+whatever you thought it was like working at RStudio,
+is (probably) true.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;From a technical perspective,
+the most jarring part of the work was transitioning from a user of the R language
+to a developer.
+I’ve taught workshops and written R packages,
+but nothing came close to the type of code I had to write for my internship.
+I think my only saving grace was I was familiar enough with Git,
+so I didn’t have to deal with
+&lt;a href=&#34;https://daniel.rbind.io/2019/08/27/git-squash-and-merge-workflow/&#34;&gt;workflow&lt;/a&gt;
+issues.&lt;/p&gt;
+&lt;div id=&#34;the-project&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The project&lt;/h3&gt;
+&lt;p&gt;I was on the
+&lt;a href=&#34;https://education.rstudio.com/&#34;&gt;education team&lt;/a&gt;
+and worked with worked with
+&lt;a href=&#34;https://twitter.com/statgarrett&#34;&gt;Garrett Grolemund&lt;/a&gt;
+and
+&lt;a href=&#34;https://twitter.com/schloerke&#34;&gt;Barret Schloerke&lt;/a&gt;
+(I can never spell their names properly without looking it up, and it didn’t help one of the other interns was
+&lt;a href=&#34;https://twitter.com/malco_barrett&#34;&gt;Malcolm Barrett&lt;/a&gt;
+)
+on &lt;a href=&#34;https://github.com/rstudio-education/gradethis&#34;&gt;&lt;code&gt;gradethis&lt;/code&gt;&lt;/a&gt;.
+The package tries to grade code in a
+&lt;a href=&#34;https://rstudio.github.io/learnr/&#34;&gt;&lt;code&gt;learnr&lt;/code&gt; document&lt;/a&gt;,
+but the real magic of the package isn’t just reporting a correct or incorrect answer,
+it’s the ability to provide meaningful feedback to the learner.
+For example, if the solution to a question was &lt;code&gt;sqrt(log(1))&lt;/code&gt; and the student provided &lt;code&gt;sqrt(log(2))&lt;/code&gt;,
+it would report the answer as “incorrect” but also return something along the lines of
+“I expected 1 where you wrote 2. Try it again; next time’s the charm!”.
+Isn’t that way nicer than a giant red box telling you the answer is wrong?
+Now if you think about it, isn’t this a really difficult problem to solve???
+(Hint: yes.)&lt;/p&gt;
+&lt;p&gt;Luckily, I didn’t have to write this package from scratch.
+Garrett did write the initial working code base for me to improve,
+but it also essentially meant working with legacy code and
+learning new R programming paradigms at the same time.
+“R programming paradigms” what’s that? you might ask.
+I mean
+&lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34;&gt;expressions&lt;/a&gt;,
+&lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34;&gt;rlang&lt;/a&gt;, and
+&lt;a href=&#34;https://tidyeval.tidyverse.org/&#34;&gt;tidyeval&lt;/a&gt;
+… :x&lt;/p&gt;
+&lt;p&gt;How does one go about leaning how all this works in the package?
+Well…
+by &lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/10&#34;&gt;merging a PR that breaks everything&lt;/a&gt;,
+then trying to &lt;a href=&#34;https://github.com/rstudio-education/gradethis/issues/11&#34;&gt;understand an issue&lt;/a&gt;
+that took &lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/21&#34;&gt;a month to fix&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I spent a better part of that month reading and not understanding &lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34;&gt;expressions&lt;/a&gt;,
+and pretty much being guided by a series of pair-programming sessions with Barret.
+By “guided” I mean he pretty much did the work I just typed characters and acted as a scribe.&lt;/p&gt;
+&lt;p&gt;I’ve done pair-programming with my own students,
+but I never had anyone pair-program with me where I was the one learning.
+There was so many new things going on during each session that I couldn’t retain every detail,
+but things got easier towards the end.
+It made me think about all the times I’d help my students and really got to empathize with their confusion.&lt;/p&gt;
+&lt;p&gt;The single most important package development skill that made my work possible were &lt;strong&gt;unit tests&lt;/strong&gt;.
+Since I was working with an already existing code base,
+all the 100s of unit tests that were there needed to pass as I made changes.
+I can’t emphasize how much time and sanity was saved from running the unit test suite.
+Seemingly small changes would cause some tests to fail where I’d have to either fix my code or fix the test.
+As the package started to stabilize and I started testing it out on a mock &lt;code&gt;learnr&lt;/code&gt; tutorial,
+I even discovered &lt;a href=&#34;https://daniel.rbind.io/2019/08/06/inconsistencies-with-in-r/&#34;&gt;a bug in the &lt;code&gt;==&lt;/code&gt; operator&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Even though everyone was in a remote position, there was so much ancillary learning going on.
+I
+&lt;a href=&#34;https://daniel.rbind.io/2019/06/10/and-were-off-rstudio-internship-week-1-complete./&#34;&gt;tried&lt;/a&gt;
+to keep a
+&lt;a href=&#34;https://daniel.rbind.io/2019/06/18/rstudio-internship-week-2/&#34;&gt;list&lt;/a&gt;
+as I was going though the
+&lt;a href=&#34;https://daniel.rbind.io/2019/07/23/new-website-a-la-blogdown/&#34;&gt;internship&lt;/a&gt;,
+but it got impractical.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hanging-out&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hanging out&lt;/h3&gt;
+&lt;p&gt;Every one of my fellow &lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34;&gt;interns&lt;/a&gt;
+are amazing.
+Since RStudio is a remote company,
+we tried to hold a weekly “virtual coffee” meeting so we can all see and talk to one another.
+It really made the distance and time zone differences between all of us seem much smaller.
+As I’m typing this blog post at rstudio::conf,
+it felt like we already knew each other,
+even though most of us haven’t seen the other in person before.&lt;/p&gt;
+&lt;p&gt;Due to my conference and travel schedule over the summer,
+I got to meet a handful of the interns in person beforehand.&lt;/p&gt;
+&lt;div id=&#34;therese-and-malcolm-in-los-angeles-ca&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Therese and Malcolm in Los Angeles, CA&lt;/h4&gt;
+&lt;p&gt;I got to meet Therese and Malcolm when I was in LA staying at a friend’s place for another friends wedding.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_therese_malcom.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;julia-in-san-francisco-ca&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Julia in San Francisco, CA&lt;/h4&gt;
+&lt;p&gt;I got the tour of Julia’s lab when I was in San Francisco for the
+&lt;a href=&#34;https://pybay.com/&#34;&gt;PyBay conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_julia_1.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;More of Julia’s lab at the bottom of the post.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;joyce-in-raleigh-nc.&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Joyce in Raleigh, NC.&lt;/h4&gt;
+&lt;p&gt;My dad’s job relocated him to Carry, NC so I was visiting him when a Data Science Happy Hour was announced in Raleigh and got to meet Joyce.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;📣 Raleigh data science folks (and ambitious Durham folks): &lt;br&gt;&lt;br&gt;🗓 Data science happy hour at &lt;a href=&#34;https://twitter.com/lynnwoodbrewing?ref_src=twsrc%5Etfw&#34;&gt;@lynnwoodbrewing&lt;/a&gt; (on Whitaker Mill) on Tuesday 9/24 at 5:30 PM with the inimitable &lt;a href=&#34;https://twitter.com/CMastication?ref_src=twsrc%5Etfw&#34;&gt;@CMastication&lt;/a&gt;. &lt;br&gt;&lt;br&gt;(You can also buy food there or bring your own.)&lt;/p&gt;&amp;mdash; Tim Hopper (@tdhopper) &lt;a href=&#34;https://twitter.com/tdhopper/status/1171456421595996160?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_joyce.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;education-and-shiny-teams&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Education and Shiny teams&lt;/h3&gt;
+&lt;p&gt;I met with the Shiny team for daily stand-ups, and the education team about every week.
+The sheer amount of people I could ask for help is absolutely &lt;strong&gt;insane&lt;/strong&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This summer I got the opportunity work with the &lt;a href=&#34;https://twitter.com/rstudio?ref_src=twsrc%5Etfw&#34;&gt;@rstudio&lt;/a&gt; education and shiny teams. Definitely leveled up my &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; skills 🍄, and looking forward to sharing it with the rest of the community. So sad this is all over😭. &lt;a href=&#34;https://t.co/qc7r3j6wg0&#34;&gt;pic.twitter.com/qc7r3j6wg0&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dⓐniel Chen 🐍🏴‍☠️ (@chendaniely) &lt;a href=&#34;https://twitter.com/chendaniely/status/1165696768618749953?ref_src=twsrc%5Etfw&#34;&gt;August 25, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;everyone-else&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Everyone else&lt;/h3&gt;
+&lt;p&gt;A lot of effort goes into making a remote company feel less isolating.
+Many of us signed up for the virtual donut bot on Slack
+that randomly pairs you up with someone else in the company to have a conference call to get to know each other.&lt;/p&gt;
+&lt;p&gt;We also had an opportunity to signup/attend lightning talk sessions where people from the company talked about
+current projects they’re working on for work/home.
+Some people even talked about their hobbies!&lt;/p&gt;
+&lt;p&gt;Even crazier, was we sat in on meetings with the President and CEO of the company on multiple occasions.
+For a company that has such a wide global reach with employees geographically scattered around the world,
+the community that RStudio has internally is &lt;strong&gt;genuinely&lt;/strong&gt; mirrored in the amazing community they have created
+externally for the rest of us.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-than-technical-training&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;More than technical training&lt;/h3&gt;
+&lt;p&gt;My time with the education group at rstudio really help me find my way.
+I’m pretty much on my third iteration of a PhD dissertation topic,
+and working with the education group helped me realize that I can apply all the lessons I’ve learned
+through
+&lt;a href=&#34;https://carpentries.org/&#34;&gt;The Carpentries&lt;/a&gt;,
+teaching on my own,
+and working on educational tools
+towards my dissertation topic.
+For the first time in a long while I finally have a sense of direction
+and feel in control of my own degree.&lt;/p&gt;
+&lt;p&gt;Not only that, but being in intern was &lt;em&gt;so&lt;/em&gt; validating.
+I’ve felt like I was spinning my wheels since starting graduate school,
+and it’s nice to know I’ve been doing &lt;strong&gt;something&lt;/strong&gt; right these past few years.
+I’m not going to lie,
+there is a certain amount of “street cred” involved with being an intern,
+but let me assure you,
+I still barely grasp a lot of the internals of R.
+If anything, I feel &lt;em&gt;even more&lt;/em&gt; impostor syndrome,
+now that I’m back out in the wild.&lt;/p&gt;
+&lt;p&gt;For now,
+the best thing I can do is pay it forward.
+And for those who don’t know,
+my new dissertation topic is on the
+education and pedagogy of data science in medicine.&lt;/p&gt;
+&lt;p&gt;I hope to hear form everyone in the future!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;appendix&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Appendix&lt;/h3&gt;
+&lt;p&gt;The other intern final blog posts (list is ongoing):&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/tools-for-teaching-yaml-with-ymlthis/&#34;&gt;Malcolm Barrett&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://jcahoon.netlify.com/post/2019/08/23/reflection/&#34;&gt;Joyce&lt;/a&gt;
+&lt;a href=&#34;https://education.rstudio.com/blog/2019/11/my-first-software-engineering-internship/&#34;&gt;Cahoon&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://fishandwhistle.netlify.com/post/2019/a-summer-of-rstudio-and-ggplot2/&#34;&gt;Dewey Dunnington&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/12/this-is-not-like-the-others/&#34;&gt;Marly Gotti&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/my-javascript-internship-at-rstudio/&#34;&gt;Maya Gans&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/what-it-was-like-interning-for-rstudio/&#34;&gt;Yim Register&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/twelve-weeks/&#34;&gt;Desirée De Leon&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Picture’s around Julia’s lab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_julia_a.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_b.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_c.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_d.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_e.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_f.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_g.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Table of Model Results using kable and kableExtra</title>
+      <link>/2019/09/13/table-of-model-results-using-kable-and-kableextra/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/13/table-of-model-results-using-kable-and-kableextra/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;I’m at the &lt;a href=&#34;https://r-medicine.com/&#34;&gt;R/Medicine&lt;/a&gt; conference (no it’s not a Reddit thing) and
+got to help Alison Hill with her &lt;a href=&#34;https://rmd4medicine.netlify.com/&#34;&gt;R Markdown for Medicine&lt;/a&gt; workshop.
+One of the questions I got to tinker with was making tables used to report model results.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;One technique I learned while doing my MPH was to add variables to your model in blocks.
+It reduces the number of tests you need to perform, and is more meaningful than saying “I ran stepwise”.
+So, as a researcher, you will add variables in meaningful blocks and then see if that block of variables
+is “significant” by looking at the F-statistic.&lt;/p&gt;
+&lt;p&gt;Here is one example of at least putting your model results into a table.&lt;/p&gt;
+&lt;div id=&#34;creating-the-models&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Creating the models&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reshape2) # using this just for the tips dataset
+library(broom)
+library(purrr)
+library(knitr)
+library(kableExtra)
+
+head(tips)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   total_bill  tip    sex smoker day   time size
+## 1      16.99 1.01 Female     No Sun Dinner    2
+## 2      10.34 1.66   Male     No Sun Dinner    3
+## 3      21.01 3.50   Male     No Sun Dinner    3
+## 4      23.68 3.31   Male     No Sun Dinner    2
+## 5      24.59 3.61 Female     No Sun Dinner    4
+## 6      25.29 4.71   Male     No Sun Dinner    4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# create a bumch of models
+m1 &amp;lt;- lm(tip ~ total_bill, data = tips)
+m2 &amp;lt;- lm(tip ~ total_bill + sex, data = tips)
+m3 &amp;lt;- lm(tip ~ total_bill + sex + smoker, data = tips)
+m4 &amp;lt;- lm(tip ~ total_bill + smoker + size, data = tips)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have the models, we can use the &lt;code&gt;broom&lt;/code&gt; package to get a nice consistent dataframe of the coefficients&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# get a dataframe of the model estimates
+models &amp;lt;- list(m1, m2, m3, m4)
+broom_outputs &amp;lt;- purrr::map(models, broom::tidy)
+broom_outputs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)    0.920   0.160        5.76 2.53e- 8
+## 2 total_bill     0.105   0.00736     14.3  6.69e-34
+## 
+## [[2]]
+## # A tibble: 3 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.933    0.174       5.37  1.84e- 7
+## 2 total_bill    0.105    0.00746    14.1   2.33e-33
+## 3 sexMale      -0.0266   0.138      -0.192 8.48e- 1
+## 
+## [[3]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.977    0.178       5.48  1.05e- 7
+## 2 total_bill    0.106    0.00748    14.2   1.73e-33
+## 3 sexMale      -0.0281   0.138      -0.203 8.39e- 1
+## 4 smokerYes    -0.149    0.135      -1.10  2.72e- 1
+## 
+## [[4]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.709    0.205       3.46  6.38e- 4
+## 2 total_bill    0.0939   0.00933    10.1   4.26e-20
+## 3 smokerYes    -0.0834   0.138      -0.605 5.46e- 1
+## 4 size          0.180    0.0878      2.05  4.11e- 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What we have now is a list of dataframes, one for each model we fit.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;just-the-beta-estimates&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Just the beta estimates&lt;/h2&gt;
+&lt;p&gt;If we just want the coefficients, we only need the &lt;code&gt;terms&lt;/code&gt; and &lt;code&gt;estimates&lt;/code&gt; columns and do a &lt;code&gt;join&lt;/code&gt;.
+We can use the &lt;code&gt;purrr::reduce&lt;/code&gt; function to do this&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# join them all together
+model_outputs &amp;lt;- purrr::reduce(broom_outputs, dplyr::full_join, by = &amp;#39;term&amp;#39;)
+model_outputs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 5 x 17
+##   term  estimate.x std.error.x statistic.x p.value.x estimate.y std.error.y
+##   &amp;lt;chr&amp;gt;      &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;       &amp;lt;dbl&amp;gt;
+## 1 (Int~      0.920     0.160          5.76  2.53e- 8     0.933      0.174  
+## 2 tota~      0.105     0.00736       14.3   6.69e-34     0.105      0.00746
+## 3 sexM~     NA        NA             NA    NA           -0.0266     0.138  
+## 4 smok~     NA        NA             NA    NA           NA         NA      
+## 5 size      NA        NA             NA    NA           NA         NA      
+## # ... with 10 more variables: statistic.y &amp;lt;dbl&amp;gt;, p.value.y &amp;lt;dbl&amp;gt;,
+## #   estimate.x.x &amp;lt;dbl&amp;gt;, std.error.x.x &amp;lt;dbl&amp;gt;, statistic.x.x &amp;lt;dbl&amp;gt;,
+## #   p.value.x.x &amp;lt;dbl&amp;gt;, estimate.y.y &amp;lt;dbl&amp;gt;, std.error.y.y &amp;lt;dbl&amp;gt;,
+## #   statistic.y.y &amp;lt;dbl&amp;gt;, p.value.y.y &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will join all the dataframes together using the &lt;code&gt;term&lt;/code&gt; column as the key.
+Variables that do not exist in the model will be filled with an &lt;code&gt;NA&lt;/code&gt;.
+Problem now, is that we have a bunch of columns we don’t need.
+So the next step is to pull out the columns we want, and rename them accordingly.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_table &amp;lt;- model_outputs %&amp;gt;%
+  dplyr::select(term, tidyselect::starts_with(&amp;#39;estimate&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;names(model_table) &amp;lt;- c(&amp;#39;Variable&amp;#39;, &amp;#39;Model 1&amp;#39;, &amp;quot;Model 2&amp;quot;, &amp;quot;Model 3&amp;quot;, &amp;quot;Model 4&amp;quot;)
+model_table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 5 x 5
+##   Variable    `Model 1` `Model 2` `Model 3` `Model 4`
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     0.920    0.933     0.977     0.709 
+## 2 total_bill      0.105    0.105     0.106     0.0939
+## 3 sexMale        NA       -0.0266   -0.0281   NA     
+## 4 smokerYes      NA       NA        -0.149    -0.0834
+## 5 size           NA       NA        NA         0.180&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-if-i-need-more-variables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What if I need more variables?&lt;/h2&gt;
+&lt;p&gt;Just reporting the beta coefficients is not how you want to report your findings,
+typically you’d want to also display some measure of uncertainty along with the results.
+Here I’m just going to add the &lt;code&gt;std.error&lt;/code&gt; column, but you can calculate the 95% confidence intervals using the &lt;code&gt;std.error&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s the reference from the &lt;code&gt;kableExtra&lt;/code&gt; library I’m using to build the coefficient table:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# this is the exmaple form the kable docs I used for reference
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+collapse_rows_dt &amp;lt;- data.frame(C1 = c(rep(&amp;quot;a&amp;quot;, 3), rep(&amp;quot;b&amp;quot;, 2)),
+                               C2 = c(rep(&amp;quot;c&amp;quot;, 2), rep(&amp;quot;d&amp;quot;, 1), rep(&amp;quot;c&amp;quot;, 1), rep(&amp;quot;d&amp;quot;, 1)),
+                               C3 = 1:5,
+                               C4 = sample(c(0,1), 5, replace = TRUE))
+collapse_rows_dt&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   C1 C2 C3 C4
+## 1  a  c  1  0
+## 2  a  c  2  0
+## 3  a  d  3  1
+## 4  b  c  4  1
+## 5  b  d  5  1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(collapse_rows_dt, align = &amp;quot;c&amp;quot;) %&amp;gt;%
+  kable_styling(full_width = F) %&amp;gt;%
+  column_spec(1, bold = T) %&amp;gt;%
+  collapse_rows(columns = 1:2, valign = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C1
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C2
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C3
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+C4
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;3&#34;&gt;
+a
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+c
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+d
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+b
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+c
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+d
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This example was important to my solution, becuase I would need to format my coefficient table the same way as &lt;code&gt;collapse_rows_dt&lt;/code&gt;.
+This means that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;C1&lt;/code&gt; would be the variables in my model&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C2&lt;/code&gt; would need to alternate between the &lt;code&gt;estimate&lt;/code&gt; and the &lt;code&gt;std.error&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The other columns would be the actual values for each model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since the model outputs the &lt;code&gt;estimate&lt;/code&gt; and &lt;code&gt;std.error&lt;/code&gt; as columns,
+I know some kind of reshaping/tidying step will need to be involved (&lt;code&gt;melt&lt;/code&gt;/&lt;code&gt;gather&lt;/code&gt; / &lt;code&gt;pivot_longer&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;We still start from the same data steps as the previous example&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;broom_outputs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 2 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)    0.920   0.160        5.76 2.53e- 8
+## 2 total_bill     0.105   0.00736     14.3  6.69e-34
+## 
+## [[2]]
+## # A tibble: 3 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.933    0.174       5.37  1.84e- 7
+## 2 total_bill    0.105    0.00746    14.1   2.33e-33
+## 3 sexMale      -0.0266   0.138      -0.192 8.48e- 1
+## 
+## [[3]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.977    0.178       5.48  1.05e- 7
+## 2 total_bill    0.106    0.00748    14.2   1.73e-33
+## 3 sexMale      -0.0281   0.138      -0.203 8.39e- 1
+## 4 smokerYes    -0.149    0.135      -1.10  2.72e- 1
+## 
+## [[4]]
+## # A tibble: 4 x 5
+##   term        estimate std.error statistic  p.value
+##   &amp;lt;chr&amp;gt;          &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1 (Intercept)   0.709    0.205       3.46  6.38e- 4
+## 2 total_bill    0.0939   0.00933    10.1   4.26e-20
+## 3 smokerYes    -0.0834   0.138      -0.605 5.46e- 1
+## 4 size          0.180    0.0878      2.05  4.11e- 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The trick here is to get the data in the correct format that can be used by &lt;code&gt;kableExtra&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;broom_stats_long &amp;lt;- purrr::map(broom_outputs, tidyr::gather, &amp;#39;key&amp;#39;, &amp;#39;value&amp;#39;, estimate, std.error)
+broom_stats_long&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 4 x 5
+##   term        statistic  p.value key         value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;       &amp;lt;dbl&amp;gt;
+## 1 (Intercept)      5.76 2.53e- 8 estimate  0.920  
+## 2 total_bill      14.3  6.69e-34 estimate  0.105  
+## 3 (Intercept)      5.76 2.53e- 8 std.error 0.160  
+## 4 total_bill      14.3  6.69e-34 std.error 0.00736
+## 
+## [[2]]
+## # A tibble: 6 x 5
+##   term        statistic  p.value key          value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     5.37  1.84e- 7 estimate   0.933  
+## 2 total_bill     14.1   2.33e-33 estimate   0.105  
+## 3 sexMale        -0.192 8.48e- 1 estimate  -0.0266 
+## 4 (Intercept)     5.37  1.84e- 7 std.error  0.174  
+## 5 total_bill     14.1   2.33e-33 std.error  0.00746
+## 6 sexMale        -0.192 8.48e- 1 std.error  0.138  
+## 
+## [[3]]
+## # A tibble: 8 x 5
+##   term        statistic  p.value key          value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     5.48  1.05e- 7 estimate   0.977  
+## 2 total_bill     14.2   1.73e-33 estimate   0.106  
+## 3 sexMale        -0.203 8.39e- 1 estimate  -0.0281 
+## 4 smokerYes      -1.10  2.72e- 1 estimate  -0.149  
+## 5 (Intercept)     5.48  1.05e- 7 std.error  0.178  
+## 6 total_bill     14.2   1.73e-33 std.error  0.00748
+## 7 sexMale        -0.203 8.39e- 1 std.error  0.138  
+## 8 smokerYes      -1.10  2.72e- 1 std.error  0.135  
+## 
+## [[4]]
+## # A tibble: 8 x 5
+##   term        statistic  p.value key          value
+##   &amp;lt;chr&amp;gt;           &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept)     3.46  6.38e- 4 estimate   0.709  
+## 2 total_bill     10.1   4.26e-20 estimate   0.0939 
+## 3 smokerYes      -0.605 5.46e- 1 estimate  -0.0834 
+## 4 size            2.05  4.11e- 2 estimate   0.180  
+## 5 (Intercept)     3.46  6.38e- 4 std.error  0.205  
+## 6 total_bill     10.1   4.26e-20 std.error  0.00933
+## 7 smokerYes      -0.605 5.46e- 1 std.error  0.138  
+## 8 size            2.05  4.11e- 2 std.error  0.0878&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have the data formatted the way we need, we now &lt;code&gt;select&lt;/code&gt; only the columns we need.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# filter only the columns we need
+broom_stats_long_filter &amp;lt;- purrr::map(broom_stats_long, dplyr::select, term, key, value)
+broom_stats_long_filter&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## # A tibble: 4 x 3
+##   term        key         value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;       &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate  0.920  
+## 2 total_bill  estimate  0.105  
+## 3 (Intercept) std.error 0.160  
+## 4 total_bill  std.error 0.00736
+## 
+## [[2]]
+## # A tibble: 6 x 3
+##   term        key          value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate   0.933  
+## 2 total_bill  estimate   0.105  
+## 3 sexMale     estimate  -0.0266 
+## 4 (Intercept) std.error  0.174  
+## 5 total_bill  std.error  0.00746
+## 6 sexMale     std.error  0.138  
+## 
+## [[3]]
+## # A tibble: 8 x 3
+##   term        key          value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate   0.977  
+## 2 total_bill  estimate   0.106  
+## 3 sexMale     estimate  -0.0281 
+## 4 smokerYes   estimate  -0.149  
+## 5 (Intercept) std.error  0.178  
+## 6 total_bill  std.error  0.00748
+## 7 sexMale     std.error  0.138  
+## 8 smokerYes   std.error  0.135  
+## 
+## [[4]]
+## # A tibble: 8 x 3
+##   term        key          value
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 (Intercept) estimate   0.709  
+## 2 total_bill  estimate   0.0939 
+## 3 smokerYes   estimate  -0.0834 
+## 4 size        estimate   0.180  
+## 5 (Intercept) std.error  0.205  
+## 6 total_bill  std.error  0.00933
+## 7 smokerYes   std.error  0.138  
+## 8 size        std.error  0.0878&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, you need to create some kind of ID value for each model you’re creating,
+that way when you’re combining everything into a single dataframe,
+the estimates are traveling together with the standard error.
+Here I’m labeling each model as a number starting with &lt;code&gt;1&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tidy_tables &amp;lt;- purrr::map2_df(broom_stats_long_filter, 1:length(broom_stats_long_filter),
+                              function(x, y) dplyr::mutate(x, mod = y))
+tidy_tables&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 26 x 4
+##    term        key          value   mod
+##    &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt;
+##  1 (Intercept) estimate   0.920       1
+##  2 total_bill  estimate   0.105       1
+##  3 (Intercept) std.error  0.160       1
+##  4 total_bill  std.error  0.00736     1
+##  5 (Intercept) estimate   0.933       2
+##  6 total_bill  estimate   0.105       2
+##  7 sexMale     estimate  -0.0266      2
+##  8 (Intercept) std.error  0.174       2
+##  9 total_bill  std.error  0.00746     2
+## 10 sexMale     std.error  0.138       2
+## # ... with 16 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Almost there!&lt;/p&gt;
+&lt;p&gt;Lastly, we need to sort the columns by using &lt;code&gt;arrange&lt;/code&gt;.
+Here is where the ID column, &lt;code&gt;mod&lt;/code&gt; get’s used to make sure model values are traveling together.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- tidy_tables %&amp;gt;%
+  dplyr::arrange(term, mod, key, value) %&amp;gt;%
+  tidyr::spread(mod, value, drop = FALSE)
+df&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 x 6
+##    term        key            `1`      `2`      `3`      `4`
+##    &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+##  1 (Intercept) estimate   0.920    0.933    0.977    0.709  
+##  2 (Intercept) std.error  0.160    0.174    0.178    0.205  
+##  3 sexMale     estimate  NA       -0.0266  -0.0281  NA      
+##  4 sexMale     std.error NA        0.138    0.138   NA      
+##  5 size        estimate  NA       NA       NA        0.180  
+##  6 size        std.error NA       NA       NA        0.0878 
+##  7 smokerYes   estimate  NA       NA       -0.149   -0.0834 
+##  8 smokerYes   std.error NA       NA        0.135    0.138  
+##  9 total_bill  estimate   0.105    0.105    0.106    0.0939 
+## 10 total_bill  std.error  0.00736  0.00746  0.00748  0.00933&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kable(df, align=&amp;#39;c&amp;#39;) %&amp;gt;%
+  kable_styling(full_width = F) %&amp;gt;%
+  column_spec(1, bold = T) %&amp;gt;%
+  collapse_rows(columns = 1, valign = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+term
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+key
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+1
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+2
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+3
+&lt;/th&gt;
+&lt;th style=&#34;text-align:center;&#34;&gt;
+4
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+(Intercept)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.9202696
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.9332785
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.9770353
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.7090155
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1597347
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1737557
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1781633
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.2048813
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+sexMale
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.0266087
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.0280926
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1383340
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1382793
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+size
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1803316
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0878033
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+smokerYes
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.1491923
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+-0.0834326
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1354353
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1380005
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;font-weight: bold;vertical-align: top !important;&#34; rowspan=&#34;2&#34;&gt;
+total_bill
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+estimate
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1050245
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1052324
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.1059431
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0938884
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+std.error
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0073648
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0074582
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0074827
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center;&#34;&gt;
+0.0093314
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;kableextra&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;kableExtra&lt;/h2&gt;
+&lt;p&gt;There kableExtra is great for tables like this. Here are links to more information&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://haozhu233.github.io/kableExtra/&#34; class=&#34;uri&#34;&gt;http://haozhu233.github.io/kableExtra/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R or Python, which One to Learn (First)?</title>
+      <link>/2019/08/28/r-or-python-which-one-to-learn-first/</link>
+      <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/08/28/r-or-python-which-one-to-learn-first/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I’ve been asked a few times lately about whether one should learn R or Python.&lt;/p&gt;
+&lt;p&gt;Channeling
+&lt;a href=&#34;http://varianceexplained.org/r/start-blog/&#34;&gt;David Robinson’s post&lt;/a&gt;,
+I’m writing a blog post about it.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;
+&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;
+When you’ve written the same code 3 times, write a function&lt;br&gt;&lt;br&gt;When you’ve given the same in-person advice 3 times, write a blog post
+&lt;/p&gt;
+— David Robinson (&lt;span class=&#34;citation&#34;&gt;@drob&lt;/span&gt;) &lt;a href=&#34;https://twitter.com/drob/status/928447584712253440?ref_src=twsrc%5Etfw&#34;&gt;November 9, 2017&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;The only definitive answer I have is if you’re planning to do web deveopment,
+and you’re somehow only picking between R and Python, pick Python
+(any of the Python web frameworks, Flask, Django, Pyramid, and then ask yourself why not JavaScript?).
+If you’re doing hardward things, also pick Python
+(see &lt;a href=&#34;https://twitter.com/search?q=%23pythonhardware&amp;amp;src=typed_query&amp;amp;f=live&#34;&gt;#pythonhardware&lt;/a&gt;).
+Otherwise, pick what you already know or took a class in,
+or look at a few job postings in your area and pick the one that is most prevelent.
+In the end all the data science and data cleaning skills you learn in one language will
+carry over into the other.&lt;/p&gt;
+&lt;p&gt;I personally perfer R for dashboarding
+(&lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;shiny&lt;/a&gt;)
+and publication
+(&lt;a href=&#34;https://rmarkdown.rstudio.com/&#34;&gt;RMarkdown + knitr&lt;/a&gt;),
+but that’s mainly because back in 2014, when I was first learning data science skills I was taught in R,
+and there were not good equlivilants in the Python world
+(other than what is now &lt;a href=&#34;https://jupyter.org/&#34;&gt;Jupyter&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Also, most data scientists in industry are working in SQL anyway ( :&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;For data science/data cleaning/data analysis programs,
+the best way is to practice working with data.
+Having said that, it’s really hard to find projects,
+or sometimes your own projects are “too big and complicated” so you might be at a loss of where to begin.&lt;/p&gt;
+&lt;p&gt;My first recommendation is take a look at
+&lt;a href=&#34;https://www.kaggle.com/competitions&#34;&gt;Kaggle&lt;/a&gt;.
+You’ll see a lot of datasets there and you might find something interesting to play around with.
+The forums on the competitions are also good place to get ideas on some of the machine learning and model fitting side.
+One of my first exposures to data science was one of those competitions,
+and I learned a lot of web scraping and string parsing skills there.&lt;/p&gt;
+&lt;p&gt;Another great resource where you can practice some of your data skills come from the R community.
+It’s called
+&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34;&gt;Tidy&lt;/a&gt;
+&lt;a href=&#34;https://thomasmock.netlify.com/post/tidytuesday-a-weekly-social-data-project-in-r/&#34;&gt;Tuesday&lt;/a&gt;.
+Every Tuesday a new dataset gets released, and people
+(all over &lt;a href=&#34;https://twitter.com/hashtag/tidytuesday&#34;&gt;twitter&lt;/a&gt;)
+share their findings.
+It does not need to be a fully worked out machine learning pipeline.
+You are just getting a new dataset to explore.
+David Robinson does a
+&lt;a href=&#34;https://www.youtube.com/user/safe4democracy/videos&#34;&gt;1-hour livestream every week&lt;/a&gt;.
+Even though it’s in R, you can do it all in Python as well (maybe try replicating someone’s R work?).
+After you get used to exploring data, and when you get more practice in either R or Python,
+it’s much easier to see how you can apply it in your daily life.
+And that motivation will help you practice and learn more.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/rctatman&#34;&gt;Rachael Tatman&lt;/a&gt;,
+from Kaggle, also does weekly livestreams where
+she also hosts a journal club to discuss an academic paper about
+a machine learning method.&lt;/p&gt;
+&lt;p&gt;If you need some more of the basic programming knowledge,
+take a look at the
+&lt;a href=&#34;https://software-carpentry.org/lessons/&#34;&gt;software-carpentry&lt;/a&gt; and
+&lt;a href=&#34;https://datacarpentry.org/lessons/&#34;&gt;data-carpentry&lt;/a&gt;
+R and Python lessons.
+Jake VanderPlas’ book
+&lt;a href=&#34;https://jakevdp.github.io/PythonDataScienceHandbook/&#34;&gt;“Python Data Science Handbook”&lt;/a&gt;
+is free online as well as
+as Garrett Grolemund and Hadley Wickham’s
+&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;.
+Hadley Wickham also as a free book on
+&lt;a href=&#34;https://adv-r.hadley.nz/&#34;&gt;Advanced R&lt;/a&gt;,
+but that’s not necessary when getting started.
+I also try to keep a list of free (python)
+&lt;a href=&#34;https://github.com/chendaniely/pandas_for_everyone#other-random-goodies&#34;&gt;resources&lt;/a&gt;
+online as well.&lt;/p&gt;
+&lt;p&gt;Since I work on the data side of most things,
+it’s easy for me to suggest learning things from that point of view.
+All I can say is, that it if you stick with one of the learning paths,
+you will actually pick up bits of knowledge that will help you in others.
+I first learned Python as a normal scriping language, and learned how to do data analysis in R.
+I only started to do data manipulation in Python when I understoon the concept of
+&lt;a href=&#34;https://vita.had.co.nz/papers/tidy-data.pdf&#34;&gt;tidy data&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tidy data is probably the &lt;em&gt;most&lt;/em&gt; important topic when working with data.
+So many of the skills you need to clean and tidy your data involve other aspects of the langage
+(e.g., writing vectorized functions),
+that you’ll learn basic programming concepts by making your data tidy.&lt;/p&gt;
+&lt;p&gt;For example, while learning pandas and data manipulations,
+will get you working with Python classes,
+which is an Object Oriented Programming concept.
+That will all translate if you need to so more software work in Python or if you want to learn Django.
+In R, you learn how to work with dataframes, functions, and how to write your own.&lt;/p&gt;
+&lt;p&gt;In the end, find somewhere to start.
+Because of my background, I say start with loading data and playing with it.
+The more you do it, the more questions you will have on your data,
+and the more skills you’ll acquire to answer those questions.
+Those skills will carry over to other aspects of the language, and even to other languages
+(e.g., R, Python, even Julia!).&lt;/p&gt;
+&lt;p&gt;You’ll always be learning, it never ends, so don’t worry about ever trying to “know it all”.
+I’m constantly finding new things and ways to do things in R and Pandas; I am always googling and stackoverflow-ing…
+Even though I have a book about Pandas and worked as an intern for RStudio! :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Squash and Merge Workflow</title>
+      <link>/2019/08/27/git-squash-and-merge-workflow/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/08/27/git-squash-and-merge-workflow/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I have a love-hate relationship with Git.
+It took me years of following cookbooks and following strict set of commands to
+get a sense of how it works.
+I still have to spend time wrangling Git at times,
+but I’ve gotten to the point where I’m just annoyed, instead of scared.
+Here is the branching-squash-and-merge workflow I’ve been using at RStudio.&lt;/p&gt;
+&lt;p&gt;Also, sorry I may be glossing over some of the Git basics in this post…&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;At RStudio, I’m using a brancing workflow where I am added directly as a collaborator to a project.
+I still have to create pull requests for review,
+but contrast this with me forking the repository and creating a pull regrest from my copy (&lt;code&gt;origin&lt;/code&gt;)
+to the parent repository (&lt;code&gt;upstream&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Every workflow has benefits and drawbacks.
+The current workflow I’m using is a “squash and merge”.
+Where all the commits in a pull request are “squashed” into a single commit when it it merged into master.
+This means the main commit history is &lt;em&gt;super&lt;/em&gt; clean,
+and potentially sets up the repository to create automatic change logs or &lt;code&gt;NEWS&lt;/code&gt; reports.
+The downside is if you start branching off other branches (instead of the main &lt;code&gt;master&lt;/code&gt;),
+you’ll have to &lt;code&gt;rebase&lt;/code&gt; or &lt;code&gt;cherry-pick&lt;/code&gt; to update the branches after a branch gets merged.&lt;/p&gt;
+&lt;div id=&#34;the-general-problem&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The general problem&lt;/h1&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3 # the master branch
+       \
+        x11-x12-x13 # example branch_1
+                  \
+                   y21-y22-y23 # example branch_2 that depends on branch_1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After a squash and merge the Git DAG looks like this&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+       \
+        x11-x12-x13 # commits from branch_1 still exist
+                  \
+                   y21-y22-y23 # commits from branch_2 still exist&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can’t simply just squash merge &lt;code&gt;branch_2&lt;/code&gt;, becuase the commits from &lt;code&gt;branch_1&lt;/code&gt;
+are technically still part of the history of &lt;code&gt;branch_2&lt;/code&gt;,
+so a rebase of &lt;code&gt;branch_2&lt;/code&gt; against the new master will cause conflicts,
+&lt;em&gt;and&lt;/em&gt; I’ll have duplicate messages if I do another squash+merge of &lt;code&gt;branch_2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you did a &lt;code&gt;rebase&lt;/code&gt; you’ll end up with this:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git checkout branch_2 # make sure you&amp;#39;re on branch_2
+git rebase master
+# fix conflicts
+# so many conflicts&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+          \
+           x11-x12-x13-y21-y22-y23 # commits from branch_1 and branch_2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Instead, you need to &lt;code&gt;git cherry-pick&lt;/code&gt; the commits against the updated master
+with just the commits from &lt;code&gt;branch_2&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git checkout master # go to master branch so you can cherry-pick commits on top
+git cherry-pick y21^..y23 # this is how to cherry-pick multiple commits
+# (note the ^ to also include commit y21, otherwise it is left exclusive)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+       \  \
+        \  y21-y22-y23 # cherry-pick commits from branch_2 # this is good
+         \
+          x11-x12-x13 # commits from branch_1 still exist # already in s1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We don’t need the commits from branch one anymore (&lt;code&gt;x11&lt;/code&gt; to &lt;code&gt;x13&lt;/code&gt; in the example),
+so we can deleate that branch using &lt;code&gt;git branch -D branch_1&lt;/code&gt;,
+note you have to use a force delete with the &lt;code&gt;-D&lt;/code&gt; flag,
+because git does not think that &lt;code&gt;branch_1&lt;/code&gt; was merged because we did a squash+merge.
+Otherwise you would’ve been able to use the lowercase &lt;code&gt;-d&lt;/code&gt; flag to delete the branch.&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+          \
+           y21-y22-y23 # cherry-pick commits from branch_2 # yay!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we finally get everthing up to date, and can re-update the pull request for branch 2
+by doing a force push: &lt;code&gt;git push -f origin master&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-the-real-world&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;In the real world&lt;/h1&gt;
+&lt;p&gt;The PR process is the same as usual:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Create a branch&lt;/li&gt;
+&lt;li&gt;Push the branch to the remote (i.e., Github, in this case)&lt;/li&gt;
+&lt;li&gt;Pull request!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;However, Github now gives you an option of which &lt;em&gt;green&lt;/em&gt; button you want!
+Specifically, the option to “Squash and merge”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;github_squash_merge.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This is fine when you have a totally independent PR
+and there’s no other work that is based of the current work on that branch.
+However here’s an example where I created separate branches for each “feature”,
+but they all rely on the previous feature.&lt;/p&gt;
+&lt;p&gt;Output of my &lt;code&gt;git log --oneline --graph --decorate --all&lt;/code&gt;, which I have aliased as &lt;code&gt;git l&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the current state we’re in after we perform a squash+merge on GitHub&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;              vignettes
+             /
+older_commits
+             \
+              master&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here’s what the actual state of the repository looks like.&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:06] $ git l
+* 16f4b6b (HEAD -&amp;gt; vignettes) intro to gradethis for learnr docs
+* b4e2873 (origin/vignettes) emphasize not to use ==
+* f66aa39 i don&amp;#39;t want to stash
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+| |/  
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+| * 9083fc8 (me/master, master) rename functions per #65 update docs and tests (#72)
+| * 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+| * 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What we want is something like this:&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;older_commits
+             \
+              master
+                    \
+                     vignettes&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First we pull and update &lt;code&gt;master&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:18] $ git pull origin master
+From github.com:rstudio-education/gradethis
+ * branch            master     -&amp;gt; FETCH_HEAD
+Updating 9083fc8..a195fa3
+Fast-forward
+ inst/tutorials/grading-demo/grading-demo.Rmd | 249 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------
+ 1 file changed, 112 insertions(+), 137 deletions(-)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that master is up to date,&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;              vignettes
+             /
+older_commits
+             \
+              master-master # master has moved up a commit from pull&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;we can cherry-pick the commits of interest&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:30] $ git cherry-pick f66aa39^..16f4b6b
+[master 28c7ebe] i don&amp;#39;t want to stash
+ Date: Wed Aug 14 10:03:25 2019 -0400
+ 3 files changed, 72 insertions(+)
+ create mode 100644 vignettes/000-introduction_to_gradethis.Rmd
+ create mode 100644 vignettes/010-using_equal.Rmd
+ create mode 100644 vignettes/990-developers_guide.Rmd
+[master 9b84be6] emphasize not to use ==
+ Date: Wed Aug 14 11:44:36 2019 -0400
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 846bb18] intro to gradethis for learnr docs
+ Date: Tue Aug 27 10:51:06 2019 -0400
+ 1 file changed, 151 insertions(+), 9 deletions(-)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that I used the &lt;code&gt;&amp;lt;commit&amp;gt;^..&amp;lt;commit&amp;gt;&lt;/code&gt; notation while &lt;code&gt;cherry-pick&lt;/code&gt;ing.
+The &lt;code&gt;^&lt;/code&gt; means to also include that commit, otherwise it will start from that commit,
+but not include it (i.e., left exclusive).&lt;/p&gt;
+&lt;p&gt;If you wanted to not use the &lt;code&gt;^&lt;/code&gt; you need to pick the previous commit hash.
+In my case it would’ve been &lt;code&gt;d5cf9de&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, we need to clean up the references to our branch.
+Since we &lt;code&gt;cherry-pick&lt;/code&gt;ed commits on master we’re actually still on master.
+So we need to do update where our branches are pointing to by using `git reset –hard &lt;commit&gt;&lt;/p&gt;
+&lt;p&gt;First we checkout the &lt;code&gt;vignettes&lt;/code&gt; branch,&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:46] $ git checkout vignettes 
+Switched to branch &amp;#39;vignettes&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:52] $ git l
+* 846bb18 (master) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&amp;#39;t want to stash
+* a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| * 16f4b6b (HEAD -&amp;gt; vignettes) intro to gradethis for learnr docs
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don&amp;#39;t want to stash
+| | * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+| |/  
+|/|   
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+|/|   
+* | 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* | 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* | 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and then set it to the correct commit location.&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:04] $ git reset --hard 846bb18
+HEAD is now at 846bb18 intro to gradethis for learnr docs&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We then repeat the process for the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
+&lt;p&gt;First &lt;code&gt;checkout master&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:07] $ git checkout master
+Switched to branch &amp;#39;master&amp;#39;
+Your branch is ahead of &amp;#39;origin/master&amp;#39; by 3 commits.
+  (use &amp;quot;git push&amp;quot; to publish your local commits)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then &lt;code&gt;reset --hard&lt;/code&gt; to the correct location:&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:11] $ git reset --hard a195fa3
+HEAD is now at a195fa3 fix gradethis demo (#70)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now everything is in the right place&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;older_commits
+             \
+              master
+                    \
+                     vignettes&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:21] $ git l
+* 846bb18 (vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&amp;#39;t want to stash
+* a195fa3 (HEAD -&amp;gt; master, origin/master, origin/HEAD) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* 9cc3d6d Test result api fixes#60 (#63)
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don&amp;#39;t want to stash
+|/  
+* d5cf9de Doc fixes (#62) and function pruning&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, we can update the GitHub remote by force bushing the branch
+(remember to be on the branch before pushing).&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:53:25] $ git checkout vignettes 
+Switched to branch &amp;#39;vignettes&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:53:30] $ git push -f origin vignettes 
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 3.27 KiB | 3.27 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+To github.com:rstudio-education/gradethis.git
+ + b4e2873...846bb18 vignettes -&amp;gt; vignettes (forced update)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The final Graph now looks like this&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:54:13] $ git l
+* 846bb18 (HEAD -&amp;gt; vignettes, origin/vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&amp;#39;t want to stash
+* a195fa3 (origin/master, origin/HEAD, master) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;It’s taken me many years to be comfortable with Git.
+My previous go-to method was to &lt;code&gt;rebase&lt;/code&gt; one branch on top of the other,
+but with the squash-and-merge method, a lot of commits get repeated,
+and it just makes &lt;code&gt;rebase&lt;/code&gt;ing a pain with all the commits and merge conflicts.&lt;/p&gt;
+&lt;p&gt;In this particular workflow I found &lt;code&gt;cherry-pick&lt;/code&gt; to be way more convenient,
+and led to fewer merge conflicts.&lt;/p&gt;
+&lt;p&gt;Again, the notation for &lt;code&gt;cherry-pick&lt;/code&gt; is weird, in that it is &lt;em&gt;left exclusive&lt;/em&gt; unless you put in the &lt;code&gt;^&lt;/code&gt;,
+i.e.,&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git cherry-pick &amp;lt;commit-start&amp;gt;^..&amp;lt;commit-end&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;not&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git cherry-pick &amp;lt;commit-start&amp;gt;..&amp;lt;commit-end&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Inconsistencies with the `==` operator in R</title>
       <link>/2019/08/06/inconsistencies-with-in-r/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/08/06/inconsistencies-with-in-r/</guid>
       <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;One of the cool things about working on &lt;a href=&#34;https://github.com/rstudio-education/gradethis&#34;&gt;&lt;code&gt;gradethis&lt;/code&gt;&lt;/a&gt;
@@ -152,6 +2096,7 @@ identical(u, s)&lt;/code&gt;&lt;/pre&gt;
       
       <guid>/2019/08/03/mounting-oclus-rift-sensors-on-the-wall/</guid>
       <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;I was initially going to get some small bookshelves to put my Oculus sensors on,

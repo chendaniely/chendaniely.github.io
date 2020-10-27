@@ -7,10 +7,126 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Daniel Chen {year}</copyright>
-    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using OBS for Online Teaching</title>
+      <link>/2020/10/27/using-obs-for-online-teaching/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/27/using-obs-for-online-teaching/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Open Broadcaster Software (OBS) is a featured and popular used to lay out your screen for recording and streaming.
+V26 of OBS Studio was released mid October 2020,
+and it ships with a virtual camera feature (windows).
+This allows you to use the OBS Studio output as the camera input for other programs (e.g., video conferencing software).&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;For teaching purposes, this means you have much more control when you are trying to teach
+online (and in person) since OBS gives you many options on what and how something is presented.
+OBS also allows you to setup “scenes” so you can potentially share an entire screen,
+or a specific set of application windows all with separate screen overlays.
+For me I was able to more efficiently lay out my screen with what I’m presenting,
+text overlays with quick links, and a live caption as I was teaching.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ds4biomed-workshop-screenshot.PNG&#34; title=&#34;Screenshot of the workshop showing the screen capture, webcam video, live captions, and links&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The virtual camera used to be an optional
+&lt;a href=&#34;https://obsproject.com/forum/resources/obs-virtualcam.949/&#34;&gt;plugin&lt;/a&gt;
+that needed to be installed,
+but this current version has been cleaned up with bug fixes.
+It seems like it’s currently Windows only,
+and you may still need to use the old plugins for Mac + Linux.&lt;/p&gt;
+&lt;p&gt;For my dissertation,
+I am writing an online resource that aims to teach
+data science skills focused towards people who work in the medical and biomedical sciences (&lt;a href=&#34;https://ds4biomed.tech/&#34;&gt;ds4biomed&lt;/a&gt;).
+I just finished giving my first workshop using these materials which you can find
+&lt;a href=&#34;https://www.youtube.com/watch?v=nQ4lbmKD1no&#34;&gt;here (part 1)&lt;/a&gt;
+and
+&lt;a href=&#34;https://www.youtube.com/watch?v=2eCSmIQN2hU&#34;&gt;here (part 2)&lt;/a&gt;.
+I wanted a way to be able to share my screen but also show a live caption at the same time.&lt;/p&gt;
+&lt;p&gt;In the past I would share my screen and open windows up in the screen,
+but that method wasted a lot of screen space to lay out all the components I wanted.
+OBS give me much more flexibility with how big each components takes up on the canvas.&lt;/p&gt;
+&lt;p&gt;Here’s an example of what was &lt;strong&gt;presented&lt;/strong&gt; to the learners over Zoom.&lt;/p&gt;
+&lt;div id=&#34;setting-up-obs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Setting up OBS&lt;/h2&gt;
+&lt;p&gt;Setting up OBS Studio is a separate post on its own.
+Luckily it’s used by streamers,
+so there are lots of YouTube guides on how to use OBS&lt;/p&gt;
+&lt;p&gt;Here are 2 resources&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Zt_HVScA3Js&#34;&gt;Gaming Careers Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=EuSUPpoi0Vs&#34;&gt;Alpha Gaming Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;my-setup&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;My setup&lt;/h2&gt;
+&lt;p&gt;I only have 1 scene when I’m teaching, but OBS gives you the option to have multiple scenes that you can toggle between.&lt;/p&gt;
+&lt;p&gt;My main teaching screen scene:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;obs-scenes.PNG&#34; title=&#34;Screenshot of the scene I used&#34; /&gt;&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Video Capture Device: Webcam&lt;/li&gt;
+&lt;li&gt;Text: Quick links to the Etherpad and workshop content&lt;/li&gt;
+&lt;li&gt;Color Source: Black bar to cover the Windows taskbar for the Text to show&lt;/li&gt;
+&lt;li&gt;Window Capture: Chrome window opened to Web Captioner&lt;/li&gt;
+&lt;li&gt;Audio Output Capture: Used to capture sound from the computer (from applications like zoom or videos)&lt;/li&gt;
+&lt;li&gt;Audio Input Capture: My microphone&lt;/li&gt;
+&lt;li&gt;Display Capture: Screen I use for screen sharing.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;An option here could be a series of application window captures instead of sharing the entire screen&lt;/li&gt;
+&lt;li&gt;You can have your own layout of source code and terminal output and not worry about windows overlapping on your end&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other things that could be useful is to have a scene that is setup in advanced to a certain part of the screen,
+e.g., the source code, or output,
+so you can zoom in to a certain area for emphasis and clarity.&lt;/p&gt;
+&lt;p&gt;You can also have a separate scene for a timer if you want a more explicit break timer.&lt;/p&gt;
+&lt;p&gt;Another useful scene is just your webcam and audio input capture so your webcam shows up like a normal webcam to people.
+The Scenes let you swap between all the different views out of OBS and into the virtual camera on the fly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;using-the-virtual-camera&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Using the Virtual Camera&lt;/h2&gt;
+&lt;p&gt;Once you have OBS setup with your scenes and sources,
+you can click the “Start Virtual Camera” button.
+Once you started that, you will see a new “webcam” option in your video conference software that will output what your OBS preview shows.&lt;/p&gt;
+&lt;p&gt;When using video conferencing software, e.g.,. Zoom, to teach,
+you need to remember you are no longer “sharing” your screen,
+since your webcam display is already setup to share your screen,
+so you need to tell people to either “pin” your video so it does not loose focus when other people talk,
+or mute microphones so people do not take away your focus.
+How this is done will vary between applications.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;other-obs-tips&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Other OBS tips&lt;/h2&gt;
+&lt;p&gt;Using OBS you can set it up to stream to services like Twitch or YouTube,
+and it also gives you the ability to “record” the stream.
+If you do decide to record out of OBS,
+I suggest you use &lt;code&gt;.mkv&lt;/code&gt; format to record since &lt;code&gt;mkv&lt;/code&gt; files will still work if something happens and the recording crashes.
+You can use programs like &lt;a href=&#34;https://handbrake.fr/&#34;&gt;HandBrake&lt;/a&gt;
+to convert video formats.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;learner-screen-layout&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Learner screen layout&lt;/h2&gt;
+&lt;p&gt;I wrote a post earlier this year for The Carpentries on how learners
+may lay out their screens during an online workshop.
+You can see the blog post here:
+&lt;a href=&#34;https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/&#34; class=&#34;uri&#34;&gt;https://carpentries.org/blog/2020/06/online-workshop-logistics-and_screen-layouts/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Using the OBS virtual camera for online teaching gives the instructor a lot of flexibility on what and how something would be presented to the learners.
+For instructors who have limited screen space,
+OBS allows you to lay out individual application windows so you can have your notes over what is presented without it affecting what the learners see.
+Additionally, OBS’s scenes allow the instructor to pre set up different views that can be changed during the lesson as needed.
+There is a learning curve to OBS, but because of it’s use in the streaming community,
+there are a plethora of resources available.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Changes in Higher Education</title>

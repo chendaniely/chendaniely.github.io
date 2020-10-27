@@ -7,10 +7,485 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Daniel Chen {year}</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/tags/rstudio-internship/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My time as an RStudio Intern</title>
+      <link>/2020/01/29/my-time-as-an-rstudio-intern/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/01/29/my-time-as-an-rstudio-intern/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I’ve had a lot of time to think about my time as an RStudio intern.
+When I do,
+I usually end up with a few words in my head before I’m flooded with
+(good) emotions and struggle with finding the words to convey my thoughts.
+The last time I tried to write something like this went a little like
+&lt;a href=&#34;https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html&#34;&gt;this&lt;/a&gt;.
+What I can say is this:
+whatever you thought it was like working at RStudio,
+is (probably) true.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;From a technical perspective,
+the most jarring part of the work was transitioning from a user of the R language
+to a developer.
+I’ve taught workshops and written R packages,
+but nothing came close to the type of code I had to write for my internship.
+I think my only saving grace was I was familiar enough with Git,
+so I didn’t have to deal with
+&lt;a href=&#34;https://daniel.rbind.io/2019/08/27/git-squash-and-merge-workflow/&#34;&gt;workflow&lt;/a&gt;
+issues.&lt;/p&gt;
+&lt;div id=&#34;the-project&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The project&lt;/h3&gt;
+&lt;p&gt;I was on the
+&lt;a href=&#34;https://education.rstudio.com/&#34;&gt;education team&lt;/a&gt;
+and worked with worked with
+&lt;a href=&#34;https://twitter.com/statgarrett&#34;&gt;Garrett Grolemund&lt;/a&gt;
+and
+&lt;a href=&#34;https://twitter.com/schloerke&#34;&gt;Barret Schloerke&lt;/a&gt;
+(I can never spell their names properly without looking it up, and it didn’t help one of the other interns was
+&lt;a href=&#34;https://twitter.com/malco_barrett&#34;&gt;Malcolm Barrett&lt;/a&gt;
+)
+on &lt;a href=&#34;https://github.com/rstudio-education/gradethis&#34;&gt;&lt;code&gt;gradethis&lt;/code&gt;&lt;/a&gt;.
+The package tries to grade code in a
+&lt;a href=&#34;https://rstudio.github.io/learnr/&#34;&gt;&lt;code&gt;learnr&lt;/code&gt; document&lt;/a&gt;,
+but the real magic of the package isn’t just reporting a correct or incorrect answer,
+it’s the ability to provide meaningful feedback to the learner.
+For example, if the solution to a question was &lt;code&gt;sqrt(log(1))&lt;/code&gt; and the student provided &lt;code&gt;sqrt(log(2))&lt;/code&gt;,
+it would report the answer as “incorrect” but also return something along the lines of
+“I expected 1 where you wrote 2. Try it again; next time’s the charm!”.
+Isn’t that way nicer than a giant red box telling you the answer is wrong?
+Now if you think about it, isn’t this a really difficult problem to solve???
+(Hint: yes.)&lt;/p&gt;
+&lt;p&gt;Luckily, I didn’t have to write this package from scratch.
+Garrett did write the initial working code base for me to improve,
+but it also essentially meant working with legacy code and
+learning new R programming paradigms at the same time.
+“R programming paradigms” what’s that? you might ask.
+I mean
+&lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34;&gt;expressions&lt;/a&gt;,
+&lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34;&gt;rlang&lt;/a&gt;, and
+&lt;a href=&#34;https://tidyeval.tidyverse.org/&#34;&gt;tidyeval&lt;/a&gt;
+… :x&lt;/p&gt;
+&lt;p&gt;How does one go about leaning how all this works in the package?
+Well…
+by &lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/10&#34;&gt;merging a PR that breaks everything&lt;/a&gt;,
+then trying to &lt;a href=&#34;https://github.com/rstudio-education/gradethis/issues/11&#34;&gt;understand an issue&lt;/a&gt;
+that took &lt;a href=&#34;https://github.com/rstudio-education/gradethis/pull/21&#34;&gt;a month to fix&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I spent a better part of that month reading and not understanding &lt;a href=&#34;https://adv-r.hadley.nz/expressions.html&#34;&gt;expressions&lt;/a&gt;,
+and pretty much being guided by a series of pair-programming sessions with Barret.
+By “guided” I mean he pretty much did the work I just typed characters and acted as a scribe.&lt;/p&gt;
+&lt;p&gt;I’ve done pair-programming with my own students,
+but I never had anyone pair-program with me where I was the one learning.
+There was so many new things going on during each session that I couldn’t retain every detail,
+but things got easier towards the end.
+It made me think about all the times I’d help my students and really got to empathize with their confusion.&lt;/p&gt;
+&lt;p&gt;The single most important package development skill that made my work possible were &lt;strong&gt;unit tests&lt;/strong&gt;.
+Since I was working with an already existing code base,
+all the 100s of unit tests that were there needed to pass as I made changes.
+I can’t emphasize how much time and sanity was saved from running the unit test suite.
+Seemingly small changes would cause some tests to fail where I’d have to either fix my code or fix the test.
+As the package started to stabilize and I started testing it out on a mock &lt;code&gt;learnr&lt;/code&gt; tutorial,
+I even discovered &lt;a href=&#34;https://daniel.rbind.io/2019/08/06/inconsistencies-with-in-r/&#34;&gt;a bug in the &lt;code&gt;==&lt;/code&gt; operator&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Even though everyone was in a remote position, there was so much ancillary learning going on.
+I
+&lt;a href=&#34;https://daniel.rbind.io/2019/06/10/and-were-off-rstudio-internship-week-1-complete./&#34;&gt;tried&lt;/a&gt;
+to keep a
+&lt;a href=&#34;https://daniel.rbind.io/2019/06/18/rstudio-internship-week-2/&#34;&gt;list&lt;/a&gt;
+as I was going though the
+&lt;a href=&#34;https://daniel.rbind.io/2019/07/23/new-website-a-la-blogdown/&#34;&gt;internship&lt;/a&gt;,
+but it got impractical.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;hanging-out&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Hanging out&lt;/h3&gt;
+&lt;p&gt;Every one of my fellow &lt;a href=&#34;https://blog.rstudio.com/2019/03/25/summer-interns-2019/&#34;&gt;interns&lt;/a&gt;
+are amazing.
+Since RStudio is a remote company,
+we tried to hold a weekly “virtual coffee” meeting so we can all see and talk to one another.
+It really made the distance and time zone differences between all of us seem much smaller.
+As I’m typing this blog post at rstudio::conf,
+it felt like we already knew each other,
+even though most of us haven’t seen the other in person before.&lt;/p&gt;
+&lt;p&gt;Due to my conference and travel schedule over the summer,
+I got to meet a handful of the interns in person beforehand.&lt;/p&gt;
+&lt;div id=&#34;therese-and-malcolm-in-los-angeles-ca&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Therese and Malcolm in Los Angeles, CA&lt;/h4&gt;
+&lt;p&gt;I got to meet Therese and Malcolm when I was in LA staying at a friend’s place for another friends wedding.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_therese_malcom.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;julia-in-san-francisco-ca&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Julia in San Francisco, CA&lt;/h4&gt;
+&lt;p&gt;I got the tour of Julia’s lab when I was in San Francisco for the
+&lt;a href=&#34;https://pybay.com/&#34;&gt;PyBay conference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_julia_1.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;p&gt;More of Julia’s lab at the bottom of the post.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;joyce-in-raleigh-nc.&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Joyce in Raleigh, NC.&lt;/h4&gt;
+&lt;p&gt;My dad’s job relocated him to Carry, NC so I was visiting him when a Data Science Happy Hour was announced in Raleigh and got to meet Joyce.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;📣 Raleigh data science folks (and ambitious Durham folks): &lt;br&gt;&lt;br&gt;🗓 Data science happy hour at &lt;a href=&#34;https://twitter.com/lynnwoodbrewing?ref_src=twsrc%5Etfw&#34;&gt;@lynnwoodbrewing&lt;/a&gt; (on Whitaker Mill) on Tuesday 9/24 at 5:30 PM with the inimitable &lt;a href=&#34;https://twitter.com/CMastication?ref_src=twsrc%5Etfw&#34;&gt;@CMastication&lt;/a&gt;. &lt;br&gt;&lt;br&gt;(You can also buy food there or bring your own.)&lt;/p&gt;&amp;mdash; Tim Hopper (@tdhopper) &lt;a href=&#34;https://twitter.com/tdhopper/status/1171456421595996160?ref_src=twsrc%5Etfw&#34;&gt;September 10, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_joyce.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;education-and-shiny-teams&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Education and Shiny teams&lt;/h3&gt;
+&lt;p&gt;I met with the Shiny team for daily stand-ups, and the education team about every week.
+The sheer amount of people I could ask for help is absolutely &lt;strong&gt;insane&lt;/strong&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;This summer I got the opportunity work with the &lt;a href=&#34;https://twitter.com/rstudio?ref_src=twsrc%5Etfw&#34;&gt;@rstudio&lt;/a&gt; education and shiny teams. Definitely leveled up my &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; skills 🍄, and looking forward to sharing it with the rest of the community. So sad this is all over😭. &lt;a href=&#34;https://t.co/qc7r3j6wg0&#34;&gt;pic.twitter.com/qc7r3j6wg0&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dⓐniel Chen 🐍🏴‍☠️ (@chendaniely) &lt;a href=&#34;https://twitter.com/chendaniely/status/1165696768618749953?ref_src=twsrc%5Etfw&#34;&gt;August 25, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;everyone-else&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Everyone else&lt;/h3&gt;
+&lt;p&gt;A lot of effort goes into making a remote company feel less isolating.
+Many of us signed up for the virtual donut bot on Slack
+that randomly pairs you up with someone else in the company to have a conference call to get to know each other.&lt;/p&gt;
+&lt;p&gt;We also had an opportunity to signup/attend lightning talk sessions where people from the company talked about
+current projects they’re working on for work/home.
+Some people even talked about their hobbies!&lt;/p&gt;
+&lt;p&gt;Even crazier, was we sat in on meetings with the President and CEO of the company on multiple occasions.
+For a company that has such a wide global reach with employees geographically scattered around the world,
+the community that RStudio has internally is &lt;strong&gt;genuinely&lt;/strong&gt; mirrored in the amazing community they have created
+externally for the rest of us.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-than-technical-training&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;More than technical training&lt;/h3&gt;
+&lt;p&gt;My time with the education group at rstudio really help me find my way.
+I’m pretty much on my third iteration of a PhD dissertation topic,
+and working with the education group helped me realize that I can apply all the lessons I’ve learned
+through
+&lt;a href=&#34;https://carpentries.org/&#34;&gt;The Carpentries&lt;/a&gt;,
+teaching on my own,
+and working on educational tools
+towards my dissertation topic.
+For the first time in a long while I finally have a sense of direction
+and feel in control of my own degree.&lt;/p&gt;
+&lt;p&gt;Not only that, but being in intern was &lt;em&gt;so&lt;/em&gt; validating.
+I’ve felt like I was spinning my wheels since starting graduate school,
+and it’s nice to know I’ve been doing &lt;strong&gt;something&lt;/strong&gt; right these past few years.
+I’m not going to lie,
+there is a certain amount of “street cred” involved with being an intern,
+but let me assure you,
+I still barely grasp a lot of the internals of R.
+If anything, I feel &lt;em&gt;even more&lt;/em&gt; impostor syndrome,
+now that I’m back out in the wild.&lt;/p&gt;
+&lt;p&gt;For now,
+the best thing I can do is pay it forward.
+And for those who don’t know,
+my new dissertation topic is on the
+education and pedagogy of data science in medicine.&lt;/p&gt;
+&lt;p&gt;I hope to hear form everyone in the future!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;appendix&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Appendix&lt;/h3&gt;
+&lt;p&gt;The other intern final blog posts (list is ongoing):&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/tools-for-teaching-yaml-with-ymlthis/&#34;&gt;Malcolm Barrett&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://jcahoon.netlify.com/post/2019/08/23/reflection/&#34;&gt;Joyce&lt;/a&gt;
+&lt;a href=&#34;https://education.rstudio.com/blog/2019/11/my-first-software-engineering-internship/&#34;&gt;Cahoon&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://fishandwhistle.netlify.com/post/2019/a-summer-of-rstudio-and-ggplot2/&#34;&gt;Dewey Dunnington&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/12/this-is-not-like-the-others/&#34;&gt;Marly Gotti&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/my-javascript-internship-at-rstudio/&#34;&gt;Maya Gans&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/what-it-was-like-interning-for-rstudio/&#34;&gt;Yim Register&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://education.rstudio.com/blog/2019/10/twelve-weeks/&#34;&gt;Desirée De Leon&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Picture’s around Julia’s lab.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio_intern_julia_a.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_b.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_c.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_d.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_e.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_f.jpg&#34; /&gt;&lt;!-- --&gt;&lt;img src=&#34;rstudio_intern_julia_g.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Squash and Merge Workflow</title>
+      <link>/2019/08/27/git-squash-and-merge-workflow/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/08/27/git-squash-and-merge-workflow/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I have a love-hate relationship with Git.
+It took me years of following cookbooks and following strict set of commands to
+get a sense of how it works.
+I still have to spend time wrangling Git at times,
+but I’ve gotten to the point where I’m just annoyed, instead of scared.
+Here is the branching-squash-and-merge workflow I’ve been using at RStudio.&lt;/p&gt;
+&lt;p&gt;Also, sorry I may be glossing over some of the Git basics in this post…&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;At RStudio, I’m using a brancing workflow where I am added directly as a collaborator to a project.
+I still have to create pull requests for review,
+but contrast this with me forking the repository and creating a pull regrest from my copy (&lt;code&gt;origin&lt;/code&gt;)
+to the parent repository (&lt;code&gt;upstream&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Every workflow has benefits and drawbacks.
+The current workflow I’m using is a “squash and merge”.
+Where all the commits in a pull request are “squashed” into a single commit when it it merged into master.
+This means the main commit history is &lt;em&gt;super&lt;/em&gt; clean,
+and potentially sets up the repository to create automatic change logs or &lt;code&gt;NEWS&lt;/code&gt; reports.
+The downside is if you start branching off other branches (instead of the main &lt;code&gt;master&lt;/code&gt;),
+you’ll have to &lt;code&gt;rebase&lt;/code&gt; or &lt;code&gt;cherry-pick&lt;/code&gt; to update the branches after a branch gets merged.&lt;/p&gt;
+&lt;div id=&#34;the-general-problem&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The general problem&lt;/h1&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3 # the master branch
+       \
+        x11-x12-x13 # example branch_1
+                  \
+                   y21-y22-y23 # example branch_2 that depends on branch_1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After a squash and merge the Git DAG looks like this&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+       \
+        x11-x12-x13 # commits from branch_1 still exist
+                  \
+                   y21-y22-y23 # commits from branch_2 still exist&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can’t simply just squash merge &lt;code&gt;branch_2&lt;/code&gt;, becuase the commits from &lt;code&gt;branch_1&lt;/code&gt;
+are technically still part of the history of &lt;code&gt;branch_2&lt;/code&gt;,
+so a rebase of &lt;code&gt;branch_2&lt;/code&gt; against the new master will cause conflicts,
+&lt;em&gt;and&lt;/em&gt; I’ll have duplicate messages if I do another squash+merge of &lt;code&gt;branch_2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you did a &lt;code&gt;rebase&lt;/code&gt; you’ll end up with this:&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git checkout branch_2 # make sure you&amp;#39;re on branch_2
+git rebase master
+# fix conflicts
+# so many conflicts&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+          \
+           x11-x12-x13-y21-y22-y23 # commits from branch_1 and branch_2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Instead, you need to &lt;code&gt;git cherry-pick&lt;/code&gt; the commits against the updated master
+with just the commits from &lt;code&gt;branch_2&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git checkout master # go to master branch so you can cherry-pick commits on top
+git cherry-pick y21^..y23 # this is how to cherry-pick multiple commits
+# (note the ^ to also include commit y21, otherwise it is left exclusive)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+       \  \
+        \  y21-y22-y23 # cherry-pick commits from branch_2 # this is good
+         \
+          x11-x12-x13 # commits from branch_1 still exist # already in s1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We don’t need the commits from branch one anymore (&lt;code&gt;x11&lt;/code&gt; to &lt;code&gt;x13&lt;/code&gt; in the example),
+so we can deleate that branch using &lt;code&gt;git branch -D branch_1&lt;/code&gt;,
+note you have to use a force delete with the &lt;code&gt;-D&lt;/code&gt; flag,
+because git does not think that &lt;code&gt;branch_1&lt;/code&gt; was merged because we did a squash+merge.
+Otherwise you would’ve been able to use the lowercase &lt;code&gt;-d&lt;/code&gt; flag to delete the branch.&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;m1-m2-m3-s1 # master branch + squash-merge
+          \
+           y21-y22-y23 # cherry-pick commits from branch_2 # yay!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we finally get everthing up to date, and can re-update the pull request for branch 2
+by doing a force push: &lt;code&gt;git push -f origin master&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-the-real-world&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;In the real world&lt;/h1&gt;
+&lt;p&gt;The PR process is the same as usual:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Create a branch&lt;/li&gt;
+&lt;li&gt;Push the branch to the remote (i.e., Github, in this case)&lt;/li&gt;
+&lt;li&gt;Pull request!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;However, Github now gives you an option of which &lt;em&gt;green&lt;/em&gt; button you want!
+Specifically, the option to “Squash and merge”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;github_squash_merge.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This is fine when you have a totally independent PR
+and there’s no other work that is based of the current work on that branch.
+However here’s an example where I created separate branches for each “feature”,
+but they all rely on the previous feature.&lt;/p&gt;
+&lt;p&gt;Output of my &lt;code&gt;git log --oneline --graph --decorate --all&lt;/code&gt;, which I have aliased as &lt;code&gt;git l&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here’s the current state we’re in after we perform a squash+merge on GitHub&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;              vignettes
+             /
+older_commits
+             \
+              master&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here’s what the actual state of the repository looks like.&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:06] $ git l
+* 16f4b6b (HEAD -&amp;gt; vignettes) intro to gradethis for learnr docs
+* b4e2873 (origin/vignettes) emphasize not to use ==
+* f66aa39 i don&amp;#39;t want to stash
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+| |/  
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+| * 9083fc8 (me/master, master) rename functions per #65 update docs and tests (#72)
+| * 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+| * 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What we want is something like this:&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;older_commits
+             \
+              master
+                    \
+                     vignettes&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First we pull and update &lt;code&gt;master&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:18] $ git pull origin master
+From github.com:rstudio-education/gradethis
+ * branch            master     -&amp;gt; FETCH_HEAD
+Updating 9083fc8..a195fa3
+Fast-forward
+ inst/tutorials/grading-demo/grading-demo.Rmd | 249 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------
+ 1 file changed, 112 insertions(+), 137 deletions(-)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that master is up to date,&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;              vignettes
+             /
+older_commits
+             \
+              master-master # master has moved up a commit from pull&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;we can cherry-pick the commits of interest&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:30] $ git cherry-pick f66aa39^..16f4b6b
+[master 28c7ebe] i don&amp;#39;t want to stash
+ Date: Wed Aug 14 10:03:25 2019 -0400
+ 3 files changed, 72 insertions(+)
+ create mode 100644 vignettes/000-introduction_to_gradethis.Rmd
+ create mode 100644 vignettes/010-using_equal.Rmd
+ create mode 100644 vignettes/990-developers_guide.Rmd
+[master 9b84be6] emphasize not to use ==
+ Date: Wed Aug 14 11:44:36 2019 -0400
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 846bb18] intro to gradethis for learnr docs
+ Date: Tue Aug 27 10:51:06 2019 -0400
+ 1 file changed, 151 insertions(+), 9 deletions(-)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that I used the &lt;code&gt;&amp;lt;commit&amp;gt;^..&amp;lt;commit&amp;gt;&lt;/code&gt; notation while &lt;code&gt;cherry-pick&lt;/code&gt;ing.
+The &lt;code&gt;^&lt;/code&gt; means to also include that commit, otherwise it will start from that commit,
+but not include it (i.e., left exclusive).&lt;/p&gt;
+&lt;p&gt;If you wanted to not use the &lt;code&gt;^&lt;/code&gt; you need to pick the previous commit hash.
+In my case it would’ve been &lt;code&gt;d5cf9de&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, we need to clean up the references to our branch.
+Since we &lt;code&gt;cherry-pick&lt;/code&gt;ed commits on master we’re actually still on master.
+So we need to do update where our branches are pointing to by using `git reset –hard &lt;commit&gt;&lt;/p&gt;
+&lt;p&gt;First we checkout the &lt;code&gt;vignettes&lt;/code&gt; branch,&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:46] $ git checkout vignettes 
+Switched to branch &amp;#39;vignettes&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:52] $ git l
+* 846bb18 (master) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&amp;#39;t want to stash
+* a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| * 16f4b6b (HEAD -&amp;gt; vignettes) intro to gradethis for learnr docs
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don&amp;#39;t want to stash
+| | * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+| |/  
+|/|   
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+|/|   
+* | 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* | 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* | 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and then set it to the correct commit location.&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:04] $ git reset --hard 846bb18
+HEAD is now at 846bb18 intro to gradethis for learnr docs&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We then repeat the process for the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
+&lt;p&gt;First &lt;code&gt;checkout master&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:07] $ git checkout master
+Switched to branch &amp;#39;master&amp;#39;
+Your branch is ahead of &amp;#39;origin/master&amp;#39; by 3 commits.
+  (use &amp;quot;git push&amp;quot; to publish your local commits)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then &lt;code&gt;reset --hard&lt;/code&gt; to the correct location:&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:11] $ git reset --hard a195fa3
+HEAD is now at a195fa3 fix gradethis demo (#70)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now everything is in the right place&lt;/p&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;older_commits
+             \
+              master
+                    \
+                     vignettes&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:21] $ git l
+* 846bb18 (vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&amp;#39;t want to stash
+* a195fa3 (HEAD -&amp;gt; master, origin/master, origin/HEAD) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* 9cc3d6d Test result api fixes#60 (#63)
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don&amp;#39;t want to stash
+|/  
+* d5cf9de Doc fixes (#62) and function pruning&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, we can update the GitHub remote by force bushing the branch
+(remember to be on the branch before pushing).&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:53:25] $ git checkout vignettes 
+Switched to branch &amp;#39;vignettes&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:53:30] $ git push -f origin vignettes 
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 3.27 KiB | 3.27 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+To github.com:rstudio-education/gradethis.git
+ + b4e2873...846bb18 vignettes -&amp;gt; vignettes (forced update)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The final Graph now looks like this&lt;/p&gt;
+&lt;pre class=&#34;console&#34;&gt;&lt;code&gt;dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:54:13] $ git l
+* 846bb18 (HEAD -&amp;gt; vignettes, origin/vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don&amp;#39;t want to stash
+* a195fa3 (origin/master, origin/HEAD, master) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&amp;gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;It’s taken me many years to be comfortable with Git.
+My previous go-to method was to &lt;code&gt;rebase&lt;/code&gt; one branch on top of the other,
+but with the squash-and-merge method, a lot of commits get repeated,
+and it just makes &lt;code&gt;rebase&lt;/code&gt;ing a pain with all the commits and merge conflicts.&lt;/p&gt;
+&lt;p&gt;In this particular workflow I found &lt;code&gt;cherry-pick&lt;/code&gt; to be way more convenient,
+and led to fewer merge conflicts.&lt;/p&gt;
+&lt;p&gt;Again, the notation for &lt;code&gt;cherry-pick&lt;/code&gt; is weird, in that it is &lt;em&gt;left exclusive&lt;/em&gt; unless you put in the &lt;code&gt;^&lt;/code&gt;,
+i.e.,&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git cherry-pick &amp;lt;commit-start&amp;gt;^..&amp;lt;commit-end&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;not&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;git cherry-pick &amp;lt;commit-start&amp;gt;..&amp;lt;commit-end&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Inconsistencies with the `==` operator in R</title>
@@ -19,6 +494,7 @@
       
       <guid>/2019/08/06/inconsistencies-with-in-r/</guid>
       <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;One of the cool things about working on &lt;a href=&#34;https://github.com/rstudio-education/gradethis&#34;&gt;&lt;code&gt;gradethis&lt;/code&gt;&lt;/a&gt;

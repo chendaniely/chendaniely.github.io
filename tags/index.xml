@@ -7,15 +7,78 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Daniel Chen {year}</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>obs</title>
+      <link>/tags/obs/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/obs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>teaching</title>
+      <link>/tags/teaching/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/teaching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zoom</title>
+      <link>/tags/zoom/</link>
+      <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/zoom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>3d-print</title>
+      <link>/tags/3d-print/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/3d-print/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>makers</title>
+      <link>/tags/makers/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/makers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>/tags/tutorial/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -24,9 +87,36 @@
     <item>
       <title>rstudio-internship</title>
       <link>/tags/rstudio-internship/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/rstudio-internship/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rmarkdown</title>
+      <link>/tags/rmarkdown/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workflow</title>
+      <link>/tags/workflow/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/workflow/</guid>
       <description></description>
     </item>
     
@@ -229,15 +319,6 @@
     </item>
     
     <item>
-      <title>teaching</title>
-      <link>/tags/teaching/</link>
-      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/teaching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>pfps17-journal</title>
       <link>/tags/pfps17-journal/</link>
       <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
@@ -409,15 +490,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>/tags/python/</link>
-      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tutorials</title>
       <link>/tags/tutorials/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
@@ -495,15 +567,6 @@
       <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
       
       <guid>/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tutorial</title>
-      <link>/tags/tutorial/</link>
-      <pubDate>Fri, 16 May 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tutorial/</guid>
       <description></description>
     </item>
     
