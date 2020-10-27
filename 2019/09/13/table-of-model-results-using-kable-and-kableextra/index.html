@@ -132,7 +132,7 @@ One technique I learned while doing my MPH was to add variables to your model in
   
   <meta property="article:published_time" content="2019-09-13T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2020-02-29T02:12:56-05:00">
+  <meta property="article:modified_time" content="2020-10-27T09:43:57-04:00">
   
 
   
@@ -381,7 +381,7 @@ One technique I learned while doing my MPH was to add variables to your model in
 
 
 <meta content="2019-09-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-02-29 02:12:56 -0500 EST" itemprop="dateModified">
+<meta content="2020-10-27 09:43:57 -0400 EDT" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -396,7 +396,7 @@ One technique I learned while doing my MPH was to add variables to your model in
           Last updated on
       
     
-    <time>2020-02-29</time>
+    <time>2020-10-27</time>
   </span>
   
 
@@ -659,10 +659,10 @@ collapse_rows_dt &lt;- data.frame(C1 = c(rep(&quot;a&quot;, 3), rep(&quot;b&quot
 collapse_rows_dt</code></pre>
 <pre><code>##   C1 C2 C3 C4
 ## 1  a  c  1  0
-## 2  a  c  2  0
+## 2  a  c  2  1
 ## 3  a  d  3  1
-## 4  b  c  4  1
-## 5  b  d  5  1</code></pre>
+## 4  b  c  4  0
+## 5  b  d  5  0</code></pre>
 <pre class="r"><code>kable(collapse_rows_dt, align = &quot;c&quot;) %&gt;%
   kable_styling(full_width = F) %&gt;%
   column_spec(1, bold = T) %&gt;%
@@ -704,7 +704,7 @@ c
 2
 </td>
 <td style="text-align:center;">
-0
+1
 </td>
 </tr>
 <tr>
@@ -729,7 +729,7 @@ c
 4
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 </tr>
 <tr>
@@ -740,7 +740,7 @@ d
 5
 </td>
 <td style="text-align:center;">
-1
+0
 </td>
 </tr>
 </tbody>
