@@ -4,8 +4,8 @@ action_link: /about
 action_type: text
 description: |
   I am a lecturer at The University of British Columbia in the
-  [Statistics Department](https://www.stat.ubc.ca/users/daniel-y-chen) and 
-  Master's of Data Science program](https://masterdatascience.ubc.ca/why-ubc/people/faculty/daniel-chen).
+  <a href="https://www.stat.ubc.ca/users/daniel-y-chen">Statistics Department</a> and 
+  <a href="https://masterdatascience.ubc.ca/why-ubc/people/faculty/daniel-chen">Master's of Data Science program</a>.
   I also work in Developer Relations at Posit, PBC and
   studied data science education in the medical and biomedical sciences.
   
