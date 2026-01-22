@@ -3,9 +3,11 @@ action_label: Read More &rarr;
 action_link: /about
 action_type: text
 description: |
-  I am a PhD Candidate at Virginia Tech in
-  Genetics, Bioinformatics, and Computational Biology
-  studying data science education in the medical and biomedical sciences.
+  I am a lecturer at The University of British Columbia in the
+  [Statistics Department](https://www.stat.ubc.ca/users/daniel-y-chen) and 
+  Master's of Data Science program](https://masterdatascience.ubc.ca/why-ubc/people/faculty/daniel-chen).
+  I also work in Developer Relations at Posit, PBC and
+  studied data science education in the medical and biomedical sciences.
   
   Author of [*Pandas for Everyone*](https://smile.amazon.com/Pandas-Everyone-Analysis-Addison-Wesley-Analytics-ebook/dp/B0789WKTKJ).
 image_left: false
