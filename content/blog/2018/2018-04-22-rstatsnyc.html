@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2018-04-22">
+
+<title>rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs – Daniel Chen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H85THYPX4L"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Daniel Chen</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#accelerating-cancer-research-with-r" id="toc-accelerating-cancer-research-with-r" class="nav-link active" data-scroll-target="#accelerating-cancer-research-with-r">Accelerating Cancer Research with R</a></li>
+  <li><a href="#skin-first-makeup-second-a-metaphor-for-data-science" id="toc-skin-first-makeup-second-a-metaphor-for-data-science" class="nav-link" data-scroll-target="#skin-first-makeup-second-a-metaphor-for-data-science">Skin First, Makeup Second: A Metaphor for Data Science</a></li>
+  <li><a href="#r-for-big-data-in-the-cloud" id="toc-r-for-big-data-in-the-cloud" class="nav-link" data-scroll-target="#r-for-big-data-in-the-cloud">R for Big Data in the Cloud</a></li>
+  <li><a href="#the-lesser-known-stars-of-the-tidyverse" id="toc-the-lesser-known-stars-of-the-tidyverse" class="nav-link" data-scroll-target="#the-lesser-known-stars-of-the-tidyverse">The Lesser Known Stars of the Tidyverse</a></li>
+  <li><a href="#deep-learning-vs-machine-learning-in-r" id="toc-deep-learning-vs-machine-learning-in-r" class="nav-link" data-scroll-target="#deep-learning-vs-machine-learning-in-r">Deep Learning vs Machine Learning in R</a></li>
+  <li><a href="#doing-data-science" id="toc-doing-data-science" class="nav-link" data-scroll-target="#doing-data-science">Doing Data Science</a></li>
+  <li><a href="#forecasting-at-scale-how-and-why-we-developed-prophet-for-forecasting-at-facebook" id="toc-forecasting-at-scale-how-and-why-we-developed-prophet-for-forecasting-at-facebook" class="nav-link" data-scroll-target="#forecasting-at-scale-how-and-why-we-developed-prophet-for-forecasting-at-facebook">Forecasting at Scale: How and Why We Developed Prophet for Forecasting at Facebook</a></li>
+  <li><a href="#the-modern-r-data-package" id="toc-the-modern-r-data-package" class="nav-link" data-scroll-target="#the-modern-r-data-package">The Modern R Data Package</a></li>
+  <li><a href="#open-source-sampling-building-and-remixing-packages-in-r" id="toc-open-source-sampling-building-and-remixing-packages-in-r" class="nav-link" data-scroll-target="#open-source-sampling-building-and-remixing-packages-in-r">Open Source Sampling: Building and Remixing Packages in R</a></li>
+  <li><a href="#r-in-usma" id="toc-r-in-usma" class="nav-link" data-scroll-target="#r-in-usma">R in USMA</a></li>
+  <li><a href="#applying-deep-learning-to-satellite-images-to-estimate-violence-in-syria-and-poverty-in-mexico" id="toc-applying-deep-learning-to-satellite-images-to-estimate-violence-in-syria-and-poverty-in-mexico" class="nav-link" data-scroll-target="#applying-deep-learning-to-satellite-images-to-estimate-violence-in-syria-and-poverty-in-mexico">Applying Deep Learning to Satellite Images to Estimate Violence in Syria and Poverty in Mexico</a></li>
+  <li><a href="#apache-arrow-a-cross-language-development-platform-for-in-memory-analytics" id="toc-apache-arrow-a-cross-language-development-platform-for-in-memory-analytics" class="nav-link" data-scroll-target="#apache-arrow-a-cross-language-development-platform-for-in-memory-analytics">Apache Arrow: A Cross-Language Development Platform for In-Memory Analytics</a></li>
+  <li><a href="#r-in-minecraft" id="toc-r-in-minecraft" class="nav-link" data-scroll-target="#r-in-minecraft">R in Minecraft</a></li>
+  <li><a href="#may-the-r-be-with-you-exploring-the-star-wars-universe" id="toc-may-the-r-be-with-you-exploring-the-star-wars-universe" class="nav-link" data-scroll-target="#may-the-r-be-with-you-exploring-the-star-wars-universe">May the R be with You: Exploring the Star Wars Universe</a></li>
+  <li><a href="#patterns-and-drivers-of-ice-shelf-melt" id="toc-patterns-and-drivers-of-ice-shelf-melt" class="nav-link" data-scroll-target="#patterns-and-drivers-of-ice-shelf-melt">Patterns and Drivers of Ice Shelf Melt</a></li>
+  <li><a href="#cracking-into-the-meat-of-r-with-lobstr-console-visualisations-that-explain-how-stuff-works" id="toc-cracking-into-the-meat-of-r-with-lobstr-console-visualisations-that-explain-how-stuff-works" class="nav-link" data-scroll-target="#cracking-into-the-meat-of-r-with-lobstr-console-visualisations-that-explain-how-stuff-works">Cracking into the Meat of R with lobstr: Console Visualisations that Explain How Stuff Works</a></li>
+  <li><a href="#introduction-to-scikit-learn" id="toc-introduction-to-scikit-learn" class="nav-link" data-scroll-target="#introduction-to-scikit-learn">Introduction to scikit-learn</a></li>
+  <li><a href="#how-long-will-i-live-the-statistics-behind-prognosis-in-cancer-research" id="toc-how-long-will-i-live-the-statistics-behind-prognosis-in-cancer-research" class="nav-link" data-scroll-target="#how-long-will-i-live-the-statistics-behind-prognosis-in-cancer-research">How Long Will I Live? The Statistics Behind Prognosis in Cancer Research</a></li>
+  <li><a href="#automated-versus-do-it-yourself-methods-for-causal-inference-lessons-learned-from-a-data-analysis-competition" id="toc-automated-versus-do-it-yourself-methods-for-causal-inference-lessons-learned-from-a-data-analysis-competition" class="nav-link" data-scroll-target="#automated-versus-do-it-yourself-methods-for-causal-inference-lessons-learned-from-a-data-analysis-competition">Automated Versus Do-it-Yourself Methods for Causal Inference: Lessons Learned From a Data Analysis Competition</a></li>
+  <li><a href="#teach-the-tidyverse-to-beginners" id="toc-teach-the-tidyverse-to-beginners" class="nav-link" data-scroll-target="#teach-the-tidyverse-to-beginners">Teach the Tidyverse to Beginners</a></li>
+  <li><a href="#open-source-success-a-decade-of-r-in-finance" id="toc-open-source-success-a-decade-of-r-in-finance" class="nav-link" data-scroll-target="#open-source-success-a-decade-of-r-in-finance">Open Source Success: A Decade of R in Finance</a></li>
+  <li><a href="#investigating-user-experience-with-natural-language-analysis" id="toc-investigating-user-experience-with-natural-language-analysis" class="nav-link" data-scroll-target="#investigating-user-experience-with-natural-language-analysis">Investigating User Experience with Natural Language Analysis</a></li>
+  <li><a href="#phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection" id="toc-phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection" class="nav-link" data-scroll-target="#phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection">Phrasing: Communicating Data Science Through Tweets, Gifs, and Classic Misdirection</a></li>
+  <li><a href="#comparing-posteriors-estimating-practical-differences-between-models" id="toc-comparing-posteriors-estimating-practical-differences-between-models" class="nav-link" data-scroll-target="#comparing-posteriors-estimating-practical-differences-between-models">Comparing Posteriors: Estimating Practical Differences Between Models</a></li>
+  <li><a href="#the-what-where-how-why-of-gpu-computing-with-r" id="toc-the-what-where-how-why-of-gpu-computing-with-r" class="nav-link" data-scroll-target="#the-what-where-how-why-of-gpu-computing-with-r">The What-Where-How-Why of GPU computing with R</a></li>
+  <li><a href="#its-always-fun-getting-autographed-books" id="toc-its-always-fun-getting-autographed-books" class="nav-link" data-scroll-target="#its-always-fun-getting-autographed-books">It’s always fun getting autographed books!</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">rstatsnyc as told by <span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>, <span class="citation" data-cites="dataandme">@dataandme</span>, and autographs</h1>
+<p class="subtitle lead">An ongoing set up updates about what happened at the 2018 NYC R Conference</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 22, 2018</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>EDIT: I’ve added the notes from <a href="https://twitter.com/dataandme"><span class="citation" data-cites="dataandme">@dataandme</span></a> and linked to people’s twitter and slides (if I found them). This is probably going to be an ongoing process…</p>
+<hr>
+<p>Another year and another talk at the <a href="https://www.rstats.nyc/">NYC R Conference</a>. As always, the conference was filled with excellent speakers (I’m biased here becuase I was one of them…), food, and people.</p>
+<p>Brooke Watson (<a href="https://twitter.com/brookLYNevery1"><span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span></a>) did a <em>fantastic</em> job illustrating and summarzing <em>all</em> of the talks. So I’ve just linked to all her tweets (after the break).</p>
+<p>Oh… and I got my <a href="#signedbooks">books signed :)</a></p>
+<blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/Bh4-7x2Bf-2/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+<div style="padding:8px;">
+<div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;">
+<div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;">
+
+</div>
+</div>
+<p style=" margin:8px 0 0 0; padding:0 4px;">
+<a href="https://www.instagram.com/p/Bh4-7x2Bf-2/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">#rstatsnyc as told by #autographs. #rstats #nycdatamafia #python #datascience</a>
+</p>
+<p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+A post shared by <a href="https://www.instagram.com/chendaniely/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Daniel Chen</a> (<span class="citation" data-cites="chendaniely">@chendaniely</span>) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2018-04-22T22:59:39+00:00">Apr 22, 2018 at 3:59pm PDT</time>
+</p>
+</div>
+</blockquote>
+<script async="" defer="" src="//www.instagram.com/embed.js"></script>
+<!-- more -->
+<section id="accelerating-cancer-research-with-r" class="level1">
+<h1>Accelerating Cancer Research with R</h1>
+<p>Sandy Griffith, Flatiron Health, <a href="https://twitter.com/sgrifter"><span class="citation" data-cites="sgrifter">@sgrifter</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/sgrifter?ref_src=twsrc%5Etfw"><span class="citation" data-cites="sgrifter">@sgrifter</span></a> kicking off the <a href="https://twitter.com/nyrconf?ref_src=twsrc%5Etfw"><span class="citation" data-cites="nyrconf">@nyrconf</span></a> with a bang 🎉 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/9A9R0ozLBc">pic.twitter.com/9A9R0ozLBc</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987323042094354432?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="skin-first-makeup-second-a-metaphor-for-data-science" class="level1">
+<h1>Skin First, Makeup Second: A Metaphor for Data Science</h1>
+<p>Eurry Kim, Glossier, <a href="https://twitter.com/eurryPlot"><span class="citation" data-cites="eurryPlot">@eurryPlot</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/eurryPlot?ref_src=twsrc%5Etfw"><span class="citation" data-cites="eurryPlot">@eurryPlot</span></a> metaphors on 💯, skincare on 💯, walk-out song on 💯. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/vt8FpS4EYg">pic.twitter.com/vt8FpS4EYg</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987328781764513793?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+NYR 🔥 thus far… <a href="https://twitter.com/sgrifter?ref_src=twsrc%5Etfw"><span class="citation" data-cites="sgrifter">@sgrifter</span></a> &amp; <a href="https://twitter.com/eurryPlot?ref_src=twsrc%5Etfw"><span class="citation" data-cites="eurryPlot">@eurryPlot</span></a> starting out 💪<a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/6v8qZTYE33">pic.twitter.com/6v8qZTYE33</a>
+</p>
+— Mara Averick (<span class="citation" data-cites="dataandme">@dataandme</span>) <a href="https://twitter.com/dataandme/status/987350390524882946?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="r-for-big-data-in-the-cloud" class="level1">
+<h1>R for Big Data in the Cloud</h1>
+<p>Marck Vaisman, Microsoft, <a href="https://twitter.com/wahalulu"><span class="citation" data-cites="wahalulu">@wahalulu</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+<a href="https://twitter.com/hashtag/big?src=hash&amp;ref_src=twsrc%5Etfw">#big</a> <a href="https://twitter.com/hashtag/data?src=hash&amp;ref_src=twsrc%5Etfw">#data</a> <a href="https://twitter.com/hashtag/in?src=hash&amp;ref_src=twsrc%5Etfw">#in</a> <a href="https://twitter.com/hashtag/the?src=hash&amp;ref_src=twsrc%5Etfw">#the</a> <a href="https://twitter.com/hashtag/cloud?src=hash&amp;ref_src=twsrc%5Etfw">#cloud</a> !!!!! And abstracting away the backend, which truly sounds ideal. <br>By <a href="https://twitter.com/wahalulu?ref_src=twsrc%5Etfw"><span class="citation" data-cites="wahalulu">@wahalulu</span></a> <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/3z3L2Joiyq">pic.twitter.com/3z3L2Joiyq</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987335059308007424?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="the-lesser-known-stars-of-the-tidyverse" class="level1">
+<h1>The Lesser Known Stars of the Tidyverse</h1>
+<p>Emily Robinson, DataCamp, <a href="https://twitter.com/robinson_es"><span class="citation" data-cites="robinson_es">@robinson_es</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+The lesser known stars of the tidyverse, from a greater known star of <a href="https://twitter.com/RLadiesNYC?ref_src=twsrc%5Etfw"><span class="citation" data-cites="RLadiesNYC">@RLadiesNYC</span></a> 🌟 <a href="https://twitter.com/robinson_es?ref_src=twsrc%5Etfw"><span class="citation" data-cites="robinson_es">@robinson_es</span></a> at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/zGQQ4y0fUR">pic.twitter.com/zGQQ4y0fUR</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987346846950535171?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+👻 Big Data in the ☁ w/ <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> 🗣 <a href="https://twitter.com/wahalulu?ref_src=twsrc%5Etfw"><span class="citation" data-cites="wahalulu">@wahalulu</span></a><br>&amp;<br>Lesser known 🌟s of the <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> 💃 <a href="https://twitter.com/robinson_es?ref_src=twsrc%5Etfw"><span class="citation" data-cites="robinson_es">@robinson_es</span></a><br>🗽 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/gc3YkqxgOu">pic.twitter.com/gc3YkqxgOu</a>
+</p>
+— Mara Averick (<span class="citation" data-cites="dataandme">@dataandme</span>) <a href="https://twitter.com/dataandme/status/987351370666856448?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="deep-learning-vs-machine-learning-in-r" class="level1">
+<h1>Deep Learning vs Machine Learning in R</h1>
+<p>Jared P. Lander, Lander Analytics, <a href="https://twitter.com/jaredlander"><span class="citation" data-cites="jaredlander">@jaredlander</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw"><span class="citation" data-cites="jaredlander">@jaredlander</span></a> speaking truth to deep learning hype. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/emESZ48Ji6">pic.twitter.com/emESZ48Ji6</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987352531008393216?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="doing-data-science" class="level1">
+<h1>Doing Data Science</h1>
+<p>Dan Chen, Virginia Tech, <a href="https://twitter.com/chendaniely"><span class="citation" data-cites="chendaniely">@chendaniely</span></a></p>
+<p><a href="https://github.com/chendaniely/rstatsnyc_2018-data_science/blob/master/talk.html">slides</a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw"><span class="citation" data-cites="chendaniely">@chendaniely</span></a> on using best practices while getting stuff done. TL;DR: in structure there is freedom. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/SssCn47HmW">pic.twitter.com/SssCn47HmW</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987357809699418117?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+I've uploaded and linked my <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> slides on doing <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a>, link in the ongoing blogpost: <a href="https://t.co/wqFARzBbss">https://t.co/wqFARzBbss</a>. Comes complete with my dog, Hobbes. <a href="https://twitter.com/hashtag/rdogladies?src=hash&amp;ref_src=twsrc%5Etfw">#rdogladies</a>. <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/fiR0h5y8OB">pic.twitter.com/fiR0h5y8OB</a>
+</p>
+— Dⓐniel Chen (<span class="citation" data-cites="chendaniely">@chendaniely</span>) <a href="https://twitter.com/chendaniely/status/988535088014032896?ref_src=twsrc%5Etfw">April 23, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>First time converting slides to PDF. First time publishing on Speaker Deck. Hope it turns out okay &gt;.&lt;</p>
+<script async="" class="speakerdeck-embed" data-id="60ff3d852b3e4f5dafee9e97b8a12882" data-ratio="1.29456384323641" src="//speakerdeck.com/assets/embed.js"></script>
+</section>
+<section id="forecasting-at-scale-how-and-why-we-developed-prophet-for-forecasting-at-facebook" class="level1">
+<h1>Forecasting at Scale: How and Why We Developed Prophet for Forecasting at Facebook</h1>
+<p>Sean Taylor, Facebook, <a href="https://twitter.com/seanjtaylor"><span class="citation" data-cites="seanjtaylor">@seanjtaylor</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/seanjtaylor?ref_src=twsrc%5Etfw"><span class="citation" data-cites="seanjtaylor">@seanjtaylor</span></a> talked about scaling machine learning, which is really about making tools more usable and interpretable. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/KJMy0Q4LdL">pic.twitter.com/KJMy0Q4LdL</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987812859873779713?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="the-modern-r-data-package" class="level1">
+<h1>The Modern R Data Package</h1>
+<p>Noam Ross, ROpenSci &amp; EcoHealth Alliance, <a href="https://twitter.com/noamross"><span class="citation" data-cites="noamross">@noamross</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/noamross?ref_src=twsrc%5Etfw"><span class="citation" data-cites="noamross">@noamross</span></a> talked about the best ways to make data available and evergreen for analysis in R. Lots of lessons learned from the data packaging at <a href="https://twitter.com/EcoHealthNYC?ref_src=twsrc%5Etfw"><span class="citation" data-cites="EcoHealthNYC">@EcoHealthNYC</span></a>! <a href="https://t.co/bOJrkahuvT">pic.twitter.com/bOJrkahuvT</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987814482528342020?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="open-source-sampling-building-and-remixing-packages-in-r" class="level1">
+<h1>Open Source Sampling: Building and Remixing Packages in R</h1>
+<p>Brooke Watson, EcoHealth Alliance, <a href="https://twitter.com/brookLYNevery1"><span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Finally got around to drawing my own <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> talk on the train home. Key point: copy and remix from your unique multitude of interests, and you’ll probably make something new. Thank you for not judging my unrealistic hair expectations! <br><br>Slides here: <a href="https://t.co/ZxA2jBxL2c">https://t.co/ZxA2jBxL2c</a> <a href="https://t.co/E7pPoPes8T">pic.twitter.com/E7pPoPes8T</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987829373540716544?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="r-in-usma" class="level1">
+<h1>R in USMA</h1>
+<p>Dusty Turner, United States Military Academy, <a href="https://twitter.com/DTDusty"><span class="citation" data-cites="DTDusty">@DTDusty</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/DTDusty?ref_src=twsrc%5Etfw"><span class="citation" data-cites="DTDusty">@DTDusty</span></a> using shiny apps to make learning more interesting for everyone, from 6th graders to army cadets. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/7praNmFY1q">pic.twitter.com/7praNmFY1q</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987412652946284547?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="applying-deep-learning-to-satellite-images-to-estimate-violence-in-syria-and-poverty-in-mexico" class="level1">
+<h1>Applying Deep Learning to Satellite Images to Estimate Violence in Syria and Poverty in Mexico</h1>
+<p>Jonathan Hersh, Chapman University, <a href="https://twitter.com/DogmaticPrior"><span class="citation" data-cites="DogmaticPrior">@DogmaticPrior</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/DogmaticPrior?ref_src=twsrc%5Etfw"><span class="citation" data-cites="DogmaticPrior">@DogmaticPrior</span></a> on balancing model accuracy with model usefulness in humanitarian settings. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/zVDgxC95Fr">pic.twitter.com/zVDgxC95Fr</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987414601095630848?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="apache-arrow-a-cross-language-development-platform-for-in-memory-analytics" class="level1">
+<h1>Apache Arrow: A Cross-Language Development Platform for In-Memory Analytics</h1>
+<p>Wes McKinney, Two Sigma, <a href="https://twitter.com/wesmckinn"><span class="citation" data-cites="wesmckinn">@wesmckinn</span></a></p>
+<p><a href="https://www.slideshare.net/wesm/apache-arrow-crosslanguage-development-platform-for-inmemory-data">slides</a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/wesmckinn?ref_src=twsrc%5Etfw"><span class="citation" data-cites="wesmckinn">@wesmckinn</span></a> thinking BIG about data frame portability. Really excited to see what happens with Ursu labs. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/j3JfIfz3c4">pic.twitter.com/j3JfIfz3c4</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987419892143022080?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Rest of <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> Day 1 (before my little ❤ couldn't take it) feat. <a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw"><span class="citation" data-cites="jaredlander">@jaredlander</span></a> <a href="https://twitter.com/chendaniely?ref_src=twsrc%5Etfw"><span class="citation" data-cites="chendaniely">@chendaniely</span></a> <a href="https://twitter.com/seanjtaylor?ref_src=twsrc%5Etfw"><span class="citation" data-cites="seanjtaylor">@seanjtaylor</span></a> <a href="https://twitter.com/noamross?ref_src=twsrc%5Etfw"><span class="citation" data-cites="noamross">@noamross</span></a> <a href="https://twitter.com/brookLYNevery1?ref_src=twsrc%5Etfw"><span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span></a> <a href="https://twitter.com/DTDusty?ref_src=twsrc%5Etfw"><span class="citation" data-cites="dtdusty">@dtdusty</span></a> <a href="https://twitter.com/DogmaticPrior?ref_src=twsrc%5Etfw"><span class="citation" data-cites="DogmaticPrior">@DogmaticPrior</span></a> <a href="https://twitter.com/wesmckinn?ref_src=twsrc%5Etfw"><span class="citation" data-cites="wesmckinn">@wesmckinn</span></a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> 🗽 <a href="https://t.co/pTOXTPTO5b">pic.twitter.com/pTOXTPTO5b</a>
+</p>
+— Mara Averick (<span class="citation" data-cites="dataandme">@dataandme</span>) <a href="https://twitter.com/dataandme/status/988435298005803008?ref_src=twsrc%5Etfw">April 23, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/67s7If0jpkCCo3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen="">
+</iframe>
+<div style="margin-bottom:5px">
+<strong> <a href="//www.slideshare.net/wesm/apache-arrow-crosslanguage-development-platform-for-inmemory-data" title="Apache Arrow -- Cross-language development platform for in-memory data" target="_blank">Apache Arrow – Cross-language development platform for in-memory data</a> </strong> from <strong><a href="https://www.slideshare.net/wesm" target="_blank">Wes McKinney</a></strong>
+</div>
+</section>
+<section id="r-in-minecraft" class="level1">
+<h1>R in Minecraft</h1>
+<p>David Smith, Microsoft, <a href="https://twitter.com/revodavid"><span class="citation" data-cites="revodavid">@revodavid</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/revodavid?ref_src=twsrc%5Etfw"><span class="citation" data-cites="revodavid">@revodavid</span></a> on tricking The Youth™ into learning R via Minecraft 💫 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/yn77S34frl">pic.twitter.com/yn77S34frl</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987437600708456448?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="may-the-r-be-with-you-exploring-the-star-wars-universe" class="level1">
+<h1>May the R be with You: Exploring the Star Wars Universe</h1>
+<p>Evelina Gabasova, Alan Turing Institute, <a href="https://twitter.com/evelgab"><span class="citation" data-cites="evelgab">@evelgab</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/evelgab?ref_src=twsrc%5Etfw"><span class="citation" data-cites="evelgab">@evelgab</span></a> CRUSHING the final talk of the day. Use interpretable datasets!! <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/zO05w8kO2r">pic.twitter.com/zO05w8kO2r</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987441813626740737?ref_src=twsrc%5Etfw">April 20, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="patterns-and-drivers-of-ice-shelf-melt" class="level1">
+<h1>Patterns and Drivers of Ice Shelf Melt</h1>
+<p>Alex Boghosian, Columbia</p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Day two of <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> kicking off with avocado toast, glaciology, and cold brew. Alex Boghosian kicked it off right 💯 <a href="https://t.co/3rV06B7VsT">pic.twitter.com/3rV06B7VsT</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987702830227181568?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="cracking-into-the-meat-of-r-with-lobstr-console-visualisations-that-explain-how-stuff-works" class="level1">
+<h1>Cracking into the Meat of R with lobstr: Console Visualisations that Explain How Stuff Works</h1>
+<p>Hadley Wickham, RStudio, <a href="https://twitter.com/hadleywickham"><span class="citation" data-cites="hadleywickham">@hadleywickham</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw"><span class="citation" data-cites="hadleywickham">@hadleywickham</span></a> on the lobstr package, which helps users understand the unique strengths of R. (Not least of which, that R is made to be read by humans). 💯 <a href="https://twitter.com/hashtag/rstatnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatnyc</a> <a href="https://t.co/FBCzDC1HRx">pic.twitter.com/FBCzDC1HRx</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987713547483451393?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="introduction-to-scikit-learn" class="level1">
+<h1>Introduction to scikit-learn</h1>
+<p>Andreas Mueller, Columbia, <a href="https://twitter.com/amuellerml"><span class="citation" data-cites="amuellerml">@amuellerml</span></a></p>
+<p><a href="https://github.com/amueller/talks_odt/blob/master/2018/machine-learning-with-scikit-learn-NYC-R.pdf">slides</a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Lots of good workflow advice in <a href="https://twitter.com/amuellerml?ref_src=twsrc%5Etfw"><span class="citation" data-cites="amuellerml">@amuellerml</span></a> ’s <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> talk. Lots of data processing and selection goes into both supervised and unsupervised ML - cross validate the WHOLE pipeline, not just the final model. <a href="https://t.co/u8ABxwdv70">pic.twitter.com/u8ABxwdv70</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987726372092239873?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="how-long-will-i-live-the-statistics-behind-prognosis-in-cancer-research" class="level1">
+<h1>How Long Will I Live? The Statistics Behind Prognosis in Cancer Research</h1>
+<p>Emily Zabor, Memorial Sloan Kettering, <a href="https://twitter.com/zabormetrics"><span class="citation" data-cites="zabormetrics">@zabormetrics</span></a></p>
+<p><a href="https://github.com/zabore/slidedecks/blob/master/nyr2018_zabor.pdf">slides</a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+LIVING for <a href="https://twitter.com/zabormetrics?ref_src=twsrc%5Etfw"><span class="citation" data-cites="zabormetrics">@zabormetrics</span></a> ’s Epi and biostats realness this morning. god bless statisticians saving people from themselves 💯 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/CBKq2wWLUo">pic.twitter.com/CBKq2wWLUo</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987732086617444353?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="automated-versus-do-it-yourself-methods-for-causal-inference-lessons-learned-from-a-data-analysis-competition" class="level1">
+<h1>Automated Versus Do-it-Yourself Methods for Causal Inference: Lessons Learned From a Data Analysis Competition</h1>
+<p>Jennifer Hill, New York University</p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Nerding out SO hard at the back-to-back Epi stats talks. Jennifer Hill with some real talk about causal inference - it CAN be done in observational studies, if done carefully. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/4cS9PepySX">pic.twitter.com/4cS9PepySX</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987738817640706048?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="teach-the-tidyverse-to-beginners" class="level1">
+<h1>Teach the Tidyverse to Beginners</h1>
+<p>David Robinson, DataCamp, <a href="https://twitter.com/drob"><span class="citation" data-cites="drob">@drob</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Great talk from <a href="https://twitter.com/drob?ref_src=twsrc%5Etfw"><span class="citation" data-cites="drob">@drob</span></a> from <a href="https://twitter.com/DataCamp?ref_src=twsrc%5Etfw"><span class="citation" data-cites="DataCamp">@DataCamp</span></a>, who really genuinely understand and empathizes with the needs and goals of beginners. My favorite takeaway: if you Mr.&nbsp;Miyagi your students or colleagues, they’ll lose interest before they learn karate (/R). <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/e6szgb7vf4">pic.twitter.com/e6szgb7vf4</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987767397213003778?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="open-source-success-a-decade-of-r-in-finance" class="level1">
+<h1>Open Source Success: A Decade of R in Finance</h1>
+<p>Jeff Ryan, Citadel, <a href="https://twitter.com/lemnica"><span class="citation" data-cites="lemnica">@lemnica</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/lemnica?ref_src=twsrc%5Etfw"><span class="citation" data-cites="lemnica">@lemnica</span></a> on building software in community. “Build places that are nice to hang out in,” and the ecosystem will grow. <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/dJSjzFCeeX">pic.twitter.com/dJSjzFCeeX</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987771563020902402?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="investigating-user-experience-with-natural-language-analysis" class="level1">
+<h1>Investigating User Experience with Natural Language Analysis</h1>
+<p>Stephanie Kim, Algorithmia, <a href="https://twitter.com/StephLKim"><span class="citation" data-cites="StephLKim">@StephLKim</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Excellent talk from <a href="https://twitter.com/StephLKim?ref_src=twsrc%5Etfw"><span class="citation" data-cites="StephLKim">@StephLKim</span></a> about using NLP techniques to analyze user feedback 📖 <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/Z35nqgIBSL">pic.twitter.com/Z35nqgIBSL</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987782101448740866?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="phrasing-communicating-data-science-through-tweets-gifs-and-classic-misdirection" class="level1">
+<h1>Phrasing: Communicating Data Science Through Tweets, Gifs, and Classic Misdirection</h1>
+<p>Mara Averick, RStudio, <a href="https://twitter.com/dataandme"><span class="citation" data-cites="dataandme">@dataandme</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/dataandme?ref_src=twsrc%5Etfw"><span class="citation" data-cites="dataandme">@dataandme</span></a> crushing it with humor, humility, and Pam Poovey. 🔥🔥🔥<a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/cDzdEozoEj">pic.twitter.com/cDzdEozoEj</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987800135936684032?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="comparing-posteriors-estimating-practical-differences-between-models" class="level1">
+<h1>Comparing Posteriors: Estimating Practical Differences Between Models</h1>
+<p>Max Kuhn, RStudio, <a href="https://twitter.com/topepos"><span class="citation" data-cites="topepos">@topepos</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+.<a href="https://twitter.com/topepos?ref_src=twsrc%5Etfw"><span class="citation" data-cites="topepos">@topepos</span></a> on the tidyposterior package to compare performance between models in R with Stan. 10/10 talk, 10/10 phrasing <a href="https://t.co/HhGoaUHugp">pic.twitter.com/HhGoaUHugp</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987804401275428866?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="the-what-where-how-why-of-gpu-computing-with-r" class="level1">
+<h1>The What-Where-How-Why of GPU computing with R</h1>
+<p>Kelly O’Briant, MapD, <a href="https://twitter.com/kellrstats"><span class="citation" data-cites="kellrstats">@kellrstats</span></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Final talk of the day: <a href="https://twitter.com/kellrstats?ref_src=twsrc%5Etfw"><span class="citation" data-cites="kellrstats">@kellrstats</span></a>, making a Suuuper compelling case for incorporating GPU computing into R pipelines. So much data viz power! <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://t.co/IzZdBFSiSx">pic.twitter.com/IzZdBFSiSx</a>
+</p>
+— Brooke Watson (<span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>) <a href="https://twitter.com/brookLYNevery1/status/987809301094977536?ref_src=twsrc%5Etfw">April 21, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Day 2: ✍️ gets tired, 📝 get weird… <a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw"><span class="citation" data-cites="hadleywickham">@hadleywickham</span></a> <a href="https://twitter.com/drob?ref_src=twsrc%5Etfw"><span class="citation" data-cites="drob">@drob</span></a> <a href="https://twitter.com/lemnica?ref_src=twsrc%5Etfw"><span class="citation" data-cites="lemnica">@lemnica</span></a> <a href="https://twitter.com/topepos?ref_src=twsrc%5Etfw"><span class="citation" data-cites="topepos">@topepos</span></a> &amp; <a href="https://twitter.com/kellrstats?ref_src=twsrc%5Etfw"><span class="citation" data-cites="kellrstats">@kellrstats</span></a> oh my!! <br>/* Also, Mara borks Twitter handles 😬 */<a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/daoclum3Qj">pic.twitter.com/daoclum3Qj</a>
+</p>
+— Mara Averick (<span class="citation" data-cites="dataandme">@dataandme</span>) <a href="https://twitter.com/dataandme/status/988437353936105472?ref_src=twsrc%5Etfw">April 23, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+<section id="its-always-fun-getting-autographed-books" class="level1">
+<h1>It’s always fun getting autographed books!</h1>
+<p><a name="signedbooks"></a></p>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Another year at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, another batch of books to get autographed! <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a> <a href="https://twitter.com/hashtag/nycdatamafia?src=hash&amp;ref_src=twsrc%5Etfw">#nycdatamafia</a> <a href="https://t.co/i4EoW0OSa1">pic.twitter.com/i4EoW0OSa1</a>
+</p>
+— Dⓐniel Chen (<span class="citation" data-cites="chendaniely">@chendaniely</span>) <a href="https://twitter.com/chendaniely/status/987085700578316290?ref_src=twsrc%5Etfw">April 19, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet blockquote" data-lang="en">
+<p lang="en" dir="ltr">
+Had a great time at <a href="https://twitter.com/hashtag/rstatsnyc?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsnyc</a>, thanks <a href="https://twitter.com/jaredlander?ref_src=twsrc%5Etfw"><span class="citation" data-cites="jaredlander">@jaredlander</span></a>! I even won the R Packages book by <a href="https://twitter.com/hadleywickham?ref_src=twsrc%5Etfw"><span class="citation" data-cites="hadleywickham">@hadleywickham</span></a> - so here's to all the future R packages coming out of <a href="https://twitter.com/turinginst?ref_src=twsrc%5Etfw"><span class="citation" data-cites="turinginst">@turinginst</span></a> 👍 <a href="https://t.co/sxSo3AtZby">pic.twitter.com/sxSo3AtZby</a>
+</p>
+— Evelina Gabasova (<span class="citation" data-cites="evelgab">@evelgab</span>) <a href="https://twitter.com/evelgab/status/987850908393463808?ref_src=twsrc%5Etfw">April 22, 2018</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/chendaniely\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

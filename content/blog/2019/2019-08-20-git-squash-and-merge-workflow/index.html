@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Daniel Chen">
+<meta name="dcterms.date" content="2019-08-27">
+
+<title>Git Squash and Merge Workflow – Daniel Chen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H85THYPX4L"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
+</script>
+
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Daniel Chen</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-general-problem" id="toc-the-general-problem" class="nav-link active" data-scroll-target="#the-general-problem">The general problem</a></li>
+  <li><a href="#in-the-real-world" id="toc-in-the-real-world" class="nav-link" data-scroll-target="#in-the-real-world">In the real world</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Git Squash and Merge Workflow</h1>
+<p class="subtitle lead">Doing gitmastics as an RStudio intern</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 27, 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>I have a love-hate relationship with Git. It took me years of following cookbooks and following strict set of commands to get a sense of how it works. I still have to spend time wrangling Git at times, but I’ve gotten to the point where I’m just annoyed, instead of scared. Here is the branching-squash-and-merge workflow I’ve been using at RStudio.</p>
+<p>Also, sorry I may be glossing over some of the Git basics in this post…</p>
+<!-- more -->
+<p>At RStudio, I’m using a brancing workflow where I am added directly as a collaborator to a project. I still have to create pull requests for review, but contrast this with me forking the repository and creating a pull regrest from my copy (<code>origin</code>) to the parent repository (<code>upstream</code>).</p>
+<p>Every workflow has benefits and drawbacks. The current workflow I’m using is a “squash and merge”. Where all the commits in a pull request are “squashed” into a single commit when it it merged into master. This means the main commit history is <em>super</em> clean, and potentially sets up the repository to create automatic change logs or <code>NEWS</code> reports. The downside is if you start branching off other branches (instead of the main <code>master</code>), you’ll have to <code>rebase</code> or <code>cherry-pick</code> to update the branches after a branch gets merged.</p>
+<section id="the-general-problem" class="level1">
+<h1>The general problem</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>m1-m2-m3 # the master branch</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       \</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        x11-x12-x13 # example branch_1</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                  \</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                   y21-y22-y23 # example branch_2 that depends on branch_1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After a squash and merge the Git DAG looks like this</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m1-m2-m3-s1 # master branch + squash-merge</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       \</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        x11-x12-x13 # commits from branch_1 still exist</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                  \</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                   y21-y22-y23 # commits from branch_2 still exist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can’t simply just squash merge <code>branch_2</code>, becuase the commits from <code>branch_1</code> are technically still part of the history of <code>branch_2</code>, so a rebase of <code>branch_2</code> against the new master will cause conflicts, <em>and</em> I’ll have duplicate messages if I do another squash+merge of <code>branch_2</code>.</p>
+<p>If you did a <code>rebase</code> you’ll end up with this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout branch_2 <span class="co"># make sure you're on branch_2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase master</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fix conflicts</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># so many conflicts</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m1-m2-m3-s1 # master branch + squash-merge</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>          \</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>           x11-x12-x13-y21-y22-y23 # commits from branch_1 and branch_2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Instead, you need to <code>git cherry-pick</code> the commits against the updated master with just the commits from <code>branch_2</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout master <span class="co"># go to master branch so you can cherry-pick commits on top</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick y21^..y23 <span class="co"># this is how to cherry-pick multiple commits</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (note the ^ to also include commit y21, otherwise it is left exclusive)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>m1-m2-m3-s1 # master branch + squash-merge</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       \  \</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        \  y21-y22-y23 # cherry-pick commits from branch_2 # this is good</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>         \</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>          x11-x12-x13 # commits from branch_1 still exist # already in s1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We don’t need the commits from branch one anymore (<code>x11</code> to <code>x13</code> in the example), so we can deleate that branch using <code>git branch -D branch_1</code>, note you have to use a force delete with the <code>-D</code> flag, because git does not think that <code>branch_1</code> was merged because we did a squash+merge. Otherwise you would’ve been able to use the lowercase <code>-d</code> flag to delete the branch.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>m1-m2-m3-s1 # master branch + squash-merge</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>          \</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>           y21-y22-y23 # cherry-pick commits from branch_2 # yay!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now we finally get everthing up to date, and can re-update the pull request for branch 2 by doing a force push: <code>git push -f origin master</code>.</p>
+</section>
+<section id="in-the-real-world" class="level1">
+<h1>In the real world</h1>
+<p>The PR process is the same as usual:</p>
+<ol type="1">
+<li>Create a branch</li>
+<li>Push the branch to the remote (i.e., Github, in this case)</li>
+<li>Pull request!</li>
+</ol>
+<p>However, Github now gives you an option of which <em>green</em> button you want! Specifically, the option to “Squash and merge”</p>
+<p><img src="./github_squash_merge.png" class="img-fluid"></p>
+<p>This is fine when you have a totally independent PR and there’s no other work that is based of the current work on that branch. However here’s an example where I created separate branches for each “feature”, but they all rely on the previous feature.</p>
+<p>Output of my <code>git log --oneline --graph --decorate --all</code>, which I have aliased as <code>git l</code></p>
+<p>Here’s the current state we’re in after we perform a squash+merge on GitHub</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">              vignettes</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">             /</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>older_commits</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             \</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              master</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Here’s what the actual state of the repository looks like.</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:06] $ git l
+* 16f4b6b (HEAD -&gt; vignettes) intro to gradethis for learnr docs
+* b4e2873 (origin/vignettes) emphasize not to use ==
+* f66aa39 i don't want to stash
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+| |/  
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+| * 9083fc8 (me/master, master) rename functions per #65 update docs and tests (#72)
+| * 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+| * 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning
+</code></pre>
+<p>What we want is something like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>older_commits</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>             \</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>              master</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                    \</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                     vignettes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>First we pull and update <code>master</code></p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:18] $ git pull origin master
+From github.com:rstudio-education/gradethis
+ * branch            master     -&gt; FETCH_HEAD
+Updating 9083fc8..a195fa3
+Fast-forward
+ inst/tutorials/grading-demo/grading-demo.Rmd | 249 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------
+ 1 file changed, 112 insertions(+), 137 deletions(-)</code></pre>
+<p>Now that master is up to date,</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">              vignettes</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">             /</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>older_commits</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>             \</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>              master-master # master has moved up a commit from pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>we can cherry-pick the commits of interest</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:30] $ git cherry-pick f66aa39^..16f4b6b
+[master 28c7ebe] i don't want to stash
+ Date: Wed Aug 14 10:03:25 2019 -0400
+ 3 files changed, 72 insertions(+)
+ create mode 100644 vignettes/000-introduction_to_gradethis.Rmd
+ create mode 100644 vignettes/010-using_equal.Rmd
+ create mode 100644 vignettes/990-developers_guide.Rmd
+[master 9b84be6] emphasize not to use ==
+ Date: Wed Aug 14 11:44:36 2019 -0400
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+[master 846bb18] intro to gradethis for learnr docs
+ Date: Tue Aug 27 10:51:06 2019 -0400
+ 1 file changed, 151 insertions(+), 9 deletions(-)
+</code></pre>
+<p>Note that I used the <code>&lt;commit&gt;^..&lt;commit&gt;</code> notation while <code>cherry-pick</code>ing. The <code>^</code> means to also include that commit, otherwise it will start from that commit, but not include it (i.e., left exclusive).</p>
+<p>If you wanted to not use the <code>^</code> you need to pick the previous commit hash. In my case it would’ve been <code>d5cf9de</code>.</p>
+<p>Now, we need to clean up the references to our branch. Since we <code>cherry-pick</code>ed commits on master we’re actually still on master. So we need to do update where our branches are pointing to by using `git reset –hard <commit></commit></p>
+<p>First we checkout the <code>vignettes</code> branch,</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:51:46] $ git checkout vignettes 
+Switched to branch 'vignettes'</code></pre>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:51:52] $ git l
+* 846bb18 (master) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don't want to stash
+* a195fa3 (origin/master, origin/HEAD) fix gradethis demo (#70)
+| * 16f4b6b (HEAD -&gt; vignettes) intro to gradethis for learnr docs
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don't want to stash
+| | * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| | * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| | * 19354dd refactor is_code_same to is_code_identical
+| | * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+| |/  
+|/|   
+| | * 91cf16e (update_grading_demo) fix gradethis demo
+| |/  
+|/|   
+* | 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* | 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* | 9cc3d6d Test result api fixes#60 (#63)
+|/  
+* d5cf9de Doc fixes (#62) and function pruning</code></pre>
+<p>and then set it to the correct commit location.</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:04] $ git reset --hard 846bb18
+HEAD is now at 846bb18 intro to gradethis for learnr docs</code></pre>
+<p>We then repeat the process for the <code>master</code> branch.</p>
+<p>First <code>checkout master</code></p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:52:07] $ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)</code></pre>
+<p>Then <code>reset --hard</code> to the correct location:</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:11] $ git reset --hard a195fa3
+HEAD is now at a195fa3 fix gradethis demo (#70)</code></pre>
+<p>Now everything is in the right place</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>older_commits</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>             \</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>              master</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                    \</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                     vignettes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:52:21] $ git l
+* 846bb18 (vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don't want to stash
+* a195fa3 (HEAD -&gt; master, origin/master, origin/HEAD) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)
+* 9cc3d6d Test result api fixes#60 (#63)
+| * b4e2873 (origin/vignettes) emphasize not to use ==
+| * f66aa39 i don't want to stash
+|/  
+* d5cf9de Doc fixes (#62) and function pruning</code></pre>
+<p>Finally, we can update the GitHub remote by force bushing the branch (remember to be on the branch before pushing).</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (master) 
+[10:53:25] $ git checkout vignettes 
+Switched to branch 'vignettes'</code></pre>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:53:30] $ git push -f origin vignettes 
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 3.27 KiB | 3.27 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+To github.com:rstudio-education/gradethis.git
+ + b4e2873...846bb18 vignettes -&gt; vignettes (forced update)</code></pre>
+<p>The final Graph now looks like this</p>
+<pre class="console"><code>dchen@longclaw [~/git/hub/gradethis]  (vignettes) 
+[10:54:13] $ git l
+* 846bb18 (HEAD -&gt; vignettes, origin/vignettes) intro to gradethis for learnr docs
+* 9b84be6 emphasize not to use ==
+* 28c7ebe i don't want to stash
+* a195fa3 (origin/master, origin/HEAD, master) fix gradethis demo (#70)
+| * feb82b3 (origin/gh-pages) Deploy rstudio-education/gradethis to github.com/rstudio-education/gradethis.git:gh-pages
+| * 4aaee31 (origin/compare_default_formals, compare_default_formals) call_standarise_formals
+| * 19354dd refactor is_code_same to is_code_identical
+| * 5591ae8 rename fxn code_is_same -&gt; is_code_same
+|/  
+| * 91cf16e (update_grading_demo) fix gradethis demo
+|/  
+* 9083fc8 (me/master) rename functions per #65 update docs and tests (#72)
+* 5ec1144 Docs to markdown per #68 by @andrie + Barret changes (#69)</code></pre>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>It’s taken me many years to be comfortable with Git. My previous go-to method was to <code>rebase</code> one branch on top of the other, but with the squash-and-merge method, a lot of commits get repeated, and it just makes <code>rebase</code>ing a pain with all the commits and merge conflicts.</p>
+<p>In this particular workflow I found <code>cherry-pick</code> to be way more convenient, and led to fewer merge conflicts.</p>
+<p>Again, the notation for <code>cherry-pick</code> is weird, in that it is <em>left exclusive</em> unless you put in the <code>^</code>, i.e.,</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commit-start<span class="op">&gt;</span>^..<span class="op">&lt;</span>commit-end<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>not</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick <span class="op">&lt;</span>commit-start<span class="op">&gt;</span>..<span class="op">&lt;</span>commit-end<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/chendaniely\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
