@@ -11,7 +11,6 @@ excerpt: |
 layout: single
 subtitle: |
   Python Data Analysis
-tags:
 title: Pandas for Everyone
 ---
 

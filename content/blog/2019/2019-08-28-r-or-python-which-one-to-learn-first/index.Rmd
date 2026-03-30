@@ -11,10 +11,6 @@ subtitle: 'Pick one, learn it well, skills will transfer over'
 summary: ''
 authors: []
 featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
 projects: []
 ---
 

@@ -12,10 +12,6 @@ summary: ''
 authors: []
 lastmod: '2019-09-13T10:30:59-04:00'
 featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
 projects: []
 ---
 

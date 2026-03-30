@@ -12,10 +12,6 @@ summary: ''
 authors: []
 lastmod: '2020-01-29'
 featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
 projects: []
 ---
 
@@ -146,9 +142,11 @@ More of Julia's lab at the bottom of the post.
 
 My dad's job relocated him to Carry, NC so I was visiting him when a Data Science Happy Hour was announced in Raleigh and got to meet Joyce.
 
+<!--
 <center>
 `r blogdown::shortcode('tweet', '1171456421595996160')`
 </center>
+-->
 
 ```{r, echo=FALSE}
 knitr::include_graphics("rstudio_intern_joyce.jpg")
@@ -159,9 +157,11 @@ knitr::include_graphics("rstudio_intern_joyce.jpg")
 I met with the Shiny team for daily stand-ups, and the education team about every week.
 The sheer amount of people I could ask for help is absolutely **insane**.
 
+<!--
 <center>
 `r blogdown::shortcode('tweet', '1165696768618749953')`
 </center>
+-->
 
 ### Everyone else
 

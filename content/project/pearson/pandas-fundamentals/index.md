@@ -11,7 +11,7 @@ excerpt: |
 layout: single
 subtitle: |
   Pandas Data Analysis with Python Fundamentals
-tags:
+
 title: Pandas Data Analysis with Python Fundamentals
 ---
 
