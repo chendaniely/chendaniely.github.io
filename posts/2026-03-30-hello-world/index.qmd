@@ -1,7 +1,0 @@
----
-title: "Hello World"
-date: "2026-03-30"
-categories: [general]
----
-
-This is my first blog post on the new Quarto site.
