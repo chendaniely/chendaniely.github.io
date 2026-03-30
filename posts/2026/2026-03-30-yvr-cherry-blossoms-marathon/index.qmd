@@ -1,0 +1,650 @@
+---
+title: "The Vancouver Cherry Blossom Marathon"
+subtitle: "A Data-Driven Guide to the City's Most Spectacular Streets"
+date: "2026-03-30"
+categories: [general, R]
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+#| echo: false
+
+library(sf)
+library(dplyr)
+library(spopt)
+library(mapgl)
+library(here)
+```
+
+```{r}
+#| label: load-and-route
+#| message: false
+#| echo: false
+
+top30_stops <- st_read(
+  here("submodules/yvr-cherry-blossoms/data/processed/top30_streets.geojson"),
+  quiet = TRUE
+)
+tsp_stops <- top30_stops %>% filter(rank <= 10)
+all_streets <- st_read(
+  here("submodules/yvr-cherry-blossoms/data/final/streets.geojson"),
+  quiet = TRUE
+)
+
+coords_matrix <- st_coordinates(tsp_stops)
+cost_matrix_euclidean <- as.matrix(dist(coords_matrix))
+
+result <- route_tsp(
+  tsp_stops,
+  start = 1,
+  end = NULL,
+  cost_matrix = cost_matrix_euclidean
+)
+
+stops_ordered <- result %>%
+  filter(!is.na(.visit_order)) %>%
+  arrange(.visit_order) %>%
+  mutate(
+    label = as.character(.visit_order),
+    rank_label = as.character(rank),
+    google_address = paste0(street_label, ", Vancouver, BC")
+  )
+
+top30_clusters <- top30_stops %>%
+  st_transform(32610) %>%
+  st_buffer(500) %>%
+  st_union() %>%
+  st_cast("POLYGON") %>%
+  st_as_sf() %>%
+  mutate(cluster_id = row_number()) %>%
+  st_transform(4326)
+
+google_maps_url <- function(stops_sf, address_col = "google_address") {
+  stops_sf[[address_col]] %>%
+    URLencode(reserved = TRUE) %>%
+    paste(collapse = "/") %>%
+    paste0("https://www.google.com/maps/dir/", .)
+}
+
+google_url <- google_maps_url(stops_ordered)
+
+route_preview <- stops_ordered %>%
+  st_coordinates() %>%
+  as.data.frame() %>%
+  st_as_sf(coords = c("X", "Y"), crs = 4326) %>%
+  st_combine() %>%
+  st_cast("LINESTRING") %>%
+  st_as_sf()
+
+walk_km <- as.numeric(st_length(st_transform(route_preview, 32610))) / 1000
+walk_miles <- walk_km * 0.621371
+```
+
+Using data from the [Vancouver Open Data Portal](https://opendata.vancouver.ca/pages/home/),
+some vibes, and lots of checking
+We have the Vancouver Cherry Blossom (Ultra?) Marathon!
+
+Every spring, Vancouver transforms into one of the most breathtaking cities on earth.
+Hundreds of cherry blossoms erupt in pink and white blossoms, turning ordinary streets into canopies of colour.
+The season lasts only a few weeks;
+The official [Vancouver Cherry Blossom Festival](https://vcbf.ca/)
+runs from March 27 to April 17.
+
+But which streets are *actually* worth visiting? And if you only had one day, could you see the best of them all in a single route?
+
+In this part of the blog series, I'll just cover the main results.
+The more technical code breakdown will be in later posts.
+All of this was inspired by [Kyle Walker](https://walker-data.com/)'s
+[{spopt}](https://walker-data.com/spopt-r) [route optimization code](https://walker-data.com/spopt-r/articles/routing.html) from his [LinkedIn post](https://www.linkedin.com/posts/walkerke_rstats-activity-7440044826521133057-PIhA).
+
+If you're interested, the code for this analysis is all here: <https://github.com/chendaniely/yvr-cherry-blossoms>
+
+## Where are Vancouver's cherry blossoms?
+
+Not all neighbourhoods are created equal when it comes to cherry blossoms.
+
+The map below shows every individual Japanese flowering cherry tree in Vancouver's public tree inventory, overlaid on neighbourhood boundaries.
+There are many different types of trees that are in the city, I hope I've properly captured the correct set of cherry blossoms,
+I didn't know there were so many different kinds!
+
+```{r}
+#| label: map-all-trees
+#| echo: false
+#| message: false
+
+neighbourhoods_raw <- st_read(
+  here(
+    "submodules/yvr-cherry-blossoms/data/original/local-area-boundary.geojson"
+  ),
+  quiet = TRUE
+)
+cherry_trees_raw <- st_read(
+  here("submodules/yvr-cherry-blossoms/data/final/cherry_blossoms.geojson"),
+  quiet = TRUE
+)
+cherry_trees_raw <- st_transform(cherry_trees_raw, st_crs(neighbourhoods_raw))
+
+tree_variety_names <- sort(unique(cherry_trees_raw$common_name))
+tree_variety_colors <- colorRampPalette(
+  c("#e879a0", "#a855f7", "#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#06b6d4")
+)(length(tree_variety_names))
+
+maplibre(style = openfreemap_style("bright"), bounds = neighbourhoods_raw) %>%
+  add_line_layer(
+    id = "neighbourhood-borders-raw",
+    source = neighbourhoods_raw,
+    line_color = "#d97706",
+    line_width = 1.5,
+    line_opacity = 0.8
+  ) %>%
+  add_circle_layer(
+    id = "all-trees",
+    source = cherry_trees_raw,
+    circle_radius = 3,
+    circle_color = match_expr(
+      column = "common_name",
+      values = tree_variety_names,
+      stops = tree_variety_colors,
+      default = "#cccccc"
+    ),
+    circle_opacity = 0.6,
+    tooltip = "common_name"
+  ) %>%
+  add_categorical_legend(
+    legend_title = "Tree variety",
+    values = tree_variety_names,
+    colors = tree_variety_colors,
+    patch_shape = "circle"
+  )
+```
+
+The next map shows tree *density* per neighbourhood. Smaller, denser areas tend to concentrate cherry trees along residential streets, which means more blossoms per step.
+This way, if you're in a certain area, you can see more cherry blossoms as you walk around.
+
+```{r}
+#| label: map-neighbourhoods
+#| echo: false
+#| message: false
+
+neighbourhoods <- st_read(
+  here(
+    "submodules/yvr-cherry-blossoms/data/original/local-area-boundary.geojson"
+  ),
+  quiet = TRUE
+)
+cherry_trees <- st_read(
+  here("submodules/yvr-cherry-blossoms/data/final/cherry_blossoms.geojson"),
+  quiet = TRUE
+)
+cherry_trees <- st_transform(cherry_trees, st_crs(neighbourhoods))
+
+tree_counts <- st_join(cherry_trees, neighbourhoods, join = st_within) %>%
+  st_drop_geometry() %>%
+  count(name, name = "tree_count")
+
+neighbourhoods <- neighbourhoods %>%
+  mutate(area_km2 = as.numeric(st_area(geometry)) / 1e6) %>%
+  left_join(tree_counts, by = "name") %>%
+  mutate(
+    tree_count    = replace(tree_count, is.na(tree_count), 0),
+    trees_per_km2 = tree_count / area_km2,
+    tooltip_text  = paste0(
+      "<b>", name, "</b><br/>",
+      "Trees per km²: ", round(trees_per_km2, 1), "<br/>",
+      "Total trees: ", tree_count
+    )
+  )
+
+maplibre(style = openfreemap_style("bright"), bounds = neighbourhoods) %>%
+  add_fill_layer(
+    id = "neighbourhood-density",
+    source = neighbourhoods,
+    fill_color = interpolate(
+      column = "trees_per_km2",
+      values = c(
+        0,
+        median(neighbourhoods$trees_per_km2),
+        max(neighbourhoods$trees_per_km2)
+      ),
+      stops = c("#f7fcf0", "#41ab5d", "#00441b"),
+      na_color = "#cccccc"
+    ),
+    fill_opacity = 0.75,
+    tooltip = "tooltip_text"
+  ) %>%
+  add_line_layer(
+    id = "neighbourhood-borders",
+    source = neighbourhoods,
+    line_color = "white",
+    line_width = 1,
+    line_opacity = 0.8
+  ) %>%
+  add_continuous_legend(
+    legend_title = "Cherry trees per km²",
+    values = c(0, max(neighbourhoods$trees_per_km2)),
+    colors = c("#f7fcf0", "#00441b"),
+    position = "bottom-right"
+  )
+```
+
+The highest density neighborhood is in Mount Pleasant (where they had the Olympic Village).
+But the [Vancouver Cherry Blossom Festival](https://vcbf.ca/) happens in David Lam Park in Downtown Vancouver,
+one of the lowest cherry blossom density neighborhoods.
+If you compare the tree locations to the neighborhood map,
+you can see almost all the cherry blossoms trees are in David Lam Park, but the downtown area is massive.
+
+## The best streets in the city
+
+Neighbourhoods are a useful overview, but the real experience happens at street level.
+We want high density areas (streets) to take our scenic pictures!
+
+Instead of neighborhood-level, we'll look at individual street segments in Vancouver and calculate how many cherry trees line each block.
+Then, similar to looking at neighborhood density, we can normalize by street length to find the streets with the highest blossom *density*.
+
+The map below shows the top 30 streets. The shaded areas group streets that are close enough to visit together in a single stroll (about 500 meters).
+
+```{r}
+#| label: map-top30
+#| echo: false
+#| message: false
+
+streets_sf <- st_read(
+  here("submodules/yvr-cherry-blossoms/data/processed/streets_counted.geojson"),
+  quiet = TRUE
+)
+streets_dense <- streets_sf %>% filter(total_trees >= 5)
+
+maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
+  add_line_layer(
+    id = "all-streets",
+    source = all_streets,
+    line_color = "#dddddd",
+    line_width = 1,
+    line_opacity = 0.4
+  ) %>%
+  add_fill_layer(
+    id = "clusters-fill",
+    source = top30_clusters,
+    fill_color = "#fde68a",
+    fill_opacity = 0.25
+  ) %>%
+  add_line_layer(
+    id = "clusters-border",
+    source = top30_clusters,
+    line_color = "#d97706",
+    line_width = 1.5,
+    line_opacity = 0.7
+  ) %>%
+  add_line_layer(
+    id = "streets-density",
+    source = streets_dense,
+    line_color = interpolate(
+      column = "density",
+      values = c(0, median(streets_dense$density), max(streets_dense$density)),
+      stops = c("#edf8e9", "#74c476", "#00441b")
+    ),
+    line_width = interpolate(
+      column = "density",
+      values = c(0, max(streets_dense$density)),
+      stops = c(1.5, 6)
+    ),
+    line_opacity = 0.9,
+    tooltip = "street_label",
+    popup = concat(
+      "<b>",
+      get_column("street_label"),
+      "</b><br/>",
+      "Trees / 100m: ",
+      number_format(get_column("density"), 1),
+      "<br/>",
+      "Total trees: ",
+      get_column("total_trees")
+    )
+  ) %>%
+  add_circle_layer(
+    id = "top30-circles",
+    source = top30_stops,
+    circle_radius = 10,
+    circle_color = "white",
+    circle_stroke_color = "#d97706",
+    circle_stroke_width = 1.5,
+    circle_opacity = 0.9,
+    tooltip = "street_label",
+    popup = concat(
+      "<b>#",
+      get_column("rank"),
+      " — ",
+      get_column("street_label"),
+      "</b><br/>",
+      "Trees / 100m: ",
+      number_format(get_column("density"), 1),
+      "<br/>",
+      "Total trees: ",
+      get_column("total_trees")
+    )
+  ) %>%
+  add_symbol_layer(
+    id = "top30-labels",
+    source = top30_stops,
+    text_field = get_column("rank_label"),
+    text_size = 10,
+    text_color = "#d97706",
+    text_font = list("Open Sans Bold")
+  )
+```
+
+What I found interesting is that even though Mount Pleasant has the highest density of cherry blossoms,
+it doesn't have any of the top 30 densest streets.
+
+
+## The Cherry Blossom Marathon
+
+With the top 10 streets identified,
+we can take
+[Kyle Walker](https://walker-data.com/)'s
+[{spopt}](https://walker-data.com/spopt-r) [route optimization code](https://walker-data.com/spopt-r/articles/routing.html)
+code to find the most efficient order to visit all of them in a single trip.
+
+I'm calling this the **Vancouver Cherry Blossom Marathon**(TM) - you heard it here first, folks!
+
+The route connects the 10 densest cherry blossom streets in the city, covering **`r sprintf("%.1f km (%.1f miles)", walk_km, walk_miles)`** as the crow flies.
+Whether you do it on foot, by bike, or by car, this is the definitive Vancouver spring itinerary.
+
+```{r}
+#| label: map-marathon
+#| echo: false
+
+maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
+  add_line_layer(
+    id = "all-streets",
+    source = all_streets,
+    line_color = "#dddddd",
+    line_width = 1,
+    line_opacity = 0.3
+  ) %>%
+  add_fill_layer(
+    id = "clusters-fill",
+    source = top30_clusters,
+    fill_color = "#fde68a",
+    fill_opacity = 0.25
+  ) %>%
+  add_line_layer(
+    id = "clusters-border",
+    source = top30_clusters,
+    line_color = "#d97706",
+    line_width = 1.5,
+    line_opacity = 0.7
+  ) %>%
+  add_line_layer(
+    id = "route-preview",
+    source = route_preview,
+    line_color = "#e11d48",
+    line_width = 3,
+    line_opacity = 0.85,
+    line_dasharray = c(2, 1)
+  ) %>%
+  add_circle_layer(
+    id = "top30-circles",
+    source = top30_stops,
+    circle_radius = 10,
+    circle_color = "white",
+    circle_stroke_color = "#d97706",
+    circle_stroke_width = 1.5,
+    circle_opacity = 0.85,
+    tooltip = "street_label"
+  ) %>%
+  add_symbol_layer(
+    id = "top30-labels",
+    source = top30_stops,
+    text_field = get_column("rank_label"),
+    text_size = 10,
+    text_color = "#d97706",
+    text_font = list("Open Sans Bold")
+  ) %>%
+  add_circle_layer(
+    id = "marathon-stops",
+    source = stops_ordered,
+    circle_radius = 13,
+    circle_color = "white",
+    circle_stroke_color = "#e11d48",
+    circle_stroke_width = 2,
+    circle_opacity = 0.95,
+    tooltip = "street_label",
+    popup = concat(
+      "<b>Stop ",
+      get_column(".visit_order"),
+      " — ",
+      get_column("street_label"),
+      "</b><br/>",
+      "Trees / 100m: ",
+      number_format(get_column("density"), 1),
+      "<br/>",
+      "Total trees: ",
+      get_column("total_trees")
+    )
+  ) %>%
+  add_symbol_layer(
+    id = "marathon-labels",
+    source = stops_ordered,
+    text_field = get_column("label"),
+    text_size = 11,
+    text_color = "#e11d48",
+    text_font = list("Open Sans Bold")
+  )
+```
+
+### The stops
+
+```{r}
+#| label: stop-table
+#| echo: false
+
+stops_ordered %>%
+  st_drop_geometry() %>%
+  select(
+    Stop = .visit_order,
+    Street = street_label,
+    `Trees / 100m` = density,
+    `Total trees` = total_trees
+  ) %>%
+  mutate(`Trees / 100m` = round(`Trees / 100m`, 1)) %>%
+  knitr::kable()
+```
+
+## Do it yourself
+
+Scroll to the bottom for the GPX files.
+
+Ready to run the Cherry Blossom Marathon? I've loaded all 10 stops into Google Maps for you.
+Hit **Optimize route** after opening and Google will sort out the best driving order from wherever you're starting.
+
+```{r}
+#| label: google-link
+#| echo: false
+
+htmltools::HTML(sprintf(
+  '<div style="text-align:center; margin: 2em 0;">
+    <a href="%s" target="_blank"
+       style="display:inline-block; background:#e11d48; color:white; padding:0.8em 2em;
+              border-radius:8px; font-size:1.1em; font-weight:bold; text-decoration:none;">
+      🌸 Open the Cherry Blossom Marathon in Google Maps
+    </a>
+  </div>',
+  google_url
+))
+```
+
+This route is not quite a marathon (It's about 35 km), but if you do this and check out all the trees and take photos,
+you might be pretty darn close. If you really want to do the (ultra)marathon, look below at the Top-30 Route.
+
+The shaded areas on the maps above show clusters of great streets.
+So even if you can't do all 10, any one of those zones should be worth it.
+
+## For the cyclists: the full 30-stop Grand Tour
+
+Can't get enough? We also mapped all 30 top streets into a bike route — split into 3 legs so Google can optimize each one. This is the definitive cherry blossom cycling tour of Vancouver.
+
+```{r}
+#| label: bike-route-data
+#| echo: false
+#| message: false
+
+coords_all <- st_coordinates(top30_stops)
+cost_matrix_all <- as.matrix(dist(coords_all))
+
+result_all <- route_tsp(
+  top30_stops,
+  start = 1,
+  end = NULL,
+  cost_matrix = cost_matrix_all
+)
+
+bike_stops <- result_all %>%
+  filter(!is.na(.visit_order)) %>%
+  arrange(.visit_order) %>%
+  mutate(
+    label = as.character(.visit_order),
+    rank_label = as.character(rank),
+    google_address = paste0(street_label, ", Vancouver, BC"),
+    leg = ceiling(row_number() / 10)
+  )
+
+google_maps_url <- function(stops_sf, address_col = "google_address") {
+  stops_sf[[address_col]] %>%
+    URLencode(reserved = TRUE) %>%
+    paste(collapse = "/") %>%
+    paste0("https://www.google.com/maps/dir/", .)
+}
+
+bike_route_line <- bike_stops %>%
+  st_coordinates() %>%
+  as.data.frame() %>%
+  st_as_sf(coords = c("X", "Y"), crs = 4326) %>%
+  st_combine() %>%
+  st_cast("LINESTRING") %>%
+  st_as_sf() %>%
+  mutate(route = "bike")
+
+bike_km <- as.numeric(st_length(st_transform(bike_route_line, 32610))) / 1000
+bike_miles <- bike_km * 0.621371
+```
+
+```{r}
+#| label: map-bike
+#| echo: false
+
+maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
+  add_line_layer(
+    id = "all-streets",
+    source = all_streets,
+    line_color = "#dddddd",
+    line_width = 1,
+    line_opacity = 0.3
+  ) %>%
+  add_fill_layer(
+    id = "clusters-fill",
+    source = top30_clusters,
+    fill_color = "#fde68a",
+    fill_opacity = 0.25
+  ) %>%
+  add_line_layer(
+    id = "clusters-border",
+    source = top30_clusters,
+    line_color = "#d97706",
+    line_width = 1.5,
+    line_opacity = 0.7
+  ) %>%
+  add_line_layer(
+    id = "bike-route",
+    source = bike_route_line,
+    line_color = "#0ea5e9",
+    line_width = 2.5,
+    line_opacity = 0.8,
+    line_dasharray = c(2, 1)
+  ) %>%
+  add_circle_layer(
+    id = "bike-circles",
+    source = bike_stops,
+    circle_radius = 11,
+    circle_color = "white",
+    circle_stroke_color = "#0ea5e9",
+    circle_stroke_width = 2,
+    circle_opacity = 0.95,
+    tooltip = "street_label",
+    popup = concat(
+      "<b>Stop ",
+      get_column(".visit_order"),
+      " (Leg ",
+      get_column("leg"),
+      ")</b><br/>",
+      get_column("street_label"),
+      "<br/>",
+      "Trees / 100m: ",
+      number_format(get_column("density"), 1)
+    )
+  ) %>%
+  add_symbol_layer(
+    id = "bike-labels",
+    source = bike_stops,
+    text_field = get_column("label"),
+    text_size = 10,
+    text_color = "#0ea5e9",
+    text_font = list("Open Sans Bold")
+  )
+```
+
+The full grand tour covers **`r sprintf("%.1f km (%.1f miles)", bike_km, bike_miles)`** straight-line distance — your actual ride following roads will be longer. Google Maps limits route optimization to 10 stops, so we've split the ride into 3 legs. Open each one, hit **Optimize route**, and chain them together for the full experience.
+
+```{r}
+#| label: bike-links
+#| echo: false
+
+htmltools::tagList(lapply(sort(unique(bike_stops$leg)), function(i) {
+  leg_stops <- bike_stops %>% filter(leg == i)
+  url <- google_maps_url(leg_stops)
+  htmltools::HTML(sprintf(
+    '<div style="text-align:center; margin: 1.5em 0;">
+      <a href="%s" target="_blank"
+         style="display:inline-block; background:#0ea5e9; color:white; padding:0.7em 1.8em;
+                border-radius:8px; font-size:1em; font-weight:bold; text-decoration:none;">
+        🚴 Leg %d (stops %d–%d) — Open in Google Maps
+      </a>
+    </div>',
+    url,
+    i,
+    min(leg_stops$.visit_order),
+    max(leg_stops$.visit_order)
+  ))
+}))
+```
+
+## Take the route with you
+
+Want to follow the route on your phone or GPS watch? We've generated GPX files for every version — import into Strava, Garmin Connect, Komoot, or AllTrails and go.
+
+:::{.callout-note}
+GPX files generated with the [OSRM](https://project-osrm.org/) open-source routing engine using OpenStreetMap data.
+:::
+
+Routes are road-following, not straight-line, generated using OpenStreetMap data. The **run** and **walk** profiles use footpaths, park shortcuts, and sidewalks. The **cycling** profile prefers bike lanes and cycle paths.
+
+### Cherry Blossom Marathon — Top 10 streets
+
+| Activity | Distance | Download | Strava |
+|---|---|---|---|
+| 🏃 Walking | road-following via foot profile | [cherry-blossom-walk.gpx](../../submodules/yvr-cherry-blossoms/data/routes/cherry-blossom-walk.gpx) | [Strava](https://www.strava.com/routes/3473491710154773940) |
+| 🚴 Cycling | road-following via bike profile | [cherry-blossom-bike.gpx](../../submodules/yvr-cherry-blossoms/data/routes/cherry-blossom-bike.gpx) | |
+
+### Cherry Blossom Grand Tour — All 30 streets
+
+| Activity | Distance | Download | Strava |
+|---|---|---|---|
+| 🏃 Walking | road-following via foot profile | [cherry-blossom-walk.gpx](../../submodules/yvr-cherry-blossoms/data/routes/cherry-blossom-walk.gpx) | [Strava](https://www.strava.com/routes/3473568223793890664) |
+| 🚴 Cycling | road-following via bike profile | [cherry-blossom-bike.gpx](../../submodules/yvr-cherry-blossoms/data/routes/cherry-blossom-bike.gpx) | [Strava](https://www.strava.com/routes/3473485469483171920) |
+
+
+## The blossoms don't last long. Get out there!
+
+I'll be updating this post if I (or you) catch any technical mistakes in [the analysis](https://github.com/chendaniely/yvr-cherry-blossoms).
