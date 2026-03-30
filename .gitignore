@@ -7,3 +7,6 @@ temp/
 .DS_Store
 Thumbs.db
 /resources/
+
+/.quarto/
+**/*.quarto_ipynb
