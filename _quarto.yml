@@ -3,11 +3,14 @@ project:
 
 website:
   title: "Daniel Chen"
+  google-analytics: "G-H85THYPX4L"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: blog.qmd
+        text: Blog
+      #- about.qmd
 
 format:
   html:
@@ -16,6 +19,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
