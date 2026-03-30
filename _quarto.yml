@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "Daniel Chen"
+  google-analytics: "G-H85THYPX4L"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog.qmd
+        text: Blog
+      #- about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true

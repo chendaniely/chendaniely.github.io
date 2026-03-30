@@ -1,0 +1,38 @@
+---
+title: "Daniel Chen, PhD, MPH"
+about:
+  template: solana
+  image: img/me/me-ice_cream.jpg
+  image-shape: round
+  links:
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/chendaniely.bsky.social
+    - icon: github
+      text: Github
+      href: https://github.com/chendaniely
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/chendaniely/
+toc: false
+---
+
+Hello! I'm slowly porting my website from [blogdown](https://pkgs.rstudio.com/blogdown/) to [quarto](https://quarto.org/),
+so things might be weird.
+
+:::{#hero-heading}
+
+Daniel Chen is a Lecturer at the University of British Columbia.
+
+## Education
+
+Virginia Tech | Blacksburg, VA. 
+PhD in Genetics, Bioinformatics, and Computational Biology | Jan 2015 - Feb 2022
+
+Columbia University Mailman School of Public Health | New York, NY. 
+MPH in Epidemiology | Sept 2012 - May 2014
+
+Macaulay Honors College at The City University of New York Hunter College | New York, NY. 
+BA in Psychology, Behavioral Neuroscience
+
+:::

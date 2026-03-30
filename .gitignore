@@ -1,0 +1,14 @@
+_site
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/public/
+temp/
+.DS_Store
+Thumbs.db
+/resources/
+
+/.quarto/
+**/*.quarto_ipynb

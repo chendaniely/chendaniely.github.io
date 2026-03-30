@@ -1,0 +1,72 @@
+---
+title: Upgrading Marlin 2.0+ with Mesh Bed Levling CR-10s
+author: Daniel Chen
+date: '2020-05-24'
+slug: upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s
+categories:
+  - making
+tags:
+  - 3d-print
+  - makers
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-05-24T17:34:18-04:00'
+featured: no
+projects: []
+---
+
+
+
+## Download software
+
+- Arduino: https://www.arduino.cc/en/Main/Software
+- Marlin and configurations: https://marlinfw.org/meta/download/
+  - You need the Marlin firmware in the "Downloads" column and the configurations from the "Configuration" column.
+
+Video guide from "The First Layer": https://www.youtube.com/watch?v=-rOZpOiWYxM
+
+## Load up printer-specific configurations
+
+In the Configurations navigate to `config > examples > Creality > CR-10s` and copy-paste the files into the `Marlin-2.0.x > Marlin` folder.
+It should prompt you to overwrite the existing `Configuration.h` and `Configuration_adv.h` files.
+
+## Load up the firmware
+
+Run the `Marlin.ino` file from the `Marlin` folder.
+It should open up the Arduino IDE with the `Marlin`, `Configuration.h`, `Configuration_adv.h`, `Version.h`, `_Bootscreen.h`, and `_Statusscreen.h` files.
+
+## Select the correct Arduino boards
+
+- `Tools > board > Arduino Mega or Mega 2560`
+- `Tools > processor > ATmega2560 (Mega2650)`
+
+## Make edits to firmware files
+
+See here for the changes I made: https://github.com/chendaniely/3d-printer/pull/1
+
+The relevant configurations you'd want to make for manual mesh leveling are:
+
+- Disable auto bed leveling bilinear: `//#define AUTO_BED_LEVELING_BILINEAR`
+- Enable mesh bed leveling: `#define MESH_BED_LEVELING`
+- Enable restore mesh: `#define RESTORE_LEVELING_AFTER_G28`
+
+If you are upgrading Marlin you'd also want to enable EPROM auto init: `#define EEPROM_AUTO_INIT`
+
+## Flash the firmware
+
+- Plug in your printer
+- verify
+
+If you run into any errors, this is a good video walkthrough of potential issues:
+https://www.youtube.com/watch?v=lAKyZd63_ns
+
+I was having an error around `#include <U8glib.h>` 
+
+#### U8glib.h
+
+- https://github.com/olikraus/u8glib
+
+Scroll down to "U8glib for Arduino"
+
+Download the library, and then in the Arduino editor `Sketch > Include Library > Add ZIP library`

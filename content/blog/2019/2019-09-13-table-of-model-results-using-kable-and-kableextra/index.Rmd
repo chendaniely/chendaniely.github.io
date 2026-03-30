@@ -1,0 +1,183 @@
+---
+title: Table of Model Results using kable and kableExtra
+author: Daniel Chen
+date: '2019-09-13'
+slug: table-of-model-results-using-kable-and-kableextra
+categories: []
+tags:
+  - R
+  - rmarkdown
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2019-09-13T10:30:59-04:00'
+featured: no
+projects: []
+---
+
+I'm at the [R/Medicine][rmedicine] conference (no it's not a Reddit thing) and
+got to help Alison Hill with her [R Markdown for Medicine][rmd4medicine] workshop.
+One of the questions I got to tinker with was making tables used to report model results.
+
+<!-- more -->
+
+One technique I learned while doing my MPH was to add variables to your model in blocks.
+It reduces the number of tests you need to perform, and is more meaningful than saying "I ran stepwise".
+So, as a researcher, you will add variables in meaningful blocks and then see if that block of variables
+is "significant" by looking at the F-statistic.
+
+Here is one example of at least putting your model results into a table.
+
+## Creating the models
+
+```{r}
+library(reshape2) # using this just for the tips dataset
+library(broom)
+library(purrr)
+library(knitr)
+library(kableExtra)
+
+head(tips)
+
+# create a bumch of models
+m1 <- lm(tip ~ total_bill, data = tips)
+m2 <- lm(tip ~ total_bill + sex, data = tips)
+m3 <- lm(tip ~ total_bill + sex + smoker, data = tips)
+m4 <- lm(tip ~ total_bill + smoker + size, data = tips)
+```
+
+Now that we have the models, we can use the `broom` package to get a nice consistent dataframe of the coefficients
+
+```{r}
+# get a dataframe of the model estimates
+models <- list(m1, m2, m3, m4)
+broom_outputs <- purrr::map(models, broom::tidy)
+broom_outputs
+```
+
+What we have now is a list of dataframes, one for each model we fit.
+
+## Just the beta estimates
+
+If we just want the coefficients, we only need the `terms` and `estimates` columns and do a `join`.
+We can use the `purrr::reduce` function to do this
+
+```{r}
+# join them all together
+model_outputs <- purrr::reduce(broom_outputs, dplyr::full_join, by = 'term')
+model_outputs
+```
+
+This will join all the dataframes together using the `term` column as the key.
+Variables that do not exist in the model will be filled with an `NA`.
+Problem now, is that we have a bunch of columns we don't need.
+So the next step is to pull out the columns we want, and rename them accordingly.
+
+```{r}
+model_table <- model_outputs %>%
+  dplyr::select(term, tidyselect::starts_with('estimate'))
+```
+
+```{r}
+names(model_table) <- c('Variable', 'Model 1', "Model 2", "Model 3", "Model 4")
+model_table
+```
+
+
+## What if I need more variables?
+
+Just reporting the beta coefficients is not how you want to report your findings,
+typically you'd want to also display some measure of uncertainty along with the results.
+Here I'm just going to add the `std.error` column, but you can calculate the 95% confidence intervals using the `std.error`.
+
+Here's the reference from the `kableExtra` library I'm using to build the coefficient table:
+
+```{r}
+# this is the exmaple form the kable docs I used for reference
+# https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+collapse_rows_dt <- data.frame(C1 = c(rep("a", 3), rep("b", 2)),
+                               C2 = c(rep("c", 2), rep("d", 1), rep("c", 1), rep("d", 1)),
+                               C3 = 1:5,
+                               C4 = sample(c(0,1), 5, replace = TRUE))
+collapse_rows_dt
+```
+
+```{r}
+kable(collapse_rows_dt, align = "c") %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = T) %>%
+  collapse_rows(columns = 1:2, valign = "top")
+```
+
+This example was important to my solution, becuase I would need to format my coefficient table the same way as `collapse_rows_dt`.
+This means that:
+
+- `C1` would be the variables in my model
+- `C2` would need to alternate between the `estimate` and the `std.error`
+- The other columns would be the actual values for each model.
+
+Since the model outputs the `estimate` and `std.error` as columns,
+I know some kind of reshaping/tidying step will need to be involved (`melt`/`gather` / `pivot_longer`).
+
+We still start from the same data steps as the previous example
+
+```{r}
+broom_outputs
+```
+
+The trick here is to get the data in the correct format that can be used by `kableExtra`
+
+```{r}
+broom_stats_long <- purrr::map(broom_outputs, tidyr::gather, 'key', 'value', estimate, std.error)
+broom_stats_long
+```
+
+Now that we have the data formatted the way we need, we now `select` only the columns we need.
+
+```{r}
+# filter only the columns we need
+broom_stats_long_filter <- purrr::map(broom_stats_long, dplyr::select, term, key, value)
+broom_stats_long_filter
+```
+
+Next, you need to create some kind of ID value for each model you're creating,
+that way when you're combining everything into a single dataframe,
+the estimates are traveling together with the standard error.
+Here I'm labeling each model as a number starting with `1`.
+
+```{r}
+tidy_tables <- purrr::map2_df(broom_stats_long_filter, 1:length(broom_stats_long_filter),
+                              function(x, y) dplyr::mutate(x, mod = y))
+tidy_tables
+```
+
+Almost there!
+
+Lastly, we need to sort the columns by using `arrange`.
+Here is where the ID column, `mod` get's used to make sure model values are traveling together.
+
+```{r}
+df <- tidy_tables %>%
+  dplyr::arrange(term, mod, key, value) %>%
+  tidyr::spread(mod, value, drop = FALSE)
+df
+```
+
+```{r}
+kable(df, align='c') %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = T) %>%
+  collapse_rows(columns = 1, valign = "top")
+```
+
+
+## kableExtra
+
+There kableExtra is great for tables like this. Here are links to more information
+
+- https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+- http://haozhu233.github.io/kableExtra/
+
+[rmedicine]: https://r-medicine.com/
+[rmd4medicine]: https://rmd4medicine.netlify.com/

@@ -1,0 +1,192 @@
+---
+title: Inconsistencies with the `==` operator in R
+author: Daniel Chen
+date: '2019-08-06'
+slug: inconsistencies-with-in-r
+categories: []
+tags:
+  - rstudio-internship
+  - r
+subtitle: 'I found a bug with the == operator in R!'
+summary: ''
+authors: []
+lastmod: '2019-08-05T21:29:37-04:00'
+featured: no
+projects: []
+---
+
+One of the cool things about working on [`gradethis`](https://github.com/rstudio-education/gradethis)
+([`grader` need to be renamed](https://github.com/rstudio-education/gradethis/issues/18))
+is that we end up doing things that aren't common in R (i.e., grading and comparing code).
+
+I discovered an inconsistency with the `==` operator when [comparing (long) R expressions](https://github.com/rstudio-education/gradethis/issues/28).
+
+<!-- more -->
+
+## A quick primer on expressions
+
+In R, you can create an expression using the
+[`quote()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/substitute.html) function.
+This is essentially the code that R will execute.
+It is similar to the "string" that will be executed,
+but an actual string in R will return a string, not a command or set of instructions that R will execute.
+
+Compare:
+
+```{r}
+3 + 3
+```
+
+Which will return the executed result of `3 + 3` and
+
+```{r}
+"3 + 3"
+```
+
+which will return the string `"3 + 3"`
+
+with:
+
+```{r}
+quote(3 + 3)
+```
+
+which returns the expression `3 + 3` that is the instruction to R without actually evaluating it.
+
+If we wanted to evaluate the expression, we can call `eval`.
+
+```{r}
+eval(quote(3 + 3))
+```
+
+
+You can read more about expressions in the
+[Expressions Chapter in Advanced R](http://adv-r.had.co.nz/Expressions.html).
+
+## The "bug"
+
+The bug was detected in `gradethis` where we want to compare student submitted code with the instructor solution.
+There are multiple steps in the comparison process,
+but the first step is to simply check if the two bits of code are the same.
+That way, we can stop there and not have to go through the process to detect where the actual differences are.
+
+The comparison code was originally written to use `==` to compare the expressions.
+
+```{r}
+user <- quote(3 + 3)
+solution <- quote(3 + 3)
+
+user == solution
+```
+
+Garrett Grolemund put in a bunch of examples that show some [weird behaviour](https://github.com/rstudio-education/gradethis/issues/28#issuecomment-510541776).
+I initially thought it had to do with name spacing the function name, or after using the `:` notation to select columns in a dataframe via `tidyselect`.
+
+When the two expressions are the same, we get `TRUE` as expected
+
+```{r}
+# supposed to return TRUE
+u <- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+s <- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+u == s
+```
+
+But when we change the values for `na.rm`, we **also** get `TRUE` when the expressions are not the same.
+
+```{r}
+# supposed to return FALSE
+u <- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = TRUE))
+s <- quote(tidyr::gather(key = key, value = value, new_sp_m014:newrel_f65, na.rm = FALSE))
+u == s
+```
+
+But it seems if we get rid of the tidyselect column selector, we get the correct result.
+
+```{r}
+# If we remove the third argument the error goes away
+u <- quote(tidyr::gather(key = key, value = value, na.rm = TRUE))
+s <- quote(tidyr::gather(key = key, value = value, na.rm = FALSE))
+u == s
+```
+
+I brought this up on our daily shiny-core stand-ups and Winston Chang thought it may have something to do with the `deparse` function since it doesn't actually matter what the expressions being compared are.
+
+```{r}
+u <- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+s <- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+u == s
+```
+
+You can see Winston's comment and link to R code in question 
+[here](https://github.com/rstudio-education/gradethis/issues/28#issuecomment-510610227).
+
+Pretty much when `==` is used to compare expressions, the expressions are passed through `deparse`.
+When `deparse` is run on an expression, it breaks it up into vectors that are `60L` characters long,
+which is fine, but the R bug is when the comparison is only performed with the first element of the vector.
+That's why only the end of the expressions seem to "not matter".
+
+
+## Reporting the bug
+
+[I reported the findings to the r-devel mailing list](https://r.789695.n4.nabble.com/Unexpected-behaviour-when-comparing-long-quoted-expressions-td4758181.html)
+
+Where, even after botching my first listserv submission, I got a response from Martin Maechler (R-core)
+
+> Looking at that and its context, I think we (R core) should
+reconsider that implementation of '=='  which indeed does about
+the same thing as deparse {which also truncates at some point by
+default; something very very reasonable for error messages, but
+undesirable in other cases}.
+>
+> But I think it's fair expectation that comparing  calls  ["language"]
+with '==' should compare the full call's syntax even if that may
+occasionally be very long.
+
+So it is actually a behavior that will get patched one day.
+
+## The fix
+
+We ended up [making changes](https://github.com/rstudio-education/gradethis/pull/34/files)
+to `gradethis` by using `identical()` while comparing quoted expressions.
+
+```{r}
+u <- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+s <- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+identical(u, s)
+```
+
+Using `identical()` is a much better way when we are comparing code *and* results, because `==` will return a matrix when comparing 2 dataframes where using `all` has problems when there are `NA` missing values.
+
+
+We want to see if the 2 vectors are the same
+```{r}
+u <- c(1, 2, 3)
+s <- c(1, 2, NA)
+all(u == s)
+```
+
+We can remove missing values, but now when either the user code or solution code does contains an `NA` it gets ignored.
+```{r}
+u <- c(1, 2, 3)
+s <- c(1, 2, NA)
+all(u == s, na.rm = TRUE)
+```
+
+```{r}
+u <- c(1, 2, NA)
+s <- c(1, 2, 3)
+all(u == s, na.rm = TRUE)
+```
+
+Now, we
+[nudge toward using identical](https://github.com/rstudio-education/gradethis/pull/56/files) and
+[raise a warning](https://github.com/rstudio-education/gradethis/pull/47)
+when we detect `==`.
+
+```{r}
+u <- c(1, 2, NA)
+s <- c(1, 2, 3)
+identical(u, s)
+```
+
+Does Donald Knuth owe me a dollar now?
