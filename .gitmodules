@@ -1,3 +1,3 @@
 [submodule "submodules/yvr-cherry-blossoms"]
 	path = submodules/yvr-cherry-blossoms
-	url = git@github.com:chendaniely/yvr-cherry-blossoms.git
+	url = https://github.com/chendaniely/yvr-cherry-blossoms.git
