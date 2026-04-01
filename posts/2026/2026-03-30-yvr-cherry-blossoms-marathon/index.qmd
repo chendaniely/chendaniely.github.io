@@ -3,6 +3,7 @@ title: "The Vancouver Cherry Blossom Marathon"
 subtitle: "A Data-Driven Guide to the City's Most Spectacular Streets"
 date: "2026-03-30"
 categories: [general, R]
+image: cherry_blossoms-night.jpg
 ---
 
 ```{r}
@@ -103,7 +104,7 @@ If you're interested, the code for this analysis is all here: <https://github.co
 
 ## Where are Vancouver's cherry blossoms?
 
-Not all neighbourhoods are created equal when it comes to cherry blossoms.
+Not all neighborhoods are created equal when it comes to cherry blossoms.
 
 The map below shows every individual Japanese flowering cherry tree in Vancouver's public tree inventory, overlaid on neighbourhood boundaries.
 There are many different types of trees that are in the city, I hope I've properly captured the correct set of cherry blossoms,
@@ -125,6 +126,11 @@ cherry_trees_raw <- st_read(
   quiet = TRUE
 )
 cherry_trees_raw <- st_transform(cherry_trees_raw, st_crs(neighbourhoods_raw))
+cherry_trees_raw <- st_join(
+  cherry_trees_raw,
+  neighbourhoods_raw %>% select(neighbourhood = name),
+  join = st_within
+)
 
 tree_variety_names <- sort(unique(cherry_trees_raw$common_name))
 tree_variety_colors <- colorRampPalette(
@@ -150,7 +156,28 @@ maplibre(style = openfreemap_style("bright"), bounds = neighbourhoods_raw) %>%
       default = "#cccccc"
     ),
     circle_opacity = 0.6,
-    tooltip = "common_name"
+    tooltip = concat(
+      "<b>",
+      get_column("common_name"),
+      "</b><br/>",
+      "<i>Prunus ",
+      get_column("species_name"),
+      " '",
+      get_column("cultivar_name"),
+      "'</i><br/><br/>",
+      "Neighbourhood: ",
+      get_column("neighbourhood"),
+      "<br/>",
+      "Age: ",
+      number_format(get_column("age_years"), 0),
+      " yrs<br/>",
+      "Height: ",
+      get_column("height_m"),
+      " m<br/>",
+      "Diameter: ",
+      get_column("diameter_cm"),
+      " cm"
+    )
   ) %>%
   add_categorical_legend(
     legend_title = "Tree variety",
@@ -188,12 +215,17 @@ neighbourhoods <- neighbourhoods %>%
   mutate(area_km2 = as.numeric(st_area(geometry)) / 1e6) %>%
   left_join(tree_counts, by = "name") %>%
   mutate(
-    tree_count    = replace(tree_count, is.na(tree_count), 0),
+    tree_count = replace(tree_count, is.na(tree_count), 0),
     trees_per_km2 = tree_count / area_km2,
-    tooltip_text  = paste0(
-      "<b>", name, "</b><br/>",
-      "Trees per km²: ", round(trees_per_km2, 1), "<br/>",
-      "Total trees: ", tree_count
+    tooltip_text = paste0(
+      "<b>",
+      name,
+      "</b><br/>",
+      "Trees per km²: ",
+      round(trees_per_km2, 1),
+      "<br/>",
+      "Total trees: ",
+      tree_count
     )
   )
 
@@ -338,6 +370,102 @@ maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
 What I found interesting is that even though Mount Pleasant has the highest density of cherry blossoms,
 it doesn't have any of the top 30 densest streets.
 
+:::{.callout-note}
+## But what about...
+
+Just because a particular location isn't highlighted in the top 30 doesn't mean it's not a good place to look for Cherry Blossoms.
+Any of the highlighted green streets have a good density of trees for you to explore.
+So if you're walking around and next to a dense street, why not take a quick detour and appreciate what Vancouver has to offer this time of year.
+:::
+
+
+## A day in Vancouver
+
+Let's say you only have a day to spend, what might be a good way to see the blossoms and spend a day downtown?
+Here's a balance of looking at the top street locations, where you can find trees along the way,
+and also stop by and have breaks along your walk.
+
+Here's my recommendation:
+
+1. Start in Stanley Park by Devonian Harbour Park (#5)
+2. Walk along the seawall towards Lost Lagoon (#2)
+3. Either continuing walking South-West across Stanley park trails, or head out towards Denman Street for a break.
+4. Walk towards Davie St to have a meal for another break and snack
+5. Keep walking down Davie until you get to David Lam Park OR turn right on Thurlow Street towards the seawall towards David Lam Park
+6. Keep walking down until you get to David Lam Park (#1)
+7. Take the Aquabus towards Granville Island to finish your day
+
+```{r}
+#| label: map-day-route
+#| echo: false
+#| message: false
+
+day_stops <- data.frame(
+  stop = 1:7,
+  label = c(
+    "1. Devonian Harbour Park",
+    "2. Lost Lagoon",
+    "3. Davie St (meal)",
+    "4. Thurlow Street",
+    "5. Seawall",
+    "6. David Lam Park",
+    "7. Granville Island"
+  ),
+  lon = c(
+    -123.133798,
+    -123.137124,
+    -123.141711,
+    -123.131364,
+    -123.136197,
+    -123.125314,
+    -123.134737
+    ),
+  lat = c(
+    49.294064,
+    49.294329,
+    49.287177,
+    49.280425,
+    49.277237,
+    49.272652,
+    49.272579
+    )
+)
+
+day_stops_sf <- st_as_sf(day_stops, coords = c("lon", "lat"), crs = 4326)
+
+day_route_sf <- day_stops_sf %>%
+  st_combine() %>%
+  st_cast("LINESTRING") %>%
+  st_as_sf()
+
+maplibre(style = openfreemap_style("bright"), bounds = day_stops_sf) %>%
+  add_line_layer(
+    id = "day-route",
+    source = day_route_sf,
+    line_color = "#7c3aed",
+    line_width = 3,
+    line_opacity = 0.8,
+    line_dasharray = c(2, 1)
+  ) %>%
+  add_circle_layer(
+    id = "day-stops-bg",
+    source = day_stops_sf,
+    circle_radius = 14,
+    circle_color = "white",
+    circle_stroke_color = "#7c3aed",
+    circle_stroke_width = 2,
+    circle_opacity = 0.95,
+    tooltip = "label"
+  ) %>%
+  add_symbol_layer(
+    id = "day-stop-numbers",
+    source = day_stops_sf,
+    text_field = get_column("stop"),
+    text_size = 11,
+    text_color = "#7c3aed",
+    text_font = list("Open Sans Bold")
+  )
+```
 
 ## The Cherry Blossom Marathon
 
@@ -434,6 +562,12 @@ maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
     text_font = list("Open Sans Bold")
   )
 ```
+
+:::{.callout-note}
+## Starting in David Lam Park
+The more optimal path would be to start in the top left corner in Stanley Park,
+but I figured why not start at the actual #1 location which is also where the Cherry Blossom Festival location is held.
+:::
 
 ### The stops
 
@@ -597,6 +731,25 @@ maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
 
 The full grand tour covers **`r sprintf("%.1f km (%.1f miles)", bike_km, bike_miles)`** straight-line distance — your actual ride following roads will be longer. Google Maps limits route optimization to 10 stops, so we've split the ride into 3 legs. Open each one, hit **Optimize route**, and chain them together for the full experience.
 
+### The stops
+
+```{r}
+#| label: bike-stop-table
+#| echo: false
+
+bike_stops %>%
+  st_drop_geometry() %>%
+  select(
+    Stop = .visit_order,
+    Leg  = leg,
+    Street = street_label,
+    `Trees / 100m` = density,
+    `Total trees` = total_trees
+  ) %>%
+  mutate(`Trees / 100m` = round(`Trees / 100m`, 1)) %>%
+  knitr::kable()
+```
+
 ```{r}
 #| label: bike-links
 #| echo: false
@@ -643,6 +796,18 @@ Routes are road-following, not straight-line, generated using OpenStreetMap data
 |---|---|---|---|
 | 🏃 Walking | road-following via foot profile | [cherry-blossom-walk.gpx](../../submodules/yvr-cherry-blossoms/data/routes/cherry-blossom-walk.gpx) | [Strava](https://www.strava.com/routes/3473568223793890664) |
 | 🚴 Cycling | road-following via bike profile | [cherry-blossom-bike.gpx](../../submodules/yvr-cherry-blossoms/data/routes/cherry-blossom-bike.gpx) | [Strava](https://www.strava.com/routes/3473485469483171920) |
+
+## An appreciation for City Planners
+
+As I've reflected on this small analysis,
+I've come to really appreciate the thoughtfulness the city planners were in planting these trees.
+
+I did a half marathon loop around part of the course the other day,
+and while I was sad not all the trees listed were in full bloom,
+I did come to appreciate the intentionally placed single trees.
+The fact that not all the trees bloom at the same time also means that the cherry blossom season can last much longer around the city.
+
+![Cherry blossom behind a Kensington Park Community Center sign](kensington_park-cherry-blossom.jpg){width=50%}
 
 
 ## The blossoms don't last long. Get out there!
