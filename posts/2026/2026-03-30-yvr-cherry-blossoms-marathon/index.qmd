@@ -600,7 +600,6 @@ stops_ordered %>%
 Scroll to the bottom for the GPX files.
 
 Ready to run the Cherry Blossom Marathon? I've loaded all 10 stops into Google Maps for you.
-Hit **Optimize route** after opening and Google will sort out the best driving order from wherever you're starting.
 
 ```{r}
 #| label: google-link
@@ -737,7 +736,7 @@ maplibre(style = openfreemap_style("bright"), bounds = top30_stops) %>%
   )
 ```
 
-The full grand tour covers **`r sprintf("%.1f km (%.1f miles)", bike_km, bike_miles)`** straight-line distance — your actual ride following roads will be longer. Google Maps limits route optimization to 10 stops, so we've split the ride into 3 legs. Open each one, hit **Optimize route**, and chain them together for the full experience.
+The full grand tour covers **`r sprintf("%.1f km (%.1f miles)", bike_km, bike_miles)`** straight-line distance — your actual ride following roads will be longer. Google Maps limits routes to 10 stops, so we've split the ride into 3 legs — open each one and chain them together for the full experience.
 
 ### The stops
 
