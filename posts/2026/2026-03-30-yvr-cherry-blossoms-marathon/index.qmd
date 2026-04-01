@@ -816,7 +816,7 @@ and while I was sad not all the trees listed were in full bloom,
 I did come to appreciate the intentionally placed single trees.
 The fact that not all the trees bloom at the same time also means that the cherry blossom season can last much longer around the city.
 
-![Cherry blossom behind a Kensington Park Community Center sign](kensington_park-cherry-blossom.jpg){width=50%}
+![A single cherry blossom behind the Kensington Park Community Center sign on 33rd Ave and Knight Ave (2 Major Roads). Sometimes a single intensional tree makes all the difference.](kensington_park-cherry-blossom.jpg){width=50%}
 
 Also,
 it's great that so much data is published on the [Vancouver Open Data Portal](https://opendata.vancouver.ca/pages/home/),
