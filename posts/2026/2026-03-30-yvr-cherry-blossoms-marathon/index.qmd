@@ -818,6 +818,10 @@ The fact that not all the trees bloom at the same time also means that the cherr
 
 ![Cherry blossom behind a Kensington Park Community Center sign](kensington_park-cherry-blossom.jpg){width=50%}
 
+Also,
+it's great that so much data is published on the [Vancouver Open Data Portal](https://opendata.vancouver.ca/pages/home/),
+especially the locations of the trees that the city has planted.
+This entire analysis would not be possible without the city's commitment to open data.
 
 ## The blossoms don't last long. Get out there!
 
