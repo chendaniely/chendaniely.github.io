@@ -477,6 +477,27 @@ maplibre(style = openfreemap_style("bright"), bounds = day_stops_sf) %>%
   )
 ```
 
+```{r}
+#| label: day-route-link
+#| echo: false
+
+day_gmaps_url <- paste0(
+  "https://www.google.com/maps/dir/",
+  paste(paste(day_stops$lat, day_stops$lon, sep = ","), collapse = "/")
+)
+
+htmltools::HTML(sprintf(
+  '<div style="text-align:center; margin: 2em 0;">
+    <a href="%s" target="_blank"
+       style="display:inline-block; background:#7c3aed; color:white; padding:0.8em 2em;
+              border-radius:8px; font-size:1.1em; font-weight:bold; text-decoration:none;">
+      🌸 Open the Day Route in Google Maps
+    </a>
+  </div>',
+  day_gmaps_url
+))
+```
+
 ## The Cherry Blossom Marathon
 
 With the top 10 streets identified,
