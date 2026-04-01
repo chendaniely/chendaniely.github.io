@@ -283,7 +283,9 @@ We want high density areas (streets) to take our scenic pictures!
 Instead of neighborhood-level, we'll look at individual street segments in Vancouver and calculate how many cherry trees line each block.
 Then, similar to looking at neighborhood density, we can normalize by street length to find the streets with the highest blossom *density*.
 
-The map below shows the top 30 streets. The shaded areas group streets that are close enough to visit together in a single stroll (about 500 meters).
+The map below shows the top 30 streets.
+The circled areas show about a 500 meter radius so if you're already in one location,
+feel free to walk around to other highlighted streets.
 
 ```{r}
 #| label: map-top30
@@ -620,7 +622,7 @@ htmltools::HTML(sprintf(
 This route is not quite a marathon (It's about 35 km), but if you do this and check out all the trees and take photos,
 you might be pretty darn close. If you really want to do the (ultra)marathon, look below at the Top-30 Route.
 
-The shaded areas on the maps above show clusters of great streets.
+The green shaded areas on the maps above show clusters of great streets.
 So even if you can't do all 10, any one of those zones should be worth it.
 
 ## For the cyclists: the full 30-stop Grand Tour
