@@ -1,1 +1,9 @@
 /* css styles */
+
+/* Crop listing card images to a 16:9 landscape ratio, centered */
+.quarto-listing .thumbnail img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}

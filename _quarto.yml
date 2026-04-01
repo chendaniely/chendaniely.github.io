@@ -10,7 +10,7 @@ website:
         text: Home
       - href: blog.qmd
         text: Blog
-      #- about.qmd
+      - about.qmd
 
 format:
   html:

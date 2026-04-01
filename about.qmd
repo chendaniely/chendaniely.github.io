@@ -1,0 +1,50 @@
+---
+title: About
+---
+
+
+## What I do
+
+::::: columns
+::: {.column width="33%"}
+![](/img/me/me-studio.jpg)
+:::
+
+::: {.column width="66%"}
+- Lecturer, UBC Statistics, MDS-Vancouver
+:::
+:::::
+
+
+## What I've done
+
+::::: columns
+::: {.column width="33%"}
+![](/img/me/me-myanmar.jpg)
+:::
+
+::: {.column width="66%"}
+- Macaulay Honors College CUNY Hunter College
+    - Psychology + Neuroscience: Learning and memory
+- Columbia University Mailman School of Public Health
+    - Epidemiology: Spread of ideas in social networks
+- Virginia Tech
+    - Data science education in biomedical sciences
+
+- The Carpentries, 2014
+:::
+:::::
+
+## What I enjoy
+
+::::: columns
+::: {.column width="50%"}
+![Daniel Chen](/img/me/dan-run.jpg){style="float: right; height: 200px;"}
+![Daniel Chen](/img/me/dan-dive.jpg){style="float: right; height: 300px;"}
+:::
+
+::: {.column width="50%"}
+![](/img/me/dan-tour.jpeg){style="float: left; height: 500px;"}
+:::
+
+:::::
