@@ -102,6 +102,8 @@ All of this was inspired by [Kyle Walker](https://walker-data.com/)'s
 
 If you're interested, the code for this analysis is all here: <https://github.com/chendaniely/yvr-cherry-blossoms>
 
+Edit: Look ma, [I'm on TV](https://vancouver.citynews.ca/video/2026/03/31/meet-the-man-mapping-top-vancouver-cherry-blossom-spots/)!
+
 ## Where are Vancouver's cherry blossoms?
 
 Not all neighborhoods are created equal when it comes to cherry blossoms.
