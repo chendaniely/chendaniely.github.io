@@ -102,7 +102,12 @@ All of this was inspired by [Kyle Walker](https://walker-data.com/)'s
 
 If you're interested, the code for this analysis is all here: <https://github.com/chendaniely/yvr-cherry-blossoms>
 
-Edit: Look ma, [I'm on TV](https://vancouver.citynews.ca/video/2026/03/31/meet-the-man-mapping-top-vancouver-cherry-blossom-spots/)!
+:::{.callout}
+## 👋
+
+- Look ma, [I'm on TV](https://vancouver.citynews.ca/video/2026/03/31/meet-the-man-mapping-top-vancouver-cherry-blossom-spots/)!
+- Hello folks from [vancouverisawesome](https://www.vancouverisawesome.com/events-and-entertainment/vancouvers-cherry-blossom-map-april-2026-12088810)!
+:::
 
 ## Where are Vancouver's cherry blossoms?
 
@@ -276,6 +281,15 @@ But the [Vancouver Cherry Blossom Festival](https://vcbf.ca/) happens in David L
 one of the lowest cherry blossom density neighborhoods.
 If you compare the tree locations to the neighborhood map,
 you can see almost all the cherry blossoms trees are in David Lam Park, but the downtown area is massive.
+
+:::{.callout}
+## Different blooming times
+
+Not all the trees bloom at the same time. If you do plan to go to a particular location,
+you may want to cross reference the area with one of the [Cherry Scouts](https://vcbf.ca/support/cherry-scouts/)
+from the [Vancouver Cherry Blossom Festival](https://vcbf.ca/) folks.
+
+:::
 
 ## The best streets in the city
 
