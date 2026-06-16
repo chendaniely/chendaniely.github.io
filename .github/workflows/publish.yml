@@ -13,8 +13,30 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        # 🤖 Don't init submodules here — we cache them separately below
+        # to avoid re-downloading submodule data on every run.
+
+      # 🤖 Submodule caching: the parent repo pins each submodule to a specific
+      # commit. We hash those pinned SHAs to build a cache key that only busts
+      # when a submodule is actually updated, not on every push.
+      - name: Get submodule cache key
+        id: submodule-hashes
+        run: |
+          echo "hash=$(git submodule status | awk '{print $1}' | sort | sha256sum | cut -c1-16)" >> $GITHUB_OUTPUT
+
+      - name: Cache submodules
+        id: cache-submodules
+        uses: actions/cache@v4
         with:
-          submodules: recursive
+          path: |
+            submodules/
+            .git/modules/
+          key: submodules-${{ steps.submodule-hashes.outputs.hash }}
+
+      - name: Initialize submodules
+        # Only runs on cache miss; skipped when cached data is still valid
+        if: steps.cache-submodules.outputs.cache-hit != 'true'
+        run: git submodule update --init --recursive
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
