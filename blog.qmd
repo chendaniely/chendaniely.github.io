@@ -8,7 +8,3 @@ listing:
 page-layout: full
 toc: false
 ---
-
-I'm slowly porting my site over.
-You can browse my previous blog posts here:
-<https://github.com/chendaniely/chendaniely_quarto/tree/main/content/blog>
