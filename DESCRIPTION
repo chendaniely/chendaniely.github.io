@@ -3,6 +3,7 @@ Package: chendaniely.github.io
 Title: Daniel Chen's Personal Website
 Version: 0.0.1
 Imports:
+    blogdown,
     broom,
     dplyr,
     here,
