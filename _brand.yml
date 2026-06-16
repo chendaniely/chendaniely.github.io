@@ -1,0 +1,108 @@
+meta:
+  name: Daniel
+  link: https://yoursite.com  # update to your actual URL
+
+# ── COLOR ──────────────────────────────────────────────────────────────────────
+#
+# Palette is built on the official NYC flag colors:
+#   orange  #F26522  — used sparingly as an accent only (links, active states,
+#                       callout borders, small structural details)
+#   blue    #236192  — default link color, info states, supporting role
+#
+# Neutrals are warm-toned (sand/linen/taupe family), never cool gray,
+# so the orange reads intentional rather than loud.
+#
+color:
+  palette:
+    # NYC flag
+    orange:       "#F26522"
+    blue:         "#236192"
+
+    # Warm neutrals — light theme
+    warm-white:   "#F8F6F2"
+    sand:         "#E8DDD2"
+    stone:        "#B8AEA2"
+    warm-gray:    "#7E7468"
+    charcoal:     "#2F2A26"
+    near-black:   "#1C1A17"
+
+    # Warm neutrals — dark theme surface values
+    dark-base:    "#171512"
+    dark-surface: "#232019"
+    dark-border:  "#2E2B26"
+
+    # Semantic aliases
+    white:        "#F8F6F2"
+    black:        "#1C1A17"
+
+  # Theme color assignments
+  # Orange is primary — but only surfaces where Bootstrap/Quarto uses
+  # primary for interactive/accent elements (links hover, active nav,
+  # callout accents, buttons). Default link color is blue (see typography).
+  foreground:   black
+  background:   white
+  primary:      orange      # accent: hover states, active indicators, callout borders
+  secondary:    warm-gray   # muted text, disabled states
+  tertiary:     sand        # hover backgrounds, wells, sidebar fill
+  info:         blue        # default link color, informational elements
+  success:      "#72994E"   # keep neutral — green feels right here
+  warning:      orange      # warning naturally maps to orange
+  danger:       "#9A4665"   # burgundy — distinct from your orange
+  light:        warm-white
+  dark:         charcoal
+
+# ── TYPOGRAPHY ─────────────────────────────────────────────────────────────────
+#
+# Two-family system — Atkinson Hyperlegible throughout:
+#   Atkinson Hyperlegible      — body, headings, UI chrome
+#   Atkinson Hyperlegible Mono — all code (inline and block)
+#
+# Atkinson Hyperlegible was designed by the Braille Institute for maximum
+# legibility, with distinct letterforms that reduce misreading at any size.
+# It pairs well with the academic/content-first intent of this site.
+#
+typography:
+  fonts:
+    - family: Atkinson Hyperlegible
+      source: google
+      weight: [400, 700]
+      style: [normal, italic]
+
+    - family: Atkinson Hyperlegible Mono
+      source: google
+      weight: [400, 700]
+      style: normal
+
+  base:
+    family: Atkinson Hyperlegible
+    size: 1rem
+    line-height: 1.75
+    weight: 400
+
+  headings:
+    family: Atkinson Hyperlegible
+    weight: 700
+    line-height: 1.2
+    # headings stay in foreground — no orange on headings,
+    # keeps the page reading normally
+
+  monospace:
+    family: Atkinson Hyperlegible Mono
+    size: 0.9em            # slightly larger than typical mono — AHL Mono is
+                           # designed to be read, not just scanned
+
+  monospace-inline:
+    family: Atkinson Hyperlegible Mono
+    size: 0.9em
+    # inherits foreground color — no orange on inline code
+
+  monospace-block:
+    family: Atkinson Hyperlegible Mono
+    size: 0.875em
+    line-height: 1.7
+
+  link:
+    color: info            # blue (#236192) as default link color
+    decoration: underline
+    # on hover, Quarto/Bootstrap will shift toward primary (orange) —
+    # that's the one place orange appears in prose, intentionally
