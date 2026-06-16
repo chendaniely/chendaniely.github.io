@@ -58,6 +58,10 @@ Makefile             # `make submodules` to init/update submodules
 - Old posts have Hugo/Jekyll frontmatter (`layout:`, `permalink:`, `slug:`, etc.) —
   leave it in place until the post is fully converted to Quarto
 
+## Planned work
+
+See `_TODO.md` in the repo root for full context on planned projects.
+
 ## Open work (GitHub issues)
 
 - **Issue #30**: Add `aliases:` to all posts for old-format URL redirects
