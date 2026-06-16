@@ -1,0 +1,4 @@
+# Python dependencies for Quarto posts
+# Add packages here as needed, e.g.:
+# pandas
+# matplotlib
