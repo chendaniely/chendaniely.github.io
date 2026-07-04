@@ -1,0 +1,9 @@
+# Single source of "what's current" — referenced across the site
+# with {{< var now.<key> >}}.
+# To blank a line: set the value to "" (renders as nothing).
+# Do NOT delete a key that's still referenced — that renders as "?var:..."
+# (which is loud on purpose: it tells you a reference went stale).
+now:
+  teaching: "▸ now: UBC Statistics · MDS-Vancouver"
+  talks: "▸ next: TBD — watch this space"
+  working-on: "▸ building: talks archive with searchable transcripts"

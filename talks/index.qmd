@@ -4,6 +4,12 @@ toc: false
 page-layout: full
 ---
 
+::: {.callout-note icon=false}
+## 🎤 Up next
+
+{{< var now.talks >}}
+:::
+
 Conference talks, guest lectures, and workshops.
 Recordings with searchable transcripts are coming —
 each talk will get its own page with video, transcript, and summary.
