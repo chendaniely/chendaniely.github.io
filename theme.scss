@@ -71,6 +71,13 @@ $reveal-rise: 18px;    // distance sections travel while fading in
   // without motion (reduced-motion): only the first word shows.
   .rot-word:not(:first-child) { opacity: 0; }
 }
+// stack the hero on narrow screens (photo above text, centered)
+@media (max-width: 576px) {
+  .home-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 // ── CHIPS ── hobby pills [index.qmd]
 .hobby-chips {
@@ -138,6 +145,7 @@ $reveal-rise: 18px;    // distance sections travel while fading in
     font-weight: 700;
     margin: 0.4rem 0;
   }
+  .now-line:empty { display: none; }  // blanked _variables.yml value hides the line
 }
 .quarto-grid-item {
   border-radius: 14px;

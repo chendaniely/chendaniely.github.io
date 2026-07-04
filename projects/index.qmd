@@ -14,7 +14,7 @@ books, course sites, and research.
 My book on data analysis with Python,
 now in its 2nd edition.
 
-[about the book →](https://smile.amazon.com/Pandas-Everyone-Analysis-Addison-Wesley-Analytics-ebook/dp/B0789WKTKJ)
+[about the book →](https://www.amazon.com/Pandas-Everyone-Analysis-Addison-Wesley-Analytics-ebook/dp/B0789WKTKJ)
 :::
 
 ::: {.signpost}
