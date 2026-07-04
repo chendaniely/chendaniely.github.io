@@ -14,8 +14,8 @@
 //   CHIPS    hobby pills                                  [index.qmd]
 //   SECTIONS section headers, home layout                 [index.qmd, about.qmd]
 //   CARDS    listing cards + signpost cards               [index, blog, projects]
-//   POSTS    reading polish, progress bar                 [posts/*]
 //   GALLERY  polaroid photo grid                          [about.qmd]
+//   POSTS    reading polish, progress bar                 [posts/*]
 //   MOTION   every animation lives here, wrapped in
 //            prefers-reduced-motion
 // ============================================================================
@@ -145,8 +145,32 @@ $reveal-rise: 18px;    // distance sections travel while fading in
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-// ── GALLERY ── (filled in Task 7)
-// ── POSTS ──
+// ── GALLERY ── polaroid photo grid [about.qmd]
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0;
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    border: 8px solid white;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ── POSTS ── reading polish [posts/*]
+blockquote {
+  border-left: 4px solid $brand-orange;
+  background: $brand-warm-white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  color: $brand-charcoal;
+}
+.callout {
+  border-radius: 10px;
+}
 
 // ── MOTION ── every animation on the site; all inside reduced-motion guard
 @media (prefers-reduced-motion: no-preference) {
@@ -230,6 +254,13 @@ $reveal-rise: 18px;    // distance sections travel while fading in
     box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
     border-color: $brand-orange;
   }
+
+  // gallery polaroids: alternate tilt, straighten on hover
+  // (> * because Quarto wraps captioned images in <figure>, uncaptioned in <p>)
+  .photo-gallery img { transition: transform 0.3s ease; }
+  .photo-gallery > *:nth-child(odd) img { transform: rotate($photo-tilt); }
+  .photo-gallery > *:nth-child(even) img { transform: rotate(-$photo-tilt); }
+  .photo-gallery img:hover { transform: rotate(0) scale(1.03); }
 }
 
 // reading progress bar (element injected by scroll-reveal.html)
