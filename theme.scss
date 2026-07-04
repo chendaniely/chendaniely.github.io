@@ -44,6 +44,13 @@ $reveal-rise: 18px;    // distance sections travel while fading in
   align-items: center;
   padding: 2.5rem 0 1rem;
 
+  // soft background blobs (from the chosen mockup): sand top-right, blue lower-left.
+  // background-image gradients, so they can never cause horizontal overflow.
+  // theme-dark.scss swaps these for faint glows that read better on dark.
+  background:
+    radial-gradient(circle 240px at 90% -10%, rgba($brand-sand, 0.55), transparent 70%),
+    radial-gradient(circle 170px at 4% 110%, rgba($brand-blue, 0.10), transparent 70%);
+
   .hero-photo img, img.hero-photo {
     width: 160px;
     height: 160px;

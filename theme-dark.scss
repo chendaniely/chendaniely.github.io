@@ -18,3 +18,10 @@ blockquote {
   border-left-color: $brand-orange;  // keep the orange accent
   color: $body-color;  // theme.scss sets charcoal — unreadable on dark surface
 }
+
+// hero blobs: light-theme sand reads as a smudge on dark — use faint brand glows
+.home-hero {
+  background:
+    radial-gradient(circle 240px at 90% -10%, rgba($brand-blue, 0.18), transparent 70%),
+    radial-gradient(circle 170px at 4% 110%, rgba($brand-orange, 0.08), transparent 70%);
+}
