@@ -1,0 +1,14 @@
+---
+title: Talks
+toc: false
+page-layout: full
+---
+
+Conference talks, guest lectures, and workshops.
+Recordings with searchable transcripts are coming —
+each talk will get its own page with video, transcript, and summary.
+
+## Past talks
+
+Talk archive under construction —
+each talk will get its own page here as the archive is built out.
