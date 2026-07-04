@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+// ============================================================================
+// theme-dark.scss — dark-mode color overrides ONLY.
+// Component styling lives in theme.scss (loaded before this file in the
+// dark stack). Values mirror the dark palette in _brand.yml.
+// ============================================================================
+$body-bg: #171512;        // _brand.yml dark-base
+$body-color: #E8DDD2;     // _brand.yml sand — readable warm text on dark
+$link-color: #7FB0D6;     // lightened brand blue for contrast on dark
+
+/*-- scss:rules --*/
+// dark-surface for cards, code blocks, and quotes
+.card, .quarto-grid-item, div.sourceCode, .signpost, .chip, blockquote {
+  background-color: #232019;   // _brand.yml dark-surface
+  border-color: #2E2B26;       // _brand.yml dark-border
+}
+blockquote { border-left-color: #F26522; }  // keep the orange accent

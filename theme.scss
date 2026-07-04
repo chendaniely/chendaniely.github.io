@@ -1,0 +1,46 @@
+/*-- scss:defaults --*/
+// ============================================================================
+// theme.scss — ALL custom styling for chendaniely.github.io
+// Layered on: cosmo (Bootswatch) + brand (_brand.yml).
+//
+// Brand palette colors arrive automatically as $brand-* variables:
+//   $brand-orange $brand-blue $brand-warm-white $brand-sand $brand-stone
+//   $brand-warm-gray $brand-charcoal $brand-near-black
+//   $brand-dark-base $brand-dark-surface $brand-dark-border
+// >>> Change colors in _brand.yml, not here. <<<
+//
+// TABLE OF CONTENTS — search for the ── markers:
+//   HERO     home page hero: photo, rotating tagline      [index.qmd]
+//   CHIPS    hobby pills                                  [index.qmd]
+//   SECTIONS section headers, home layout                 [index.qmd, about.qmd]
+//   CARDS    listing cards + signpost cards               [index, blog, projects]
+//   POSTS    reading polish, progress bar                 [posts/*]
+//   GALLERY  polaroid photo grid                          [about.qmd]
+//   MOTION   every animation lives here, wrapped in
+//            prefers-reduced-motion
+// ============================================================================
+
+// ── tweakable knobs ──
+$photo-tilt: -3.5deg;  // resting tilt of hero photo & gallery polaroids
+$card-tilt: 1deg;      // resting tilt of cards (alternates +/- per card)
+$reveal-rise: 18px;    // distance sections travel while fading in
+
+/*-- scss:rules --*/
+
+// ── LISTING THUMBNAILS ── (was styles.css) crop card images to 16:9
+.quarto-listing .thumbnail img,
+.quarto-grid-item .thumbnail img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+// Sections below are appended by later tasks:
+// ── HERO ──
+// ── CHIPS ──
+// ── SECTIONS ──
+// ── CARDS ──
+// ── POSTS ──
+// ── GALLERY ──
+// ── MOTION ──
