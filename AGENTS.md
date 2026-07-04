@@ -6,7 +6,11 @@ deployed via GitHub Pages on the `gh-pages` branch.
 
 ## Writing conventions
 
-When creating commits, preface each commit with a `🤖: ` so it's easy to see a claude commit.
+When creating commits, preface each commit with a `🤖: `
+so it's easy to see a claude commit.
+However, if you are using a conventional commit notation, put the `🤖: ` at the beginning of the description section.
+This makes it clear which commits are AI driven,
+but can still work with other workflows that look at commit messages.
 
 ### Semantic line breaks
 
