@@ -1,0 +1,93 @@
+# 🤖 PR deployment previews — GitHub-native replacement for Netlify previews.
+# Each PR gets its rendered site deployed to gh-pages under pr-preview/pr-<N>/
+# and a sticky bot comment with the URL. The preview is removed when the PR
+# closes. Build steps mirror publish.yml; only the deploy target differs.
+#
+# Known accepted caveat: a production deploy (publish.yml → quarto publish)
+# rewrites gh-pages and can delete pr-preview/; an open PR's preview
+# regenerates on its next push.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+name: PR Preview
+
+# 🤖 one preview build per PR at a time; a new push cancels the stale build
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # push preview files to gh-pages
+      pull-requests: write   # sticky preview comment
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        # 🤖 Don't init submodules here — cached separately below (see publish.yml)
+
+      # 🤖 Build steps are skipped on 'closed' — the preview-action step below
+      # still runs and removes the preview directory.
+      - name: Get submodule cache key
+        if: github.event.action != 'closed'
+        id: submodule-hashes
+        run: |
+          echo "hash=$(git submodule status | awk '{print $1}' | sort | sha256sum | cut -c1-16)" >> $GITHUB_OUTPUT
+
+      - name: Cache submodules
+        if: github.event.action != 'closed'
+        id: cache-submodules
+        uses: actions/cache@v4
+        with:
+          path: |
+            submodules/
+            .git/modules/
+          key: submodules-${{ steps.submodule-hashes.outputs.hash }}
+
+      - name: Initialize submodules
+        if: github.event.action != 'closed' && steps.cache-submodules.outputs.cache-hit != 'true'
+        run: git submodule update --init --recursive
+
+      - name: Set up Quarto
+        if: github.event.action != 'closed'
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: pre-release
+
+      - name: Set up R
+        if: github.event.action != 'closed'
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R packages
+        if: github.event.action != 'closed'
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache: true
+          cache-version: 1
+
+      - name: Set up Python
+        if: github.event.action != 'closed'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+          cache: pip
+
+      - name: Install Python packages
+        if: github.event.action != 'closed'
+        run: pip install -r requirements.txt
+
+      - name: Render site
+        if: github.event.action != 'closed'
+        run: quarto render
+
+      # 🤖 auto = deploy on opened/reopened/synchronize, remove on closed
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: _site
+          action: auto
