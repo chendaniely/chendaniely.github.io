@@ -6,6 +6,8 @@ deployed via GitHub Pages on the `gh-pages` branch.
 
 ## Writing conventions
 
+When creating commits, preface each commit with a `🤖: ` so it's easy to see a claude commit.
+
 ### Semantic line breaks
 
 All prose in this repository (`.md`, `.qmd`, `AGENTS.md`, `CLAUDE.md`) uses semantic line breaks (SEMBR):
@@ -19,12 +21,13 @@ Do not reflow prose into long single lines or hard-wrap at 80 characters.
 ## Repository layout
 
 ```
-_quarto.yml          # Quarto site config (cosmo theme + brand)
-_brand.yml           # Brand colors/typography used by Quarto + Shiny
-index.qmd            # Home page
-about.qmd            # About page
-blog.qmd             # Blog listing page (scans posts/)
-styles.css           # Custom CSS
+_quarto.yml          # Quarto site config (cosmo + brand + theme.scss)
+_variables.yml       # "now" values, injected with {{< var now.* >}}
+theme.scss           # ALL custom styling (commented, sectioned)
+theme-dark.scss      # dark-mode color overrides
+scroll-reveal.html   # the site's only JS (~20 lines)
+_now-signposts.qmd   # home page signpost cards partial
+talks/ teaching/ projects/   # section stub pages
 posts/               # All blog posts — one folder per post
   YYYY/
     YYYY-MM-DD-slug/
@@ -57,6 +60,19 @@ Makefile             # `make submodules` to init/update submodules
   (no separate tags concept)
 - Old posts have Hugo/Jekyll frontmatter (`layout:`, `permalink:`, `slug:`, etc.) —
   leave it in place until the post is fully converted to Quarto
+
+## Interactive posts
+
+Posts can embed interactive charts with Quarto's built-in `ojs` engine —
+no site-level JavaScript needed.
+See `posts/2026/2026-07-04-interactive-posts/` for the pattern.
+
+## Updating "what's current"
+
+Edit `_variables.yml` (next talk, current courses, current project).
+Values surface on the home page signposts and the Talks page banner
+via `{{< var now.* >}}`.
+Blank a value with `""`; don't delete keys.
 
 ## Planned work
 

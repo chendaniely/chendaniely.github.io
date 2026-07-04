@@ -1,0 +1,37 @@
+---
+title: "Interactive charts in Quarto posts"
+date: 2026-07-04
+categories: [quarto, data viz, meta]
+description: >
+  This site now supports interactive charts in posts —
+  here's a tiny Observable JS example and how to write one.
+---
+
+This site can embed interactive charts with zero site-level JavaScript,
+using Quarto's built-in [Observable JS](https://quarto.org/docs/interactive/ojs/) engine.
+Drag the slider:
+
+```{ojs}
+//| echo: false
+viewof amplitude = Inputs.range([0.5, 3], {value: 1, step: 0.1, label: "Amplitude"})
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  height: 260,
+  y: {domain: [-3, 3]},
+  marks: [
+    Plot.line(
+      d3.range(0, 20, 0.1).map(x => ({x, y: amplitude * Math.sin(x)})),
+      {x: "x", y: "y", stroke: "#F26522", strokeWidth: 2}
+    )
+  ]
+})
+```
+
+## How to do this again
+
+1. Add an `{ojs}` code cell to any post — no YAML changes needed.
+2. `Inputs.*` makes controls; `Plot.plot` draws charts; `viewof` wires them together.
+3. Everything runs in the reader's browser — the site stays static.
