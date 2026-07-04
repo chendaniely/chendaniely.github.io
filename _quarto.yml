@@ -1,8 +1,15 @@
 project:
   type: website
+  render:
+    # 🤖 render everything except docs/ — it holds local planning files
+    # (gitignored) whose markdown contains Quarto shortcodes in code samples
+    # that break the build if rendered as site content
+    - "*"
+    - "!docs/**"
 
 website:
   title: "Daniel Chen"
+  site-url: https://chendaniely.github.io  # 🤖 required for RSS feed generation
   google-analytics: "G-H85THYPX4L"
   navbar:
     left:
