@@ -37,12 +37,116 @@ $reveal-rise: 18px;    // distance sections travel while fading in
 }
 
 // Sections below are appended by later tasks:
-// ── HERO ──
-// ── CHIPS ──
-// ── SECTIONS ──
-// ── CARDS ──
+// ── HERO ── home page: photo, name, rotating tagline [index.qmd]
+.home-hero {
+  display: flex;
+  gap: 2.75rem;
+  align-items: center;
+  padding: 2.5rem 0 1rem;
+
+  .hero-photo img, img.hero-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 22px;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+  h1 {
+    font-size: 2.5rem;
+    border: none;
+  }
+}
+.rot-lead { font-size: 1.3rem; }
+.rotator {
+  display: inline-grid;
+  vertical-align: bottom;
+  font-size: 1.3rem;
+  .rot-word {
+    grid-area: 1 / 1;
+    color: $brand-orange;
+    font-weight: 700;
+  }
+  // words stack; MOTION section animates the cycle.
+  // without motion (reduced-motion): only the first word shows.
+  .rot-word:not(:first-child) { opacity: 0; }
+}
+
+// ── CHIPS ── hobby pills [index.qmd]
+.hobby-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.5rem 0 1rem;
+}
+.chip {
+  background: white;
+  border: 1.5px solid $brand-sand;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+// ── SECTIONS ── section header pattern [index.qmd, about.qmd]
+.home-section { padding-top: 2rem; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1.5px solid $brand-sand;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+
+  .section-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: $brand-warm-gray;
+    margin: 0;
+    border: none;
+  }
+  .section-more {
+    margin-left: auto;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+// ── CARDS ── listing cards (home + blog) and signpost cards
+// tilt is resting state; MOTION straightens them on hover
+.signposts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+.signpost {
+  background: white;
+  border: 1.5px solid $brand-sand;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    border: none;
+  }
+  .now-line {
+    display: block;
+    color: $brand-orange;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0.4rem 0;
+  }
+}
+.quarto-grid-item {
+  border-radius: 14px;
+  border: 1.5px solid $brand-sand;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+// ── GALLERY ── (filled in Task 7)
 // ── POSTS ──
-// ── GALLERY ──
 
 // ── MOTION ── every animation on the site; all inside reduced-motion guard
 @media (prefers-reduced-motion: no-preference) {
@@ -72,6 +176,59 @@ $reveal-rise: 18px;    // distance sections travel while fading in
   .navbar .nav-link:hover {
     transform: rotate(-3deg) scale(1.08);
     color: $brand-orange;
+  }
+
+  // hero photo: tilted at rest, straightens on hover
+  .home-hero .hero-photo img, img.hero-photo {
+    transform: rotate($photo-tilt);
+    transition: transform 0.3s ease;
+  }
+  .home-hero .hero-photo img:hover, img.hero-photo:hover {
+    transform: rotate(0deg) scale(1.04);
+  }
+
+  // rotating tagline: 4 words × 2s each = 8s cycle.
+  // To add/remove a word: add/remove a .rot-word span in index.qmd,
+  // then update the 8s duration (2s × word count) and the delay list.
+  .rotator .rot-word {
+    opacity: 0;
+    animation: rot-cycle 8s infinite;
+  }
+  .rotator .rot-word:nth-child(2) { animation-delay: 2s; }
+  .rotator .rot-word:nth-child(3) { animation-delay: 4s; }
+  .rotator .rot-word:nth-child(4) { animation-delay: 6s; }
+  @keyframes rot-cycle {
+    0% { opacity: 0; transform: translateY(8px); }
+    5%, 22% { opacity: 1; transform: translateY(0); }
+    28%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+
+  // chips lift + tilt on hover
+  .chip {
+    display: inline-block;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .chip:hover {
+    transform: translateY(-3px) rotate(-2deg);
+    border-color: $brand-orange;
+  }
+
+  // cards: alternating resting tilt, straighten + lift on hover
+  .signpost, .quarto-grid-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .signposts .signpost:nth-child(odd),
+  .quarto-listing .quarto-grid-item:nth-child(odd) {
+    transform: rotate(-$card-tilt);
+  }
+  .signposts .signpost:nth-child(even),
+  .quarto-listing .quarto-grid-item:nth-child(even) {
+    transform: rotate($card-tilt);
+  }
+  .signpost:hover, .quarto-grid-item:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+    border-color: $brand-orange;
   }
 }
 
