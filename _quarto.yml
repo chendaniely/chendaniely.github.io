@@ -25,3 +25,4 @@ format:
       light: [cosmo, brand, theme.scss]
       dark: [cosmo, brand, theme.scss, theme-dark.scss]
     toc: true
+    include-after-body: scroll-reveal.html

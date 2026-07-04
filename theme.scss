@@ -43,4 +43,45 @@ $reveal-rise: 18px;    // distance sections travel while fading in
 // ── CARDS ──
 // ── POSTS ──
 // ── GALLERY ──
-// ── MOTION ──
+
+// ── MOTION ── every animation on the site; all inside reduced-motion guard
+@media (prefers-reduced-motion: no-preference) {
+  // scroll reveal (driven by scroll-reveal.html)
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY($reveal-rise);
+  }
+  .reveal-hidden.revealed {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  // prose links warm from blue to orange
+  a {
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: $brand-orange;
+  }
+
+  // nav links tilt playfully
+  .navbar .nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .navbar .nav-link:hover {
+    transform: rotate(-3deg) scale(1.08);
+    color: $brand-orange;
+  }
+}
+
+// reading progress bar (element injected by scroll-reveal.html)
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: $brand-orange;
+  z-index: 2000;
+}
