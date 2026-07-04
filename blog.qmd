@@ -3,8 +3,11 @@ title: "Blog"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: grid
+  categories: true
   feed: true
+  image-placeholder: img/post-placeholder.svg
+  fields: [image, date, title, description, categories, reading-time]
 page-layout: full
 toc: false
 ---
