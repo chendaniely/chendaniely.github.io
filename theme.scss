@@ -214,7 +214,9 @@ blockquote {
   }
   .navbar .nav-link:hover {
     transform: rotate(-3deg) scale(1.08);
-    color: $brand-orange;
+    // blue, not orange: the navbar background is brand primary (orange),
+    // so an orange hover would vanish into it
+    color: $brand-blue;
   }
 
   // hero photo: tilted at rest, straightens on hover

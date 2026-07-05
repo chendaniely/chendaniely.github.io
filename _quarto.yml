@@ -30,7 +30,9 @@ website:
 format:
   html:
     theme:
-      light: [cosmo, brand, theme.scss]
+      # 🤖 dark listed first = dark is the default appearance;
+      # the navbar toggle still switches to light
       dark: [cosmo, brand, theme.scss, theme-dark.scss]
+      light: [cosmo, brand, theme.scss]
     toc: true
     include-after-body: scroll-reveal.html
