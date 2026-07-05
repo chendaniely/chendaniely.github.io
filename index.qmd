@@ -19,11 +19,11 @@ listing:
 ::: {.hero-text}
 # Hi, I'm Daniel 👋
 
-[I'm a]{.rot-lead}
-[[data science educator]{.rot-word}
-[ultra runner]{.rot-word aria-hidden="true"}
-[scuba diver]{.rot-word aria-hidden="true"}
-[ski tourer]{.rot-word aria-hidden="true"}]{.rotator}
+[I'm]{.rot-lead}
+[[a data science educator]{.rot-word}
+[an ultra runner]{.rot-word aria-hidden="true"}
+[a scuba diver]{.rot-word aria-hidden="true"}
+[a ski tourer]{.rot-word aria-hidden="true"}]{.rotator}
 
 [Bluesky](https://bsky.app/profile/chendaniely.bsky.social){.hero-link}
 · [GitHub](https://github.com/chendaniely){.hero-link}
