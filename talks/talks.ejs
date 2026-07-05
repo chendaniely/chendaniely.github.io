@@ -1,0 +1,48 @@
+<%
+// talks.ejs — renders talks.yml as Upcoming (soonest first) and Past
+// (most recent first). A talk moves to Past at the next site render
+// after its date. Headline falls back to the event name until a talk
+// has a title.
+//
+// NOTE: listing template output is processed as MARKDOWN — keep all
+// emitted HTML flush-left; indenting 4+ spaces turns it into an
+// escaped code block.
+const now = new Date();
+const ts = (d) => new Date(d).getTime();
+const upcoming = items.filter(t => ts(t.date) >= now.getTime())
+                      .sort((a, b) => ts(a.date) - ts(b.date));
+const past = items.filter(t => ts(t.date) < now.getTime())
+                  .sort((a, b) => ts(b.date) - ts(a.date));
+const fmt = (d) => new Date(d).toLocaleDateString("en-US",
+  { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+%>
+<% for (const [label, group] of [["Upcoming", upcoming], ["Past talks", past]]) { %>
+<% if (group.length) { %>
+<h2><%= label %></h2>
+<div class="talk-list">
+<% for (const t of group) { %>
+<div class="talk">
+<div class="talk-date"><%= fmt(t.date) %></div>
+<div class="talk-body">
+<div class="talk-title"><%= t.title || t.event %><% if (t.type && t.type !== "talk") { %><span class="talk-type"><%= t.type %></span><% } %></div>
+<div class="talk-meta"><% if (t["event-url"]) { %><a href="<%= t["event-url"] %>"><%= t.event %></a><% } else { %><%= t.event %><% } %><% if (t.location) { %> · <%= t.location %><% } %></div>
+<% if (t.description) { %><div class="talk-desc"><%= t.description %></div><% } %>
+<% const tags = [...(t.languages || []), ...(t.packages || [])]; %>
+<% if (tags.length) { %>
+<div class="talk-tags">
+<% for (const tag of tags) { %><span class="talk-tag"><%= tag %></span><% } %>
+</div>
+<% } %>
+<% if (t.repo || t.slides || t.video) { %>
+<div class="talk-links">
+<% if (t.slides) { %><a href="<%= t.slides %>">slides</a><% } %>
+<% if (t.repo) { %><a href="<%= t.repo %>">code</a><% } %>
+<% if (t.video) { %><a href="<%= t.video %>">video</a><% } %>
+</div>
+<% } %>
+</div>
+</div>
+<% } %>
+</div>
+<% } %>
+<% } %>

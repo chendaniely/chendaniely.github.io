@@ -1,0 +1,25 @@
+---
+title: Teaching
+toc: false
+page-layout: full
+---
+
+I'm a Data Science Lecturer in the
+[Statistics Department](https://www.stat.ubc.ca/)
+at the University of British Columbia,
+and teach in the
+[UBC Master of Data Science](https://masterdatascience.ubc.ca/) program.
+
+## Currently
+
+- Courses in UBC Statistics and the MDS-Vancouver program
+
+## Background
+
+- Data Science Educator & Developer Advocate, Posit PBC (formerly RStudio)
+- Instructor and lesson maintainer with [The Carpentries](https://carpentries.org/) since 2014
+- Workshops on Python, R, git, and reproducible research
+  at universities, conferences, and research groups
+
+A fuller teaching dossier (courses, philosophy, materials) is planned —
+see the site's TODO.

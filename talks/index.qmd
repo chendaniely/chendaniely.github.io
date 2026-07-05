@@ -1,0 +1,23 @@
+---
+title: Talks
+toc: false
+page-layout: full
+listing:
+  id: talks-list
+  contents: talks.yml
+  template: talks.ejs
+---
+
+::: {.callout-note icon=false}
+## 🎤 Up next
+
+{{< var now.talks >}}
+:::
+
+Conference talks, guest lectures, and workshops.
+All talks live in `talks.yml` (one entry per talk);
+recordings with searchable transcripts are coming —
+each talk will get its own page with video, transcript, and summary.
+
+::: {#talks-list}
+:::

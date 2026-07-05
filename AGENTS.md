@@ -6,6 +6,12 @@ deployed via GitHub Pages on the `gh-pages` branch.
 
 ## Writing conventions
 
+When creating commits, preface each commit with a `🤖: `
+so it's easy to see a claude commit.
+However, if you are using a conventional commit notation, put the `🤖: ` at the beginning of the description section.
+This makes it clear which commits are AI driven,
+but can still work with other workflows that look at commit messages.
+
 ### Semantic line breaks
 
 All prose in this repository (`.md`, `.qmd`, `AGENTS.md`, `CLAUDE.md`) uses semantic line breaks (SEMBR):
@@ -19,12 +25,16 @@ Do not reflow prose into long single lines or hard-wrap at 80 characters.
 ## Repository layout
 
 ```
-_quarto.yml          # Quarto site config (cosmo theme + brand)
-_brand.yml           # Brand colors/typography used by Quarto + Shiny
-index.qmd            # Home page
-about.qmd            # About page
-blog.qmd             # Blog listing page (scans posts/)
-styles.css           # Custom CSS
+_quarto.yml          # Quarto site config (cosmo + brand + theme.scss)
+_variables.yml       # "now" values, injected with {{< var now.* >}}
+theme.scss           # ALL custom styling (commented, sectioned)
+theme-dark.scss      # dark-mode color overrides
+scroll-reveal.html   # the site's only JS (~20 lines)
+_now-signposts.qmd   # home page signpost cards partial
+talks/ teaching/ projects/   # section stub pages
+talks/talks.yml      # ALL talks data (copy template comment inside for new
+                     # talks; omit unused fields). Feeds the talks page via
+                     # talks.ejs; later feeds CV + video pipeline (id = join key)
 posts/               # All blog posts — one folder per post
   YYYY/
     YYYY-MM-DD-slug/
@@ -57,6 +67,36 @@ Makefile             # `make submodules` to init/update submodules
   (no separate tags concept)
 - Old posts have Hugo/Jekyll frontmatter (`layout:`, `permalink:`, `slug:`, etc.) —
   leave it in place until the post is fully converted to Quarto
+
+## Interactive posts
+
+Posts can embed interactive charts with Quarto's built-in `ojs` engine —
+no site-level JavaScript needed:
+add an `{ojs}` code cell to any post (no YAML changes required);
+`Inputs.*` makes controls, `Plot.plot` draws charts,
+`viewof` wires them together, all running in the reader's browser.
+(A demo post existed briefly; Dan removed it — pattern lives here instead.)
+
+## Updating "what's current"
+
+Edit `_variables.yml` (next talk, current courses, current project).
+Values surface on the home page signposts and the Talks page banner
+via `{{< var now.* >}}`.
+Blank a value with `""`; don't delete keys.
+
+## Talks data (`talks/talks.yml`)
+
+One entry per talk;
+the file's header comment is the copy-paste template for new entries.
+Omit fields that don't apply — never leave empty strings.
+`id` is the stable join key for the future video/transcript pipeline;
+the same data will feed the academic CV.
+
+**Keep the template comment in sync:**
+any time the schema changes
+(field added/renamed/removed, new `type` value, changed conventions),
+update the template comment at the top of `talks.yml` in the same commit —
+and check `talks/talks.ejs` still handles the change.
 
 ## Planned work
 

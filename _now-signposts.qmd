@@ -1,0 +1,34 @@
+:::: {.signposts .reveal}
+::: {.signpost}
+### 🎤 Talks
+
+Where I'm speaking next,
+plus recordings of past talks.
+
+[{{< var now.talks >}}]{.now-line}
+
+[next & past talks →](talks/index.qmd)
+:::
+
+::: {.signpost}
+### 🏫 Teaching
+
+Current courses at UBC Statistics & MDS,
+workshops, and how I teach.
+
+[{{< var now.teaching >}}]{.now-line}
+
+[what I'm teaching →](teaching/index.qmd)
+:::
+
+::: {.signpost}
+### 🛠️ Projects
+
+Books, teaching materials, and research —
+including Pandas for Everyone.
+
+[{{< var now.working-on >}}]{.now-line}
+
+[things I've built →](projects/index.qmd)
+:::
+::::

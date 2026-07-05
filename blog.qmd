@@ -3,8 +3,14 @@ title: "Blog"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
-  feed: true
+  type: grid
+  categories: true
+  # partial = excerpt + link in RSS; full content ballooned blog.xml to 51MB
+  # because the cherry-blossom post embeds ~51MB of mapgl widget JSON
+  feed:
+    type: partial
+  image-placeholder: img/post-placeholder.svg
+  fields: [image, date, title, description, categories, reading-time]
 page-layout: full
 toc: false
 ---

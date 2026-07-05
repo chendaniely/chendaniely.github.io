@@ -1,0 +1,46 @@
+---
+title: Projects
+toc: false
+page-layout: full
+---
+
+Things I've built with their own identity —
+books, course sites, and research.
+
+:::: {.signposts}
+::: {.signpost}
+### 🐼 Pandas for Everyone
+
+My book on data analysis with Python,
+now in its 2nd edition.
+
+[about the book →](https://www.amazon.com/Pandas-Everyone-Analysis-Addison-Wesley-Analytics-ebook/dp/B0789WKTKJ)
+:::
+
+::: {.signpost}
+### 🩺 ds4biomed
+
+Data Science for the Biomedical Sciences —
+an online book teaching data skills to clinicians.
+
+[read the book →](https://ds4biomed.tech)
+:::
+
+::: {.signpost}
+### 🎓 Dissertation
+
+My PhD work on data science education
+in the biomedical sciences at Virginia Tech.
+
+[read more →](https://github.com/chendaniely/dissertation)
+:::
+
+::: {.signpost}
+### 📹 Video courses
+
+Video courses on pandas and data processing
+published with Pearson.
+
+[watch →](https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/)
+:::
+::::

@@ -1,50 +1,52 @@
 ---
 title: About
+toc: false
+page-layout: full
 ---
 
-
-## What I do
-
-::::: columns
-::: {.column width="33%"}
-![](/img/me/me-studio.jpg)
+:::: {.home-section .reveal}
+::: {.section-head}
+## What I do {.section-label}
 :::
 
-::: {.column width="66%"}
-- Lecturer, UBC Statistics, MDS-Vancouver
-:::
-:::::
+I'm a Data Science Lecturer in the
+[Statistics Department](https://www.stat.ubc.ca/)
+at the University of British Columbia,
+teaching in UBC Statistics and the
+[Master of Data Science](https://masterdatascience.ubc.ca/) Vancouver program.
+::::
 
-
-## What I've done
-
-::::: columns
-::: {.column width="33%"}
-![](/img/me/me-myanmar.jpg)
-:::
-
-::: {.column width="66%"}
-- Macaulay Honors College CUNY Hunter College
-    - Psychology + Neuroscience: Learning and memory
-- Columbia University Mailman School of Public Health
-    - Epidemiology: Spread of ideas in social networks
-- Virginia Tech
-    - Data science education in biomedical sciences
-
-- The Carpentries, 2014
-:::
-:::::
-
-## What I enjoy
-
-::::: columns
-::: {.column width="50%"}
-![Daniel Chen](/img/me/dan-run.jpg){style="float: right; height: 200px;"}
-![Daniel Chen](/img/me/dan-dive.jpg){style="float: right; height: 300px;"}
+:::: {.home-section .reveal}
+::: {.section-head}
+## What I've done {.section-label}
 :::
 
-::: {.column width="50%"}
-![](/img/me/dan-tour.jpeg){style="float: left; height: 500px;"}
+- Data Science Educator & Developer Advocate at [Posit, PBC](https://posit.co/) (FKA RStudio)
+- Author of *Pandas for Everyone* (2nd ed.)
+- Instructor with [The Carpentries](https://carpentries.org/) since 2014
+
+### Education
+
+- **Virginia Tech** — PhD, Genetics, Bioinformatics, and Computational Biology (2022).
+  Data science education in the biomedical sciences.
+- **Columbia University Mailman School of Public Health** — MPH, Epidemiology (2014).
+  Spread of ideas in social networks.
+- **Macaulay Honors College, CUNY Hunter College** — BA, Psychology & Behavioral Neuroscience (2012).
+  Learning and memory.
+::::
+
+:::: {.home-section .reveal}
+::: {.section-head}
+## What I enjoy {.section-label}
 :::
 
-:::::
+::: {.photo-gallery}
+![running](/img/me/dan-run.jpg){fig-alt="Daniel running a race"}
+
+![scuba](/img/me/dan-dive.jpg){fig-alt="Daniel scuba diving"}
+
+![touring](/img/me/dan-tour.jpeg){fig-alt="Daniel ski touring in the mountains"}
+
+![in the studio](/img/me/me-studio.jpg){fig-alt="Daniel recording in a studio"}
+:::
+::::

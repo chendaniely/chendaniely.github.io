@@ -1,3 +1,4 @@
+docs/
 _TODO.md
 _site
 
@@ -13,3 +14,6 @@ Thumbs.db
 
 /.quarto/
 **/*.quarto_ipynb
+
+# brainstorming visual companion sessions
+.superpowers/

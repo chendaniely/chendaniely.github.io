@@ -1,0 +1,31 @@
+/*-- scss:defaults --*/
+// ============================================================================
+// theme-dark.scss — dark-mode color overrides ONLY.
+// Component styling lives in theme.scss (loaded before this file in the
+// dark stack). Values mirror the dark palette in _brand.yml.
+// ============================================================================
+$body-bg: #171512;        // _brand.yml dark-base
+$body-color: #E8DDD2;     // _brand.yml sand — readable warm text on dark
+$link-color: #7FB0D6;     // lightened brand blue for contrast on dark — not a brand color, kept as literal
+
+/*-- scss:rules --*/
+// dark-surface for cards, code blocks, and quotes
+.card, .quarto-grid-item, div.sourceCode, .signpost, .chip, blockquote {
+  background-color: $brand-dark-surface;
+  border-color: $brand-dark-border;
+}
+blockquote {
+  border-left-color: $brand-orange;  // keep the orange accent
+  color: $body-color;  // theme.scss sets charcoal — unreadable on dark surface
+}
+
+// talks listing: warm-gray is too dim on dark — lift to stone
+.talk-date, .talk-meta, .talk-desc { color: $brand-stone; }
+.talk-tag { color: $brand-stone; border-color: $brand-dark-border; }
+
+// hero blobs: light-theme sand reads as a smudge on dark — use faint brand glows
+.home-hero {
+  background:
+    radial-gradient(circle 240px at 90% -10%, rgba($brand-blue, 0.18), transparent 70%),
+    radial-gradient(circle 170px at 4% 110%, rgba($brand-orange, 0.08), transparent 70%);
+}

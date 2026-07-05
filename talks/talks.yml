@@ -1,0 +1,46 @@
+# talks.yml — single source of truth for every talk.
+# Consumed by: talks page listing (talks.ejs), academic CV (later),
+# video/transcript pipeline (later — `id` is the join key).
+#
+# TEMPLATE — copy this block for a new talk, delete every line that
+# doesn't apply (omit unused fields entirely; no empty strings):
+#
+# - id: YYYY-MM-DD-event-slug        # stable slug — never change once set
+#   title: "Talk title"              # omit until known; page falls back to event
+#   date: YYYY-MM-DD                 # your talk's day; for multi-day events use
+#                                    # the start date until your slot is announced
+#   type: talk                       # talk | invited | keynote | workshop |
+#                                    # tutorial | guest-lecture | panel
+#   event: Conference or Meetup Name
+#   event-url: https://...           # event / schedule page
+#   location: City, Region, Country  # or: virtual
+#   categories: [python, teaching]   # theme tags (not locations)
+#   languages: [r, python]           # programming languages the talk covers
+#   packages: [ellmer, chatlas]      # packages/libraries featured, any language
+#   description: >
+#     One or two sentences in your own voice —
+#     feeds the page snippet and the CV line.
+#   abstract: |
+#     The OFFICIAL submitted abstract, verbatim — never edited after the
+#     fact. Not shown on the listing page; archived here (conference sites
+#     rot) and shown on future per-talk pages. Multi-paragraph is fine.
+#   repo: https://github.com/...     # code / materials
+#   slides: https://...
+#   video: https://...
+#   with: [Co Presenter]             # omit when solo
+
+- id: 2026-07-06-pyladies-vancouver
+  date: 2026-07-06
+  type: talk
+  event: PyLadies Vancouver
+  event-url: https://luma.com/3oxfwqry
+  location: Vancouver, BC, Canada
+  categories: [python]
+
+- id: 2026-07-13-scipy
+  date: 2026-07-13  # conference runs Jul 13-19; exact talk slot TBA
+  type: talk
+  event: SciPy 2026
+  event-url: https://www.scipy2026.scipy.org/schedule
+  location: Minneapolis, MN, USA
+  categories: [python, scientific-computing]

@@ -1,0 +1,39 @@
+<script>
+// The site's ONLY custom JavaScript.
+// 1) Elements with class .reveal fade up when scrolled into view.
+// 2) Cards/polaroids get a random resting tilt each page load.
+// 3) A thin orange reading-progress bar tracks scroll position.
+// All skipped when the visitor prefers reduced motion.
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add("revealed"); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.1 });
+  for (const el of document.querySelectorAll(".reveal")) {
+    // only hide elements below the fold — no flash for above-fold content
+    if (el.getBoundingClientRect().top > innerHeight) {
+      el.classList.add("reveal-hidden");
+      io.observe(el);
+    }
+  }
+
+  // random resting tilts — a fresh arrangement every page load.
+  // CSS reads --tilt via rotate(var(--tilt, 0deg)); tweak max degrees here.
+  const tilt = (sel, max) => {
+    for (const el of document.querySelectorAll(sel))
+      el.style.setProperty("--tilt", ((Math.random() * 2 - 1) * max).toFixed(2) + "deg");
+  };
+  tilt(".signpost, .quarto-grid-item", 1.6);
+  tilt(".photo-gallery img", 4);
+
+  document.body.insertAdjacentHTML("afterbegin", '<div id="reading-progress"></div>');
+  const bar = document.getElementById("reading-progress");
+  const h = document.documentElement;
+  addEventListener("scroll", () => {
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100 || 0) + "%";
+  }, { passive: true });
+})();
+</script>

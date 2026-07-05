@@ -1,0 +1,346 @@
+/*-- scss:defaults --*/
+// ============================================================================
+// theme.scss — ALL custom styling for chendaniely.github.io
+// Layered on: cosmo (Bootswatch) + brand (_brand.yml).
+//
+// Brand palette colors arrive automatically as $brand-* variables:
+//   $brand-orange $brand-blue $brand-warm-white $brand-sand $brand-stone
+//   $brand-warm-gray $brand-charcoal $brand-near-black
+//   $brand-dark-base $brand-dark-surface $brand-dark-border
+// >>> Change colors in _brand.yml, not here. <<<
+//
+// TABLE OF CONTENTS — search for the ── markers:
+//   HERO     home page hero: photo, rotating tagline      [index.qmd]
+//   CHIPS    hobby pills                                  [index.qmd]
+//   SECTIONS section headers, home layout                 [index.qmd, about.qmd]
+//   CARDS    listing cards + signpost cards               [index, blog, projects]
+//   GALLERY  polaroid photo grid                          [about.qmd]
+//   POSTS    reading polish, progress bar                 [posts/*]
+//   TALKS    talks.yml listing                             [talks/]
+//   MOTION   every animation lives here, wrapped in
+//            prefers-reduced-motion
+// ============================================================================
+
+// ── tweakable knobs ──
+$photo-tilt: -3.5deg;  // resting tilt of hero photo & gallery polaroids
+// card + polaroid tilts are randomized per page load — ranges are the
+// `tilt(...)` calls in scroll-reveal.html
+$reveal-rise: 18px;    // distance sections travel while fading in
+
+/*-- scss:rules --*/
+
+// ── LISTING THUMBNAILS ── (was styles.css) crop card images to 16:9
+.quarto-listing .thumbnail img,
+.quarto-grid-item .thumbnail img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+// Sections below are appended by later tasks:
+// ── HERO ── home page: photo, name, rotating tagline [index.qmd]
+.home-hero {
+  display: flex;
+  gap: 2.75rem;
+  align-items: center;
+  padding: 2.5rem 0 1rem;
+
+  // soft background blobs (from the chosen mockup): sand top-right, blue lower-left.
+  // background-image gradients, so they can never cause horizontal overflow.
+  // theme-dark.scss swaps these for faint glows that read better on dark.
+  background:
+    radial-gradient(circle 240px at 90% -10%, rgba($brand-sand, 0.55), transparent 70%),
+    radial-gradient(circle 170px at 4% 110%, rgba($brand-blue, 0.10), transparent 70%);
+
+  .hero-photo img, img.hero-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 22px;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+  h1 {
+    font-size: 2.5rem;
+    border: none;
+  }
+}
+.rot-lead { font-size: 1.3rem; }
+.rotator {
+  display: inline-grid;
+  vertical-align: bottom;
+  font-size: 1.3rem;
+  .rot-word {
+    grid-area: 1 / 1;
+    color: $brand-orange;
+    font-weight: 700;
+  }
+  // words stack; MOTION section animates the cycle.
+  // without motion (reduced-motion): only the first word shows.
+  .rot-word:not(:first-child) { opacity: 0; }
+}
+// stack the hero on narrow screens (photo above text, centered)
+@media (max-width: 576px) {
+  .home-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+// ── CHIPS ── hobby pills [index.qmd]
+.hobby-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.5rem 0 1rem;
+}
+.chip {
+  background: white;
+  border: 1.5px solid $brand-sand;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+// ── SECTIONS ── section header pattern [index.qmd, about.qmd]
+.home-section { padding-top: 2rem; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1.5px solid $brand-sand;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+
+  .section-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: $brand-warm-gray;
+    margin: 0;
+    border: none;
+  }
+  .section-more {
+    margin-left: auto;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+// ── CARDS ── listing cards (home + blog) and signpost cards
+// tilt is resting state; MOTION straightens them on hover
+.signposts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+.signpost {
+  background: white;
+  border: 1.5px solid $brand-sand;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    border: none;
+  }
+  .now-line {
+    display: block;
+    color: $brand-orange;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0.4rem 0;
+  }
+  .now-line:empty { display: none; }  // blanked _variables.yml value hides the line
+}
+.quarto-grid-item {
+  border-radius: 14px;
+  border: 1.5px solid $brand-sand;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+// ── GALLERY ── polaroid photo grid [about.qmd]
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0;
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    border: 8px solid white;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// ── POSTS ── reading polish [posts/*]
+blockquote {
+  border-left: 4px solid $brand-orange;
+  background: $brand-warm-white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  color: $brand-charcoal;
+}
+.callout {
+  border-radius: 10px;
+}
+
+// ── TALKS ── talks.yml listing [talks/index.qmd via talks.ejs]
+.talk-list {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.talk {
+  display: flex;
+  gap: 1.25rem;
+  align-items: baseline;
+}
+.talk-date {
+  min-width: 6.5rem;
+  color: $brand-warm-gray;
+  font-size: 0.9rem;
+}
+.talk-title {
+  font-weight: 700;
+}
+// badge shown for non-"talk" types (workshop, tutorial, keynote, ...)
+.talk-type {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $brand-blue;
+  background: rgba($brand-blue, 0.12);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+.talk-meta,
+.talk-desc {
+  font-size: 0.9rem;
+  color: $brand-warm-gray;
+}
+.talk-links {
+  display: flex;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+}
+// languages + packages pills (talks.yml `languages:` / `packages:`)
+.talk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+}
+.talk-tag {
+  font-size: 0.72rem;
+  color: $brand-warm-gray;
+  border: 1px solid $brand-sand;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+}
+
+// ── MOTION ── every animation on the site; all inside reduced-motion guard
+@media (prefers-reduced-motion: no-preference) {
+  // scroll reveal (driven by scroll-reveal.html)
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY($reveal-rise);
+  }
+  .reveal-hidden.revealed {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  // prose links warm from blue to orange
+  a {
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: $brand-orange;
+  }
+
+  // nav links tilt playfully
+  .navbar .nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .navbar .nav-link:hover {
+    transform: rotate(-3deg) scale(1.08);
+    // blue, not orange: the navbar background is brand primary (orange),
+    // so an orange hover would vanish into it
+    color: $brand-blue;
+  }
+
+  // hero photo: tilted at rest, straightens on hover
+  .home-hero .hero-photo img, img.hero-photo {
+    transform: rotate($photo-tilt);
+    transition: transform 0.3s ease;
+  }
+  .home-hero .hero-photo img:hover, img.hero-photo:hover {
+    transform: rotate(0deg) scale(1.04);
+  }
+
+  // rotating tagline: 4 words × 2s each = 8s cycle.
+  // To add/remove a word: add/remove a .rot-word span in index.qmd,
+  // then update the 8s duration (2s × word count) and the delay list.
+  .rotator .rot-word {
+    opacity: 0;
+    animation: rot-cycle 8s infinite;
+  }
+  .rotator .rot-word:nth-child(2) { animation-delay: 2s; }
+  .rotator .rot-word:nth-child(3) { animation-delay: 4s; }
+  .rotator .rot-word:nth-child(4) { animation-delay: 6s; }
+  @keyframes rot-cycle {
+    0% { opacity: 0; transform: translateY(8px); }
+    5%, 22% { opacity: 1; transform: translateY(0); }
+    28%, 100% { opacity: 0; transform: translateY(-8px); }
+  }
+
+  // chips lift + tilt on hover
+  .chip {
+    display: inline-block;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .chip:hover {
+    transform: translateY(-3px) rotate(-2deg);
+    border-color: $brand-orange;
+  }
+
+  // cards: random resting tilt (set per page load by scroll-reveal.html
+  // via the --tilt custom property; ranges live there), straighten + lift
+  // on hover. Without JS or with reduced motion, cards sit straight.
+  .signpost, .quarto-grid-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transform: rotate(var(--tilt, 0deg));
+  }
+  .signpost:hover, .quarto-grid-item:hover {
+    transform: rotate(0) translateY(-5px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.15);
+    border-color: $brand-orange;
+  }
+
+  // gallery polaroids: same random-tilt mechanism, straighten on hover
+  .photo-gallery img {
+    transition: transform 0.3s ease;
+    transform: rotate(var(--tilt, 0deg));
+  }
+  .photo-gallery img:hover { transform: rotate(0) scale(1.03); }
+}
+
+// reading progress bar (element injected by scroll-reveal.html)
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: $brand-orange;
+  z-index: 2000;
+}

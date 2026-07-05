@@ -1,21 +1,38 @@
 project:
   type: website
+  render:
+    # 🤖 render everything except docs/ — it holds local planning files
+    # (gitignored) whose markdown contains Quarto shortcodes in code samples
+    # that break the build if rendered as site content
+    - "*"
+    - "!docs/**"
 
 website:
   title: "Daniel Chen"
+  site-url: https://chendaniely.github.io  # 🤖 required for RSS feed generation
   google-analytics: "G-H85THYPX4L"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - href: blog.qmd
         text: Blog
-      - about.qmd
+      - href: talks/index.qmd
+        text: Talks
+      - href: teaching/index.qmd
+        text: Teaching
+      - href: projects/index.qmd
+        text: Projects
+      - href: about.qmd
+        text: About
+  page-footer:
+    left: "© Daniel Chen · [RSS](/blog.xml) · [Source](https://github.com/chendaniely/chendaniely.github.io)"
+    right: "Built with [Quarto](https://quarto.org)"
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: styles.css
+      # 🤖 dark listed first = dark is the default appearance;
+      # the navbar toggle still switches to light
+      dark: [cosmo, brand, theme.scss, theme-dark.scss]
+      light: [cosmo, brand, theme.scss]
     toc: true
+    include-after-body: scroll-reveal.html
