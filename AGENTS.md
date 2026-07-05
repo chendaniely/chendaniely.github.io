@@ -71,8 +71,11 @@ Makefile             # `make submodules` to init/update submodules
 ## Interactive posts
 
 Posts can embed interactive charts with Quarto's built-in `ojs` engine —
-no site-level JavaScript needed.
-See `posts/2026/2026-07-04-interactive-posts/` for the pattern.
+no site-level JavaScript needed:
+add an `{ojs}` code cell to any post (no YAML changes required);
+`Inputs.*` makes controls, `Plot.plot` draws charts,
+`viewof` wires them together, all running in the reader's browser.
+(A demo post existed briefly; Dan removed it — pattern lives here instead.)
 
 ## Updating "what's current"
 
