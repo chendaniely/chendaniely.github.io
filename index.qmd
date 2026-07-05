@@ -19,7 +19,7 @@ listing:
 ::: {.hero-text}
 # Hi, I'm Daniel 👋
 
-[I'm a ]{.rot-lead}[[data science educator]{.rot-word}[ultra runner]{.rot-word aria-hidden="true"}[scuba diver]{.rot-word aria-hidden="true"}[ski tourer]{.rot-word aria-hidden="true"}]{.rotator}
+[I'm a]{.rot-lead} [[data science educator]{.rot-word}[ultra runner]{.rot-word aria-hidden="true"}[scuba diver]{.rot-word aria-hidden="true"}[ski tourer]{.rot-word aria-hidden="true"}]{.rotator}
 
 [Bluesky](https://bsky.app/profile/chendaniely.bsky.social){.hero-link} · [GitHub](https://github.com/chendaniely){.hero-link} · [LinkedIn](https://www.linkedin.com/in/chendaniely/){.hero-link}
 :::
