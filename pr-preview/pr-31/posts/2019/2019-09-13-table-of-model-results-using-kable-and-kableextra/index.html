@@ -78,12 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a1e89d46001ea12dc3528b129505873c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-c147a353cdf3e0b7efe79f993c0de547.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a1e89d46001ea12dc3528b129505873c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-11e39bde76d677cecbcbef4f81c2373f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-d5e91331b797aba4ee99bd9935f4d7f0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-11e39bde76d677cecbcbef4f81c2373f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-6046e4e0dc62be7ffdcc464bada6e9bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-efdc95b544024a32462e425aad9e3c27.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -126,7 +124,7 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -268,10 +266,8 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = false;
+    const authorPrefersDark = true;
     const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -514,10 +510,10 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 <div class="cell-output cell-output-stdout">
 <pre><code>  C1 C2 C3 C4
 1  a  c  1  1
-2  a  c  2  0
-3  a  d  3  0
+2  a  c  2  1
+3  a  d  3  1
 4  b  c  4  0
-5  b  d  5  0</code></pre>
+5  b  d  5  1</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -544,12 +540,12 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">d</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
 <td rowspan="2" style="text-align: center; font-weight: bold; vertical-align: top !important;">b</td>
@@ -560,7 +556,7 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 <tr class="odd">
 <td style="text-align: center;">d</td>
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
