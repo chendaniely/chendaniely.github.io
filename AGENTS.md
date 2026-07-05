@@ -32,6 +32,9 @@ theme-dark.scss      # dark-mode color overrides
 scroll-reveal.html   # the site's only JS (~20 lines)
 _now-signposts.qmd   # home page signpost cards partial
 talks/ teaching/ projects/   # section stub pages
+talks/talks.yml      # ALL talks data (copy template comment inside for new
+                     # talks; omit unused fields). Feeds the talks page via
+                     # talks.ejs; later feeds CV + video pipeline (id = join key)
 posts/               # All blog posts — one folder per post
   YYYY/
     YYYY-MM-DD-slug/

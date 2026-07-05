@@ -2,6 +2,10 @@
 title: Talks
 toc: false
 page-layout: full
+listing:
+  id: talks-list
+  contents: talks.yml
+  template: talks.ejs
 ---
 
 ::: {.callout-note icon=false}
@@ -11,17 +15,9 @@ page-layout: full
 :::
 
 Conference talks, guest lectures, and workshops.
-Recordings with searchable transcripts are coming —
+All talks live in `talks.yml` (one entry per talk);
+recordings with searchable transcripts are coming —
 each talk will get its own page with video, transcript, and summary.
 
-## Upcoming
-
-- [PyLadies Vancouver](https://luma.com/3oxfwqry)
-  — July 6, 2026, Vancouver, BC
-- [SciPy 2026](https://www.scipy2026.scipy.org/schedule)
-  — July 13–19, 2026, University of Minnesota, Minneapolis
-
-## Past talks
-
-Talk archive under construction —
-each talk will get its own page here as the archive is built out.
+::: {#talks-list}
+:::

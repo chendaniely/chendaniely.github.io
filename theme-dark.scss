@@ -19,6 +19,9 @@ blockquote {
   color: $body-color;  // theme.scss sets charcoal — unreadable on dark surface
 }
 
+// talks listing: warm-gray is too dim on dark — lift to stone
+.talk-date, .talk-meta, .talk-desc { color: $brand-stone; }
+
 // hero blobs: light-theme sand reads as a smudge on dark — use faint brand glows
 .home-hero {
   background:
