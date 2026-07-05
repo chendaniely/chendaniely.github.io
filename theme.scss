@@ -23,7 +23,8 @@
 
 // ── tweakable knobs ──
 $photo-tilt: -3.5deg;  // resting tilt of hero photo & gallery polaroids
-$card-tilt: 1deg;      // resting tilt of cards (alternates +/- per card)
+// card + polaroid tilts are randomized per page load — ranges are the
+// `tilt(...)` calls in scroll-reveal.html
 $reveal-rise: 18px;    // distance sections travel while fading in
 
 /*-- scss:rules --*/
@@ -312,17 +313,12 @@ blockquote {
     border-color: $brand-orange;
   }
 
-  // cards: alternating resting tilt, straighten + lift on hover
+  // cards: random resting tilt (set per page load by scroll-reveal.html
+  // via the --tilt custom property; ranges live there), straighten + lift
+  // on hover. Without JS or with reduced motion, cards sit straight.
   .signpost, .quarto-grid-item {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
-  .signposts .signpost:nth-child(odd),
-  .quarto-listing .quarto-grid-item:nth-child(odd) {
-    transform: rotate(-$card-tilt);
-  }
-  .signposts .signpost:nth-child(even),
-  .quarto-listing .quarto-grid-item:nth-child(even) {
-    transform: rotate($card-tilt);
+    transform: rotate(var(--tilt, 0deg));
   }
   .signpost:hover, .quarto-grid-item:hover {
     transform: rotate(0) translateY(-5px);
@@ -330,11 +326,11 @@ blockquote {
     border-color: $brand-orange;
   }
 
-  // gallery polaroids: alternate tilt, straighten on hover
-  // (> * because Quarto wraps captioned images in <figure>, uncaptioned in <p>)
-  .photo-gallery img { transition: transform 0.3s ease; }
-  .photo-gallery > *:nth-child(odd) img { transform: rotate($photo-tilt); }
-  .photo-gallery > *:nth-child(even) img { transform: rotate(-$photo-tilt); }
+  // gallery polaroids: same random-tilt mechanism, straighten on hover
+  .photo-gallery img {
+    transition: transform 0.3s ease;
+    transform: rotate(var(--tilt, 0deg));
+  }
   .photo-gallery img:hover { transform: rotate(0) scale(1.03); }
 }
 
