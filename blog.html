@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.11">
+<meta name="generator" content="quarto-1.10.14">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -41,14 +41,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-45ce9ca833de1680a648b33705801a79.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b26489370931adde4ea3d6c904185fb1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-45ce9ca833de1680a648b33705801a79.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a1e89d46001ea12dc3528b129505873c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c147a353cdf3e0b7efe79f993c0de547.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cee3bdc0c5455b69bd5653b652ddb52b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-01c96ae18dcc85a5c8b28a7fa726d80a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-cee3bdc0c5455b69bd5653b652ddb52b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b9978e8e939c10ee63139d87fbceaef0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f067ce0454aac2af0b17d37b5bff2309.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,10 +84,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 25,
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 18,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -146,10 +144,169 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Daniel Chen" href="blog.xml" data-external="1"></head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -167,12 +324,20 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./blog.html" aria-current="page"> 
 <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./talks/index.html"> 
+<span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects/index.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -181,6 +346,7 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -189,9 +355,11 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(61)</span></div><div class="category" data-category="Z2VuZXJhbA==">general <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFraW5n">making <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -200,7 +368,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -216,1580 +384,1271 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXJhbCUyQ1I=" data-listing-date-sort="1774828800000" data-listing-file-modified-sort="1781594936845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4224">
-<div class="thumbnail"><a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="no-external">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Z2VuZXJhbCUyQ1I=" data-listing-date-sort="1774828800000" data-listing-file-modified-sort="1783221299461" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4224">
+<a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/cherry_blossoms-night.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+The Vancouver Cherry Blossom Marathon
+</h5>
+<div class="listing-reading-time card-text text-muted">22 min</div>
+<div class="listing-categories">
 
-<img loading="lazy" src="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/cherry_blossoms-night.jpg" class="thumbnail-image">
+<div class="listing-category" onclick="window.quartoListingCategory('Z2VuZXJhbA=='); return false;">general</div>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="no-external">The Vancouver Cherry Blossom Marathon</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="no-external">A Data-Driven Guide to the City’s Most Spectacular Streets</a>
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
 </div>
-<div class="delink listing-description"><a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="no-external">
+<div class="card-text listing-description delink">
 Using data from the Vancouver Open Data Portal, some vibes, and lots of checking We have the Vancouver Cherry Blossom (Ultra?) Marathon!
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 30, 2026
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="" data-listing-date-sort="1603756800000" data-listing-file-modified-sort="1781594936842" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="881">
-<div class="thumbnail"><a href="./posts/2020/2020-10-27-using-obs-for-online-teaching/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="" data-listing-date-sort="1603756800000" data-listing-file-modified-sort="1783221299458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="881">
+<a href="./posts/2020/2020-10-27-using-obs-for-online-teaching/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="posts/2020/2020-10-27-using-obs-for-online-teaching/ds4biomed-workshop-screenshot.PNG" style="height: 150px;" title="Screenshot of the workshop showing the screen capture, webcam video, live captions, and links" class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Using OBS for Online Teaching
+</h5>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="listing-categories">
 
-<p class="card-img-top"><img loading='lazy' src="posts/2020/2020-10-27-using-obs-for-online-teaching/ds4biomed-workshop-screenshot.PNG" title="Screenshot of the workshop showing the screen capture, webcam video, live captions, and links" class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020/2020-10-27-using-obs-for-online-teaching/index.html" class="no-external">Using OBS for Online Teaching</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2020/2020-10-27-using-obs-for-online-teaching/index.html" class="no-external"></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2020/2020-10-27-using-obs-for-online-teaching/index.html" class="no-external">
+<div class="card-text listing-description delink">
 Open Broadcaster Software (OBS) is a featured and popular used to lay out your screen for recording and streaming. V26 of OBS Studio was released mid October 2020, and it…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2020/2020-10-27-using-obs-for-online-teaching/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Oct 27, 2020
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="bWFraW5n" data-listing-date-sort="1590278400000" data-listing-file-modified-sort="1781594936838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="222">
-<div class="thumbnail"><a href="./posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="bWFraW5n" data-listing-date-sort="1590278400000" data-listing-file-modified-sort="1783221299454" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="222">
+<a href="./posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Upgrading Marlin 2.0+ with Mesh Bed Levling CR-10s
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="listing-categories">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bWFraW5n'); return false;">making</div>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html" class="no-external">Upgrading Marlin 2.0+ with Mesh Bed Levling CR-10s</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html" class="no-external"></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html" class="no-external">
+<div class="card-text listing-description delink">
 Video guide from “The First Layer”: https://www.youtube.com/watch?v=-rOZpOiWYxM
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 May 24, 2020
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="" data-listing-date-sort="1582934400000" data-listing-file-modified-sort="1781594936838" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2715">
-<div class="thumbnail"><a href="./posts/2020/2020-02-29-python-environments-with-conda/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="" data-listing-date-sort="1582934400000" data-listing-file-modified-sort="1783221299454" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2715">
+<a href="./posts/2020/2020-02-29-python-environments-with-conda/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Python Environments with Conda
+</h5>
+<div class="listing-reading-time card-text text-muted">14 min</div>
+<div class="listing-categories">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020/2020-02-29-python-environments-with-conda/index.html" class="no-external">Python Environments with Conda</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2020/2020-02-29-python-environments-with-conda/index.html" class="no-external"></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2020/2020-02-29-python-environments-with-conda/index.html" class="no-external">
+<div class="card-text listing-description delink">
 Anaconda (and these days miniconda) has been my go-to for getting Python and the scientific/data science software stack installed on my computer (even on my Arch linux…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2020/2020-02-29-python-environments-with-conda/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 29, 2020
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="" data-listing-date-sort="1580342400000" data-listing-file-modified-sort="1781594936835" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="585">
-<div class="thumbnail"><a href="./posts/2020/2020-01-30-r-hex-bowtie/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="" data-listing-date-sort="1580342400000" data-listing-file-modified-sort="1783221299451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="585">
+<a href="./posts/2020/2020-01-30-r-hex-bowtie/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="posts/2020/2020-01-30-r-hex-bowtie/conference_tag_labeled.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+R Hex Bowtie
+</h5>
+<div class="listing-reading-time card-text text-muted">3 min</div>
+<div class="listing-categories">
 
-<p class="card-img-top"><img loading='lazy' src="posts/2020/2020-01-30-r-hex-bowtie/conference_tag_labeled.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020/2020-01-30-r-hex-bowtie/index.html" class="no-external">R Hex Bowtie</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2020/2020-01-30-r-hex-bowtie/index.html" class="no-external"></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2020/2020-01-30-r-hex-bowtie/index.html" class="no-external">
+<div class="card-text listing-description delink">
 If you were at rstudio::conf you may have seen me walking around with my conference badge and wondered what everything is.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2020/2020-01-30-r-hex-bowtie/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jan 30, 2020
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="" data-listing-date-sort="1580256000000" data-listing-file-modified-sort="1781594936730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1124">
-<div class="thumbnail"><a href="./posts/2020/2020-01-29-my-time-as-an-rstudio-intern/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="" data-listing-date-sort="1580256000000" data-listing-file-modified-sort="1783221299344" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1124">
+<a href="./posts/2020/2020-01-29-my-time-as-an-rstudio-intern/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="posts/2020/2020-01-29-my-time-as-an-rstudio-intern/rstudio_intern_therese_malcom.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+My time as an RStudio Intern
+</h5>
+<div class="listing-reading-time card-text text-muted">6 min</div>
+<div class="listing-categories">
 
-<p class="card-img-top"><img loading='lazy' src="posts/2020/2020-01-29-my-time-as-an-rstudio-intern/rstudio_intern_therese_malcom.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2020/2020-01-29-my-time-as-an-rstudio-intern/index.html" class="no-external">My time as an RStudio Intern</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2020/2020-01-29-my-time-as-an-rstudio-intern/index.html" class="no-external">When internships are more than technical training</a>
 </div>
-<div class="delink listing-description"><a href="./posts/2020/2020-01-29-my-time-as-an-rstudio-intern/index.html" class="no-external">
+<div class="card-text listing-description delink">
 I’ve had a lot of time to think about my time as an RStudio intern. When I do, I usually end up with a few words in my head before I’m flooded with (good) emotions and…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2020/2020-01-29-my-time-as-an-rstudio-intern/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jan 29, 2020
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="" data-listing-date-sort="1568332800000" data-listing-file-modified-sort="1781594936730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
-<div class="thumbnail"><a href="./posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="" data-listing-date-sort="1568332800000" data-listing-file-modified-sort="1783221299343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="834">
+<a href="./posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Table of Model Results using kable and kableExtra
+</h5>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="listing-categories">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/index.html" class="no-external">Table of Model Results using kable and kableExtra</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/index.html" class="no-external"></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/index.html" class="no-external">
+<div class="card-text listing-description delink">
 I’m at the R/Medicine conference (no it’s not a Reddit thing) and got to help Alison Hill with her R Markdown for Medicine workshop. One of the questions I got to tinker…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 13, 2019
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="" data-listing-date-sort="1566950400000" data-listing-file-modified-sort="1781594936730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="808">
-<div class="thumbnail"><a href="./posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="" data-listing-date-sort="1566950400000" data-listing-file-modified-sort="1783221299343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="808">
+<a href="./posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+R or Python, which One to Learn (First)?
+</h5>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="listing-categories">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/index.html" class="no-external">R or Python, which One to Learn (First)?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/index.html" class="no-external">Pick one, learn it well, skills will transfer over</a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/index.html" class="no-external">
+<div class="card-text listing-description delink">
 I’ve been asked a few times lately about whether one should learn R or Python.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Aug 28, 2019
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="" data-listing-date-sort="1566864000000" data-listing-file-modified-sort="1781594936730" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2065">
-<div class="thumbnail"><a href="./posts/2019/2019-08-20-git-squash-and-merge-workflow/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="" data-listing-date-sort="1566864000000" data-listing-file-modified-sort="1783221299343" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2065">
+<a href="./posts/2019/2019-08-20-git-squash-and-merge-workflow/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="posts/2019/2019-08-20-git-squash-and-merge-workflow/github_squash_merge.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Git Squash and Merge Workflow
+</h5>
+<div class="listing-reading-time card-text text-muted">11 min</div>
+<div class="listing-categories">
 
-<p class="card-img-top"><img loading='lazy' src="posts/2019/2019-08-20-git-squash-and-merge-workflow/github_squash_merge.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-08-20-git-squash-and-merge-workflow/index.html" class="no-external">Git Squash and Merge Workflow</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-08-20-git-squash-and-merge-workflow/index.html" class="no-external">Doing gitmastics as an RStudio intern</a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-08-20-git-squash-and-merge-workflow/index.html" class="no-external">
+<div class="card-text listing-description delink">
 I have a love-hate relationship with Git. It took me years of following cookbooks and following strict set of commands to get a sense of how it works. I still have to spend…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-08-20-git-squash-and-merge-workflow/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Aug 27, 2019
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="" data-listing-date-sort="1565049600000" data-listing-file-modified-sort="1781594936729" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="775">
-<div class="thumbnail"><a href="./posts/2019/2019-08-06-inconsistencies-with-in-r/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="9" data-categories="" data-listing-date-sort="1565049600000" data-listing-file-modified-sort="1783221299342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="775">
+<a href="./posts/2019/2019-08-06-inconsistencies-with-in-r/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Inconsistencies with the <code>==</code> operator in R
+</h5>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="listing-categories">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-08-06-inconsistencies-with-in-r/index.html" class="no-external">Inconsistencies with the <code>==</code> operator in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-08-06-inconsistencies-with-in-r/index.html" class="no-external">I found a bug with the == operator in R!</a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-08-06-inconsistencies-with-in-r/index.html" class="no-external">
+<div class="card-text listing-description delink">
 One of the cool things about working on <code>gradethis</code> (<code>grader</code> need to be renamed) is that we end up doing things that aren’t common in R (i.e., grading and comparing code).
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-08-06-inconsistencies-with-in-r/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Aug 6, 2019
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="" data-listing-date-sort="1564790400000" data-listing-file-modified-sort="1781594936725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="667">
-<div class="thumbnail"><a href="./posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="10" data-categories="" data-listing-date-sort="1564790400000" data-listing-file-modified-sort="1783221299339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="667">
+<a href="./posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/mounting_oculus-machine_screws.jpg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Mounting Oclus Rift Sensors on the Wall
+</h5>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="listing-categories">
 
-<p class="card-img-top"><img loading='lazy' src="posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/mounting_oculus-machine_screws.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/index.html" class="no-external">Mounting Oclus Rift Sensors on the Wall</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/index.html" class="no-external">Still looking for a way to hide my cables behind the desk…</a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/index.html" class="no-external">
+<div class="card-text listing-description delink">
 I was initially going to get some small bookshelves to put my Oculus sensors on, but you can take your Oculus sensors off the stand! This way you wont have an awkward way to…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Aug 3, 2019
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="" data-listing-date-sort="1563840000000" data-listing-file-modified-sort="1781594936725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="389">
-<div class="thumbnail"><a href="./posts/2019/2019-07-23-new-website/index.html" class="no-external">
+</div></a>
+</div>
+<div class="g-col-1" data-index="11" data-categories="" data-listing-date-sort="1563840000000" data-listing-file-modified-sort="1783221299339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="389">
+<a href="./posts/2019/2019-07-23-new-website/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+New Website a la Blogdown!
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="listing-categories">
 
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-07-23-new-website/index.html" class="no-external">New Website a la Blogdown!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-07-23-new-website/index.html" class="no-external">At least I accomplished something this internship! xD</a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-07-23-new-website/index.html" class="no-external">
+<div class="card-text listing-description delink">
 I finally got everything moved over to blogdown with the Hugo Academic theme. Thanks so much to Allison Hill, who ran the summer-of-blogdown tutorial for us RStudio interns.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-07-23-new-website/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jul 23, 2019
 </div>
-<div class="listing-author">
-Daniel Chen
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1560816000000" data-listing-file-modified-sort="1781594936725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1228">
-<div class="thumbnail"><a href="./posts/2019/2019-06-18-rstudio_internship_wk02/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-06-18-rstudio_internship_wk02/index.html" class="no-external">RStudio internship week 2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-06-18-rstudio_internship_wk02/index.html" class="no-external">I think I can make it through the summer</a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-06-18-rstudio_internship_wk02/index.html" class="no-external">
+<div class="g-col-1" data-index="12" data-listing-date-sort="1560816000000" data-listing-file-modified-sort="1783221299339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1228">
+<a href="./posts/2019/2019-06-18-rstudio_internship_wk02/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+RStudio internship week 2
+</h5>
+<div class="listing-reading-time card-text text-muted">7 min</div>
+<div class="card-text listing-description delink">
 The main topics and events of last week were:
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-06-18-rstudio_internship_wk02/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jun 18, 2019
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-listing-date-sort="1560124800000" data-listing-file-modified-sort="1781594936725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="982">
-<div class="thumbnail"><a href="./posts/2019/2019-06-10-rstudio_internship_wk01/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2019/2019-06-10-rstudio_internship_wk01/index.html" class="no-external">And we’re off! RStudio internship week 1, complete.</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2019/2019-06-10-rstudio_internship_wk01/index.html" class="no-external">First week of internship is over and I can’t believe this is actually happening</a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2019/2019-06-10-rstudio_internship_wk01/index.html" class="no-external">
+<div class="g-col-1" data-index="13" data-listing-date-sort="1560124800000" data-listing-file-modified-sort="1783221299339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="982">
+<a href="./posts/2019/2019-06-10-rstudio_internship_wk01/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+And we’re off! RStudio internship week 1, complete.
+</h5>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="card-text listing-description delink">
 I’m still pinching myself about being one of the RStudio interns this year. It’s an unbelievable opportunity and I’ve been half panicked and fighting imposter syndrome since…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2019/2019-06-10-rstudio_internship_wk01/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jun 10, 2019
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-listing-date-sort="1524355200000" data-listing-file-modified-sort="1781594936725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1794">
-<div class="thumbnail"><a href="./posts/2018/2018-04-22-rstatsnyc/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2018/2018-04-22-rstatsnyc/index.html" class="no-external">rstatsnyc as told by <span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>, <span class="citation" data-cites="dataandme">@dataandme</span>, and autographs</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2018/2018-04-22-rstatsnyc/index.html" class="no-external">An ongoing set up updates about what happened at the 2018 NYC R Conference</a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2018/2018-04-22-rstatsnyc/index.html" class="no-external">
+<div class="g-col-1" data-index="14" data-listing-date-sort="1524355200000" data-listing-file-modified-sort="1783221299338" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1794">
+<a href="./posts/2018/2018-04-22-rstatsnyc/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+rstatsnyc as told by <span class="citation" data-cites="brookLYNevery1">@brookLYNevery1</span>, <span class="citation" data-cites="dataandme">@dataandme</span>, and autographs
+</h5>
+<div class="listing-reading-time card-text text-muted">9 min</div>
+<div class="card-text listing-description delink">
 EDIT: I’ve added the notes from <span class="citation" data-cites="dataandme">@dataandme</span> and linked to people’s twitter and slides (if I found them). This is probably going to be an ongoing process…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2018/2018-04-22-rstatsnyc/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 22, 2018
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-listing-date-sort="1516665600000" data-listing-file-modified-sort="1781594936725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1477">
-<div class="thumbnail"><a href="./posts/2018/2018-01-23-analysis_based_project_templates/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2018/2018-01-23-analysis_based_project_templates/index.html" class="no-external">Analysis-Based Project Templates</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2018/2018-01-23-analysis_based_project_templates/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2018/2018-01-23-analysis_based_project_templates/index.html" class="no-external">
+<div class="g-col-1" data-index="15" data-listing-date-sort="1516665600000" data-listing-file-modified-sort="1783221299338" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1477">
+<a href="./posts/2018/2018-01-23-analysis_based_project_templates/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Analysis-Based Project Templates
+</h5>
+<div class="listing-reading-time card-text text-muted">8 min</div>
+<div class="card-text listing-description delink">
 One of the most annoying things you hear people say when they are working with some common code base is “It works on my machine…”. Conversely, one of the more satisfying…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2018/2018-01-23-analysis_based_project_templates/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jan 23, 2018
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-listing-date-sort="1499385600000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1444">
-<div class="thumbnail"><a href="./posts/2017/2017-07-07-vm_lxc_docker/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-07-07-vm_lxc_docker/index.html" class="no-external">From VMs to LXC Containers to Docker Containers</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-07-07-vm_lxc_docker/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-07-07-vm_lxc_docker/index.html" class="no-external">
+<div class="g-col-1" data-index="16" data-listing-date-sort="1499385600000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1444">
+<a href="./posts/2017/2017-07-07-vm_lxc_docker/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+From VMs to LXC Containers to Docker Containers
+</h5>
+<div class="listing-reading-time card-text text-muted">8 min</div>
+<div class="card-text listing-description delink">
 Since I’ve joined SDAL, the lab has undergone a few infrastructure related changes, mainly how applications are run on the servers. From what I remember, we started using Vir…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-07-07-vm_lxc_docker/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jul 7, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-listing-date-sort="1496102400000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1012">
-<div class="thumbnail"><a href="./posts/2017/2017-05-30-project_templates/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-05-30-project_templates/index.html" class="no-external">Project Templates</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-05-30-project_templates/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-05-30-project_templates/index.html" class="no-external">
+<div class="g-col-1" data-index="17" data-listing-date-sort="1496102400000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1012">
+<a href="./posts/2017/2017-05-30-project_templates/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Project Templates
+</h5>
+<div class="listing-reading-time card-text text-muted">6 min</div>
+<div class="card-text listing-description delink">
 Project templates provide some standardized way to organize files. Our lab uses a template that is based off the Noble 2009 Paper, “A Quick Guide to Organizing Computational…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-05-30-project_templates/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 May 30, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-listing-date-sort="1493596800000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="240">
-<div class="thumbnail"><a href="./posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html" class="no-external">Changes in Higher Education</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html" class="no-external">
+<div class="g-col-1" data-index="18" data-listing-date-sort="1493596800000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="240">
+<a href="./posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Changes in Higher Education
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 As a PhD student who already has a Master’s degree, it’s safe to say that I’ve been in school for a long time. One of the things in higher education that I started to…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 May 1, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-listing-date-sort="1492992000000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="157">
-<div class="thumbnail"><a href="./posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html" class="no-external">NYC R Conference</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html" class="no-external">
+<div class="g-col-1" data-index="19" data-listing-date-sort="1492992000000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="157">
+<a href="./posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NYC R Conference
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 Just got back from the 3rd annual NYC R Conference this past weekend. I have been honored to be one of the few speakers for the 3rd year in a row. This year’s talk, “So You…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 24, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1492992000000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="250">
-<div class="thumbnail"><a href="./posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html" class="no-external">Preparing for the Summer</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html" class="no-external">
+<div class="g-col-1" data-index="20" data-listing-date-sort="1492992000000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="250">
+<a href="./posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Preparing for the Summer
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 As the semester comes to an end, preparing for my lab’s Data Science for the Public Good Program begins. I’ve started a GitHub group to dump the various components we will…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 24, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-listing-date-sort="1492387200000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="200">
-<div class="thumbnail"><a href="./posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html" class="no-external">Working While Pursuing a PhD</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html" class="no-external">
+<div class="g-col-1" data-index="21" data-listing-date-sort="1492387200000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="200">
+<a href="./posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Working While Pursuing a PhD
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 My lab has extended me an opportunity to be a research scientist and helping out our current senior data scientist with the daily analytics and IT support the lab needs.…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 17, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-listing-date-sort="1491782400000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42">
-<div class="thumbnail"><a href="./posts/2017/2017-04-10-pfp_journal_11_us_education/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-10-pfp_journal_11_us_education/index.html" class="no-external">Education in the United States</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-10-pfp_journal_11_us_education/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-10-pfp_journal_11_us_education/index.html" class="no-external">
+<div class="g-col-1" data-index="22" data-listing-date-sort="1491782400000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42">
+<a href="./posts/2017/2017-04-10-pfp_journal_11_us_education/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Education in the United States
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 As people start sharing their educational experiences from around the world, I realized how lucky I am to have been educated in New York City, and how much less the United…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-10-pfp_journal_11_us_education/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 10, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-listing-date-sort="1491782400000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="423">
-<div class="thumbnail"><a href="./posts/2017/2017-04-10-pfp_blog_open_access/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-10-pfp_blog_open_access/index.html" class="no-external">Open Access</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-10-pfp_blog_open_access/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-10-pfp_blog_open_access/index.html" class="no-external">
+<div class="g-col-1" data-index="23" data-listing-date-sort="1491782400000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="423">
+<a href="./posts/2017/2017-04-10-pfp_blog_open_access/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Open Access
+</h5>
+<div class="listing-reading-time card-text text-muted">3 min</div>
+<div class="card-text listing-description delink">
 “Open” has played in important role in my life the last few years. It all began when I was an attendee at a Software-Carpentry workshop back in 2013. Before then, I only…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-10-pfp_blog_open_access/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 10, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-listing-date-sort="1491177600000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292">
-<div class="thumbnail"><a href="./posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html" class="no-external">The People that Keep Me Sane</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html" class="no-external">
+<div class="g-col-1" data-index="24" data-listing-date-sort="1491177600000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292">
+<a href="./posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+The People that Keep Me Sane
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 Coming from CUNY Hunter College, I never really had the typical ‘college experience’. Going to college for me was almost no different than going to high school since so many…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 3, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-listing-date-sort="1491177600000" data-listing-file-modified-sort="1781594936724" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="478">
-<div class="thumbnail"><a href="./posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html" class="no-external">Tech &amp; Innovation in Higher Ed</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html" class="no-external">
+<div class="g-col-1" data-index="25" data-listing-date-sort="1491177600000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="478">
+<a href="./posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Tech &amp; Innovation in Higher Ed
+</h5>
+<div class="listing-reading-time card-text text-muted">3 min</div>
+<div class="card-text listing-description delink">
 How faculty (higher education) are using and/or reacting to social media, MOOCs, and/or other “disruptive” technologies.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Apr 3, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-listing-date-sort="1490832600000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="681">
-<div class="thumbnail"><a href="./posts/2017/2017-03-30-simple_neural_network_model/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-30-simple_neural_network_model/index.html" class="no-external">A ‘Simple’ Neural-Network Model</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-30-simple_neural_network_model/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-30-simple_neural_network_model/index.html" class="no-external">
+<div class="g-col-1" data-index="26" data-listing-date-sort="1490832600000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="681">
+<a href="./posts/2017/2017-03-30-simple_neural_network_model/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+A ‘Simple’ Neural-Network Model
+</h5>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="card-text listing-description delink">
 My previous blog post summarized the main points of the Watts 2002 paper. At the very end of the post I mentioned ways we can extend the Watts model with neural-networks.…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-30-simple_neural_network_model/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 30, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-listing-date-sort="1490572800000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="162">
-<div class="thumbnail"><a href="./posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html" class="no-external">Should You Attend Grad School?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html" class="no-external">
+<div class="g-col-1" data-index="27" data-listing-date-sort="1490572800000" data-listing-file-modified-sort="1783221299337" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="162">
+<a href="./posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Should You Attend Grad School?
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 I’ve been asked a few times about whether one should attend graduate school. I usually follow up by asking whether they are planning to do a Master’s or a Doctorate.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 27, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-listing-date-sort="1490572800000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="190">
-<div class="thumbnail"><a href="./posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html" class="no-external">Scientific Programming</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html" class="no-external">
+<div class="g-col-1" data-index="28" data-listing-date-sort="1490572800000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="190">
+<a href="./posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Scientific Programming
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 Software-Carpentry played an integral part of who I am today. I am always trying to learn and follow best practices in the context of scientific programming, which I think…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 27, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-listing-date-sort="1489968000000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
-<div class="thumbnail"><a href="./posts/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/index.html" class="no-external">From NYC to Blacksburg, VA</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/index.html" class="no-external">
+<div class="g-col-1" data-index="29" data-listing-date-sort="1489968000000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
+<a href="./posts/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+From NYC to Blacksburg, VA
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 I’m from New York City. Born and raised in Queens, and went to school in Manhattan for high school, college, and masters. So, coming down to rural Blacksburg, VA has been a…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-20-pfp_journal_08_nyc_blacksburg/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 20, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-listing-date-sort="1489968000000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="619">
-<div class="thumbnail"><a href="./posts/2017/2017-03-20-pfp_blog_03_my_story/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-20-pfp_blog_03_my_story/index.html" class="no-external">My Story</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-20-pfp_blog_03_my_story/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-20-pfp_blog_03_my_story/index.html" class="no-external">
+<div class="g-col-1" data-index="30" data-listing-date-sort="1489968000000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="619">
+<a href="./posts/2017/2017-03-20-pfp_blog_03_my_story/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+My Story
+</h5>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="card-text listing-description delink">
 How did I get to where I am today.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-20-pfp_blog_03_my_story/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 20, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="31" data-listing-date-sort="1489363200000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<div class="thumbnail"><a href="./posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html" class="no-external">What You Call Yourself is Important</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html" class="no-external">
+<div class="g-col-1" data-index="31" data-listing-date-sort="1489363200000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
+<a href="./posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+What You Call Yourself is Important
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 I am a PhD <em>Student</em>, not a candidate… yet.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 13, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="32" data-listing-date-sort="1489276800000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="251">
-<div class="thumbnail"><a href="./posts/2017/2017-03-12-pfp_blog_research_ethics/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-12-pfp_blog_research_ethics/index.html" class="no-external">Research Ethics</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-12-pfp_blog_research_ethics/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-12-pfp_blog_research_ethics/index.html" class="no-external">
+<div class="g-col-1" data-index="32" data-listing-date-sort="1489276800000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="251">
+<a href="./posts/2017/2017-03-12-pfp_blog_research_ethics/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Research Ethics
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 The Office of Research Integrity (ORI) oversees and directs Public Health Service (PHS) research integrity activities on behalf of the Secretary of Health and Human Services…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-12-pfp_blog_research_ethics/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 12, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="33" data-listing-date-sort="1488758400000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206">
-<div class="thumbnail"><a href="./posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html" class="no-external">Some Modest Advice for Graduate Students</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html" class="no-external">
+<div class="g-col-1" data-index="33" data-listing-date-sort="1488758400000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206">
+<a href="./posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Some Modest Advice for Graduate Students
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 Some Modest Advice for Graduate Students by Stephen C. Stearns
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 6, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="34" data-listing-date-sort="1488758400000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
-<div class="thumbnail"><a href="./posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html" class="no-external">How Learning Works</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html" class="no-external">
+<div class="g-col-1" data-index="34" data-listing-date-sort="1488758400000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
+<a href="./posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+How Learning Works
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 Susan Ambrose’s book “How Learning Works” is probably one of the best investments for people who teach. The next best (time) investment is reading Greg Wilson’s paper on “Sof…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 6, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="35" data-listing-date-sort="1488153600000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
-<div class="thumbnail"><a href="./posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html" class="no-external">Teaching and Mentoring</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html" class="no-external">
+<div class="g-col-1" data-index="35" data-listing-date-sort="1488153600000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
+<a href="./posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Teaching and Mentoring
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 Software-Carpentry1 has made be a better teacher because of the way we collect feedback during our workshops. When teaching a technical class, we use low-tech sticky notes…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 27, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="36" data-listing-date-sort="1487548800000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="158">
-<div class="thumbnail"><a href="./posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html" class="no-external">Where Do I Fit in Academia?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html" class="no-external">
+<div class="g-col-1" data-index="36" data-listing-date-sort="1487548800000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="158">
+<a href="./posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Where Do I Fit in Academia?
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 It’s always a good idea to take a break and think about all that’s going on in life in perspective. As I approach the end of the coursework phase of my PhD program, I need…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 20, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="37" data-listing-date-sort="1486944000000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="195">
-<div class="thumbnail"><a href="./posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html" class="no-external">Communicating Science</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html" class="no-external">
+<div class="g-col-1" data-index="37" data-listing-date-sort="1486944000000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="195">
+<a href="./posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Communicating Science
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 The communication science workshop at class reminds me of the various acting warm-up exercise I did when I took an acting class in high school. The drills require…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 13, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="38" data-listing-date-sort="1486339200000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="70">
-<div class="thumbnail"><a href="./posts/2017/2017-02-06-pfp_journal_02_accessible_education/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-02-06-pfp_journal_02_accessible_education/index.html" class="no-external">Accessible Education in the United States</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-02-06-pfp_journal_02_accessible_education/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-02-06-pfp_journal_02_accessible_education/index.html" class="no-external">
+<div class="g-col-1" data-index="38" data-listing-date-sort="1486339200000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="70">
+<a href="./posts/2017/2017-02-06-pfp_journal_02_accessible_education/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Accessible Education in the United States
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 In the United States, higher education aims to be accessible to everyone. Although historically, college and university degrees were mainly for privileged, white males…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-02-06-pfp_journal_02_accessible_education/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 6, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="39" data-listing-date-sort="1486339200000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="245">
-<div class="thumbnail"><a href="./posts/2017/2017-02-06-pfp_blog_01_imposter_syndrome/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-02-06-pfp_blog_01_imposter_syndrome/index.html" class="no-external">Impostor Syndrome: Am I Qualified?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-02-06-pfp_blog_01_imposter_syndrome/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-02-06-pfp_blog_01_imposter_syndrome/index.html" class="no-external">
+<div class="g-col-1" data-index="39" data-listing-date-sort="1486339200000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="245">
+<a href="./posts/2017/2017-02-06-pfp_blog_01_imposter_syndrome/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Impostor Syndrome: Am I Qualified?
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 Impostor syndrome (also known as impostor phenomenon or fraud syndrome) is a concept describing high-achieving individuals who are marked by an inability to internalize…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-02-06-pfp_blog_01_imposter_syndrome/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 6, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="40" data-listing-date-sort="1485734400000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76">
-<div class="thumbnail"><a href="./posts/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/index.html" class="no-external">Journal: Why am I Journaling?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/index.html" class="no-external">
+<div class="g-col-1" data-index="40" data-listing-date-sort="1485734400000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76">
+<a href="./posts/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Journal: Why am I Journaling?
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 I’m taking “Preparing the Future Professoriate” this semester at Virginia Tech, which is one of the core classes for the “Future Professoriate Certificate”.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-01-30-pfp_journal_01_why_am_i_journaling/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jan 30, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="41" data-listing-date-sort="1485734400000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="865">
-<div class="thumbnail"><a href="./posts/2017/2017-01-30-pfp_blog_mission_statements/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2017/2017-01-30-pfp_blog_mission_statements/index.html" class="no-external">Mission Statements</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2017/2017-01-30-pfp_blog_mission_statements/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2017/2017-01-30-pfp_blog_mission_statements/index.html" class="no-external">
+<div class="g-col-1" data-index="41" data-listing-date-sort="1485734400000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="865">
+<a href="./posts/2017/2017-01-30-pfp_blog_mission_statements/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Mission Statements
+</h5>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="card-text listing-description delink">
 Mission statements and reflections on higher education institutions (plus one high school) that I’ve attended.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2017/2017-01-30-pfp_blog_mission_statements/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jan 30, 2017
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="42" data-listing-date-sort="1477440000000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2016/2016-10-26-what_swc_means_to_me/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2016/2016-10-26-what_swc_means_to_me/index.html" class="no-external">SWC: What the Carpentries Mean To Me</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2016/2016-10-26-what_swc_means_to_me/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2016/2016-10-26-what_swc_means_to_me/index.html" class="no-external">
+<div class="g-col-1" data-index="42" data-listing-date-sort="1477440000000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2016/2016-10-26-what_swc_means_to_me/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: What the Carpentries Mean To Me
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2016/2016-10-26-what_swc_means_to_me/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Oct 26, 2016
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="43" data-listing-date-sort="1475107200000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1140">
-<div class="thumbnail"><a href="./posts/2016/2016-09-29-expanding_watts_to_lens/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2016/2016-09-29-expanding_watts_to_lens/index.html" class="no-external">Expanding the Watts Model</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2016/2016-09-29-expanding_watts_to_lens/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2016/2016-09-29-expanding_watts_to_lens/index.html" class="no-external">
+<div class="g-col-1" data-index="43" data-listing-date-sort="1475107200000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1140">
+<a href="./posts/2016/2016-09-29-expanding_watts_to_lens/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Expanding the Watts Model
+</h5>
+<div class="listing-reading-time card-text text-muted">6 min</div>
+<div class="card-text listing-description delink">
 I wrote a blog post and gave a seminar talk about the Watts 2002 paper. The next step is thinking about expanding the <em>binary decisions with externalities</em> model to a <em>psycholog…</em>
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2016/2016-09-29-expanding_watts_to_lens/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 29, 2016
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="44" data-listing-date-sort="1472601600000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="892">
-<div class="thumbnail"><a href="./posts/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/index.html" class="no-external">A Simple Model of Global Cascades on Random Networks</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/index.html" class="no-external">
+<div class="g-col-1" data-index="44" data-listing-date-sort="1472601600000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="892">
+<a href="./posts/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+A Simple Model of Global Cascades on Random Networks
+</h5>
+<div class="listing-reading-time card-text text-muted">5 min</div>
+<div class="card-text listing-description delink">
 Duncan J Watts wrote a paper that was published in 2002 titled “A simple model of global cascades on random networks” in the Proceedings of the National Academy of Sciences…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2016/2016-08-31-a_simple_model_of_global_cascades_on_random_networks/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Aug 31, 2016
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="45" data-listing-date-sort="1457913600000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
-<div class="thumbnail"><a href="./posts/2016/2016-03-14-scientific_purity_in_the_connected_age/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2016/2016-03-14-scientific_purity_in_the_connected_age/index.html" class="no-external">Scientific ‘Purity’ in the ‘Connected Age’</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2016/2016-03-14-scientific_purity_in_the_connected_age/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2016/2016-03-14-scientific_purity_in_the_connected_age/index.html" class="no-external">
+<div class="g-col-1" data-index="45" data-listing-date-sort="1457913600000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="334">
+<a href="./posts/2016/2016-03-14-scientific_purity_in_the_connected_age/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Scientific ‘Purity’ in the ‘Connected Age’
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 I just started reading <i>Six Degrees: The Science of a Connected Age</i> by Duncan J. Watts. It’s a book on network theory and related to the Multi-Agent Neural Network project…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2016/2016-03-14-scientific_purity_in_the_connected_age/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Mar 14, 2016
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="46" data-listing-date-sort="1454630400000" data-listing-file-modified-sort="1781594936723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2016/2016-02-05-swc-as-a-university-course/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2016/2016-02-05-swc-as-a-university-course/index.html" class="no-external">SWC: Software Carpentry as a University Course</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2016/2016-02-05-swc-as-a-university-course/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2016/2016-02-05-swc-as-a-university-course/index.html" class="no-external">
+<div class="g-col-1" data-index="46" data-listing-date-sort="1454630400000" data-listing-file-modified-sort="1783221299336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2016/2016-02-05-swc-as-a-university-course/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: Software Carpentry as a University Course
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2016/02/swc-as-a-university-course.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2016/2016-02-05-swc-as-a-university-course/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 5, 2016
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="47" data-listing-date-sort="1446681600000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2015/2015-11-05-teaching-extreme-ranges/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2015/2015-11-05-teaching-extreme-ranges/index.html" class="no-external">SWC: Teaching Bimodal Workshops with a Large Range</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2015/2015-11-05-teaching-extreme-ranges/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2015/2015-11-05-teaching-extreme-ranges/index.html" class="no-external">
+<div class="g-col-1" data-index="47" data-listing-date-sort="1446681600000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2015/2015-11-05-teaching-extreme-ranges/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: Teaching Bimodal Workshops with a Large Range
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2015/11/teaching-extreme-ranges.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2015/2015-11-05-teaching-extreme-ranges/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 5, 2015
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="48" data-listing-date-sort="1435017600000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2015/2015-06-23-learner-assessment-part-01/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2015/2015-06-23-learner-assessment-part-01/index.html" class="no-external">SWC: Assessing Our Learners Part I</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2015/2015-06-23-learner-assessment-part-01/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2015/2015-06-23-learner-assessment-part-01/index.html" class="no-external">
+<div class="g-col-1" data-index="48" data-listing-date-sort="1435017600000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2015/2015-06-23-learner-assessment-part-01/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: Assessing Our Learners Part I
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2015/06/learner-assessment-part-01.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2015/2015-06-23-learner-assessment-part-01/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jun 23, 2015
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="49" data-listing-date-sort="1430784000000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="732">
-<div class="thumbnail"><a href="./posts/2015/2015-05-05-getting-started-with-data-science/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2015/2015-05-05-getting-started-with-data-science/index.html" class="no-external">Getting Started with Data Science and Analysis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2015/2015-05-05-getting-started-with-data-science/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2015/2015-05-05-getting-started-with-data-science/index.html" class="no-external">
+<div class="g-col-1" data-index="49" data-listing-date-sort="1430784000000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="732">
+<a href="./posts/2015/2015-05-05-getting-started-with-data-science/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Getting Started with Data Science and Analysis
+</h5>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="card-text listing-description delink">
 I’ve been an instructor for Software-Carpentry (SWC) over a year now. It’s been a facinating experience and I’m proud to be a part of an open source movement promoting best…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2015/2015-05-05-getting-started-with-data-science/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 May 5, 2015
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="50" data-listing-date-sort="1423526400000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2015/2015-02-10-cookie-cutter/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2015/2015-02-10-cookie-cutter/index.html" class="no-external">SWC: Cookie Cutter</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2015/2015-02-10-cookie-cutter/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2015/2015-02-10-cookie-cutter/index.html" class="no-external">
+<div class="g-col-1" data-index="50" data-listing-date-sort="1423526400000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2015/2015-02-10-cookie-cutter/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: Cookie Cutter
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2015/02/cookie-cutter.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2015/2015-02-10-cookie-cutter/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 10, 2015
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="51" data-listing-date-sort="1423094400000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1057">
-<div class="thumbnail"><a href="./posts/2015/2015-02-05-open-sourcing-a-python-project/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2015/2015-02-05-open-sourcing-a-python-project/index.html" class="no-external">Open Source A Python Project I</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2015/2015-02-05-open-sourcing-a-python-project/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2015/2015-02-05-open-sourcing-a-python-project/index.html" class="no-external">
+<div class="g-col-1" data-index="51" data-listing-date-sort="1423094400000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1057">
+<a href="./posts/2015/2015-02-05-open-sourcing-a-python-project/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Open Source A Python Project I
+</h5>
+<div class="listing-reading-time card-text text-muted">6 min</div>
+<div class="card-text listing-description delink">
 I started my first open source project towards the end of summer 2014 I began working at the Social Decision Analytics Laboratory at the Virginia Informatics Institutee. The…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2015/2015-02-05-open-sourcing-a-python-project/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 5, 2015
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="52" data-listing-date-sort="1414886400000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2014/2014-11-02-revised-instructor-survey/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-11-02-revised-instructor-survey/index.html" class="no-external">SWC: Revamping the Instructor Survey</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-11-02-revised-instructor-survey/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-11-02-revised-instructor-survey/index.html" class="no-external">
+<div class="g-col-1" data-index="52" data-listing-date-sort="1414886400000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2014/2014-11-02-revised-instructor-survey/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: Revamping the Instructor Survey
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2014/11/revised-instructor-survey.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-11-02-revised-instructor-survey/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Nov 2, 2014
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="53" data-listing-date-sort="1412023200000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="733">
-<div class="thumbnail"><a href="./posts/2014/2014-09-29-hack-your-metrocard-to-0/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-09-29-hack-your-metrocard-to-0/index.html" class="no-external">Hacking Your MetroCard to $0.00</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-09-29-hack-your-metrocard-to-0/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-09-29-hack-your-metrocard-to-0/index.html" class="no-external">
+<div class="g-col-1" data-index="53" data-listing-date-sort="1412023200000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="733">
+<a href="./posts/2014/2014-09-29-hack-your-metrocard-to-0/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Hacking Your MetroCard to $0.00
+</h5>
+<div class="listing-reading-time card-text text-muted">4 min</div>
+<div class="card-text listing-description delink">
 Earlier this month, Ben Wellington wrote a blog post about How Memorizing “$19.05” Can Help You Outsmart the MTA. A few days later, after the post went viral, the MTA respond…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-09-29-hack-your-metrocard-to-0/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 29, 2014
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="54" data-listing-date-sort="1410104337000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="163">
-<div class="thumbnail"><a href="./posts/2014/2014-09-07-welcome-to-jekyll/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-09-07-welcome-to-jekyll/index.html" class="no-external">Welcome to Jekyll!</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-09-07-welcome-to-jekyll/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-09-07-welcome-to-jekyll/index.html" class="no-external">
+<div class="g-col-1" data-index="54" data-listing-date-sort="1410104337000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="163">
+<a href="./posts/2014/2014-09-07-welcome-to-jekyll/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Welcome to Jekyll!
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most…<code></code>
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-09-07-welcome-to-jekyll/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 7, 2014
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="55" data-listing-date-sort="1404691200000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail"><a href="./posts/2014/2014-07-07-high-school-students-at-rockefeller/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-07-07-high-school-students-at-rockefeller/index.html" class="no-external">SWC: Our First High School Workshop at Rockefeller University</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-07-07-high-school-students-at-rockefeller/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-07-07-high-school-students-at-rockefeller/index.html" class="no-external">
+<div class="g-col-1" data-index="55" data-listing-date-sort="1404691200000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./posts/2014/2014-07-07-high-school-students-at-rockefeller/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+SWC: Our First High School Workshop at Rockefeller University
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 https://software-carpentry.org/blog/2014/07/high-school-students-at-rockefeller.html
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-07-07-high-school-students-at-rockefeller/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Jul 7, 2014
 </div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="56" data-listing-date-sort="1400198400000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
-<div class="thumbnail"><a href="./posts/2014/2014-05-16-absolute-and-relative-directories-in-python/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-05-16-absolute-and-relative-directories-in-python/index.html" class="no-external">Absolute and Relative Directories in Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-05-16-absolute-and-relative-directories-in-python/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-05-16-absolute-and-relative-directories-in-python/index.html" class="no-external">
+<div class="g-col-1" data-index="56" data-listing-date-sort="1400198400000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
+<a href="./posts/2014/2014-05-16-absolute-and-relative-directories-in-python/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Absolute and Relative Directories in Python
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 One of the most common tasks (for me at least) is saving or getting data from another directory from where the current python script is running. However, for many of the…<code></code>
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-05-16-absolute-and-relative-directories-in-python/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 May 16, 2014
 </div>
-<div class="listing-author">
-Daniel
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="57" data-listing-date-sort="1391472000000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="280">
-<div class="thumbnail"><a href="./posts/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/index.html" class="no-external">Installing Eclipse in Ubuntu 13.10</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/index.html" class="no-external">
+<div class="g-col-1" data-index="57" data-listing-date-sort="1391472000000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="280">
+<a href="./posts/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Installing Eclipse in Ubuntu 13.10
+</h5>
+<div class="listing-reading-time card-text text-muted">2 min</div>
+<div class="card-text listing-description delink">
 Adapted answer from Shubhmay and TimD on askubuntu on installing Eclipse.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-02-04-installing-eclipse-in-ubuntu-13-10/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 4, 2014
 </div>
-<div class="listing-author">
-Daniel
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="58" data-listing-date-sort="1391472000000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
-<div class="thumbnail"><a href="./posts/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/index.html" class="no-external">Setting Up Repast Simphony 2.1 in Linux</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/index.html" class="no-external">
+<div class="g-col-1" data-index="58" data-listing-date-sort="1391472000000" data-listing-file-modified-sort="1783221299335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="95">
+<a href="./posts/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="img/post-placeholder.svg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Setting Up Repast Simphony 2.1 in Linux
+</h5>
+<div class="listing-reading-time card-text text-muted">1 min</div>
+<div class="card-text listing-description delink">
 Repast Simphony is a Java based collection of agent-based modeling and simulation software.
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2014/2014-02-04-setting-up-repast-simphony-2-1-in-linux/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 4, 2014
 </div>
-<div class="listing-author">
-Daniel
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="59" data-listing-date-sort="1378252800000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1329">
-<div class="thumbnail"><a href="./posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' data-src="posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/{{ site.baseurl }}/wp-content/uploads/2013/09/webdav01-300x52.png" alt="webdav01"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/index.html" class="no-external">Setting up a WebDAV Client for Courseworks</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/index.html" class="no-external">
+<div class="g-col-1" data-index="59" data-listing-date-sort="1378252800000" data-listing-file-modified-sort="1783221299334" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1329">
+<a href="./posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/{{ site.baseurl }}/wp-content/uploads/2013/09/webdav01-300x52.png" alt="webdav01" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Setting up a WebDAV Client for Courseworks
+</h5>
+<div class="listing-reading-time card-text text-muted">7 min</div>
+<div class="card-text listing-description delink">
 Columbia University’s Courseworks website allows you to download files for a registered class. &nbsp;A problem arises when multiple files needed to be downloaded simultaneously.…
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2013/2013-09-04-setting-up-a-webdav-client-for-courseworks/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Sep 4, 2013
 </div>
-<div class="listing-author">
-Daniel
-</div>
-</a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="60" data-listing-date-sort="1361404800000" data-listing-file-modified-sort="1781594936722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1140">
-<div class="thumbnail"><a href="./posts/2013/2013-02-21-setting-up-virtualbox/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' data-src="posts/2013/2013-02-21-setting-up-virtualbox/{{ site.baseurl }}/wp-content/uploads/2013/02/01-pickISO-300x195.png" alt="01-pickISO"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2013/2013-02-21-setting-up-virtualbox/index.html" class="no-external">Setting up VirtualBox</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2013/2013-02-21-setting-up-virtualbox/index.html" class="no-external"></a>
+</div></a>
 </div>
-<div class="delink listing-description"><a href="./posts/2013/2013-02-21-setting-up-virtualbox/index.html" class="no-external">
+<div class="g-col-1" data-index="60" data-listing-date-sort="1361404800000" data-listing-file-modified-sort="1783221299334" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1140">
+<a href="./posts/2013/2013-02-21-setting-up-virtualbox/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' data-src="posts/2013/2013-02-21-setting-up-virtualbox/{{ site.baseurl }}/wp-content/uploads/2013/02/01-pickISO-300x195.png" alt="01-pickISO" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Setting up VirtualBox
+</h5>
+<div class="listing-reading-time card-text text-muted">6 min</div>
+<div class="card-text listing-description delink">
 Edit: March 31, 2014: As an assignment for Software Carpentry I made a screencast to follow along with these steps, here
-</a></div>
 </div>
-<div class="metadata">
-<a href="./posts/2013/2013-02-21-setting-up-virtualbox/index.html" class="no-external">
+<div class="card-attribution card-text-small end">
 <div class="listing-date">
 Feb 21, 2013
 </div>
-<div class="listing-author">
-Daniel
 </div>
-</a>
 </div>
+</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
@@ -1797,8 +1656,60 @@ Daniel
   <ul class="pagination"></ul>
 </nav>
 </div></main> <!-- /main -->
+<script>
+// The site's ONLY custom JavaScript.
+// 1) Elements with class .reveal fade up when scrolled into view.
+// 2) Cards/polaroids get a random resting tilt each page load.
+// 3) A thin orange reading-progress bar tracks scroll position.
+// All skipped when the visitor prefers reduced motion.
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add("revealed"); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.1 });
+  for (const el of document.querySelectorAll(".reveal")) {
+    // only hide elements below the fold — no flash for above-fold content
+    if (el.getBoundingClientRect().top > innerHeight) {
+      el.classList.add("reveal-hidden");
+      io.observe(el);
+    }
+  }
+
+  // random resting tilts — a fresh arrangement every page load.
+  // CSS reads --tilt via rotate(var(--tilt, 0deg)); tweak max degrees here.
+  const tilt = (sel, max) => {
+    for (const el of document.querySelectorAll(sel))
+      el.style.setProperty("--tilt", ((Math.random() * 2 - 1) * max).toFixed(2) + "deg");
+  };
+  tilt(".signpost, .quarto-grid-item", 1.6);
+  tilt(".photo-gallery img", 4);
+
+  document.body.insertAdjacentHTML("afterbegin", '<div id="reading-progress"></div>');
+  const bar = document.getElementById("reading-progress");
+  const h = document.documentElement;
+  addEventListener("scroll", () => {
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100 || 0) + "%";
+  }, { passive: true });
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1870,7 +1781,7 @@ Daniel
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/chendaniely\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/chendaniely\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -2198,6 +2109,19 @@ Daniel
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Daniel Chen · <a href="./blog.xml">RSS</a> · <a href="https://github.com/chendaniely/chendaniely.github.io">Source</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 
