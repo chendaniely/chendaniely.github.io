@@ -44,8 +44,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-c147a353cdf3e0b7efe79f993c0de547.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-aa2cae1f136614c199b3ef50288f1e00.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-a5e9c16606716c2dab21ed20ae6973d4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-b9978e8e939c10ee63139d87fbceaef0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-f067ce0454aac2af0b17d37b5bff2309.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -335,8 +335,9 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 <script>
 // The site's ONLY custom JavaScript.
 // 1) Elements with class .reveal fade up when scrolled into view.
-// 2) A thin orange reading-progress bar tracks scroll position.
-// Both are skipped when the visitor prefers reduced motion.
+// 2) Cards/polaroids get a random resting tilt each page load.
+// 3) A thin orange reading-progress bar tracks scroll position.
+// All skipped when the visitor prefers reduced motion.
 (() => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -352,6 +353,15 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
       io.observe(el);
     }
   }
+
+  // random resting tilts — a fresh arrangement every page load.
+  // CSS reads --tilt via rotate(var(--tilt, 0deg)); tweak max degrees here.
+  const tilt = (sel, max) => {
+    for (const el of document.querySelectorAll(sel))
+      el.style.setProperty("--tilt", ((Math.random() * 2 - 1) * max).toFixed(2) + "deg");
+  };
+  tilt(".signpost, .quarto-grid-item", 1.6);
+  tilt(".photo-gallery img", 4);
 
   document.body.insertAdjacentHTML("afterbegin", '<div id="reading-progress"></div>');
   const bar = document.getElementById("reading-progress");
