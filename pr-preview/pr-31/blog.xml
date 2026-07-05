@@ -10,17 +10,7 @@
 <atom:link href="https://chendaniely.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.14</generator>
-<lastBuildDate>Sat, 04 Jul 2026 00:00:00 GMT</lastBuildDate>
-<item>
-  <title>Interactive charts in Quarto posts</title>
-  <link>https://chendaniely.github.io/posts/2026/2026-07-04-interactive-posts/</link>
-  <description><![CDATA[ This site now supports interactive charts in posts — here’s a tiny Observable JS example and how to write one. ]]></description>
-  <category>quarto</category>
-  <category>data viz</category>
-  <category>meta</category>
-  <guid>https://chendaniely.github.io/posts/2026/2026-07-04-interactive-posts/</guid>
-  <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Mon, 30 Mar 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>The Vancouver Cherry Blossom Marathon</title>
   <link>https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/</link>
@@ -168,6 +158,13 @@
   <description><![CDATA[ As a PhD student who already has a Master’s degree, it’s safe to say that I’ve been in school for a long time. One of the things in higher education that I started to dislike over the years are the ways professors assess students in the classroom. ]]></description>
   <guid>https://chendaniely.github.io/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/</guid>
   <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>NYC R Conference</title>
+  <link>https://chendaniely.github.io/posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/</link>
+  <description><![CDATA[ Just got back from the 3rd annual <a href="http://www.rstats.nyc/">NYC R Conference</a> this past weekend. I have been honored to be one of the few speakers for the 3rd year in a row. This year’s talk, <a href="https://github.com/chendaniely/rstatsnyc_2017-data_scientist">“So You Want to be a Data Scientist”</a> gave a whirlwind tour of the tools and skills needed to be a Data Scientist. I conveyed all this information in 56 slides and did it in 20 minutes. ]]></description>
+  <guid>https://chendaniely.github.io/posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/</guid>
+  <pubDate>Mon, 24 Apr 2017 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

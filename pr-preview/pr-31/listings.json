@@ -1,8 +1,7 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
-      "/posts/2026/2026-07-04-interactive-posts/index.html",
       "/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html",
       "/posts/2020/2020-10-27-using-obs-for-online-teaching/index.html",
       "/posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html",
@@ -67,9 +66,8 @@
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
-      "/posts/2026/2026-07-04-interactive-posts/index.html",
       "/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html",
       "/posts/2020/2020-10-27-using-obs-for-online-teaching/index.html",
       "/posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/index.html",
