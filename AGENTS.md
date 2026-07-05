@@ -81,6 +81,20 @@ Values surface on the home page signposts and the Talks page banner
 via `{{< var now.* >}}`.
 Blank a value with `""`; don't delete keys.
 
+## Talks data (`talks/talks.yml`)
+
+One entry per talk;
+the file's header comment is the copy-paste template for new entries.
+Omit fields that don't apply — never leave empty strings.
+`id` is the stable join key for the future video/transcript pipeline;
+the same data will feed the academic CV.
+
+**Keep the template comment in sync:**
+any time the schema changes
+(field added/renamed/removed, new `type` value, changed conventions),
+update the template comment at the top of `talks.yml` in the same commit —
+and check `talks/talks.ejs` still handles the change.
+
 ## Planned work
 
 See `_TODO.md` in the repo root for full context on planned projects.
