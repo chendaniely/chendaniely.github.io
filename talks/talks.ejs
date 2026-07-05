@@ -27,6 +27,12 @@ const fmt = (d) => new Date(d).toLocaleDateString("en-US",
 <div class="talk-title"><%= t.title || t.event %><% if (t.type && t.type !== "talk") { %><span class="talk-type"><%= t.type %></span><% } %></div>
 <div class="talk-meta"><% if (t["event-url"]) { %><a href="<%= t["event-url"] %>"><%= t.event %></a><% } else { %><%= t.event %><% } %><% if (t.location) { %> · <%= t.location %><% } %></div>
 <% if (t.description) { %><div class="talk-desc"><%= t.description %></div><% } %>
+<% const tags = [...(t.languages || []), ...(t.packages || [])]; %>
+<% if (tags.length) { %>
+<div class="talk-tags">
+<% for (const tag of tags) { %><span class="talk-tag"><%= tag %></span><% } %>
+</div>
+<% } %>
 <% if (t.repo || t.slides || t.video) { %>
 <div class="talk-links">
 <% if (t.slides) { %><a href="<%= t.slides %>">slides</a><% } %>

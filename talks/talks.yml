@@ -15,8 +15,15 @@
 #   event-url: https://...           # event / schedule page
 #   location: City, Region, Country  # or: virtual
 #   categories: [python, teaching]   # theme tags (not locations)
+#   languages: [r, python]           # programming languages the talk covers
+#   packages: [ellmer, chatlas]      # packages/libraries featured, any language
 #   description: >
-#     One or two sentences — feeds the page snippet and the CV line.
+#     One or two sentences in your own voice —
+#     feeds the page snippet and the CV line.
+#   abstract: |
+#     The OFFICIAL submitted abstract, verbatim — never edited after the
+#     fact. Not shown on the listing page; archived here (conference sites
+#     rot) and shown on future per-talk pages. Multi-paragraph is fine.
 #   repo: https://github.com/...     # code / materials
 #   slides: https://...
 #   video: https://...

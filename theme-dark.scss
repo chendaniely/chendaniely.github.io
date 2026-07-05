@@ -21,6 +21,7 @@ blockquote {
 
 // talks listing: warm-gray is too dim on dark — lift to stone
 .talk-date, .talk-meta, .talk-desc { color: $brand-stone; }
+.talk-tag { color: $brand-stone; border-color: $brand-dark-border; }
 
 // hero blobs: light-theme sand reads as a smudge on dark — use faint brand glows
 .home-hero {

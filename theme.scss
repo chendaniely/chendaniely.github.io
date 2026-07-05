@@ -230,6 +230,20 @@ blockquote {
   gap: 0.9rem;
   font-size: 0.85rem;
 }
+// languages + packages pills (talks.yml `languages:` / `packages:`)
+.talk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+}
+.talk-tag {
+  font-size: 0.72rem;
+  color: $brand-warm-gray;
+  border: 1px solid $brand-sand;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+}
 
 // ── MOTION ── every animation on the site; all inside reduced-motion guard
 @media (prefers-reduced-motion: no-preference) {
