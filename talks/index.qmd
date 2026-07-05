@@ -14,6 +14,13 @@ Conference talks, guest lectures, and workshops.
 Recordings with searchable transcripts are coming —
 each talk will get its own page with video, transcript, and summary.
 
+## Upcoming
+
+- [PyLadies Vancouver](https://luma.com/3oxfwqry)
+  — July 6, 2026, Vancouver, BC
+- [SciPy 2026](https://www.scipy2026.scipy.org/schedule)
+  — July 13–19, 2026, University of Minnesota, Minneapolis
+
 ## Past talks
 
 Talk archive under construction —
