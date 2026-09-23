@@ -11,6 +11,12 @@ website:
   title: "Daniel Chen"
   site-url: https://chendaniely.github.io  # 🤖 required for RSS feed generation
   google-analytics: "G-H85THYPX4L"
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Learn Anything with AI** - I'm co-teaching a one-week retreat on how to [learn anything with AI](https://learn-anything.nonlinearlabs.ai/) with [Eric Ma](https://ericmjl.github.io/), February 2027"
+    type: primary
+    position: below-navbar
   navbar:
     left:
       - href: blog.qmd

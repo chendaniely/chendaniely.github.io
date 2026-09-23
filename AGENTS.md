@@ -29,9 +29,12 @@ _quarto.yml          # Quarto site config (cosmo + brand + theme.scss)
 _variables.yml       # "now" values, injected with {{< var now.* >}}
 theme.scss           # ALL custom styling (commented, sectioned)
 theme-dark.scss      # dark-mode color overrides
-scroll-reveal.html   # the site's only JS (~20 lines)
+scroll-reveal.html   # the site's only JS: reveal-on-scroll, random card
+                     # tilts, reading-progress bar (~40 lines)
 _now-signposts.qmd   # home page signpost cards partial
-talks/ teaching/ projects/   # section stub pages
+talks/               # talks.yml is the data source; talks.ejs renders the listing
+teaching/ projects/  # projects/ is a real signpost-card page; teaching/ is a
+                     # short bio page pointing to the fuller dossier in _TODO.md
 talks/talks.yml      # ALL talks data (copy template comment inside for new
                      # talks; omit unused fields). Feeds the talks page via
                      # talks.ejs; later feeds CV + video pipeline (id = join key)
