@@ -88,6 +88,9 @@ jobs:
       - name: Render site
         if: github.event.action != 'closed'
         run: quarto render
+        env:
+          # 🤖 authenticated GitHub API for _scripts/fetch-vibe-coded.py
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # 🤖 auto = deploy on opened/reopened/synchronize, remove on closed
       - name: Deploy PR preview
