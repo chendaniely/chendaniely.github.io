@@ -17,3 +17,6 @@ Thumbs.db
 
 # brainstorming visual companion sessions
 .superpowers/
+
+# generated at render time by _scripts/fetch-vibe-coded.py
+projects/vibe-coded.yml

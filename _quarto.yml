@@ -6,6 +6,9 @@ project:
     # that break the build if rendered as site content
     - "*"
     - "!docs/**"
+  # 🤖 pull GitHub repos tagged `vibe-coded` into projects/vibe-coded.yml
+  # before every render (feeds projects/vibe-coded.qmd)
+  pre-render: _scripts/fetch-vibe-coded.py
 
 website:
   title: "Daniel Chen"

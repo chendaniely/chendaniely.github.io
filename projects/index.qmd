@@ -43,4 +43,13 @@ published with Pearson.
 
 [watch →](https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/)
 :::
+
+::: {.signpost}
+### 🤖 Vibe-coded projects
+
+Small tools and experiments built with AI coding agents —
+pulled automatically from GitHub.
+
+[see them all →](vibe-coded.qmd)
+:::
 ::::

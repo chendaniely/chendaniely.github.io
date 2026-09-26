@@ -1,0 +1,21 @@
+---
+title: Vibe-coded projects
+toc: false
+page-layout: full
+listing:
+  id: vibe-list
+  contents: vibe-coded.yml
+  template: vibe-coded.ejs
+  sort: false
+---
+
+Small tools and experiments I built by pairing with AI coding agents.
+
+This page updates itself:
+any of my GitHub repos tagged with the
+[vibe-coded](https://github.com/chendaniely?tab=repositories&q=topic%3Avibe-coded) topic
+shows up here at the next site build,
+using the repo's own description, website, and topics.
+
+::: {#vibe-list}
+:::

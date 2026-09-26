@@ -1,0 +1,36 @@
+<%
+// vibe-coded.ejs — renders vibe-coded.yml (generated at render time by
+// _scripts/fetch-vibe-coded.py from GitHub repos tagged `vibe-coded`)
+// as signpost cards, most recently pushed first.
+//
+// Everything shown comes from GitHub repo metadata — edit a repo's
+// description / website / topics on GitHub, not here.
+//
+// NOTE: listing template output is processed as MARKDOWN — keep all
+// emitted HTML flush-left; indenting 4+ spaces turns it into an
+// escaped code block.
+const repos = [...items].sort((a, b) => b.updated.localeCompare(a.updated));
+const fmt = (d) => new Date(d).toLocaleDateString("en-US",
+  { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+%>
+<% if (!repos.length) { %>
+<p><em>Couldn't reach GitHub at build time — check back soon.</em></p>
+<% } %>
+<div class="signposts">
+<% for (const r of repos) { %>
+<div class="signpost vibe-repo">
+<h3><%= r.name %></h3>
+<% if (r.description) { %><p><%= r.description %></p><% } %>
+<div class="vibe-meta"><% if (r.language) { %><%= r.language %> · <% } %>updated <%= fmt(r.updated) %><% if (r.stars) { %> · <span class="text-nowrap">★ <%= r.stars %></span><% } %></div>
+<% if (r.topics.length) { %>
+<div class="talk-tags">
+<% for (const t of r.topics) { %><span class="talk-tag"><%= t %></span><% } %>
+</div>
+<% } %>
+<div class="talk-links">
+<% if (r.homepage) { %><a href="<%= r.homepage %>">try it →</a><% } %>
+<a href="<%= r.url %>">code →</a>
+</div>
+</div>
+<% } %>
+</div>
