@@ -1,6 +1,10 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/projects/vibe-coded.html",
+    "items": []
+  },
+  {
+    "listing": "/index.html",
     "items": [
       "/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html",
       "/posts/2020/2020-10-27-using-obs-for-online-teaching/index.html",
@@ -21,13 +25,13 @@
       "/posts/2017/2017-07-07-vm_lxc_docker/index.html",
       "/posts/2017/2017-05-30-project_templates/index.html",
       "/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html",
-      "/posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html",
       "/posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html",
+      "/posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html",
       "/posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html",
       "/posts/2017/2017-04-10-pfp_journal_11_us_education/index.html",
       "/posts/2017/2017-04-10-pfp_blog_open_access/index.html",
-      "/posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html",
       "/posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html",
+      "/posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html",
       "/posts/2017/2017-03-30-simple_neural_network_model/index.html",
       "/posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html",
       "/posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html",
@@ -35,8 +39,8 @@
       "/posts/2017/2017-03-20-pfp_blog_03_my_story/index.html",
       "/posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html",
       "/posts/2017/2017-03-12-pfp_blog_research_ethics/index.html",
-      "/posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html",
       "/posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html",
+      "/posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html",
       "/posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html",
       "/posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html",
       "/posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html",
@@ -66,7 +70,7 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html",
       "/posts/2020/2020-10-27-using-obs-for-online-teaching/index.html",
@@ -87,13 +91,13 @@
       "/posts/2017/2017-07-07-vm_lxc_docker/index.html",
       "/posts/2017/2017-05-30-project_templates/index.html",
       "/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/index.html",
-      "/posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html",
       "/posts/2017/2017-04-24-pfp_blog_05_summer_plans/index.html",
+      "/posts/2017/2017-04-24-pfp_journal_13_rstatsnyc_nypvi/index.html",
       "/posts/2017/2017-04-17-pfp_journal_12_working_phd/index.html",
       "/posts/2017/2017-04-10-pfp_journal_11_us_education/index.html",
       "/posts/2017/2017-04-10-pfp_blog_open_access/index.html",
-      "/posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html",
       "/posts/2017/2017-04-03-pfp_journal_10_snow_scuba/index.html",
+      "/posts/2017/2017-04-03-pfp_blog_tech_and_innovation/index.html",
       "/posts/2017/2017-03-30-simple_neural_network_model/index.html",
       "/posts/2017/2017-03-27-pfp_blog_04_scientific_programming/index.html",
       "/posts/2017/2017-03-27-pfp_journal_09_masters_phd/index.html",
@@ -101,8 +105,8 @@
       "/posts/2017/2017-03-20-pfp_blog_03_my_story/index.html",
       "/posts/2017/2017-03-13-pfp_journal_07_naming_yourself/index.html",
       "/posts/2017/2017-03-12-pfp_blog_research_ethics/index.html",
-      "/posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html",
       "/posts/2017/2017-03-06-pfp_journal_06_how_teaching_works/index.html",
+      "/posts/2017/2017-03-06-pfp_blog_02_modest_advice/index.html",
       "/posts/2017/2017-02-27-pfp_journal_05_teaching_mentoring/index.html",
       "/posts/2017/2017-02-20-pfp_journal_04_academic_fit/index.html",
       "/posts/2017/2017-02-13-pfp_journal_03_communicating_science/index.html",
