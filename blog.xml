@@ -10,7 +10,17 @@
 <atom:link href="https://chendaniely.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.11.5</generator>
-<lastBuildDate>Mon, 30 Mar 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 27 Sep 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Incorporating AI in the Classroom: Reviewing with an Agent Harness</title>
+  <link>https://chendaniely.github.io/posts/2026/2026-09-27-reviewing-with-an-agent-harness/</link>
+  <description><![CDATA[ In my first month teaching with AI, an agent did the typing in my review sessions while the class read and judged its commands. ]]></description>
+  <category>teaching</category>
+  <category>AI</category>
+  <guid>https://chendaniely.github.io/posts/2026/2026-09-27-reviewing-with-an-agent-harness/</guid>
+  <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://chendaniely.github.io/posts/2026/2026-09-27-reviewing-with-an-agent-harness/2026-09-26-claude-code-status-bar-card.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
 <item>
   <title>The Vancouver Cherry Blossom Marathon</title>
   <link>https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/</link>
@@ -158,13 +168,6 @@
   <description><![CDATA[ As a PhD student who already has a Master’s degree, it’s safe to say that I’ve been in school for a long time. One of the things in higher education that I started to dislike over the years are the ways professors assess students in the classroom. ]]></description>
   <guid>https://chendaniely.github.io/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/</guid>
   <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Preparing for the Summer</title>
-  <link>https://chendaniely.github.io/posts/2017/2017-04-24-pfp_blog_05_summer_plans/</link>
-  <description><![CDATA[ As the semester comes to an end, preparing for my lab’s <a href="https://www.bi.vt.edu/sdal/projects/data-science-for-the-public-good-program">Data Science for the Public Good Program</a> begins. I’ve started a <a href="https://github.com/bi-sdal/">GitHub group</a> to dump the various components we will be using during the summer. ]]></description>
-  <guid>https://chendaniely.github.io/posts/2017/2017-04-24-pfp_blog_05_summer_plans/</guid>
-  <pubDate>Mon, 24 Apr 2017 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
