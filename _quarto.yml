@@ -32,6 +32,12 @@ website:
         text: Projects
       - href: about.qmd
         text: About
+    # 🤖 GitHub icon for the site's source repo, top right beside the
+    # light/dark toggle; aria-label gives the icon-only link a screen-reader name
+    right:
+      - icon: github
+        href: https://github.com/chendaniely/chendaniely.github.io
+        aria-label: GitHub repository for this site
   page-footer:
     left: "© Daniel Chen · [RSS](/blog.xml) · [Source](https://github.com/chendaniely/chendaniely.github.io)"
     right: "Built with [Quarto](https://quarto.org)"
