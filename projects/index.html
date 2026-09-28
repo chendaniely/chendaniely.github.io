@@ -36,6 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -46,8 +48,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d799aac71703158d4b1c5a4685a09794.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-29bc7e2d1ffab6167cfe44fe6f9ba131.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-9e4a4e28c4a6e040ba32908533a0fe29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f55118d050ae4a3956a5d5fc867a52a7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1b42dc8fb5258ccaab452c2f27480b5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,6 +77,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-vibe-list .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-name','listing-url','listing-description','listing-homepage','listing-language','listing-topics','listing-stars','listing-updated',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-name","listing-url","listing-description","listing-homepage","listing-language","listing-topics","listing-stars","listing-updated"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-vibe-list'] = new List('listing-vibe-list', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H85THYPX4L"></script>
 
 <script type="text/javascript">
@@ -85,6 +116,35 @@ gtag('js', new Date());
 gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -332,7 +392,7 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 </header>
 
 
-<p>Things I’ve built with their own identity — books, course sites, and research.</p>
+<p>Things I’ve built with their own identity: books, course sites, research, etc.</p>
 <div class="signposts">
 <section id="pandas-for-everyone" class="level3 signpost">
 <h3 class="anchored" data-anchor-id="pandas-for-everyone">🐼 Pandas for Everyone</h3>
@@ -354,14 +414,134 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 <p>Video courses on pandas and data processing published with Pearson.</p>
 <p><a href="https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/" class="stretched-link">watch →</a></p>
 </section>
-<section id="vibe-coded-projects" class="level3 signpost">
-<h3 class="anchored" data-anchor-id="vibe-coded-projects">🤖 Vibe-coded projects</h3>
-<p>Small tools and experiments built with AI coding agents — pulled automatically from GitHub.</p>
-<p><a href="../projects/vibe-coded.html" class="stretched-link">see them all →</a></p>
-</section>
+</div>
+<section id="vibe-coded-projects" class="level2">
+<h2 class="anchored" data-anchor-id="vibe-coded-projects">Vibe-coded projects</h2>
+<p>Small tools and experiments I built by pairing with AI coding agents.</p>
+<p>This section updates itself: any of my GitHub repos tagged with the <a href="https://github.com/chendaniely?tab=repositories&amp;q=topic%3Avibe-coded">vibe-coded</a> topic shows up here at the next site build, using the repo’s own description, website, and topics. Repos that live under other GitHub organizations are pinned by hand.</p>
+<div id="listing-vibe-list" class="quarto-listing quarto-listing-container-custom">
+<div class="signposts">
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+local-ai
+</h3>
+<div class="vibe-meta">
+Python · updated Sep 27, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://github.com/chendaniely/local-ai" class="stretched-link">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+pstrunners.github.io
+</h3>
+<p>
+Pacific Spirit Trail Runners website with run route generator
+</p>
+<div class="vibe-meta">
+Python · updated Sep 27, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://pstrunners.github.io/" class="stretched-link">try it →</a> <a href="https://github.com/pstrunners/pstrunners.github.io">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+subtitle-sync
+</h3>
+<p>
+Spot-check sidecar subtitles against the audio and fix whole-file offsets for Plex and Jellyfin
+</p>
+<div class="vibe-meta">
+updated Sep 26, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://github.com/chendaniely/subtitle-sync" class="stretched-link">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+skills
+</h3>
+<div class="vibe-meta">
+Python · updated Sep 24, 2026 · <span class="text-nowrap">★ 1</span>
+</div>
+<div class="talk-links">
+<p><a href="https://github.com/chendaniely/skills" class="stretched-link">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+audio-router
+</h3>
+<div class="vibe-meta">
+Python · updated Sep 24, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://github.com/chendaniely/audio-router" class="stretched-link">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+type-me
+</h3>
+<div class="vibe-meta">
+Python · updated Sep 11, 2026 · <span class="text-nowrap">★ 1</span>
+</div>
+<div class="talk-links">
+<p><a href="https://github.com/chendaniely/type-me" class="stretched-link">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+genai-learning-moments
+</h3>
+<p>
+Capturing examples of me correcting GenAI output
+</p>
+<div class="vibe-meta">
+updated Aug 16, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://github.com/chendaniely/genai-learning-moments" class="stretched-link">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+meanwhile
+</h3>
+<p>
+Many people’s photos, one shared timeline. See what everyone was doing in relation to everyone else.
+</p>
+<div class="vibe-meta">
+TypeScript · updated Aug 1, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://chendaniely.github.io/meanwhile/" class="stretched-link">try it →</a> <a href="https://github.com/chendaniely/meanwhile">code →</a></p>
+</div>
+</div>
+<div class="signpost vibe-repo">
+<h3 class="anchored">
+color-combinations
+</h3>
+<p>
+An interactive website for exploring the 348 color combinations from Sanzo Wada’s 1930s classic A Dictionary of Color Combinations
+</p>
+<div class="vibe-meta">
+TypeScript · updated Jul 31, 2026
+</div>
+<div class="talk-links">
+<p><a href="https://chendaniely.github.io/color-combinations/" class="stretched-link">try it →</a> <a href="https://github.com/chendaniely/color-combinations">code →</a></p>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script>
