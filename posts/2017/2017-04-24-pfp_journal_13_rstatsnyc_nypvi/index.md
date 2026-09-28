@@ -5,7 +5,7 @@ date:   2017-04-24
 
 # categories: Teaching
 
-categories: [conference, R, Preparing the Future Professoriate]
+categories: [data science, conference, R, Preparing the Future Professoriate]
 tags:
   - teaching
   - higher ed

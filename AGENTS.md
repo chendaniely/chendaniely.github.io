@@ -85,7 +85,7 @@ Each post gets 1–4 tags, written as a flow list:
 
 | Group | Tags | When |
 |-------|------|------|
-| Topic (at least one) | `teaching`, `higher ed`, `data science`, `research`, `workflow`, `AI`, `life`, `making` | what the post is about. `higher ed` = academia and grad school; `workflow` = setup, tooling, project organization, Git; `making` = physical builds |
+| Topic (at least one) | `teaching`, `higher ed`, `data science`, `programming`, `research`, `workflow`, `AI`, `life`, `making` | what the post is about. `higher ed` = academia and grad school; `programming` = writing code, language behavior; `workflow` = setup, tooling, project organization, Git; `making` = physical builds |
 | Language / OS | `R`, `Python`, `Linux` | only when the post is about the language or OS itself |
 | Post type | `tutorial`, `conference` | step-by-step how-tos; conference write-ups |
 | Series & communities | `Incorporating AI in the Classroom`, `Preparing the Future Professoriate`, `RStudio internship`, `Software Carpentry` | posts meant to be read together, or about that community |

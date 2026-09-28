@@ -3,7 +3,7 @@ title: Table of Model Results using kable and kableExtra
 author: Daniel Chen
 date: '2019-09-13'
 slug: table-of-model-results-using-kable-and-kableextra
-categories: [tutorial, R]
+categories: [data science, tutorial, R]
 tags:
   - R
   - rmarkdown

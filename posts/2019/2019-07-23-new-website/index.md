@@ -3,7 +3,7 @@ title: New Website a la Blogdown!
 author: Daniel Chen
 date: '2019-07-23'
 slug: []
-categories: [R, RStudio internship]
+categories: [workflow, R, RStudio internship]
 tags:
   - rstudio-internship
   - r

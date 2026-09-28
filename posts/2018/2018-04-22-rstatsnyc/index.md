@@ -6,7 +6,7 @@ date:   2018-04-22
 
 #category: R
 
-categories: [conference, R]
+categories: [data science, conference, R]
 tags:
   - R
   - conference

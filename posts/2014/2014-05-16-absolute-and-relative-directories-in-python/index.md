@@ -6,7 +6,7 @@ layout: post
 date: 2014-05-16
 
 # categories: Tips
-categories: [tutorial, Python]
+categories: [programming, tutorial, Python]
 tags:
   - tutorial
   - tips
