@@ -30,7 +30,8 @@ _variables.yml       # "now" values, injected with {{< var now.* >}}
 theme.scss           # ALL custom styling (commented, sectioned)
 theme-dark.scss      # dark-mode color overrides
 scroll-reveal.html   # the site's only JS: reveal-on-scroll, random card
-                     # tilts, reading-progress bar (~40 lines)
+                     # tilts, reading-progress bar, and making a dismissed
+                     # announcement come back next visit (~55 lines)
 _now-signposts.qmd   # home page signpost cards partial
 talks/               # talks.yml is the data source; talks.ejs renders the listing
 teaching/ projects/  # projects/ is a real signpost-card page; teaching/ is a

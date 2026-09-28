@@ -4,6 +4,22 @@
 // 2) Cards/polaroids get a random resting tilt each page load.
 // 3) A thin orange reading-progress bar tracks scroll position.
 // All skipped when the visitor prefers reduced motion.
+// 4) The announcement banner comes back on each new visit (runs always).
+
+// Quarto remembers a dismissed announcement forever (localStorage).
+// On the first page of a visit, forget it, so ✕ hides the banner while
+// browsing the site but it's back next visit. "Visit" = sessionStorage:
+// this tab, until it's closed. This inline script runs before Quarto
+// checks for a dismissal (on DOMContentLoaded), so the banner never flashes.
+(() => {
+  try {
+    if (sessionStorage.getItem("announce-visit")) return;
+    sessionStorage.setItem("announce-visit", "1");
+    for (const key of Object.keys(localStorage))
+      if (key.startsWith("quarto-announce-")) localStorage.removeItem(key);
+  } catch {}  // storage blocked: Quarto can't remember a dismissal either
+})();
+
 (() => {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
