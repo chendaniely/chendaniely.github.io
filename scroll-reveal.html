@@ -5,6 +5,14 @@
 // 3) A thin orange reading-progress bar tracks scroll position.
 // All skipped when the visitor prefers reduced motion.
 // 4) The announcement banner comes back on each new visit (runs always).
+// 5) Listing thumbnails without alt text get alt="" (runs always).
+
+// Blog/listing cards already name the post in their link text, so a
+// thumbnail with no image-alt is decorative. Quarto omits alt entirely
+// (it drops an empty image-alt), which makes screen readers read the
+// file name; alt="" tells them to skip it. Posts that set image-alt keep it.
+for (const img of document.querySelectorAll("img.thumbnail-image:not([alt])"))
+  img.alt = "";
 
 // Quarto remembers a dismissed announcement forever (localStorage).
 // On the first page of a visit, forget it, so ✕ hides the banner while

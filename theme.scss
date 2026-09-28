@@ -51,6 +51,23 @@ $web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
   object-position: center;
   width: 100%;
 }
+// blog list (blog.qmd, type: default): a post with no image gets an empty
+// placeholder box from Quarto; hide it so the row is text-only and the
+// text takes the full width
+.quarto-post .thumbnail:has(.listing-item-img-placeholder) {
+  display: none;
+}
+// Quarto sizes the date column as a shrinkable 33%, so it's narrow on rows
+// with an image and wide on rows without, and titles don't line up.
+// Fix its width and let the text column give way instead. Only while the
+// row is horizontal: below md Quarto stacks it into a column, where a fixed
+// flex-basis would set the date block's height instead.
+@include media-breakpoint-up(md) {
+  .quarto-listing div.quarto-post {
+    .metadata { flex: 0 0 7.5rem; }
+    .body { flex-shrink: 1; min-width: 0; }
+  }
+}
 
 // Sections below are appended by later tasks:
 // ── HERO ── home page: photo, name, rotating tagline [index.qmd]
