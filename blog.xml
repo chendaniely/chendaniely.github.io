@@ -89,6 +89,7 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/</link>
   <description><![CDATA[ I’m at the <a href="https://r-medicine.com/">R/Medicine</a> conference (no it’s not a Reddit thing) and got to help Alison Hill with her <a href="https://rmd4medicine.netlify.com/">R Markdown for Medicine</a> workshop. One of the questions I got to tinker with was making tables used to report model results. ]]></description>
+  <category>data science</category>
   <category>tutorial</category>
   <category>R</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/</guid>
@@ -121,6 +122,7 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-08-06-inconsistencies-with-in-r/</link>
   <description><![CDATA[ One of the cool things about working on <a href="https://github.com/rstudio-education/gradethis"><code>gradethis</code></a> (<a href="https://github.com/rstudio-education/gradethis/issues/18"><code>grader</code> need to be renamed</a>) is that we end up doing things that aren’t common in R (i.e., grading and comparing code). ]]></description>
+  <category>programming</category>
   <category>R</category>
   <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-08-06-inconsistencies-with-in-r/</guid>
@@ -140,6 +142,7 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-07-23-new-website/</link>
   <description><![CDATA[ I finally got everything moved over to <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> with the <a href="https://gohugo.io/">Hugo</a> <a href="https://github.com/gcushen/hugo-academic">Academic</a> theme. Thanks so much to <a href="https://alison.rbind.io/">Allison Hill</a>, who ran the <a href="https://summer-of-blogdown.netlify.com">summer-of-blogdown</a> tutorial for us <a href="https://blog.rstudio.com/2019/03/25/summer-interns-2019/">RStudio interns</a>. ]]></description>
+  <category>workflow</category>
   <category>R</category>
   <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-07-23-new-website/</guid>
@@ -149,6 +152,7 @@
   <title>RStudio internship week 2</title>
   <link>https://chendaniely.github.io/posts/2019/2019-06-18-rstudio_internship_wk02/</link>
   <description><![CDATA[ The main topics and events of last week were: ]]></description>
+  <category>programming</category>
   <category>R</category>
   <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-06-18-rstudio_internship_wk02/</guid>
@@ -158,6 +162,7 @@
   <title>And we’re off! RStudio internship week 1, complete.</title>
   <link>https://chendaniely.github.io/posts/2019/2019-06-10-rstudio_internship_wk01/</link>
   <description><![CDATA[ I’m still pinching myself about being one of the <a href="https://blog.rstudio.com/2019/03/25/summer-interns-2019/">RStudio interns this year</a>. It’s an unbelievable opportunity and I’ve been half panicked and fighting imposter syndrome since the <a href="https://blog.rstudio.com/2019/03/25/summer-interns-2019/">announcement was made in March</a>. My meeting with <a href="http://third-bit.com/">Greg Wilson</a> on Friday (2019-06-07) went something like this: ]]></description>
+  <category>programming</category>
   <category>R</category>
   <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-06-10-rstudio_internship_wk01/</guid>
@@ -167,6 +172,7 @@
   <title>rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs</title>
   <link>https://chendaniely.github.io/posts/2018/2018-04-22-rstatsnyc/</link>
   <description><![CDATA[ EDIT: I’ve added the notes from <a href="https://twitter.com/dataandme"><span class="citation" data-cites="dataandme">@dataandme</span></a> and linked to people’s twitter and slides (if I found them). This is probably going to be an ongoing process… ]]></description>
+  <category>data science</category>
   <category>conference</category>
   <category>R</category>
   <guid>https://chendaniely.github.io/posts/2018/2018-04-22-rstatsnyc/</guid>

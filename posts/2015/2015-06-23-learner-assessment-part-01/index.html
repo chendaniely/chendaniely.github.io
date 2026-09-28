@@ -47,8 +47,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d799aac71703158d4b1c5a4685a09794.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-f55118d050ae4a3956a5d5fc867a52a7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-1b42dc8fb5258ccaab452c2f27480b5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-dd55354e8ebdb0fa3ed269fdc4f86bb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-49419fc5bc5245b4799bed319a432bf1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -357,6 +357,14 @@ gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
 // 3) A thin orange reading-progress bar tracks scroll position.
 // All skipped when the visitor prefers reduced motion.
 // 4) The announcement banner comes back on each new visit (runs always).
+// 5) Listing thumbnails without alt text get alt="" (runs always).
+
+// Blog/listing cards already name the post in their link text, so a
+// thumbnail with no image-alt is decorative. Quarto omits alt entirely
+// (it drops an empty image-alt), which makes screen readers read the
+// file name; alt="" tells them to skip it. Posts that set image-alt keep it.
+for (const img of document.querySelectorAll("img.thumbnail-image:not([alt])"))
+  img.alt = "";
 
 // Quarto remembers a dismissed announcement forever (localStorage).
 // On the first page of a visit, forget it, so ✕ hides the banner while
