@@ -7,7 +7,7 @@ project:
     - "*"
     - "!docs/**"
   # 🤖 pull GitHub repos tagged `vibe-coded` into projects/vibe-coded.yml
-  # before every render (feeds projects/vibe-coded.qmd)
+  # before every render (feeds the vibe-coded list on projects/index.qmd)
   pre-render: _scripts/fetch-vibe-coded.py
 
 website:

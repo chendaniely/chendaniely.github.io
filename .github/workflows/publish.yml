@@ -2,7 +2,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # 🤖 daily rebuild so projects/vibe-coded.qmd picks up GitHub repo
+  # 🤖 daily rebuild so the Projects page vibe-coded list picks up GitHub repo
   # metadata changes (new `vibe-coded` topics, descriptions) without a push.
   # Note: each production deploy can wipe open PR previews (see preview.yml).
   schedule:

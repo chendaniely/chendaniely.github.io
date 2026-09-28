@@ -2,10 +2,19 @@
 title: Projects
 toc: false
 page-layout: full
+# 🤖 vibe-coded repos render into #vibe-list below; they used to have their
+# own page, so the old URL redirects here
+aliases:
+  - vibe-coded.html
+listing:
+  id: vibe-list
+  contents: vibe-coded.yml
+  template: vibe-coded.ejs
+  sort: false
 ---
 
-Things I've built with their own identity —
-books, course sites, and research.
+Things I've built with their own identity:
+books, course sites, research, etc.
 
 :::: {.signposts}
 ::: {.signpost}
@@ -43,13 +52,18 @@ published with Pearson.
 
 [watch →](https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/){.stretched-link}
 :::
-
-::: {.signpost}
-### 🤖 Vibe-coded projects
-
-Small tools and experiments built with AI coding agents —
-pulled automatically from GitHub.
-
-[see them all →](vibe-coded.qmd){.stretched-link}
-:::
 ::::
+
+## Vibe-coded projects
+
+Small tools and experiments I built by pairing with AI coding agents.
+
+This section updates itself:
+any of my GitHub repos tagged with the
+[vibe-coded](https://github.com/chendaniely?tab=repositories&q=topic%3Avibe-coded) topic
+shows up here at the next site build,
+using the repo's own description, website, and topics.
+Repos that live under other GitHub organizations are pinned by hand.
+
+::: {#vibe-list}
+:::

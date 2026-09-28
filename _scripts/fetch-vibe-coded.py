@@ -2,7 +2,7 @@
 
 Runs as a Quarto pre-render script (see _quarto.yml), so every site build
 pulls fresh repo metadata: tag a repo with the `vibe-coded` topic on GitHub
-and it appears on projects/vibe-coded.qmd at the next render.
+and it appears on projects/index.qmd at the next render.
 
 Repos outside my account (e.g. ones living in an org I made for them) aren't
 found by the topic search — pin those by hand in EXTRA_REPOS. Their card

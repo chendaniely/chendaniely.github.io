@@ -17,7 +17,7 @@
 //   GALLERY  polaroid photo grid                          [about.qmd]
 //   POSTS    reading polish, progress bar                 [posts/*]
 //   TALKS    talks.yml listing                             [talks/]
-//   VIBE     vibe-coded repo cards                         [projects/vibe-coded]
+//   VIBE     vibe-coded repo cards                         [projects/index]
 //   MOTION   every animation lives here, wrapped in
 //            prefers-reduced-motion
 // ============================================================================
@@ -150,6 +150,12 @@ $web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.1rem;
 }
+// a ## heading right after a card grid (projects: "Vibe-coded projects").
+// Quarto zeroes the top margin of the page's first h2 section, and the
+// grid isn't a section, so that heading would sit flush on the cards.
+.signposts + section {
+  margin-top: 2.5rem;
+}
 .signpost {
   background: white;
   border: 1.5px solid $brand-sand;
@@ -269,7 +275,7 @@ blockquote {
   padding: 0.05rem 0.5rem;
 }
 
-// ── VIBE ── vibe-coded repo cards [projects/vibe-coded.qmd via vibe-coded.ejs]
+// ── VIBE ── vibe-coded repo cards [projects/index.qmd via vibe-coded.ejs]
 // reuses .signpost cards + .talk-tags/.talk-links; only the meta line is new
 .vibe-meta {
   font-size: 0.85rem;
