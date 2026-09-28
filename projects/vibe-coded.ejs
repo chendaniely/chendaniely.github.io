@@ -7,6 +7,9 @@
 // Everything shown comes from GitHub repo metadata — edit a repo's
 // description / website / topics on GitHub, not here.
 //
+// The whole card is a link (.stretched-link): to the repo's website
+// when it has one, otherwise to the code.
+//
 // NOTE: listing template output is processed as MARKDOWN — keep all
 // emitted HTML flush-left; indenting 4+ spaces turns it into an
 // escaped code block.
@@ -29,8 +32,8 @@ const fmt = (d) => new Date(d).toLocaleDateString("en-US",
 </div>
 <% } %>
 <div class="talk-links">
-<% if (r.homepage) { %><a href="<%= r.homepage %>">try it →</a><% } %>
-<a href="<%= r.url %>">code →</a>
+<% if (r.homepage) { %><a href="<%= r.homepage %>" class="stretched-link">try it →</a><% } %>
+<a href="<%= r.url %>"<% if (!r.homepage) { %> class="stretched-link"<% } %>>code →</a>
 </div>
 </div>
 <% } %>

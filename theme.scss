@@ -142,6 +142,15 @@ $reveal-rise: 18px;    // distance sections travel while fading in
   border: 1.5px solid $brand-sand;
   border-radius: 14px;
   padding: 1rem 1.1rem;
+  // whole card is clickable: the card's main link carries Bootstrap's
+  // .stretched-link, whose ::after overlay fills this positioned box.
+  // Any other link in the card (vibe cards' second link) is lifted above
+  // that overlay so it stays clickable on its own.
+  position: relative;
+  a:not(.stretched-link) {
+    position: relative;
+    z-index: 2;
+  }
 
   h3 {
     font-size: 1.1rem;
