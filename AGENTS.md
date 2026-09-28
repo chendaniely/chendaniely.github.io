@@ -29,6 +29,8 @@ _quarto.yml          # Quarto site config (cosmo + brand + theme.scss)
 _variables.yml       # "now" values, injected with {{< var now.* >}}
 theme.scss           # ALL custom styling (commented, sectioned)
 theme-dark.scss      # dark-mode color overrides
+fonts/               # self-hosted woff2 fonts (OFL), wired up in _brand.yml;
+                     # fallback font stacks are in theme.scss
 scroll-reveal.html   # the site's only JS: reveal-on-scroll, random card
                      # tilts, reading-progress bar, and making a dismissed
                      # announcement come back next visit (~55 lines)

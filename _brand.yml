@@ -61,17 +61,39 @@ color:
 # legibility, with distinct letterforms that reduce misreading at any size.
 # It pairs well with the academic/content-first intent of this site.
 #
+# 🤖 Fonts are self-hosted from fonts/ rather than loaded from Google Fonts:
+# same-origin files arrive with the page instead of via two extra servers.
+# Both are SIL Open Font License (OFL.txt beside each), which allows this.
+# Built from google/fonts' TTFs as woff2; Mono is cut from the variable font
+# at the two weights the site uses. Fallback stacks live in theme.scss.
+#
 typography:
   fonts:
     - family: Atkinson Hyperlegible
-      source: google
-      weight: [400, 700]
-      style: [normal, italic]
+      source: file
+      files:
+        - path: fonts/atkinson-hyperlegible/AtkinsonHyperlegible-Regular.woff2
+          weight: 400
+          style: normal
+        - path: fonts/atkinson-hyperlegible/AtkinsonHyperlegible-Italic.woff2
+          weight: 400
+          style: italic
+        - path: fonts/atkinson-hyperlegible/AtkinsonHyperlegible-Bold.woff2
+          weight: 700
+          style: normal
+        - path: fonts/atkinson-hyperlegible/AtkinsonHyperlegible-BoldItalic.woff2
+          weight: 700
+          style: italic
 
     - family: Atkinson Hyperlegible Mono
-      source: google
-      weight: [400, 700]
-      style: normal
+      source: file
+      files:
+        - path: fonts/atkinson-hyperlegible-mono/AtkinsonHyperlegibleMono-Regular.woff2
+          weight: 400
+          style: normal
+        - path: fonts/atkinson-hyperlegible-mono/AtkinsonHyperlegibleMono-Bold.woff2
+          weight: 700
+          style: normal
 
   base:
     family: Atkinson Hyperlegible

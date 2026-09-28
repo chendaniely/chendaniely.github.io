@@ -28,6 +28,19 @@ $photo-tilt: -3.5deg;  // resting tilt of hero photo & gallery polaroids
 // `tilt(...)` calls in scroll-reveal.html
 $reveal-rise: 18px;    // distance sections travel while fading in
 
+// ── fonts ── families come from _brand.yml (self-hosted in fonts/).
+// Brand sets each to a bare name with no fallback, so until the font
+// arrives the browser shows its default serif. These stacks fall back to
+// the system sans / mono instead.
+$font-family-base: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: $font-family-base;
+$font-family-monospace: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular,
+  Menlo, Consolas, monospace;
+$font-family-monospace-block: $font-family-monospace;   // <pre>
+$font-family-monospace-inline: $font-family-monospace;  // <code>
+$web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
+
 /*-- scss:rules --*/
 
 // ── LISTING THUMBNAILS ── (was styles.css) crop card images to 16:9
