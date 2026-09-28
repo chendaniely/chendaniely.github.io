@@ -16,6 +16,7 @@ any of my GitHub repos tagged with the
 [vibe-coded](https://github.com/chendaniely?tab=repositories&q=topic%3Avibe-coded) topic
 shows up here at the next site build,
 using the repo's own description, website, and topics.
+Repos that live under other GitHub organizations are pinned by hand.
 
 ::: {#vibe-list}
 :::
