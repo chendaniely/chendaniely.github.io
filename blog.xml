@@ -17,6 +17,7 @@
   <description><![CDATA[ In my first month teaching with AI, an agent did the typing in my review sessions while the class read and judged its commands. ]]></description>
   <category>teaching</category>
   <category>AI</category>
+  <category>Incorporating AI in the Classroom</category>
   <guid>https://chendaniely.github.io/posts/2026/2026-09-27-reviewing-with-an-agent-harness/</guid>
   <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
   <media:content url="https://chendaniely.github.io/posts/2026/2026-09-27-reviewing-with-an-agent-harness/2026-09-26-claude-code-status-bar-card.png" medium="image" type="image/png" height="81" width="144"/>
@@ -25,7 +26,8 @@
   <title>The Vancouver Cherry Blossom Marathon</title>
   <link>https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/</link>
   <description><![CDATA[ Using data from the <a href="https://opendata.vancouver.ca/pages/home/">Vancouver Open Data Portal</a>, some vibes, and lots of checking We have the Vancouver Cherry Blossom (Ultra?) Marathon! ]]></description>
-  <category>general</category>
+  <category>data science</category>
+  <category>life</category>
   <category>R</category>
   <guid>https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/</guid>
   <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
@@ -36,6 +38,8 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2020/2020-10-27-using-obs-for-online-teaching/</link>
   <description><![CDATA[ Open Broadcaster Software (OBS) is a featured and popular used to lay out your screen for recording and streaming. V26 of OBS Studio was released mid October 2020, and it ships with a virtual camera feature (windows). This allows you to use the OBS Studio output as the camera input for other programs (e.g., video conferencing software). ]]></description>
+  <category>teaching</category>
+  <category>tutorial</category>
   <guid>https://chendaniely.github.io/posts/2020/2020-10-27-using-obs-for-online-teaching/</guid>
   <pubDate>Tue, 27 Oct 2020 00:00:00 GMT</pubDate>
 </item>
@@ -45,6 +49,7 @@
   <link>https://chendaniely.github.io/posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/</link>
   <description><![CDATA[ Video guide from “The First Layer”: https://www.youtube.com/watch?v=-rOZpOiWYxM ]]></description>
   <category>making</category>
+  <category>tutorial</category>
   <guid>https://chendaniely.github.io/posts/2020/2020-05-24-upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s/</guid>
   <pubDate>Sun, 24 May 2020 00:00:00 GMT</pubDate>
 </item>
@@ -53,6 +58,9 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2020/2020-02-29-python-environments-with-conda/</link>
   <description><![CDATA[ <a href="https://www.anaconda.com/distribution/#download-section">Anaconda</a> (and these days <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>) has been my go-to for getting Python and the scientific/data science software stack installed on my computer (even on my Arch linux machine!). ]]></description>
+  <category>workflow</category>
+  <category>tutorial</category>
+  <category>Python</category>
   <guid>https://chendaniely.github.io/posts/2020/2020-02-29-python-environments-with-conda/</guid>
   <pubDate>Sat, 29 Feb 2020 00:00:00 GMT</pubDate>
 </item>
@@ -61,6 +69,8 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2020/2020-01-30-r-hex-bowtie/</link>
   <description><![CDATA[ If you were at <a href="https://rstudio.com/conference/">rstudio::conf</a> you may have seen me walking around with my conference badge and wondered what everything is. ]]></description>
+  <category>making</category>
+  <category>R</category>
   <guid>https://chendaniely.github.io/posts/2020/2020-01-30-r-hex-bowtie/</guid>
   <pubDate>Thu, 30 Jan 2020 00:00:00 GMT</pubDate>
 </item>
@@ -69,6 +79,8 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2020/2020-01-29-my-time-as-an-rstudio-intern/</link>
   <description><![CDATA[ I’ve had a lot of time to think about my time as an RStudio intern. When I do, I usually end up with a few words in my head before I’m flooded with (good) emotions and struggle with finding the words to convey my thoughts. The last time I tried to write something like this went a little like <a href="https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html">this</a>. What I can say is this: whatever you thought it was like working at RStudio, is (probably) true. ]]></description>
+  <category>life</category>
+  <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2020/2020-01-29-my-time-as-an-rstudio-intern/</guid>
   <pubDate>Wed, 29 Jan 2020 00:00:00 GMT</pubDate>
 </item>
@@ -77,6 +89,8 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/</link>
   <description><![CDATA[ I’m at the <a href="https://r-medicine.com/">R/Medicine</a> conference (no it’s not a Reddit thing) and got to help Alison Hill with her <a href="https://rmd4medicine.netlify.com/">R Markdown for Medicine</a> workshop. One of the questions I got to tinker with was making tables used to report model results. ]]></description>
+  <category>tutorial</category>
+  <category>R</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-09-13-table-of-model-results-using-kable-and-kableextra/</guid>
   <pubDate>Fri, 13 Sep 2019 00:00:00 GMT</pubDate>
 </item>
@@ -85,6 +99,9 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/</link>
   <description><![CDATA[ I’ve been asked a few times lately about whether one should learn R or Python. ]]></description>
+  <category>data science</category>
+  <category>R</category>
+  <category>Python</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-08-28-r-or-python-which-one-to-learn-first/</guid>
   <pubDate>Wed, 28 Aug 2019 00:00:00 GMT</pubDate>
 </item>
@@ -93,6 +110,9 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-08-20-git-squash-and-merge-workflow/</link>
   <description><![CDATA[ I have a love-hate relationship with Git. It took me years of following cookbooks and following strict set of commands to get a sense of how it works. I still have to spend time wrangling Git at times, but I’ve gotten to the point where I’m just annoyed, instead of scared. Here is the branching-squash-and-merge workflow I’ve been using at RStudio. ]]></description>
+  <category>workflow</category>
+  <category>tutorial</category>
+  <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-08-20-git-squash-and-merge-workflow/</guid>
   <pubDate>Tue, 27 Aug 2019 00:00:00 GMT</pubDate>
 </item>
@@ -101,6 +121,8 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-08-06-inconsistencies-with-in-r/</link>
   <description><![CDATA[ One of the cool things about working on <a href="https://github.com/rstudio-education/gradethis"><code>gradethis</code></a> (<a href="https://github.com/rstudio-education/gradethis/issues/18"><code>grader</code> need to be renamed</a>) is that we end up doing things that aren’t common in R (i.e., grading and comparing code). ]]></description>
+  <category>R</category>
+  <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-08-06-inconsistencies-with-in-r/</guid>
   <pubDate>Tue, 06 Aug 2019 00:00:00 GMT</pubDate>
 </item>
@@ -109,6 +131,7 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/</link>
   <description><![CDATA[ I was initially going to get some small bookshelves to put my Oculus sensors on, but you can take your Oculus sensors off the stand! This way you wont have an awkward way to mount the sensors against the wall. ]]></description>
+  <category>making</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-08-03-mounting-oclus-rift-censors-on-the-wall/</guid>
   <pubDate>Sat, 03 Aug 2019 00:00:00 GMT</pubDate>
 </item>
@@ -117,6 +140,8 @@
   <dc:creator>Daniel Chen</dc:creator>
   <link>https://chendaniely.github.io/posts/2019/2019-07-23-new-website/</link>
   <description><![CDATA[ I finally got everything moved over to <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> with the <a href="https://gohugo.io/">Hugo</a> <a href="https://github.com/gcushen/hugo-academic">Academic</a> theme. Thanks so much to <a href="https://alison.rbind.io/">Allison Hill</a>, who ran the <a href="https://summer-of-blogdown.netlify.com">summer-of-blogdown</a> tutorial for us <a href="https://blog.rstudio.com/2019/03/25/summer-interns-2019/">RStudio interns</a>. ]]></description>
+  <category>R</category>
+  <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-07-23-new-website/</guid>
   <pubDate>Tue, 23 Jul 2019 00:00:00 GMT</pubDate>
 </item>
@@ -124,6 +149,8 @@
   <title>RStudio internship week 2</title>
   <link>https://chendaniely.github.io/posts/2019/2019-06-18-rstudio_internship_wk02/</link>
   <description><![CDATA[ The main topics and events of last week were: ]]></description>
+  <category>R</category>
+  <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-06-18-rstudio_internship_wk02/</guid>
   <pubDate>Tue, 18 Jun 2019 00:00:00 GMT</pubDate>
 </item>
@@ -131,6 +158,8 @@
   <title>And we’re off! RStudio internship week 1, complete.</title>
   <link>https://chendaniely.github.io/posts/2019/2019-06-10-rstudio_internship_wk01/</link>
   <description><![CDATA[ I’m still pinching myself about being one of the <a href="https://blog.rstudio.com/2019/03/25/summer-interns-2019/">RStudio interns this year</a>. It’s an unbelievable opportunity and I’ve been half panicked and fighting imposter syndrome since the <a href="https://blog.rstudio.com/2019/03/25/summer-interns-2019/">announcement was made in March</a>. My meeting with <a href="http://third-bit.com/">Greg Wilson</a> on Friday (2019-06-07) went something like this: ]]></description>
+  <category>R</category>
+  <category>RStudio internship</category>
   <guid>https://chendaniely.github.io/posts/2019/2019-06-10-rstudio_internship_wk01/</guid>
   <pubDate>Mon, 10 Jun 2019 00:00:00 GMT</pubDate>
 </item>
@@ -138,6 +167,8 @@
   <title>rstatsnyc as told by @brookLYNevery1, @dataandme, and autographs</title>
   <link>https://chendaniely.github.io/posts/2018/2018-04-22-rstatsnyc/</link>
   <description><![CDATA[ EDIT: I’ve added the notes from <a href="https://twitter.com/dataandme"><span class="citation" data-cites="dataandme">@dataandme</span></a> and linked to people’s twitter and slides (if I found them). This is probably going to be an ongoing process… ]]></description>
+  <category>conference</category>
+  <category>R</category>
   <guid>https://chendaniely.github.io/posts/2018/2018-04-22-rstatsnyc/</guid>
   <pubDate>Sun, 22 Apr 2018 00:00:00 GMT</pubDate>
 </item>
@@ -145,6 +176,8 @@
   <title>Analysis-Based Project Templates</title>
   <link>https://chendaniely.github.io/posts/2018/2018-01-23-analysis_based_project_templates/</link>
   <description><![CDATA[ One of the most annoying things you hear people say when they are working with some common code base is “It works on my machine…”. Conversely, one of the more satisfying things is running a script that you are not actively working on and have it run without problems. ]]></description>
+  <category>data science</category>
+  <category>workflow</category>
   <guid>https://chendaniely.github.io/posts/2018/2018-01-23-analysis_based_project_templates/</guid>
   <pubDate>Tue, 23 Jan 2018 00:00:00 GMT</pubDate>
 </item>
@@ -152,6 +185,8 @@
   <title>From VMs to LXC Containers to Docker Containers</title>
   <link>https://chendaniely.github.io/posts/2017/2017-07-07-vm_lxc_docker/</link>
   <description><![CDATA[ Since I’ve joined <a href="https://www.bi.vt.edu/sdal">SDAL</a>, the lab has undergone a few infrastructure related changes, mainly how applications are run on the servers. From what I remember, we started using <a href="https://www.virtualbox.org/">Virtual Box</a> virtual machines, then moved to <a href="https://linuxcontainers.org/">LXC</a> Linux containers, and we are now rebuilding our entire infrastructure using <a href="https://www.docker.com/">Docker</a> containers. ]]></description>
+  <category>workflow</category>
+  <category>Linux</category>
   <guid>https://chendaniely.github.io/posts/2017/2017-07-07-vm_lxc_docker/</guid>
   <pubDate>Fri, 07 Jul 2017 00:00:00 GMT</pubDate>
 </item>
@@ -159,6 +194,8 @@
   <title>Project Templates</title>
   <link>https://chendaniely.github.io/posts/2017/2017-05-30-project_templates/</link>
   <description><![CDATA[ Project templates provide some standardized way to organize files. Our lab uses a template that is based off the <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424">Noble 2009 Paper, “A Quick Guide to Organizing Computational Biology Projects”</a>. I’ve created a simple shell script that automatically generates this folder structure <a href="https://github.com/chendaniely/computational-project-cookie-cutter">here</a>, and there’s an <a href="https://github.com/Reproducible-Science-Curriculum/rr-init">rr-init</a> project by the Reproducible Science Curriculum folks. ]]></description>
+  <category>data science</category>
+  <category>workflow</category>
   <guid>https://chendaniely.github.io/posts/2017/2017-05-30-project_templates/</guid>
   <pubDate>Tue, 30 May 2017 00:00:00 GMT</pubDate>
 </item>
@@ -166,6 +203,8 @@
   <title>Changes in Higher Education</title>
   <link>https://chendaniely.github.io/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/</link>
   <description><![CDATA[ As a PhD student who already has a Master’s degree, it’s safe to say that I’ve been in school for a long time. One of the things in higher education that I started to dislike over the years are the ways professors assess students in the classroom. ]]></description>
+  <category>higher ed</category>
+  <category>Preparing the Future Professoriate</category>
   <guid>https://chendaniely.github.io/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/</guid>
   <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
 </item>
