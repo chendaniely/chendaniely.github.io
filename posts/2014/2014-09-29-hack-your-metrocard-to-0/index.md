@@ -5,6 +5,7 @@ date:   2014-09-29 20:40:00
 
 #categories: lifehack mta metrocard
 
+categories: [life]
 tags:
   - lifehack
   - mta

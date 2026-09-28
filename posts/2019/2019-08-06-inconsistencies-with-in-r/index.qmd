@@ -3,7 +3,7 @@ title: Inconsistencies with the `==` operator in R
 author: Daniel Chen
 date: '2019-08-06'
 slug: inconsistencies-with-in-r
-categories: []
+categories: [R, RStudio internship]
 tags:
   - rstudio-internship
   - r

@@ -70,9 +70,35 @@ Makefile             # `make submodules` to init/update submodules
 - New posts should use `.qmd`;
   migrated posts may stay as `.md` until converted
 - Quarto categories are used for both categories and tags
-  (no separate tags concept)
+  (no separate tags concept) — see "Tags" below for the allowed set
 - Old posts have Hugo/Jekyll frontmatter (`layout:`, `permalink:`, `slug:`, etc.) —
-  leave it in place until the post is fully converted to Quarto
+  leave it in place until the post is fully converted to Quarto.
+  That includes their old Hugo `tags:` lists, which Quarto ignores;
+  only `categories:` shows on the site
+
+## Tags (`categories:`)
+
+Pick from this set;
+don't invent a new tag for one post.
+Each post gets 1–4 tags, written as a flow list:
+`categories: [teaching, AI, Incorporating AI in the Classroom]`.
+
+| Group | Tags | When |
+|-------|------|------|
+| Topic (at least one) | `teaching`, `higher ed`, `data science`, `research`, `workflow`, `AI`, `life`, `making` | what the post is about. `higher ed` = academia and grad school; `workflow` = setup, tooling, project organization, Git; `making` = physical builds |
+| Language / OS | `R`, `Python`, `Linux` | only when the post is about the language or OS itself |
+| Post type | `tutorial`, `conference` | step-by-step how-tos; conference write-ups |
+| Series & communities | `Incorporating AI in the Classroom`, `Preparing the Future Professoriate`, `RStudio internship`, `Software Carpentry` | posts meant to be read together, or about that community |
+
+Casing: topics and types are lowercase;
+names (languages, series, communities) keep their own capitalization.
+
+A series gets its own tag, named exactly as the series,
+in addition to its topic tags.
+Clicking the tag lists the whole series on the blog page.
+Only create one for a planned multi-part series,
+not for posts that merely share a theme
+(the Watts-model posts just use `research`).
 
 ## Interactive posts
 

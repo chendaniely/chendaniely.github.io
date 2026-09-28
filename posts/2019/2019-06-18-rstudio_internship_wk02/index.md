@@ -4,6 +4,7 @@ title:  "RStudio internship week 2"
 subtitle: "I think I can make it through the summer"
 date: "2019-06-18"
 
+categories: [R, RStudio internship]
 tags:
   - R
   - rstudio-internship

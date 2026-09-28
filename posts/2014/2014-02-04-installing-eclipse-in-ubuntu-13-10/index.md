@@ -6,6 +6,7 @@ layout: post
 date: 2014-02-04
 
 # categories: Tutorials
+categories: [tutorial, Linux]
 tags:
   - tutorials
   - Eclipse

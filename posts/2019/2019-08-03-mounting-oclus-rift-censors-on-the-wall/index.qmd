@@ -3,7 +3,7 @@ title: Mounting Oclus Rift Sensors on the Wall
 author: Daniel Chen
 date: '2019-08-03'
 slug: []
-categories: []
+categories: [making]
 tags: ['home']
 subtitle: 'Still looking for a way to hide my cables behind the desk...'
 summary: ''

@@ -5,6 +5,7 @@ date:   2014-11-02 00:00:00
 
 # categories: External
 
+categories: [teaching, Software Carpentry]
 tags:
   - external
   - swc

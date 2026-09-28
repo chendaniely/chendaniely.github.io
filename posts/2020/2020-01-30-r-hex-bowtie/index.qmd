@@ -3,7 +3,7 @@ title: R Hex Bowtie
 author: Daniel Chen
 date: '2020-01-30'
 slug: r-hex-bowtie
-categories: []
+categories: [making, R]
 tags:
   - R
 subtitle: ''

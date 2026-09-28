@@ -6,7 +6,7 @@ subtitle: ""
 summary: ""
 authors: []
 tags: []
-categories: []
+categories: [teaching, tutorial]
 date: 2020-08-27T19:51:05-05:00
 lastmod: 2021-01-10T19:51:05-05:00
 featured: false

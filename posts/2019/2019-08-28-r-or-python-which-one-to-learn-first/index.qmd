@@ -3,7 +3,7 @@ title: R or Python, which One to Learn (First)?
 author: Daniel Chen
 date: '2019-08-28'
 slug: r-or-python-which-one-to-learn-first
-categories: []
+categories: [data science, R, Python]
 tags:
   - R
   - python

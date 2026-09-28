@@ -3,7 +3,7 @@ title: Python Environments with Conda
 author: Daniel Chen
 date: '2020-02-29'
 slug: python-environments-with-conda
-categories: []
+categories: [workflow, tutorial, Python]
 tags:
   - python
   - tutorial

@@ -4,6 +4,7 @@ title:  "SWC: Our First High School Workshop at Rockefeller University"
 date:   2014-07-07 00:00:00
 
 #categories: External
+categories: [teaching, Software Carpentry]
 tags:
   - external
   - swc

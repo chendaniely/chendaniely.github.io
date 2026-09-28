@@ -5,6 +5,7 @@ date:   2017-07-07
 
 #categories: SDAL
 
+categories: [workflow, Linux]
 tags:
   - infrastructure
   - dspg

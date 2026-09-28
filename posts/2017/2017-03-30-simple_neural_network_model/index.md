@@ -5,6 +5,7 @@ date:   2017-03-30 00:10:00
 
 # categories: Research
 
+categories: [research]
 tags:
   - research
   - complexity science

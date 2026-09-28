@@ -3,7 +3,7 @@ title: My time as an RStudio Intern
 author: Daniel Chen
 date: '2020-01-29'
 slug: my-time-as-an-rstudio-intern
-categories: []
+categories: [life, RStudio internship]
 tags:
   - rstudio-internship
   - r

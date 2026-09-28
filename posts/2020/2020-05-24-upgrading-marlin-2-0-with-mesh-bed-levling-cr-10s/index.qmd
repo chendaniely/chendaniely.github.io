@@ -3,8 +3,7 @@ title: Upgrading Marlin 2.0+ with Mesh Bed Levling CR-10s
 author: Daniel Chen
 date: '2020-05-24'
 slug: upgrading-marlin-2-0-with-mesh-bed-levling-cr-10s
-categories:
-  - making
+categories: [making, tutorial]
 tags:
   - 3d-print
   - makers

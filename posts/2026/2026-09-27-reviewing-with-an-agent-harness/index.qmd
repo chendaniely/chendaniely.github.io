@@ -4,7 +4,7 @@
 title: "Incorporating AI in the Classroom: Reviewing with an Agent Harness"
 description: "In my first month teaching with AI, an agent did the typing in my review sessions while the class read and judged its commands."
 date: "2026-09-27"
-categories: [teaching, AI]
+categories: [teaching, AI, Incorporating AI in the Classroom]
 bibliography: references.bib
 # 🤖 web sources linked in the text, listed in References without in-text markers
 nocite: |

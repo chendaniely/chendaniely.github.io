@@ -5,6 +5,7 @@ date:   2018-01-23
 
 #category: Data Engineer
 
+categories: [data science, workflow]
 tags:
   - sdal
   - data science

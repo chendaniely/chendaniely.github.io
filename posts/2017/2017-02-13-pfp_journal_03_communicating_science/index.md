@@ -5,6 +5,7 @@ date:   2017-02-13
 
 # categories: Teaching
 
+categories: [higher ed, Preparing the Future Professoriate]
 tags:
   - teaching
   - higher ed

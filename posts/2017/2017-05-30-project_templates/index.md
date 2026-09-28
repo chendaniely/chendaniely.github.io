@@ -5,6 +5,7 @@ date:   2017-05-30
 
 #categories: SDAL
 
+categories: [data science, workflow]
 tags:
   - infrastructure
   - dspg

@@ -5,6 +5,7 @@ date:   2015-02-05
 
 # categories: Tutorials
 
+categories: [workflow, tutorial, Python]
 tags:
   - tutorials
   - opensource

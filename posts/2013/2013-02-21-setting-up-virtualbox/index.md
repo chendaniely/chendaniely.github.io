@@ -6,6 +6,7 @@ permalink: /2013/02/21/setting-up-virtualbox/
 date: 2013-02-21
 
 # categories: Tutorials
+categories: [workflow, tutorial]
 tags:
   - tutorials
   - Setup

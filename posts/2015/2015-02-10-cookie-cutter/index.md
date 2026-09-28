@@ -4,6 +4,7 @@ title:  "SWC: Cookie Cutter"
 date:   2015-02-10 00:00:00
 
 # categories: External
+categories: [teaching, Software Carpentry]
 tags:
   - external
   - swc

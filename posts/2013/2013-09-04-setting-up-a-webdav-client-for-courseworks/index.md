@@ -6,6 +6,7 @@ permalink: /2013/09/04/setting-up-a-webdav-client-for-courseworks/
 date: 2013-09-04
 
 # categories: Tutorials
+categories: [workflow, tutorial]
 tags:
   - tutorials
   - Client

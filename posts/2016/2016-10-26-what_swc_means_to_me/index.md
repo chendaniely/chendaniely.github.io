@@ -4,6 +4,7 @@ title:  "SWC: What the Carpentries Mean To Me"
 date:   2016-10-26 00:00:00
 
 # categories: External
+categories: [teaching, Software Carpentry]
 tags:
   - external
   - swc

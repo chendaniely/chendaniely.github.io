@@ -5,6 +5,7 @@ date:   2017-04-24
 
 # categories: Teaching
 
+categories: [teaching, data science, Preparing the Future Professoriate]
 tags:
   - teaching
   - higher ed

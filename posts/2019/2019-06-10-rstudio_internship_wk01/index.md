@@ -4,6 +4,7 @@ title:  "And we're off! RStudio internship week 1, complete."
 subtitle: "First week of internship is over and I can't believe this is actually happening"
 date: "2019-06-10"
 
+categories: [R, RStudio internship]
 tags:
   - R
   - rstudio-internship

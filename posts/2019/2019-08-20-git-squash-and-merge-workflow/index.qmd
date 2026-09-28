@@ -3,7 +3,7 @@ title: Git Squash and Merge Workflow
 author: Daniel Chen
 date: '2019-08-27'
 slug: git-squash-and-merge-workflow
-categories: []
+categories: [workflow, tutorial, RStudio internship]
 tags:
   - rstudio-internship
   - git

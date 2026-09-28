@@ -3,7 +3,7 @@ title: Using OBS for Online Teaching
 author: Daniel Chen
 date: '2020-10-27'
 slug: using-obs-for-online-teaching
-categories: []
+categories: [teaching, tutorial]
 tags:
   - teaching
   - obs
