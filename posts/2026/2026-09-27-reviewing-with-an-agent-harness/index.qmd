@@ -13,6 +13,11 @@ image: 2026-09-26-claude-code-status-bar-card.png
 image-alt: "Close crop of Claude Code's status bar in a terminal: it's my turn, the model is Opus 5.5 at extra-high effort, this session has cost $1.51, and auto mode is on."
 ---
 
+::: {.callout-note title="Part of a series"}
+This is the first post in my [Incorporating AI in the Classroom](../../../blog.qmd#category=SW5jb3Jwb3JhdGluZyUyMEFJJTIwaW4lMjB0aGUlMjBDbGFzc3Jvb20=) series.
+More to come!
+:::
+
 This September was my first month trying to deliberately incorporate AI into my teaching.
 I teach in UBC's [Master of Data Science](https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-data-science) (MDS) program in Vancouver.
 My course, [DSCI 521: Computing Platforms for Data Science](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/),
