@@ -14,7 +14,7 @@ image-alt: "Close crop of Claude Code's status bar in a terminal: it's my turn, 
 ---
 
 ::: {.callout-note title="Part of a series"}
-This is the first post in my [Incorporating AI in the Classroom](../../../blog.qmd#category=SW5jb3Jwb3JhdGluZyUyMEFJJTIwaW4lMjB0aGUlMjBDbGFzc3Jvb20=) series.
+This is the first post in my [Incorporating AI in the Classroom](../../../blog.qmd#category=Incorporating%20AI%20in%20the%20Classroom) series.
 More to come!
 :::
 
