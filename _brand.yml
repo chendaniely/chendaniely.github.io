@@ -17,12 +17,18 @@ color:
     # NYC flag
     orange:       "#F26522"
     blue:         "#236192"
+    # 🤖 orange for TEXT on light backgrounds only (links on hover, the
+    # rotating tagline, "now" lines): flag orange is 2.9:1 on warm-white,
+    # this burnt orange is 4.8:1. Fills, borders, and dark mode keep #F26522.
+    orange-ink:   "#B84A12"
 
     # Warm neutrals — light theme
     warm-white:   "#F8F6F2"
     sand:         "#E8DDD2"
     stone:        "#B8AEA2"
-    warm-gray:    "#7E7468"
+    # 🤖 was #7E7468 (4.2:1 on warm-white, just under WCAG AA's 4.5);
+    # a touch darker for muted text: 5.2:1 on warm-white, 5.6:1 on white
+    warm-gray:    "#6F665B"
     charcoal:     "#2F2A26"
     near-black:   "#1C1A17"
 

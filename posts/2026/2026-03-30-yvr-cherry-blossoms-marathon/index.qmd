@@ -807,7 +807,7 @@ htmltools::tagList(lapply(sort(unique(bike_stops$leg)), function(i) {
   htmltools::HTML(sprintf(
     '<div style="text-align:center; margin: 1.5em 0;">
       <a href="%s" target="_blank"
-         style="display:inline-block; background:#0ea5e9; color:white; padding:0.7em 1.8em;
+         style="display:inline-block; background:#0369a1; color:white; padding:0.7em 1.8em;
                 border-radius:8px; font-size:1em; font-weight:bold; text-decoration:none;">
         🚴 Leg %d (stops %d–%d) — Open in Google Maps
       </a>

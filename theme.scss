@@ -4,7 +4,7 @@
 // Layered on: cosmo (Bootswatch) + brand (_brand.yml).
 //
 // Brand palette colors arrive automatically as $brand-* variables:
-//   $brand-orange $brand-blue $brand-warm-white $brand-sand $brand-stone
+//   $brand-orange $brand-orange-ink $brand-blue $brand-warm-white $brand-sand $brand-stone
 //   $brand-warm-gray $brand-charcoal $brand-near-black
 //   $brand-dark-base $brand-dark-surface $brand-dark-border
 // >>> Change colors in _brand.yml, not here. <<<
@@ -18,6 +18,7 @@
 //   POSTS    reading polish, progress bar                 [posts/*]
 //   TALKS    talks.yml listing                             [talks/]
 //   VIBE     vibe-coded repo cards                         [projects/index]
+//   CONTRAST Quarto grays + navbar hover, kept WCAG AA      [all pages]
 //   MOTION   every animation lives here, wrapped in
 //            prefers-reduced-motion
 // ============================================================================
@@ -40,6 +41,37 @@ $font-family-monospace: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regul
 $font-family-monospace-block: $font-family-monospace;   // <pre>
 $font-family-monospace-inline: $font-family-monospace;  // <code>
 $web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
+
+// ── contrast ── 🤖 every text color here passes WCAG AA (4.5:1) in light
+// mode; theme-dark.scss sets the dark-mode equivalents. Literal hex values
+// because $brand-* variables don't exist yet in the defaults layer.
+//
+// Cosmo lowers Bootstrap's minimum contrast ratio, so text on the orange
+// primary (buttons, pagination, active items) came out white at 3.1:1.
+// Back at 4.5, Bootstrap picks near-black on orange (5.5:1) on its own.
+$min-contrast-ratio: 4.5;
+$color-contrast-dark: #1C1A17;     // near-black
+$color-contrast-light: #F8F6F2;    // warm-white
+$component-active-color: #1C1A17;  // text on active orange items (pagination, pills)
+// navbar: near-black on the NYC-orange bar (5.5:1; white was 3.1:1)
+$navbar-fg: #1C1A17;
+$navbar-hl: #1C1A17;
+// dropdown menus: Bootstrap's hover fill is a cool near-white that was
+// invisible on warm-white and erased the text in dark mode. Hovered and
+// current items now get the orange fill with near-black text (5.5:1).
+$dropdown-link-hover-bg: #F26522;
+$dropdown-link-hover-color: #1C1A17;
+$dropdown-link-active-bg: #F26522;
+$dropdown-link-active-color: #1C1A17;
+// muted text and borders: warm, not Bootstrap's cool grays
+// Light-only values. In the dark stack Quarto puts theme-dark.scss's
+// defaults BEFORE these, so a plain assignment here would overwrite the
+// dark ones (and !default loses to Bootstrap's own defaults in light).
+// theme-dark.scss sets $site-dark, which skips this block there.
+@if not variable-exists(site-dark) {
+  $text-muted: #6F665B !global;    // warm-gray, 5.2:1 on warm-white
+  $border-color: #E8DDD2 !global;  // sand
+}
 
 /*-- scss:rules --*/
 
@@ -104,7 +136,7 @@ $web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
   font-size: 1.3rem;
   .rot-word {
     grid-area: 1 / 1;
-    color: $brand-orange;
+    color: $brand-orange-ink;  // flag orange is too light for text on warm-white
     font-weight: 700;
   }
   // words stack; MOTION section animates the cycle.
@@ -148,7 +180,7 @@ $web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
     font-size: 0.95rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: $brand-warm-gray;
+    color: var(--bs-secondary-color);
     margin: 0;
     border: none;
   }
@@ -195,7 +227,7 @@ $web-font-path: false;  // skip Cosmo's Source Sans Pro import — never used
   }
   .now-line {
     display: block;
-    color: $brand-orange;
+    color: $brand-orange-ink;  // flag orange is too light for text on white
     font-size: 0.85rem;
     font-weight: 700;
     margin: 0.4rem 0;
@@ -248,7 +280,7 @@ blockquote {
 }
 .talk-date {
   min-width: 6.5rem;
-  color: $brand-warm-gray;
+  color: var(--bs-secondary-color);
   font-size: 0.9rem;
 }
 .talk-title {
@@ -270,7 +302,7 @@ blockquote {
 .talk-meta,
 .talk-desc {
   font-size: 0.9rem;
-  color: $brand-warm-gray;
+  color: var(--bs-secondary-color);
 }
 // slides / code / video: Bootstrap's own .btn classes (set in talks.ejs),
 // with Bootstrap Icons that Quarto already bundles
@@ -286,6 +318,19 @@ blockquote {
 }
 .talk-links > p {
   margin: 0;
+}
+// 🤖 the buttons use the link color, which theme-dark.scss already lightens:
+// orange outline text was 2.9:1 on warm-white. Bootstrap's own --bs-btn-*
+// variables, so hover/active fills keep working.
+.talk-links .btn {
+  --bs-btn-color: var(--bs-link-color);
+  --bs-btn-border-color: var(--bs-link-color);
+  --bs-btn-hover-color: var(--bs-body-bg);
+  --bs-btn-hover-bg: var(--bs-link-color);
+  --bs-btn-hover-border-color: var(--bs-link-color);
+  --bs-btn-active-color: var(--bs-body-bg);
+  --bs-btn-active-bg: var(--bs-link-color);
+  --bs-btn-active-border-color: var(--bs-link-color);
 }
 // languages + packages pills (talks.yml `languages:` / `packages:`)
 .talk-tags {
@@ -303,8 +348,8 @@ blockquote {
 }
 .talk-tag {
   font-size: 0.72rem;
-  color: $brand-warm-gray;
-  border: 1px solid $brand-sand;
+  color: var(--bs-secondary-color);
+  border: 1px solid var(--bs-border-color);
   border-radius: 999px;
   padding: 0.05rem 0.5rem;
 }
@@ -313,11 +358,33 @@ blockquote {
 // reuses .signpost cards + .talk-tags/.talk-links; only the meta line is new
 .vibe-meta {
   font-size: 0.85rem;
-  color: $brand-warm-gray;
+  color: var(--bs-secondary-color);
   margin-bottom: 0.4rem;
 }
 .vibe-repo .talk-links {
   margin-top: 0.6rem;
+}
+
+// ── CONTRAST ── 🤖 Quarto pieces that hard-code Bootstrap's cool grays
+// (#6c757d, 4.3:1 on warm-white and 3.9:1 on dark), switched to the
+// theme's muted color: warm-gray in light, stone in dark (theme-dark.scss)
+.quarto-grid-item .listing-categories .listing-category,
+div.quarto-post .listing-categories .listing-category,
+.quarto-grid-item .card-attribution,
+.quarto-title-breadcrumbs .breadcrumb li:last-of-type a {
+  color: var(--bs-secondary-color);
+}
+.quarto-title .quarto-categories .quarto-category {
+  color: var(--bs-secondary-color);
+  opacity: 1;
+}
+// navbar links keep the near-black text on hover; an underline shows which
+// one you're on (works with reduced motion, where the tilt is off)
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 // ── MOTION ── every animation on the site; all inside reduced-motion guard
@@ -338,7 +405,7 @@ blockquote {
     transition: color 0.2s ease;
   }
   a:hover {
-    color: $brand-orange;
+    color: $brand-orange-ink;  // theme-dark.scss switches back to flag orange
   }
 
   // nav links tilt playfully
@@ -347,9 +414,6 @@ blockquote {
   }
   .navbar .nav-link:hover {
     transform: rotate(-3deg) scale(1.08);
-    // blue, not orange: the navbar background is brand primary (orange),
-    // so an orange hover would vanish into it
-    color: $brand-blue;
   }
 
   // hero photo: tilted at rest, straightens on hover

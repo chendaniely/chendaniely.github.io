@@ -9,7 +9,7 @@ listing:
 ---
 
 Every talk, workshop, and tutorial I've given, newest first.
-Each year lists workshops and tutorials first, then talks.
+Each year puts talks on the left and workshops and tutorials on the right.
 All of them live in `talks.yml` (one entry per talk);
 recordings with searchable transcripts are coming —
 each talk will get its own page with video, transcript, and summary.

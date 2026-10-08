@@ -12,6 +12,16 @@ $link-color: #7FB0D6;     // lightened brand blue for contrast on dark — not a
 // which all but vanishes on that gray
 $code-bg: #232019;        // _brand.yml dark-surface, same as code blocks
 $code-color: #E8DDD2;     // _brand.yml sand, same as body text
+// 🤖 plain code blocks and R/Python output (no syntax highlighting) took the
+// brand's near-black <pre> color: 1.04:1 on the dark page, invisible
+$pre-color: #E8DDD2;      // _brand.yml sand
+// 🤖 contrast: dark-mode versions of theme.scss's contrast block
+$site-dark: true;                // tells theme.scss to skip its light-only values
+$body-secondary-color: #B8AEA2;  // stone for muted text: 8.3:1 (warm-gray was 4.0:1)
+$text-muted: #B8AEA2;
+$body-secondary: #B8AEA2;        // Quarto's captions, margin notes, asides (warm-gray was 3.2:1)
+$border-color: #2E2B26;          // dark-border, not Bootstrap's light gray
+$body-tertiary-bg: #232019;      // dark-surface
 
 /*-- scss:rules --*/
 // dark-surface for cards, code blocks, and quotes
@@ -24,9 +34,29 @@ blockquote {
   color: $body-color;  // theme.scss sets charcoal — unreadable on dark surface
 }
 
-// talks listing: warm-gray is too dim on dark — lift to stone
-.talk-date, .talk-meta, .talk-desc { color: $brand-stone; }
-.talk-tag { color: $brand-stone; border-color: $brand-dark-border; }
+// talks listing: muted text and pill borders already follow
+// $body-secondary-color / $border-color above. The type badge's brand blue
+// is 2.6:1 on dark, so it takes the lightened link blue instead.
+.talk-type {
+  color: $link-color;
+  background: rgba($link-color, 0.15);
+}
+
+// orange TEXT: theme.scss uses the darker orange-ink for light backgrounds;
+// on dark, flag orange itself reads fine (5.8:1)
+.rotator .rot-word, .signpost .now-line { color: $brand-orange; }
+@media (prefers-reduced-motion: no-preference) {
+  a:hover { color: $brand-orange; }
+}
+
+// announcement bar: Bootstrap's pale-orange alert background stayed light
+// in dark mode, so its links (light blue) dropped to 1.8:1. Dark surface
+// with the orange edge instead.
+#quarto-announcement.alert-primary {
+  --bs-alert-bg: #{$brand-dark-surface};
+  --bs-alert-color: #{$body-color};
+  --bs-alert-border-color: #{$brand-orange};
+}
 
 // hero blobs: light-theme sand reads as a smudge on dark — use faint brand glows
 .home-hero {
