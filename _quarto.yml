@@ -53,3 +53,14 @@ format:
       light: [cosmo, brand, theme.scss]
     toc: true
     include-after-body: scroll-reveal.html
+
+# 🤖 extra callout types, from the coatless-quarto/custom-callout extension
+# (_extensions/; `quarto add coatless-quarto/custom-callout`). Use them like
+# built-in callouts in any page: ::: {.definition title="vibe coding"}
+filters:
+  - custom-callout
+custom-callout:
+  definition:
+    title: "Definition"
+    icon-symbol: "fa-book"
+    color: "#7E7468"  # _brand.yml warm-gray: the built-in callouts already use blue, green, orange, burgundy

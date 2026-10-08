@@ -27,3 +27,5 @@ projects/vibe-coded.yml
 # The plain name is ignored too, so it can't be committed by mistake.
 posts/**/_social-posts.md
 posts/**/social-posts.md
+
+/.luarc.json

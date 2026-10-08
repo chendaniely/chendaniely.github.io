@@ -149,12 +149,20 @@ but it's what got me wanting to show students what's actually happening under th
 But watching only goes so far,
 and much of what I know about how these tools behave came from building things for myself.
 I have a growing list of [vibe-coded projects](/projects/index.qmd#vibe-coded-projects) on my website,
-small tools and websites I built by pairing with an AI coding agent
-([vibe coding](https://x.com/karpathy/status/1886192184808149383) is Andrej Karpathy's term for coding where you "forget that the code even exists").
+small tools and websites I built by pairing with an AI coding agent.
 I did the websites entirely in plan and auto mode,
 because I don't know JavaScript, HTML, or CSS, and I'm not planning on learning them right now.
 I just wanted to build the cool projects I had in my head,
 and my subscription let me make something as soon as I thought of it.
+
+<!-- 🤖 definition callout (custom-callout extension, set up in _quarto.yml); Karpathy's post is a screenshot, not an X link, so it can't rot -->
+::: {.definition}
+## [Definition:]{aria-hidden="true"} vibe coding [/vaɪb ˈkoʊdɪŋ/]{aria-hidden="true"} *noun*
+
+Andrej Karpathy's term for coding where you "fully give in to the vibes, embrace exponentials, and forget that the code even exists."
+
+![Karpathy's post that named it, February 2, 2025.](2025-02-02-karpathy-vibe-coding.png){fig-alt="Screenshot of a post on X by Andrej Karpathy, @karpathy, with a verified badge. The post reads: There's a new kind of coding I call “vibe coding”, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like “decrease the padding on the sidebar by half” because I'm too lazy to find it. I “Accept All” always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works. Posted at 3:17 PM on Feb 2, 2025, with 7.3M views, 1.4K replies, 3.6K reposts, 34K likes, and 17K bookmarks."}
+:::
 
 These projects are just the code I want to exist in the world for myself
 (and maybe they'll be useful for other people),

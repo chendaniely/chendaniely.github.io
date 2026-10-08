@@ -114,6 +114,35 @@ add an `{ojs}` code cell to any post (no YAML changes required);
 `viewof` wires them together, all running in the reader's browser.
 (A demo post existed briefly; Dan removed it — pattern lives here instead.)
 
+## Custom callouts
+
+Reach for Quarto features and extensions before writing custom HTML/CSS.
+Extra callout types come from the
+[custom-callout](https://quarto.thecoatlessprofessor.com/custom-callout/) extension
+(`_extensions/coatless-quarto/custom-callout/`),
+defined once under `custom-callout:` in `_quarto.yml`
+and used like built-in callouts on any page.
+To add a type, add an entry there (`title`, `icon-symbol`, `color`, ...).
+
+`definition` is for a term a post leans on,
+styled like a dictionary entry.
+A heading as the first line becomes the callout's title;
+`aria-hidden` keeps screen readers from reading "Definition" twice
+(Quarto already announces the callout type) or reading the pronunciation aloud:
+
+```markdown
+::: {.definition}
+## [Definition:]{aria-hidden="true"} vibe coding [/vaɪb ˈkoʊdɪŋ/]{aria-hidden="true"} *noun*
+
+The definition, with its source.
+
+![Optional screenshot of the source.](source.png){fig-alt="Full text of the screenshot."}
+:::
+```
+
+Screenshot sources from X/Twitter rather than linking them;
+those links rot.
+
 ## Updating "what's current"
 
 Edit `_variables.yml` (next talk, current courses, current project).
