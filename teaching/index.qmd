@@ -1,25 +1,168 @@
 ---
 title: Teaching
-toc: false
-page-layout: full
+description: >
+  How I teach data science,
+  and over a decade of workshops, conference tutorials,
+  and recorded courses outside the classroom.
+toc: true
 ---
 
-I'm a Data Science Lecturer in the
-[Statistics Department](https://www.stat.ubc.ca/)
-at the University of British Columbia,
-and teach in the
-[UBC Master of Data Science](https://masterdatascience.ubc.ca/) program.
+I've been teaching data science since 2014,
+when I started teaching workshops with [The Carpentries](https://carpentries.org/).
+That turned into tutorials at conferences like SciPy, PyCon, and posit::conf,
+recorded courses with Pearson and DataCamp,
+and 4 years as a Data Science Educator at Posit (formerly RStudio),
+where I'm also a [Certified Tidyverse Trainer](https://education.rstudio.com/trainers/).
+These days I'm a Lecturer in Statistics at the University of British Columbia,
+and my courses there have [their own page](/teaching/ubc/index.qmd).
 
-## Currently
+:::: {.signposts}
+::: {.signpost}
+### 🏫 Teaching at UBC
 
-- Courses in UBC Statistics and the MDS-Vancouver program
+My courses in UBC Statistics and the Master of Data Science program,
+and the open textbooks they run on.
 
-## Background
+[my UBC courses →](/teaching/ubc/index.qmd){.stretched-link}
+:::
 
-- Data Science Educator & Developer Advocate, Posit PBC (formerly RStudio)
-- Instructor and lesson maintainer with [The Carpentries](https://carpentries.org/) since 2014
-- Workshops on Python, R, git, and reproducible research
-  at universities, conferences, and research groups
+::: {.signpost}
+### 🎤 Talks and workshops
 
-A fuller teaching dossier (courses, philosophy, materials) is planned —
-see the site's TODO.
+Every talk, workshop, and tutorial I've given,
+with links to the materials.
+
+[talks and workshops →](/talks/index.qmd){.stretched-link}
+:::
+
+::: {.signpost}
+### 🩺 ds4biomed
+
+Data Science for the Biomedical Sciences:
+an online book teaching data skills to clinicians and researchers.
+
+[read the book →](https://ds4biomed.tech){.stretched-link}
+:::
+::::
+
+## Open textbooks
+
+All of these are free to read online,
+so anyone can learn from them or teach with them.
+The first 3 run my courses in UBC's Master of Data Science program.
+
+- [Reproducible and Trustworthy Workflows for Data Science](https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/):
+  version control, environments, containers, testing, CI/CD, and packaging
+  (co-author and maintainer; DSCI 310, 522, and 524).
+- [Computing Platforms for Data Science](https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/):
+  Bash, Git, Quarto, and virtual environments
+  (co-author and maintainer; DSCI 521).
+- [Data Visualization II](https://ubc-mds.github.io/DSCI_532_vis-2_book/):
+  dashboards with Shiny in R and Python, interactive maps, and AI-powered apps
+  (co-author and maintainer; DSCI 532).
+- [Data Science for the Biomedical Sciences](https://ds4biomed.tech) (ds4biomed):
+  data skills for clinicians and researchers,
+  written alongside my PhD research on data science education in the biomedical sciences
+  (author, 2021).
+
+## How I teach
+
+I picked up [live coding](https://carpentries.github.io/instructor-training/17-live.html)
+from my time with The Carpentries,
+and it's still a big part of how I teach,
+mistakes and all.
+Each lecture's code ends up in its own
+[public GitHub repository](https://github.com/chendaniely?tab=repositories&q=topic%3Alive-code),
+so students have something to look back on when they're working on their assignments
+(and a colleague who took over one of my courses found them the fastest way to see what had been taught).
+
+I start every lecture with a 10 to 15 minute review of earlier topics,
+since students don't always bring what they already know into a new lecture on their own.
+I also try to keep in mind who's actually in the room.
+My PhD research was on [learner personas](https://github.com/chendaniely/dissertation),
+designing data science materials for a specific audience,
+and in DSCI 100 I've noticed students arriving with less computing background than they used to,
+so I added code review sessions and wrote
+[worked examples for every week](https://github.com/chendaniely/dsci-100-code_examples)
+in both R and Python.
+
+A lot of my course material starts out as a conference tutorial or workshop,
+where I get to see how it lands with an audience before it goes into a course.
+The LLM unit in DSCI 532 went through a
+[workshop for MDS students](https://github.com/chendaniely/2025-06-05-llm),
+tutorials at PyData and the New York Data Science & AI Conference,
+and a [talk to my department](https://github.com/chendaniely/2025-09-23-ubc-stat-llm)
+before any students had to sit through it for credit.
+
+## Teaching with AI
+
+This year I started bringing AI into my classes on purpose,
+both to help students learn the material and so they can see how these tools actually work.
+What that looks like in my UBC courses is on the
+[Teaching at UBC](/teaching/ubc/index.qmd#teaching-with-ai) page,
+and I'm writing up how it goes in my
+[Incorporating AI in the Classroom](/blog.html#category=Incorporating%20AI%20in%20the%20Classroom)
+series on the blog.
+Outside UBC,
+I'm co-teaching [Learn Anything with AI](https://learn-anything.nonlinearlabs.ai/),
+a one-week retreat with [Eric Ma](https://ericmjl.github.io/), in February 2027.
+
+## The Carpentries
+
+I've been part of [The Carpentries](https://carpentries.org/) since 2014,
+teaching 15+ workshops and training new instructors as an Instructor Trainer.
+From 2020 to 2022 I was the
+[Maintainer Community Lead](https://carpentries.org/blog/2020/11/introducing-dan-chen-as-maintainer-community-lead/),
+supporting the volunteers who maintain the lessons
+and revamping the Maintainer Onboarding curriculum along the way.
+Before that I co-maintained the Software Carpentry R lesson (starting in 2016),
+and I'm a co-author of 4 Software Carpentry lessons:
+[Programming with R](https://doi.org/10.5281/zenodo.57541),
+[The Unix Shell](https://doi.org/10.5281/zenodo.57544),
+[Databases and SQL](https://doi.org/10.5281/zenodo.57551),
+and [Version Control with Git](https://doi.org/10.5281/zenodo.57467).
+
+## Workshops and tutorials
+
+At Virginia Tech,
+I co-taught the intensive data science workshop
+for the [Data Science for the Public Good](https://bi-sdal.github.io/training/) program (2015–2018).
+
+Recent conference tutorials and workshops:
+
+- **2026:** Shiny for Python at PyCon US and SciPy;
+  Git forking and contributing to open source at R/Medicine
+- **2025:** Shiny for Python at posit::conf and SciPy;
+  LLMs for data science at PyData Seattle
+  and the New York Data Science & AI Conference
+- **2024:** machine learning in Python with scikit-learn at posit::conf
+  ([materials](https://posit-conf-2024.github.io/ml-python/));
+  creating and distributing R packages at the Statistical Society of Canada
+  ([materials](https://github.com/UBC-STAT/ssc-workshop-2024))
+- **2016–2023:** pandas tutorials at PyCon, SciPy, PyBay, and PyData;
+  Git for data science at the New York R Conference;
+  R and Python workshops at ODSC East, R/Medicine, and posit::conf
+
+Those are the highlights.
+Every talk and workshop I've given, with links to its materials,
+is on my [Talks](/talks/index.qmd) page.
+
+## Recorded courses
+
+- *Pandas Data Analysis with Python Fundamentals*,
+  [Pearson LiveLessons](https://www.oreilly.com/library/view/pandas-data-analysis/9780134692272/)
+- *Pandas Data Cleaning and Modeling with Python*,
+  [Pearson LiveLessons](https://www.oreilly.com/library/view/pandas-data-cleaning/9780135170199/)
+- *Git Essentials*,
+  [Pearson LiveLessons](https://www.oreilly.com/library/view/git-essentials-livelessons/9780134655284/)
+- *Cleaning Data in Python*,
+  [DataCamp](https://www.datacamp.com/courses/cleaning-data-in-python)
+- *Python for R Users*,
+  [DataCamp](https://www.datacamp.com/courses/python-for-r-users)
+
+## Writing about teaching
+
+Posts tagged [teaching](/blog.html#category=teaching) on the blog,
+including my
+[Preparing the Future Professoriate](/blog.html#category=Preparing%20the%20Future%20Professoriate)
+series from grad school.
