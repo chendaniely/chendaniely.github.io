@@ -48,8 +48,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d799aac71703158d4b1c5a4685a09794.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dd55354e8ebdb0fa3ed269fdc4f86bb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-d1692f01a13ba0ee7d9d120c8d0ed9cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-92c39dfa139330ce3d9e7ff62a767acf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f64fecbae6c10cae959bcd011cd092ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/quarto-contrib/fontawesome-7-free-7.2.0/fontawesome.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -88,9 +88,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-id','listing-date','listing-type','listing-event','listing-event-url','listing-location','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-id","listing-date","listing-type","listing-event","listing-event-url","listing-location","listing-categories"],
+      valueNames: ['listing-id','listing-title','listing-date','listing-type','listing-event','listing-event-url','listing-location','listing-categories','listing-languages','listing-packages','listing-venue-type','listing-scope','listing-repo','listing-slides',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-id","listing-title","listing-date","listing-type","listing-event","listing-event-url","listing-location","listing-categories","listing-languages","listing-packages","listing-venue-type","listing-scope","listing-repo","listing-slides"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -420,41 +421,19 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>🎤 Up next
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>▸ next: PyLadies Vancouver — Jul 6 · then SciPy 2026</p>
-</div>
-</div>
-<p>Conference talks, guest lectures, and workshops. All talks live in <code>talks.yml</code> (one entry per talk); recordings with searchable transcripts are coming — each talk will get its own page with video, transcript, and summary.</p>
+<p>Every talk, workshop, and tutorial I’ve given, newest first. Each year lists workshops and tutorials first, then talks. All of them live in <code>talks.yml</code> (one entry per talk); recordings with searchable transcripts are coming — each talk will get its own page with video, transcript, and summary.</p>
 <div id="listing-talks-list" class="quarto-listing quarto-listing-container-custom">
-<h2 class="anchored">
-Past talks
-</h2>
+<p>Jump to a year: <a href="#year-2026">2026</a> · <a href="#year-2025">2025</a> · <a href="#year-2024">2024</a> · <a href="#year-2023">2023</a> · <a href="#year-2022">2022</a> · <a href="#year-2021">2021</a> · <a href="#year-2020">2020</a> · <a href="#year-2019">2019</a> · <a href="#year-2018">2018</a> · <a href="#year-2017">2017</a> · <a href="#year-2016">2016</a> · <a href="#year-2015">2015</a> · <a href="#year-2014">2014</a></p>
+<section id="year-2026" class="level2">
+<h2 class="anchored" data-anchor-id="year-2026">2026</h2>
+<p>2 talks, 3 workshops</p>
+<div class="grid">
+<section id="year-2026-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2026-talks">Talks</h3>
 <div class="talk-list">
 <div class="talk">
 <div class="talk-date">
-Jul 13, 2026
-</div>
-<div class="talk-body">
-<div class="talk-title">
-SciPy 2026
-</div>
-<div class="talk-meta">
-<a href="https://www.scipy2026.scipy.org/schedule">SciPy 2026</a> · Minneapolis, MN, USA
-</div>
-</div>
-</div>
-<div class="talk">
-<div class="talk-date">
-Jul 6, 2026
+Jul 2026
 </div>
 <div class="talk-body">
 <div class="talk-title">
@@ -463,10 +442,1759 @@ PyLadies Vancouver
 <div class="talk-meta">
 <a href="https://luma.com/3oxfwqry">PyLadies Vancouver</a> · Vancouver, BC, Canada
 </div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/2026-07-06-pyladies-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2026-07-06-pyladies-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
 </div>
 </div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2026
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Cherry Blossom Data Analysis
+</div>
+<div class="talk-meta">
+R-Ladies Vancouver
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/rladies-2026-04-30-blossoms/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rladies-2026-04-30-blossoms"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2026-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2026-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Jul 2026
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Shiny for Python<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+<a href="https://www.scipy2026.scipy.org/schedule">SciPy 2026</a> · Minneapolis, MN, USA
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/scipy-2026-shiny/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/scipy-2026-shiny"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2026
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Shiny for Python<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+PyCon 2026
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/pycon-2026-shiny/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pycon-2026-shiny"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2026
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git Forking and Contributing to Open Source<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+R/Medicine 2026
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2026-04-08-git"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2025" class="level2">
+<h2 class="anchored" data-anchor-id="year-2025">2025</h2>
+<p>6 talks, 4 workshops</p>
+<div class="grid">
+<section id="year-2025-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2025-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Dec 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+LLMs for Data Science
+</div>
+<div class="talk-meta">
+PyData Global 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/pydata-global-2025-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydata-global-2025-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Dec 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+LLMs for Students: Practical Uses in Coding and Data Science
+</div>
+<div class="talk-meta">
+Vancouver Independent School for Science and Technology (VISST)
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/2025-12-09-visst-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2025-12-09-visst-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Nov 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+LLMs, Chatbots, and Dashboards
+</div>
+<div class="talk-meta">
+New York Data Science and AI Conference 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/nydsaic2025-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/nydsaic2025-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Sep 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Practical Uses of LLMs in Coding and Data Science
+</div>
+<div class="talk-meta">
+UBC Statistics Department Seminar
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/2025-09-23-ubc-stat-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2025-09-23-ubc-stat-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+But It Works on My Machine: Creating Reusable Compute Environments for Research and Teaching
+</div>
+<div class="talk-meta">
+Statistical Society of Canada (SSC) 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/ssc-2025-reusable_compute_envs/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/ssc-2025-reusable_compute_envs"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Creating and Sharing Scalable Applications with Shiny
+</div>
+<div class="talk-meta">
+ShinyConf 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/shinyconf2025-scalable_apps"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/shinyconf2025-scalable_apps"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2025-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2025-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+LLMs for Data Science<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+PyData Seattle 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/pydata-seattle-2025-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydata-seattle-2025-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Nov 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Introduction to LLMs/AI<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+New York Data Science and AI Conference 2025
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/nydsaic2025-llm/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/nydsaic2025-llm"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Sep 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Shiny for Python<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+posit::conf 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://posit-conf-2025.github.io/shiny-py/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/posit-conf-2025/shiny-py"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2025
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Shiny for Python<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+SciPy 2025
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/scipy-2025-shiny/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/scipy-2025-shiny"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2024" class="level2">
+<h2 class="anchored" data-anchor-id="year-2024">2024</h2>
+<p>1 talk, 2 workshops</p>
+<div class="grid">
+<section id="year-2024-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2024-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Dec 2024
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Tips to Level-Up Your Shiny for Python Applications
+</div>
+<div class="talk-meta">
+PyData Global 2024
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydata-global-2024-pyshiny_tips"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2024-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2024-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Aug 2024
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Introduction to Machine Learning in Python with Scikit-learn<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+posit::conf 2024
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">scikit-learn</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://posit-conf-2024.github.io/ml-python/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/posit-conf-2024/ml-python"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2024
+</div>
+<div class="talk-body">
+<div class="talk-title">
+How to Create and Distribute R Packages<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+Statistical Society of Canada Annual Meeting 2024
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/UBC-STAT/ssc-workshop-2024"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2023" class="level2">
+<h2 class="anchored" data-anchor-id="year-2023">2023</h2>
+<p>1 talk, 1 workshop</p>
+<div class="grid">
+<section id="year-2023-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2023-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+May 2023
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Moving to Quarto from RMarkdown and Python Jupyter Notebooks
+</div>
+<div class="talk-meta">
+NYR Conference 2023
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.quarto.pub/rstatsnyc-rmd-jupyter-quarto/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc-2023-quarto"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2023-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2023-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Sep 2023
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Introduction to Data Science with Python<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+posit::conf 2023
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/positconf2023-academy_python"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2022" class="level2">
+<h2 class="anchored" data-anchor-id="year-2022">2022</h2>
+<p>5 talks, 1 workshop</p>
+<div class="grid">
+<section id="year-2022-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2022-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2022
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Online Education for Data Science: Opportunities and Challenges<span class="talk-type">panel</span>
+</div>
+<div class="talk-meta">
+AMIA 2022
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2022-11-07-amia-ds_edu"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Nov 2022
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Install Python, Quarto All the Things!
+</div>
+<div class="talk-meta">
+PyData NYC 2022
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydata-nyc-2022-python_quarto"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Oct 2022
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Jamboree
+</div>
+<div class="talk-meta">
+American Statistical Association
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/asa-data_jamboree-2022"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jun 2022
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Combining Analysis Work with Reports and Presentations: What I Would Change About My Dissertation
+</div>
+<div class="talk-meta">
+NYR Conference 2022
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://speakerdeck.com/chendaniely/combining-analysis-work-with-reports-and-presentations"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc-2022-analysis_presentations"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2022
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Identify and Create Data Science Materials for Your Learners
+</div>
+<div class="talk-meta">
+R-Ladies Vancouver Meetup
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2022-04-21-rladies-YVR"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2022-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2022-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Sep 2022
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Science Workshop<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+The Vancouver Datafest
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://sites.google.com/view/datajam2022"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2022-09-30-yvr_datafest"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2021" class="level2">
+<h2 class="anchored" data-anchor-id="year-2021">2021</h2>
+<p>4 talks, 5 workshops</p>
+<div class="grid">
+<section id="year-2021-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2021-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Sep 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Learner Personas for Domain-Specific Data Science Educational Materials
+</div>
+<div class="talk-meta">
+NYR Conference 2021
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc-2021-learner_personas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Aug 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Education and Pedagogy of Domain-Specific Learning Materials Using Learning Personas
+</div>
+<div class="talk-meta">
+Joint Statistical Meetings (JSM) 2021
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://www.youtube.com/watch?v=ZxUltLiZykE"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/jsm-2021-learner_personas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Learner Personas for Domain-Specific Data Science Educational Materials<span class="talk-type">poster</span>
+</div>
+<div class="talk-meta">
+SciPy 2021
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/scipy-2021-poster-personas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Learner Personas for Domain-Specific Data Science Educational Materials
+</div>
+<div class="talk-meta">
+PyCon 2021 Education Summit
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://us.pycon.org/2021/summits/education-training/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pycon-2021-edu_summit-personas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2021-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2021-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Sep 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git for Data Science<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+NYR Conference 2021
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2021-09-01-git_dan"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Aug 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Intro to R for Medical Data<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+R/Medicine 2021
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/MaraAlexeev/intro_to_R_for_medical_data_rmed2021"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jun 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Science for Biomedical Sciences<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Open Workshop
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2021-06-29-ds4biomed"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Science for Biomedical Sciences<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Open Workshop
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/ds4biomed-2021-05-18"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Feb 2021
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Science for Biomedical Sciences<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Open Workshop
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/ds4biomed-2021-02-02"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2020" class="level2">
+<h2 class="anchored" data-anchor-id="year-2020">2020</h2>
+<p>4 talks, 10 workshops</p>
+<div class="grid">
+<section id="year-2020-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2020-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Learning Tidy Evaluation by Reimplementing {dplyr}
+</div>
+<div class="talk-meta">
+DCR Conference 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsdc-2020-tidyeval"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Aug 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Debunking the R vs.&nbsp;Python Myth
+</div>
+<div class="talk-meta">
+RStudio Webinar
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2020-08-26-rstudio_debunk"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Aug 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Grading Code with {gradethis}
+</div>
+<div class="talk-meta">
+NYR Conference 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://speakerdeck.com/chendaniely/rstatsnyc-2020-grading-code-with-gradethis"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Mar 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Grading Code with {gradethis}
+</div>
+<div class="talk-meta">
+satRday DC 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://speakerdeck.com/chendaniely/satrday-grading-code-with-gradethis"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2020-03-28-satRday-gradethis"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2020-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2020-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Dec 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Science for Biomedical Sciences — Business of Healthcare<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Open Workshop
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/ds4biomed-20201209-business"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Oct 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Data Science for Biomedical Sciences<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Open Workshop
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/ds4biomed-oct20"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Sep 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git Workshop<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+CarpentryCon@Home 2020
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2020-09-09-CCatHome-git-dan"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Aug 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git Lesson<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Virginia Tech Software Carpentry
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2020-08-17-git-dan"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Aug 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git for Data Science<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+NYR Conference 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2020-08-12-nyr_git-dan"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git Workshop<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+CarpentryCon@Home 2020
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2020-07-16-CCatHome-git-dan"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Learn Python through Data Processing in Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+SciPy 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/scipy-2020-pandas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Plumber and Docker<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+ODSC East 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/odsc-east-2020-plumber_docker"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Forecasting and Time Series<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+ODSC East 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/odsc-east-2020-forecasting_timeseries"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2020
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Introduction to R: Cleaning and Processing Data<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+ODSC East 2020
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/odsc-east-2020-intro_r"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2019" class="level2">
+<h2 class="anchored" data-anchor-id="year-2019">2019</h2>
+<p>4 talks, 4 workshops</p>
+<div class="grid">
+<section id="year-2019-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2019-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Using Python with R
+</div>
+<div class="talk-meta">
+DCR 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsdc_2019-python-r"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Sep 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+learnr + gradethis for Data Science<span class="talk-type">lightning-talk</span>
+</div>
+<div class="talk-meta">
+Statistical Programming DC Meetup
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://colorado.rstudio.com/rsc/connect/#/apps/2855/access"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2019-09-17-gradethis_lightning"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jun 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Introduction to Python
+</div>
+<div class="talk-meta">
+Nonclinical Biostatistics Conference 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/ncb-2019-python"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Building Reproducible and Replicable Projects
+</div>
+<div class="talk-meta">
+NYR Conference 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc_2019-workflow"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2019-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2019-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Aug 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+PyBay 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/pybay_2019-pandas_tutorial/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pybay_2019-pandas_tutorial"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+SciPy 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/scipy-2019-pandas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git for Data Science<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+NYR Conference 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2019-05-09-rstatsnyc_git"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2019
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+PyCon 2019
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://chendaniely.github.io/pycon_2019-pandas_tutorial/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pycon_2019-pandas_tutorial"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2018" class="level2">
+<h2 class="anchored" data-anchor-id="year-2018">2018</h2>
+<p>5 talks, 1 workshop</p>
+<div class="grid">
+<section id="year-2018-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2018-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Dec 2018
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Functions: Using, Writing, and Non-Standard Evaluation
+</div>
+<div class="talk-meta">
+satRday DC 2018
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://speakerdeck.com/chendaniely/functions-using-writing-and-non-standard-evaluation"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/satRdays-dc2018-functions"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Nov 2018
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Python Properties<span class="talk-type">lightning-talk</span>
+</div>
+<div class="talk-meta">
+PyData DC 2018
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydatadc18_lightning"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Nov 2018
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Structuring Your (Data Science/Analysis) Projects
+</div>
+<div class="talk-meta">
+DCR 2018
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://speakerdeck.com/chendaniely/analysis-projects"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsdc_2018-structure"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2018
+</div>
+<div class="talk-body">
+<div class="talk-title">
+R and Python<span class="talk-type">lightning-talk</span>
+</div>
+<div class="talk-meta">
+PyData London 2018
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydata_london_2018_lightning"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2018
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Doing Data Science
+</div>
+<div class="talk-meta">
+NYR Conference 2018
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc_2018-data_science"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2018-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2018-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2018
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Cleaning and Tidying Data in Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+PyData DC 2018
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://pydata.org/dc2018/schedule/presentation/37/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/pydatadc_2018-tidy"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2017" class="level2">
+<h2 class="anchored" data-anchor-id="year-2017">2017</h2>
+<p>5 talks, 2 workshops</p>
+<div class="grid">
+<section id="year-2017-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2017-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Doing Data Science<span class="talk-type">poster</span>
+</div>
+<div class="talk-meta">
+Biocomplexity Institute Symposium 2017
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2017-bi_day_poster-doing_data_science"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jun 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Understanding Social Diffusion Dynamics Using Networked Cognitive Systems<span class="talk-type">poster</span>
+</div>
+<div class="talk-meta">
+Society for Epidemiologic Research (SER) 2017
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2017_ser_poster"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+So You Want to be a Data Scientist?
+</div>
+<div class="talk-meta">
+NYR Conference 2017
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/rstatsnyc_2017-data_scientist"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Spread of Ideas in Social Networks
+</div>
+<div class="talk-meta">
+New York Presbyterian Hospital — Value Institute
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2017-04-20-nyp_value_institute"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Back to Basics: R you markDown?
+</div>
+<div class="talk-meta">
+NY Open Statistical Programming Meetup
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2017-08-15-meetup-r_you_markDown"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2017-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2017-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Aug 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Learn Bayesian Data Analysis and MCMC Using Stan<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Stan Workshop
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2017-08-23-stan_class"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2017
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+SciPy 2017
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/scipy-2017-tutorial-pandas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2016" class="level2">
+<h2 class="anchored" data-anchor-id="year-2016">2016</h2>
+<p>5 talks, 3 workshops</p>
+<div class="grid">
+<section id="year-2016-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2016-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Understanding Social Diffusion Dynamics Using Networked Cognitive Systems<span class="talk-type">poster</span>
+</div>
+<div class="talk-meta">
+Biocomplexity Institute Symposium 2016
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://www.bi.vt.edu/news/events/2016-research-symposium"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-11-01-bi_symposium"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Oct 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Python useRs
+</div>
+<div class="talk-meta">
+PyData DC 2016
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-pydata-dc-python_useRs"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Sep 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Changing People’s Minds: Understanding Social Diffusion Dynamics Using Networked Cognitive Systems
+</div>
+<div class="talk-meta">
+GBCB Seminar, Virginia Tech
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/gbcb_seminar_presentation_1"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Pandas for Everyone<span class="talk-type">lightning-talk</span>
+</div>
+<div class="talk-meta">
+SciPy 2016
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-scipy-lightning-pandas_for_everyone"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Testing
+</div>
+<div class="talk-meta">
+NYR Conference 2016
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-04-08-rstatsnyc_testing"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2016-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2016-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Sep 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Pandas<span class="talk-type">tutorial</span>
+</div>
+<div class="talk-meta">
+PyData Carolinas 2016
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span><span class="talk-tag">pandas</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-pydata-carolinas-pandas"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Introduction and Intermediate Git<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Data Intensive Biology Training Program
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-04-06-dib-git-intro"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Feb 2016
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Git Workshop<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Network Dynamics and Simulation Science Laboratory
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2016-01-22-ndssl"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2015" class="level2">
+<h2 class="anchored" data-anchor-id="year-2015">2015</h2>
+<p>4 talks</p>
+<div class="grid">
+<section id="year-2015-talks" class="level3 g-col-12">
+<h3 class="anchored" data-anchor-id="year-2015-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Jul 2015
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Python Properties in MANN<span class="talk-type">lightning-talk</span>
+</div>
+<div class="talk-meta">
+SciPy 2015
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2015-scipy-lightning-mann-properties"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Jul 2015
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Literate Programming<span class="talk-type">lightning-talk</span>
+</div>
+<div class="talk-meta">
+SciPy 2015
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2015-scipy-lightning-literate"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+May 2015
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Interactive Ebola Plots
+</div>
+<div class="talk-meta">
+NYR Conference 2015
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2015-04-25-rstatsnyc-ebola"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Apr 2015
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Shiny Primer
+</div>
+<div class="talk-meta">
+Statistical Programming DC Meetup
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span><span class="talk-tag">shiny</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="http://www.meetup.com/stats-prog-dc/events/221534560/"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2015-04-15-SPDC-shiny"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section id="year-2014" class="level2">
+<h2 class="anchored" data-anchor-id="year-2014">2014</h2>
+<p>1 talk, 2 workshops</p>
+<div class="grid">
+<section id="year-2014-talks" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2014-talks">Talks</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Nov 2014
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Open Science and Ebola
+</div>
+<div class="talk-meta">
+Health Communication and Informatics Lab, Columbia University
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2014-11-21-talk-cumc-dbmi-hci"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="year-2014-workshops" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="year-2014-workshops">Workshops</h3>
+<div class="talk-list">
+<div class="talk">
+<div class="talk-date">
+Oct 2014
+</div>
+<div class="talk-body">
+<div class="talk-title">
+R Workshop<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Virginia Biocomplexity Institute
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">r</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/2014-10-08-vbi"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+<div class="talk">
+<div class="talk-date">
+Mar 2014
+</div>
+<div class="talk-body">
+<div class="talk-title">
+Python Workshop<span class="talk-type">workshop</span>
+</div>
+<div class="talk-meta">
+Complex System Approaches to Population Health
+</div>
+<div class="talk-tags">
+<p><span class="talk-tag">python</span></p>
+</div>
+<div class="talk-links">
+<p><a class="btn btn-outline-primary btn-sm" href="http://www.cussp.org/csaph"><i class="bi bi-easel" aria-hidden="true"></i> slides</a> <a class="btn btn-outline-primary btn-sm" href="https://github.com/chendaniely/csaph-python"><i class="bi bi-github" aria-hidden="true"></i> code</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
+<nav id="talks-list-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</section>
 </div>
 
 
