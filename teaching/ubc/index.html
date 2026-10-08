@@ -509,8 +509,87 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 </section>
 <section id="student-evaluations" class="level2">
 <h2 class="anchored" data-anchor-id="student-evaluations">Student evaluations</h2>
-<p>DSCI 310 (2022W2) received <strong>Dean of Science recognition</strong> for some of the highest student evaluation scores in the UBC Faculty of Science.</p>
-<p>In my course evaluations, students bring up how approachable I am more than anything else, along with how much they get out of watching me live code (the most common request is for me to slow down during those demos, which is fair).</p>
+<p>At the end of every course, UBC asks students to fill out a <a href="https://seoi.ubc.ca/">Student Experience of Instruction</a> (SEI) survey. If you found me through <a href="https://www.ratemyprofessors.com/professor/2808322">Rate My Professors</a>, you’ve seen my 3.1 out of 5. As a data scientist, I’d like to point out that’s 14 ratings, and the plots below come from 727 SEI responses across 24 course sections since 2022 (I’ll let you decide which sample you trust).</p>
+<p>The plots use UBC’s interpolated median, a median on the 1 to 5 scale that accounts for how the ratings are spread out, and they only include sections that met UBC’s minimum response rate.</p>
+<p><em>Figures updated 2026-05-21, with SEI results through 2025W2 (spring 2026). I update them a few times a year, once all of a term’s SEI reports are in.</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sei-university-module-im.png" class="img-fluid figure-img" alt="Two panels of box plots of interpolated median scores, from 3 to 5, for UBC's 6 University Module questions: explain requirements, motivated, understand, learning progression, support, and learned. In the MDS panel, every course section scores between 4.0 and 4.8 on every question, with medians around 4.5. In the undergraduate panel, DSCI 310 sections score between 4.3 and 4.8, while DSCI 100 sections spread from about 3.3 to 4.5, lowest on motivated and learning progression."></p>
+<figcaption>The 6 questions UBC asks about every instructor, split by program. Each point is one course section, and larger points mean students agreed with each other more.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What's in this figure">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What’s in this figure
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Students rate each statement from 1 (strongly disagree) to 5 (strongly agree). These are UBC’s 6 University Module questions, which every instructor gets asked:</p>
+<ul>
+<li><strong>Explain Requirements</strong>: Throughout the term, the instructor explained course requirements so it was clear to me what I was expected to learn.</li>
+<li><strong>Motivated</strong>: The instructor conducted this course in such a way that I was motivated to learn.</li>
+<li><strong>Understand</strong>: The instructor presented the course material in a way that I could understand.</li>
+<li><strong>Learning Progression</strong>: Considering the type of class (e.g., large lecture, seminar, studio), the instructor provided useful feedback that helped me understand how my learning progressed during this course.</li>
+<li><strong>Support</strong>: The instructor showed genuine interest in supporting my learning throughout this course.</li>
+<li><strong>Learned</strong>: Overall, I learned a great deal from this instructor.</li>
+</ul>
+<p>How to read it:</p>
+<ul>
+<li><strong>Points</strong>: one course section each, colored by course and nudged sideways so they don’t overlap.</li>
+<li><strong>Boxes</strong>: the median and middle half of all the sections for that question.</li>
+<li><strong>Point size</strong>: UBC’s dispersion index, flipped, so bigger points mean students agreed with each other more. The index runs from 0 (everyone gave the same rating) to 1 (students split evenly between strongly disagree and strongly agree).</li>
+<li><strong>Panels</strong>: MDS courses on top, undergraduate courses on the bottom.</li>
+<li><strong>Legend counts</strong>: sections plotted out of sections with SEI results, since sections below UBC’s minimum response rate are left out (for example, 6/9 means 6 of 9 DSCI 100 sections are shown).</li>
+</ul>
+</div>
+</div>
+</div>
+<p>In my MDS courses, every section scores between 4 and 4.8 out of 5 on every question. DSCI 100, the big intro course with about 100 to 175 students a term, is where my scores are lowest, mostly on feeling motivated and on getting feedback about how their learning is going. That’s also where most of my course changes have gone, like the code review sessions, worked examples, and checkpoint projects. DSCI 310 sits at the top of the undergraduate panel, and its 2022W2 offering got <strong>Dean of Science recognition</strong> for some of the highest student evaluation scores in the UBC Faculty of Science.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="sei-trends-im.png" class="img-fluid figure-img" alt="Three panels of line charts from 2022W1 to 2025W2, one each for University Module, Course, and Instructor questions, with one line per course: DSCI 100, 310, 521, 522, and 524. On the instructor questions, every course stays between about 4.3 and 4.8. DSCI 521 rises on all 3 panels between 2023W1 and 2025W1. DSCI 522 is highest, around 4.7 to 4.8. DSCI 100 dips to about 3.6 on the University Module questions in 2023W1, recovers to 4.3 in 2024S, and sits around 3.9 since 2025."></p>
+<figcaption>Average interpolated median by course and term, for the University Module questions, the course questions, and the instructor questions. Only courses with at least 2 terms that met the response rate are shown.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What's in this figure">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What’s in this figure
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Each panel averages the interpolated medians of one set of questions, for each course in each term.</p>
+<ul>
+<li><strong>University Module</strong>: the 6 UBC questions from the figure above.</li>
+<li><strong>Course</strong>: 2 questions about the course itself.
+<ul>
+<li>My academic background provided sufficient preparation for this course.</li>
+<li>In this class, I applied facts, theories, or methods to new problems or situations.</li>
+</ul></li>
+<li><strong>Instructor</strong>: 3 questions about the instructor.
+<ul>
+<li>The instructor treated students with respect.</li>
+<li>The ways the instructor implemented the course activities (e.g., in-class activities, labs, tutorials, field trips, online components, assignments) helped me achieve the learning objectives.</li>
+<li>The instructor was intentional about cultivating a welcoming and inclusive environment that supports all students and encourages all students to participate.</li>
+</ul></li>
+</ul>
+<p>Each line is one course, and a course only shows up once it has at least 2 terms that met UBC’s minimum response rate (so DSCI 532 and DSCI 561 aren’t here yet). Lines only connect the terms where a course was taught and met the response rate, which is why some of them jump across a few terms.</p>
+</div>
+</div>
+</div>
+<p>Over time, the questions about me as an instructor have stayed between about 4.3 and 4.8 in every course. DSCI 521 went up on all 3 sets of questions between 2023W1 and 2025W1, and DSCI 100 dipped in 2023W1 and has hovered just under 4 on the University Module questions since 2025.</p>
+<p>In the written comments, students bring up how approachable I am more than anything else, along with how much they get out of watching me live code (the most common request is for me to slow down during those demos, which is fair). Student comments are confidential, so I don’t quote any of them here.</p>
 
 
 </section>
