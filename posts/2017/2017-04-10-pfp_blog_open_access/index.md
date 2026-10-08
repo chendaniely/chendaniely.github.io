@@ -62,6 +62,6 @@ and when productivity is measured by number of publications,
 potentially losing publications is enough of a detractor for many to not pursuit Openness.
 
 [1]: https://software-carpentry.org/
-[2]: https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html
+[2]: https://carpentries.org/blog/2016/10/what_swc_means_to_me/
 [3]: https://blogs.lt.vt.edu/openvt/2017/01/17/opencon-2016-reports-from-virginia-tech-graduate-students/
 [4]: https://vtnews.vt.edu/articles/2017/04/univlib-opendataweek.html

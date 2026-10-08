@@ -10,4 +10,4 @@ tags:
   - swc
 ---
 
-https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html
+<https://carpentries.org/blog/2016/10/what_swc_means_to_me/>

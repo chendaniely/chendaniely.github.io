@@ -37,4 +37,4 @@ It only makes me wonder how much this happens in scholarly research,
 and can also explain why science has a reproducibility problem.
 
 [1]: https://software-carpentry.org/
-[2]: https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html
+[2]: https://carpentries.org/blog/2016/10/what_swc_means_to_me/

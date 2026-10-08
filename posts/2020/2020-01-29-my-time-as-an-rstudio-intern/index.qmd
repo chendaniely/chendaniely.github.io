@@ -20,7 +20,7 @@ When I do,
 I usually end up with a few words in my head before I'm flooded with
 (good) emotions and struggle with finding the words to convey my thoughts.
 The last time I tried to write something like this went a little like
-[this](https://software-carpentry.org/blog/2016/10/what_swc_means_to_me.html).
+[this](https://carpentries.org/blog/2016/10/what_swc_means_to_me/).
 What I can say is this:
 whatever you thought it was like working at RStudio,
 is (probably) true.
