@@ -177,10 +177,89 @@ and they started in DSCI 521 since that's where students first set everything up
 
 ## Student evaluations
 
-DSCI 310 (2022W2) received **Dean of Science recognition**
+At the end of every course,
+UBC asks students to fill out a
+[Student Experience of Instruction](https://seoi.ubc.ca/) (SEI) survey.
+If you found me through [Rate My Professors](https://www.ratemyprofessors.com/professor/2808322),
+you've seen my 3.1 out of 5.
+As a data scientist, I'd like to point out that's 14 ratings,
+and the plots below come from 727 SEI responses across 24 course sections since 2022
+(I'll let you decide which sample you trust).
+
+The plots use UBC's interpolated median,
+a median on the 1 to 5 scale that accounts for how the ratings are spread out,
+and they only include sections that met UBC's minimum response rate.
+
+*Figures updated 2026-05-21, with SEI results through 2025W2 (spring 2026).
+I update them a few times a year, once all of a term's SEI reports are in.*
+
+![The 6 questions UBC asks about every instructor, split by program. Each point is one course section, and larger points mean students agreed with each other more.](sei-university-module-im.png){fig-alt="Two panels of box plots of interpolated median scores, from 3 to 5, for UBC's 6 University Module questions: explain requirements, motivated, understand, learning progression, support, and learned. In the MDS panel, every course section scores between 4.0 and 4.8 on every question, with medians around 4.5. In the undergraduate panel, DSCI 310 sections score between 4.3 and 4.8, while DSCI 100 sections spread from about 3.3 to 4.5, lowest on motivated and learning progression."}
+
+::: {.callout-note collapse="true" title="What's in this figure"}
+Students rate each statement from 1 (strongly disagree) to 5 (strongly agree).
+These are UBC's 6 University Module questions,
+which every instructor gets asked:
+
+- **Explain Requirements**: Throughout the term, the instructor explained course requirements so it was clear to me what I was expected to learn.
+- **Motivated**: The instructor conducted this course in such a way that I was motivated to learn.
+- **Understand**: The instructor presented the course material in a way that I could understand.
+- **Learning Progression**: Considering the type of class (e.g., large lecture, seminar, studio), the instructor provided useful feedback that helped me understand how my learning progressed during this course.
+- **Support**: The instructor showed genuine interest in supporting my learning throughout this course.
+- **Learned**: Overall, I learned a great deal from this instructor.
+
+How to read it:
+
+- **Points**: one course section each, colored by course and nudged sideways so they don't overlap.
+- **Boxes**: the median and middle half of all the sections for that question.
+- **Point size**: UBC's dispersion index, flipped, so bigger points mean students agreed with each other more.
+  The index runs from 0 (everyone gave the same rating) to 1 (students split evenly between strongly disagree and strongly agree).
+- **Panels**: MDS courses on top, undergraduate courses on the bottom.
+- **Legend counts**: sections plotted out of sections with SEI results,
+  since sections below UBC's minimum response rate are left out
+  (for example, 6/9 means 6 of 9 DSCI 100 sections are shown).
+:::
+
+In my MDS courses,
+every section scores between 4 and 4.8 out of 5 on every question.
+DSCI 100, the big intro course with about 100 to 175 students a term,
+is where my scores are lowest,
+mostly on feeling motivated and on getting feedback about how their learning is going.
+That's also where most of my course changes have gone,
+like the code review sessions, worked examples, and checkpoint projects.
+DSCI 310 sits at the top of the undergraduate panel,
+and its 2022W2 offering got **Dean of Science recognition**
 for some of the highest student evaluation scores in the UBC Faculty of Science.
 
-In my course evaluations,
+![Average interpolated median by course and term, for the University Module questions, the course questions, and the instructor questions. Only courses with at least 2 terms that met the response rate are shown.](sei-trends-im.png){fig-alt="Three panels of line charts from 2022W1 to 2025W2, one each for University Module, Course, and Instructor questions, with one line per course: DSCI 100, 310, 521, 522, and 524. On the instructor questions, every course stays between about 4.3 and 4.8. DSCI 521 rises on all 3 panels between 2023W1 and 2025W1. DSCI 522 is highest, around 4.7 to 4.8. DSCI 100 dips to about 3.6 on the University Module questions in 2023W1, recovers to 4.3 in 2024S, and sits around 3.9 since 2025."}
+
+::: {.callout-note collapse="true" title="What's in this figure"}
+Each panel averages the interpolated medians of one set of questions,
+for each course in each term.
+
+- **University Module**: the 6 UBC questions from the figure above.
+- **Course**: 2 questions about the course itself.
+  - My academic background provided sufficient preparation for this course.
+  - In this class, I applied facts, theories, or methods to new problems or situations.
+- **Instructor**: 3 questions about the instructor.
+  - The instructor treated students with respect.
+  - The ways the instructor implemented the course activities (e.g., in-class activities, labs, tutorials, field trips, online components, assignments) helped me achieve the learning objectives.
+  - The instructor was intentional about cultivating a welcoming and inclusive environment that supports all students and encourages all students to participate.
+
+Each line is one course,
+and a course only shows up once it has at least 2 terms that met UBC's minimum response rate
+(so DSCI 532 and DSCI 561 aren't here yet).
+Lines only connect the terms where a course was taught and met the response rate,
+which is why some of them jump across a few terms.
+:::
+
+Over time,
+the questions about me as an instructor have stayed between about 4.3 and 4.8 in every course.
+DSCI 521 went up on all 3 sets of questions between 2023W1 and 2025W1,
+and DSCI 100 dipped in 2023W1 and has hovered just under 4 on the University Module questions since 2025.
+
+In the written comments,
 students bring up how approachable I am more than anything else,
 along with how much they get out of watching me live code
 (the most common request is for me to slow down during those demos, which is fair).
+Student comments are confidential,
+so I don't quote any of them here.
