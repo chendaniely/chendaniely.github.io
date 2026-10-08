@@ -272,17 +272,34 @@ blockquote {
   font-size: 0.9rem;
   color: $brand-warm-gray;
 }
+// slides / code / video: Bootstrap's own .btn classes (set in talks.ejs),
+// with Bootstrap Icons that Quarto already bundles
 .talk-links {
+  margin-top: 0.5rem;
+}
+// the listing runs through markdown, which wraps the inline buttons in a <p>
+.talk-links,
+.talk-links > p {
   display: flex;
-  gap: 0.9rem;
-  font-size: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.talk-links > p {
+  margin: 0;
 }
 // languages + packages pills (talks.yml `languages:` / `packages:`)
 .talk-tags {
+  margin-top: 0.3rem;
+}
+// same <p> wrapping as .talk-links
+.talk-tags,
+.talk-tags > p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  margin-top: 0.3rem;
+}
+.talk-tags > p {
+  margin: 0;
 }
 .talk-tag {
   font-size: 0.72rem;

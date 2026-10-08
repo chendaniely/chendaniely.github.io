@@ -5,5 +5,5 @@
 # (which is loud on purpose: it tells you a reference went stale).
 now:
   teaching: "▸ now: UBC Statistics · MDS-Vancouver"
-  talks: "▸ next: PyLadies Vancouver — Jul 6 · then SciPy 2026"
+  talks: ""  # blanked 2026-10-07: too hard to keep current; upcoming talks show on the Talks page
   working-on: "▸ building: talks archive with searchable transcripts"

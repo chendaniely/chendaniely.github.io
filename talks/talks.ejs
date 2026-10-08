@@ -1,26 +1,36 @@
 <%
-// talks.ejs — renders talks.yml as Upcoming (soonest first) and Past
-// (most recent first). A talk moves to Past at the next site render
-// after its date. Headline falls back to the event name until a talk
-// has a title.
+// talks.ejs — renders talks.yml as Upcoming (soonest first), then past
+// talks grouped by year (newest year first). Inside each year, talks and
+// workshops sit side by side: talks on the left, workshops + tutorials on
+// the right (stacked on phones). A talk moves to Past at the next site
+// render after its date. Headline falls back to the event name until a
+// talk has a title.
+//
+// Headings are emitted as markdown (not <h2>) so they get anchors, with
+// explicit ids because pandoc can't build one from a heading that's only a
+// year. Quarto builds the page TOC before listings are filled in, so the
+// years can't appear there; a row of year links at the top does that job.
 //
 // NOTE: listing template output is processed as MARKDOWN — keep all
 // emitted HTML flush-left; indenting 4+ spaces turns it into an
-// escaped code block.
+// escaped code block. Blank lines must separate headings from HTML.
+const WORKSHOP_TYPES = ["workshop", "tutorial"];
 const now = new Date();
 const ts = (d) => new Date(d).getTime();
 const upcoming = items.filter(t => ts(t.date) >= now.getTime())
                       .sort((a, b) => ts(a.date) - ts(b.date));
 const past = items.filter(t => ts(t.date) < now.getTime())
                   .sort((a, b) => ts(b.date) - ts(a.date));
-const fmt = (d) => new Date(d).toLocaleDateString("en-US",
+// upcoming talks show the day; past talks show month + year, since some
+// older dates are only approximate (see the `# *` comments in talks.yml)
+const fmtDay = (d) => new Date(d).toLocaleDateString("en-US",
   { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+const fmtMonth = (d) => new Date(d).toLocaleDateString("en-US",
+  { year: "numeric", month: "short", timeZone: "UTC" });
+const years = [...new Set(past.map(t => new Date(t.date).getUTCFullYear()))];
+const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 %>
-<% for (const [label, group] of [["Upcoming", upcoming], ["Past talks", past]]) { %>
-<% if (group.length) { %>
-<h2><%= label %></h2>
-<div class="talk-list">
-<% for (const t of group) { %>
+<% const card = (t, fmt) => { %>
 <div class="talk">
 <div class="talk-date"><%= fmt(t.date) %></div>
 <div class="talk-body">
@@ -35,14 +45,55 @@ const fmt = (d) => new Date(d).toLocaleDateString("en-US",
 <% } %>
 <% if (t.repo || t.slides || t.video) { %>
 <div class="talk-links">
-<% if (t.slides) { %><a href="<%= t.slides %>">slides</a><% } %>
-<% if (t.repo) { %><a href="<%= t.repo %>">code</a><% } %>
-<% if (t.video) { %><a href="<%= t.video %>">video</a><% } %>
+<% if (t.slides) { %><a class="btn btn-outline-primary btn-sm" href="<%= t.slides %>"><i class="bi bi-easel" aria-hidden="true"></i> slides</a><% } %>
+<% if (t.repo) { %><a class="btn btn-outline-primary btn-sm" href="<%= t.repo %>"><i class="bi bi-github" aria-hidden="true"></i> code</a><% } %>
+<% if (t.video) { %><a class="btn btn-outline-primary btn-sm" href="<%= t.video %>"><i class="bi bi-play-btn" aria-hidden="true"></i> video</a><% } %>
 </div>
 <% } %>
 </div>
 </div>
 <% } %>
+<% if (years.length) { %>
+
+Jump to a year: <%- years.map(y => `[${y}](#year-${y})`).join(" · ") %>
+
+<% } %>
+<% if (upcoming.length) { %>
+
+## Upcoming {#upcoming}
+
+<div class="talk-list">
+<% for (const t of upcoming) { card(t, fmtDay); } %>
 </div>
 <% } %>
+<% for (const year of years) {
+  const inYear = past.filter(t => new Date(t.date).getUTCFullYear() === year);
+  const workshops = inYear.filter(t => WORKSHOP_TYPES.includes(t.type));
+  const talks = inYear.filter(t => !WORKSHOP_TYPES.includes(t.type));
+  const groups = [["Talks", talks], ["Workshops", workshops]].filter(([, g]) => g.length);
+  const counts = groups.map(([label, g]) => plural(g.length, label.toLowerCase().slice(0, -1)));
+  // Quarto's built-in CSS grid: talks left, workshops right on wide screens,
+  // stacked on phones; a year with only one kind uses the full width
+  const colClass = groups.length > 1 ? "g-col-12 g-col-md-6" : "g-col-12";
+%>
+
+## <%= year %> {#year-<%= year %>}
+
+<%= counts.join(", ") %>
+
+::::: {.grid}
+<% for (const [label, group] of groups) { %>
+
+:::: {.<%= colClass.split(" ").join(" .") %>}
+
+### <%= label %> {#year-<%= year %>-<%= label.toLowerCase() %>}
+
+<div class="talk-list">
+<% for (const t of group) { card(t, fmtMonth); } %>
+</div>
+
+::::
+<% } %>
+
+:::::
 <% } %>

@@ -8,9 +8,14 @@
 # - id: YYYY-MM-DD-event-slug        # stable slug — never change once set
 #   title: "Talk title"              # omit until known; page falls back to event
 #   date: YYYY-MM-DD                 # your talk's day; for multi-day events use
-#                                    # the start date until your slot is announced
-#   type: talk                       # talk | invited | keynote | workshop |
-#                                    # tutorial | guest-lecture | panel
+#                                    # the start date until your slot is announced.
+#                                    # Add a `# * approximate` comment when the
+#                                    # exact day isn't known
+#   type: talk                       # talk | invited | keynote | lightning-talk |
+#                                    # panel | poster | guest-lecture |
+#                                    # workshop | tutorial
+#                                    # (the page lists workshop + tutorial under
+#                                    # "Workshops", everything else under "Talks")
 #   event: Conference or Meetup Name
 #   event-url: https://...           # event / schedule page
 #   location: City, Region, Country  # or: virtual
@@ -24,23 +29,979 @@
 #     The OFFICIAL submitted abstract, verbatim — never edited after the
 #     fact. Not shown on the listing page; archived here (conference sites
 #     rot) and shown on future per-talk pages. Multi-paragraph is fine.
+#   venue-type: practitioner         # CV only, not shown on the page:
+#                                    # academic | practitioner | community |
+#                                    # institutional
+#   scope: National                  # CV only: Local | National | International
+#   ubc-section: 10b                 # CV only, and only to override the default
+#                                    # UBC CV section: 10b | 10c | 10e
 #   repo: https://github.com/...     # code / materials
 #   slides: https://...
 #   video: https://...
 #   with: [Co Presenter]             # omit when solo
+
+- id: 2026-07-13-scipy
+  title: "Shiny for Python"
+  date: 2026-07-13  # * approximate — SciPy 2026 is July 13-19
+  type: tutorial
+  event: SciPy 2026
+  event-url: https://www.scipy2026.scipy.org/schedule
+  location: "Minneapolis, MN, USA"
+  categories: [teaching]
+  languages: [python]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/scipy-2026-shiny
+  slides: https://chendaniely.github.io/scipy-2026-shiny/
 
 - id: 2026-07-06-pyladies-vancouver
   date: 2026-07-06
   type: talk
   event: PyLadies Vancouver
   event-url: https://luma.com/3oxfwqry
-  location: Vancouver, BC, Canada
+  location: "Vancouver, BC, Canada"
   categories: [python]
+  repo: https://github.com/chendaniely/2026-07-06-pyladies-llm
+  slides: https://chendaniely.github.io/2026-07-06-pyladies-llm/
 
-- id: 2026-07-13-scipy
-  date: 2026-07-13  # conference runs Jul 13-19; exact talk slot TBA
+- id: 2026-05-14-pycon-2026
+  title: "Shiny for Python"
+  date: 2026-05-14  # * approximate
+  type: tutorial
+  event: PyCon 2026
+  categories: [teaching]
+  languages: [python]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/pycon-2026-shiny
+  slides: https://chendaniely.github.io/pycon-2026-shiny/
+
+- id: 2026-04-30-r-ladies-vancouver
+  title: "Cherry Blossom Data Analysis"
+  date: 2026-04-30
   type: talk
-  event: SciPy 2026
-  event-url: https://www.scipy2026.scipy.org/schedule
-  location: Minneapolis, MN, USA
-  categories: [python, scientific-computing]
+  event: R-Ladies Vancouver
+  categories: [data-visualization, open-data]
+  languages: [r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/rladies-2026-04-30-blossoms
+  slides: https://chendaniely.github.io/rladies-2026-04-30-blossoms/
+
+- id: 2026-04-08-r-medicine-2026
+  title: "Git Forking and Contributing to Open Source"
+  date: 2026-04-08
+  type: tutorial
+  event: R/Medicine 2026
+  categories: [git, open-source, teaching]
+  venue-type: academic
+  scope: International
+  repo: https://github.com/chendaniely/2026-04-08-git
+
+- id: 2025-12-09-pydata-global-2025
+  title: "LLMs for Data Science"
+  date: 2025-12-09
+  type: talk
+  event: PyData Global 2025
+  categories: [llm, ai, data-science]
+  languages: [python]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/pydata-global-2025-llm
+  slides: https://chendaniely.github.io/pydata-global-2025-llm/
+
+- id: 2025-12-09-visst
+  title: "LLMs for Students: Practical Uses in Coding and Data Science"
+  date: 2025-12-09
+  type: talk
+  event: Vancouver Independent School for Science and Technology (VISST)
+  categories: [llm, ai, teaching, data-science]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2025-12-09-visst-llm
+  slides: https://chendaniely.github.io/2025-12-09-visst-llm/
+
+- id: 2025-11-07-pydata-seattle-2025
+  title: "LLMs for Data Science"
+  date: 2025-11-07
+  type: tutorial
+  event: PyData Seattle 2025
+  categories: [llm, ai, teaching, data-science]
+  languages: [python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pydata-seattle-2025-llm
+  slides: https://chendaniely.github.io/pydata-seattle-2025-llm/
+
+- id: 2025-11-01-nydsaic-2025-llms-chatbots-and
+  title: "LLMs, Chatbots, and Dashboards"
+  date: 2025-11-01  # * approximate
+  type: talk
+  event: New York Data Science and AI Conference 2025
+  categories: [llm, ai, data-science]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/nydsaic2025-llm
+  slides: https://chendaniely.github.io/nydsaic2025-llm/
+
+- id: 2025-11-01-nydsaic-2025-introduction-to-llms
+  title: "Introduction to LLMs/AI"
+  date: 2025-11-01  # * approximate; same event as talk above
+  type: workshop
+  event: New York Data Science and AI Conference 2025
+  categories: [llm, ai, teaching, data-science]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/nydsaic2025-llm
+  slides: https://chendaniely.github.io/nydsaic2025-llm/
+
+- id: 2025-09-23-ubc-statistics-department-seminar
+  title: "Practical Uses of LLMs in Coding and Data Science"
+  date: 2025-09-23
+  type: talk
+  event: UBC Statistics Department Seminar
+  categories: [llm, ai, data-science]
+  languages: [python, r]
+  venue-type: institutional
+  scope: Local
+  repo: https://github.com/chendaniely/2025-09-23-ubc-stat-llm
+  slides: https://chendaniely.github.io/2025-09-23-ubc-stat-llm/
+
+- id: 2025-09-01-posit-conf-2025
+  title: "Shiny for Python"
+  date: 2025-09-01  # * approximate — posit::conf 2025 was September
+  type: tutorial
+  event: posit::conf 2025
+  categories: [teaching]
+  languages: [python]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/posit-conf-2025/shiny-py
+  slides: https://posit-conf-2025.github.io/shiny-py/
+
+- id: 2025-07-07-scipy-2025
+  title: "Shiny for Python"
+  date: 2025-07-07  # * approximate
+  type: tutorial
+  event: SciPy 2025
+  categories: [teaching]
+  languages: [python]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/scipy-2025-shiny
+  slides: https://chendaniely.github.io/scipy-2025-shiny/
+
+- id: 2025-05-28-ssc-2025
+  title: "But It Works on My Machine: Creating Reusable Compute Environments for Research and Teaching"
+  date: 2025-05-28
+  type: talk
+  event: Statistical Society of Canada (SSC) 2025
+  categories: [reproducibility, teaching, docker]
+  languages: [r, python]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/ssc-2025-reusable_compute_envs
+  slides: https://chendaniely.github.io/ssc-2025-reusable_compute_envs/
+
+- id: 2025-04-01-shinyconf-2025
+  title: "Creating and Sharing Scalable Applications with Shiny"
+  date: 2025-04-01  # * approximate
+  type: talk
+  event: ShinyConf 2025
+  categories: [data-science]
+  languages: [r]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/shinyconf2025-scalable_apps
+  slides: https://chendaniely.github.io/shinyconf2025-scalable_apps
+
+- id: 2024-12-04-pydata-global-2024
+  title: "Tips to Level-Up Your Shiny for Python Applications"
+  date: 2024-12-04  # * approximate
+  type: talk
+  event: PyData Global 2024
+  categories: [data-science]
+  languages: [python]
+  packages: [shiny]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/pydata-global-2024-pyshiny_tips
+
+- id: 2024-08-13-posit-conf-2024
+  title: "Introduction to Machine Learning in Python with Scikit-learn"
+  date: 2024-08-13
+  type: tutorial
+  event: posit::conf 2024
+  categories: [machine-learning, teaching]
+  languages: [python]
+  packages: [scikit-learn]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/posit-conf-2024/ml-python
+  slides: https://posit-conf-2024.github.io/ml-python/
+
+- id: 2024-05-26-ssc-2024
+  title: "How to Create and Distribute R Packages"
+  date: 2024-05-26  # * approximate
+  type: tutorial
+  event: Statistical Society of Canada Annual Meeting 2024
+  categories: [packaging, open-source, teaching]
+  languages: [r]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/UBC-STAT/ssc-workshop-2024
+
+- id: 2023-09-17-posit-conf-2023
+  title: "Introduction to Data Science with Python"
+  date: 2023-09-17
+  type: tutorial
+  event: posit::conf 2023
+  categories: [data-science, teaching]
+  languages: [python]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/positconf2023-academy_python
+
+- id: 2023-05-19-nyr-conference-2023
+  title: "Moving to Quarto from RMarkdown and Python Jupyter Notebooks"
+  date: 2023-05-19
+  type: talk
+  event: NYR Conference 2023
+  categories: [quarto, reproducibility, teaching]
+  languages: [r, python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc-2023-quarto
+  slides: https://chendaniely.quarto.pub/rstatsnyc-rmd-jupyter-quarto/
+
+- id: 2022-11-07-amia-2022
+  title: "Online Education for Data Science: Opportunities and Challenges"
+  date: 2022-11-07
+  type: panel
+  event: AMIA 2022
+  categories: [data-science, teaching, open-education]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/2022-11-07-amia-ds_edu
+
+- id: 2022-11-01-pydata-nyc-2022
+  title: "Install Python, Quarto All the Things!"
+  date: 2022-11-01  # * approximate
+  type: talk
+  event: PyData NYC 2022
+  categories: [quarto, data-science]
+  languages: [python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pydata-nyc-2022-python_quarto
+
+- id: 2022-10-01-american-statistical-association
+  title: "Data Jamboree"
+  date: 2022-10-01  # * approximate
+  type: talk
+  event: American Statistical Association
+  categories: [data-science, statistics]
+  languages: [r]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/asa-data_jamboree-2022
+
+- id: 2022-09-30-the-vancouver-datafest
+  title: "Data Science Workshop"
+  date: 2022-09-30
+  type: workshop
+  event: The Vancouver Datafest
+  categories: [data-science, teaching]
+  languages: [r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2022-09-30-yvr_datafest
+  slides: https://sites.google.com/view/datajam2022
+
+- id: 2022-06-08-nyr-conference-2022
+  title: "Combining Analysis Work with Reports and Presentations: What I Would Change About My Dissertation"
+  date: 2022-06-08  # * approximate
+  type: talk
+  event: NYR Conference 2022
+  categories: [quarto, reproducibility, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc-2022-analysis_presentations
+  slides: https://speakerdeck.com/chendaniely/combining-analysis-work-with-reports-and-presentations
+
+- id: 2022-04-21-r-ladies-vancouver-meetup
+  title: "Identify and Create Data Science Materials for Your Learners"
+  date: 2022-04-21
+  type: talk
+  event: R-Ladies Vancouver Meetup
+  categories: [teaching, data-science, open-education]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2022-04-21-rladies-YVR
+
+- id: 2021-09-01-nyr-conference-2021-learner-personas-for
+  title: "Learner Personas for Domain-Specific Data Science Educational Materials"
+  date: 2021-09-01  # * approximate — repo date is 2021-09-01
+  type: talk
+  event: NYR Conference 2021
+  categories: [teaching, data-science, open-education]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc-2021-learner_personas
+
+- id: 2021-09-01-nyr-conference-2021-git-for-data
+  title: "Git for Data Science"
+  date: 2021-09-01
+  type: tutorial
+  event: NYR Conference 2021
+  categories: [git, teaching, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2021-09-01-git_dan
+
+- id: 2021-08-25-r-medicine-2021
+  title: "Intro to R for Medical Data"
+  date: 2021-08-25  # * approximate
+  type: tutorial
+  event: R/Medicine 2021
+  categories: [teaching, medical-data, data-science]
+  languages: [r]
+  venue-type: academic
+  scope: International
+  repo: https://github.com/MaraAlexeev/intro_to_R_for_medical_data_rmed2021
+
+- id: 2021-08-08-jsm-2021
+  title: "Education and Pedagogy of Domain-Specific Learning Materials Using Learning Personas"
+  date: 2021-08-08
+  type: talk
+  event: Joint Statistical Meetings (JSM) 2021
+  categories: [teaching, data-science, open-education, statistics]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/jsm-2021-learner_personas
+  slides: https://www.youtube.com/watch?v=ZxUltLiZykE
+
+- id: 2021-07-12-scipy-2021
+  title: "Learner Personas for Domain-Specific Data Science Educational Materials"
+  date: 2021-07-12  # * approximate — SciPy 2021 was July 12-18
+  type: poster
+  event: SciPy 2021
+  categories: [teaching, data-science, open-education]
+  languages: [python]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/scipy-2021-poster-personas
+
+- id: 2021-06-29-open-workshop
+  title: "Data Science for Biomedical Sciences"
+  date: 2021-06-29  # * approximate
+  type: workshop
+  event: Open Workshop
+  categories: [data-science, teaching, open-education, biomedical]
+  languages: [python, r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2021-06-29-ds4biomed
+
+- id: 2021-05-18-open-workshop
+  title: "Data Science for Biomedical Sciences"
+  date: 2021-05-18  # * approximate
+  type: workshop
+  event: Open Workshop
+  categories: [data-science, teaching, open-education, biomedical]
+  languages: [python, r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/ds4biomed-2021-05-18
+
+- id: 2021-05-14-pycon-2021-education-summit
+  title: "Learner Personas for Domain-Specific Data Science Educational Materials"
+  date: 2021-05-14  # * approximate — PyCon 2021 was May 12-18
+  type: talk
+  event: PyCon 2021 Education Summit
+  categories: [teaching, data-science, open-education]
+  languages: [python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pycon-2021-edu_summit-personas
+  slides: https://us.pycon.org/2021/summits/education-training/
+
+- id: 2021-02-02-open-workshop
+  title: "Data Science for Biomedical Sciences"
+  date: 2021-02-02  # * approximate
+  type: workshop
+  event: Open Workshop
+  categories: [data-science, teaching, open-education, biomedical]
+  languages: [python, r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/ds4biomed-2021-02-02
+
+- id: 2020-12-09-open-workshop
+  title: "Data Science for Biomedical Sciences — Business of Healthcare"
+  date: 2020-12-09
+  type: workshop
+  event: Open Workshop
+  categories: [data-science, teaching, open-education, biomedical]
+  languages: [python, r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/ds4biomed-20201209-business
+
+- id: 2020-11-01-dcr-conference-2020
+  title: "Learning Tidy Evaluation by Reimplementing {dplyr}"
+  date: 2020-11-01  # * approximate
+  type: talk
+  event: DCR Conference 2020
+  categories: [programming, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsdc-2020-tidyeval
+
+- id: 2020-10-01-open-workshop
+  title: "Data Science for Biomedical Sciences"
+  date: 2020-10-01  # * approximate
+  type: workshop
+  event: Open Workshop
+  categories: [data-science, teaching, open-education, biomedical]
+  languages: [python, r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/ds4biomed-oct20
+
+- id: 2020-09-09-carpentrycon-home-2020
+  title: "Git Workshop"
+  date: 2020-09-09
+  type: workshop
+  event: "CarpentryCon@Home 2020"
+  categories: [git, teaching, open-education]
+  venue-type: community
+  scope: International
+  repo: https://github.com/chendaniely/2020-09-09-CCatHome-git-dan
+
+- id: 2020-08-26-rstudio-webinar
+  title: "Debunking the R vs. Python Myth"
+  date: 2020-08-26
+  type: talk
+  event: RStudio Webinar
+  categories: [data-science]
+  languages: [r, python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2020-08-26-rstudio_debunk
+
+- id: 2020-08-17-virginia-tech-software-carpentry
+  title: "Git Lesson"
+  date: 2020-08-17
+  type: workshop
+  event: Virginia Tech Software Carpentry
+  categories: [git, teaching, open-education]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2020-08-17-git-dan
+
+- id: 2020-08-14-nyr-conference-2020
+  title: "Grading Code with {gradethis}"
+  date: 2020-08-14
+  type: talk
+  event: NYR Conference 2020
+  categories: [teaching, open-education]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis
+  slides: https://speakerdeck.com/chendaniely/rstatsnyc-2020-grading-code-with-gradethis
+
+- id: 2020-08-12-nyr-conference-2020
+  title: "Git for Data Science"
+  date: 2020-08-12
+  type: tutorial
+  event: NYR Conference 2020
+  categories: [git, teaching, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2020-08-12-nyr_git-dan
+
+- id: 2020-07-16-carpentrycon-home-2020
+  title: "Git Workshop"
+  date: 2020-07-16
+  type: workshop
+  event: "CarpentryCon@Home 2020"
+  categories: [git, teaching, open-education]
+  venue-type: community
+  scope: International
+  repo: https://github.com/chendaniely/2020-07-16-CCatHome-git-dan
+
+- id: 2020-07-06-scipy-2020
+  title: "Learn Python through Data Processing in Pandas"
+  date: 2020-07-06  # * approximate — SciPy 2020 was July 6-12
+  type: tutorial
+  event: SciPy 2020
+  categories: [teaching, data-science]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/scipy-2020-pandas
+
+- id: 2020-04-15-odsc-east-2020-plumber-and-docker
+  title: "Plumber and Docker"
+  date: 2020-04-15
+  type: tutorial
+  event: ODSC East 2020
+  categories: [docker, api, teaching]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/odsc-east-2020-plumber_docker
+
+- id: 2020-04-15-odsc-east-2020-forecasting-and-time
+  title: "Forecasting and Time Series"
+  date: 2020-04-15
+  type: tutorial
+  event: ODSC East 2020
+  categories: [statistics, teaching]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/odsc-east-2020-forecasting_timeseries
+
+- id: 2020-04-14-odsc-east-2020
+  title: "Introduction to R: Cleaning and Processing Data"
+  date: 2020-04-14
+  type: tutorial
+  event: ODSC East 2020
+  categories: [data-science, teaching]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/odsc-east-2020-intro_r
+
+- id: 2020-03-28-satrday-dc-2020
+  title: "Grading Code with {gradethis}"
+  date: 2020-03-28
+  type: talk
+  event: satRday DC 2020
+  categories: [teaching, open-education]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2020-03-28-satRday-gradethis
+  slides: https://speakerdeck.com/chendaniely/satrday-grading-code-with-gradethis
+
+- id: 2019-11-08-dcr-2019
+  title: "Using Python with R"
+  date: 2019-11-08  # * approximate
+  type: talk
+  event: DCR 2019
+  categories: [data-science]
+  languages: [python, r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsdc_2019-python-r
+
+- id: 2019-09-17-statistical-programming-dc-meetup
+  title: "learnr + gradethis for Data Science"
+  date: 2019-09-17
+  type: lightning-talk
+  event: Statistical Programming DC Meetup
+  categories: [teaching, open-education]
+  languages: [r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2019-09-17-gradethis_lightning
+  slides: "https://colorado.rstudio.com/rsc/connect/#/apps/2855/access"
+
+- id: 2019-08-15-pybay-2019
+  title: "Pandas"
+  date: 2019-08-15
+  type: tutorial
+  event: PyBay 2019
+  categories: [data-science, teaching]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pybay_2019-pandas_tutorial
+  slides: https://chendaniely.github.io/pybay_2019-pandas_tutorial/
+
+- id: 2019-07-09-scipy-2019
+  title: "Pandas"
+  date: 2019-07-09
+  type: tutorial
+  event: SciPy 2019
+  categories: [data-science, teaching]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/scipy-2019-pandas
+
+- id: 2019-06-03-ncb-2019
+  title: "Introduction to Python"
+  date: 2019-06-03  # * approximate
+  type: talk
+  event: Nonclinical Biostatistics Conference 2019
+  categories: [statistics, teaching]
+  languages: [python]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/ncb-2019-python
+
+- id: 2019-05-20-nyr-conference-2019
+  title: "Building Reproducible and Replicable Projects"
+  date: 2019-05-20
+  type: talk
+  event: NYR Conference 2019
+  categories: [reproducibility, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc_2019-workflow
+
+- id: 2019-05-09-nyr-conference-2019
+  title: "Git for Data Science"
+  date: 2019-05-09
+  type: tutorial
+  event: NYR Conference 2019
+  categories: [git, teaching, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2019-05-09-rstatsnyc_git
+
+- id: 2019-05-01-pycon-2019
+  title: "Pandas"
+  date: 2019-05-01  # * approximate — PyCon 2019 was May 1-9
+  type: tutorial
+  event: PyCon 2019
+  categories: [data-science, teaching]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pycon_2019-pandas_tutorial
+  slides: https://chendaniely.github.io/pycon_2019-pandas_tutorial/
+
+- id: 2018-12-08-satrday-dc-2018
+  title: "Functions: Using, Writing, and Non-Standard Evaluation"
+  date: 2018-12-08
+  type: talk
+  event: satRday DC 2018
+  categories: [programming, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/satRdays-dc2018-functions
+  slides: https://speakerdeck.com/chendaniely/functions-using-writing-and-non-standard-evaluation
+
+- id: 2018-11-17-pydata-dc-2018
+  title: "Python Properties"
+  date: 2018-11-17
+  type: lightning-talk
+  event: PyData DC 2018
+  categories: [programming]
+  languages: [python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pydatadc18_lightning
+
+- id: 2018-11-16-pydata-dc-2018
+  title: "Cleaning and Tidying Data in Pandas"
+  date: 2018-11-16
+  type: tutorial
+  event: PyData DC 2018
+  categories: [data-science, teaching]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/pydatadc_2018-tidy
+  slides: https://pydata.org/dc2018/schedule/presentation/37/
+
+- id: 2018-11-15-dcr-2018
+  title: "Structuring Your (Data Science/Analysis) Projects"
+  date: 2018-11-15
+  type: talk
+  event: DCR 2018
+  categories: [data-science, reproducibility]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsdc_2018-structure
+  slides: https://speakerdeck.com/chendaniely/analysis-projects
+
+- id: 2018-04-26-pydata-london-2018
+  title: "R and Python"
+  date: 2018-04-26
+  type: lightning-talk
+  event: PyData London 2018
+  categories: [data-science]
+  languages: [python, r]
+  venue-type: practitioner
+  scope: International
+  repo: https://github.com/chendaniely/pydata_london_2018_lightning
+
+- id: 2018-04-22-nyr-conference-2018
+  title: "Doing Data Science"
+  date: 2018-04-22
+  type: talk
+  event: NYR Conference 2018
+  categories: [data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc_2018-data_science
+
+- id: 2017-11-01-biocomplexity-institute-symposium-2017
+  title: "Doing Data Science"
+  date: 2017-11-01  # * approximate
+  type: poster
+  event: Biocomplexity Institute Symposium 2017
+  categories: [data-science]
+  languages: [r]
+  venue-type: academic
+  scope: Local
+  repo: https://github.com/chendaniely/2017-bi_day_poster-doing_data_science
+
+- id: 2017-08-23-stan-workshop
+  title: "Learn Bayesian Data Analysis and MCMC Using Stan"
+  date: 2017-08-23
+  type: workshop
+  event: Stan Workshop
+  categories: [statistics, teaching, bayesian]
+  languages: [r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2017-08-23-stan_class
+
+- id: 2017-07-10-scipy-2017
+  title: "Pandas"
+  date: 2017-07-10  # * approximate — SciPy 2017 was July 10-16
+  type: tutorial
+  event: SciPy 2017
+  categories: [data-science, teaching]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/scipy-2017-tutorial-pandas
+
+- id: 2017-06-20-ser-2017
+  title: "Understanding Social Diffusion Dynamics Using Networked Cognitive Systems"
+  date: 2017-06-20  # * approximate — SER is typically mid-June
+  type: poster
+  event: Society for Epidemiologic Research (SER) 2017
+  categories: [network-science, epidemiology, social-networks]
+  venue-type: academic
+  scope: National
+  repo: https://github.com/chendaniely/2017_ser_poster
+
+- id: 2017-04-22-nyr-conference-2017
+  title: "So You Want to be a Data Scientist?"
+  date: 2017-04-22
+  type: talk
+  event: NYR Conference 2017
+  categories: [data-science, teaching]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/rstatsnyc_2017-data_scientist
+
+- id: 2017-04-20-nyp-value-institute
+  title: "Spread of Ideas in Social Networks"
+  date: 2017-04-20
+  type: talk
+  event: New York Presbyterian Hospital — Value Institute
+  categories: [network-science, social-networks, data-science]
+  venue-type: institutional
+  scope: Local
+  repo: https://github.com/chendaniely/2017-04-20-nyp_value_institute
+
+- id: 2017-04-15-nyhackr
+  title: "Back to Basics: R you markDown?"
+  date: 2017-04-15
+  type: talk
+  event: NY Open Statistical Programming Meetup
+  categories: [reproducibility, data-science]
+  languages: [r]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2017-08-15-meetup-r_you_markDown
+
+- id: 2016-11-01-biocomplexity-institute-symposium-2016
+  title: "Understanding Social Diffusion Dynamics Using Networked Cognitive Systems"
+  date: 2016-11-01
+  type: poster
+  event: Biocomplexity Institute Symposium 2016
+  categories: [network-science, epidemiology, social-networks]
+  venue-type: academic
+  scope: Local
+  repo: https://github.com/chendaniely/2016-11-01-bi_symposium
+  slides: https://www.bi.vt.edu/news/events/2016-research-symposium
+
+- id: 2016-10-09-pydata-dc-2016
+  title: "Python useRs"
+  date: 2016-10-09
+  type: talk
+  event: PyData DC 2016
+  categories: [data-science]
+  languages: [python, r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2016-pydata-dc-python_useRs
+
+- id: 2016-09-16-pydata-carolinas-2016
+  title: "Pandas"
+  date: 2016-09-16
+  type: tutorial
+  event: PyData Carolinas 2016
+  categories: [data-science, teaching]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2016-pydata-carolinas-pandas
+
+- id: 2016-09-01-gbcb-seminar-virginia-tech
+  title: "Changing People's Minds: Understanding Social Diffusion Dynamics Using Networked Cognitive Systems"
+  date: 2016-09-01
+  type: talk
+  event: "GBCB Seminar, Virginia Tech"
+  categories: [network-science, epidemiology, social-networks]
+  venue-type: institutional
+  scope: Local
+  repo: https://github.com/chendaniely/gbcb_seminar_presentation_1
+
+- id: 2016-07-14-scipy-2016
+  title: "Pandas for Everyone"
+  date: 2016-07-14  # * approximate — SciPy 2016 was July 11-17
+  type: lightning-talk
+  event: SciPy 2016
+  categories: [data-science]
+  languages: [python]
+  packages: [pandas]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2016-scipy-lightning-pandas_for_everyone
+
+- id: 2016-04-08-nyr-conference-2016
+  title: "Testing"
+  date: 2016-04-08
+  type: talk
+  event: NYR Conference 2016
+  categories: [programming, testing]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2016-04-08-rstatsnyc_testing
+
+- id: 2016-04-06-dib-training
+  title: "Introduction and Intermediate Git"
+  date: 2016-04-06
+  type: workshop
+  event: Data Intensive Biology Training Program
+  categories: [git, teaching, open-education]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2016-04-06-dib-git-intro
+
+- id: 2016-02-08-ndssl
+  title: "Git Workshop"
+  date: 2016-02-08
+  type: workshop
+  event: Network Dynamics and Simulation Science Laboratory
+  categories: [git, teaching]
+  venue-type: institutional
+  scope: Local
+  repo: https://github.com/chendaniely/2016-01-22-ndssl
+
+- id: 2015-07-10-scipy-2015
+  title: "Python Properties in MANN"
+  date: 2015-07-10
+  type: lightning-talk
+  event: SciPy 2015
+  categories: [programming, agent-based-modeling]
+  languages: [python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2015-scipy-lightning-mann-properties
+
+- id: 2015-07-09-scipy-2015
+  title: "Literate Programming"
+  date: 2015-07-09
+  type: lightning-talk
+  event: SciPy 2015
+  categories: [reproducibility, teaching]
+  languages: [python]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2015-scipy-lightning-literate
+
+- id: 2015-05-02-nyr-conference-2015
+  title: "Interactive Ebola Plots"
+  date: 2015-05-02
+  type: talk
+  event: NYR Conference 2015
+  categories: [data-visualization, data-science]
+  languages: [r]
+  venue-type: practitioner
+  scope: National
+  repo: https://github.com/chendaniely/2015-04-25-rstatsnyc-ebola
+
+- id: 2015-04-22-statistical-programming-dc-meetup
+  title: "Shiny Primer"
+  date: 2015-04-22
+  type: talk
+  event: Statistical Programming DC Meetup
+  categories: [data-science]
+  languages: [r]
+  packages: [shiny]
+  venue-type: community
+  scope: Local
+  repo: https://github.com/chendaniely/2015-04-15-SPDC-shiny
+  slides: http://www.meetup.com/stats-prog-dc/events/221534560/
+
+- id: 2014-11-21-columbia-hci-lab
+  title: "Open Science and Ebola"
+  date: 2014-11-21
+  type: talk
+  event: "Health Communication and Informatics Lab, Columbia University"
+  categories: [open-science, data-science, epidemiology]
+  venue-type: institutional
+  scope: Local
+  repo: https://github.com/chendaniely/2014-11-21-talk-cumc-dbmi-hci
+
+- id: 2014-10-09-virginia-biocomplexity-institute
+  title: "R Workshop"
+  date: 2014-10-09
+  type: workshop
+  event: Virginia Biocomplexity Institute
+  categories: [teaching, data-science]
+  languages: [r]
+  venue-type: institutional
+  scope: Local
+  repo: https://github.com/chendaniely/2014-10-08-vbi
+
+- id: 2014-03-30-csaph
+  title: "Python Workshop"
+  date: 2014-03-30
+  type: workshop
+  event: Complex System Approaches to Population Health
+  categories: [teaching, data-science]
+  languages: [python]
+  venue-type: academic
+  scope: Local
+  repo: https://github.com/chendaniely/csaph-python
+  slides: http://www.cussp.org/csaph
