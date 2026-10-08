@@ -7,6 +7,12 @@ description: >
 toc: true
 ---
 
+<!-- 🤖 my UBC MDS headshot from 2022, my first year at UBC and MDS; floated left so the intro wraps around it:
+     Bootstrap's float-sm-start floats it from tablet width up, and on phones it
+     sits above the text instead of squeezing it; the clearfix keeps the
+     Open textbooks cards below the photo -->
+:::: {.clearfix}
+![Daniel Chen in 2022, his first year at UBC and in MDS, wearing a navy suit, orange glasses, and a hex-sticker bow tie, holding a small whiteboard with his name handwritten on it, in a sunlit UBC hallway.](ubc-mds-headshot-2022.jpg "Me in 2022, my first year at UBC and MDS"){.d-block .float-sm-start .me-sm-4 .mb-3 .rounded-3 .shadow-sm width="220"}
 I'm a Lecturer in the
 [Department of Statistics](https://www.stat.ubc.ca/)
 at the University of British Columbia,
@@ -22,6 +28,7 @@ and I'm the first instructor for
 My teaching outside UBC,
 and how I think about teaching in general,
 is on my main [Teaching](/teaching/index.qmd) page.
+::::
 
 ## Open textbooks
 
