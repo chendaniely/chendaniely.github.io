@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.5">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-10-07">
+<meta name="description" content="There are 2 things I want students to get out of AI in class: using AI to learn something, and just doing stuff to learn the AI.">
+
+<title>Incorporating AI in the Classroom: Using AI to Learn, and Learning the AI – Daniel Chen</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-28830a267a9c0723ba95af4315c5cf62.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d799aac71703158d4b1c5a4685a09794.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-dd55354e8ebdb0fa3ed269fdc4f86bb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-d1692f01a13ba0ee7d9d120c8d0ed9cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/quarto-contrib/fontawesome-7-free-7.2.0/fontawesome.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H85THYPX4L"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-H85THYPX4L', { 'anonymize_ip': true});
+</script>
+<style>
+div.callout-definition.callout {
+  border-left-color: #7E7468;
+}
+div.callout-definition.callout-style-default .callout-header {
+  background-color: rgba(126, 116, 104, 0.13);
+}
+div.callout-definition .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-definition.callout-style-default .callout-icon::before, div.callout-definition.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 7 Free';
+  font-weight: 900;
+  font-style: normal;
+  content: '\f02d' !important;
+  background-image: none;
+}
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-dark"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Daniel Chen</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../talks/index.html"> 
+<span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/chendaniely/chendaniely.github.io"> <i class="bi bi-github" role="img" aria-label="GitHub repository for this site">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <div id="quarto-announcement" data-announcement-id="c77c4fdea01e24e4307c64921bcd1cff" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Learn Anything with AI</strong> - I’m co-teaching a one-week retreat on how to <a href="https://learn-anything.nonlinearlabs.ai/">learn anything with AI</a> with <a href="https://ericmjl.github.io/">Eric Ma</a>, February 2027</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#using-ai-to-learn-something" id="toc-using-ai-to-learn-something" class="nav-link active" data-scroll-target="#using-ai-to-learn-something">Using AI to learn something</a>
+  <ul class="collapse">
+  <li><a href="#what-it-looks-like-in-class" id="toc-what-it-looks-like-in-class" class="nav-link" data-scroll-target="#what-it-looks-like-in-class">What it looks like in class</a></li>
+  <li><a href="#know-what-your-tools-can-do" id="toc-know-what-your-tools-can-do" class="nav-link" data-scroll-target="#know-what-your-tools-can-do">Know what your tools can do</a></li>
+  </ul></li>
+  <li><a href="#doing-stuff-to-learn-the-ai" id="toc-doing-stuff-to-learn-the-ai" class="nav-link" data-scroll-target="#doing-stuff-to-learn-the-ai">Doing stuff to learn the AI</a>
+  <ul class="collapse">
+  <li><a href="#showing-whats-under-the-hood" id="toc-showing-whats-under-the-hood" class="nav-link" data-scroll-target="#showing-whats-under-the-hood">Showing what’s under the hood</a></li>
+  <li><a href="#building-my-own-projects" id="toc-building-my-own-projects" class="nav-link" data-scroll-target="#building-my-own-projects">Building my own projects</a></li>
+  </ul></li>
+  <li><a href="#why-i-want-both" id="toc-why-i-want-both" class="nav-link" data-scroll-target="#why-i-want-both">Why I want both</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Incorporating AI in the Classroom: Using AI to Learn, and Learning the AI</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">teaching</div>
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">Incorporating AI in the Classroom</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    There are 2 things I want students to get out of AI in class: using AI to learn something, and just doing stuff to learn the AI.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 7, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled" title="Part of a series">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Part of a series
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is the second post in my <a href="../../../blog.html#category=Incorporating AI in the Classroom">Incorporating AI in the Classroom</a> series. More to come!</p>
+</div>
+</div>
+<p>This term I’m using AI on purpose in 2 of the courses I teach at UBC. The first is my own course, <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/">DSCI 521: Computing Platforms for Data Science</a>, in the <a href="https://www.grad.ubc.ca/prospective-students/graduate-degree-programs/master-of-data-science">Master of Data Science</a> program. The second is <a href="https://ehsanx.github.io/HDSx/">SPPH 381H: Health Data Science: AI and Knowledge Translation</a>. There are 2 things I want students to get out of AI in class. There’s using AI to learn something, and then there’s just doing stuff to learn the AI.</p>
+<section id="using-ai-to-learn-something" class="level2">
+<h2 class="anchored" data-anchor-id="using-ai-to-learn-something">Using AI to learn something</h2>
+<p>The first thing is using AI to learn the course material itself.</p>
+<section id="what-it-looks-like-in-class" class="level3">
+<h3 class="anchored" data-anchor-id="what-it-looks-like-in-class">What it looks like in class</h3>
+<p>In DSCI 521, this mostly happened in my review sessions. We’d go over the concepts, then watch an agent do a similar task using the same commands we had just talked about, which I think helped solidify them (I wrote about those sessions in my <a href="../../../posts/2026/2026-09-27-reviewing-with-an-agent-harness/index.html">last post</a>).</p>
+<p>In SPPH 381H, we still go through the concepts, but then we go into AI-assisted coding, with <a href="https://github.com/features/copilot">GitHub Copilot</a> in a <a href="https://github.com/features/codespaces">GitHub Codespace</a>. The course has <a href="https://spph.ubc.ca/education/courses-and-schedules/">no coding prerequisites</a>, and students use Copilot’s free tier, where <a href="https://docs.github.com/en/copilot/concepts/models/auto-model-selection">Auto</a> picks the model for them. I drive Copilot in the class demos, but it’s to show students how they can use it themselves. The AI-KT teaching team also wrote a lot of AI prompts into the course materials that students can use with Copilot on their homework.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="About SPPH 381H">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>About SPPH 381H
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>SPPH 381H isn’t my course. It’s an open course developed by Dr.&nbsp;M. Ehsan Karim of UBC’s School of Population and Public Health, with the AI-KT team (Manya Jain, Rainie Fu, and Md. Belal Hossain), and shared as “an open educational resource for learners and adopting instructors” <span class="citation" data-cites="karimHealthDataScience2026">(<a href="#ref-karimHealthDataScience2026" role="doc-biblioref">Karim et al. 2026</a>)</span>. I’m the first instructor for the course, even though it was developed by all of these other people (I just happen to be a good instructional fit for teaching it). AI is built right into the course, and one of its goals is for students to use LLMs to “generate, debug, and translate code while critically auditing them for bias and hallucinations”.</p>
+</div>
+</div>
+<p>A typical class goes like this: we teach a concept, students ask a research question, the code shows up, we try to read the code, and then we see the result. We already teach code in a similar way, even without AI: we teach a concept, show a more complicated example, have students guess what might happen, and then show them the result. A fuller version of this pattern is PRIMM (predict, run, investigate, modify, and make). I first read about it in Greg Wilson’s <em>Teaching Tech Together</em> <span class="citation" data-cites="wilsonTeachingTechTogether2019">(<a href="#ref-wilsonTeachingTechTogether2019" role="doc-biblioref">2019</a>)</span>, and it comes from Sue Sentance and Jane Waite, who wrote it up with Maria Kallia <span class="citation" data-cites="sentanceTeachingComputerProgramming2019">(<a href="#ref-sentanceTeachingComputerProgramming2019" role="doc-biblioref">2019</a>)</span>. I’m not using PRIMM in class right now: I mostly live code and demo things, with the agent helping me type a lot of it. But since AI frees up some class time, PRIMM is a format that can fit in, and now that we’re a month into the term, it’s something I’m considering.</p>
+<p>What I’ve learned is that AI-assisted coding really cuts down on the time we spend talking about the details of the code. Since we aren’t stuck on the code, we can start thinking about the data and the next set of questions to ask of it. That reminds me of what Lucy D’Agostino McGowan, Stephanie Hicks, and Roger Peng call <a href="https://analyticdesigntheory.org/">analytic design theory</a>, “the study of how data analyses are conducted in the real world”. It was never really about the code, it’s about the thinking behind it. Copilot helps students write less code, and the point is for them to read more of it and assess it, which I think is a good thing.</p>
+<p>We’ll see how well this works for students in the long term. That’s an open question for education in general, which is in an assessment crisis right now with AI.</p>
+</section>
+<section id="know-what-your-tools-can-do" class="level3">
+<h3 class="anchored" data-anchor-id="know-what-your-tools-can-do">Know what your tools can do</h3>
+<p>The flip side of letting AI write the code showed up in DSCI 521. One homework assignment had students filling in <a href="https://quarto.org/docs/presentations/revealjs/">Quarto reveal.js slides</a>, and some of the slides ended up with too much text. The <a href="https://ubc-mds.github.io/DSCI_521_platforms-dsci/assignments/lab3-group.html">assignment’s instructions</a> said Quarto has a built-in option for exactly this, and where to find it in the documentation, but didn’t name it, on purpose. One student (using ChatGPT, the way they normally do) had it rewrite all of the CSS to work around the problem instead, when the fix was a one or two liner, Quarto’s <a href="https://quarto.org/docs/presentations/revealjs/index.html#content-overflow"><code>.smaller</code> class</a>.</p>
+<p>When I know the tool I’m using and where its documentation lives, I always feed that documentation to the LLM. LLMs can do a lot of this stuff for you, but you still need to know what your other tools (like Quarto) are already capable of, or the LLM is going to go off and do something you don’t want.</p>
+</section>
+</section>
+<section id="doing-stuff-to-learn-the-ai" class="level2">
+<h2 class="anchored" data-anchor-id="doing-stuff-to-learn-the-ai">Doing stuff to learn the AI</h2>
+<p>The other thing I want students to see is how these tools work. Most students only know how to talk to an LLM through a chatbot, not through a harness, and not as an agent (I went over what I mean by those in my <a href="../../../posts/2026/2026-09-27-reviewing-with-an-agent-harness/index.html">last post</a>). In SPPH 381H, I get a lot of cool head nodding (and some wide eyes) when the agent does something on its own. It’s such a different way of interacting with AI, and those eyes and nods tell me it’s worth showing.</p>
+<section id="showing-whats-under-the-hood" class="level3">
+<h3 class="anchored" data-anchor-id="showing-whats-under-the-hood">Showing what’s under the hood</h3>
+<p>In DSCI 521, I ran one of my reviews in Claude Code on the desktop app, since it’s a little bit easier to toggle the model’s thinking on and off there. With the thinking visible, we could see how much text the model generates before it does anything, and all of that text is tokens, which is time and money. We also got to compare what it wrote while it was thinking with what it told us. I did this because of a <a href="https://podcasts.apple.com/us/podcast/hard-fork/id1528594034?i=1000787837136">September episode of Hard Fork</a> (the New York Times podcast) about the incident where OpenAI’s AI agents hacked into Hugging Face. The <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">investigators</a> could read the AI agents’ thinking, and some of the agents were working out how to fake their own logs, so what the logs showed wasn’t always what the agents had actually done. The hack itself had nothing to do with DSCI 521, but it’s what got me wanting to show students what’s actually happening under the hood.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="2026-10-07-claude-code-thinking.png" class="img-fluid figure-img" alt="Dark-mode screenshot of a Claude Code session in the Claude desktop app. My prompt: “Make a folder for today's date in my git folder, turn it into a Git repository, and start a Quarto project in it.” Below it, under the heading “Ran a command, used a tool”, is the model's thinking in two paragraphs: “I need to find their git folder and create a dated folder there, likely ~/git. There's a discrepancy between the system date and the scratch workspace name, so I should verify the actual date before proceeding, and check the existing structure under ~/git for naming conventions.” “Since this involves a new project folder on the machine, I should create it and then change_directory into it rather than working in the scratch space. I'll also consider whether the quarto-authoring skill is relevant here, though this seems like a simple scaffolding task.” Then, under “Checked date, git folder contents, and Quarto version”, the command it ran: $ date '+%Y-%m-%d %H:%M %Z'; ls -la ~/git; which quarto &amp;&amp; quarto --version"></p>
+<figcaption>Claude Code in the desktop app, with the model’s thinking shown above the first command it ran.</figcaption>
+</figure>
+</div>
+</section>
+<section id="building-my-own-projects" class="level3">
+<h3 class="anchored" data-anchor-id="building-my-own-projects">Building my own projects</h3>
+<p>But watching only goes so far, and much of what I know about how these tools behave came from building things for myself. I have a growing list of <a href="../../../projects/index.html#vibe-coded-projects">vibe-coded projects</a> on my website, small tools and websites I built by pairing with an AI coding agent. I did the websites entirely in plan and auto mode, because I don’t know JavaScript, HTML, or CSS, and I’m not planning on learning them right now. I just wanted to build the cool projects I had in my head, and my subscription let me make something as soon as I thought of it.</p>
+<!-- 🤖 definition callout (custom-callout extension, set up in _quarto.yml); Karpathy's post is a screenshot, not an X link, so it can't rot -->
+<div class="callout callout-style-default callout-definition callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Definition</span><span aria-hidden="true">Definition:</span> vibe coding <span aria-hidden="true">/vaɪb ˈkoʊdɪŋ/</span> <em>noun</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Andrej Karpathy’s term for coding where you “fully give in to the vibes, embrace exponentials, and forget that the code even exists.”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="2025-02-02-karpathy-vibe-coding.png" class="img-fluid figure-img" alt="Screenshot of a post on X by Andrej Karpathy, @karpathy, with a verified badge. The post reads: There's a new kind of coding I call “vibe coding”, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like “decrease the padding on the sidebar by half” because I'm too lazy to find it. I “Accept All” always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works. Posted at 3:17 PM on Feb 2, 2025, with 7.3M views, 1.4K replies, 3.6K reposts, 34K likes, and 17K bookmarks."></p>
+<figcaption>Karpathy’s post that named it, February 2, 2025.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These projects are just the code I want to exist in the world for myself (and maybe they’ll be useful for other people), and sometimes I even get to bring in what I already know to direct them, mostly anything around Quarto and GitHub Pages deployments. If something goes wrong, it doesn’t really affect anyone else, which makes them a good place to try stuff out. That’s how I learned different ways to use an LLM, like <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">Karpathy’s LLM wiki</a> method, where an LLM keeps a wiki of your notes and sources up to date. I keep my teaching and learning notes in one, and I’ve moved my main Obsidian vault over too, using Claude to reorganize my projects and folders.</p>
+</section>
+</section>
+<section id="why-i-want-both" class="level2">
+<h2 class="anchored" data-anchor-id="why-i-want-both">Why I want both</h2>
+<p>What I’m trying to show students is that you need to go and use these tools yourself to see what they’re actually capable of, and that’s separate from using them in my classroom to learn data science. It’s also why it’s fine for me to vibe code a website without knowing any CSS, but not for a student whose homework is about learning Quarto. In class, the code is the thing you’re learning to judge, while in my own projects it can stay out of sight. I understand a lot more of the language people use around agentic coding now, because I’ve done it myself.</p>
+<p>Learning to use these AI tools was itself learning with an LLM, so it’s circular in a way. But they’re still 2 different things I want to expose students to, and 2 different ways to learn. The end goal, hopefully, is knowing both, so you can pick whichever fits the task at hand. Not everything you do with these tools has to be fully understood, and you can totally use them for fun.</p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-mcgowanAnalyticDesignTheory" class="csl-entry" role="listitem">
+D’Agostino McGowan, Lucy, Stephanie C. Hicks, and Roger D. Peng. n.d. <span>“<span>Analytic Design Theory</span>.”</span> Accessed October 7, 2026. <a href="https://analyticdesigntheory.org/">https://analyticdesigntheory.org/</a>.
+</div>
+<div id="ref-githubAboutCopilotAuto" class="csl-entry" role="listitem">
+GitHub. n.d. <span>“<span>About Copilot Auto Model Selection</span>.”</span> GitHub Docs. Accessed October 7, 2026. <a href="https://docs.github.com/en/copilot/concepts/models/auto-model-selection">https://docs.github.com/en/copilot/concepts/models/auto-model-selection</a>.
+</div>
+<div id="ref-greenblattBriefIndependentInvestigation2026" class="csl-entry" role="listitem">
+Greenblatt, Ryan, Ajeya Cotra, and Hjalmar Wijk. 2026. <span>“<span class="nocase">Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident</span>.”</span> METR, August 26. <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/</a>.
+</div>
+<div id="ref-karimHealthDataScience2026" class="csl-entry" role="listitem">
+Karim, M. Ehsan, Manya Jain, Rainie Fu, and Md. Belal Hossain. 2026. <em><span class="nocase">Health Data Science: AI and Knowledge Translation</span></em>. <a href="https://ehsanx.github.io/HDSx/">https://ehsanx.github.io/HDSx/</a>.
+</div>
+<div id="ref-karpathyTheresNewKind2025" class="csl-entry" role="listitem">
+Karpathy, Andrej. 2025. <span>“<span class="nocase">There’s a new kind of coding I call <span>‘vibe coding’</span></span>.”</span> X, February 2. <a href="https://x.com/karpathy/status/1886192184808149383">https://x.com/karpathy/status/1886192184808149383</a>.
+</div>
+<div id="ref-karpathyLlmwiki2026" class="csl-entry" role="listitem">
+Karpathy, Andrej. 2026. <span>“<span class="nocase">llm-wiki</span>.”</span> GitHub Gist, April 4. <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f</a>.
+</div>
+<div id="ref-rooseAIMobThat2026" class="csl-entry" role="listitem">
+Roose, Kevin, and Casey Newton. 2026. <span>“<span class="nocase">The A.I. Mob That Attacked Hugging Face + METR’s Ajeya Cotra</span>.”</span> Hard Fork, The New York Times, September 4. <a href="https://podcasts.apple.com/us/podcast/hard-fork/id1528594034?i=1000787837136">https://podcasts.apple.com/us/podcast/hard-fork/id1528594034?i=1000787837136</a>.
+</div>
+<div id="ref-sentanceTeachingComputerProgramming2019" class="csl-entry" role="listitem">
+Sentance, Sue, Jane Waite, and Maria Kallia. 2019. <span>“Teaching Computer Programming with <span>PRIMM</span>: A Sociocultural Perspective.”</span> <em>Computer Science Education</em> 29 (2-3): 136–76. <a href="https://doi.org/10.1080/08993408.2019.1608781">https://doi.org/10.1080/08993408.2019.1608781</a>.
+</div>
+<div id="ref-ubcspphCoursesSchedules" class="csl-entry" role="listitem">
+UBC School of Population and Public Health. n.d. <span>“<span class="nocase">Courses and Schedules</span>.”</span> Accessed October 7, 2026. <a href="https://spph.ubc.ca/education/courses-and-schedules/">https://spph.ubc.ca/education/courses-and-schedules/</a>.
+</div>
+<div id="ref-wilsonTeachingTechTogether2019" class="csl-entry" role="listitem">
+Wilson, Greg. 2019. <em>Teaching Tech Together: <span>How</span> to Make Your Lessons Work and Build a Teaching Community Around Them</em>. Taylor &amp; Francis. <a href="http://teachtogether.tech">http://teachtogether.tech</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script>
+// The site's ONLY custom JavaScript.
+// 1) Elements with class .reveal fade up when scrolled into view.
+// 2) Cards/polaroids get a random resting tilt each page load.
+// 3) A thin orange reading-progress bar tracks scroll position.
+// All skipped when the visitor prefers reduced motion.
+// 4) The announcement banner comes back on each new visit (runs always).
+// 5) Listing thumbnails without alt text get alt="" (runs always).
+
+// Blog/listing cards already name the post in their link text, so a
+// thumbnail with no image-alt is decorative. Quarto omits alt entirely
+// (it drops an empty image-alt), which makes screen readers read the
+// file name; alt="" tells them to skip it. Posts that set image-alt keep it.
+for (const img of document.querySelectorAll("img.thumbnail-image:not([alt])"))
+  img.alt = "";
+
+// Quarto remembers a dismissed announcement forever (localStorage).
+// On the first page of a visit, forget it, so ✕ hides the banner while
+// browsing the site but it's back next visit. "Visit" = sessionStorage:
+// this tab, until it's closed. This inline script runs before Quarto
+// checks for a dismissal (on DOMContentLoaded), so the banner never flashes.
+(() => {
+  try {
+    if (sessionStorage.getItem("announce-visit")) return;
+    sessionStorage.setItem("announce-visit", "1");
+    for (const key of Object.keys(localStorage))
+      if (key.startsWith("quarto-announce-")) localStorage.removeItem(key);
+  } catch {}  // storage blocked: Quarto can't remember a dismissal either
+})();
+
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add("revealed"); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.1 });
+  for (const el of document.querySelectorAll(".reveal")) {
+    // only hide elements below the fold — no flash for above-fold content
+    if (el.getBoundingClientRect().top > innerHeight) {
+      el.classList.add("reveal-hidden");
+      io.observe(el);
+    }
+  }
+
+  // random resting tilts — a fresh arrangement every page load.
+  // CSS reads --tilt via rotate(var(--tilt, 0deg)); tweak max degrees here.
+  const tilt = (sel, max) => {
+    for (const el of document.querySelectorAll(sel))
+      el.style.setProperty("--tilt", ((Math.random() * 2 - 1) * max).toFixed(2) + "deg");
+  };
+  tilt(".signpost, .quarto-grid-item", 1.6);
+  tilt(".photo-gallery img", 4);
+
+  document.body.insertAdjacentHTML("afterbegin", '<div id="reading-progress"></div>');
+  const bar = document.getElementById("reading-progress");
+  const h = document.documentElement;
+  addEventListener("scroll", () => {
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100 || 0) + "%";
+  }, { passive: true });
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/chendaniely\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Daniel Chen · <a href="../../../blog.xml">RSS</a> · <a href="https://github.com/chendaniely/chendaniely.github.io">Source</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

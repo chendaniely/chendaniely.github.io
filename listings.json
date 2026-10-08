@@ -4,8 +4,9 @@
     "items": []
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/2026/2026-10-07-using-ai-to-learn-and-learning-the-ai/index.html",
       "/posts/2026/2026-09-27-reviewing-with-an-agent-harness/index.html",
       "/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html",
       "/posts/2020/2020-10-27-using-obs-for-online-teaching/index.html",
@@ -71,8 +72,9 @@
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
+      "/posts/2026/2026-10-07-using-ai-to-learn-and-learning-the-ai/index.html",
       "/posts/2026/2026-09-27-reviewing-with-an-agent-harness/index.html",
       "/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html",
       "/posts/2020/2020-10-27-using-obs-for-online-teaching/index.html",

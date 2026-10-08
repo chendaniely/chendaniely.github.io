@@ -10,7 +10,18 @@
 <atom:link href="https://chendaniely.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.11.5</generator>
-<lastBuildDate>Sun, 27 Sep 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Incorporating AI in the Classroom: Using AI to Learn, and Learning the AI</title>
+  <link>https://chendaniely.github.io/posts/2026/2026-10-07-using-ai-to-learn-and-learning-the-ai/</link>
+  <description><![CDATA[ There are 2 things I want students to get out of AI in class: using AI to learn something, and just doing stuff to learn the AI. ]]></description>
+  <category>teaching</category>
+  <category>AI</category>
+  <category>Incorporating AI in the Classroom</category>
+  <guid>https://chendaniely.github.io/posts/2026/2026-10-07-using-ai-to-learn-and-learning-the-ai/</guid>
+  <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://chendaniely.github.io/posts/2026/2026-10-07-using-ai-to-learn-and-learning-the-ai/2026-10-07-claude-code-thinking-card.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
 <item>
   <title>Incorporating AI in the Classroom: Reviewing with an Agent Harness</title>
   <link>https://chendaniely.github.io/posts/2026/2026-09-27-reviewing-with-an-agent-harness/</link>
@@ -204,15 +215,6 @@
   <category>workflow</category>
   <guid>https://chendaniely.github.io/posts/2017/2017-05-30-project_templates/</guid>
   <pubDate>Tue, 30 May 2017 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Changes in Higher Education</title>
-  <link>https://chendaniely.github.io/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/</link>
-  <description><![CDATA[ As a PhD student who already has a Master’s degree, it’s safe to say that I’ve been in school for a long time. One of the things in higher education that I started to dislike over the years are the ways professors assess students in the classroom. ]]></description>
-  <category>higher ed</category>
-  <category>Preparing the Future Professoriate</category>
-  <guid>https://chendaniely.github.io/posts/2017/2017-05-01-pfp_blog_changes_in_higher_education/</guid>
-  <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
