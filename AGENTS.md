@@ -37,8 +37,10 @@ scroll-reveal.html   # the site's only JS: reveal-on-scroll, random card
                      # listing thumbnails with no image-alt (~65 lines)
 _now-signposts.qmd   # home page signpost cards partial
 talks/               # talks.yml is the data source; talks.ejs renders the listing
-teaching/ projects/  # projects/ is a real signpost-card page; teaching/ is a
-                     # short bio page pointing to the fuller dossier in _TODO.md
+projects/            # signpost cards + the auto-updating vibe-coded list
+teaching/            # index.qmd (general teaching), ubc/ (UBC courses, SEI
+                     # figures as static PNGs updated by hand), carpentries/
+                     # (talks.yml entries tagged `carpentries`); navbar dropdown
 talks/talks.yml      # ALL talks data (copy template comment inside for new
                      # talks; omit unused fields). Feeds the talks page via
                      # talks.ejs; later feeds CV + video pipeline (id = join key)
@@ -166,9 +168,21 @@ and check `talks/talks.ejs` still handles the change.
 
 ## Planned work
 
-See `_TODO.md` in the repo root for full context on planned projects.
+Planned work lives in GitHub issues (label `enhancement`), not in `_TODO.md`:
+`gh issue list` shows what's open.
+`_TODO.md` was retired on 2026-10-07; it's now a local, gitignored stub
+mapping its old sections to issues #34–#42.
 
 ## Open work (GitHub issues)
+
+- **#34**: Talks phase 2: auto-pick up GitHub repos tagged `talk` / `workshop`,
+  merged with `talks.yml` by repo URL (design agreed; repo tagging needs Dan's sign-off)
+- **#35**: Per-talk pages with video, transcript, and AI summary (Pixeltable submodule)
+- **#36**: Cross-post blog posts to Substack with n8n
+- **#37**: CV / resume page from the CV repo
+- **#38**: Community page for open source and community work
+- **#39**: Guides section for reference material
+- **#40**: Hobbies content (running timeline photo saved at `img/me/mds-graduation-2023.jpg`)
 
 - **Issue #30**: Add `aliases:` to all posts for old-format URL redirects
   Old URL pattern: `/YYYY/MM/DD/slug/`
