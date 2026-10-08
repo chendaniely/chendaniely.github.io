@@ -110,17 +110,11 @@ a one-week retreat with [Eric Ma](https://ericmjl.github.io/), in February 2027.
 ## The Carpentries
 
 I've been part of [The Carpentries](https://carpentries.org/) since 2014,
-teaching 15+ workshops and training new instructors as an Instructor Trainer.
-From 2020 to 2022 I was the
-[Maintainer Community Lead](https://carpentries.org/blog/2020/11/introducing-dan-chen-as-maintainer-community-lead/),
-supporting the volunteers who maintain the lessons
-and revamping the Maintainer Onboarding curriculum along the way.
-Before that I co-maintained the Software Carpentry R lesson (starting in 2016),
-and I'm a co-author of 4 Software Carpentry lessons:
-[Programming with R](https://doi.org/10.5281/zenodo.57541),
-[The Unix Shell](https://doi.org/10.5281/zenodo.57544),
-[Databases and SQL](https://doi.org/10.5281/zenodo.57551),
-and [Version Control with Git](https://doi.org/10.5281/zenodo.57467).
+first teaching workshops and later training new instructors,
+and from 2020 to 2022 I was their Maintainer Community Lead.
+Everything I've done with them,
+including all 15 workshops I've taught,
+is on [its own page](/teaching/carpentries/index.qmd).
 
 ## Workshops and tutorials
 

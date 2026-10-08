@@ -346,6 +346,33 @@
   scope: Local
   repo: https://github.com/chendaniely/2022-04-21-rladies-YVR
 
+- id: 2022-01-06-ttt-vt-online
+  title: "Instructor Training"
+  date: 2022-01-06
+  type: workshop
+  event: "Virginia Tech"
+  event-url: https://carpentries.github.io/instructor-training/
+  location: virtual
+  categories: [carpentries, teaching]
+
+- id: 2021-09-07-maintainer-onboarding
+  title: "Maintainer Onboarding"
+  date: 2021-09-07
+  type: workshop
+  event: "The Carpentries"
+  event-url: https://carpentries.github.io/maintainer-onboarding/
+  location: virtual
+  categories: [carpentries, teaching]
+
+- id: 2021-09-02-maintainer-onboarding
+  title: "Maintainer Onboarding"
+  date: 2021-09-02
+  type: workshop
+  event: "The Carpentries"
+  event-url: https://carpentries.github.io/maintainer-onboarding/
+  location: virtual
+  categories: [carpentries, teaching]
+
 - id: 2021-09-01-nyr-conference-2021-learner-personas-for
   title: "Learner Personas for Domain-Specific Data Science Educational Materials"
   date: 2021-09-01  # * approximate — repo date is 2021-09-01
@@ -367,6 +394,15 @@
   venue-type: practitioner
   scope: National
   repo: https://github.com/chendaniely/2021-09-01-git_dan
+
+- id: 2021-08-26-maintainer-onboarding
+  title: "Maintainer Onboarding"
+  date: 2021-08-26
+  type: workshop
+  event: "The Carpentries"
+  event-url: https://carpentries.github.io/maintainer-onboarding/
+  location: virtual
+  categories: [carpentries, teaching]
 
 - id: 2021-08-25-r-medicine-2021
   title: "Intro to R for Medical Data"
@@ -435,6 +471,24 @@
   repo: https://github.com/chendaniely/pycon-2021-edu_summit-personas
   slides: https://us.pycon.org/2021/summits/education-training/
 
+- id: 2021-04-12-ttt-online-pdt
+  title: "Instructor Training"
+  date: 2021-04-12
+  type: workshop
+  event: "The Carpentries (open online training, Pacific time)"
+  event-url: https://chendaniely.github.io/2021-04-12-ttt-online-PDT/
+  location: virtual
+  categories: [carpentries, teaching]
+
+- id: 2021-03-02-ttt-online-nnlm
+  title: "Instructor Training"
+  date: 2021-03-02
+  type: workshop
+  event: "National Network of Libraries of Medicine"
+  event-url: https://carpentries.github.io/instructor-training/
+  location: virtual
+  categories: [carpentries, teaching]
+
 - id: 2021-02-02-open-workshop
   title: "Data Science for Biomedical Sciences"
   date: 2021-02-02  # * approximate
@@ -484,7 +538,7 @@
   date: 2020-09-09
   type: workshop
   event: "CarpentryCon@Home 2020"
-  categories: [git, teaching, open-education]
+  categories: [carpentries, git, teaching, open-education]
   venue-type: community
   scope: International
   repo: https://github.com/chendaniely/2020-09-09-CCatHome-git-dan
@@ -500,12 +554,22 @@
   scope: National
   repo: https://github.com/chendaniely/2020-08-26-rstudio_debunk
 
+- id: 2020-08-19-nsbe
+  title: "Carpentries Workshop"
+  date: 2020-08-19
+  type: workshop
+  event: "NSBE 46th Annual Convention"
+  event-url: https://brownsarahm.github.io/2020-08-19-nsbe/
+  location: virtual
+  categories: [carpentries, teaching]
+  with: [Sarah Brown, Kari Jordan, Maneesha Sane]
+
 - id: 2020-08-17-virginia-tech-software-carpentry
   title: "Git Lesson"
   date: 2020-08-17
   type: workshop
   event: Virginia Tech Software Carpentry
-  categories: [git, teaching, open-education]
+  categories: [carpentries, git, teaching, open-education]
   venue-type: community
   scope: Local
   repo: https://github.com/chendaniely/2020-08-17-git-dan
@@ -538,7 +602,7 @@
   date: 2020-07-16
   type: workshop
   event: "CarpentryCon@Home 2020"
-  categories: [git, teaching, open-education]
+  categories: [carpentries, git, teaching, open-education]
   venue-type: community
   scope: International
   repo: https://github.com/chendaniely/2020-07-16-CCatHome-git-dan
@@ -554,6 +618,16 @@
   venue-type: practitioner
   scope: National
   repo: https://github.com/chendaniely/scipy-2020-pandas
+
+- id: 2020-06-09-uofdelaware-online
+  title: "Software Carpentry Workshop"
+  date: 2020-06-09
+  type: workshop
+  event: "University of Delaware"
+  event-url: https://svigneau.github.io/2020-06-09-uofdelaware-online/
+  location: virtual
+  categories: [carpentries, teaching]
+  with: [Brook Moyers, Sebastien Vigneau, Lorraine Ling]
 
 - id: 2020-04-15-odsc-east-2020-plumber-and-docker
   title: "Plumber and Docker"
@@ -808,6 +882,15 @@
   scope: National
   repo: https://github.com/chendaniely/2017_ser_poster
 
+- id: 2017-06-19-nasa-rm1
+  title: "Software Carpentry Workshop"
+  date: 2017-06-19
+  type: workshop
+  event: "NASA Goddard Space Flight Center"
+  event-url: https://jdcorless.github.io/2017-06-19-nasa-rm1/
+  categories: [carpentries, teaching]
+  with: [John Corless]
+
 - id: 2017-04-22-nyr-conference-2017
   title: "So You Want to be a Data Scientist?"
   date: 2017-04-22
@@ -839,6 +922,15 @@
   venue-type: community
   scope: Local
   repo: https://github.com/chendaniely/2017-08-15-meetup-r_you_markDown
+
+- id: 2016-11-03-nsbe-norfolk
+  title: "Data Carpentry Workshop"
+  date: 2016-11-03
+  type: workshop
+  event: "National Society of Black Engineers: Region II Fall Regional Conference"
+  event-url: https://chendaniely.github.io/2016-11-03-nsbe/
+  categories: [carpentries, teaching]
+  with: [Jennifer Shelton]
 
 - id: 2016-11-01-biocomplexity-institute-symposium-2016
   title: "Understanding Social Diffusion Dynamics Using Networked Cognitive Systems"
@@ -884,6 +976,15 @@
   scope: Local
   repo: https://github.com/chendaniely/gbcb_seminar_presentation_1
 
+- id: 2016-08-03-frb-washingtondc
+  title: "Data Carpentry Workshop"
+  date: 2016-08-03
+  type: workshop
+  event: "Federal Reserve Board"
+  event-url: https://arthur-e.github.io/2016-08-03-FederalReserveBoard/
+  categories: [carpentries, teaching]
+  with: [Arthur Endsley]
+
 - id: 2016-07-14-scipy-2016
   title: "Pandas for Everyone"
   date: 2016-07-14  # * approximate — SciPy 2016 was July 11-17
@@ -927,6 +1028,15 @@
   scope: Local
   repo: https://github.com/chendaniely/2016-01-22-ndssl
 
+- id: 2015-10-12-vt
+  title: "Software Carpentry Workshop"
+  date: 2015-10-12
+  type: workshop
+  event: "Virginia Tech"
+  event-url: https://zhuoaprilfu.github.io/2015-10-12-VirginiaTech/
+  categories: [carpentries, teaching]
+  with: [Zhuo Fu]
+
 - id: 2015-07-10-scipy-2015
   title: "Python Properties in MANN"
   date: 2015-07-10
@@ -948,6 +1058,32 @@
   venue-type: practitioner
   scope: National
   repo: https://github.com/chendaniely/2015-scipy-lightning-literate
+
+- id: 2015-06-25-jhu
+  title: "Software Carpentry Workshop"
+  date: 2015-06-25
+  type: workshop
+  event: "Johns Hopkins University"
+  event-url: https://chendaniely.github.io/2015-06-25-jhu/
+  categories: [carpentries, teaching]
+  with: [Brian Miles]
+
+- id: 2015-06-22-vt
+  title: "Software Carpentry Workshop"
+  date: 2015-06-22
+  type: workshop
+  event: "Virginia Tech"
+  categories: [carpentries, teaching]
+  with: [Tommy Guy]
+
+- id: 2015-05-12-busm
+  title: "Software Carpentry Workshop"
+  date: 2015-05-12
+  type: workshop
+  event: "Boston University School of Medicine"
+  event-url: https://chendaniely.github.io/2015-05-12-BUSM/
+  categories: [carpentries, teaching]
+  with: [Marianne Corvellec]
 
 - id: 2015-05-02-nyr-conference-2015
   title: "Interactive Ebola Plots"
@@ -973,6 +1109,24 @@
   repo: https://github.com/chendaniely/2015-04-15-SPDC-shiny
   slides: http://www.meetup.com/stats-prog-dc/events/221534560/
 
+- id: 2015-04-01-wcmc
+  title: "Software Carpentry Workshop"
+  date: 2015-04-01
+  type: workshop
+  event: "Weill Cornell Medical College"
+  event-url: https://iglpdc.github.io/2015-04-01-wcmc/
+  categories: [carpentries, teaching]
+  with: [Ivan Gonzalez, Sheldon McKay, Jennifer Shelton]
+
+- id: 2015-03-06-nyas
+  title: "Software Carpentry Workshop"
+  date: 2015-03-06
+  type: workshop
+  event: "New York Academy of Sciences"
+  event-url: https://mckays630.github.io/2015-03-06-nyas/
+  categories: [carpentries, teaching]
+  with: [Matthew Aiello-Lammens, Sheldon McKay, Jason Williams]
+
 - id: 2014-11-21-columbia-hci-lab
   title: "Open Science and Ebola"
   date: 2014-11-21
@@ -982,6 +1136,15 @@
   venue-type: institutional
   scope: Local
   repo: https://github.com/chendaniely/2014-11-21-talk-cumc-dbmi-hci
+
+- id: 2014-11-07-harvard
+  title: "Software Carpentry Workshop"
+  date: 2014-11-07
+  type: workshop
+  event: "Research Computing & Harvard-Smithsonian Center for Astrophysics, Harvard University"
+  event-url: https://iglpdc.github.io/2014-11-07-harvard/
+  categories: [carpentries, teaching]
+  with: [Ivan Gonzalez]
 
 - id: 2014-10-09-virginia-biocomplexity-institute
   title: "R Workshop"
@@ -993,6 +1156,33 @@
   venue-type: institutional
   scope: Local
   repo: https://github.com/chendaniely/2014-10-08-vbi
+
+- id: 2014-09-24-frb
+  title: "Software Carpentry Workshop"
+  date: 2014-09-24
+  type: workshop
+  event: "Federal Reserve Board"
+  event-url: https://chendaniely.github.io/2014-09-24-frb/
+  categories: [carpentries, teaching]
+  with: [Ivan Gonzalez, Steve Eddins]
+
+- id: 2014-08-11-wustl
+  title: "Software Carpentry Workshop"
+  date: 2014-08-11
+  type: workshop
+  event: "Washington University School of Medicine"
+  event-url: https://mollygibson.github.io/2014-08-11-wustl/
+  categories: [carpentries, teaching]
+  with: [Molly Gibson, Neem Serra, Jessica Kerr, Ariel Rokem]
+
+- id: 2014-06-24-ru
+  title: "Software Carpentry Workshop"
+  date: 2014-06-24
+  type: workshop
+  event: "Rockefeller University"
+  event-url: https://cavestruz.github.io/2014-06-24-ru/
+  categories: [carpentries, teaching]
+  with: [Camille Avestruz, Ivan Gonzalez, Timothy Cerino]
 
 - id: 2014-03-30-csaph
   title: "Python Workshop"

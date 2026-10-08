@@ -178,6 +178,14 @@ See `_TODO.md` in the repo root for full context on planned projects.
   posts with `slug:`,
   posts with neither (derive from folder name).
 
+- **Issue #33**: Reconcile talks data with The Carpentries' AMY records
+  (AMY is the source of truth for Carpentries workshops and trainings);
+  mostly CV-repo fixes, plus 3 `carpentries`-tagged `talks.yml` entries not in AMY
+
+- **Issue #32**: Stacked bar chart of talks per year (talks vs workshops)
+  as the "Jump to a year" navigation on every page that lists `talks.yml`;
+  clicking a bar jumps to `#year-YYYY`
+
 - **Issue #29**: Create stub posts for external blog contributions
   - 7 new stubs needed for Carpentries posts (2015–2022) not already in `posts/`
   - 7 existing posts need the Carpentries URL added to frontmatter

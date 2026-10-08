@@ -1,0 +1,66 @@
+---
+title: The Carpentries
+description: >
+  Over a decade with The Carpentries:
+  workshops taught, instructors trained,
+  and lessons and maintainers looked after.
+toc: false
+page-layout: full
+# 🤖 every talks.yml entry tagged `carpentries`, rendered with the Talks page's template
+listing:
+  id: carpentries-list
+  contents: ../../talks/talks.yml
+  template: ../../talks/talks.ejs
+  include:
+    categories: carpentries
+---
+
+[The Carpentries](https://carpentries.org/) is where I learned to teach.
+I went through Software Carpentry's instructor training in 2014,
+taught my first workshop that June,
+and I've been involved in one way or another ever since
+(I wrote about [what the Carpentries mean to me](/posts/2016/2016-10-26-what_swc_means_to_me/index.md) back in 2016).
+A lot of how I teach today,
+like [live coding](https://carpentries.github.io/instructor-training/17-live.html),
+comes from there.
+
+- **Instructor:**
+  I became a certified instructor in 2014
+  and have taught 15 Carpentries workshops,
+  12 for Software Carpentry, 2 for Data Carpentry, and 1 Carpentries workshop that mixed lessons from both.
+  My first was a workshop for
+  [high school students at Rockefeller University](/posts/2014/2014-07-07-high-school-students-at-rockefeller/index.md).
+- **Lesson maintainer:**
+  in 2016, [Harriet Dashnow and I took over](https://carpentries.org/blog/2016/03/new-maintainers/)
+  maintaining the Software Carpentry R lesson, Programming with R.
+  I'm also a co-author of 4 Software Carpentry lessons:
+  [Programming with R](https://doi.org/10.5281/zenodo.57541),
+  [The Unix Shell](https://doi.org/10.5281/zenodo.57544),
+  [Databases and SQL](https://doi.org/10.5281/zenodo.57551),
+  and [Version Control with Git](https://doi.org/10.5281/zenodo.57467).
+- **Instructor Trainer:**
+  I trained to become an Instructor Trainer in fall 2020,
+  and then taught 3 instructor trainings (2021–2022),
+  teaching new instructors how to teach.
+- **Maintainer Community Lead:**
+  I [took over the role](https://carpentries.org/blog/2020/11/introducing-dan-chen-as-maintainer-community-lead/)
+  in November 2020,
+  supporting the volunteers who maintain the lessons,
+  revamping the [Maintainer Onboarding](https://carpentries.github.io/maintainer-onboarding/) curriculum,
+  and teaching 3 onboarding sessions in 2021,
+  before [handing it over](https://carpentries.org/blog/2022/06/new-maintainer-community-lead/)
+  to Vini Salazar in June 2022.
+
+I've written about Software Carpentry on the blog
+(posts tagged [Software Carpentry](/blog.html#category=Software%20Carpentry)),
+mostly about teaching workshops and assessing learners.
+
+## Workshops and trainings
+
+Every Carpentries workshop, instructor training, and maintainer onboarding I've taught,
+newest first.
+Workshop names link to the workshop's own website when it's still up,
+and the full list of everything I've taught is on my [Talks](/talks/index.qmd) page.
+
+::: {#carpentries-list}
+:::

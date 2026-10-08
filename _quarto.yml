@@ -28,14 +28,17 @@ website:
         text: Blog
       - href: talks/index.qmd
         text: Talks
-      # 🤖 Teaching is a dropdown: general teaching (workshops, Carpentries,
-      # how I teach) and a UBC-only page (courses, textbooks, evaluations)
+      # 🤖 Teaching is a dropdown: general teaching (workshops, how I teach),
+      # a UBC-only page (courses, textbooks, evaluations), and The Carpentries
+      # (roles + every carpentries-tagged entry in talks.yml)
       - text: Teaching
         menu:
           - href: teaching/index.qmd
             text: Teaching
           - href: teaching/ubc/index.qmd
             text: UBC courses
+          - href: teaching/carpentries/index.qmd
+            text: The Carpentries
       - href: projects/index.qmd
         text: Projects
     # 🤖 About, then a GitHub icon for the site's source repo, top right beside
