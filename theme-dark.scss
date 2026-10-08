@@ -7,6 +7,11 @@
 $body-bg: #171512;        // _brand.yml dark-base
 $body-color: #E8DDD2;     // _brand.yml sand — readable warm text on dark
 $link-color: #7FB0D6;     // lightened brand blue for contrast on dark — not a brand color, kept as literal
+// 🤖 inline `code`: without these, dark mode keeps the light theme's chip
+// (near-black text on light gray), and a linked `code` takes the link blue,
+// which all but vanishes on that gray
+$code-bg: #232019;        // _brand.yml dark-surface, same as code blocks
+$code-color: #E8DDD2;     // _brand.yml sand, same as body text
 
 /*-- scss:rules --*/
 // dark-surface for cards, code blocks, and quotes
