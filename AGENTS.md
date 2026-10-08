@@ -68,6 +68,10 @@ Makefile             # `make submodules` to init/update submodules
 
 - Every post lives in its own folder: `posts/YYYY/YYYY-MM-DD-slug/index.md` (or `.qmd`)
 - Images and assets are co-located in the same folder as `index.*`
+- Social media planning for a post goes in `_social-posts.md` in its folder:
+  gitignored and local only.
+  Keep the leading `_` so Quarto skips it;
+  otherwise the blog listing reads it as a post and its `---` dividers break the build
 - New posts should use `.qmd`;
   migrated posts may stay as `.md` until converted
 - Quarto categories are used for both categories and tags

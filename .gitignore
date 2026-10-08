@@ -20,3 +20,10 @@ Thumbs.db
 
 # generated at render time by _scripts/fetch-vibe-coded.py
 projects/vibe-coded.yml
+
+# 🤖 per-post social media planning docs: local only, never committed.
+# Name them _social-posts.md: the leading _ makes Quarto skip the file,
+# which the blog listing would otherwise read as a broken post.
+# The plain name is ignored too, so it can't be committed by mistake.
+posts/**/_social-posts.md
+posts/**/social-posts.md
