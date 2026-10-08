@@ -116,6 +116,15 @@ LLMs can do a lot of this stuff for you,
 but you still need to know what your other tools (like Quarto) are already capable of,
 or the LLM is going to go off and do something you don't want.
 
+It happened to me while writing this post.
+I asked Claude for a fun way to define vibe coding,
+and it built a custom card from scratch, with about 40 lines of CSS and a bit of JavaScript.
+Quarto could already do it with a callout extension
+(that's the vibe coding definition further down),
+and I only knew to ask for that because I know Quarto.
+I wrote it up as a [learning moment](https://chendaniely.github.io/genai-learning-moments/posts/2026-10-07-use-the-framework-first.html),
+one of the [examples I keep of correcting AI output](https://chendaniely.github.io/genai-learning-moments/).
+
 ## Doing stuff to learn the AI
 
 The other thing I want students to see is how these tools work.
