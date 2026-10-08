@@ -11,7 +11,6 @@ nocite: |
   @mcgowanAnalyticDesignTheory, @rooseAIMobThat2026, @karpathyLlmwiki2026, @karpathyTheresNewKind2025, @ubcspphCoursesSchedules, @githubAboutCopilotAuto, @greenblattBriefIndependentInvestigation2026
 image: 2026-10-07-claude-code-thinking-card.png
 image-alt: "Close crop of Claude Code in the desktop app: the model's thinking, which starts \"I need to find their git folder and create a dated folder there, likely ~/git\", above the first command it ran. See alt-text in blog for full image text."
-draft: true
 ---
 
 ::: {.callout-note title="Part of a series"}
