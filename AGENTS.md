@@ -142,8 +142,11 @@ The definition, with its source.
 :::
 ```
 
-Screenshot sources from X/Twitter rather than linking them;
+Screenshot sources from X/Twitter rather than linking them in prose;
 those links rot.
+The durable ones can still be linked from the screenshot image itself —
+`[![...](source.png){fig-alt="..."}](post-url)` keeps the figure centered and its alt text —
+like the vibe coding definition linking Karpathy's post.
 
 ## Updating "what's current"
 
