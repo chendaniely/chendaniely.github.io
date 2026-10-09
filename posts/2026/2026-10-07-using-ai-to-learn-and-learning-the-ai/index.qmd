@@ -49,6 +49,8 @@ where [Auto](https://docs.github.com/en/copilot/concepts/models/auto-model-selec
 I drive Copilot in the class demos,
 but it's to show students how they can use it themselves.
 The AI-KT teaching team also wrote a lot of AI prompts into the course materials that students can use with Copilot on their homework.
+AI is built right into the course,
+and one of its goals is for students to use LLMs to "generate, debug, and translate code while critically auditing them for bias and hallucinations".
 
 ::: {.callout-note title="About SPPH 381H"}
 SPPH 381H isn't my course.
@@ -58,8 +60,6 @@ and shared as "an open educational resource for learners and adopting instructor
 I'm the first instructor for the course,
 even though it was developed by all of these other people
 (I just happen to be a good instructional fit for teaching it).
-AI is built right into the course,
-and one of its goals is for students to use LLMs to "generate, debug, and translate code while critically auditing them for bias and hallucinations".
 :::
 
 A typical class goes like this:
@@ -120,11 +120,19 @@ or the LLM is going to go off and do something you don't want.
 It happened to me while writing this post.
 I asked Claude for a fun way to define vibe coding,
 and it built a custom card from scratch, with about 40 lines of CSS and a bit of JavaScript.
-Quarto could already do it with a callout extension
-(that's the vibe coding definition further down),
+Quarto could already do it with a callout extension,
 and I only knew to ask for that because I know Quarto.
 I wrote it up as a [learning moment](https://chendaniely.github.io/genai-learning-moments/posts/2026-10-07-use-the-framework-first.html),
 one of the [examples I keep of correcting AI output](https://chendaniely.github.io/genai-learning-moments/).
+
+<!-- 🤖 definition callout (custom-callout extension, set up in _quarto.yml); Karpathy's post is a screenshot with the image linked to the original X post -->
+::: {.definition}
+## [Definition:]{aria-hidden="true"} vibe coding [/vaɪb ˈkoʊdɪŋ/]{aria-hidden="true"} *noun*
+
+Andrej Karpathy's term for coding where you "fully give in to the vibes, embrace exponentials, and forget that the code even exists."
+
+[![Karpathy's post that named it, February 2, 2025.](2025-02-02-karpathy-vibe-coding.png){fig-alt="Screenshot of a post on X by Andrej Karpathy, @karpathy, with a verified badge. The post reads: There's a new kind of coding I call “vibe coding”, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like “decrease the padding on the sidebar by half” because I'm too lazy to find it. I “Accept All” always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works. Posted at 3:17 PM on Feb 2, 2025, with 7.3M views, 1.4K replies, 3.6K reposts, 34K likes, and 17K bookmarks."}](https://x.com/karpathy/status/1886192184808149383)
+:::
 
 ## Doing stuff to learn the AI
 
@@ -163,15 +171,6 @@ I did the websites entirely in plan mode and auto mode,
 because I don't know JavaScript, HTML, or CSS, and I'm not planning on learning them right now.
 I just wanted to build the cool projects I had in my head,
 and my subscription let me make something as soon as I thought of it.
-
-<!-- 🤖 definition callout (custom-callout extension, set up in _quarto.yml); Karpathy's post is a screenshot with the image linked to the original X post -->
-::: {.definition}
-## [Definition:]{aria-hidden="true"} vibe coding [/vaɪb ˈkoʊdɪŋ/]{aria-hidden="true"} *noun*
-
-Andrej Karpathy's term for coding where you "fully give in to the vibes, embrace exponentials, and forget that the code even exists."
-
-[![Karpathy's post that named it, February 2, 2025.](2025-02-02-karpathy-vibe-coding.png){fig-alt="Screenshot of a post on X by Andrej Karpathy, @karpathy, with a verified badge. The post reads: There's a new kind of coding I call “vibe coding”, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists. It's possible because the LLMs (e.g. Cursor Composer w Sonnet) are getting too good. Also I just talk to Composer with SuperWhisper so I barely even touch the keyboard. I ask for the dumbest things like “decrease the padding on the sidebar by half” because I'm too lazy to find it. I “Accept All” always, I don't read the diffs anymore. When I get error messages I just copy paste them in with no comment, usually that fixes it. The code grows beyond my usual comprehension, I'd have to really read through it for a while. Sometimes the LLMs can't fix a bug so I just work around it or ask for random changes until it goes away. It's not too bad for throwaway weekend projects, but still quite amusing. I'm building a project or webapp, but it's not really coding - I just see stuff, say stuff, run stuff, and copy paste stuff, and it mostly works. Posted at 3:17 PM on Feb 2, 2025, with 7.3M views, 1.4K replies, 3.6K reposts, 34K likes, and 17K bookmarks."}](https://x.com/karpathy/status/1886192184808149383)
-:::
 
 These projects are just the code I want to exist in the world for myself
 (and maybe they'll be useful for other people),
