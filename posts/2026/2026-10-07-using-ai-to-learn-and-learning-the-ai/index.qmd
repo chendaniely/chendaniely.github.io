@@ -1,6 +1,7 @@
 ---
 # Exported from the Teaching and Learning vault (writing/Incorporating AI in the Classroom - Using AI to Learn, and Learning the AI.md) on 2026-10-07;
 # the final wording lives here now.
+# 🤖 copyedited 2026-10-08 in pi with qwen3.8-27b; Dan chose which fixes to apply
 title: "Incorporating AI in the Classroom: Using AI to Learn, and Learning the AI"
 description: "There are 2 things I want students to get out of AI in class: using AI to learn something, and just doing stuff to learn the AI."
 date: "2026-10-07"
@@ -41,7 +42,7 @@ which I think helped solidify them
 
 In SPPH 381H, we still go through the concepts,
 but then we go into AI-assisted coding,
-with [GitHub Copilot](https://github.com/features/copilot) in a [GitHub Codespace](https://github.com/features/codespaces).
+with [GitHub Copilot](https://github.com/features/copilot) in [GitHub Codespaces](https://github.com/features/codespaces).
 The course has [no coding prerequisites](https://spph.ubc.ca/education/courses-and-schedules/),
 and students use Copilot's free tier,
 where [Auto](https://docs.github.com/en/copilot/concepts/models/auto-model-selection) picks the model for them.
@@ -78,7 +79,7 @@ I first read about it in Greg Wilson's *Teaching Tech Together* [-@wilsonTeachin
 and it comes from Sue Sentance and Jane Waite, who wrote it up with Maria Kallia [-@sentanceTeachingComputerProgramming2019].
 I'm not using PRIMM in class right now:
 I mostly live code and demo things,
-with the agent helping me type a lot of it.
+with the agent typing a lot of it.
 But since AI frees up some class time,
 PRIMM is a format that can fit in,
 and now that we're a month into the term, it's something I'm considering.
@@ -88,10 +89,10 @@ Since we aren't stuck on the code,
 we can start thinking about the data and the next set of questions to ask of it.
 That reminds me of what Lucy D'Agostino McGowan, Stephanie Hicks, and Roger Peng call [analytic design theory](https://analyticdesigntheory.org/),
 "the study of how data analyses are conducted in the real world".
-It was never really about the code,
+It was never really about the code;
 it's about the thinking behind it.
 Copilot helps students write less code,
-and the point is for them to read more of it and assess it,
+and the point is for them to read and assess more of it,
 which I think is a good thing.
 
 We'll see how well this works for students in the long term.
@@ -108,7 +109,7 @@ and where to find it in the documentation,
 but didn't name it, on purpose.
 One student (using ChatGPT, the way they normally do)
 had it rewrite all of the CSS to work around the problem instead,
-when the fix was a one or two liner, Quarto's [`.smaller` class](https://quarto.org/docs/presentations/revealjs/index.html#content-overflow).
+when the fix was a one- or two-liner, Quarto's [`.smaller` class](https://quarto.org/docs/presentations/revealjs/index.html#content-overflow).
 
 When I know the tool I'm using and where its documentation lives,
 I always feed that documentation to the LLM.
@@ -129,7 +130,7 @@ one of the [examples I keep of correcting AI output](https://chendaniely.github.
 
 The other thing I want students to see is how these tools work.
 Most students only know how to talk to an LLM through a chatbot,
-not through a harness, and not as an agent
+not through a harness, and they've never seen one running as an agent
 (I went over what I mean by those in my [last post](/posts/2026/2026-09-27-reviewing-with-an-agent-harness/index.qmd)).
 In SPPH 381H, I get a lot of cool head nodding (and some wide eyes) when the agent does something on its own.
 It's such a different way of interacting with AI,
@@ -138,12 +139,12 @@ and those eyes and nods tell me it's worth showing.
 ### Showing what's under the hood
 
 In DSCI 521, I ran one of my reviews in Claude Code on the desktop app,
-since it's a little bit easier to toggle the model's thinking on and off there.
+since it's a little bit easier to toggle the model's thinking there.
 With the thinking visible,
 we could see how much text the model generates before it does anything,
 and all of that text is tokens, which is time and money.
 We also got to compare what it wrote while it was thinking with what it told us.
-I did this because of a [September episode of Hard Fork](https://podcasts.apple.com/us/podcast/hard-fork/id1528594034?i=1000787837136) (the New York Times podcast) about the incident where OpenAI's AI agents hacked into Hugging Face.
+I did this because of a [September episode of Hard Fork](https://podcasts.apple.com/us/podcast/hard-fork/id1528594034?i=1000787837136) (a New York Times podcast) about the incident where OpenAI's AI agents hacked into Hugging Face.
 The [investigators](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/) could read the AI agents' thinking,
 and some of the agents were working out how to fake their own logs,
 so what the logs showed wasn't always what the agents had actually done.
@@ -158,7 +159,7 @@ But watching only goes so far,
 and much of what I know about how these tools behave came from building things for myself.
 I have a growing list of [vibe-coded projects](/projects/index.qmd#vibe-coded-projects) on my website,
 small tools and websites I built by pairing with an AI coding agent.
-I did the websites entirely in plan and auto mode,
+I did the websites entirely in plan mode and auto mode,
 because I don't know JavaScript, HTML, or CSS, and I'm not planning on learning them right now.
 I just wanted to build the cool projects I had in my head,
 and my subscription let me make something as soon as I thought of it.
@@ -175,7 +176,7 @@ Andrej Karpathy's term for coding where you "fully give in to the vibes, embrace
 These projects are just the code I want to exist in the world for myself
 (and maybe they'll be useful for other people),
 and sometimes I even get to bring in what I already know to direct them,
-mostly anything around Quarto and GitHub Pages deployments.
+mostly things around Quarto and GitHub Pages deployments.
 If something goes wrong, it doesn't really affect anyone else,
 which makes them a good place to try stuff out.
 That's how I learned different ways to use an LLM,
