@@ -12,6 +12,14 @@ However, if you are using a conventional commit notation, put the `🤖: ` at th
 This makes it clear which commits are AI driven,
 but can still work with other workflows that look at commit messages.
 
+For AI-driven commits, add a `Co-Authored-By:` trailer
+crediting the model that actually made the changes.
+Confirm the real model before writing the line:
+`PI_PROVIDER` and `PI_MODEL` are set on shell tool commands.
+Qwen models use the email `qwen-coder@alibabacloud.com`,
+e.g. `Co-Authored-By: Qwen 3.8 27B <qwen-coder@alibabacloud.com>`;
+keep the name aligned with the model actually in use.
+
 ### Semantic line breaks
 
 All prose in this repository (`.md`, `.qmd`, `AGENTS.md`, `CLAUDE.md`) uses semantic line breaks (SEMBR):
