@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.11.5">
+<meta name="generator" content="quarto-1.11.6">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,12 +40,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-28830a267a9c0723ba95af4315c5cf62.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d799aac71703158d4b1c5a4685a09794.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2ea1a707718cc9f3905c58b26d130924.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-afc06898b8261c65da9068aaeb0c694d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-367bdd7fbab57bbdc43897872cc0c6a0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -219,13 +220,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -317,6 +324,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -434,7 +442,7 @@ window.Quarto = {
 </section>
 <div id="listing-recent-posts" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="dGVhY2hpbmclMkNBSSUyQ0luY29ycG9yYXRpbmclMjBBSSUyMGluJTIwdGhlJTIwQ2xhc3Nyb29t" data-listing-date-sort="1791331200000" data-listing-file-modified-sort="1791909275189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1898">
+<div class="g-col-1" data-index="0" data-categories="dGVhY2hpbmclMkNBSSUyQ0luY29ycG9yYXRpbmclMjBBSSUyMGluJTIwdGhlJTIwQ2xhc3Nyb29t" data-listing-date-sort="1791331200000" data-listing-file-modified-sort="1791986994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1898">
 <a href="./posts/2026/2026-10-07-using-ai-to-learn-and-learning-the-ai/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -461,7 +469,7 @@ Oct 7, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="dGVhY2hpbmclMkNBSSUyQ0luY29ycG9yYXRpbmclMjBBSSUyMGluJTIwdGhlJTIwQ2xhc3Nyb29t" data-listing-date-sort="1790467200000" data-listing-file-modified-sort="1791909275188" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1424">
+<div class="g-col-1" data-index="1" data-categories="dGVhY2hpbmclMkNBSSUyQ0luY29ycG9yYXRpbmclMjBBSSUyMGluJTIwdGhlJTIwQ2xhc3Nyb29t" data-listing-date-sort="1790467200000" data-listing-file-modified-sort="1791986994809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1424">
 <a href="./posts/2026/2026-09-27-reviewing-with-an-agent-harness/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -488,7 +496,7 @@ Sep 27, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="ZGF0YSUyMHNjaWVuY2UlMkNsaWZlJTJDUg==" data-listing-date-sort="1774828800000" data-listing-file-modified-sort="1791909275183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4224">
+<div class="g-col-1" data-index="2" data-categories="ZGF0YSUyMHNjaWVuY2UlMkNsaWZlJTJDUg==" data-listing-date-sort="1774828800000" data-listing-file-modified-sort="1791986994804" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="22" data-listing-word-count-sort="4224">
 <a href="./posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1059,6 +1067,9 @@ for (const img of document.querySelectorAll("img.thumbnail-image:not([alt])"))
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">
