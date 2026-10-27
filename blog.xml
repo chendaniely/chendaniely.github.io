@@ -9,7 +9,7 @@
 <link>https://chendaniely.github.io/blog.html</link>
 <atom:link href="https://chendaniely.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.11.6</generator>
+<generator>quarto-1.11.7</generator>
 <lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Incorporating AI in the Classroom: Using AI to Learn, and Learning the AI</title>
@@ -42,7 +42,7 @@
   <category>R</category>
   <guid>https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/</guid>
   <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
-  <media:content url="https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/cherry_blossoms-night.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://chendaniely.github.io/posts/2026/2026-03-30-yvr-cherry-blossoms-marathon/cherry_blossoms-night.jpg" medium="image" type="image/jpeg" height="108" width="144"/>
 </item>
 <item>
   <title>Using OBS for Online Teaching</title>
