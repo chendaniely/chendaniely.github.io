@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.12.1">
+<meta name="generator" content="quarto-1.12.2">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -63,7 +63,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+@media print {
+  html {
+    color-scheme: light only;
+  }
+  html, body, pre, code {
+    background-color: transparent;
+  }
+  body, a, a:visited, blockquote {
+    color: black;
+  }
+  pre, code {
+    padding: 0;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -80,8 +100,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-73c936a99cc9c6496088e045a4198583.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-e312e621e90a81910f3c14cf9f1de48f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-d8c670ede763aea5a72e0b0cb5860f73.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a79929df3ce4afacf05fa3ee0f80d62a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap-1d0ac7dd77a55a78fb5d9b5759ad903f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -568,11 +588,11 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>collapse_rows_dt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  C1 C2 C3 C4
-1  a  c  1  0
+1  a  c  1  1
 2  a  c  2  0
-3  a  d  3  0
-4  b  c  4  0
-5  b  d  5  0</code></pre>
+3  a  d  3  1
+4  b  c  4  1
+5  b  d  5  1</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -595,7 +615,7 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <td rowspan="3" style="text-align: center; font-weight: bold; vertical-align: top !important;">a</td>
 <td rowspan="2" style="text-align: center; vertical-align: top !important;">c</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
@@ -604,18 +624,18 @@ div.callout-definition.callout-style-default .callout-icon::before, div.callout-
 <tr class="odd">
 <td style="text-align: center;">d</td>
 <td style="text-align: center;">3</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
 <td rowspan="2" style="text-align: center; font-weight: bold; vertical-align: top !important;">b</td>
 <td style="text-align: center;">c</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">d</td>
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
